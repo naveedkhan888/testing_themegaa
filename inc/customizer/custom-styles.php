@@ -292,7 +292,14 @@ if (!function_exists('themename_tbay_custom_styles')) {
 						}     
 						<?php endif; ?>       
 
-						<?php if ($logo_mobile_padding['padding-top'] != "" || $logo_mobile_padding['padding-right'] || $logo_mobile_padding['padding-bottom'] || $logo_mobile_padding['padding-left']) : ?>
+						<?php
+if (is_array($logo_mobile_padding) && (
+    $logo_mobile_padding['padding-top'] != "" || 
+    $logo_mobile_padding['padding-right'] || 
+    $logo_mobile_padding['padding-bottom'] || 
+    $logo_mobile_padding['padding-left']
+)) :
+?>
 						.mobile-logo a img {
 
 							<?php if (!empty($logo_mobile_padding['padding-top'])) : ?>
