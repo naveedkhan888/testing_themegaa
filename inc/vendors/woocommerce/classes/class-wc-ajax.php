@@ -138,7 +138,7 @@ if ( class_exists('WC_AJAX') ) :
 
             ob_start();
 
-            $wishlist_count = YITH_WCWL()->count_products();
+            $wishlist_count = YITH_WCWL()->count_items_in_wishlist();
 
             $data = array(
                 'count' => $wishlist_count
