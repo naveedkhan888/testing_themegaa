@@ -1,6 +1,6 @@
 <?php
 
-    $copyright 	= lasa_tbay_get_config('copyright_text', '');
+    $copyright 	= themename_tbay_get_config('copyright_text', '');
 
 ?>
 
@@ -39,7 +39,7 @@
 								'href'  => array(),
 							) 
 						);
-                        echo wp_kses(__('Copyright &copy; 2024 - lasa. All Rights Reserved. <br/> Powered by <a href="//thembay.com" class="theme-color">ThemBay</a>', 'lasa'), $allowed_html_array
+                        echo wp_kses(__('Copyright &copy; 2024 - themename. All Rights Reserved. <br/> Powered by <a href="//xperttheme.com" class="theme-color">XpertTheme</a>', 'themename'), $allowed_html_array
 					);
                     
                 ?>

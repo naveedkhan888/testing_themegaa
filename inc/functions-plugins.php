@@ -1,7 +1,7 @@
 <?php
 
-if (!function_exists('lasa_register_required_plugins')) {
-    function lasa_register_required_plugins()
+if (!function_exists('themename_register_required_plugins')) {
+    function themename_register_required_plugins()
     {
 
         $plugins[] =(array(
@@ -35,10 +35,10 @@ if (!function_exists('lasa_register_required_plugins')) {
         ));
 
         $plugins[] =(array(
-            'name'                     => 'WPthembay Core',
-            'slug'                     => 'wpthembay',
+            'name'                     => 'WPxperttheme Core',
+            'slug'                     => 'wpxperttheme',
             'required'                 => true ,
-            'source'         		   => esc_url('plugins.thembay.com/wpthembay.zip'),
+            'source'         		   => esc_url('plugins.xperttheme.com/wpxperttheme.zip'),
         ));
 
         $plugins[] =(array(
@@ -64,7 +64,7 @@ if (!function_exists('lasa_register_required_plugins')) {
             'name'                     => 'WooCommerce Products Filter',
             'slug'                     => 'woocommerce-products-filter',
             'required'                 =>  false,
-            'source'         		   => esc_url('plugins.thembay.com/woocommerce-products-filter.zip'),
+            'source'         		   => esc_url('plugins.xperttheme.com/woocommerce-products-filter.zip'),
         ));
 
         $plugins[] =(array(
@@ -77,7 +77,7 @@ if (!function_exists('lasa_register_required_plugins')) {
             'name'                     => 'Slider Revolution',
             'slug'                     => 'revslider',
             'required'                 => true ,
-            'source'         		   => esc_url('plugins.thembay.com/revslider.zip'),
+            'source'         		   => esc_url('plugins.xperttheme.com/revslider.zip'),
         ));
 
         /*
@@ -90,7 +90,7 @@ if (!function_exists('lasa_register_required_plugins')) {
          * Only uncomment the strings in the config array if you want to customize the strings.
         */
         $config = array(
-            'id'           => 'lasa',
+            'id'           => 'themename',
             // Unique ID for hashing notices for multiple instances of TGMPA.
             'default_path' => '',
             // Default absolute path to bundled plugins.
@@ -108,5 +108,5 @@ if (!function_exists('lasa_register_required_plugins')) {
          
         tgmpa($plugins, $config);
     }
-    add_action('tgmpa_register', 'lasa_register_required_plugins');
+    add_action('tgmpa_register', 'themename_register_required_plugins');
 }

@@ -2,11 +2,11 @@
 	<div class="container">
 		<?php
 			/**
-			* lasa_theme_header_checkout hook
+			* themename_theme_header_checkout hook
 			*
-			* @hooked lasa_the_logo_checkout - 10
+			* @hooked themename_the_logo_checkout - 10
 			*/
-			do_action('lasa_theme_header_checkout');
+			do_action('themename_theme_header_checkout');
 		?>
 	</div>
 </header>

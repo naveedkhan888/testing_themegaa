@@ -36,7 +36,7 @@ if (! is_a($product, 'WC_Product')) {
 			</figure>
 		</div>
 		<div class="caption">
-			<?php lasa_the_product_name(); ?>
+			<?php themename_the_product_name(); ?>
 
 			<?php if (! empty($show_rating)) : ?>
 				<?php echo wc_get_rating_html($product->get_average_rating()); // PHPCS:Ignore WordPress.Security.EscapeOutput.OutputNotEscaped?>

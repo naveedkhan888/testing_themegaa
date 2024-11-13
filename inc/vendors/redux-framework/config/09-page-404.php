@@ -14,13 +14,13 @@ Redux::set_section(
 	$opt_name,
 	array(
         'icon' => 'zmdi zmdi-search-replace',
-        'title' => esc_html__('Page 404', 'lasa'),
+        'title' => esc_html__('Page 404', 'themename'),
         'fields' => array(
             array(
                 'id'       => 'img_404',
                 'type' => 'media',
-                'title' => esc_html__('Upload Image 404', 'lasa'),
-                'subtitle' => esc_html__('Image File (.png or .gif)', 'lasa'),
+                'title' => esc_html__('Upload Image 404', 'themename'),
+                'subtitle' => esc_html__('Image File (.png or .gif)', 'themename'),
             ),
         )
 	)

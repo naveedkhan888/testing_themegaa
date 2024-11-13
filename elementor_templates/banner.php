@@ -16,7 +16,7 @@ if (isset($settings['link']['is_external']) && 'on' === $settings['link']['is_ex
     $onclick = 'window.location.href=\'' . esc_url($settings['link']['url']) . '\'';
 }
 ?>
-<div <?php $this->print_render_attribute_string('wrapper'); ?> <?php echo (! lasa_elementor_is_edit_mode() && $settings['link']['url']) ? 'onclick="' . esc_attr($onclick) . '"' : ''; ?>>
+<div <?php $this->print_render_attribute_string('wrapper'); ?> <?php echo (! themename_elementor_is_edit_mode() && $settings['link']['url']) ? 'onclick="' . esc_attr($onclick) . '"' : ''; ?>>
     <?php $this->render_item_image(); ?>
     <?php $this->render_item_content(); ?>
 </div>

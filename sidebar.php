@@ -3,8 +3,8 @@
  * The sidebar containing the main widget area
  *
  * @package WordPress
- * @subpackage Lasa
- * @since Lasa 1.0
+ * @subpackage Themename
+ * @since Themename 1.0
  */
 if (function_exists('dokan_is_store_page') && dokan_is_store_page() && dokan_get_option('enable_theme_store_sidebar', 'dokan_appearance', 'off') !== 'off') {
     return;

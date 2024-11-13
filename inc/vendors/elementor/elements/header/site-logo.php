@@ -1,22 +1,22 @@
 <?php
 
-if (! defined('ABSPATH') || function_exists('Lasa_Elementor_Widget_Image')) {
+if (! defined('ABSPATH') || function_exists('Themename_Elementor_Widget_Image')) {
     exit; // Exit if accessed directly.
 }
 
 use Elementor\Controls_Manager;
 
-class Lasa_Element_Site_Logo extends Lasa_Elementor_Widget_Image
+class Themename_Element_Site_Logo extends Themename_Elementor_Widget_Image
 {
     public function get_name()
     {
         // `theme` prefix is to avoid conflicts with a dynamic-tag with same name.
-        return 'lasa-site-logo';
+        return 'themename-site-logo';
     }
 
     public function get_title()
     {
-        return esc_html__('Lasa Site Logo', 'lasa');
+        return esc_html__('Themename Site Logo', 'themename');
     }
 
     public function get_keywords()
@@ -34,14 +34,14 @@ class Lasa_Element_Site_Logo extends Lasa_Elementor_Widget_Image
         $this->start_controls_section(
             'section_general',
             [
-                'label' => esc_html__('General', 'lasa'),
+                'label' => esc_html__('General', 'themename'),
             ]
         );
 
         $this->add_control(
             'image_logo',
             [
-                'label' => esc_html__('Choose Image', 'lasa'),
+                'label' => esc_html__('Choose Image', 'themename'),
                 'type' => Controls_Manager::MEDIA,
                 'default' => [
                     'url' => Elementor\Utils::get_placeholder_image_src(),
@@ -69,9 +69,9 @@ class Lasa_Element_Site_Logo extends Lasa_Elementor_Widget_Image
             [
                 'default' => 'home',
                 'options' => [
-                    'none' => esc_html__('None', 'lasa'),
-                    'home' => esc_html__('Home Page', 'lasa'),
-                    'custom' => esc_html__('Custom URL', 'lasa'),
+                    'none' => esc_html__('None', 'themename'),
+                    'home' => esc_html__('Home Page', 'themename'),
+                    'custom' => esc_html__('Custom URL', 'themename'),
                 ],
                 'condition' => '',
             ]
@@ -95,7 +95,7 @@ class Lasa_Element_Site_Logo extends Lasa_Elementor_Widget_Image
         $this->start_controls_section(
             'section_style_logo',
             [
-                'label' => esc_html__('Logo', 'lasa'),
+                'label' => esc_html__('Logo', 'themename'),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -103,7 +103,7 @@ class Lasa_Element_Site_Logo extends Lasa_Elementor_Widget_Image
         $this->add_control(
             'width_logo',
             [
-                'label' => esc_html__('Max Width', 'lasa'),
+                'label' => esc_html__('Max Width', 'themename'),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => [ 'px' ],
                 'range' => [
@@ -123,7 +123,7 @@ class Lasa_Element_Site_Logo extends Lasa_Elementor_Widget_Image
     }
     public static function get_logo_default_image_src()
     {
-        $logo_image = LASA_IMAGES . '/logo-default.svg';
+        $logo_image = THEMENAME_IMAGES . '/logo-default.svg';
 
         /**
          * Get default image logo source.
@@ -166,4 +166,4 @@ class Lasa_Element_Site_Logo extends Lasa_Elementor_Widget_Image
         return;
     }
 }
-$widgets_manager->register(new Lasa_Element_Site_Logo());
+$widgets_manager->register(new Themename_Element_Site_Logo());

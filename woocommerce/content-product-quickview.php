@@ -1,9 +1,9 @@
 
 <?php
 /**
- * lasa_woocommerce_before_quick_view hook
+ * themename_woocommerce_before_quick_view hook
  */
-do_action('lasa_woocommerce_before_quick_view');  
+do_action('themename_woocommerce_before_quick_view');  
 ?>
 <div id="tbay-quick-view-body" class="woocommerce single-product">
     <div id="tbay-quick-view-content"> 
@@ -16,6 +16,6 @@ do_action('lasa_woocommerce_before_quick_view');
 </div>
 <?php
 /** 
- * lasa_woocommerce_after_quick_view hook
+ * themename_woocommerce_after_quick_view hook
  */
-do_action('lasa_woocommerce_after_quick_view');
+do_action('themename_woocommerce_after_quick_view');

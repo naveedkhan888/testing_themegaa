@@ -4,14 +4,14 @@
          $cat = get_term_by('id', $category, 'product_cat');
          if (isset($images) && $images) {
              $cat_id 		= 	$images;
-             $cat_count      =   lasa_get_product_count_of_category($tab['category']);
+             $cat_count      =   themename_get_product_count_of_category($tab['category']);
 
              if (isset($cat) && $cat) {
                  $cat_name 		= 	$cat->name;
                  $cat_slug 		= 	$cat->slug;
                  $cat_link 		= 	get_term_link($cat->slug, 'product_cat');
              } else {
-                 $cat_name 		= 	esc_html__('Shop', 'lasa');
+                 $cat_name 		= 	esc_html__('Shop', 'themename');
                  $cat_link 		= 	get_permalink(wc_get_page_id('shop'));
              } ?> 
 
@@ -26,7 +26,7 @@
 
 					<a class="cat-name" href="<?php echo esc_url($cat_link); ?>">
 						<?php echo trim($cat_name); ?>
-						<span class="count-item">(<?php echo trim($cat_count).' '.esc_html__('products', 'lasa'); ?>)</span>
+						<span class="count-item">(<?php echo trim($cat_count).' '.esc_html__('products', 'themename'); ?>)</span>
 					</a>
 
 				</div>

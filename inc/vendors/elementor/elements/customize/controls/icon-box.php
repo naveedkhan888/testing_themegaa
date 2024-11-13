@@ -1,13 +1,13 @@
 <?php
-if (!function_exists('lasa_section_icon_box')) {
-    function lasa_section_icon_box($widget)
+if (!function_exists('themename_section_icon_box')) {
+    function themename_section_icon_box($widget)
     {
         $widget->start_controls_tabs('tabs_icon_box_border_style');
 
         $widget->start_controls_tab(
             'tab_icon_box_border_style',
             [
-                'label' => esc_html__('Normal', 'lasa'),
+                'label' => esc_html__('Normal', 'themename'),
                 'condition' => [
                     'view!' => 'default',
                 ],
@@ -17,7 +17,7 @@ if (!function_exists('lasa_section_icon_box')) {
         $widget->add_control(
             'tab_icon_box_border_color',
             [
-                'label' => esc_html__('Icon Border Color', 'lasa'),
+                'label' => esc_html__('Icon Border Color', 'themename'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'condition' => [
                     'view!' => 'default',
@@ -35,7 +35,7 @@ if (!function_exists('lasa_section_icon_box')) {
         $widget->start_controls_tab(
             'tab_icon_box_border_style_hover',
             [
-                'label' => esc_html__('Hover', 'lasa'),
+                'label' => esc_html__('Hover', 'themename'),
                 'condition' => [
                     'view!' => 'default',
                 ],
@@ -45,7 +45,7 @@ if (!function_exists('lasa_section_icon_box')) {
         $widget->add_control(
             'tab_icon_box_border_color_hover',
             [
-                'label' => esc_html__('Icon Border Color', 'lasa'),
+                'label' => esc_html__('Icon Border Color', 'themename'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'default' => '',
                 'condition' => [
@@ -64,7 +64,7 @@ if (!function_exists('lasa_section_icon_box')) {
         $widget->add_control(
 			'heading_background_icon',
 			[
-				'label' => esc_html__( 'Background Icon', 'lasa' ),
+				'label' => esc_html__( 'Background Icon', 'themename' ),
 				'type' => \Elementor\Controls_Manager::HEADING,
 			]
 		);
@@ -78,5 +78,5 @@ if (!function_exists('lasa_section_icon_box')) {
 		);
     }
 
-    add_action('elementor/element/icon-box/section_style_icon/before_section_end', 'lasa_section_icon_box', 10, 2);
+    add_action('elementor/element/icon-box/section_style_icon/before_section_end', 'themename_section_icon_box', 10, 2);
 }

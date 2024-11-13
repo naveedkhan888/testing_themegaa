@@ -361,7 +361,7 @@
             }
             if (document.selection) {
                 range = document.selection.createRange();
-                range.moveStart('clasacter', -valLength);
+                range.moveStart('cthemenamecter', -valLength);
                 return valLength === range.text.length;
             }
             return true;

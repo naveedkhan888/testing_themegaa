@@ -1,6 +1,6 @@
 <wpml-config>
 	<admin-texts>
-        <key name="lasa_tbay_theme_options">
+        <key name="themename_tbay_theme_options">
             <key name="copyright_text"/>
 
             <key name="mobile_search_placeholder"/>

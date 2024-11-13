@@ -330,7 +330,7 @@ class NormalizerFormatterTest extends \PHPUnit_Framework_TestCase
         return array(
             'depth' => array(JSON_ERROR_DEPTH, 'Maximum stack depth exceeded'),
             'state' => array(JSON_ERROR_STATE_MISMATCH, 'Underflow or the modes mismatch'),
-            'ctrl' => array(JSON_ERROR_CTRL_CHAR, 'Unexpected control clasacter found'),
+            'ctrl' => array(JSON_ERROR_CTRL_CHAR, 'Unexpected control cthemenamecter found'),
             'default' => array(-1, 'Unknown error'),
         );
     }

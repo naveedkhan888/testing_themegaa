@@ -17,10 +17,10 @@
 if (! defined('ABSPATH')) {
     exit;
 }
-$stock_style    = lasa_tbay_get_config('single_stock_style', 'style1');
+$stock_style    = themename_tbay_get_config('single_stock_style', 'style1');
 ?>
 <?php if(  $stock_style === 'style1' || $class === 'out-of-stock' ) : ?>
 <p class="stock <?php echo esc_attr($class); ?>"><?php echo wp_kses_post($availability); ?></p>
 <?php else : ?>
-<?php lasa_single_product_stock_style2($class, $product); ?>
+<?php themename_single_product_stock_style2($class, $product); ?>
 <?php endif; ?>

@@ -11,7 +11,7 @@ $settings = $this->get_settings_for_display();
 
 extract($settings);
 
-$url_login = apply_filters('lasa_woocommerce_my_account_url', get_permalink(wc_get_page_id('myaccount')));
+$url_login = apply_filters('themename_woocommerce_my_account_url', get_permalink(wc_get_page_id('myaccount')));
 ?>
     <div <?php $this->print_render_attribute_string('wrapper'); ?>>
         <div <?php $this->print_render_attribute_string('tbay-login'); ?>>

@@ -1,6 +1,6 @@
 <?php
 
-if (! defined('ABSPATH') || function_exists('Lasa_Elementor_Product_Tabs')) {
+if (! defined('ABSPATH') || function_exists('Themename_Elementor_Product_Tabs')) {
     exit; // Exit if accessed directly.
 }
 
@@ -16,7 +16,7 @@ use Elementor\Group_Control_Typography;
  *
  * @since 1.0.0
  */
-class Lasa_Elementor_Product_Tabs extends Lasa_Elementor_Carousel_Base
+class Themename_Elementor_Product_Tabs extends Themename_Elementor_Carousel_Base
 {
     /**
      * Get widget name.
@@ -45,12 +45,12 @@ class Lasa_Elementor_Product_Tabs extends Lasa_Elementor_Carousel_Base
      */
     public function get_title()
     {
-        return esc_html__('Lasa Product Tabs', 'lasa');
+        return esc_html__('Themename Product Tabs', 'themename');
     }
 
     public function get_categories()
     {
-        return [ 'lasa-elements', 'woocommerce-elements'];
+        return [ 'themename-elements', 'woocommerce-elements'];
     }
 
     /**
@@ -78,7 +78,7 @@ class Lasa_Elementor_Product_Tabs extends Lasa_Elementor_Carousel_Base
      */
     public function get_script_depends()
     {
-        return ['slick', 'lasa-custom-slick'];
+        return ['slick', 'themename-custom-slick'];
     }
 
     public function get_keywords()
@@ -93,13 +93,13 @@ class Lasa_Elementor_Product_Tabs extends Lasa_Elementor_Carousel_Base
         $this->start_controls_section(
             'section_general',
             [
-                'label' => esc_html__('Product Tabs', 'lasa'),
+                'label' => esc_html__('Product Tabs', 'themename'),
             ]
         );
         $this->add_control(
             'limit',
             [
-                'label' => esc_html__('Number of products ( -1 = all )', 'lasa'),
+                'label' => esc_html__('Number of products ( -1 = all )', 'themename'),
                 'type' => Controls_Manager::NUMBER,
                 'default' => 6,
                 'min'  => -1
@@ -108,12 +108,12 @@ class Lasa_Elementor_Product_Tabs extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'layout_type',
             [
-                'label'     => esc_html__('Layout', 'lasa'),
+                'label'     => esc_html__('Layout', 'themename'),
                 'type'      => Controls_Manager::SELECT,
                 'default'   => 'grid',
                 'options'   => [
-                    'grid'      => esc_html__('Grid', 'lasa'),
-                    'carousel'  => esc_html__('Carousel', 'lasa'),
+                    'grid'      => esc_html__('Grid', 'themename'),
+                    'carousel'  => esc_html__('Carousel', 'themename'),
                 ],
             ]
         );
@@ -121,7 +121,7 @@ class Lasa_Elementor_Product_Tabs extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'product_style',
             [
-                'label' => esc_html__('Product Style', 'lasa'),
+                'label' => esc_html__('Product Style', 'themename'),
                 'type' => Controls_Manager::SELECT,
                 'default' => 'inner',
                 'options' => $this->get_template_product(),
@@ -132,10 +132,10 @@ class Lasa_Elementor_Product_Tabs extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'ajax_tabs',
             [
-                'label' => esc_html__( 'Ajax Product Tabs', 'lasa' ),
+                'label' => esc_html__( 'Ajax Product Tabs', 'themename' ),
                 'type' => Controls_Manager::SWITCHER,
                 'default' => 'yes',
-                'description' => esc_html__( 'Show/hidden Ajax Product Tabs', 'lasa' ), 
+                'description' => esc_html__( 'Show/hidden Ajax Product Tabs', 'themename' ), 
             ]
         );
 
@@ -143,7 +143,7 @@ class Lasa_Elementor_Product_Tabs extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'advanced',
             [
-                'label' => esc_html__('Advanced', 'lasa'),
+                'label' => esc_html__('Advanced', 'themename'),
                 'type' => Controls_Manager::HEADING,
             ]
         );
@@ -151,7 +151,7 @@ class Lasa_Elementor_Product_Tabs extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'orderby',
             [
-                'label' => esc_html__('Order By', 'lasa'),
+                'label' => esc_html__('Order By', 'themename'),
                 'type' => Controls_Manager::SELECT,
                 'default' => 'date',
                 'options' => $this->get_woo_order_by(),
@@ -161,7 +161,7 @@ class Lasa_Elementor_Product_Tabs extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'order',
             [
-                'label' => esc_html__('Order', 'lasa'),
+                'label' => esc_html__('Order', 'themename'),
                 'type' => Controls_Manager::SELECT,
                 'default' => 'asc',
                 'options' => $this->get_woo_order(),
@@ -182,14 +182,14 @@ class Lasa_Elementor_Product_Tabs extends Lasa_Elementor_Carousel_Base
         $repeater->add_control(
             'product_tabs_title',
             [
-                'label' => esc_html__('Title', 'lasa'),
+                'label' => esc_html__('Title', 'themename'),
                 'type' => Controls_Manager::TEXT,
             ]
         );
         $repeater->add_control(
             'product_tabs',
             [
-                'label' => esc_html__('Show Tabs', 'lasa'),
+                'label' => esc_html__('Show Tabs', 'themename'),
                 'type' => Controls_Manager::SELECT,
                 'options' => $this->get_product_type(),
                 'default' => 'newest',
@@ -198,7 +198,7 @@ class Lasa_Elementor_Product_Tabs extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'list_product_tabs',
             [
-                'label' => esc_html__('Tab Item', 'lasa'),
+                'label' => esc_html__('Tab Item', 'themename'),
                 'type' => Controls_Manager::REPEATER,
                 'fields' => $repeater->get_controls(),
                 'title_field' => '{{{ product_tabs_title }}}',
@@ -210,19 +210,19 @@ class Lasa_Elementor_Product_Tabs extends Lasa_Elementor_Carousel_Base
         $this->start_controls_section(
             'section_style_heading_categories_tab',
             [
-                'label' => esc_html__('Heading Product Categories Tabs', 'lasa'),
+                'label' => esc_html__('Heading Product Categories Tabs', 'themename'),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
         $this->add_control(
             'style_heading_tab',
             [
-                'label' => esc_html__('Style Heading Tab', 'lasa'),
-                'description' => esc_html__('Only working on screen > 992px', 'lasa'),
+                'label' => esc_html__('Style Heading Tab', 'themename'),
+                'description' => esc_html__('Only working on screen > 992px', 'themename'),
                 'type' => Controls_Manager::SELECT2,
                 'options' => [
-                    'style-inline' => esc_html__('Inline', 'lasa'),
-                    'style-block' => esc_html__('Block', 'lasa'),
+                    'style-inline' => esc_html__('Inline', 'themename'),
+                    'style-block' => esc_html__('Block', 'themename'),
                 ],
                 'default' => 'style-block',
                 'prefix_class' => 'heading-tab-'
@@ -231,22 +231,22 @@ class Lasa_Elementor_Product_Tabs extends Lasa_Elementor_Carousel_Base
         $this->add_responsive_control(
             'heading_categories_tab_align',
             [
-                'label' => esc_html__('Alignment', 'lasa'),
+                'label' => esc_html__('Alignment', 'themename'),
                 'type' => Controls_Manager::CHOOSE,
                 'condition' => [
                     'style_heading_tab' => 'style-block'
                 ],
                 'options' => [
                     'flex-start' => [
-                        'title' => esc_html__('Left', 'lasa'),
+                        'title' => esc_html__('Left', 'themename'),
                         'icon' => 'fa fa-align-left',
                     ],
                     'center' => [
-                        'title' => esc_html__('Center', 'lasa'),
+                        'title' => esc_html__('Center', 'themename'),
                         'icon' => 'fa fa-align-center',
                     ],
                     'flex-end' => [
-                        'title' => esc_html__('Right', 'lasa'),
+                        'title' => esc_html__('Right', 'themename'),
                         'icon' => 'fa fa-align-right',
                     ],
                 ],
@@ -260,7 +260,7 @@ class Lasa_Elementor_Product_Tabs extends Lasa_Elementor_Carousel_Base
         $this->add_responsive_control(
             'heading_categories_tab_padding',
             [
-                'label'      => esc_html__('Padding', 'lasa'),
+                'label'      => esc_html__('Padding', 'themename'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', 'em', '%' ],
                 'default' => [
@@ -279,7 +279,7 @@ class Lasa_Elementor_Product_Tabs extends Lasa_Elementor_Carousel_Base
         $this->add_responsive_control(
             'heading_categories_tab_margin',
             [
-                'label'      => esc_html__('Margin', 'lasa'),
+                'label'      => esc_html__('Margin', 'themename'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', 'em', '%' ],
                 'default' => [
@@ -310,7 +310,7 @@ class Lasa_Elementor_Product_Tabs extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'heading_tab_title',
             [
-                'label' => esc_html__('Tab Title', 'lasa'),
+                'label' => esc_html__('Tab Title', 'themename'),
                 'type' => Controls_Manager::HEADING,
             ]
         );
@@ -328,14 +328,14 @@ class Lasa_Elementor_Product_Tabs extends Lasa_Elementor_Carousel_Base
         $this->start_controls_tab(
             'heading_tab_title_tab_normal',
             [
-                'label' => esc_html__('Normal', 'lasa'),
+                'label' => esc_html__('Normal', 'themename'),
             ]
         );
 
         $this->add_control(
             'heading_tab_title_color',
             [
-                'label' => esc_html__('Color', 'lasa'),
+                'label' => esc_html__('Color', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -350,14 +350,14 @@ class Lasa_Elementor_Product_Tabs extends Lasa_Elementor_Carousel_Base
         $this->start_controls_tab(
             'heading_tab_title_tab_hover',
             [
-                'label' => esc_html__('Hover', 'lasa'),
+                'label' => esc_html__('Hover', 'themename'),
             ]
         );
 
         $this->add_control(
             'heading_tab_title_color_hover',
             [
-                'label' => esc_html__('Hover Color', 'lasa'),
+                'label' => esc_html__('Hover Color', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -374,7 +374,7 @@ class Lasa_Elementor_Product_Tabs extends Lasa_Elementor_Carousel_Base
         $this->add_responsive_control(
             'tab_title_padding',
             [
-                'label'      => esc_html__('Padding', 'lasa'),
+                'label'      => esc_html__('Padding', 'themename'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', 'em', '%' ],
                 'separator'    => 'before',
@@ -387,7 +387,7 @@ class Lasa_Elementor_Product_Tabs extends Lasa_Elementor_Carousel_Base
         $this->add_responsive_control(
             'tab_title_margin',
             [
-                'label'      => esc_html__('Margin', 'lasa'),
+                'label'      => esc_html__('Margin', 'themename'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', 'em', '%' ],
                 'selectors'  => [
@@ -399,7 +399,7 @@ class Lasa_Elementor_Product_Tabs extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'heading_tab_border_active',
             [
-                'label' => esc_html__('Border Tab Active', 'lasa'),
+                'label' => esc_html__('Border Tab Active', 'themename'),
                 'type' => Controls_Manager::HEADING,
                 'separator'    => 'before',
             ]
@@ -408,7 +408,7 @@ class Lasa_Elementor_Product_Tabs extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'heading_tab_border_active_color',
             [
-                'label' => esc_html__( 'Background Color', 'lasa' ),
+                'label' => esc_html__( 'Background Color', 'themename' ),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .tbay-element-product-tabs .tabs-list > li > a.active:after,
@@ -421,7 +421,7 @@ class Lasa_Elementor_Product_Tabs extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'heading_tab_border_active_height',
             [
-                'label'     => esc_html__('Height', 'lasa'),
+                'label'     => esc_html__('Height', 'themename'),
                 'type' => Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [
@@ -438,7 +438,7 @@ class Lasa_Elementor_Product_Tabs extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'heading_tab_border_active_position_bottom',
             [
-                'label'     => esc_html__('Position Bottom', 'lasa'),
+                'label'     => esc_html__('Position Bottom', 'themename'),
                 'type' => Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [
@@ -455,7 +455,7 @@ class Lasa_Elementor_Product_Tabs extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'heading_tab_border_active_position_left',
             [
-                'label'     => esc_html__('Position Left', 'lasa'),
+                'label'     => esc_html__('Position Left', 'themename'),
                 'type' => Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [
@@ -473,7 +473,7 @@ class Lasa_Elementor_Product_Tabs extends Lasa_Elementor_Carousel_Base
     }
     public function get_template_product()
     {
-        return apply_filters('lasa_get_template_product', 'v1');
+        return apply_filters('themename_get_template_product', 'v1');
     }
 
     public function render_product_tabs($product_tabs, $key_id, $random_id, $title, $active)
@@ -525,7 +525,7 @@ class Lasa_Elementor_Product_Tabs extends Lasa_Elementor_Carousel_Base
         $product_type = $product_tabs;
 
         /** Get Query Products */
-        $loop = lasa_get_query_products($categories, $cat_operator, $product_type, $limit, $orderby, $order);
+        $loop = themename_get_query_products($categories, $cat_operator, $product_type, $limit, $orderby, $order);
         
         $this->add_render_attribute('row', 'class', ['products']);
 
@@ -536,4 +536,4 @@ class Lasa_Elementor_Product_Tabs extends Lasa_Elementor_Carousel_Base
         <?php
     }
 }
-$widgets_manager->register(new Lasa_Elementor_Product_Tabs());
+$widgets_manager->register(new Themename_Elementor_Product_Tabs());

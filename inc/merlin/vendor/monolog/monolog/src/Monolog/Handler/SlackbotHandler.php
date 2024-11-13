@@ -16,7 +16,7 @@ use Monolog\Logger;
 /**
  * Sends notifications through Slack's Slackbot
  *
- * @author Lasalan Dobrev <hkdobrev@gmail.com>
+ * @author Themenamelan Dobrev <hkdobrev@gmail.com>
  * @see    https://slack.com/apps/A0F81R8ET-slackbot
  */
 class SlackbotHandler extends AbstractProcessingHandler

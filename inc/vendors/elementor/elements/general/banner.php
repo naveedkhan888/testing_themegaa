@@ -1,6 +1,6 @@
 <?php
 
-if (! defined('ABSPATH') || function_exists('Lasa_Elementor_Banner')) {
+if (! defined('ABSPATH') || function_exists('Themename_Elementor_Banner')) {
     exit; // Exit if accessed directly.
 }
 
@@ -18,7 +18,7 @@ use Elementor\Utils;
  *
  * @since 1.0.0
  */
-class Lasa_Elementor_Banner extends Lasa_Elementor_Widget_Base
+class Themename_Elementor_Banner extends Themename_Elementor_Widget_Base
 {
     /**
      * Get widget name.
@@ -47,7 +47,7 @@ class Lasa_Elementor_Banner extends Lasa_Elementor_Widget_Base
      */
     public function get_title()
     {
-        return esc_html__('Lasa Banner', 'lasa');
+        return esc_html__('Themename Banner', 'themename');
     }
 
  
@@ -80,15 +80,15 @@ class Lasa_Elementor_Banner extends Lasa_Elementor_Widget_Base
         $this->start_controls_section(
             'general_content_section',
             [
-                'label' => esc_html__('General', 'lasa'),
+                'label' => esc_html__('General', 'themename'),
             ]
         );
 
         $this->add_control(
             'link',
             [
-                'label'       => esc_html__('Link', 'lasa'),
-                'description' => esc_html__('Enter URL if you want this banner to have a link.', 'lasa'),
+                'label'       => esc_html__('Link', 'themename'),
+                'description' => esc_html__('Enter URL if you want this banner to have a link.', 'themename'),
                 'type'        => Controls_Manager::URL,
                 'default'     => [
                     'url'         => '#',
@@ -114,7 +114,7 @@ class Lasa_Elementor_Banner extends Lasa_Elementor_Widget_Base
         $this->start_controls_section(
             'section_general_style',
             [
-                'label' => esc_html__('General', 'lasa'),
+                'label' => esc_html__('General', 'themename'),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -123,19 +123,19 @@ class Lasa_Elementor_Banner extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'banner_effects',
             [
-                'label' => esc_html__('TB Effects', 'lasa'),
+                'label' => esc_html__('TB Effects', 'themename'),
                 'type' => Controls_Manager::SELECT,
                 'label_block' => true,
                 'prefix_class' => 'tb-effect effect-',
                 'default' => 'no',
-                'options' => lasa_list_controls_effects(),
+                'options' => themename_list_controls_effects(),
             ]
         );
         
         $this->add_control(
             'heading_wrap',
             [
-                'label' => esc_html__('Wraper', 'lasa'),
+                'label' => esc_html__('Wraper', 'themename'),
                 'type' => Controls_Manager::HEADING,
             ]
         );
@@ -143,7 +143,7 @@ class Lasa_Elementor_Banner extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'general_padding',
             [
-                'label'      => esc_html__('Padding', 'lasa'),
+                'label'      => esc_html__('Padding', 'themename'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors'  => [
@@ -157,14 +157,14 @@ class Lasa_Elementor_Banner extends Lasa_Elementor_Widget_Base
         $this->start_controls_tab(
             'general_tab_normal',
             [
-                'label' => esc_html__('Normal', 'lasa'),
+                'label' => esc_html__('Normal', 'themename'),
             ]
         );
 
         $this->add_control(
             'general_bg_color',
             [
-                'label' => esc_html__('Background', 'lasa'),
+                'label' => esc_html__('Background', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -179,14 +179,14 @@ class Lasa_Elementor_Banner extends Lasa_Elementor_Widget_Base
         $this->start_controls_tab(
             'general_tab_hover',
             [
-                'label' => esc_html__('Hover', 'lasa'),
+                'label' => esc_html__('Hover', 'themename'),
             ]
         );
 
         $this->add_control(
             'general_bg_color_hover',
             [
-                'label' => esc_html__('Background', 'lasa'),
+                'label' => esc_html__('Background', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -202,7 +202,7 @@ class Lasa_Elementor_Banner extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'heading_layout',
             [
-                'label' => esc_html__('Layout Content', 'lasa'),
+                'label' => esc_html__('Layout Content', 'themename'),
                 'type' => Controls_Manager::HEADING,
                 'separator'   => 'before',
             ]
@@ -211,19 +211,19 @@ class Lasa_Elementor_Banner extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'general_horizontal_alignment',
             [
-                'label'   => esc_html__('Horizontal alignment', 'lasa'),
+                'label'   => esc_html__('Horizontal alignment', 'themename'),
                 'type' => Controls_Manager::CHOOSE,
                 'options' => [
                     'flex-start' => [
-                        'title' => esc_html__('left', 'lasa'),
+                        'title' => esc_html__('left', 'themename'),
                         'icon' => 'fa fa-align-left',
                     ],
                     'center' => [
-                        'title' => esc_html__('Center', 'lasa'),
+                        'title' => esc_html__('Center', 'themename'),
                         'icon' => 'fa fa-align-center',
                     ],
                     'flex-end' => [
-                        'title' => esc_html__('right', 'lasa'),
+                        'title' => esc_html__('right', 'themename'),
                         'icon' => 'fa fa-align-right',
                     ],
                 ],
@@ -237,19 +237,19 @@ class Lasa_Elementor_Banner extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'general_vertical_alignment',
             [
-                'label'   => esc_html__('Vertical alignment', 'lasa'),
+                'label'   => esc_html__('Vertical alignment', 'themename'),
                 'type' => Controls_Manager::CHOOSE,
                 'options' => [
                     'flex-start' => [
-                        'title' => esc_html__('Top', 'lasa'),
+                        'title' => esc_html__('Top', 'themename'),
                         'icon' => 'fa fa-arrow-up',
                     ],
                     'center' => [
-                        'title' => esc_html__('Middle', 'lasa'),
+                        'title' => esc_html__('Middle', 'themename'),
                         'icon' => 'fa fa-align-center',
                     ],
                     'flex-end' => [
-                        'title' => esc_html__('Bottom', 'lasa'),
+                        'title' => esc_html__('Bottom', 'themename'),
                         'icon' => 'fa fa-arrow-down',
                     ],
                 ],
@@ -263,19 +263,19 @@ class Lasa_Elementor_Banner extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'general_text_alignment',
             [
-                'label'   => esc_html__('Text alignment', 'lasa'),
+                'label'   => esc_html__('Text alignment', 'themename'),
                 'type' => Controls_Manager::CHOOSE,
                 'options' => [
                     'left' => [
-                        'title' => esc_html__('left', 'lasa'),
+                        'title' => esc_html__('left', 'themename'),
                         'icon' => 'fa fa-align-left',
                     ],
                     'center' => [
-                        'title' => esc_html__('Center', 'lasa'),
+                        'title' => esc_html__('Center', 'themename'),
                         'icon' => 'fa fa-align-center',
                     ],
                     'right' => [
-                        'title' => esc_html__('right', 'lasa'),
+                        'title' => esc_html__('right', 'themename'),
                         'icon' => 'fa fa-align-right',
                     ],
                 ],
@@ -289,7 +289,7 @@ class Lasa_Elementor_Banner extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'general_width',
             [
-                'label'          => esc_html__('Max Width', 'lasa'),
+                'label'          => esc_html__('Max Width', 'themename'),
                 'type'           => Controls_Manager::SLIDER,
                 'default'        => [
                     'unit' => '%',
@@ -321,7 +321,7 @@ class Lasa_Elementor_Banner extends Lasa_Elementor_Widget_Base
         $this->start_controls_section(
             'section_title_style',
             [
-                'label' => esc_html__('Title', 'lasa'),
+                'label' => esc_html__('Title', 'themename'),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -337,7 +337,7 @@ class Lasa_Elementor_Banner extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'title_margin',
             [
-                'label'      => esc_html__('Margin', 'lasa'),
+                'label'      => esc_html__('Margin', 'themename'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors'  => [
@@ -350,7 +350,7 @@ class Lasa_Elementor_Banner extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'title_padding',
             [
-                'label'      => esc_html__('Padding', 'lasa'),
+                'label'      => esc_html__('Padding', 'themename'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors'  => [
@@ -366,14 +366,14 @@ class Lasa_Elementor_Banner extends Lasa_Elementor_Widget_Base
         $this->start_controls_tab(
             'title_tab_normal',
             [
-                'label' => esc_html__('Normal', 'lasa'),
+                'label' => esc_html__('Normal', 'themename'),
             ]
         );
 
         $this->add_control(
             'title_color',
             [
-                'label' => esc_html__('Color', 'lasa'),
+                'label' => esc_html__('Color', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -384,7 +384,7 @@ class Lasa_Elementor_Banner extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'title_bg_color',
             [
-                'label' => esc_html__('Background', 'lasa'),
+                'label' => esc_html__('Background', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -399,14 +399,14 @@ class Lasa_Elementor_Banner extends Lasa_Elementor_Widget_Base
         $this->start_controls_tab(
             'title_tab_hover',
             [
-                'label' => esc_html__('Hover', 'lasa'),
+                'label' => esc_html__('Hover', 'themename'),
             ]
         );
 
         $this->add_control(
             'title_color_hover',
             [
-                'label' => esc_html__('Hover Color', 'lasa'),
+                'label' => esc_html__('Hover Color', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -417,7 +417,7 @@ class Lasa_Elementor_Banner extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'title_bg_color_hover',
             [
-                'label' => esc_html__('Background', 'lasa'),
+                'label' => esc_html__('Background', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -441,7 +441,7 @@ class Lasa_Elementor_Banner extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'border_radius_title',
             [
-                'label'     => esc_html__('Border Radius', 'lasa'),
+                'label'     => esc_html__('Border Radius', 'themename'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px' ],
                 'selectors'  => [
@@ -457,7 +457,7 @@ class Lasa_Elementor_Banner extends Lasa_Elementor_Widget_Base
         $this->start_controls_section(
             'section_subtitle_style',
             [
-                'label' => esc_html__('Sub Title', 'lasa'),
+                'label' => esc_html__('Sub Title', 'themename'),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -473,7 +473,7 @@ class Lasa_Elementor_Banner extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'subtitle_margin',
             [
-                'label'      => esc_html__('Margin', 'lasa'),
+                'label'      => esc_html__('Margin', 'themename'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors'  => [
@@ -486,7 +486,7 @@ class Lasa_Elementor_Banner extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'subtitle_padding',
             [
-                'label'      => esc_html__('Padding', 'lasa'),
+                'label'      => esc_html__('Padding', 'themename'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors'  => [
@@ -500,14 +500,14 @@ class Lasa_Elementor_Banner extends Lasa_Elementor_Widget_Base
         $this->start_controls_tab(
             'subtitle_tab_normal',
             [
-                'label' => esc_html__('Normal', 'lasa'),
+                'label' => esc_html__('Normal', 'themename'),
             ]
         );
 
         $this->add_control(
             'subtitle_color',
             [
-                'label' => esc_html__('Color', 'lasa'),
+                'label' => esc_html__('Color', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -522,14 +522,14 @@ class Lasa_Elementor_Banner extends Lasa_Elementor_Widget_Base
         $this->start_controls_tab(
             'subtitle_tab_hover',
             [
-                'label' => esc_html__('Hover', 'lasa'),
+                'label' => esc_html__('Hover', 'themename'),
             ]
         );
 
         $this->add_control(
             'subtitle_color_hover',
             [
-                'label' => esc_html__('Hover Color', 'lasa'),
+                'label' => esc_html__('Hover Color', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -550,7 +550,7 @@ class Lasa_Elementor_Banner extends Lasa_Elementor_Widget_Base
         $this->start_controls_section(
             'section_description_style',
             [
-                 'label' => esc_html__('Description', 'lasa'),
+                 'label' => esc_html__('Description', 'themename'),
                  'tab'   => Controls_Manager::TAB_STYLE,
              ]
         );
@@ -566,7 +566,7 @@ class Lasa_Elementor_Banner extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'description_margin',
             [
-                 'label'      => esc_html__('Margin', 'lasa'),
+                 'label'      => esc_html__('Margin', 'themename'),
                  'type'       => Controls_Manager::DIMENSIONS,
                  'size_units' => [ 'px', '%', 'em' ],
                  'selectors'  => [
@@ -579,7 +579,7 @@ class Lasa_Elementor_Banner extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'description_padding',
             [
-                 'label'      => esc_html__('Padding', 'lasa'),
+                 'label'      => esc_html__('Padding', 'themename'),
                  'type'       => Controls_Manager::DIMENSIONS,
                  'size_units' => [ 'px', '%', 'em' ],
                  'selectors'  => [
@@ -593,14 +593,14 @@ class Lasa_Elementor_Banner extends Lasa_Elementor_Widget_Base
         $this->start_controls_tab(
             'description_tab_normal',
             [
-                 'label' => esc_html__('Normal', 'lasa'),
+                 'label' => esc_html__('Normal', 'themename'),
              ]
         );
  
         $this->add_control(
             'description_color',
             [
-                 'label' => esc_html__('Color', 'lasa'),
+                 'label' => esc_html__('Color', 'themename'),
                  'type' => Controls_Manager::COLOR,
                  'default' => '',
                  'selectors' => [
@@ -615,14 +615,14 @@ class Lasa_Elementor_Banner extends Lasa_Elementor_Widget_Base
         $this->start_controls_tab(
             'description_tab_hover',
             [
-                 'label' => esc_html__('Hover', 'lasa'),
+                 'label' => esc_html__('Hover', 'themename'),
              ]
         );
  
         $this->add_control(
             'description_color_hover',
             [
-                 'label' => esc_html__('Hover Color', 'lasa'),
+                 'label' => esc_html__('Hover Color', 'themename'),
                  'type' => Controls_Manager::COLOR,
                  'default' => '',
                  'selectors' => [
@@ -643,7 +643,7 @@ class Lasa_Elementor_Banner extends Lasa_Elementor_Widget_Base
         $this->start_controls_section(
             'section_label_style',
             [
-                'label' => esc_html__('Label', 'lasa'),
+                'label' => esc_html__('Label', 'themename'),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -659,7 +659,7 @@ class Lasa_Elementor_Banner extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'label_margin',
             [
-                'label'      => esc_html__('Margin', 'lasa'),
+                'label'      => esc_html__('Margin', 'themename'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors'  => [
@@ -672,7 +672,7 @@ class Lasa_Elementor_Banner extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'label_padding',
             [
-                'label'      => esc_html__('Padding', 'lasa'),
+                'label'      => esc_html__('Padding', 'themename'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors'  => [
@@ -686,14 +686,14 @@ class Lasa_Elementor_Banner extends Lasa_Elementor_Widget_Base
         $this->start_controls_tab(
             'label_tab_normal',
             [
-                'label' => esc_html__('Normal', 'lasa'),
+                'label' => esc_html__('Normal', 'themename'),
             ]
         );
 
         $this->add_control(
             'label_color',
             [
-                'label' => esc_html__('Color', 'lasa'),
+                'label' => esc_html__('Color', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -705,7 +705,7 @@ class Lasa_Elementor_Banner extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'label_bg_color',
             [
-                'label' => esc_html__('Background', 'lasa'),
+                'label' => esc_html__('Background', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -731,7 +731,7 @@ class Lasa_Elementor_Banner extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'label_bg_border_radius',
             [
-                'label' => esc_html__('Border Radius', 'lasa'),
+                'label' => esc_html__('Border Radius', 'themename'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'selectors' => [
@@ -746,14 +746,14 @@ class Lasa_Elementor_Banner extends Lasa_Elementor_Widget_Base
         $this->start_controls_tab(
             'label_tab_hover',
             [
-                'label' => esc_html__('Hover', 'lasa'),
+                'label' => esc_html__('Hover', 'themename'),
             ]
         );
 
         $this->add_control(
             'label_color_hover',
             [
-                'label' => esc_html__('Hover Color', 'lasa'),
+                'label' => esc_html__('Hover Color', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -765,7 +765,7 @@ class Lasa_Elementor_Banner extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'label_bg_color_hover',
             [
-                'label' => esc_html__('Background', 'lasa'),
+                'label' => esc_html__('Background', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -788,7 +788,7 @@ class Lasa_Elementor_Banner extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'label_bg_border_radius_hover',
             [
-                'label' => esc_html__('Border Radius', 'lasa'),
+                'label' => esc_html__('Border Radius', 'themename'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'selectors' => [
@@ -804,7 +804,7 @@ class Lasa_Elementor_Banner extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'label_css_classes',
             [
-                'label'       => esc_html__('CSS Classes', 'lasa'),
+                'label'       => esc_html__('CSS Classes', 'themename'),
                 'type'        => Controls_Manager::TEXT,
                 'dynamic'     => [
                     'active' => true,
@@ -824,13 +824,13 @@ class Lasa_Elementor_Banner extends Lasa_Elementor_Widget_Base
         $this->start_controls_section(
             'image_content_section',
             [
-                'label' => esc_html__('Image', 'lasa'),
+                'label' => esc_html__('Image', 'themename'),
             ]
         );
         $this->add_control(
             'image',
             [
-                'label'   => esc_html__('Choose image', 'lasa'),
+                'label'   => esc_html__('Choose image', 'themename'),
                 'type'    => Controls_Manager::MEDIA,
                 'default' => [
                     'url' => Utils::get_placeholder_image_src(),
@@ -855,20 +855,20 @@ class Lasa_Elementor_Banner extends Lasa_Elementor_Widget_Base
         $this->start_controls_section(
             'content_section',
             [
-                'label' => esc_html__('Content', 'lasa'),
+                'label' => esc_html__('Content', 'themename'),
             ]
         );
         
         $this->add_control(
             'banner_title',
             [
-                'label'       => esc_html__('Title', 'lasa'),
+                'label'       => esc_html__('Title', 'themename'),
                 'type'        => Controls_Manager::TEXT,
                 'dynamic'     => [
                     'active' => true,
                 ],
-                'default'     => esc_html__('This is the heading', 'lasa'),
-                'placeholder' => esc_html__('Enter your title', 'lasa'),
+                'default'     => esc_html__('This is the heading', 'themename'),
+                'placeholder' => esc_html__('Enter your title', 'themename'),
                 'label_block' => true,
             ]
         );
@@ -876,7 +876,7 @@ class Lasa_Elementor_Banner extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'banner_title_tag',
             [
-                'label'   => esc_html__('Title HTML Tag', 'lasa'),
+                'label'   => esc_html__('Title HTML Tag', 'themename'),
                 'type'    => Controls_Manager::SELECT,
                 'options' => [
                     'h1'   => 'H1',
@@ -896,9 +896,9 @@ class Lasa_Elementor_Banner extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'banner_sub_title',
             [
-                'label'       => esc_html__('Sub Title', 'lasa'),
+                'label'       => esc_html__('Sub Title', 'themename'),
                 'type'        => Controls_Manager::TEXT,
-                'placeholder' => esc_html__('Enter your sub-title', 'lasa'),
+                'placeholder' => esc_html__('Enter your sub-title', 'themename'),
                 'label_block' => true,
             ]
         );
@@ -906,13 +906,13 @@ class Lasa_Elementor_Banner extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'banner_description',
             [
-                'label'       => esc_html__('Description', 'lasa'),
+                'label'       => esc_html__('Description', 'themename'),
                 'type'        => Controls_Manager::TEXTAREA,
                 'dynamic'     => [
                     'active' => true,
                 ],
-                'default'     => esc_html__('Click edit button to change this text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.', 'lasa'),
-                'placeholder' => esc_html__('Enter your description', 'lasa'),
+                'default'     => esc_html__('Click edit button to change this text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.', 'themename'),
+                'placeholder' => esc_html__('Enter your description', 'themename'),
                 'separator'   => 'none',
                 'rows'        => 10,
             ]
@@ -921,7 +921,7 @@ class Lasa_Elementor_Banner extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'banner_label',
             [
-                'label'   => esc_html__('Label', 'lasa'),
+                'label'   => esc_html__('Label', 'themename'),
                 'type'    => Controls_Manager::TEXT,
             ]
         );
@@ -973,4 +973,4 @@ class Lasa_Elementor_Banner extends Lasa_Elementor_Widget_Base
         <?php
     }
 }
-$widgets_manager->register(new Lasa_Elementor_Banner());
+$widgets_manager->register(new Themename_Elementor_Banner());

@@ -23,7 +23,7 @@ if (!(isset($videolink) && $videolink)) {
 ?>
 <div class="entry-single">
   <article id="post-<?php the_ID(); ?>" <?php post_class($class_main); ?>>
-	<?php echo lasa_tbay_post_media(get_the_excerpt()); ?>
+	<?php echo themename_tbay_post_media(get_the_excerpt()); ?>
     <?php $class_image = ($videolink) ? 'post-preview' : ''; ?>
         <?php
             if ($videolink || has_post_thumbnail()) {
@@ -32,7 +32,7 @@ if (!(isset($videolink) && $videolink)) {
                         <?php if ($videolink) : ?>
                             <div class="video-thumb video-responsive"><?php echo wp_oembed_get($videolink); ?></div>
                         <?php elseif (has_post_thumbnail()) : ?>
-                            <?php lasa_tbay_post_thumbnail(); ?>
+                            <?php themename_tbay_post_thumbnail(); ?>
                         <?php endif; ?>
                     </div>
                 <?php
@@ -40,7 +40,7 @@ if (!(isset($videolink) && $videolink)) {
         ?>
 
         <?php if (get_the_category_list()): ?>
-                <div class="entry-category"><?php lasa_the_post_category_full() ?></div>
+                <div class="entry-category"><?php themename_the_post_category_full() ?></div>
         <?php endif; ?>
         
         <?php if (get_the_title()) {
@@ -52,7 +52,7 @@ if (!(isset($videolink) && $videolink)) {
             } ?>
 
         <div class="entry-header">
-            <?php lasa_post_meta(array(
+            <?php themename_post_meta(array(
                 'date'     		=> 1,
                 'author'   		=> 1,
                 'comments' 		=> 1,
@@ -65,21 +65,21 @@ if (!(isset($videolink) && $videolink)) {
         
         <div class="post-excerpt entry-content">
 
-            <?php the_content(esc_html__('Continue Reading', 'lasa')); ?>
+            <?php the_content(esc_html__('Continue Reading', 'themename')); ?>
 
-            <div class="lasa-tag-socials-box"><?php do_action('lasa_tbay_post_tag_socials') ?></div>
+            <div class="themename-tag-socials-box"><?php do_action('themename_tbay_post_tag_socials') ?></div>
 
-            <?php do_action('lasa_tbay_post_bottom') ?>
+            <?php do_action('themename_tbay_post_bottom') ?>
             
         </div><!-- /entry-content -->
 
         <?php
             wp_link_pages(array(
-                'before'      => '<div class="page-links"><span class="page-links-title">' . esc_html__('Pages:', 'lasa') . '</span>',
+                'before'      => '<div class="page-links"><span class="page-links-title">' . esc_html__('Pages:', 'themename') . '</span>',
                 'after'       => '</div>',
                 'link_before' => '<span>',
                 'link_after'  => '</span>',
-                'pagelink'    => '<span class="screen-reader-text">' . esc_html__('Page', 'lasa') . ' </span>%',
+                'pagelink'    => '<span class="screen-reader-text">' . esc_html__('Page', 'themename') . ' </span>%',
                 'separator'   => '<span class="screen-reader-text">, </span>',
             ));
         ?>  

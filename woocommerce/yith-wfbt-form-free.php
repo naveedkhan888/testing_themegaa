@@ -55,7 +55,7 @@ foreach ($products as $current_product) {
 
             <input type="hidden" name="offeringID[]" id="offeringID_<?php echo esc_attr($index); ?>" class="active" value="<?php echo esc_attr($current_product_id); ?>" />
 
-            <span class="product-name"><?php echo ! $index ? '<span>'. esc_html__('This item', 'lasa') . ': </span>' . trim($current_product_title) : trim($current_product_title); ?></span>
+            <span class="product-name"><?php echo ! $index ? '<span>'. esc_html__('This item', 'themename') . ': </span>' . trim($current_product_title) : trim($current_product_title); ?></span>
 
             <?php
 

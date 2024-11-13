@@ -8,7 +8,7 @@ extract($settings);
 
 $this->settings_layout();
 
-$random_id = lasa_tbay_random_key();
+$random_id = themename_tbay_random_key();
 
 if( $ajax_tabs === 'yes' ) {
     $this->add_render_attribute('wrapper', 'class', 'ajax-active'); 

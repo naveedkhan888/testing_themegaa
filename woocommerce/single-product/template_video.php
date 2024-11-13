@@ -3,7 +3,7 @@ if (! defined('ABSPATH')) {
     exit;
 }
 
-$aspect_ratio = lasa_tbay_get_config('video_aspect_ratio', '16_9');
+$aspect_ratio = themename_tbay_get_config('video_aspect_ratio', '16_9');
 $aspect_ratio = '_' . $aspect_ratio;
 
 $gallery_thumbnail = wc_get_image_size('gallery_thumbnail');
@@ -18,7 +18,7 @@ $thumbnail_url     = wp_get_attachment_image_src($thumbnail_id, $thumbnail_size)
 $thumbnail_url = isset($thumbnail_url[0]) ? $thumbnail_url[0] : '';
 
 if( is_null($thumbnail_url) || empty($thumbnail_url) ) {
-    $thumbnail_url = LASA_IMAGES.'/thumbnail-video.jpg';
+    $thumbnail_url = THEMENAME_IMAGES.'/thumbnail-video.jpg';
 }
 
 global $product;
@@ -30,7 +30,7 @@ if ('youtube' == $host) {
     $url         = "//player.vimeo.com/video/" . $video_id;
 }
 
-$gallery_item_class = lasa_get_gallery_item_class();
+$gallery_item_class = themename_get_gallery_item_class();
 
 
 $video_class	.= ' '.$aspect_ratio;

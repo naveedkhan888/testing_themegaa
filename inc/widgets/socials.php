@@ -1,5 +1,5 @@
 <?php
-if (!lasa_redux_framework_activated()) {
+if (!themename_redux_framework_activated()) {
     return;
 }
 
@@ -8,9 +8,9 @@ class Tbay_Widget_Socials extends Tbay_Widget
     public function __construct()
     {
         parent::__construct(
-            'lasa_socials_widget',
-            esc_html__('Lasa Socials', 'lasa'),
-            array( 'description' => esc_html__('Socials for website.', 'lasa'), )
+            'themename_socials_widget',
+            esc_html__('Themename Socials', 'themename'),
+            array( 'description' => esc_html__('Socials for website.', 'themename'), )
         );
         $this->widgetName = 'socials';
     }
@@ -28,7 +28,7 @@ class Tbay_Widget_Socials extends Tbay_Widget
     public function form($instance)
     {
         $list_socials = apply_filters(
-            'lasa_socials_list_socials',array(
+            'themename_socials_list_socials',array(
                 'facebook'      => 'Facebook',
                 'twitter'       => 'Twitter',
                 'youtube-play'  => 'Youtube',
@@ -42,11 +42,11 @@ class Tbay_Widget_Socials extends Tbay_Widget
     <div class="tbay_socials">
 
         <p>
-            <label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><?php esc_html_e('Title:', 'lasa'); ?></label>
+            <label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><?php esc_html_e('Title:', 'themename'); ?></label>
             <input class="widefat" type="text" id="<?php echo esc_attr($this->get_field_id('title')); ?>" name="<?php echo esc_attr($this->get_field_name('title')); ?>" value="<?php echo esc_attr($instance['title']); ?>" />
         </p>
         <p>
-            <label for="<?php echo esc_attr($this->get_field_id('socials')); ?>"><?php esc_html_e('Select socials:', 'lasa'); ?></label>
+            <label for="<?php echo esc_attr($this->get_field_id('socials')); ?>"><?php esc_html_e('Select socials:', 'themename'); ?></label>
             <br>
         <?php
             foreach ($list_socials as $key => $value):
@@ -56,7 +56,7 @@ class Tbay_Widget_Socials extends Tbay_Widget
                 <input class="checkbox" type="checkbox" <?php checked($checked, 1); ?> id="<?php echo esc_attr($key); ?>"
                     name="<?php echo esc_attr($this->get_field_name('socials')); ?>[<?php echo esc_attr($key); ?>][status]" />
                     <label for="<?php echo esc_attr($this->get_field_name('socials')); ?>[<?php echo esc_attr($key); ?>][status]">
-                        <?php echo esc_html__('Show ', 'lasa').esc_html($value); ?>
+                        <?php echo esc_html__('Show ', 'themename').esc_html($value); ?>
                     </label>
                 <input type="hidden" name="<?php echo esc_attr($this->get_field_name('socials')); ?>[<?php echo esc_attr($key); ?>][name]" value=<?php echo esc_attr($value); ?> />
                 </p>
@@ -65,7 +65,7 @@ class Tbay_Widget_Socials extends Tbay_Widget
                    $check_value =  ($checked)? 'block': 'none'; ?>
                 <p style="display: <?php echo trim($check_value); ?>" id="<?php echo esc_attr($this->get_field_id($key)); ?>" class="text_url <?php echo esc_attr($key); ?>">
                     <label for="<?php echo esc_attr($this->get_field_name('socials')); ?>[<?php echo esc_attr($key); ?>][page_url]">
-                        <?php echo esc_html($value).' '.esc_html__('Page URL:', 'lasa').' '; ?>
+                        <?php echo esc_html($value).' '.esc_html__('Page URL:', 'themename').' '; ?>
                     </label>
                     <input class="widefat" type="text"
                         id="<?php echo esc_attr($this->get_field_name('socials')); ?>[<?php echo esc_attr($key); ?>][page_url]"

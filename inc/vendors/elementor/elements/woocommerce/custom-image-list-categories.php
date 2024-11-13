@@ -1,6 +1,6 @@
 <?php
 
-if (! defined('ABSPATH') || function_exists('Lasa_Elementor_Custom_Image_List_Categories')) {
+if (! defined('ABSPATH') || function_exists('Themename_Elementor_Custom_Image_List_Categories')) {
     exit; // Exit if accessed directly.
 }
 
@@ -16,7 +16,7 @@ use Elementor\Group_Control_Typography;
  *
  * @since 1.0.0
  */
-class Lasa_Elementor_Custom_Image_List_Categories extends Lasa_Elementor_Carousel_Base
+class Themename_Elementor_Custom_Image_List_Categories extends Themename_Elementor_Carousel_Base
 {
     /**
      * Get widget name.
@@ -45,12 +45,12 @@ class Lasa_Elementor_Custom_Image_List_Categories extends Lasa_Elementor_Carouse
      */
     public function get_title()
     {
-        return esc_html__('Lasa Custom Image List Categories', 'lasa');
+        return esc_html__('Themename Custom Image List Categories', 'themename');
     }
 
     public function get_categories()
     {
-        return [ 'lasa-elements', 'woocommerce-elements'];
+        return [ 'themename-elements', 'woocommerce-elements'];
     }
     
     /**
@@ -78,7 +78,7 @@ class Lasa_Elementor_Custom_Image_List_Categories extends Lasa_Elementor_Carouse
      */
     public function get_script_depends()
     {
-        return ['slick', 'lasa-custom-slick'];
+        return ['slick', 'themename-custom-slick'];
     }
 
     public function get_keywords()
@@ -93,14 +93,14 @@ class Lasa_Elementor_Custom_Image_List_Categories extends Lasa_Elementor_Carouse
         $this->start_controls_section(
             'section_general',
             [
-                'label' => esc_html__('Custom Image List Categories', 'lasa'),
+                'label' => esc_html__('Custom Image List Categories', 'themename'),
             ]
         );
 
         $this->add_control(
             'advanced',
             [
-                'label' => esc_html__('Advanced', 'lasa'),
+                'label' => esc_html__('Advanced', 'themename'),
                 'type' => Controls_Manager::HEADING,
             ]
         );
@@ -110,7 +110,7 @@ class Lasa_Elementor_Custom_Image_List_Categories extends Lasa_Elementor_Carouse
         $this->add_control(
             'custom_image_list_category',
             [
-                'label' => esc_html__('List Categories Items', 'lasa'),
+                'label' => esc_html__('List Categories Items', 'themename'),
                 'type' => Controls_Manager::REPEATER,
                 'fields' => $repeater->get_controls()
                 
@@ -120,12 +120,12 @@ class Lasa_Elementor_Custom_Image_List_Categories extends Lasa_Elementor_Carouse
         $this->add_control(
             'layout_type',
             [
-                'label'     => esc_html__('Layout Type', 'lasa'),
+                'label'     => esc_html__('Layout Type', 'themename'),
                 'type'      => Controls_Manager::SELECT,
                 'default'   => 'grid',
                 'options'   => [
-                    'grid'      => esc_html__('Grid', 'lasa'),
-                    'carousel'  => esc_html__('Carousel', 'lasa'),
+                    'grid'      => esc_html__('Grid', 'themename'),
+                    'carousel'  => esc_html__('Carousel', 'themename'),
                 ],
             ]
         );
@@ -133,15 +133,15 @@ class Lasa_Elementor_Custom_Image_List_Categories extends Lasa_Elementor_Carouse
         $this->add_control(
             'style_type',
             [
-                'label'     => esc_html__('Style Type', 'lasa'),
+                'label'     => esc_html__('Style Type', 'themename'),
                 'type'      => Controls_Manager::SELECT,
                 'default'   => 'v1',
                 'options'   => [
-                    'v1'      => esc_html__('Style 1', 'lasa'),
-                    'v2'  => esc_html__('Style 2', 'lasa'),
-                    'v3'  => esc_html__('Style 3', 'lasa'),
-                    'v4'  => esc_html__('Style 4', 'lasa'),
-                    'v5'  => esc_html__('Style 5', 'lasa'),
+                    'v1'      => esc_html__('Style 1', 'themename'),
+                    'v2'  => esc_html__('Style 2', 'themename'),
+                    'v3'  => esc_html__('Style 3', 'themename'),
+                    'v4'  => esc_html__('Style 4', 'themename'),
+                    'v5'  => esc_html__('Style 5', 'themename'),
                 ],
             ]
         );
@@ -151,19 +151,19 @@ class Lasa_Elementor_Custom_Image_List_Categories extends Lasa_Elementor_Carouse
         $this->add_control(
             'cat_list_align',
             [
-                'label' => esc_html__('Align', 'lasa'),
+                'label' => esc_html__('Align', 'themename'),
                 'type' => Controls_Manager::CHOOSE,
                 'options' => [
                     'left' => [
-                        'title' => esc_html__('Left', 'lasa'),
+                        'title' => esc_html__('Left', 'themename'),
                         'icon' => 'eicon-text-align-left'
                     ],
                     'center' => [
-                        'title' => esc_html__('Center', 'lasa'),
+                        'title' => esc_html__('Center', 'themename'),
                         'icon' => 'eicon-text-align-center'
                     ],
                     'right' => [
-                        'title' => esc_html__('Right', 'lasa'),
+                        'title' => esc_html__('Right', 'themename'),
                         'icon' => 'eicon-text-align-right'
                     ],
                 ],
@@ -179,7 +179,7 @@ class Lasa_Elementor_Custom_Image_List_Categories extends Lasa_Elementor_Carouse
         $this->add_control(
             'display_count_category',
             [
-                'label'     => esc_html__('Show Count Category', 'lasa'),
+                'label'     => esc_html__('Show Count Category', 'themename'),
                 'type'      => Controls_Manager::SWITCHER,
                 'default'   => 'no',
             ]
@@ -188,7 +188,7 @@ class Lasa_Elementor_Custom_Image_List_Categories extends Lasa_Elementor_Carouse
         $this->add_control(
             'show_all',
             [
-                'label'     => esc_html__('Display Show All', 'lasa'),
+                'label'     => esc_html__('Display Show All', 'themename'),
                 'type'      => Controls_Manager::SWITCHER,
                 'default'   => '',
             ]
@@ -196,11 +196,11 @@ class Lasa_Elementor_Custom_Image_List_Categories extends Lasa_Elementor_Carouse
         $this->add_control(
             'position_show_all',
             [
-                'label'     => esc_html__('Position', 'lasa'),
+                'label'     => esc_html__('Position', 'themename'),
                 'type'      => Controls_Manager::SELECT,
                 'options' => [
-                    'top' => esc_html__('Top', 'lasa'),
-                    'bottom' => esc_html__('Bottom', 'lasa'),
+                    'top' => esc_html__('Top', 'themename'),
+                    'bottom' => esc_html__('Bottom', 'themename'),
                 ],
                 'default' => 'bottom',
                 'condition' => [
@@ -211,7 +211,7 @@ class Lasa_Elementor_Custom_Image_List_Categories extends Lasa_Elementor_Carouse
         $this->add_control(
             'text_show_all',
             [
-                'label'     => esc_html__('Text Show All', 'lasa'),
+                'label'     => esc_html__('Text Show All', 'themename'),
                 'type'      => Controls_Manager::TEXT,
                 'default'   => 'See all categories',
                 'condition' => [
@@ -222,7 +222,7 @@ class Lasa_Elementor_Custom_Image_List_Categories extends Lasa_Elementor_Carouse
         $this->add_control(
             'icon_show_all',
             [
-                'label'     => esc_html__('Icon Show All', 'lasa'),
+                'label'     => esc_html__('Icon Show All', 'themename'),
                 'type'      => Controls_Manager::ICONS,
                 'default'   => [
                     'library' => 'tbay-custom',
@@ -249,7 +249,7 @@ class Lasa_Elementor_Custom_Image_List_Categories extends Lasa_Elementor_Carouse
         $repeater->add_control(
             'category',
             [
-                'label' => esc_html__('Choose category', 'lasa'),
+                'label' => esc_html__('Choose category', 'themename'),
                 'type' => Controls_Manager::SELECT,
                 'default'   => array_keys($categories)[0],
                 'options'   => $categories,
@@ -259,15 +259,15 @@ class Lasa_Elementor_Custom_Image_List_Categories extends Lasa_Elementor_Carouse
         $repeater->add_control(
             'type',
             [
-                'label' => esc_html__('Type Custom', 'lasa'),
+                'label' => esc_html__('Type Custom', 'themename'),
                 'type' => Controls_Manager::CHOOSE,
                 'options' => [
                     'image' => [
-                        'title' => esc_html__('Image', 'lasa'),
+                        'title' => esc_html__('Image', 'themename'),
                         'icon' => 'fa fa-image',
                     ],
                     'icon' => [
-                        'title' => esc_html__('Icon', 'lasa'),
+                        'title' => esc_html__('Icon', 'themename'),
                         'icon' => 'fa fa-info',
                     ],
                 ],
@@ -278,7 +278,7 @@ class Lasa_Elementor_Custom_Image_List_Categories extends Lasa_Elementor_Carouse
         $repeater->add_control(
             'type_icon',
             [
-                'label' => esc_html__('Choose Icon', 'lasa'),
+                'label' => esc_html__('Choose Icon', 'themename'),
                 'type' => Controls_Manager::ICONS,
                 'default' => [
                     'value' => 'icon-question',
@@ -293,7 +293,7 @@ class Lasa_Elementor_Custom_Image_List_Categories extends Lasa_Elementor_Carouse
         $repeater->add_control(
             'type_image',
             [
-                'label' => esc_html__('Choose Image', 'lasa'),
+                'label' => esc_html__('Choose Image', 'themename'),
                 'type' => Controls_Manager::MEDIA,
                 'condition' => [
                     'type' => 'image'
@@ -307,7 +307,7 @@ class Lasa_Elementor_Custom_Image_List_Categories extends Lasa_Elementor_Carouse
         $repeater->add_control(
             'display_custom',
             [
-                'label' => esc_html__('Show Custom Link', 'lasa'),
+                'label' => esc_html__('Show Custom Link', 'themename'),
                 'type' => Controls_Manager::SWITCHER,
                 'default' => 'no'
             ]
@@ -316,12 +316,12 @@ class Lasa_Elementor_Custom_Image_List_Categories extends Lasa_Elementor_Carouse
         $repeater->add_control(
             'custom_link',
             [
-                'label' => esc_html__('Custom Link', 'lasa'),
+                'label' => esc_html__('Custom Link', 'themename'),
                 'type' => Controls_Manager::URL,
                 'condition' => [
                     'display_custom' => 'yes'
                 ],
-                'placeholder' => esc_html__('https://your-link.com', 'lasa'),
+                'placeholder' => esc_html__('https://your-link.com', 'themename'),
             ]
         );
 
@@ -333,7 +333,7 @@ class Lasa_Elementor_Custom_Image_List_Categories extends Lasa_Elementor_Carouse
         $this->start_controls_section(
             'section_style_custom_image_list_categories',
             [
-                'label' => esc_html__('Categories Item ', 'lasa'),
+                'label' => esc_html__('Categories Item ', 'themename'),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -351,7 +351,7 @@ class Lasa_Elementor_Custom_Image_List_Categories extends Lasa_Elementor_Carouse
         $this->add_control(
             'heading_style_custom_image_list_categories_content',
             [
-                'label' => esc_html__('Content Item', 'lasa'),
+                'label' => esc_html__('Content Item', 'themename'),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -362,14 +362,14 @@ class Lasa_Elementor_Custom_Image_List_Categories extends Lasa_Elementor_Carouse
         $this->start_controls_tab(
             'list_categories_content_tab_normal',
             [
-                'label' => esc_html__('Normal', 'lasa'),
+                'label' => esc_html__('Normal', 'themename'),
             ]
         );
 
         $this->add_control(
             'list_categories_content_bg',
             [
-                'label' => esc_html__('Background', 'lasa'),
+                'label' => esc_html__('Background', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -384,14 +384,14 @@ class Lasa_Elementor_Custom_Image_List_Categories extends Lasa_Elementor_Carouse
         $this->start_controls_tab(
             'list_categories_content_tab_hover',
             [
-                'label' => esc_html__('Hover', 'lasa'),
+                'label' => esc_html__('Hover', 'themename'),
             ]
         );
 
         $this->add_control(
             'list_categories_content_color_hover',
             [
-                'label' => esc_html__('Hover Background', 'lasa'),
+                'label' => esc_html__('Hover Background', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -418,7 +418,7 @@ class Lasa_Elementor_Custom_Image_List_Categories extends Lasa_Elementor_Carouse
         $this->add_responsive_control(
             'list_categories_content_radius',
             [
-                'label' => esc_html__('Border Radius', 'lasa'),
+                'label' => esc_html__('Border Radius', 'themename'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'separator'    => 'before',
@@ -432,7 +432,7 @@ class Lasa_Elementor_Custom_Image_List_Categories extends Lasa_Elementor_Carouse
         $this->add_responsive_control(
             'list_categories_content_padding',
             [
-                'label'      => esc_html__('Padding', 'lasa'),
+                'label'      => esc_html__('Padding', 'themename'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', 'em', '%' ],
                 'selectors'  => [
@@ -443,7 +443,7 @@ class Lasa_Elementor_Custom_Image_List_Categories extends Lasa_Elementor_Carouse
         $this->add_responsive_control(
             'list_categories_content_margin',
             [
-                'label'      => esc_html__('Margin', 'lasa'),
+                'label'      => esc_html__('Margin', 'themename'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', 'em', '%' ],
                 'selectors'  => [
@@ -459,7 +459,7 @@ class Lasa_Elementor_Custom_Image_List_Categories extends Lasa_Elementor_Carouse
         $this->add_control(
             'heading_style_custom_image_list_categories_img',
             [
-                'label' => esc_html__('Image', 'lasa'),
+                'label' => esc_html__('Image', 'themename'),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -468,7 +468,7 @@ class Lasa_Elementor_Custom_Image_List_Categories extends Lasa_Elementor_Carouse
         $this->add_responsive_control(
             'list_categories_img_padding',
             [
-                'label' => esc_html__('Padding', 'lasa'),
+                'label' => esc_html__('Padding', 'themename'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'selectors' => [
@@ -480,7 +480,7 @@ class Lasa_Elementor_Custom_Image_List_Categories extends Lasa_Elementor_Carouse
         $this->add_responsive_control(
             'list_categories_img_radius',
             [
-                'label' => esc_html__('Border Radius', 'lasa'),
+                'label' => esc_html__('Border Radius', 'themename'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'separator'    => 'before',
@@ -496,14 +496,14 @@ class Lasa_Elementor_Custom_Image_List_Categories extends Lasa_Elementor_Carouse
         $this->start_controls_tab(
             'list_categories_img_tab_normal',
             [
-                'label' => esc_html__('Normal', 'lasa'),
+                'label' => esc_html__('Normal', 'themename'),
             ]
         );
 
         $this->add_control(
             'list_categories_img_bg',
             [
-                'label' => esc_html__('Background', 'lasa'),
+                'label' => esc_html__('Background', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -518,14 +518,14 @@ class Lasa_Elementor_Custom_Image_List_Categories extends Lasa_Elementor_Carouse
         $this->start_controls_tab(
             'list_categories_img_tab_hover',
             [
-                'label' => esc_html__('Hover', 'lasa'),
+                'label' => esc_html__('Hover', 'themename'),
             ]
         );
 
         $this->add_control(
             'list_categories_img_color_hover',
             [
-                'label' => esc_html__('Color', 'lasa'),
+                'label' => esc_html__('Color', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -544,7 +544,7 @@ class Lasa_Elementor_Custom_Image_List_Categories extends Lasa_Elementor_Carouse
         $this->add_control(
             'heading_style_custom_image_list_categories_icon',
             [
-                'label' => esc_html__('Icon', 'lasa'),
+                'label' => esc_html__('Icon', 'themename'),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -553,7 +553,7 @@ class Lasa_Elementor_Custom_Image_List_Categories extends Lasa_Elementor_Carouse
         $this->add_responsive_control(
             'list_categories_icon_size',
             [
-                'label' => esc_html__('Font Size', 'lasa'),
+                'label' => esc_html__('Font Size', 'themename'),
                 'type' => Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [
@@ -573,7 +573,7 @@ class Lasa_Elementor_Custom_Image_List_Categories extends Lasa_Elementor_Carouse
         $this->add_responsive_control(
             'list_categories_icon_line_height',
             [
-                'label' => esc_html__('Line Height', 'lasa'),
+                'label' => esc_html__('Line Height', 'themename'),
                 'type' => Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [
@@ -590,7 +590,7 @@ class Lasa_Elementor_Custom_Image_List_Categories extends Lasa_Elementor_Carouse
         $this->add_responsive_control(
             'list_categories_icon_padding',
             [
-                'label' => esc_html__('Padding', 'lasa'),
+                'label' => esc_html__('Padding', 'themename'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'selectors' => [
@@ -604,14 +604,14 @@ class Lasa_Elementor_Custom_Image_List_Categories extends Lasa_Elementor_Carouse
         $this->start_controls_tab(
             'list_categories_icon_tab_normal',
             [
-                'label' => esc_html__('Normal', 'lasa'),
+                'label' => esc_html__('Normal', 'themename'),
             ]
         );
 
         $this->add_control(
             'list_categories_icon_color',
             [
-                'label' => esc_html__('Color', 'lasa'),
+                'label' => esc_html__('Color', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -626,14 +626,14 @@ class Lasa_Elementor_Custom_Image_List_Categories extends Lasa_Elementor_Carouse
         $this->start_controls_tab(
             'list_categories_icon_tab_hover',
             [
-                'label' => esc_html__('Hover', 'lasa'),
+                'label' => esc_html__('Hover', 'themename'),
             ]
         );
 
         $this->add_control(
             'list_categories_icon_color_hover',
             [
-                'label' => esc_html__('Hover Color', 'lasa'),
+                'label' => esc_html__('Hover Color', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -652,7 +652,7 @@ class Lasa_Elementor_Custom_Image_List_Categories extends Lasa_Elementor_Carouse
         $this->add_control(
             'heading_style_custom_image_list_categories_title',
             [
-                'label' => esc_html__('Title', 'lasa'),
+                'label' => esc_html__('Title', 'themename'),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -669,7 +669,7 @@ class Lasa_Elementor_Custom_Image_List_Categories extends Lasa_Elementor_Carouse
         $this->add_responsive_control(
             'list_categories_title_padding',
             [
-                'label' => esc_html__('Padding', 'lasa'),
+                'label' => esc_html__('Padding', 'themename'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'selectors' => [
@@ -681,7 +681,7 @@ class Lasa_Elementor_Custom_Image_List_Categories extends Lasa_Elementor_Carouse
         $this->add_responsive_control(
             'list_categories_title_margin',
             [
-                'label' => esc_html__('Margin', 'lasa'),
+                'label' => esc_html__('Margin', 'themename'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'selectors' => [
@@ -695,14 +695,14 @@ class Lasa_Elementor_Custom_Image_List_Categories extends Lasa_Elementor_Carouse
         $this->start_controls_tab(
             'list_categories_title_tab_normal',
             [
-                'label' => esc_html__('Normal', 'lasa'),
+                'label' => esc_html__('Normal', 'themename'),
             ]
         );
 
         $this->add_control(
             'list_categories_title_color',
             [
-                'label' => esc_html__('Color', 'lasa'),
+                'label' => esc_html__('Color', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -717,14 +717,14 @@ class Lasa_Elementor_Custom_Image_List_Categories extends Lasa_Elementor_Carouse
         $this->start_controls_tab(
             'list_categories_title_tab_hover',
             [
-                'label' => esc_html__('Hover', 'lasa'),
+                'label' => esc_html__('Hover', 'themename'),
             ]
         );
 
         $this->add_control(
             'list_categories_title_color_hover',
             [
-                'label' => esc_html__('Hover Color', 'lasa'),
+                'label' => esc_html__('Hover Color', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -743,7 +743,7 @@ class Lasa_Elementor_Custom_Image_List_Categories extends Lasa_Elementor_Carouse
         $this->add_control(
             'heading_style_custom_image_list_categories_count_item',
             [
-                'label' => esc_html__('Count item', 'lasa'),
+                'label' => esc_html__('Count item', 'themename'),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -760,7 +760,7 @@ class Lasa_Elementor_Custom_Image_List_Categories extends Lasa_Elementor_Carouse
         $this->add_responsive_control(
             'list_categories_count_item_padding',
             [
-                'label' => esc_html__('Padding', 'lasa'),
+                'label' => esc_html__('Padding', 'themename'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'selectors' => [
@@ -772,7 +772,7 @@ class Lasa_Elementor_Custom_Image_List_Categories extends Lasa_Elementor_Carouse
         $this->add_responsive_control(
             'list_categories_count_item_margin',
             [
-                'label' => esc_html__('Margin', 'lasa'),
+                'label' => esc_html__('Margin', 'themename'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'selectors' => [
@@ -784,7 +784,7 @@ class Lasa_Elementor_Custom_Image_List_Categories extends Lasa_Elementor_Carouse
         $this->add_control(
             'list_categories_count_item_color',
             [
-                'label' => esc_html__('Color', 'lasa'),
+                'label' => esc_html__('Color', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -838,7 +838,7 @@ class Lasa_Elementor_Custom_Image_List_Categories extends Lasa_Elementor_Carouse
                 </a>
                 <?php if ($display_count_category === 'yes' && ( $settings['style_type'] === 'v1' || $settings['style_type'] === 'v3' || $settings['style_type'] === 'v4' || $settings['style_type'] === 'v5' ) ) {
                         ?><span class="count-item">
-                    <?php echo trim($count).' '.esc_html__('products', 'lasa'); ?>
+                    <?php echo trim($count).' '.esc_html__('products', 'themename'); ?>
                 </span><?php
                     } ?>
 
@@ -908,4 +908,4 @@ class Lasa_Elementor_Custom_Image_List_Categories extends Lasa_Elementor_Carouse
         }
     }
 }
-$widgets_manager->register(new Lasa_Elementor_Custom_Image_List_Categories());
+$widgets_manager->register(new Themename_Elementor_Custom_Image_List_Categories());

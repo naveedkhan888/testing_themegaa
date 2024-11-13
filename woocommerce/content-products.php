@@ -31,7 +31,7 @@ $flash_sales 			= isset($flash_sales) ? $flash_sales : false;
 $end_date 				= isset($end_date) ? $end_date : '';
 
 $countdown_title 		= isset($countdown_title) ? $countdown_title : '';
-$skin 					= lasa_tbay_get_theme();
+$skin 					= themename_tbay_get_theme();
 
 
 // Increase loop count

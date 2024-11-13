@@ -1,6 +1,6 @@
 <?php
 
-if (! defined('ABSPATH') || function_exists('Lasa_Elementor_Feature_List_Image')) {
+if (! defined('ABSPATH') || function_exists('Themename_Elementor_Feature_List_Image')) {
     exit; // Exit if accessed directly.
 }
 
@@ -16,7 +16,7 @@ use Elementor\Group_Control_Typography;
  *
  * @since 1.0.0
  */
-class Lasa_Elementor_Feature_List_Image extends Lasa_Elementor_Widget_Base
+class Themename_Elementor_Feature_List_Image extends Themename_Elementor_Widget_Base
 {
     /**
      * Get widget name.
@@ -45,7 +45,7 @@ class Lasa_Elementor_Feature_List_Image extends Lasa_Elementor_Widget_Base
      */
     public function get_title()
     {
-        return esc_html__('Lasa Feature List Image', 'lasa');
+        return esc_html__('Themename Feature List Image', 'themename');
     }
     
     /**
@@ -68,14 +68,14 @@ class Lasa_Elementor_Feature_List_Image extends Lasa_Elementor_Widget_Base
         $this->start_controls_section(
             'section_general',
             [
-                'label' => esc_html__('General', 'lasa'),
+                'label' => esc_html__('General', 'themename'),
             ]
         );
 
         $this->add_control(
             'feature_list_image',
             [
-                'label' => esc_html__('Choose Image', 'lasa'),
+                'label' => esc_html__('Choose Image', 'themename'),
                 'type' => Controls_Manager::MEDIA,
                 'default' => [
                     'url' => Elementor\Utils::get_placeholder_image_src(),
@@ -89,7 +89,7 @@ class Lasa_Elementor_Feature_List_Image extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'custom_image_list_feature',
             [
-                'label' => esc_html__('List Feature Items', 'lasa'),
+                'label' => esc_html__('List Feature Items', 'themename'),
                 'type' => Controls_Manager::REPEATER,
                 'fields' => $repeater->get_controls()
                 
@@ -99,20 +99,20 @@ class Lasa_Elementor_Feature_List_Image extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
 			'feature_list_position',
 			[
-				'label' => esc_html__( 'Item Position', 'lasa' ),
+				'label' => esc_html__( 'Item Position', 'themename' ),
 				'type' => Controls_Manager::CHOOSE,
 				'mobile_default' => 'top',
 				'options' => [
 					'left' => [
-						'title' => esc_html__( 'Left', 'lasa' ),
+						'title' => esc_html__( 'Left', 'themename' ),
 						'icon' => 'eicon-h-align-left',
 					],
 					'top' => [
-						'title' => esc_html__( 'Top', 'lasa' ),
+						'title' => esc_html__( 'Top', 'themename' ),
 						'icon' => 'eicon-v-align-top',
 					],
 					'right' => [
-						'title' => esc_html__( 'Right', 'lasa' ),
+						'title' => esc_html__( 'Right', 'themename' ),
 						'icon' => 'eicon-h-align-right',
 					],
 				],
@@ -123,19 +123,19 @@ class Lasa_Elementor_Feature_List_Image extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'feature_list_align',
             [
-                'label' => esc_html__('Align', 'lasa'),
+                'label' => esc_html__('Align', 'themename'),
                 'type' => Controls_Manager::CHOOSE,
                 'options' => [
                     'left' => [
-                        'title' => esc_html__('Left', 'lasa'),
+                        'title' => esc_html__('Left', 'themename'),
                         'icon' => 'eicon-text-align-left'
                     ],
                     'center' => [
-                        'title' => esc_html__('Center', 'lasa'),
+                        'title' => esc_html__('Center', 'themename'),
                         'icon' => 'eicon-text-align-center'
                     ],
                     'right' => [
-                        'title' => esc_html__('Right', 'lasa'),
+                        'title' => esc_html__('Right', 'themename'),
                         'icon' => 'eicon-text-align-right'
                     ],
                 ],
@@ -168,9 +168,9 @@ class Lasa_Elementor_Feature_List_Image extends Lasa_Elementor_Widget_Base
         $repeater->add_control(
             'item_title',
             [
-                'label' => esc_html__('Title', 'lasa'),
+                'label' => esc_html__('Title', 'themename'),
                 'type' => Controls_Manager::TEXT,
-                'default' => esc_html__('Item Title', 'lasa'),
+                'default' => esc_html__('Item Title', 'themename'),
                 'separator' => 'before',
             ]
         );
@@ -178,15 +178,15 @@ class Lasa_Elementor_Feature_List_Image extends Lasa_Elementor_Widget_Base
         $repeater->add_control(
             'item_type',
             [
-                'label' => esc_html__('Type Custom', 'lasa'),
+                'label' => esc_html__('Type Custom', 'themename'),
                 'type' => Controls_Manager::CHOOSE,
                 'options' => [
                     'image' => [
-                        'title' => esc_html__('Image', 'lasa'),
+                        'title' => esc_html__('Image', 'themename'),
                         'icon' => 'fa fa-image',
                     ],
                     'icon' => [
-                        'title' => esc_html__('Icon', 'lasa'),
+                        'title' => esc_html__('Icon', 'themename'),
                         'icon' => 'fa fa-info',
                     ],
                 ],
@@ -197,7 +197,7 @@ class Lasa_Elementor_Feature_List_Image extends Lasa_Elementor_Widget_Base
         $repeater->add_control(
             'item_type_icon',
             [
-                'label' => esc_html__('Choose Icon', 'lasa'),
+                'label' => esc_html__('Choose Icon', 'themename'),
                 'type' => Controls_Manager::ICONS,
                 'default' => [
                     'value' => 'icon-question',
@@ -212,7 +212,7 @@ class Lasa_Elementor_Feature_List_Image extends Lasa_Elementor_Widget_Base
         $repeater->add_control(
             'item_type_image',
             [
-                'label' => esc_html__('Choose Image', 'lasa'),
+                'label' => esc_html__('Choose Image', 'themename'),
                 'type' => Controls_Manager::MEDIA,
                 'condition' => [
                     'item_type' => 'image'
@@ -231,7 +231,7 @@ class Lasa_Elementor_Feature_List_Image extends Lasa_Elementor_Widget_Base
         $this->start_controls_section(
             'section_style_feature_list_image',
             [
-                'label' => esc_html__('Feature Image Main ', 'lasa'),
+                'label' => esc_html__('Feature Image Main ', 'themename'),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -239,7 +239,7 @@ class Lasa_Elementor_Feature_List_Image extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'style_feature_list_image',
             [
-                'label' => esc_html__('Max Width', 'lasa'),
+                'label' => esc_html__('Max Width', 'themename'),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => [ 'px' ],
                 'range' => [
@@ -258,7 +258,7 @@ class Lasa_Elementor_Feature_List_Image extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'style_feature_list_image_radius',
             [
-                'label' => esc_html__('Border Radius', 'lasa'),
+                'label' => esc_html__('Border Radius', 'themename'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'separator'    => 'before',
@@ -272,7 +272,7 @@ class Lasa_Elementor_Feature_List_Image extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'style_feature_list_image_padding',
             [
-                'label'      => esc_html__('Padding', 'lasa'),
+                'label'      => esc_html__('Padding', 'themename'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', 'em', '%' ],
                 'selectors'  => [
@@ -283,7 +283,7 @@ class Lasa_Elementor_Feature_List_Image extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'style_feature_list_image_margin',
             [
-                'label'      => esc_html__('Margin', 'lasa'),
+                'label'      => esc_html__('Margin', 'themename'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', 'em', '%' ],
                 'selectors'  => [
@@ -300,7 +300,7 @@ class Lasa_Elementor_Feature_List_Image extends Lasa_Elementor_Widget_Base
         $this->start_controls_section(
             'section_style_feature_list_items',
             [
-                'label' => esc_html__('Feature List Items', 'lasa'),
+                'label' => esc_html__('Feature List Items', 'themename'),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -310,14 +310,14 @@ class Lasa_Elementor_Feature_List_Image extends Lasa_Elementor_Widget_Base
         $this->start_controls_tab(
             'feature_list_items_tab_normal',
             [
-                'label' => esc_html__('Normal', 'lasa'),
+                'label' => esc_html__('Normal', 'themename'),
             ]
         );
 
         $this->add_control(
             'feature_list_items_bg',
             [
-                'label' => esc_html__('Background', 'lasa'),
+                'label' => esc_html__('Background', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -332,14 +332,14 @@ class Lasa_Elementor_Feature_List_Image extends Lasa_Elementor_Widget_Base
         $this->start_controls_tab(
             'feature_list_items_tab_hover',
             [
-                'label' => esc_html__('Hover', 'lasa'),
+                'label' => esc_html__('Hover', 'themename'),
             ]
         );
 
         $this->add_control(
             'feature_list_items_color_hover',
             [
-                'label' => esc_html__('Hover Background', 'lasa'),
+                'label' => esc_html__('Hover Background', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -366,7 +366,7 @@ class Lasa_Elementor_Feature_List_Image extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'feature_list_items_radius',
             [
-                'label' => esc_html__('Border Radius', 'lasa'),
+                'label' => esc_html__('Border Radius', 'themename'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'separator'    => 'before',
@@ -380,7 +380,7 @@ class Lasa_Elementor_Feature_List_Image extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'feature_list_items_padding',
             [
-                'label'      => esc_html__('Padding', 'lasa'),
+                'label'      => esc_html__('Padding', 'themename'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', 'em', '%' ],
                 'selectors'  => [
@@ -391,7 +391,7 @@ class Lasa_Elementor_Feature_List_Image extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'feature_list_items_margin',
             [
-                'label'      => esc_html__('Margin', 'lasa'),
+                'label'      => esc_html__('Margin', 'themename'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', 'em', '%' ],
                 'selectors'  => [
@@ -409,7 +409,7 @@ class Lasa_Elementor_Feature_List_Image extends Lasa_Elementor_Widget_Base
         $this->start_controls_section(
             'section_style_feature_list_item',
             [
-                'label' => esc_html__('Feature Item', 'lasa'),
+                'label' => esc_html__('Feature Item', 'themename'),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -419,14 +419,14 @@ class Lasa_Elementor_Feature_List_Image extends Lasa_Elementor_Widget_Base
         $this->start_controls_tab(
             'feature_list_item_tab_normal',
             [
-                'label' => esc_html__('Normal', 'lasa'),
+                'label' => esc_html__('Normal', 'themename'),
             ]
         );
 
         $this->add_control(
             'feature_list_item_bg',
             [
-                'label' => esc_html__('Background', 'lasa'),
+                'label' => esc_html__('Background', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -441,14 +441,14 @@ class Lasa_Elementor_Feature_List_Image extends Lasa_Elementor_Widget_Base
         $this->start_controls_tab(
             'feature_list_item_tab_hover',
             [
-                'label' => esc_html__('Hover', 'lasa'),
+                'label' => esc_html__('Hover', 'themename'),
             ]
         );
 
         $this->add_control(
             'feature_list_item_color_hover',
             [
-                'label' => esc_html__('Hover Background', 'lasa'),
+                'label' => esc_html__('Hover Background', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -475,7 +475,7 @@ class Lasa_Elementor_Feature_List_Image extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'feature_list_item_radius',
             [
-                'label' => esc_html__('Border Radius', 'lasa'),
+                'label' => esc_html__('Border Radius', 'themename'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'separator'    => 'before',
@@ -489,7 +489,7 @@ class Lasa_Elementor_Feature_List_Image extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'feature_list_item_padding',
             [
-                'label'      => esc_html__('Padding', 'lasa'),
+                'label'      => esc_html__('Padding', 'themename'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', 'em', '%' ],
                 'selectors'  => [
@@ -500,7 +500,7 @@ class Lasa_Elementor_Feature_List_Image extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'feature_list_item_margin',
             [
-                'label'      => esc_html__('Margin', 'lasa'),
+                'label'      => esc_html__('Margin', 'themename'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', 'em', '%' ],
                 'selectors'  => [
@@ -517,7 +517,7 @@ class Lasa_Elementor_Feature_List_Image extends Lasa_Elementor_Widget_Base
         $this->start_controls_section(
             'section_style_feature_item_image',
             [
-                'label' => esc_html__('Feature Item Image', 'lasa'),
+                'label' => esc_html__('Feature Item Image', 'themename'),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -525,18 +525,18 @@ class Lasa_Elementor_Feature_List_Image extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'style_feature_item_image_effects',
             [
-                'label' => esc_html__('TB Effects', 'lasa'),
+                'label' => esc_html__('TB Effects', 'themename'),
                 'type' => Controls_Manager::SELECT,
                 'label_block' => true,
                 'default' => 'no',
-                'options' => lasa_list_controls_effects(),
+                'options' => themename_list_controls_effects(),
             ]
         );
 
         $this->add_responsive_control(
             'style_feature_item_image',
             [
-                'label' => esc_html__('Max Width', 'lasa'),
+                'label' => esc_html__('Max Width', 'themename'),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => [ 'px' ],
                 'range' => [
@@ -555,7 +555,7 @@ class Lasa_Elementor_Feature_List_Image extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'style_feature_item_image_radius',
             [
-                'label' => esc_html__('Border Radius', 'lasa'),
+                'label' => esc_html__('Border Radius', 'themename'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'separator'    => 'before',
@@ -568,7 +568,7 @@ class Lasa_Elementor_Feature_List_Image extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'style_feature_item_image_padding',
             [
-                'label'      => esc_html__('Padding', 'lasa'),
+                'label'      => esc_html__('Padding', 'themename'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', 'em', '%' ],
                 'selectors'  => [
@@ -580,7 +580,7 @@ class Lasa_Elementor_Feature_List_Image extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'style_feature_item_image_margin',
             [
-                'label'      => esc_html__('Margin', 'lasa'),
+                'label'      => esc_html__('Margin', 'themename'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', 'em', '%' ],
                 'selectors'  => [
@@ -597,7 +597,7 @@ class Lasa_Elementor_Feature_List_Image extends Lasa_Elementor_Widget_Base
         $this->start_controls_section(
             'section_style_feature_item_icon',
             [
-                'label' => esc_html__('Feature Item Icon', 'lasa'),
+                'label' => esc_html__('Feature Item Icon', 'themename'),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -605,7 +605,7 @@ class Lasa_Elementor_Feature_List_Image extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'feature_item_icon_size',
             [
-                'label' => esc_html__('Font Size', 'lasa'),
+                'label' => esc_html__('Font Size', 'themename'),
                 'type' => Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [
@@ -627,7 +627,7 @@ class Lasa_Elementor_Feature_List_Image extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'feature_item_icon_line_height',
             [
-                'label' => esc_html__('Line Height', 'lasa'),
+                'label' => esc_html__('Line Height', 'themename'),
                 'type' => Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [
@@ -644,7 +644,7 @@ class Lasa_Elementor_Feature_List_Image extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'feature_item_icon_padding',
             [
-                'label' => esc_html__('Padding', 'lasa'),
+                'label' => esc_html__('Padding', 'themename'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'selectors' => [
@@ -656,7 +656,7 @@ class Lasa_Elementor_Feature_List_Image extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'feature_item_icon_margin',
             [
-                'label'      => esc_html__('Margin', 'lasa'),
+                'label'      => esc_html__('Margin', 'themename'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', 'em', '%' ],
                 'selectors'  => [
@@ -670,14 +670,14 @@ class Lasa_Elementor_Feature_List_Image extends Lasa_Elementor_Widget_Base
         $this->start_controls_tab(
             'feature_item_icon_tab_normal',
             [
-                'label' => esc_html__('Normal', 'lasa'),
+                'label' => esc_html__('Normal', 'themename'),
             ]
         );
 
         $this->add_control(
             'feature_item_icon_color',
             [
-                'label' => esc_html__('Color', 'lasa'),
+                'label' => esc_html__('Color', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -693,14 +693,14 @@ class Lasa_Elementor_Feature_List_Image extends Lasa_Elementor_Widget_Base
         $this->start_controls_tab(
             'feature_item_icon_tab_hover',
             [
-                'label' => esc_html__('Hover', 'lasa'),
+                'label' => esc_html__('Hover', 'themename'),
             ]
         );
 
         $this->add_control(
             'feature_item_icon_color_hover',
             [
-                'label' => esc_html__('Hover Color', 'lasa'),
+                'label' => esc_html__('Hover Color', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -722,7 +722,7 @@ class Lasa_Elementor_Feature_List_Image extends Lasa_Elementor_Widget_Base
         $this->start_controls_section(
             'section_style_feature_item_title',
             [
-                'label' => esc_html__('Feature Item Title', 'lasa'),
+                'label' => esc_html__('Feature Item Title', 'themename'),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -738,7 +738,7 @@ class Lasa_Elementor_Feature_List_Image extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'feature_item_title_margin',
             [
-                'label' => esc_html__('Margin', 'lasa'),
+                'label' => esc_html__('Margin', 'themename'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'selectors' => [
@@ -752,14 +752,14 @@ class Lasa_Elementor_Feature_List_Image extends Lasa_Elementor_Widget_Base
         $this->start_controls_tab(
             'feature_item_title_tab_normal',
             [
-                'label' => esc_html__('Normal', 'lasa'),
+                'label' => esc_html__('Normal', 'themename'),
             ]
         );
 
         $this->add_control(
             'feature_item_title_color',
             [
-                'label' => esc_html__('Color', 'lasa'),
+                'label' => esc_html__('Color', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -774,14 +774,14 @@ class Lasa_Elementor_Feature_List_Image extends Lasa_Elementor_Widget_Base
         $this->start_controls_tab(
             'feature_item_title_tab_hover',
             [
-                'label' => esc_html__('Hover', 'lasa'),
+                'label' => esc_html__('Hover', 'themename'),
             ]
         );
 
         $this->add_control(
             'feature_item_title_color_hover',
             [
-                'label' => esc_html__('Hover Color', 'lasa'),
+                'label' => esc_html__('Hover Color', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -831,4 +831,4 @@ class Lasa_Elementor_Feature_List_Image extends Lasa_Elementor_Widget_Base
         echo wp_get_attachment_image($image['id'], 'full');
     }
 }
-$widgets_manager->register(new Lasa_Elementor_Feature_List_Image());
+$widgets_manager->register(new Themename_Elementor_Feature_List_Image());

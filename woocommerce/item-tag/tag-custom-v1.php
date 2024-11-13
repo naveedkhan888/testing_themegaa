@@ -25,7 +25,7 @@
         <?php if ($count_item == 'yes') {
         ?>
                 <div class="tag-hover">
-                    <span class="count-item"><?php echo trim($tag_count).' '.apply_filters('lasa_custom_item', 'products'); ?></span>
+                    <span class="count-item"><?php echo trim($tag_count).' '.apply_filters('themename_custom_item', 'products'); ?></span>
                 </div>
             <?php
     }

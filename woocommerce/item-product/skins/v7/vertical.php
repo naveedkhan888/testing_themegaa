@@ -4,8 +4,8 @@ global $product;
 $product_style = isset($product_style) ? $product_style : '';
 
 ?>
-<div class="product-block product <?php echo esc_attr($product_style); ?> <?php lasa_is_product_variable_sale(); ?>" data-product-id="<?php echo esc_attr($product->get_id()); ?>">
-    <?php do_action( 'lasa_content_product_item_before' ); ?>
+<div class="product-block product <?php echo esc_attr($product_style); ?> <?php themename_is_product_variable_sale(); ?>" data-product-id="<?php echo esc_attr($product->get_id()); ?>">
+    <?php do_action( 'themename_content_product_item_before' ); ?>
 	<div class="product-content">
 		<?php
             /**
@@ -31,14 +31,14 @@ $product_style = isset($product_style) ? $product_style : '';
             ?>
 		</div>
 		<div class="caption">
-			<?php lasa_the_product_name(); ?>
+			<?php themename_the_product_name(); ?>
 			<?php
                 /**
-                * lasa_after_title_tbay_subtitle hook
+                * themename_after_title_tbay_subtitle hook
                 *
-                * @hooked lasa_woo_get_subtitle - 0
+                * @hooked themename_woo_get_subtitle - 0
                 */
-                do_action('lasa_after_title_tbay_subtitle');
+                do_action('themename_after_title_tbay_subtitle');
             ?>
 
 			<?php do_action('woocommerce_after_shop_loop_item_vertical_title'); ?>

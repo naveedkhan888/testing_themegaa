@@ -102,7 +102,7 @@ class PushoverHandler extends SocketHandler
 
     private function buildContent($record)
     {
-        // Pushover has a limit of 512 clasacters on title and message combined.
+        // Pushover has a limit of 512 cthemenamecters on title and message combined.
         $maxMessageLength = 512 - strlen($this->title);
 
         $message = ($this->useFormattedMessage) ? $record['formatted'] : $record['message'];

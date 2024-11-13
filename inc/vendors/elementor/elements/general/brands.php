@@ -1,6 +1,6 @@
 <?php
 
-if (! defined('ABSPATH') || function_exists('Lasa_Elementor_Brands')) {
+if (! defined('ABSPATH') || function_exists('Themename_Elementor_Brands')) {
     exit; // Exit if accessed directly.
 }
 
@@ -14,7 +14,7 @@ use Elementor\Controls_Manager;
  *
  * @since 1.0.0
  */
-class Lasa_Elementor_Brands extends Lasa_Elementor_Carousel_Base
+class Themename_Elementor_Brands extends Themename_Elementor_Carousel_Base
 {
     /**
      * Get widget name.
@@ -43,12 +43,12 @@ class Lasa_Elementor_Brands extends Lasa_Elementor_Carousel_Base
      */
     public function get_title()
     {
-        return esc_html__('Lasa Brands', 'lasa');
+        return esc_html__('Themename Brands', 'themename');
     }
 
     public function get_script_depends()
     {
-        return [ 'lasa-custom-slick', 'slick' ];
+        return [ 'themename-custom-slick', 'slick' ];
     }
  
     /**
@@ -81,38 +81,38 @@ class Lasa_Elementor_Brands extends Lasa_Elementor_Carousel_Base
         $this->start_controls_section(
             'section_general',
             [
-                'label' => esc_html__('General', 'lasa'),
+                'label' => esc_html__('General', 'themename'),
             ]
         );
  
         $this->add_control(
             'layout_type',
             [
-                'label'     => esc_html__('Layout Type', 'lasa'),
+                'label'     => esc_html__('Layout Type', 'themename'),
                 'type'      => Controls_Manager::SELECT,
                 'default'   => 'grid',
                 'options'   => [
-                    'grid'      => esc_html__('Grid', 'lasa'),
-                    'carousel'  => esc_html__('Carousel', 'lasa'),
+                    'grid'      => esc_html__('Grid', 'themename'),
+                    'carousel'  => esc_html__('Carousel', 'themename'),
                 ],
             ]
         );
         $this->add_control(
             'brands_align',
             [
-                'label' => esc_html__('Align', 'lasa'),
+                'label' => esc_html__('Align', 'themename'),
                 'type' => Controls_Manager::CHOOSE,
                 'options' => [
                     'start' => [
-                        'title' => esc_html__('Left', 'lasa'),
+                        'title' => esc_html__('Left', 'themename'),
                         'icon' => 'eicon-text-align-left'
                     ],
                     'center' => [
-                        'title' => esc_html__('Center', 'lasa'),
+                        'title' => esc_html__('Center', 'themename'),
                         'icon' => 'eicon-text-align-center'
                     ],
                     'flex-end' => [
-                        'title' => esc_html__('Right', 'lasa'),
+                        'title' => esc_html__('Right', 'themename'),
                         'icon' => 'eicon-text-align-right'
                     ],
                 ],
@@ -127,7 +127,7 @@ class Lasa_Elementor_Brands extends Lasa_Elementor_Carousel_Base
         $brands->add_control(
             'brand_image',
             [
-                'label' => esc_html__('Choose Image', 'lasa'),
+                'label' => esc_html__('Choose Image', 'themename'),
                 'type' => Controls_Manager::MEDIA,
                 'default' => [
                     'url' => Elementor\Utils::get_placeholder_image_src(),
@@ -138,16 +138,16 @@ class Lasa_Elementor_Brands extends Lasa_Elementor_Carousel_Base
         $brands->add_control(
             'brand_link',
             [
-                'label' => esc_html__('Link to', 'lasa'),
+                'label' => esc_html__('Link to', 'themename'),
                 'type' => Controls_Manager::URL,
-                'placeholder' => esc_html__('https://your-link.com', 'lasa'),
+                'placeholder' => esc_html__('https://your-link.com', 'themename'),
             ]
         );
 
         $this->add_control(
             'brands',
             [
-                'label' => esc_html__('Brand Items', 'lasa'),
+                'label' => esc_html__('Brand Items', 'themename'),
                 'type' => Controls_Manager::REPEATER,
                 'fields' => $brands->get_controls()
             ]
@@ -192,4 +192,4 @@ class Lasa_Elementor_Brands extends Lasa_Elementor_Carousel_Base
         <?php
     }
 }
-$widgets_manager->register(new Lasa_Elementor_Brands());
+$widgets_manager->register(new Themename_Elementor_Brands());

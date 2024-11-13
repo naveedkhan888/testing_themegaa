@@ -1,5 +1,5 @@
 <?php
-if (!lasa_redux_framework_activated()) {
+if (!themename_redux_framework_activated()) {
     return;
 }
 
@@ -8,9 +8,9 @@ class Tbay_Widget_Recent_Post extends Tbay_Widget
     public function __construct()
     {
         parent::__construct(
-            'lasa_recent_post',
-            esc_html__('Lasa Recent Posts', 'lasa'),
-            array( 'description' => esc_html__('Show list of recent post', 'lasa'), )
+            'themename_recent_post',
+            esc_html__('Themename Recent Posts', 'themename'),
+            array( 'description' => esc_html__('Show list of recent post', 'themename'), )
         );
         $this->widgetName = 'recent_post';
     }
@@ -36,12 +36,12 @@ class Tbay_Widget_Recent_Post extends Tbay_Widget
         $instance = wp_parse_args((array) $instance, $defaults);
         // Widget admin form?>
         <p>
-            <label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><?php esc_html_e('Title:', 'lasa'); ?></label>
+            <label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><?php esc_html_e('Title:', 'themename'); ?></label>
             <input class="widefat" id="<?php echo esc_attr($this->get_field_id('title')); ?>" name="<?php echo esc_attr($this->get_field_name('title')); ?>" type="text" value="<?php echo esc_attr($instance['title']); ?>" />
         </p>
         <p>
             <label for="<?php echo esc_attr($this->get_field_id('post_type')); ?>">
-                <?php esc_html_e('Type:', 'lasa'); ?>
+                <?php esc_html_e('Type:', 'themename'); ?>
             </label>
             <br>
             <select id="<?php echo esc_attr($this->get_field_id('post_type')); ?>" name="<?php echo esc_attr($this->get_field_name('post_type')); ?>">
@@ -53,7 +53,7 @@ class Tbay_Widget_Recent_Post extends Tbay_Widget
             </select>
         </p>
         <p>
-            <label for="<?php echo esc_attr($this->get_field_id('number_post')); ?>"><?php esc_html_e('Num Posts:', 'lasa'); ?></label>
+            <label for="<?php echo esc_attr($this->get_field_id('number_post')); ?>"><?php esc_html_e('Num Posts:', 'themename'); ?></label>
             <input class="widefat" id="<?php echo esc_attr($this->get_field_id('number_post')); ?>" name="<?php echo esc_attr($this->get_field_name('number_post')); ?>" type="text" value="<?php echo esc_attr($instance['number_post']); ?>" />
         </p>  
 

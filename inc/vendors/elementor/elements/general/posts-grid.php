@@ -1,6 +1,6 @@
 <?php
 
-if (! defined('ABSPATH') || function_exists('Lasa_Elementor_Posts_Grid')) {
+if (! defined('ABSPATH') || function_exists('Themename_Elementor_Posts_Grid')) {
     exit; // Exit if accessed directly.
 }
 
@@ -9,7 +9,7 @@ use Elementor\Group_Control_Typography;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Image_Size;
 
-class Lasa_Elementor_Posts_Grid extends Lasa_Elementor_Carousel_Base
+class Themename_Elementor_Posts_Grid extends Themename_Elementor_Carousel_Base
 {
     public function get_name()
     {
@@ -18,7 +18,7 @@ class Lasa_Elementor_Posts_Grid extends Lasa_Elementor_Carousel_Base
 
     public function get_title()
     {
-        return esc_html__('Lasa Posts Grid', 'lasa');
+        return esc_html__('Themename Posts Grid', 'themename');
     }
 
     public function get_icon()
@@ -43,7 +43,7 @@ class Lasa_Elementor_Posts_Grid extends Lasa_Elementor_Carousel_Base
      */
     public function get_script_depends()
     {
-        return ['slick', 'lasa-custom-slick'];
+        return ['slick', 'themename-custom-slick'];
     }
 
     protected function register_controls()
@@ -53,16 +53,16 @@ class Lasa_Elementor_Posts_Grid extends Lasa_Elementor_Carousel_Base
         $this->start_controls_section(
             'general',
             [
-                'label' => esc_html__('General', 'lasa'),
+                'label' => esc_html__('General', 'themename'),
             ]
         );
 
         $this->add_control(
             'limit',
             [
-                'label' => esc_html__('Number of posts', 'lasa'),
+                'label' => esc_html__('Number of posts', 'themename'),
                 'type' => Controls_Manager::NUMBER,
-                'description' => esc_html__('Number of posts to show ( -1 = all )', 'lasa'),
+                'description' => esc_html__('Number of posts to show ( -1 = all )', 'themename'),
                 'default' => 6,
                 'min'  => -1
             ]
@@ -72,7 +72,7 @@ class Lasa_Elementor_Posts_Grid extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'advanced',
             [
-                'label' => esc_html__('Advanced', 'lasa'),
+                'label' => esc_html__('Advanced', 'themename'),
                 'type' => Controls_Manager::HEADING,
             ]
         );
@@ -80,12 +80,12 @@ class Lasa_Elementor_Posts_Grid extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'layout_type',
             [
-                'label'     => esc_html__('Layout Type', 'lasa'),
+                'label'     => esc_html__('Layout Type', 'themename'),
                 'type'      => Controls_Manager::SELECT,
                 'default'   => 'grid',
                 'options'   => [
-                    'grid'      => esc_html__('Grid', 'lasa'),
-                    'carousel'  => esc_html__('Carousel', 'lasa'),
+                    'grid'      => esc_html__('Grid', 'themename'),
+                    'carousel'  => esc_html__('Carousel', 'themename'),
                 ],
             ]
         );
@@ -93,13 +93,13 @@ class Lasa_Elementor_Posts_Grid extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'orderby',
             [
-                'label' => esc_html__('Order By', 'lasa'),
+                'label' => esc_html__('Order By', 'themename'),
                 'type' => Controls_Manager::SELECT,
                 'default' => 'post_date',
                 'options' => [
-                    'post_date'  => esc_html__('Date', 'lasa'),
-                    'post_title' => esc_html__('Title', 'lasa'),
-                    'rand'       => esc_html__('Random', 'lasa'),
+                    'post_date'  => esc_html__('Date', 'themename'),
+                    'post_title' => esc_html__('Title', 'themename'),
+                    'rand'       => esc_html__('Random', 'themename'),
                 ],
             ]
         );
@@ -107,12 +107,12 @@ class Lasa_Elementor_Posts_Grid extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'order',
             [
-                'label' => esc_html__('Order', 'lasa'),
+                'label' => esc_html__('Order', 'themename'),
                 'type' => Controls_Manager::SELECT,
                 'default' => 'desc',
                 'options' => [
-                    'asc' => esc_html__('ASC', 'lasa'),
-                    'desc' => esc_html__('DESC', 'lasa'),
+                    'asc' => esc_html__('ASC', 'themename'),
+                    'desc' => esc_html__('DESC', 'themename'),
                 ],
             ]
         );
@@ -120,7 +120,7 @@ class Lasa_Elementor_Posts_Grid extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'categories',
             [
-                'label' => esc_html__('Categories', 'lasa'),
+                'label' => esc_html__('Categories', 'themename'),
                 'type' => Controls_Manager::SELECT2,
                 'options' => $this->get_post_categories(),
                 'label_block' => true,
@@ -131,13 +131,13 @@ class Lasa_Elementor_Posts_Grid extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'cat_operator',
             [
-                'label' => esc_html__('Category Operator', 'lasa'),
+                'label' => esc_html__('Category Operator', 'themename'),
                 'type' => Controls_Manager::SELECT,
                 'default' => 'IN',
                 'options' => [
-                    'AND' => esc_html__('AND', 'lasa'),
-                    'IN' => esc_html__('IN', 'lasa'),
-                    'NOT IN' => esc_html__('NOT IN', 'lasa'),
+                    'AND' => esc_html__('AND', 'themename'),
+                    'IN' => esc_html__('IN', 'themename'),
+                    'NOT IN' => esc_html__('NOT IN', 'themename'),
                 ],
                 'condition' => [
                     'categories!' => ''
@@ -148,7 +148,7 @@ class Lasa_Elementor_Posts_Grid extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'style',
             [
-                'label'   => esc_html__('Style', 'lasa'),
+                'label'   => esc_html__('Style', 'themename'),
                 'type'    => Controls_Manager::SELECT,
                 'options' => $this->get_template_post_type(),
                 'default' => 'post-style-1',
@@ -160,7 +160,7 @@ class Lasa_Elementor_Posts_Grid extends Lasa_Elementor_Carousel_Base
         $this->start_controls_section(
             'content',
             [
-                'label' => esc_html__('Content', 'lasa'),
+                'label' => esc_html__('Content', 'themename'),
             ]
         );
         $this->register_thumbnail_controls();
@@ -186,7 +186,7 @@ class Lasa_Elementor_Posts_Grid extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'advanced_image',
             [
-                'label' => esc_html__('Image', 'lasa'),
+                'label' => esc_html__('Image', 'themename'),
                 'type' => Controls_Manager::HEADING,
             ]
         );
@@ -206,7 +206,7 @@ class Lasa_Elementor_Posts_Grid extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'advanced_title',
             [
-                'label' => esc_html__('Title', 'lasa'),
+                'label' => esc_html__('Title', 'themename'),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -214,10 +214,10 @@ class Lasa_Elementor_Posts_Grid extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'show_title',
             [
-                'label' => esc_html__('Title', 'lasa'),
+                'label' => esc_html__('Title', 'themename'),
                 'type' => Controls_Manager::SWITCHER,
-                'label_on' => esc_html__('Show', 'lasa'),
-                'label_off' => esc_html__('Hide', 'lasa'),
+                'label_on' => esc_html__('Show', 'themename'),
+                'label_off' => esc_html__('Hide', 'themename'),
                 'default' => 'yes',
                 
             ]
@@ -226,7 +226,7 @@ class Lasa_Elementor_Posts_Grid extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'post_title_tag',
             [
-                'label' => esc_html__('Title HTML Tag', 'lasa'),
+                'label' => esc_html__('Title HTML Tag', 'themename'),
                 'type' => Controls_Manager::SELECT,
                 'options' => [
                     'h1' => 'H1',
@@ -252,7 +252,7 @@ class Lasa_Elementor_Posts_Grid extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'advanced_category',
             [
-                'label' => esc_html__('Category', 'lasa'),
+                'label' => esc_html__('Category', 'themename'),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -260,10 +260,10 @@ class Lasa_Elementor_Posts_Grid extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'show_category',
             [
-                'label' => esc_html__('Category', 'lasa'),
+                'label' => esc_html__('Category', 'themename'),
                 'type' => Controls_Manager::SWITCHER,
-                'label_on' => esc_html__('Show', 'lasa'),
-                'label_off' => esc_html__('Hide', 'lasa'),
+                'label_on' => esc_html__('Show', 'themename'),
+                'label_off' => esc_html__('Hide', 'themename'),
                 'default' => 'yes',
             ]
         );
@@ -274,7 +274,7 @@ class Lasa_Elementor_Posts_Grid extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'advanced_excerpt',
             [
-                'label' => esc_html__('Excerpt', 'lasa'),
+                'label' => esc_html__('Excerpt', 'themename'),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -282,10 +282,10 @@ class Lasa_Elementor_Posts_Grid extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'show_excerpt',
             [
-                'label' => esc_html__('Excerpt', 'lasa'),
+                'label' => esc_html__('Excerpt', 'themename'),
                 'type' => Controls_Manager::SWITCHER,
-                'label_on' => esc_html__('Show', 'lasa'),
-                'label_off' => esc_html__('Hide', 'lasa'),
+                'label_on' => esc_html__('Show', 'themename'),
+                'label_off' => esc_html__('Hide', 'themename'),
                 'default' => 'yes',
             ]
         );
@@ -293,7 +293,7 @@ class Lasa_Elementor_Posts_Grid extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'excerpt_length',
             [
-                'label' => esc_html__('Excerpt Length', 'lasa'),
+                'label' => esc_html__('Excerpt Length', 'themename'),
                 'type' => Controls_Manager::NUMBER,
                 'default' => apply_filters('excerpt_length', 25),
                 'condition' => [
@@ -308,7 +308,7 @@ class Lasa_Elementor_Posts_Grid extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'advanced_read_more',
             [
-                'label' => esc_html__('Read More', 'lasa'),
+                'label' => esc_html__('Read More', 'themename'),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -316,10 +316,10 @@ class Lasa_Elementor_Posts_Grid extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'show_read_more',
             [
-                'label' => esc_html__('Read More', 'lasa'),
+                'label' => esc_html__('Read More', 'themename'),
                 'type' => Controls_Manager::SWITCHER,
-                'label_on' => esc_html__('Show', 'lasa'),
-                'label_off' => esc_html__('Hide', 'lasa'),
+                'label_on' => esc_html__('Show', 'themename'),
+                'label_off' => esc_html__('Hide', 'themename'),
                 'default' => 'no',
             ]
         );
@@ -327,9 +327,9 @@ class Lasa_Elementor_Posts_Grid extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'read_more_text',
             [
-                'label' => esc_html__('Read More Text', 'lasa'),
+                'label' => esc_html__('Read More Text', 'themename'),
                 'type' => Controls_Manager::TEXT,
-                'default' => esc_html__('Read more', 'lasa'),
+                'default' => esc_html__('Read more', 'themename'),
                 'condition' => [
                     'show_read_more' => 'yes',
                 ],
@@ -342,7 +342,7 @@ class Lasa_Elementor_Posts_Grid extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'advanced_meta',
             [
-                'label' => esc_html__('Meta', 'lasa'),
+                'label' => esc_html__('Meta', 'themename'),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -351,10 +351,10 @@ class Lasa_Elementor_Posts_Grid extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'show_author',
             [
-                'label' => esc_html__('Author', 'lasa'),
+                'label' => esc_html__('Author', 'themename'),
                 'type' => Controls_Manager::SWITCHER,
-                'label_on' => esc_html__('Show', 'lasa'),
-                'label_off' => esc_html__('Hide', 'lasa'),
+                'label_on' => esc_html__('Show', 'themename'),
+                'label_off' => esc_html__('Hide', 'themename'),
                 'default' => 'no',
             ]
         );
@@ -364,10 +364,10 @@ class Lasa_Elementor_Posts_Grid extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'show_date',
             [
-                'label' => esc_html__('Date', 'lasa'),
+                'label' => esc_html__('Date', 'themename'),
                 'type' => Controls_Manager::SWITCHER,
-                'label_on' => esc_html__('Show', 'lasa'),
-                'label_off' => esc_html__('Hide', 'lasa'),
+                'label_on' => esc_html__('Show', 'themename'),
+                'label_off' => esc_html__('Hide', 'themename'),
                 'default' => 'yes',
             ]
         );
@@ -375,10 +375,10 @@ class Lasa_Elementor_Posts_Grid extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'show_comments',
             [
-                'label' => esc_html__('Comments', 'lasa'),
+                'label' => esc_html__('Comments', 'themename'),
                 'type' => Controls_Manager::SWITCHER,
-                'label_on' => esc_html__('Show', 'lasa'),
-                'label_off' => esc_html__('Hide', 'lasa'),
+                'label_on' => esc_html__('Show', 'themename'),
+                'label_off' => esc_html__('Hide', 'themename'),
                 'default' => 'no',
             ]
         );
@@ -386,10 +386,10 @@ class Lasa_Elementor_Posts_Grid extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'show_comments_text',
             [
-                'label' => esc_html__('Comments Text', 'lasa'),
+                'label' => esc_html__('Comments Text', 'themename'),
                 'type' => Controls_Manager::SWITCHER,
-                'label_on' => esc_html__('Show', 'lasa'),
-                'label_off' => esc_html__('Hide', 'lasa'),
+                'label_on' => esc_html__('Show', 'themename'),
+                'label_off' => esc_html__('Hide', 'themename'),
                 'default' => 'no',
                 'condition' => [
                     'show_comments' => 'yes'
@@ -467,7 +467,7 @@ class Lasa_Elementor_Posts_Grid extends Lasa_Elementor_Carousel_Base
         $this->start_controls_section(
             'section_image',
             [
-                'label' => esc_html__('Image', 'lasa'),
+                'label' => esc_html__('Image', 'themename'),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -475,7 +475,7 @@ class Lasa_Elementor_Posts_Grid extends Lasa_Elementor_Carousel_Base
         $this->add_responsive_control(
             'img_border_margin',
             [
-                'label' => esc_html__('Margin', 'lasa'),
+                'label' => esc_html__('Margin', 'themename'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'selectors' => [
@@ -486,7 +486,7 @@ class Lasa_Elementor_Posts_Grid extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'img_border_radius',
             [
-                'label' => esc_html__('Border Radius', 'lasa'),
+                'label' => esc_html__('Border Radius', 'themename'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'selectors' => [
@@ -501,7 +501,7 @@ class Lasa_Elementor_Posts_Grid extends Lasa_Elementor_Carousel_Base
         $this->start_controls_tab(
             'normal',
             [
-                'label' => esc_html__('Normal', 'lasa'),
+                'label' => esc_html__('Normal', 'themename'),
             ]
         );
 
@@ -518,7 +518,7 @@ class Lasa_Elementor_Posts_Grid extends Lasa_Elementor_Carousel_Base
         $this->start_controls_tab(
             'hover',
             [
-                'label' => esc_html__('Hover', 'lasa'),
+                'label' => esc_html__('Hover', 'themename'),
             ]
         );
 
@@ -542,7 +542,7 @@ class Lasa_Elementor_Posts_Grid extends Lasa_Elementor_Carousel_Base
         $this->start_controls_section(
             'section_content',
             [
-                'label' => esc_html__('Content', 'lasa'),
+                'label' => esc_html__('Content', 'themename'),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -550,7 +550,7 @@ class Lasa_Elementor_Posts_Grid extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'heading_title_style',
             [
-                'label' => esc_html__('Title', 'lasa'),
+                'label' => esc_html__('Title', 'themename'),
                 'type' => Controls_Manager::HEADING,
                 'condition' => [
                     'show_title' => 'yes',
@@ -561,19 +561,19 @@ class Lasa_Elementor_Posts_Grid extends Lasa_Elementor_Carousel_Base
         $this->add_responsive_control(
             'post_title_alignment',
             [
-                'label'   => esc_html__('Alignment', 'lasa'),
+                'label'   => esc_html__('Alignment', 'themename'),
                 'type' => Controls_Manager::CHOOSE,
                 'options' => [
                     'left' => [
-                        'title' => esc_html__('left', 'lasa'),
+                        'title' => esc_html__('left', 'themename'),
                         'icon' => 'fa fa-align-left',
                     ],
                     'center' => [
-                        'title' => esc_html__('Center', 'lasa'),
+                        'title' => esc_html__('Center', 'themename'),
                         'icon' => 'fa fa-align-center',
                     ],
                     'right' => [
-                        'title' => esc_html__('right', 'lasa'),
+                        'title' => esc_html__('right', 'themename'),
                         'icon' => 'fa fa-align-right',
                     ],
                 ],
@@ -589,7 +589,7 @@ class Lasa_Elementor_Posts_Grid extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'post_title_color',
             [
-                'label' => esc_html__('Color', 'lasa'),
+                'label' => esc_html__('Color', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .post .entry-title, {{WRAPPER}} .post .entry-title a' => 'color: {{VALUE}};',
@@ -614,7 +614,7 @@ class Lasa_Elementor_Posts_Grid extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'post_title_spacing',
             [
-                'label' => esc_html__('Spacing', 'lasa'),
+                'label' => esc_html__('Spacing', 'themename'),
                 'type' => Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [
@@ -633,7 +633,7 @@ class Lasa_Elementor_Posts_Grid extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'heading_category_style',
             [
-                'label' => esc_html__('Category', 'lasa'),
+                'label' => esc_html__('Category', 'themename'),
                 'type' => Controls_Manager::HEADING,
                 'condition' => [
                     'show_category' => 'yes',
@@ -644,19 +644,19 @@ class Lasa_Elementor_Posts_Grid extends Lasa_Elementor_Carousel_Base
         $this->add_responsive_control(
             'post_category_alignment',
             [
-                'label'   => esc_html__('Alignment', 'lasa'),
+                'label'   => esc_html__('Alignment', 'themename'),
                 'type' => Controls_Manager::CHOOSE,
                 'options' => [
                     'flex-start' => [
-                        'title' => esc_html__('left', 'lasa'),
+                        'title' => esc_html__('left', 'themename'),
                         'icon' => 'fa fa-align-left',
                     ],
                     'center' => [
-                        'title' => esc_html__('Center', 'lasa'),
+                        'title' => esc_html__('Center', 'themename'),
                         'icon' => 'fa fa-align-center',
                     ],
                     'flex-end' => [
-                        'title' => esc_html__('right', 'lasa'),
+                        'title' => esc_html__('right', 'themename'),
                         'icon' => 'fa fa-align-right',
                     ],
                 ],
@@ -673,7 +673,7 @@ class Lasa_Elementor_Posts_Grid extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'category_color',
             [
-                'label' => esc_html__('Color', 'lasa'),
+                'label' => esc_html__('Color', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .post .entry-category, {{WRAPPER}} .post .entry-category a' => 'color: {{VALUE}};',
@@ -698,7 +698,7 @@ class Lasa_Elementor_Posts_Grid extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'category_spacing',
             [
-                'label' => esc_html__('Spacing', 'lasa'),
+                'label' => esc_html__('Spacing', 'themename'),
                 'type' => Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [
@@ -717,7 +717,7 @@ class Lasa_Elementor_Posts_Grid extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'heading_meta_style',
             [
-                'label' => esc_html__('Meta', 'lasa'),
+                'label' => esc_html__('Meta', 'themename'),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -727,19 +727,19 @@ class Lasa_Elementor_Posts_Grid extends Lasa_Elementor_Carousel_Base
         $this->add_responsive_control(
             'post_meta_alignment',
             [
-                'label'   => esc_html__('Alignment', 'lasa'),
+                'label'   => esc_html__('Alignment', 'themename'),
                 'type' => Controls_Manager::CHOOSE,
                 'options' => [
                     'flex-start' => [
-                        'title' => esc_html__('left', 'lasa'),
+                        'title' => esc_html__('left', 'themename'),
                         'icon' => 'fa fa-align-left',
                     ],
                     'center' => [
-                        'title' => esc_html__('Center', 'lasa'),
+                        'title' => esc_html__('Center', 'themename'),
                         'icon' => 'fa fa-align-center',
                     ],
                     'flex-end' => [
-                        'title' => esc_html__('right', 'lasa'),
+                        'title' => esc_html__('right', 'themename'),
                         'icon' => 'fa fa-align-right',
                     ],
                 ],
@@ -752,7 +752,7 @@ class Lasa_Elementor_Posts_Grid extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'meta_color',
             [
-                'label' => esc_html__('Color', 'lasa'),
+                'label' => esc_html__('Color', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .entry-meta-list, {{WRAPPER}} .entry-meta-list a' => 'color: {{VALUE}};',
@@ -771,7 +771,7 @@ class Lasa_Elementor_Posts_Grid extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'meta_spacing',
             [
-                'label' => esc_html__('Spacing', 'lasa'),
+                'label' => esc_html__('Spacing', 'themename'),
                 'type' => Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [
@@ -787,7 +787,7 @@ class Lasa_Elementor_Posts_Grid extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'heading_excerpt_style',
             [
-                'label' => esc_html__('Excerpt', 'lasa'),
+                'label' => esc_html__('Excerpt', 'themename'),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'before',
                 'condition' => [
@@ -799,19 +799,19 @@ class Lasa_Elementor_Posts_Grid extends Lasa_Elementor_Carousel_Base
         $this->add_responsive_control(
             'post_excerpt_alignment',
             [
-                'label'   => esc_html__('Alignment', 'lasa'),
+                'label'   => esc_html__('Alignment', 'themename'),
                 'type' => Controls_Manager::CHOOSE,
                 'options' => [
                     'left' => [
-                        'title' => esc_html__('left', 'lasa'),
+                        'title' => esc_html__('left', 'themename'),
                         'icon' => 'fa fa-align-left',
                     ],
                     'center' => [
-                        'title' => esc_html__('Center', 'lasa'),
+                        'title' => esc_html__('Center', 'themename'),
                         'icon' => 'fa fa-align-center',
                     ],
                     'right' => [
-                        'title' => esc_html__('right', 'lasa'),
+                        'title' => esc_html__('right', 'themename'),
                         'icon' => 'fa fa-align-right',
                     ],
                 ],
@@ -827,7 +827,7 @@ class Lasa_Elementor_Posts_Grid extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'excerpt_color',
             [
-                'label' => esc_html__('Color', 'lasa'),
+                'label' => esc_html__('Color', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .entry-description' => 'color: {{VALUE}};',
@@ -852,7 +852,7 @@ class Lasa_Elementor_Posts_Grid extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'excerpt_spacing',
             [
-                'label' => esc_html__('Spacing', 'lasa'),
+                'label' => esc_html__('Spacing', 'themename'),
                 'type' => Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [
@@ -871,7 +871,7 @@ class Lasa_Elementor_Posts_Grid extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'heading_readmore_style',
             [
-                'label' => esc_html__('Read More', 'lasa'),
+                'label' => esc_html__('Read More', 'themename'),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'before',
                 'condition' => [
@@ -883,19 +883,19 @@ class Lasa_Elementor_Posts_Grid extends Lasa_Elementor_Carousel_Base
         $this->add_responsive_control(
             'post_readmore_alignment',
             [
-                'label'   => esc_html__('Alignment', 'lasa'),
+                'label'   => esc_html__('Alignment', 'themename'),
                 'type' => Controls_Manager::CHOOSE,
                 'options' => [
                     'left' => [
-                        'title' => esc_html__('left', 'lasa'),
+                        'title' => esc_html__('left', 'themename'),
                         'icon' => 'fa fa-align-left',
                     ],
                     'center' => [
-                        'title' => esc_html__('Center', 'lasa'),
+                        'title' => esc_html__('Center', 'themename'),
                         'icon' => 'fa fa-align-center',
                     ],
                     'right' => [
-                        'title' => esc_html__('right', 'lasa'),
+                        'title' => esc_html__('right', 'themename'),
                         'icon' => 'fa fa-align-right',
                     ],
                 ],
@@ -911,7 +911,7 @@ class Lasa_Elementor_Posts_Grid extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'read_more_color',
             [
-                'label' => esc_html__('Color', 'lasa'),
+                'label' => esc_html__('Color', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .readmore' => 'color: {{VALUE}};',
@@ -936,7 +936,7 @@ class Lasa_Elementor_Posts_Grid extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'read_more_spacing',
             [
-                'label' => esc_html__('Spacing', 'lasa'),
+                'label' => esc_html__('Spacing', 'themename'),
                 'type' => Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [
@@ -958,7 +958,7 @@ class Lasa_Elementor_Posts_Grid extends Lasa_Elementor_Carousel_Base
 
     private function get_template_post_type()
     {
-        $folderes = glob(LASA_PAGE_TEMPLATES. '/posts/item-*');
+        $folderes = glob(THEMENAME_PAGE_TEMPLATES. '/posts/item-*');
  
         $output = array();
 
@@ -971,4 +971,4 @@ class Lasa_Elementor_Posts_Grid extends Lasa_Elementor_Carousel_Base
         return $output;
     }
 }
-$widgets_manager->register(new Lasa_Elementor_Posts_Grid());
+$widgets_manager->register(new Themename_Elementor_Posts_Grid());

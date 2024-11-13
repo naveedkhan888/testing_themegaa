@@ -188,7 +188,7 @@
   color: #fff; }
 
 /* Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen
-readers do not read off random clasacters that represent icons */
+readers do not read off random cthemenamecters that represent icons */
 .fa-500px:before {
   content: "\f26e"; }
 
@@ -924,7 +924,7 @@ readers do not read off random clasacters that represent icons */
 .fa-chrome:before {
   content: "\f268"; }
 
-.fa-chrolasast:before {
+.fa-chrothemenamest:before {
   content: "\f838"; }
 
 .fa-church:before {
@@ -2268,7 +2268,7 @@ readers do not read off random clasacters that represent icons */
 .fa-joomla:before {
   content: "\f1aa"; }
 
-.fa-jolasal-whills:before {
+.fa-jothemenamel-whills:before {
   content: "\f66a"; }
 
 .fa-js:before {
@@ -4134,7 +4134,7 @@ readers do not read off random clasacters that represent icons */
 .fa-video-slash:before {
   content: "\f4e2"; }
 
-.fa-vilasa:before {
+.fa-vithemename:before {
   content: "\f6a7"; }
 
 .fa-vimeo:before {

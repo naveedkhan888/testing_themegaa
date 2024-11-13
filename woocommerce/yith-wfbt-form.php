@@ -86,7 +86,7 @@ if (!(defined('YITH_WFBT_PREMIUM') && YITH_WFBT_PREMIUM)) {
 			                        <?php endif ?>
 
 			                        <span class="product-name">
-							            <?php echo(($product_id == $main_product_id) ? '<span>'. esc_html__('This item', 'lasa') . ': &nbsp;</span>' : '') . sprintf('%1$s <span class="att">%2$s</span>', $product->get_title(), wc_get_formatted_variation($product, true)); ?>
+							            <?php echo(($product_id == $main_product_id) ? '<span>'. esc_html__('This item', 'themename') . ': &nbsp;</span>' : '') . sprintf('%1$s <span class="att">%2$s</span>', $product->get_title(), wc_get_formatted_variation($product, true)); ?>
 			                        </span>
 
 			                        <?php if ($product_id != $main_product_id) : ?>

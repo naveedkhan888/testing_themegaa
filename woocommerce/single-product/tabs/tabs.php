@@ -19,15 +19,15 @@ if (! defined('ABSPATH')) {
     exit;
 }
 
-$tabs_layout   =  apply_filters('lasa_woo_tabs_style_single_product', 10, 2);
-if (wp_is_mobile() && lasa_tbay_get_config('enable_tabs_mobile', false)) {
+$tabs_layout   =  apply_filters('themename_woo_tabs_style_single_product', 10, 2);
+if (wp_is_mobile() && themename_tbay_get_config('enable_tabs_mobile', false)) {
 	wc_get_template('single-product/tabs/tabs-mobile.php');
 	return;
 }
 
 if ($tabs_layout !== 'fulltext') {
 	add_filter('woocommerce_product_description_heading', '__return_empty_string', 10, 1);
-	add_filter('lasa_woocommerce_product_more_product_heading', '__return_empty_string', 10, 1);
+	add_filter('themename_woocommerce_product_more_product_heading', '__return_empty_string', 10, 1);
 }
 
 if (isset($tabs_layout)) {

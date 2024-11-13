@@ -3,7 +3,7 @@
  */
 
 ( function( $ ) {
-	var $style = $( '#lasa-color-scheme-css' ),
+	var $style = $( '#themename-color-scheme-css' ),
 		api = wp.customize;
 
 	api( 'blogname', function( value ) {

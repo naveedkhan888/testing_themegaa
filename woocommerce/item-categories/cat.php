@@ -18,7 +18,7 @@ $thumbnail_id = get_term_meta($cat_id, 'thumbnail_id', true);
 
     <a class="cat-name" href="<?php echo esc_url(get_term_link($cat_slug, 'product_cat')); ?>">
         <?php echo trim($cat_name); ?>
-        <span class="count-item">(<?php echo trim($cat_count).' '.apply_filters('lasa_tbay_categories_count_item', esc_html__('products', 'lasa')); ?>)</span>
+        <span class="count-item">(<?php echo trim($cat_count).' '.apply_filters('themename_tbay_categories_count_item', esc_html__('products', 'themename')); ?>)</span>
 
     </a>
 

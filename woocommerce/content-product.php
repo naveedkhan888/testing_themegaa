@@ -25,7 +25,7 @@ if (! $product || ! $product->is_visible()) {
     return;
 }
 
-$woo_display = lasa_tbay_woocommerce_get_display_mode();
+$woo_display = themename_tbay_woocommerce_get_display_mode();
 
 $show_des 		= isset($show_des) ? $show_des : false;
 $countdown 		= isset($countdown) ? $countdown : false;
@@ -35,7 +35,7 @@ $flash_sales 	= isset($flash_sales) ? $flash_sales : false;
  
 // Extra post classes
 $classes    = array();
-$skin       = lasa_tbay_get_theme();
+$skin       = themename_tbay_get_theme();
 if ((isset($list) && $list === 'list')) {
     $inner = $list;
 } elseif (empty($list) && $woo_display == 'list') {

@@ -1,6 +1,6 @@
 <?php
 
-if (! defined('ABSPATH') || function_exists('Lasa_Elementor_Image_Color_Tab')) {
+if (! defined('ABSPATH') || function_exists('Themename_Elementor_Image_Color_Tab')) {
     exit; // Exit if accessed directly.
 }
 
@@ -15,7 +15,7 @@ use Elementor\Group_Control_Typography;
  *
  * @since 1.0.0
  */
-class Lasa_Elementor_Image_Color_Tab extends Lasa_Elementor_Widget_Base
+class Themename_Elementor_Image_Color_Tab extends Themename_Elementor_Widget_Base
 {
     /**
      * Get widget name.
@@ -44,7 +44,7 @@ class Lasa_Elementor_Image_Color_Tab extends Lasa_Elementor_Widget_Base
      */
     public function get_title()
     {
-        return esc_html__('Lasa Image Color Tab', 'lasa');
+        return esc_html__('Themename Image Color Tab', 'themename');
     }
  
     /**
@@ -75,7 +75,7 @@ class Lasa_Elementor_Image_Color_Tab extends Lasa_Elementor_Widget_Base
         $this->start_controls_section(
             'section_general',
             [
-                'label' => esc_html__('General', 'lasa'),
+                'label' => esc_html__('General', 'themename'),
             ]
         );
 
@@ -83,7 +83,7 @@ class Lasa_Elementor_Image_Color_Tab extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'general_heading_color',
             [
-                'label' => esc_html__('List Color', 'lasa'),
+                'label' => esc_html__('List Color', 'themename'),
                 'type' => Controls_Manager::HEADING,
             ]
         );
@@ -95,7 +95,7 @@ class Lasa_Elementor_Image_Color_Tab extends Lasa_Elementor_Widget_Base
             $this->add_control(
                 'color_'.$value,
                 [
-                    'label' => esc_html__('Color ', 'lasa'). $value,
+                    'label' => esc_html__('Color ', 'themename'). $value,
                     'type' => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .gallery-color-picker-'.$value => '--color: {{VALUE}}; --border-color: {{VALUE}};',
@@ -110,7 +110,7 @@ class Lasa_Elementor_Image_Color_Tab extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'tabs',
             [
-                'label' => esc_html__('Tab Items', 'lasa'),
+                'label' => esc_html__('Tab Items', 'themename'),
                 'type' => Controls_Manager::REPEATER,
                 'fields' => $repeater->get_controls(),
             ]
@@ -126,7 +126,7 @@ class Lasa_Elementor_Image_Color_Tab extends Lasa_Elementor_Widget_Base
         $this->start_controls_section(
             'section_style_tabs',
             [
-                'label' => esc_html__('Style', 'lasa'),
+                'label' => esc_html__('Style', 'themename'),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -135,7 +135,7 @@ class Lasa_Elementor_Image_Color_Tab extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'heading_tab_item',
             [
-                'label' => esc_html__('Tab Item', 'lasa'),
+                'label' => esc_html__('Tab Item', 'themename'),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -155,14 +155,14 @@ class Lasa_Elementor_Image_Color_Tab extends Lasa_Elementor_Widget_Base
         $this->start_controls_tab(
             'item_tab_normal',
             [
-                'label' => esc_html__('Normal', 'lasa'),
+                'label' => esc_html__('Normal', 'themename'),
             ]
         );
 
         $this->add_control(
             'item_tab_color',
             [
-                'label' => esc_html__('Color', 'lasa'),
+                'label' => esc_html__('Color', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -177,14 +177,14 @@ class Lasa_Elementor_Image_Color_Tab extends Lasa_Elementor_Widget_Base
         $this->start_controls_tab(
             'item_tab_hover',
             [
-                'label' => esc_html__('Hover', 'lasa'),
+                'label' => esc_html__('Hover', 'themename'),
             ]
         );
 
         $this->add_control(
             'item_tab_color_hover',
             [
-                'label' => esc_html__('Color', 'lasa'),
+                'label' => esc_html__('Color', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -201,7 +201,7 @@ class Lasa_Elementor_Image_Color_Tab extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'item_tab_margin',
             [
-                'label' => esc_html__('Margin', 'lasa'),
+                'label' => esc_html__('Margin', 'themename'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'separator' => 'before',
@@ -214,7 +214,7 @@ class Lasa_Elementor_Image_Color_Tab extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'item_tab_padding',
             [
-                'label' => esc_html__('Padding', 'lasa'),
+                'label' => esc_html__('Padding', 'themename'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'selectors' => [
@@ -226,7 +226,7 @@ class Lasa_Elementor_Image_Color_Tab extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'heading_color_tab_wrapper',
             [
-                'label' => esc_html__('Color Item Wrapper', 'lasa'),
+                'label' => esc_html__('Color Item Wrapper', 'themename'),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -235,7 +235,7 @@ class Lasa_Elementor_Image_Color_Tab extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'color_tab_wrapper_margin',
             [
-                'label' => esc_html__('Margin', 'lasa'),
+                'label' => esc_html__('Margin', 'themename'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'selectors' => [
@@ -247,7 +247,7 @@ class Lasa_Elementor_Image_Color_Tab extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'heading_color_tab',
             [
-                'label' => esc_html__('Color Item', 'lasa'),
+                'label' => esc_html__('Color Item', 'themename'),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -256,7 +256,7 @@ class Lasa_Elementor_Image_Color_Tab extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'color_tab_margin',
             [
-                'label' => esc_html__('Margin', 'lasa'),
+                'label' => esc_html__('Margin', 'themename'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'separator' => 'before',
@@ -269,7 +269,7 @@ class Lasa_Elementor_Image_Color_Tab extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'color_tab_padding',
             [
-                'label' => esc_html__('Padding', 'lasa'),
+                'label' => esc_html__('Padding', 'themename'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'selectors' => [
@@ -289,7 +289,7 @@ class Lasa_Elementor_Image_Color_Tab extends Lasa_Elementor_Widget_Base
         $repeater->add_control(
             'tab_name',
             [
-                'label' => esc_html__('Tab Title', 'lasa'),
+                'label' => esc_html__('Tab Title', 'themename'),
                 'type' => Controls_Manager::TEXT,
             ]
         );
@@ -300,7 +300,7 @@ class Lasa_Elementor_Image_Color_Tab extends Lasa_Elementor_Widget_Base
             $repeater->add_control(
                 'tab_image_'.$value,
                 [
-                    'label' => esc_html__('Choose Image Color ', 'lasa'). $value,
+                    'label' => esc_html__('Choose Image Color ', 'themename'). $value,
                     'type' => Controls_Manager::MEDIA,
                     'default' => [
                         'url' => Elementor\Utils::get_placeholder_image_src(),
@@ -372,4 +372,4 @@ class Lasa_Elementor_Image_Color_Tab extends Lasa_Elementor_Widget_Base
         <?php
     }
 }
-$widgets_manager->register(new Lasa_Elementor_Image_Color_Tab());
+$widgets_manager->register(new Themename_Elementor_Image_Color_Tab());

@@ -18,7 +18,7 @@ use Monolog\Handler\Slack\SlackRecord;
 /**
  * Sends notifications through Slack Webhooks
  *
- * @author Lasalan Dobrev <hkdobrev@gmail.com>
+ * @author Themenamelan Dobrev <hkdobrev@gmail.com>
  * @see    https://api.slack.com/incoming-webhooks
  */
 class SlackWebhookHandler extends AbstractProcessingHandler

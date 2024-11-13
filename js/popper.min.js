@@ -640,7 +640,7 @@
 
   function getClientRectFromMixedType(element, clippingParent) {
     return clippingParent === viewport ? rectToClientRect(getViewportRect(element)) : isHTMLElement(clippingParent) ? getInnerBoundingClientRect(clippingParent) : rectToClientRect(getDocumentRect(getDocumentElement(element)));
-  } // A "clipping parent" is an overflowable container with the clasacteristic of
+  } // A "clipping parent" is an overflowable container with the cthemenamecteristic of
   // clipping (or hiding) overflowing elements with a position different from
   // `initial`
 

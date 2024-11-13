@@ -1,13 +1,13 @@
 <?php
 
-if (! defined('ABSPATH') || function_exists('Lasa_Elementor_Currency')) {
+if (! defined('ABSPATH') || function_exists('Themename_Elementor_Currency')) {
     exit; // Exit if accessed directly.
 }
 
 
 use Elementor\Controls_Manager;
 
-class Lasa_Elementor_Currency extends Lasa_Elementor_Widget_Base
+class Themename_Elementor_Currency extends Themename_Elementor_Widget_Base
 {
     public function get_name()
     {
@@ -16,7 +16,7 @@ class Lasa_Elementor_Currency extends Lasa_Elementor_Widget_Base
 
     public function get_title()
     {
-        return esc_html__('Lasa Currency', 'lasa');
+        return esc_html__('Themename Currency', 'themename');
     }
 
     public function get_icon()
@@ -39,18 +39,18 @@ class Lasa_Elementor_Currency extends Lasa_Elementor_Widget_Base
         $this->start_controls_section(
             'section_layout',
             [
-                'label' => esc_html__('Currency Settings', 'lasa'),
+                'label' => esc_html__('Currency Settings', 'themename'),
             ]
         );
 
         $this->add_control(
             'txt_type',
             [
-                'label'              => esc_html__('Choose Type Text', 'lasa'),
+                'label'              => esc_html__('Choose Type Text', 'themename'),
                 'type'               => Controls_Manager::SELECT,
                 'options' => [
-                    'desc' => esc_html__('Desc', 'lasa'),
-                    'code' => esc_html__('Code', 'lasa')
+                    'desc' => esc_html__('Desc', 'themename'),
+                    'code' => esc_html__('Code', 'themename')
                 ],
                 'default' => 'desc'
             ]
@@ -58,7 +58,7 @@ class Lasa_Elementor_Currency extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'show_flags',
             [
-                'label'              => esc_html__('Show Flags', 'lasa'),
+                'label'              => esc_html__('Show Flags', 'themename'),
                 'type'               => Controls_Manager::SWITCHER,
                 'default' => 'no'
             ]
@@ -66,11 +66,11 @@ class Lasa_Elementor_Currency extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'position_flags',
             [
-                'label'              => esc_html__('Position Flags', 'lasa'),
+                'label'              => esc_html__('Position Flags', 'themename'),
                 'type'               => Controls_Manager::SELECT,
                 'options' => [
-                    'left'  => esc_html__('Left', 'lasa'),
-                    'right'  => esc_html__('Right', 'lasa')
+                    'left'  => esc_html__('Left', 'themename'),
+                    'right'  => esc_html__('Right', 'themename')
                 ],
                 'default' => 'left',
                 'condition' => [
@@ -82,11 +82,11 @@ class Lasa_Elementor_Currency extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'position_sub_menu',
             [
-                'label'     => esc_html__('Position Sub Menu', 'lasa'),
+                'label'     => esc_html__('Position Sub Menu', 'themename'),
                 'type'      => Controls_Manager::SELECT,
                 'options' => [
-                    'top' => esc_html__('Top', 'lasa'),
-                    'bottom' => esc_html__('Bottom', 'lasa'),
+                    'top' => esc_html__('Top', 'themename'),
+                    'bottom' => esc_html__('Bottom', 'themename'),
                 ],
                 'default' => 'top',
                 'prefix_class' => 'sub-menu-',
@@ -102,7 +102,7 @@ class Lasa_Elementor_Currency extends Lasa_Elementor_Widget_Base
         $this->start_controls_section(
             'section_style_currency',
             [
-                'label' => esc_html__('Style Currency', 'lasa'),
+                'label' => esc_html__('Style Currency', 'themename'),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -121,14 +121,14 @@ class Lasa_Elementor_Currency extends Lasa_Elementor_Widget_Base
         $this->start_controls_tab(
             'currency_tab_normal',
             [
-                'label' => esc_html__('Normal', 'lasa'),
+                'label' => esc_html__('Normal', 'themename'),
             ]
         );
 
         $this->add_control(
             'currency_color',
             [
-                'label' => esc_html__('Color', 'lasa'),
+                'label' => esc_html__('Color', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -141,7 +141,7 @@ class Lasa_Elementor_Currency extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'currency_bg',
             [
-                'label' => esc_html__('Background', 'lasa'),
+                'label' => esc_html__('Background', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -157,14 +157,14 @@ class Lasa_Elementor_Currency extends Lasa_Elementor_Widget_Base
         $this->start_controls_tab(
             'currency_tab_hover',
             [
-                'label' => esc_html__('Hover', 'lasa'),
+                'label' => esc_html__('Hover', 'themename'),
             ]
         );
 
         $this->add_control(
             'currency_color_hover',
             [
-                'label' => esc_html__('Hover Color', 'lasa'),
+                'label' => esc_html__('Hover Color', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '', 
                 'selectors' => [
@@ -183,7 +183,7 @@ class Lasa_Elementor_Currency extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'currency_bg_hover',
             [
-                'label' => esc_html__('Background', 'lasa'),
+                'label' => esc_html__('Background', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -200,7 +200,7 @@ class Lasa_Elementor_Currency extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'currency_padding',
             [
-                'label'     => esc_html__('Padding', 'lasa'),
+                'label'     => esc_html__('Padding', 'themename'),
                 'type'      => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
@@ -213,7 +213,7 @@ class Lasa_Elementor_Currency extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'currency_margin',
             [
-                'label'     => esc_html__('Margin', 'lasa'),
+                'label'     => esc_html__('Margin', 'themename'),
                 'type'      => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
@@ -226,7 +226,7 @@ class Lasa_Elementor_Currency extends Lasa_Elementor_Widget_Base
         $this->end_controls_section();
     }
     
-    protected function lasa_currency()
+    protected function themename_currency()
     {
         $settings = $this->get_settings_for_display();
         extract($settings);
@@ -247,7 +247,7 @@ class Lasa_Elementor_Currency extends Lasa_Elementor_Widget_Base
 
         $woocs = $this->get_render_attribute_string('woocs');
 
-        if (lasa_woocommerce_activated() && class_exists('WOOCS')) {
+        if (themename_woocommerce_activated() && class_exists('WOOCS')) {
             wp_enqueue_style('sumoselect'); ?>
             <div class="tbay-currency">
             <?php
@@ -257,4 +257,4 @@ class Lasa_Elementor_Currency extends Lasa_Elementor_Widget_Base
         }
     }
 }
-$widgets_manager->register(new Lasa_Elementor_Currency());
+$widgets_manager->register(new Themename_Elementor_Currency());

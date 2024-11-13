@@ -1,11 +1,11 @@
 <?php
-if (!defined('ABSPATH') || function_exists('Lasa_Elementor_Carousel_Base')) {
+if (!defined('ABSPATH') || function_exists('Themename_Elementor_Carousel_Base')) {
     exit; // Exit if accessed directly.
 }
 
 use Elementor\Controls_Manager;
 
-abstract class Lasa_Elementor_Carousel_Base extends Lasa_Elementor_Responsive_Base
+abstract class Themename_Elementor_Carousel_Base extends Themename_Elementor_Responsive_Base
 {
     public function get_name()
     {
@@ -14,7 +14,7 @@ abstract class Lasa_Elementor_Carousel_Base extends Lasa_Elementor_Responsive_Ba
 
     private function get_rows()
     {
-        $value = apply_filters('lasa_admin_elementor_rows', [
+        $value = apply_filters('themename_admin_elementor_rows', [
             1 => 1,
             2 => 2,
             3 => 3
@@ -35,7 +35,7 @@ abstract class Lasa_Elementor_Carousel_Base extends Lasa_Elementor_Responsive_Ba
         $this->start_controls_section(
             'section_carousel_options',
             [
-                'label' => esc_html__('Carousel Options', 'lasa'),
+                'label' => esc_html__('Carousel Options', 'themename'),
                 'type'  => Controls_Manager::SECTION,
                 'condition' => $condition,
             ]
@@ -45,7 +45,7 @@ abstract class Lasa_Elementor_Carousel_Base extends Lasa_Elementor_Responsive_Ba
         $this->add_control(
             'rows',
             [
-                'label' => esc_html__('Rows', 'lasa'),
+                'label' => esc_html__('Rows', 'themename'),
                 'type' => Controls_Manager::SELECT,
                 'default' => 1,
                 'options' => $this->get_rows()
@@ -55,7 +55,7 @@ abstract class Lasa_Elementor_Carousel_Base extends Lasa_Elementor_Responsive_Ba
         $this->add_control(
             'carousel_blur',
             [
-                'label'     => esc_html__('Show carousel Blur?', 'lasa'),
+                'label'     => esc_html__('Show carousel Blur?', 'themename'),
                 'type'      => Controls_Manager::SWITCHER,
                 'default' => 'no'
             ]
@@ -64,27 +64,27 @@ abstract class Lasa_Elementor_Carousel_Base extends Lasa_Elementor_Responsive_Ba
         $this->add_control(
             'speed',
             [
-                'label' => esc_html__('Speed', 'lasa'),
+                'label' => esc_html__('Speed', 'themename'),
                 'type' => Controls_Manager::NUMBER,
                 'default' => 500,
-                'description' => esc_html__('Slide/Fade animation speed', 'lasa'),
+                'description' => esc_html__('Slide/Fade animation speed', 'themename'),
             ]
         );
 
         $this->add_control(
             'navigation',
             [
-                'label' => esc_html__('Navigation', 'lasa'),
+                'label' => esc_html__('Navigation', 'themename'),
                 'type' => Controls_Manager::SWITCHER,
                 'default' => 'yes',
-                'description' => esc_html__('Show/hidden Navigation', 'lasa'),
+                'description' => esc_html__('Show/hidden Navigation', 'themename'),
             ]
         );
 
         $this->add_responsive_control(
             'navigation_prev',
             [
-                'label' => esc_html__('Navigation Prev', 'lasa'),
+                'label' => esc_html__('Navigation Prev', 'themename'),
                 'type' => Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [ 
@@ -105,7 +105,7 @@ abstract class Lasa_Elementor_Carousel_Base extends Lasa_Elementor_Responsive_Ba
         $this->add_responsive_control(
             'navigation_next',
             [
-                'label' => esc_html__('Navigation Next ', 'lasa'),
+                'label' => esc_html__('Navigation Next ', 'themename'),
                 'type' => Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [ 
@@ -126,10 +126,10 @@ abstract class Lasa_Elementor_Carousel_Base extends Lasa_Elementor_Responsive_Ba
         $this->add_control(
             'pagination',
             [
-                'label' => esc_html__('Pagination', 'lasa'),
+                'label' => esc_html__('Pagination', 'themename'),
                 'type' => Controls_Manager::SWITCHER,
                 'default' => '',
-                'description' => esc_html__('Show/hidden Pagination', 'lasa'),
+                'description' => esc_html__('Show/hidden Pagination', 'themename'),
             ]
         );
 
@@ -137,30 +137,30 @@ abstract class Lasa_Elementor_Carousel_Base extends Lasa_Elementor_Responsive_Ba
         $this->add_control(
             'loop',
             [
-                'label' => esc_html__('Infinite Loop', 'lasa'),
+                'label' => esc_html__('Infinite Loop', 'themename'),
                 'type' => Controls_Manager::SWITCHER,
                 'default' => '',
                 'condition' => [
                     'carousel_blur!' => 'yes'
                 ],
-                'description' => esc_html__('Show/hidden Infinite Loop', 'lasa'),
+                'description' => esc_html__('Show/hidden Infinite Loop', 'themename'),
             ]
         );
 
         $this->add_control(
             'auto',
             [
-                'label' => esc_html__('Autoplay', 'lasa'),
+                'label' => esc_html__('Autoplay', 'themename'),
                 'type' => Controls_Manager::SWITCHER,
                 'default' => 'no',
-                'description' => esc_html__('Show/hidden Autoplay', 'lasa'),
+                'description' => esc_html__('Show/hidden Autoplay', 'themename'),
             ]
         );
 
         $this->add_control(
             'autospeed',
             [
-                'label' => esc_html__('Autoplay Speed', 'lasa'),
+                'label' => esc_html__('Autoplay Speed', 'themename'),
                 'type' => Controls_Manager::NUMBER,
                 'default' => 1000,
                 'condition' => [
@@ -173,10 +173,10 @@ abstract class Lasa_Elementor_Carousel_Base extends Lasa_Elementor_Responsive_Ba
         $this->add_control(
             'disable_mobile',
             [
-                'label' => esc_html__('Disable Carousel On Mobile', 'lasa'),
+                'label' => esc_html__('Disable Carousel On Mobile', 'themename'),
                 'type' => Controls_Manager::SWITCHER,
                 'default' => 'yes',
-                'description' => esc_html__('To help load faster in mmobile', 'lasa'),
+                'description' => esc_html__('To help load faster in mmobile', 'themename'),
             ]
         );
 
@@ -190,7 +190,7 @@ abstract class Lasa_Elementor_Carousel_Base extends Lasa_Elementor_Responsive_Ba
         $this->start_controls_section(
             'section_style_navigation',
             [
-                'label' => esc_html__('Navigation', 'lasa'),
+                'label' => esc_html__('Navigation', 'themename'),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition' => $condition,
             ]
@@ -199,7 +199,7 @@ abstract class Lasa_Elementor_Carousel_Base extends Lasa_Elementor_Responsive_Ba
         $this->add_responsive_control(
             'arrows_width',
             [
-                'label' => esc_html__('Width', 'lasa'),
+                'label' => esc_html__('Width', 'themename'),
                 'type' => Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [
@@ -219,7 +219,7 @@ abstract class Lasa_Elementor_Carousel_Base extends Lasa_Elementor_Responsive_Ba
         $this->add_responsive_control(
             'arrows_height',
             [
-                'label' => esc_html__('Height', 'lasa'),
+                'label' => esc_html__('Height', 'themename'),
                 'type' => Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [
@@ -240,7 +240,7 @@ abstract class Lasa_Elementor_Carousel_Base extends Lasa_Elementor_Responsive_Ba
         $this->add_responsive_control(
             'arrows_size_icon',
             [
-                'label' => esc_html__('Size Icon', 'lasa'),
+                'label' => esc_html__('Size Icon', 'themename'),
                 'type' => Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [
@@ -260,7 +260,7 @@ abstract class Lasa_Elementor_Carousel_Base extends Lasa_Elementor_Responsive_Ba
         $this->add_responsive_control(
             'arrows_size_position',
             [
-                'label' => esc_html__('Position', 'lasa'),
+                'label' => esc_html__('Position', 'themename'),
                 'type' => Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [
@@ -281,7 +281,7 @@ abstract class Lasa_Elementor_Carousel_Base extends Lasa_Elementor_Responsive_Ba
         $this->add_responsive_control(
             'arrows_radius',
             [
-                'label' => esc_html__('Border Radius', 'lasa'),
+                'label' => esc_html__('Border Radius', 'themename'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'selectors' => [
@@ -293,7 +293,7 @@ abstract class Lasa_Elementor_Carousel_Base extends Lasa_Elementor_Responsive_Ba
         $this->add_control(
             'arrows_text_color',
             [
-                'label' => esc_html__('Text Color', 'lasa'),
+                'label' => esc_html__('Text Color', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -305,7 +305,7 @@ abstract class Lasa_Elementor_Carousel_Base extends Lasa_Elementor_Responsive_Ba
         $this->add_control(
             'arrows_text_color_hover',
             [
-                'label' => esc_html__('Text Color Hover', 'lasa'),
+                'label' => esc_html__('Text Color Hover', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -323,7 +323,7 @@ abstract class Lasa_Elementor_Carousel_Base extends Lasa_Elementor_Responsive_Ba
         $this->start_controls_section(
             'section_style_pagination',
             [
-                'label' => esc_html__('Pagination', 'lasa'),
+                'label' => esc_html__('Pagination', 'themename'),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition' => $condition,
             ]
@@ -332,7 +332,7 @@ abstract class Lasa_Elementor_Carousel_Base extends Lasa_Elementor_Responsive_Ba
         $this->add_responsive_control(
             'pagination_width',
             [
-                'label' => esc_html__('Width', 'lasa'),
+                'label' => esc_html__('Width', 'themename'),
                 'type' => Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [
@@ -349,7 +349,7 @@ abstract class Lasa_Elementor_Carousel_Base extends Lasa_Elementor_Responsive_Ba
         $this->add_responsive_control(
             'pagination_height',
             [
-                'label' => esc_html__('Height', 'lasa'),
+                'label' => esc_html__('Height', 'themename'),
                 'type' => Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [
@@ -365,7 +365,7 @@ abstract class Lasa_Elementor_Carousel_Base extends Lasa_Elementor_Responsive_Ba
         $this->add_responsive_control(
             'pagination_position',
             [
-                'label' => esc_html__('Position', 'lasa'),
+                'label' => esc_html__('Position', 'themename'),
                 'type' => Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [
@@ -381,7 +381,7 @@ abstract class Lasa_Elementor_Carousel_Base extends Lasa_Elementor_Responsive_Ba
         $this->add_responsive_control(
             'pagination_radius',
             [
-                'label' => esc_html__('Border Radius', 'lasa'),
+                'label' => esc_html__('Border Radius', 'themename'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'selectors' => [

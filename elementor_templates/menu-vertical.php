@@ -22,7 +22,7 @@ if( !empty( $heading_title ) || !empty( $heading_subtitle ) ) {
 	<?php $this->render_element_heading(); ?>
 	<?php
 
-    $_id = lasa_tbay_random_key();
+    $_id = themename_tbay_random_key();
 
     $args = array(
         'menu' 			  => $menu,

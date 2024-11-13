@@ -18,7 +18,7 @@ One click demo import github page: https://github.com/ProteusThemes/one-click-de
 - Fixed Elementor import after `wp_slash` updates in this repo.
 
 *July 14th 2020*
-- Fixed incorrect post and post meta import (unicode and other special clasacters were not escaped properly).
+- Fixed incorrect post and post meta import (unicode and other special cthemenamecters were not escaped properly).
 
 *February 7th 2018*
 - Clean up the WXRImporter code

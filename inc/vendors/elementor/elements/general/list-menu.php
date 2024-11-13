@@ -1,6 +1,6 @@
 <?php
 
-if ( ! defined( 'ABSPATH' ) || function_exists('Lasa_Elementor_List_Menu') ) {
+if ( ! defined( 'ABSPATH' ) || function_exists('Themename_Elementor_List_Menu') ) {
     exit; // Exit if accessed directly.
 }
 
@@ -8,14 +8,14 @@ if ( ! defined( 'ABSPATH' ) || function_exists('Lasa_Elementor_List_Menu') ) {
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
 
-class Lasa_Elementor_List_Menu extends Lasa_Elementor_Widget_Base {
+class Themename_Elementor_List_Menu extends Themename_Elementor_Widget_Base {
 
     public function get_name() {
         return 'tbay-list-menu';
     }
 
     public function get_title() {
-        return esc_html__('Lasa List Menu', 'lasa');
+        return esc_html__('Themename List Menu', 'themename');
     }
 
     public function get_icon() {
@@ -33,7 +33,7 @@ class Lasa_Elementor_List_Menu extends Lasa_Elementor_Widget_Base {
         $this->start_controls_section(
             'section_layout',
             [
-                'label' => esc_html__('General', 'lasa'),
+                'label' => esc_html__('General', 'themename'),
             ]
         );
 
@@ -43,13 +43,13 @@ class Lasa_Elementor_List_Menu extends Lasa_Elementor_Widget_Base {
             $this->add_control(
                 'menu',
                 [
-                    'label'        => esc_html__('Menu', 'lasa'),
+                    'label'        => esc_html__('Menu', 'themename'),
                     'type'         => Controls_Manager::SELECT,
                     'options'      => $menus,
                     'default'      => array_keys($menus)[0],
                     'save_default' => true,
                     'separator'    => 'after',
-                    'description'  => esc_html__('Note does not apply to Mega Menu.', 'lasa'),
+                    'description'  => esc_html__('Note does not apply to Mega Menu.', 'themename'),
                 ]
             );
         } else {
@@ -57,7 +57,7 @@ class Lasa_Elementor_List_Menu extends Lasa_Elementor_Widget_Base {
                 'menu',
                 [
                     'type'            => Controls_Manager::RAW_HTML,
-                    'raw'             => sprintf(__('<strong>There are no menus in your site.</strong><br>Go to the <a href="%s" target="_blank">Menus screen</a> to create one.', 'lasa'), admin_url('nav-menus.php?action=edit&menu=0')),
+                    'raw'             => sprintf(__('<strong>There are no menus in your site.</strong><br>Go to the <a href="%s" target="_blank">Menus screen</a> to create one.', 'themename'), admin_url('nav-menus.php?action=edit&menu=0')),
                     'separator'       => 'after',
                     'content_classes' => 'elementor-panel-alert elementor-panel-alert-info',
                 ]
@@ -67,7 +67,7 @@ class Lasa_Elementor_List_Menu extends Lasa_Elementor_Widget_Base {
         $this->add_control(
             'list_menu_title',
             [
-                'label' => esc_html__('Menu Title', 'lasa'),
+                'label' => esc_html__('Menu Title', 'themename'),
                 'type' => Controls_Manager::TEXT,
             ]
         );
@@ -76,7 +76,7 @@ class Lasa_Elementor_List_Menu extends Lasa_Elementor_Widget_Base {
         $this->add_control(
             'list_menu_separator',
             [
-                'label' => esc_html__('Separator Between', 'lasa'),
+                'label' => esc_html__('Separator Between', 'themename'),
                 'type' => Controls_Manager::TEXT,
                 'default'  =>  ', ',
                 'label_block' => true,
@@ -93,7 +93,7 @@ class Lasa_Elementor_List_Menu extends Lasa_Elementor_Widget_Base {
         $this->start_controls_section(
             'section_style_list_menu',
             [
-                'label' => esc_html__('Style List Menu', 'lasa'),
+                'label' => esc_html__('Style List Menu', 'themename'),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -101,19 +101,19 @@ class Lasa_Elementor_List_Menu extends Lasa_Elementor_Widget_Base {
         $this->add_responsive_control(
             'list_menu_align',
             [
-                'label' => esc_html__('Align', 'lasa'),
+                'label' => esc_html__('Align', 'themename'),
                 'type' => Controls_Manager::CHOOSE,
                 'options' => [
                     'left' => [
-                        'title' => esc_html__('Left', 'lasa'),
+                        'title' => esc_html__('Left', 'themename'),
                         'icon' => 'fa fa-align-left'
                     ],
                     'center' => [
-                        'title' => esc_html__('Center', 'lasa'),
+                        'title' => esc_html__('Center', 'themename'),
                         'icon' => 'fa fa-align-center'
                     ],
                     'right' => [
-                        'title' => esc_html__('Right', 'lasa'),
+                        'title' => esc_html__('Right', 'themename'),
                         'icon' => 'fa fa-align-right'
                     ],
                 ],
@@ -135,7 +135,7 @@ class Lasa_Elementor_List_Menu extends Lasa_Elementor_Widget_Base {
         $this->add_responsive_control(
             'list_menu_padding',
             [
-                'label'     => esc_html__('Padding', 'lasa'),
+                'label'     => esc_html__('Padding', 'themename'),
                 'type'      => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
@@ -147,7 +147,7 @@ class Lasa_Elementor_List_Menu extends Lasa_Elementor_Widget_Base {
         $this->add_responsive_control(
             'list_menu_margin',
             [
-                'label'     => esc_html__('Margin', 'lasa'),
+                'label'     => esc_html__('Margin', 'themename'),
                 'type'      => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
@@ -161,14 +161,14 @@ class Lasa_Elementor_List_Menu extends Lasa_Elementor_Widget_Base {
         $this->start_controls_tab(
             'list_menu_tab_normal',
             [
-                'label' => esc_html__('Normal', 'lasa'),
+                'label' => esc_html__('Normal', 'themename'),
             ]
         );
 
         $this->add_control(
             'list_menu_color',
             [
-                'label' => esc_html__('Color', 'lasa'),
+                'label' => esc_html__('Color', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -184,14 +184,14 @@ class Lasa_Elementor_List_Menu extends Lasa_Elementor_Widget_Base {
         $this->start_controls_tab(
             'list_menu_tab_hover',
             [
-                'label' => esc_html__('Hover', 'lasa'),
+                'label' => esc_html__('Hover', 'themename'),
             ]
         );
 
         $this->add_control(
             'list_menu_color_hover',
             [
-                'label' => esc_html__('Hover Color', 'lasa'),
+                'label' => esc_html__('Hover Color', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '', 
                 'selectors' => [
@@ -208,5 +208,5 @@ class Lasa_Elementor_List_Menu extends Lasa_Elementor_Widget_Base {
     }
 
 }
-$widgets_manager->register(new Lasa_Elementor_List_Menu());
+$widgets_manager->register(new Themename_Elementor_List_Menu());
 

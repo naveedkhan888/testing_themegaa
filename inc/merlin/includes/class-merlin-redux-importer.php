@@ -31,7 +31,7 @@ class Merlin_Redux_Importer
             if (isset($redux_framework->args['opt_name'])) {
                 $redux_framework->options_class->set($redux_options_data);
 
-                Merlin_Logger::get_instance()->debug(__('The Redux Framework data was imported', 'lasa'), $redux_item);
+                Merlin_Logger::get_instance()->debug(__('The Redux Framework data was imported', 'themename'), $redux_item);
             }
         }
 

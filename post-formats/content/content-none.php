@@ -11,9 +11,9 @@
 <article id="post-0" class="post no-results not-found">
 	<div class="entry-content e-entry-content">
 		<h2>
-			<span><?php esc_html_e('Oops!', 'lasa') ?></span> <?php esc_html_e('Sorry, but your search returned no results!', 'lasa') ?>
+			<span><?php esc_html_e('Oops!', 'themename') ?></span> <?php esc_html_e('Sorry, but your search returned no results!', 'themename') ?>
 		</h2>
-		<p><?php esc_html_e('Try again please, use the search form below.', 'lasa'); ?></p>
+		<p><?php esc_html_e('Try again please, use the search form below.', 'themename'); ?></p>
 		<?php get_search_form(); ?>
 	</div>
 	<!-- entry-content -->

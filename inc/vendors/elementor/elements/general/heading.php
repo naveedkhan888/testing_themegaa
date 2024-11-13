@@ -1,6 +1,6 @@
 <?php
 
-if (! defined('ABSPATH') || function_exists('Lasa_Elementor_Heading')) {
+if (! defined('ABSPATH') || function_exists('Themename_Elementor_Heading')) {
     exit; // Exit if accessed directly.
 }
 /**
@@ -11,7 +11,7 @@ if (! defined('ABSPATH') || function_exists('Lasa_Elementor_Heading')) {
  *
  * @since 1.0.0
  */
-class Lasa_Elementor_Heading extends Lasa_Elementor_Widget_Base
+class Themename_Elementor_Heading extends Themename_Elementor_Widget_Base
 {
     /**
      * Get widget name.
@@ -40,7 +40,7 @@ class Lasa_Elementor_Heading extends Lasa_Elementor_Widget_Base
      */
     public function get_title()
     {
-        return esc_html__('Lasa Heading', 'lasa');
+        return esc_html__('Themename Heading', 'themename');
     }
 
     public function get_keywords()
@@ -78,9 +78,9 @@ class Lasa_Elementor_Heading extends Lasa_Elementor_Widget_Base
         $this->update_control(
             'heading_title',
             [
-                'default' => esc_html__('Title', 'lasa'),
+                'default' => esc_html__('Title', 'themename'),
             ]
         );
     }
 }
-$widgets_manager->register(new Lasa_Elementor_Heading());
+$widgets_manager->register(new Themename_Elementor_Heading());

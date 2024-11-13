@@ -5,8 +5,8 @@
  * Displays all of the head element and everything up until the "site-content" div.
  *
  * @package WordPress
- * @subpackage Lasa
- * @since Lasa 1.0
+ * @subpackage Themename
+ * @since Themename 1.0
  */
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
@@ -18,27 +18,27 @@
 </head>
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
-<div id="wrapper-container" class="<?php echo esc_attr(apply_filters('lasa_class_wrapper_container', 'wrapper-container')); ?>">
+<div id="wrapper-container" class="<?php echo esc_attr(apply_filters('themename_class_wrapper_container', 'wrapper-container')); ?>">
 
 
 	<?php
         /**
-        * lasa_before_theme_header hook
+        * themename_before_theme_header hook
         *
-        * @hooked lasa_tbay_offcanvas_smart_menu - 10
-        * @hooked lasa_tbay_the_topbar_mobile - 20
-        * @hooked lasa_tbay_custom_form_login - 30
-        * @hooked lasa_tbay_footer_mobile - 40
+        * @hooked themename_tbay_offcanvas_smart_menu - 10
+        * @hooked themename_tbay_the_topbar_mobile - 20
+        * @hooked themename_tbay_custom_form_login - 30
+        * @hooked themename_tbay_footer_mobile - 40
         */
-        do_action('lasa_before_theme_header');
+        do_action('themename_before_theme_header');
     ?>
 
 	<?php get_template_part('headers/header'); ?>
 	<?php
         /**
-        * lasa_after_theme_header hook
+        * themename_after_theme_header hook
         */
-        do_action('lasa_after_theme_header');
+        do_action('themename_after_theme_header');
     ?>
 
 	<div id="tbay-main-content">

@@ -65,14 +65,14 @@ if (! defined('YITH_WCWL')) {
 
         <th class="product-name">
             <span class="nobr">
-                <?php echo apply_filters('yith_wcwl_wishlist_view_name_heading', esc_html__('Product name', 'lasa')) ?>
+                <?php echo apply_filters('yith_wcwl_wishlist_view_name_heading', esc_html__('Product name', 'themename')) ?>
             </span>
         </th>
 
         <?php if ($show_price || $show_price_variations) : $column_count ++; ?>
             <th class="product-price">
                 <span class="nobr">
-                    <?php echo apply_filters('yith_wcwl_wishlist_view_price_heading', esc_html__('Unit price', 'lasa')) ?>
+                    <?php echo apply_filters('yith_wcwl_wishlist_view_price_heading', esc_html__('Unit price', 'themename')) ?>
                 </span>
             </th>
         <?php endif; ?>
@@ -80,7 +80,7 @@ if (! defined('YITH_WCWL')) {
         <?php if ($show_quantity) : $column_count ++; ?>
             <th class="product-quantity">
                 <span class="nobr">
-                    <?php echo apply_filters('yith_wcwl_wishlist_view_quantity_heading', esc_html__('Quantity', 'lasa')) ?>
+                    <?php echo apply_filters('yith_wcwl_wishlist_view_quantity_heading', esc_html__('Quantity', 'themename')) ?>
                 </span>
             </th>
         <?php endif;?>
@@ -88,7 +88,7 @@ if (! defined('YITH_WCWL')) {
         <?php if ($show_stock_status) : $column_count ++; ?>
             <th class="product-stock-status">
                 <span class="nobr">
-                    <?php echo apply_filters('yith_wcwl_wishlist_view_stock_heading', esc_html__('Stock status', 'lasa')) ?>
+                    <?php echo apply_filters('yith_wcwl_wishlist_view_stock_heading', esc_html__('Stock status', 'themename')) ?>
                 </span>
             </th>
         <?php endif; ?>
@@ -100,7 +100,7 @@ if (! defined('YITH_WCWL')) {
         <?php if ($enable_drag_n_drop): $column_count ++; ?>
             <th class="product-arrange">
                 <span class="nobr">
-                    <?php echo apply_filters('yith_wcwl_wishlist_view_arrange_heading', esc_html__('Arrange', 'lasa'))?>
+                    <?php echo apply_filters('yith_wcwl_wishlist_view_arrange_heading', esc_html__('Arrange', 'themename'))?>
                 </span>
             </th>
         <?php endif; ?>
@@ -132,7 +132,7 @@ if (! defined('YITH_WCWL')) {
                     <td class="product-thumbnail">
                         <?php if ($show_remove_product): ?>
                         <span class="product-remove icon">
-                                <a href="<?php echo esc_url(add_query_arg('remove_from_wishlist', $item->get_product_id())) ?>" class="remove_from_wishlist" title="<?php echo apply_filters('yith_wcwl_remove_product_wishlist_message_title', esc_html__('Remove this product', 'lasa')); ?>"><i class="tb-icon tb-icon-close-01"></i></a>
+                                <a href="<?php echo esc_url(add_query_arg('remove_from_wishlist', $item->get_product_id())) ?>" class="remove_from_wishlist" title="<?php echo apply_filters('yith_wcwl_remove_product_wishlist_message_title', esc_html__('Remove this product', 'themename')); ?>"><i class="tb-icon tb-icon-close-01"></i></a>
                         </span>
                         <?php endif; ?>
                         <a href="<?php echo esc_url(get_permalink(apply_filters('woocommerce_in_cart_product', $item->get_product_id()))) ?>">
@@ -143,7 +143,7 @@ if (! defined('YITH_WCWL')) {
                     <?php if ($show_stock_status) : ?>
                         <td class="product-stock-status">
                             <?php
-                                $stock_html = ($stock_status == 'out-of-stock') ? '<span class="wishlist-out-of-stock">' . apply_filters('yith_wcwl_out_of_stock_label', esc_html__('Out of stock', 'lasa')) . '</span>' : '<span class="wishlist-in-stock">' . apply_filters('yith_wcwl_in_stock_label', esc_html__('In Stock', 'lasa')) . '</span>';
+                                $stock_html = ($stock_status == 'out-of-stock') ? '<span class="wishlist-out-of-stock">' . apply_filters('yith_wcwl_out_of_stock_label', esc_html__('Out of stock', 'themename')) . '</span>' : '<span class="wishlist-in-stock">' . apply_filters('yith_wcwl_in_stock_label', esc_html__('In Stock', 'themename')) . '</span>';
                                 echo  trim($stock_html);
                             ?>
                         </td>
@@ -193,7 +193,7 @@ if (! defined('YITH_WCWL')) {
                             <!-- Date added -->
                             <?php
                             if ($show_dateadded && $item->get_date_added()):
-                                echo '<span class="dateadded">' . sprintf(esc_html__('Added on: %s', 'lasa'), $item->get_date_added_formatted()) . '</span>';
+                                echo '<span class="dateadded">' . sprintf(esc_html__('Added on: %s', 'themename'), $item->get_date_added_formatted()) . '</span>';
                             endif;
                             ?>
 
@@ -206,7 +206,7 @@ if (! defined('YITH_WCWL')) {
                             <?php if ($move_to_another_wishlist && $available_multi_wishlist && count($users_wishlists) > 1): ?>
                                 <?php if ('select' == $move_to_another_wishlist_type): ?>
                                     <select class="change-wishlist selectBox">
-                                        <option value=""><?php esc_html_e('Move', 'lasa') ?></option>
+                                        <option value=""><?php esc_html_e('Move', 'themename') ?></option>
                                         <?php
                                         foreach ($users_wishlists as $wl):
                                             /**
@@ -225,7 +225,7 @@ if (! defined('YITH_WCWL')) {
                                     </select>
                                 <?php else: ?>
                                     <a href="#move_to_another_wishlist" class="move-to-another-wishlist-button" data-rel="prettyPhoto[move_to_another_wishlist]">
-                                        <?php echo apply_filters('yith_wcwl_move_to_another_list_label', esc_html__('Move to another list &rsaquo;', 'lasa')) ?>
+                                        <?php echo apply_filters('yith_wcwl_move_to_another_list_label', esc_html__('Move to another list &rsaquo;', 'themename')) ?>
                                     </a>
                                 <?php endif; ?>
                             <?php endif; ?>
@@ -236,7 +236,7 @@ if (! defined('YITH_WCWL')) {
                     <!-- Remove from wishlist -->
                     <?php if ($repeat_remove_button): ?>
                         <td class="product-remove">
-                            <a href="<?php echo esc_url(add_query_arg('remove_from_wishlist', $item->get_product_id())) ?>" class="remove_from_wishlist" title="<?php echo apply_filters('yith_wcwl_remove_product_wishlist_message_title', esc_html__('Remove this product', 'lasa')); ?>"><?php esc_html_e('Remove', 'lasa') ?></a>
+                            <a href="<?php echo esc_url(add_query_arg('remove_from_wishlist', $item->get_product_id())) ?>" class="remove_from_wishlist" title="<?php echo apply_filters('yith_wcwl_remove_product_wishlist_message_title', esc_html__('Remove this product', 'themename')); ?>"><?php esc_html_e('Remove', 'themename') ?></a>
                         </td>
                     <?php endif; ?>
                     
@@ -252,7 +252,7 @@ if (! defined('YITH_WCWL')) {
         endforeach;
     else: ?>
         <tr class="no-products">
-            <td colspan="<?php echo esc_attr($column_count) ?>" class="wishlist-empty"><?php echo apply_filters('yith_wcwl_no_product_to_remove_message', esc_html__('No products added to the wishlist', 'lasa')) ?></td>
+            <td colspan="<?php echo esc_attr($column_count) ?>" class="wishlist-empty"><?php echo apply_filters('yith_wcwl_no_product_to_remove_message', esc_html__('No products added to the wishlist', 'themename')) ?></td>
         </tr>
     <?php
     endif;

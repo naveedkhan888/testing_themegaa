@@ -24,4 +24,4 @@ if ( is_user_logged_in() ) {
 	return;
 }
 
-lasa_login_form( true, false, $message, $hidden, $redirect );
+themename_login_form( true, false, $message, $hidden, $redirect );

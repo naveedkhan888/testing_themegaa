@@ -1,6 +1,6 @@
 <?php
 
-if (! defined('ABSPATH') || function_exists('Lasa_Elementor_List_Custom_Fonts')) {
+if (! defined('ABSPATH') || function_exists('Themename_Elementor_List_Custom_Fonts')) {
     exit; // Exit if accessed directly.
 }
 
@@ -14,7 +14,7 @@ use Elementor\Controls_Manager;
  *
  * @since 1.0.0
  */
-class Lasa_Elementor_List_Custom_Fonts extends Lasa_Elementor_Carousel_Base
+class Themename_Elementor_List_Custom_Fonts extends Themename_Elementor_Carousel_Base
 {
     /**
      * Get widget name.
@@ -43,7 +43,7 @@ class Lasa_Elementor_List_Custom_Fonts extends Lasa_Elementor_Carousel_Base
      */
     public function get_title()
     {
-        return esc_html__('Lasa List Icons Tbay Custom Fonts', 'lasa');
+        return esc_html__('Themename List Icons Tbay Custom Fonts', 'themename');
     }
 
     public function get_script_depends()
@@ -81,13 +81,13 @@ class Lasa_Elementor_List_Custom_Fonts extends Lasa_Elementor_Carousel_Base
         $this->start_controls_section(
             'section_general',
             [
-                'label' => esc_html__('General', 'lasa'),
+                'label' => esc_html__('General', 'themename'),
             ]
         );
         $this->add_control(
             'layout_type',
             [
-                'label' => esc_html__('Layout Type', 'lasa'),
+                'label' => esc_html__('Layout Type', 'themename'),
                 'type' => Controls_Manager::HIDDEN,
                 'default' => 'grid',
             ]
@@ -99,7 +99,7 @@ class Lasa_Elementor_List_Custom_Fonts extends Lasa_Elementor_Carousel_Base
 
     protected function render_element_content()
     {
-        $url = LASA_THEME_DIR . '/inc/vendors/elementor/icons/json/tbay-custom.json';
+        $url = THEMENAME_THEME_DIR . '/inc/vendors/elementor/icons/json/tbay-custom.json';
         $request = wp_remote_get($url);
 
         if (is_wp_error($request)) {
@@ -116,9 +116,9 @@ class Lasa_Elementor_List_Custom_Fonts extends Lasa_Elementor_Carousel_Base
                     <i class="icon-magnifier"></i>
                 </div> 
                 <div class="text-center font-size-changer">
-                    <a href="#" class="small-icons"><i class="icon-info"></i> <?php esc_html_e('Small', 'lasa'); ?></a>
-                    <a href="#" class="medium-icons"><i class="icon-info"></i> <?php esc_html_e('Medium', 'lasa'); ?></a>
-                    <a href="#" class="large-icons active"><i class="icon-info"></i> <?php esc_html_e('Large', 'lasa'); ?></a>
+                    <a href="#" class="small-icons"><i class="icon-info"></i> <?php esc_html_e('Small', 'themename'); ?></a>
+                    <a href="#" class="medium-icons"><i class="icon-info"></i> <?php esc_html_e('Medium', 'themename'); ?></a>
+                    <a href="#" class="large-icons active"><i class="icon-info"></i> <?php esc_html_e('Large', 'themename'); ?></a>
                 </div>
                 <div <?php $this->print_render_attribute_string('row'); ?>>
                     <?php
@@ -135,10 +135,10 @@ class Lasa_Elementor_List_Custom_Fonts extends Lasa_Elementor_Carousel_Base
         ?>
         <div class="icon-preview-box large-icons">
             <div class="preview">
-            <a href="#" class="show-code" data-bs-toggle="tooltip" data-bs-placement="top" title="<?php esc_attr_e('Click to copy class', 'lasa'); ?>"><i class="tb-icon tb-icon-<?php echo esc_attr($icon); ?>"></i><span class="name"><?php echo trim(str_replace('-', ' ', $icon)); ?></span> <code class="code-preview" style="display: none;">tb-icon tb-icon-<?php echo trim($icon); ?></code></a>
+            <a href="#" class="show-code" data-bs-toggle="tooltip" data-bs-placement="top" title="<?php esc_attr_e('Click to copy class', 'themename'); ?>"><i class="tb-icon tb-icon-<?php echo esc_attr($icon); ?>"></i><span class="name"><?php echo trim(str_replace('-', ' ', $icon)); ?></span> <code class="code-preview" style="display: none;">tb-icon tb-icon-<?php echo trim($icon); ?></code></a>
             </div>
         </div>
         <?php
     }
 }
-$widgets_manager->register(new Lasa_Elementor_List_Custom_Fonts());
+$widgets_manager->register(new Themename_Elementor_List_Custom_Fonts());

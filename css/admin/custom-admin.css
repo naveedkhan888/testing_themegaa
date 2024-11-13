@@ -122,7 +122,7 @@
 
 
 /*Admin woo*/
-#woocommerce-product-data ul.wc-tabs li.lasa-options-tab_options a:before { 
+#woocommerce-product-data ul.wc-tabs li.themename-options-tab_options a:before { 
 	font-family: WooCommerce; 
 	content: '\e007'; 
 }

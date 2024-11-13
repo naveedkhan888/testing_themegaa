@@ -2,7 +2,7 @@
 get_header();
 
 
-if ( !lasa_redux_framework_activated() ) {
+if ( !themename_redux_framework_activated() ) {
     $colContent = (is_active_sidebar('sidebar-default')) ? 9 : 12; ?>
 		<div id="main" class="site-main">
 			<div class="container">
@@ -18,7 +18,7 @@ if ( !lasa_redux_framework_activated() ) {
 									<?php
 								// End the loop.
 								endwhile;
-								lasa_tbay_paging_nav(); ?>
+								themename_tbay_paging_nav(); ?>
 							<?php else : ?>
 								<?php get_template_part('post-formats/content/content', 'none'); ?>
 							<?php endif; ?>
@@ -34,17 +34,17 @@ if ( !lasa_redux_framework_activated() ) {
 		</div><!-- .site-main -->
 <?php
 } else {
-        $sidebar_configs = lasa_tbay_get_blog_layout_configs();
-        $blog_archive_layout =  (isset($_GET['blog_archive_layout']))  ? $_GET['blog_archive_layout'] : lasa_tbay_get_config('blog_archive_layout', 'main-right');
-        $blog_single_layout =	(isset($_GET['blog_single_layout'])) ? $_GET['blog_single_layout']  :  lasa_tbay_get_config('blog_single_layout', 'left-main');
+        $sidebar_configs = themename_tbay_get_blog_layout_configs();
+        $blog_archive_layout =  (isset($_GET['blog_archive_layout']))  ? $_GET['blog_archive_layout'] : themename_tbay_get_config('blog_archive_layout', 'main-right');
+        $blog_single_layout =	(isset($_GET['blog_single_layout'])) ? $_GET['blog_single_layout']  :  themename_tbay_get_config('blog_single_layout', 'left-main');
         $class_row =  $blog_archive_layout === 'main-right' ? 'tb-column-reverse tb-custom-blog' : 'tb-custom-blog';
         if (is_single()) {
             $class_row =  $blog_single_layout === 'main-right' ? 'tb-column-reverse' : 'tb-custom-blog';
         }
 
-        lasa_tbay_render_breadcrumbs();
+        themename_tbay_render_breadcrumbs();
 
-        $class_main = apply_filters('lasa_tbay_post_content_class', 'container');
+        $class_main = apply_filters('themename_tbay_post_content_class', 'container');
     
         $blog_columns = apply_filters('loop_blog_columns', 1);
 
@@ -73,7 +73,7 @@ if ( !lasa_redux_framework_activated() ) {
 
 	<section id="main-container" class="main-content  <?php echo esc_attr($class_main); ?>">
 
-		<?php do_action('lasa_post_template_main_container_before'); ?>
+		<?php do_action('themename_post_template_main_container_before'); ?>
 
 		<div class="row <?php echo esc_attr($class_row); ?>">
 
@@ -88,7 +88,7 @@ if ( !lasa_redux_framework_activated() ) {
 			<div id="main-content" class="col-sm-12 <?php echo esc_attr($sidebar_configs['main']['class']); ?>">
 				<div id="main" class="site-main layout-blog">
 
-					<?php do_action('lasa_post_template_main_content_before'); ?>
+					<?php do_action('themename_post_template_main_content_before'); ?>
 					
 					<div class="row grid" <?php echo trim($data_responsive); ?>>
 						<?php if (have_posts()) : ?>
@@ -114,7 +114,7 @@ if ( !lasa_redux_framework_activated() ) {
                             endwhile;
 
 						// Previous/next page navigation.
-						lasa_tbay_paging_nav();
+						themename_tbay_paging_nav();
 
 						// If no content, include the "No posts found" template.
 						else :
@@ -123,14 +123,14 @@ if ( !lasa_redux_framework_activated() ) {
 						endif; ?>
 					</div>
 
-					<?php do_action('lasa_post_template_main_content_after'); ?>
+					<?php do_action('themename_post_template_main_content_after'); ?>
 
 				</div><!-- .site-main -->
 			</div><!-- .content-area -->
 			
 		</div>
 
-		<?php do_action('lasa_post_template_main_container_after'); ?>
+		<?php do_action('themename_post_template_main_container_after'); ?>
 	</section> 
 	<?php
     }

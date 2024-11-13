@@ -1,12 +1,12 @@
 <?php
 
-if (! defined('ABSPATH') || function_exists('Lasa_Elementor_Products')) {
+if (! defined('ABSPATH') || function_exists('Themename_Elementor_Products')) {
     exit; // Exit if accessed directly.
 }
 
 use Elementor\Controls_Manager;
 
-class Lasa_Elementor_Products extends Lasa_Elementor_Carousel_Base
+class Themename_Elementor_Products extends Themename_Elementor_Carousel_Base
 {
     public function get_name()
     {
@@ -15,12 +15,12 @@ class Lasa_Elementor_Products extends Lasa_Elementor_Carousel_Base
 
     public function get_title()
     {
-        return esc_html__('Lasa Products', 'lasa');
+        return esc_html__('Themename Products', 'themename');
     }
 
     public function get_categories()
     {
-        return [ 'lasa-elements', 'woocommerce-elements'];
+        return [ 'themename-elements', 'woocommerce-elements'];
     }
 
     public function get_icon()
@@ -40,7 +40,7 @@ class Lasa_Elementor_Products extends Lasa_Elementor_Carousel_Base
      */
     public function get_script_depends()
     {
-        return ['slick', 'lasa-custom-slick'];
+        return ['slick', 'themename-custom-slick'];
     }
 
     public function get_keywords()
@@ -55,16 +55,16 @@ class Lasa_Elementor_Products extends Lasa_Elementor_Carousel_Base
         $this->start_controls_section(
             'general',
             [
-                'label' => esc_html__('General', 'lasa'),
+                'label' => esc_html__('General', 'themename'),
             ]
         );
 
         $this->add_control(
             'limit',
             [
-                'label' => esc_html__('Number of products', 'lasa'),
+                'label' => esc_html__('Number of products', 'themename'),
                 'type' => Controls_Manager::NUMBER,
-                'description' => esc_html__('Number of products to show ( -1 = all )', 'lasa'),
+                'description' => esc_html__('Number of products to show ( -1 = all )', 'themename'),
                 'default' => 6,
                 'min'  => -1
             ]
@@ -74,7 +74,7 @@ class Lasa_Elementor_Products extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'advanced',
             [
-                'label' => esc_html__('Advanced', 'lasa'),
+                'label' => esc_html__('Advanced', 'themename'),
                 'type' => Controls_Manager::HEADING,
             ]
         );
@@ -82,12 +82,12 @@ class Lasa_Elementor_Products extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'layout_type',
             [
-                'label'     => esc_html__('Layout Type', 'lasa'),
+                'label'     => esc_html__('Layout Type', 'themename'),
                 'type'      => Controls_Manager::SELECT,
                 'default'   => 'grid',
                 'options'   => [
-                    'grid'      => esc_html__('Grid', 'lasa'),
-                    'carousel'  => esc_html__('Carousel', 'lasa'),
+                    'grid'      => esc_html__('Grid', 'themename'),
+                    'carousel'  => esc_html__('Carousel', 'themename'),
                 ],
             ]
         );
@@ -99,7 +99,7 @@ class Lasa_Elementor_Products extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'product_type',
             [
-                'label' => esc_html__('Product Type', 'lasa'),
+                'label' => esc_html__('Product Type', 'themename'),
                 'type' => Controls_Manager::SELECT,
                 'default' => 'newest',
                 'options' => $this->get_product_type(),
@@ -109,7 +109,7 @@ class Lasa_Elementor_Products extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'product_style',
             [
-                'label' => esc_html__('Product Style', 'lasa'),
+                'label' => esc_html__('Product Style', 'themename'),
                 'type' => Controls_Manager::SELECT,
                 'default' => 'inner',
                 'options' => $this->get_template_product(),
@@ -132,7 +132,7 @@ class Lasa_Elementor_Products extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'show_all',
             [
-                'label'     => esc_html__('Display Show All', 'lasa'),
+                'label'     => esc_html__('Display Show All', 'themename'),
                 'type'      => Controls_Manager::SWITCHER,
                 'default' => 'no'
             ]
@@ -140,11 +140,11 @@ class Lasa_Elementor_Products extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'position_show_all',
             [
-                'label'     => esc_html__('Position', 'lasa'),
+                'label'     => esc_html__('Position', 'themename'),
                 'type'      => Controls_Manager::SELECT,
                 'options' => [
-                    'top' => esc_html__('Top', 'lasa'),
-                    'bottom' => esc_html__('Bottom', 'lasa'),
+                    'top' => esc_html__('Top', 'themename'),
+                    'bottom' => esc_html__('Bottom', 'themename'),
                 ],
                 'default' => 'bottom',
                 'condition' => [
@@ -155,9 +155,9 @@ class Lasa_Elementor_Products extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'text_show_all',
             [
-                'label'     => esc_html__('Text Button', 'lasa'),
+                'label'     => esc_html__('Text Button', 'themename'),
                 'type'      => Controls_Manager::TEXT,
-                'default'   => esc_html__('View all products', 'lasa'),
+                'default'   => esc_html__('View all products', 'themename'),
                 'condition' => [
                     'show_all' => 'yes'
                 ]
@@ -166,7 +166,7 @@ class Lasa_Elementor_Products extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'icon_show_all',
             [
-                'label'     => esc_html__('Icon Button', 'lasa'),
+                'label'     => esc_html__('Icon Button', 'themename'),
                 'type'      => Controls_Manager::ICONS,
                 'default' => [
                     'value' => 'tb-icon tb-icon-arrow-right',
@@ -229,4 +229,4 @@ class Lasa_Elementor_Products extends Lasa_Elementor_Carousel_Base
         }
     }
 }
-$widgets_manager->register(new Lasa_Elementor_Products());
+$widgets_manager->register(new Themename_Elementor_Products());

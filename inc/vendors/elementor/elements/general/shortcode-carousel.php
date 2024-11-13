@@ -1,6 +1,6 @@
 <?php
 
-if (! defined('ABSPATH') || function_exists('Lasa_Elementor_Shortcode_Carousel')) {
+if (! defined('ABSPATH') || function_exists('Themename_Elementor_Shortcode_Carousel')) {
     exit; // Exit if accessed directly.
 }
 
@@ -14,7 +14,7 @@ use Elementor\Controls_Manager;
  *
  * @since 1.0.0
  */
-class Lasa_Elementor_Shortcode_Carousel extends Lasa_Elementor_Carousel_Base
+class Themename_Elementor_Shortcode_Carousel extends Themename_Elementor_Carousel_Base
 {
     /**
      * Get widget name.
@@ -43,12 +43,12 @@ class Lasa_Elementor_Shortcode_Carousel extends Lasa_Elementor_Carousel_Base
      */
     public function get_title()
     {
-        return esc_html__('Lasa Shortcode Carousel', 'lasa');
+        return esc_html__('Themename Shortcode Carousel', 'themename');
     }
 
     public function get_script_depends()
     {
-        return [ 'lasa-custom-slick', 'slick' ];
+        return [ 'themename-custom-slick', 'slick' ];
     }
  
     /**
@@ -93,25 +93,25 @@ class Lasa_Elementor_Shortcode_Carousel extends Lasa_Elementor_Carousel_Base
         $this->start_controls_section(
             'section_general',
             [
-                'label' => esc_html__('Shortcode Carousel', 'lasa'),
+                'label' => esc_html__('Shortcode Carousel', 'themename'),
             ]
         );
         
         $this->add_control(
             'list_shortcode',
             [
-                'label' => esc_html__('List Shortcode', 'lasa'),
+                'label' => esc_html__('List Shortcode', 'themename'),
                 'type' => Controls_Manager::REPEATER,
 				'fields' => [
 					[
                         'name' => 'shortcode',
-                        'label' => esc_html__( 'Enter your shortcode', 'lasa' ),
+                        'label' => esc_html__( 'Enter your shortcode', 'themename' ),
                         'type' => Controls_Manager::TEXTAREA,
                         'dynamic' => [
                             'active' => true,
                         ],
                         'placeholder' => '[tbay_block id="block-id"]',
-                        'description'  => sprintf(__('Go to the <a href="%s" target="_blank">Thembay Shortcode</a> to manage your.', 'lasa'), admin_url('edit.php?post_type=tbay_custom_post&tbay_block_type=custom')),
+                        'description'  => sprintf(__('Go to the <a href="%s" target="_blank">Xperttheme Shortcode</a> to manage your.', 'themename'), admin_url('edit.php?post_type=tbay_custom_post&tbay_block_type=custom')),
                         'default' => '',
 					],
                 ]
@@ -129,7 +129,7 @@ class Lasa_Elementor_Shortcode_Carousel extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'layout_type',
             [
-                'label'     => esc_html__('Layout Type', 'lasa'),
+                'label'     => esc_html__('Layout Type', 'themename'),
                 'type'      => Controls_Manager::HIDDEN,
                 'default'   => 'carousel',
             ]
@@ -138,7 +138,7 @@ class Lasa_Elementor_Shortcode_Carousel extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'column',
             [
-                'label'     => esc_html__('Columns', 'lasa'),
+                'label'     => esc_html__('Columns', 'themename'),
                 'type'      => Controls_Manager::HIDDEN,
                 'default'   => 1,
             ]
@@ -147,7 +147,7 @@ class Lasa_Elementor_Shortcode_Carousel extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'column_tablet',
             [
-                'label'     => esc_html__('Columns Tablet ', 'lasa'),
+                'label'     => esc_html__('Columns Tablet ', 'themename'),
                 'type'      => Controls_Manager::HIDDEN,
                 'default'   => 1,
             ]
@@ -156,7 +156,7 @@ class Lasa_Elementor_Shortcode_Carousel extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'column_mobile',
             [
-                'label'     => esc_html__('Columns Mobile', 'lasa'),
+                'label'     => esc_html__('Columns Mobile', 'themename'),
                 'type'      => Controls_Manager::HIDDEN,
                 'default'   => 1,
             ]
@@ -165,8 +165,8 @@ class Lasa_Elementor_Shortcode_Carousel extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'col_desktop',
             [
-                'label'     => esc_html__('Columns desktop', 'lasa'),
-                'description' => esc_html__('Column apply when the width is between 1200px and 1600px', 'lasa'),
+                'label'     => esc_html__('Columns desktop', 'themename'),
+                'description' => esc_html__('Column apply when the width is between 1200px and 1600px', 'themename'),
                 'type'      => Controls_Manager::HIDDEN,
                 'default'   => 1,
             ]
@@ -175,8 +175,8 @@ class Lasa_Elementor_Shortcode_Carousel extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'col_desktopsmall',
             [
-                'label'     => esc_html__('Columns desktopsmall', 'lasa'),
-                'description' => esc_html__('Column apply when the width is between 992px and 1199px', 'lasa'),
+                'label'     => esc_html__('Columns desktopsmall', 'themename'),
+                'description' => esc_html__('Column apply when the width is between 992px and 1199px', 'themename'),
                 'type'      => Controls_Manager::HIDDEN,
                 'default'   => 1,
             ]
@@ -185,12 +185,12 @@ class Lasa_Elementor_Shortcode_Carousel extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'col_landscape',
             [
-                'label'     => esc_html__('Columns mobile landscape', 'lasa'),
-                'description' => esc_html__('Column apply when the width is between 576px and 767px', 'lasa'),
+                'label'     => esc_html__('Columns mobile landscape', 'themename'),
+                'description' => esc_html__('Column apply when the width is between 576px and 767px', 'themename'),
                 'type'      => Controls_Manager::HIDDEN,
                 'default'   => 1,
             ]
         );
     }
 }
-$widgets_manager->register(new Lasa_Elementor_Shortcode_Carousel());
+$widgets_manager->register(new Themename_Elementor_Shortcode_Carousel());

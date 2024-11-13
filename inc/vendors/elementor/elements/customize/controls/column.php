@@ -1,12 +1,12 @@
 <?php
 
-if (!function_exists('lasa_column_section_advanced')) {
-    function lasa_column_section_advanced($widget)
+if (!function_exists('themename_column_section_advanced')) {
+    function themename_column_section_advanced($widget)
     {
         $widget->update_responsive_control(
             'padding',
             [
-                'label' => esc_html__('Padding', 'lasa'),
+                'label' => esc_html__('Padding', 'themename'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', 'em', '%' ],
                 'selectors' => [
@@ -16,5 +16,5 @@ if (!function_exists('lasa_column_section_advanced')) {
         );
     }
 
-    add_action('elementor/element/column/section_advanced/before_section_end', 'lasa_column_section_advanced', 10, 2);
+    add_action('elementor/element/column/section_advanced/before_section_end', 'themename_column_section_advanced', 10, 2);
 }

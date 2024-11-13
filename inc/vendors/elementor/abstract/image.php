@@ -1,20 +1,20 @@
 <?php
-if (!defined('ABSPATH') || function_exists('Lasa_Elementor_Widget_Image')) {
+if (!defined('ABSPATH') || function_exists('Themename_Elementor_Widget_Image')) {
     exit; // Exit if accessed directly.
 }
 
 use Elementor\Widget_Image;
 
-abstract class Lasa_Elementor_Widget_Image extends Widget_Image
+abstract class Themename_Elementor_Widget_Image extends Widget_Image
 {
     public function get_name_template()
     {
-        return str_replace('lasa-', '', $this->get_name());
+        return str_replace('themename-', '', $this->get_name());
     }
 
     public function get_categories()
     {
-        return [ 'lasa-elements' ];
+        return [ 'themename-elements' ];
     }
 
     public function get_name()
@@ -46,7 +46,7 @@ abstract class Lasa_Elementor_Widget_Image extends Widget_Image
         $templates[] = 'elementor_templates/' . $tpl_slug . '.php';
  
         foreach ($templates as $template) {
-            if (file_exists(LASA_THEMEROOT . '/' . $template)) {
+            if (file_exists(THEMENAME_THEMEROOT . '/' . $template)) {
                 $located = locate_template( $template );
                 break;
             } else {
@@ -57,7 +57,7 @@ abstract class Lasa_Elementor_Widget_Image extends Widget_Image
         if ($located) {
             include $located;
         } else {
-            echo sprintf(__('Failed to load template with slug "%s" and name "%s".', 'lasa'), $tpl_slug, $tpl_name);
+            echo sprintf(__('Failed to load template with slug "%s" and name "%s".', 'themename'), $tpl_slug, $tpl_name);
         }
     }
 

@@ -3,8 +3,8 @@
  * The sidebar containing the main widget area
  *
  * @package WordPress
- * @subpackage Lasa
- * @since Lasa 1.0
+ * @subpackage Themename
+ * @since Themename 1.0
  */
 
 

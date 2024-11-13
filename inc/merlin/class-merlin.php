@@ -482,7 +482,7 @@ class Merlin
         wp_enqueue_script('merlin', trailingslashit($this->base_url) . $this->directory . '/assets/js/merlin' . $suffix . '.js', array( 'jquery-core' ), MERLIN_VERSION);
 
         $texts = array(
-            'something_went_wrong' => esc_html__('Something went wrong. Please refresh the page and try again!', 'lasa'),
+            'something_went_wrong' => esc_html__('Something went wrong. Please refresh the page and try again!', 'themename'),
         );
 
         // Localize the javascript.
@@ -634,12 +634,12 @@ class Merlin
 
         // Make sure $args are an array.
         if (empty($args)) {
-            return __('Please define default parameters in the form of an array.', 'lasa');
+            return __('Please define default parameters in the form of an array.', 'themename');
         }
 
         // Define an icon.
         if (false === array_key_exists('icon', $args)) {
-            return __('Please define an SVG icon filename.', 'lasa');
+            return __('Please define an SVG icon filename.', 'themename');
         }
 
         // Set defaults.
@@ -761,20 +761,20 @@ class Merlin
     {
         $this->steps = array(
             'welcome' => array(
-                'name'    => esc_html__('Welcome', 'lasa'),
+                'name'    => esc_html__('Welcome', 'themename'),
                 'view'    => array( $this, 'welcome' ),
                 'handler' => array( $this, 'welcome_handler' ),
             ),
         );
 
         $this->steps['child'] = array(
-            'name' => esc_html__('Child', 'lasa'),
+            'name' => esc_html__('Child', 'themename'),
             'view' => array( $this, 'child' ),
         );
 
         if ($this->license_step_enabled) {
             $this->steps['license'] = array(
-                'name' => esc_html__('License', 'lasa'),
+                'name' => esc_html__('License', 'themename'),
                 'view' => array( $this, 'license' ),
             );
         }
@@ -782,7 +782,7 @@ class Merlin
         // Show the plugin importer, only if TGMPA is included.
         if (class_exists('TGM_Plugin_Activation') && $this->plugins_step_enabled) {
             $this->steps['plugins'] = array(
-                'name' => esc_html__('Plugins', 'lasa'),
+                'name' => esc_html__('Plugins', 'themename'),
                 'view' => array( $this, 'plugins' ),
             );
         }
@@ -790,13 +790,13 @@ class Merlin
         // Show the content importer, only if there's demo content added.
         if (! empty($this->import_files)) {
             $this->steps['content'] = array(
-                'name' => esc_html__('Content', 'lasa'),
+                'name' => esc_html__('Content', 'themename'),
                 'view' => array( $this, 'content' ),
             );
         }
 
         $this->steps['ready'] = array(
-            'name' => esc_html__('Ready', 'lasa'),
+            'name' => esc_html__('Ready', 'themename'),
             'view' => array( $this, 'ready' ),
         );
 
@@ -902,7 +902,7 @@ class Merlin
 		</footer>
 
 	<?php
-        $this->logger->debug(__('The welcome step has been displayed', 'lasa'));
+        $this->logger->debug(__('The welcome step has been displayed', 'themename'));
     }
 
     /**
@@ -996,7 +996,7 @@ class Merlin
 			<?php wp_nonce_field('merlin'); ?>
 		</footer>
 		<?php
-        $this->logger->debug(__('The license activation step has been displayed', 'lasa'));
+        $this->logger->debug(__('The license activation step has been displayed', 'themename'));
     }
 
 
@@ -1067,7 +1067,7 @@ class Merlin
 			<?php wp_nonce_field('merlin'); ?>
 		</footer>
 	<?php
-        $this->logger->debug(__('The child theme installation step has been displayed', 'lasa'));
+        $this->logger->debug(__('The child theme installation step has been displayed', 'themename'));
     }
 
     /**
@@ -1154,8 +1154,8 @@ class Merlin
 								<span><?php echo esc_html($plugin['name']); ?></span>
 
 								<span class="badge">
-									<span class="hint--top" aria-label="<?php esc_attr_e('Required', 'lasa'); ?>">
-										<?php esc_html_e('req', 'lasa'); ?>
+									<span class="hint--top" aria-label="<?php esc_attr_e('Required', 'themename'); ?>">
+										<?php esc_html_e('req', 'themename'); ?>
 									</span>
 								</span>
 							</label>
@@ -1195,7 +1195,7 @@ class Merlin
 		</form>
 
 	<?php
-        $this->logger->debug(__('The plugin installation step has been displayed', 'lasa'));
+        $this->logger->debug(__('The plugin installation step has been displayed', 'themename'));
     }
 
     /**
@@ -1225,7 +1225,7 @@ class Merlin
             
             printf("<img src='%s' alt='Home Preview' class='merlin-image-preview' />", $this->import_files[0]['import_preview_image_url']);
             
-        printf('<a href="%s" target="_blank" class="merlin-view-demo">' . esc_html__('Watch Demo Online', 'lasa') . '</a>', $this->import_files[0]['preview_url']); ?>
+        printf('<a href="%s" target="_blank" class="merlin-view-demo">' . esc_html__('Watch Demo Online', 'themename') . '</a>', $this->import_files[0]['preview_url']); ?>
 
 			<svg class="icon icon--checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
 				<circle class="icon--checkmark__circle" cx="26" cy="26" r="25" fill="none"/><path class="icon--checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
@@ -1256,7 +1256,7 @@ class Merlin
 					</select>
 
 					<div class="merlin__select-control-help">
-						<span class="hint--top" aria-label="<?php echo esc_attr__('Select Demo', 'lasa'); ?>">
+						<span class="hint--top" aria-label="<?php echo esc_attr__('Select Demo', 'themename'); ?>">
 							<?php echo wp_kses($this->svg(array( 'icon' => 'downarrow' )), $this->svg_allowed_html()); ?>
 						</span>
 					</div>
@@ -1294,7 +1294,7 @@ class Merlin
 		</form>
 
 	<?php
-        $this->logger->debug(__('The content import step has been displayed', 'lasa'));
+        $this->logger->debug(__('The content import step has been displayed', 'themename'));
     }
 
 
@@ -1374,7 +1374,7 @@ class Merlin
 		</footer>
 
 	<?php
-        $this->logger->debug(__('The final step has been displayed', 'lasa'));
+        $this->logger->debug(__('The final step has been displayed', 'themename'));
     }
 
     /**
@@ -1450,7 +1450,7 @@ class Merlin
             switch_theme($slug);
             endif;
 
-            $this->logger->debug(__('The existing child theme was activated', 'lasa'));
+            $this->logger->debug(__('The existing child theme was activated', 'themename'));
 
             wp_send_json(
                 array(
@@ -1468,7 +1468,7 @@ class Merlin
         switch_theme($slug);
         endif;
 
-        $this->logger->debug(__('The newly generated child theme was activated', 'lasa'));
+        $this->logger->debug(__('The newly generated child theme was activated', 'themename'));
 
         wp_send_json(
             array(
@@ -1490,7 +1490,7 @@ class Merlin
             wp_send_json(
                 array(
                     'success' => false,
-                    'message' => esc_html__('Yikes! The theme activation failed. Please try again or contact support.', 'lasa'),
+                    'message' => esc_html__('Yikes! The theme activation failed. Please try again or contact support.', 'themename'),
                 )
             );
         }
@@ -1499,7 +1499,7 @@ class Merlin
             wp_send_json(
                 array(
                     'success' => false,
-                    'message' => esc_html__('Please add your license key before attempting to activate one.', 'lasa'),
+                    'message' => esc_html__('Please add your license key before attempting to activate one.', 'themename'),
                 )
             );
         }
@@ -1512,7 +1512,7 @@ class Merlin
             $result = apply_filters('merlin_ajax_activate_license', $license_key);
         }
 
-        $this->logger->debug(__('The license activation was performed with the following results', 'lasa'), $result);
+        $this->logger->debug(__('The license activation was performed with the following results', 'themename'), $result);
 
         wp_send_json(array_merge(array( 'done' => 1 ), $result));
     }
@@ -1558,7 +1558,7 @@ class Merlin
             if (is_wp_error($response)) {
                 $message = $response->get_error_message();
             } else {
-                $message = esc_html__('An error occurred, please try again.', 'lasa');
+                $message = esc_html__('An error occurred, please try again.', 'themename');
             }
         } else {
             $license_data = json_decode(wp_remote_retrieve_body($response));
@@ -1569,35 +1569,35 @@ class Merlin
                     case 'expired':
                         $message = sprintf(
                             /* translators: Expiration date */
-                            esc_html__('Your license key expired on %s.', 'lasa'),
+                            esc_html__('Your license key expired on %s.', 'themename'),
                             date_i18n(get_option('date_format'), strtotime($license_data->expires, current_time('timestamp')))
                         );
                         break;
 
                     case 'revoked':
-                        $message = esc_html__('Your license key has been disabled.', 'lasa');
+                        $message = esc_html__('Your license key has been disabled.', 'themename');
                         break;
 
                     case 'missing':
-                        $message = esc_html__('This appears to be an invalid license key. Please try again or contact support.', 'lasa');
+                        $message = esc_html__('This appears to be an invalid license key. Please try again or contact support.', 'themename');
                         break;
 
                     case 'invalid':
                     case 'site_inactive':
-                        $message = esc_html__('Your license is not active for this URL.', 'lasa');
+                        $message = esc_html__('Your license is not active for this URL.', 'themename');
                         break;
 
                     case 'item_name_mismatch':
                         /* translators: EDD Item Name */
-                        $message = sprintf(esc_html__('This appears to be an invalid license key for %s.', 'lasa'), $this->edd_item_name);
+                        $message = sprintf(esc_html__('This appears to be an invalid license key for %s.', 'themename'), $this->edd_item_name);
                         break;
 
                     case 'no_activations_left':
-                        $message = esc_html__('Your license key has reached its activation limit.', 'lasa');
+                        $message = esc_html__('Your license key has reached its activation limit.', 'themename');
                         break;
 
                     default:
-                        $message = esc_html__('An error occurred, please try again.', 'lasa');
+                        $message = esc_html__('An error occurred, please try again.', 'themename');
                         break;
                 }
             } else {
@@ -1687,7 +1687,7 @@ class Merlin
         // Let's remove the tabs so that it displays nicely.
         $output = trim(preg_replace('/\t+/', '', $output));
 
-        $this->logger->debug(__('The child theme functions.php content was generated', 'lasa'));
+        $this->logger->debug(__('The child theme functions.php content was generated', 'themename'));
 
         // Filterable return.
         return apply_filters('merlin_generate_child_functions_php', $output, $slug);
@@ -1718,7 +1718,7 @@ class Merlin
         // Let's remove the tabs so that it displays nicely.
         $output = trim(preg_replace('/\t+/', '', $output));
 
-        $this->logger->debug(__('The child theme style.css content was generated', 'lasa'));
+        $this->logger->debug(__('The child theme style.css content was generated', 'themename'));
 
         return apply_filters('merlin_generate_child_style_css', $output, $slug, $parent, $author, $version);
     }
@@ -1752,9 +1752,9 @@ class Merlin
         if (! empty($screenshot) && file_exists($screenshot)) {
             $copied = copy($screenshot, $path . '/screenshot.' . $screenshot_ext);
 
-            $this->logger->debug(__('The child theme screenshot was copied to the child theme, with the following result', 'lasa'), array( 'copied' => $copied ));
+            $this->logger->debug(__('The child theme screenshot was copied to the child theme, with the following result', 'themename'), array( 'copied' => $copied ));
         } else {
-            $this->logger->debug(__('The child theme screenshot was not generated, because of these results', 'lasa'), array( 'screenshot' => $screenshot ));
+            $this->logger->debug(__('The child theme screenshot was not generated, because of these results', 'themename'), array( 'screenshot' => $screenshot ));
         }
     }
 
@@ -1783,7 +1783,7 @@ class Merlin
                     '_wpnonce'      => wp_create_nonce('bulk-plugins'),
                     'action'        => 'tgmpa-bulk-activate',
                     'action2'       => - 1,
-                    'message'       => esc_html__('Activating', 'lasa'),
+                    'message'       => esc_html__('Activating', 'themename'),
                 );
                 break;
             }
@@ -1799,7 +1799,7 @@ class Merlin
                     '_wpnonce'      => wp_create_nonce('bulk-plugins'),
                     'action'        => 'tgmpa-bulk-update',
                     'action2'       => - 1,
-                    'message'       => esc_html__('Updating', 'lasa'),
+                    'message'       => esc_html__('Updating', 'themename'),
                 );
                 break;
             }
@@ -1815,7 +1815,7 @@ class Merlin
                     '_wpnonce'      => wp_create_nonce('bulk-plugins'),
                     'action'        => 'tgmpa-bulk-install',
                     'action2'       => - 1,
-                    'message'       => esc_html__('Installing', 'lasa'),
+                    'message'       => esc_html__('Installing', 'themename'),
                 );
                 break;
             }
@@ -1823,7 +1823,7 @@ class Merlin
 
         if ($json) {
             $this->logger->debug(
-                __('A plugin with the following data will be processed', 'lasa'),
+                __('A plugin with the following data will be processed', 'themename'),
                 array(
                     'plugin_slug' => $_POST['slug'],
                     'message'     => $json['message'],
@@ -1831,11 +1831,11 @@ class Merlin
             );
 
             $json['hash']    = md5(serialize($json));
-            $json['message'] = esc_html__('Installing', 'lasa');
+            $json['message'] = esc_html__('Installing', 'themename');
             wp_send_json($json);
         } else {
             $this->logger->debug(
-                __('A plugin with the following data was processed', 'lasa'),
+                __('A plugin with the following data was processed', 'themename'),
                 array(
                     'plugin_slug' => $_POST['slug'],
                 )
@@ -1844,7 +1844,7 @@ class Merlin
             wp_send_json(
                 array(
                     'done'    => 1,
-                    'message' => esc_html__('Success', 'lasa'),
+                    'message' => esc_html__('Success', 'themename'),
                 )
             );
         }
@@ -1868,12 +1868,12 @@ class Merlin
         }
 
         if (! check_ajax_referer('merlin_nonce', 'wpnonce') || empty($_POST['content']) && isset($content[ $_POST['content'] ])) {
-            $this->logger->error(__('The content importer AJAX call failed to start, because of incorrect data', 'lasa'));
+            $this->logger->error(__('The content importer AJAX call failed to start, because of incorrect data', 'themename'));
 
             wp_send_json_error(
                 array(
                     'error'   => 1,
-                    'message' => esc_html__('Invalid content!', 'lasa'),
+                    'message' => esc_html__('Invalid content!', 'themename'),
                 )
             );
         }
@@ -1884,7 +1884,7 @@ class Merlin
         if (isset($_POST['proceed'])) {
             if (is_callable($this_content['install_callback'])) {
                 $this->logger->info(
-                    __('The content import AJAX call will be executed with this import data', 'lasa'),
+                    __('The content import AJAX call will be executed with this import data', 'themename'),
                     array(
                         'title' => $this_content['title'],
                         'data'  => $this_content['data'],
@@ -1928,7 +1928,7 @@ class Merlin
             wp_send_json($json);
         } else {
             $this->logger->error(
-                __('The content import AJAX call failed with this passed data', 'lasa'),
+                __('The content import AJAX call failed with this passed data', 'themename'),
                 array(
                     'selected_content_index' => $selected_import,
                     'importing_content'      => $_POST['content'],
@@ -1939,7 +1939,7 @@ class Merlin
             wp_send_json(
                 array(
                     'error'   => 1,
-                    'message' => esc_html__('Error', 'lasa'),
+                    'message' => esc_html__('Error', 'themename'),
                     'logs'    => '',
                     'errors'  => '',
                 )
@@ -1954,12 +1954,12 @@ class Merlin
     public function _ajax_get_total_content_import_items()
     {
         if (! check_ajax_referer('merlin_nonce', 'wpnonce') && empty($_POST['selected_index'])) {
-            $this->logger->error(__('The content importer AJAX call for retrieving total content import items failed to start, because of incorrect data.', 'lasa'));
+            $this->logger->error(__('The content importer AJAX call for retrieving total content import items failed to start, because of incorrect data.', 'themename'));
 
             wp_send_json_error(
                 array(
                     'error'   => 1,
-                    'message' => esc_html__('Invalid data!', 'lasa'),
+                    'message' => esc_html__('Invalid data!', 'themename'),
                 )
             );
         }
@@ -2052,11 +2052,11 @@ class Merlin
 
         if (! empty($import_files['content'])) {
             $content['content'] = array(
-                'title'            => esc_html__('Content', 'lasa'),
-                'description'      => esc_html__('Demo content data.', 'lasa'),
-                'pending'          => esc_html__('Pending', 'lasa'),
-                'installing'       => esc_html__('Installing', 'lasa'),
-                'success'          => esc_html__('Success', 'lasa'),
+                'title'            => esc_html__('Content', 'themename'),
+                'description'      => esc_html__('Demo content data.', 'themename'),
+                'pending'          => esc_html__('Pending', 'themename'),
+                'installing'       => esc_html__('Installing', 'themename'),
+                'success'          => esc_html__('Success', 'themename'),
                 'checked'          => $this->is_possible_upgrade() ? 0 : 1,
                 'install_callback' => array( $this->importer, 'import' ),
                 'data'             => $import_files['content'],
@@ -2065,11 +2065,11 @@ class Merlin
 
         if (! empty($import_files['widgets'])) {
             $content['widgets'] = array(
-                'title'            => esc_html__('Widgets', 'lasa'),
-                'description'      => esc_html__('Sample widgets data.', 'lasa'),
-                'pending'          => esc_html__('Pending', 'lasa'),
-                'installing'       => esc_html__('Installing', 'lasa'),
-                'success'          => esc_html__('Success', 'lasa'),
+                'title'            => esc_html__('Widgets', 'themename'),
+                'description'      => esc_html__('Sample widgets data.', 'themename'),
+                'pending'          => esc_html__('Pending', 'themename'),
+                'installing'       => esc_html__('Installing', 'themename'),
+                'success'          => esc_html__('Success', 'themename'),
                 'install_callback' => array( 'Merlin_Widget_Importer', 'import' ),
                 'checked'          => $this->is_possible_upgrade() ? 0 : 1,
                 'data'             => $import_files['widgets'],
@@ -2078,11 +2078,11 @@ class Merlin
 
         if (! empty($import_files['sliders'])) {
             $content['sliders'] = array(
-                'title'            => esc_html__('Revolution Slider', 'lasa'),
-                'description'      => esc_html__('Sample Revolution sliders data.', 'lasa'),
-                'pending'          => esc_html__('Pending', 'lasa'),
-                'installing'       => esc_html__('Installing', 'lasa'),
-                'success'          => esc_html__('Success', 'lasa'),
+                'title'            => esc_html__('Revolution Slider', 'themename'),
+                'description'      => esc_html__('Sample Revolution sliders data.', 'themename'),
+                'pending'          => esc_html__('Pending', 'themename'),
+                'installing'       => esc_html__('Installing', 'themename'),
+                'success'          => esc_html__('Success', 'themename'),
                 'install_callback' => array( $this, 'import_revolution_sliders' ),
                 'checked'          => $this->is_possible_upgrade() ? 0 : 1,
                 'data'             => $import_files['sliders'],
@@ -2091,11 +2091,11 @@ class Merlin
 
         if (! empty($import_files['options'])) {
             $content['options'] = array(
-                'title'            => esc_html__('Options', 'lasa'),
-                'description'      => esc_html__('Sample theme options data.', 'lasa'),
-                'pending'          => esc_html__('Pending', 'lasa'),
-                'installing'       => esc_html__('Installing', 'lasa'),
-                'success'          => esc_html__('Success', 'lasa'),
+                'title'            => esc_html__('Options', 'themename'),
+                'description'      => esc_html__('Sample theme options data.', 'themename'),
+                'pending'          => esc_html__('Pending', 'themename'),
+                'installing'       => esc_html__('Installing', 'themename'),
+                'success'          => esc_html__('Success', 'themename'),
                 'install_callback' => array( 'Merlin_Customizer_Importer', 'import' ),
                 'checked'          => $this->is_possible_upgrade() ? 0 : 1,
                 'data'             => $import_files['options'],
@@ -2104,11 +2104,11 @@ class Merlin
 
         if (! empty($import_files['redux'])) {
             $content['redux'] = array(
-                'title'            => esc_html__('Redux Options', 'lasa'),
-                'description'      => esc_html__('Redux framework options.', 'lasa'),
-                'pending'          => esc_html__('Pending', 'lasa'),
-                'installing'       => esc_html__('Installing', 'lasa'),
-                'success'          => esc_html__('Success', 'lasa'),
+                'title'            => esc_html__('Redux Options', 'themename'),
+                'description'      => esc_html__('Redux framework options.', 'themename'),
+                'pending'          => esc_html__('Pending', 'themename'),
+                'installing'       => esc_html__('Installing', 'themename'),
+                'success'          => esc_html__('Success', 'themename'),
                 'install_callback' => array( 'Merlin_Redux_Importer', 'import' ),
                 'checked'          => $this->is_possible_upgrade() ? 0 : 1,
                 'data'             => $import_files['redux'],
@@ -2117,11 +2117,11 @@ class Merlin
 
         if (false !== has_action('merlin_after_all_import')) {
             $content['after_import'] = array(
-                'title'            => esc_html__('After import setup', 'lasa'),
-                'description'      => esc_html__('After import setup.', 'lasa'),
-                'pending'          => esc_html__('Pending', 'lasa'),
-                'installing'       => esc_html__('Installing', 'lasa'),
-                'success'          => esc_html__('Success', 'lasa'),
+                'title'            => esc_html__('After import setup', 'themename'),
+                'description'      => esc_html__('After import setup.', 'themename'),
+                'pending'          => esc_html__('Pending', 'themename'),
+                'installing'       => esc_html__('Installing', 'themename'),
+                'success'          => esc_html__('Success', 'themename'),
                 'install_callback' => array( $this->hooks, 'after_all_import_action' ),
                 'checked'          => $this->is_possible_upgrade() ? 0 : 1,
                 'data'             => $selected_import_index,
@@ -2148,7 +2148,7 @@ class Merlin
 
         $response = $importer->importSliderFromPost(true, true, $file);
 
-        $this->logger->info(__('The revolution slider import was executed', 'lasa'));
+        $this->logger->info(__('The revolution slider import was executed', 'themename'));
 
         if (defined('DOING_AJAX') && DOING_AJAX) {
             return 'true';
@@ -2165,7 +2165,7 @@ class Merlin
     public function pt_importer_new_ajax_request_response_data($data)
     {
         $data['url']      = admin_url('admin-ajax.php');
-        $data['message']  = esc_html__('Installing', 'lasa');
+        $data['message']  = esc_html__('Installing', 'themename');
         $data['proceed']  = 'true';
         $data['action']   = 'merlin_content';
         $data['content']  = 'content';
@@ -2197,7 +2197,7 @@ class Merlin
             if (! empty($import_file['import_file_name'])) {
                 $filtered_import_file_info[] = $import_file;
             } else {
-                $this->logger->warning(__('This predefined demo import does not have the name parameter: import_file_name', 'lasa'), $import_file);
+                $this->logger->warning(__('This predefined demo import does not have the name parameter: import_file_name', 'themename'), $import_file);
             }
         }
 

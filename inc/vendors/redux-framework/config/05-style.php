@@ -9,8 +9,8 @@
 defined( 'ABSPATH' ) || exit;
 
 
-$default_color = lasa_tbay_default_theme_primary_color();
-$default_fonts = lasa_tbay_default_theme_primary_fonts();
+$default_color = themename_tbay_default_theme_primary_color();
+$default_fonts = themename_tbay_default_theme_primary_fonts();
 
 if ( !isset($default_color['main_color_second']) ) {
 	$default_color['main_color_second'] = '';
@@ -25,12 +25,12 @@ Redux::set_section(
 	$opt_name,
 	array(
         'icon' => 'zmdi zmdi-format-color-text',
-        'title' => esc_html__('Style', 'lasa'),
+        'title' => esc_html__('Style', 'themename'),
 	)
 );
 
-if (!function_exists('lasa_settings_style_main_fields')) {
-    function lasa_settings_style_main_fields( $default_color )
+if (!function_exists('themename_settings_style_main_fields')) {
+    function themename_settings_style_main_fields( $default_color )
     {
 
 		$fields_color_text = $fields_color_sencond_text = array();
@@ -40,18 +40,18 @@ if (!function_exists('lasa_settings_style_main_fields')) {
 				'id'       => 'boby_bg',
 				'type'     => 'background',
 				'output'   => array( 'body' ),
-				'title'    => esc_html__('Body Background', 'lasa'),
-				'subtitle' => esc_html__('Body background with image, color, etc.', 'lasa'),
+				'title'    => esc_html__('Body Background', 'themename'),
+				'subtitle' => esc_html__('Body background with image, color, etc.', 'themename'),
 			),
 			array(
-				'title' => esc_html__('Theme Main Color', 'lasa'),
+				'title' => esc_html__('Theme Main Color', 'themename'),
 				'id' => 'main_color',
 				'type' => 'color',
 				'transparent' => false,
 				'default' => $default_color['main_color'],
 			),
 			array(
-				'title' => esc_html__('Color Text of the button theme color', 'lasa'),
+				'title' => esc_html__('Color Text of the button theme color', 'themename'),
 				'id' => 'btn_text_color',
 				'type' => 'color',
 				'transparent' => false,
@@ -62,7 +62,7 @@ if (!function_exists('lasa_settings_style_main_fields')) {
 		if( !empty($default_color['enable_main_color_text']) && $default_color['enable_main_color_text'] ) {
             $fields_color_text = array(
 				array(
-					'title' => esc_html__('Theme Main Color (Text)', 'lasa'),
+					'title' => esc_html__('Theme Main Color (Text)', 'themename'),
 					'id' => 'main_color_text',
 					'type' => 'color',
 					'transparent' => false,
@@ -74,7 +74,7 @@ if (!function_exists('lasa_settings_style_main_fields')) {
 		if( !empty($default_color['enable_main_color_second']) && $default_color['enable_main_color_second'] ) {
             $fields_color_sencond_text = array(
 				array(
-					'title' => esc_html__('Theme Main Color Second', 'lasa'),
+					'title' => esc_html__('Theme Main Color Second', 'themename'),
 					'id' => 'main_color_second',
 					'type' => 'color',
 					'transparent' => false,
@@ -94,9 +94,9 @@ if (!function_exists('lasa_settings_style_main_fields')) {
 Redux::set_section(
 	$opt_name,
 	array(
-		'title' => esc_html__('Main', 'lasa'),
+		'title' => esc_html__('Main', 'themename'),
 		'subsection' => true,
-		'fields' => lasa_settings_style_main_fields( $default_color )
+		'fields' => themename_settings_style_main_fields( $default_color )
 	)
 );
 
@@ -106,16 +106,16 @@ Redux::set_section(
 	$opt_name,
 	array(
 		'subsection' => true,
-		'title' => esc_html__('Typography', 'lasa'),
+		'title' => esc_html__('Typography', 'themename'),
 		'fields' => array(
 			array(
 				'id' => 'show_typography',
 				'type' => 'switch',
-				'title' => esc_html__('Edit Typography', 'lasa'),
+				'title' => esc_html__('Edit Typography', 'themename'),
 				'default' => false
 			),
 			array(
-				'title'    => esc_html__('Font Source', 'lasa'),
+				'title'    => esc_html__('Font Source', 'themename'),
 				'id'       => 'font_source',
 				'type'     => 'radio',
 				'required' => array('show_typography','=', true),
@@ -129,10 +129,10 @@ Redux::set_section(
 			array(
 				'id'=>'font_google_code',
 				'type' => 'text',
-				'title' => esc_html__('Google Link', 'lasa'),
-				'subtitle' => '<em>'.esc_html__('Paste the provided Google Code', 'lasa').'</em>',
+				'title' => esc_html__('Google Link', 'themename'),
+				'subtitle' => '<em>'.esc_html__('Paste the provided Google Code', 'themename').'</em>',
 				'default' => '',
-				'desc' => esc_html__('e.g.: https://fonts.googleapis.com/css?family=Open+Sans', 'lasa'),
+				'desc' => esc_html__('e.g.: https://fonts.googleapis.com/css?family=Open+Sans', 'themename'),
 				'required' => array('font_source','=','2')
 			),
 
@@ -142,9 +142,9 @@ Redux::set_section(
 				'type' => 'info',
 				'raw' => '<h3 style="margin: 0;">'. sprintf(
 					'%1$s <a href="%2$s">%3$s</a>',
-					esc_html__('Video guide custom font in ', 'lasa'),
+					esc_html__('Video guide custom font in ', 'themename'),
 					esc_url('https://www.youtube.com/watch?v=ljXAxueAQUc'),
-					esc_html__('here', 'lasa')
+					esc_html__('here', 'themename')
 				) .'</h3>',
 				'required' => array('font_source','=','3')
 			),
@@ -153,13 +153,13 @@ Redux::set_section(
 				'id' => 'main_font_info',
 				'icon' => true,
 				'type' => 'info',
-				'raw' => '<h3 style="margin: 0;"> '.esc_html__('Main Font', 'lasa').'</h3>',
+				'raw' => '<h3 style="margin: 0;"> '.esc_html__('Main Font', 'themename').'</h3>',
 				'required' => array('show_typography','=', true),
 			),
 
 			// Standard + Google Webfonts
 			array(
-				'title' => esc_html__('Font Face', 'lasa'),
+				'title' => esc_html__('Font Face', 'themename'),
 				'id' => 'main_font',
 				'type' => 'typography',
 				'line-height' => false,
@@ -181,9 +181,9 @@ Redux::set_section(
 			
 			// Google Custom
 			array(
-				'title' => esc_html__('Google Font Face', 'lasa'),
-				'subtitle' => '<em>'.esc_html__('Enter your Google Font Name for the theme\'s Main Typography', 'lasa').'</em>',
-				'desc' => esc_html__('e.g.: &#39;Open Sans&#39;', 'lasa'),
+				'title' => esc_html__('Google Font Face', 'themename'),
+				'subtitle' => '<em>'.esc_html__('Enter your Google Font Name for the theme\'s Main Typography', 'themename').'</em>',
+				'desc' => esc_html__('e.g.: &#39;Open Sans&#39;', 'themename'),
 				'id' => 'main_google_font_face',
 				'type' => 'text',
 				'default' => '',
@@ -195,9 +195,9 @@ Redux::set_section(
 
 			// main Custom fonts
 			array(
-				'title' => esc_html__('Main custom Font Face', 'lasa'),
-				'subtitle' => '<em>'.esc_html__('Enter your Custom Font Name for the theme\'s Main Typography', 'lasa').'</em>',
-				'desc' => esc_html__('e.g.: &#39;Open Sans&#39;', 'lasa'),
+				'title' => esc_html__('Main custom Font Face', 'themename'),
+				'subtitle' => '<em>'.esc_html__('Enter your Custom Font Name for the theme\'s Main Typography', 'themename').'</em>',
+				'desc' => esc_html__('e.g.: &#39;Open Sans&#39;', 'themename'),
 				'id' => 'main_custom_font_face',
 				'type' => 'text',
 				'default' => '',
@@ -211,7 +211,7 @@ Redux::set_section(
 				'id' => 'main_font_second_info',
 				'icon' => true,
 				'type' => 'info',
-				'raw' => '<h3 style="margin: 0;"> '.esc_html__('Font Second', 'lasa').'</h3>',
+				'raw' => '<h3 style="margin: 0;"> '.esc_html__('Font Second', 'themename').'</h3>',
 				'required' => array( 
 					array('show_typography','=', true),
 					array('show_typography','=', $default_fonts['main_font_second']),
@@ -220,7 +220,7 @@ Redux::set_section(
 
 			// Standard + Google Webfonts
 			array (
-				'title' => esc_html__('Font Face Second', 'lasa'),
+				'title' => esc_html__('Font Face Second', 'themename'),
 				'id' => 'main_font_second',
 				'type' => 'typography',
 				'line-height' => false,
@@ -243,9 +243,9 @@ Redux::set_section(
 
 			// Google Custom                        
 			array (
-				'title' => esc_html__('Google Font Face Second', 'lasa'),
-				'subtitle' => '<em>'.esc_html__('Enter your Google Font Name for the theme\'s Main Typography', 'lasa').'</em>',
-				'desc' => esc_html__('e.g.: &#39;Open Sans&#39;, sans-serif', 'lasa'),
+				'title' => esc_html__('Google Font Face Second', 'themename'),
+				'subtitle' => '<em>'.esc_html__('Enter your Google Font Name for the theme\'s Main Typography', 'themename').'</em>',
+				'desc' => esc_html__('e.g.: &#39;Open Sans&#39;, sans-serif', 'themename'),
 				'id' => 'main_second_google_font_face',
 				'type' => 'text',
 				'default' => '',
@@ -258,9 +258,9 @@ Redux::set_section(
 
 			// main Custom fonts                      
 			array (
-				'title' => esc_html__('Custom Font Face Second', 'lasa'),
-				'subtitle' => '<em>'.esc_html__('Enter your Custom Font Name for the theme\'s Main Typography', 'lasa').'</em>',
-				'desc' => esc_html__('e.g.: &#39;Open Sans&#39;, sans-serif', 'lasa'),
+				'title' => esc_html__('Custom Font Face Second', 'themename'),
+				'subtitle' => '<em>'.esc_html__('Enter your Custom Font Name for the theme\'s Main Typography', 'themename').'</em>',
+				'desc' => esc_html__('e.g.: &#39;Open Sans&#39;, sans-serif', 'themename'),
 				'id' => 'main_second_custom_font_face',
 				'type' => 'text',
 				'default' => '',
@@ -279,19 +279,19 @@ Redux::set_section(
 Redux::set_section(
 	$opt_name,
 	array(
-		'title' => esc_html__('Header Mobile', 'lasa'),
+		'title' => esc_html__('Header Mobile', 'themename'),
 		'subsection' => true,
 		'fields' => array(
 
 			array(
-				'title' => esc_html__('Background Color', 'lasa'),
+				'title' => esc_html__('Background Color', 'themename'),
 				'id' => 'header_mobile_bg',
 				'type' => 'color',
 				'transparent' => false,
 			),
 
 			array(
-				'title' => esc_html__('Header Color', 'lasa'),
+				'title' => esc_html__('Header Color', 'themename'),
 				'id' => 'header_mobile_color',
 				'type' => 'color',
 				'transparent' => false,

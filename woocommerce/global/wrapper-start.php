@@ -20,11 +20,11 @@ if (! defined('ABSPATH')) {
     exit; // Exit if accessed directly
 }
 
-$configs 			= lasa_class_wrapper_start();
-$sidebar_configs  	= lasa_tbay_get_woocommerce_layout_configs();
+$configs 			= themename_class_wrapper_start();
+$sidebar_configs  	= themename_tbay_get_woocommerce_layout_configs();
 
-$product_archive_layout  =   (isset($_GET['product_archive_layout'])) ? $_GET['product_archive_layout'] : lasa_tbay_get_config('product_archive_layout', 'shop-left');
-$product_single_layout  =   (isset($_GET['product_single_layout']))   ?   $_GET['product_single_layout'] :  lasa_get_single_select_layout();
+$product_archive_layout  =   (isset($_GET['product_archive_layout'])) ? $_GET['product_archive_layout'] : themename_tbay_get_config('product_archive_layout', 'shop-left');
+$product_single_layout  =   (isset($_GET['product_single_layout']))   ?   $_GET['product_single_layout'] :  themename_get_single_select_layout();
 $class_row = '';
 
 
@@ -32,19 +32,19 @@ if (!is_singular('product')) {
     $class_row .= ($product_archive_layout === 'shop-right') ? ' tb-column-reverse' : '';
     $class_row .= ($product_archive_layout !== 'full-width') ? ' row-shop-sidebar' : '';
 
-	if ( !lasa_tbay_get_config('show_product_breadcrumb', false) ) {
-		remove_action('lasa_woo_template_main_wrapper_before', 'woocommerce_breadcrumb', 20);
+	if ( !themename_tbay_get_config('show_product_breadcrumb', false) ) {
+		remove_action('themename_woo_template_main_wrapper_before', 'woocommerce_breadcrumb', 20);
 	}
 } else {
     $class_row .= ($product_single_layout === 'main-right') ? ' tb-column-reverse' : '';
 
-	if ( !lasa_tbay_get_config('show_single_product_breadcrumb', false) ) {
-		remove_action('lasa_woo_template_main_wrapper_before', 'woocommerce_breadcrumb', 20);
+	if ( !themename_tbay_get_config('show_single_product_breadcrumb', false) ) {
+		remove_action('themename_woo_template_main_wrapper_before', 'woocommerce_breadcrumb', 20);
 	}
 }
 ?>
 	<div id="main-wrapper" class="<?php echo esc_attr($configs['main']); ?>">
-		<?php do_action('lasa_woo_template_main_wrapper_before'); ?>
+		<?php do_action('themename_woo_template_main_wrapper_before'); ?>
 
 		<div id="main-container" class="container">
 			<?php 
@@ -63,11 +63,11 @@ if (!is_singular('product')) {
 				<?php if (!empty($sidebar_configs['sidebar']['id'])) {
 					get_sidebar('shop');
 				} ?>
-				<div id="main" class="<?php echo lasa_wc_wrapper_class($configs['content']) ;?>"><!-- .content -->
+				<div id="main" class="<?php echo themename_wc_wrapper_class($configs['content']) ;?>"><!-- .content -->
 
-				<?php do_action('lasa_woo_template_main_before'); ?>
+				<?php do_action('themename_woo_template_main_before'); ?>
 
 				<?php $display_type = woocommerce_get_loop_display_mode();
 					if('subcategories' === $display_type || 'both' === $display_type) { ?>
-					<ul class="all-subcategories"><?php lasa_woocommerce_sub_categories(); ?></ul>
+					<ul class="all-subcategories"><?php themename_woocommerce_sub_categories(); ?></ul>
 				<?php } ?>

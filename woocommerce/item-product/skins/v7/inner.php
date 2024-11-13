@@ -2,7 +2,7 @@
 global $product;
 
 
-do_action('lasa_woocommerce_before_product_block_grid');
+do_action('themename_woocommerce_before_product_block_grid');
 
 $flash_sales 	= isset($flash_sales) ? $flash_sales : false;
 $end_date 		= isset($end_date) ? $end_date : '';
@@ -11,13 +11,13 @@ $countdown_title 		= isset($countdown_title) ? $countdown_title : '';
 
 $countdown 		= isset($countdown) ? $countdown : false;
 $class = array();
-$class_flash_sale = lasa_tbay_class_flash_sale($flash_sales);
+$class_flash_sale = themename_tbay_class_flash_sale($flash_sales);
 array_push($class, $class_flash_sale);
 
 
 ?>
-<div <?php lasa_tbay_product_class($class); ?> data-product-id="<?php echo esc_attr($product->get_id()); ?>">
-    <?php do_action( 'lasa_content_product_item_before' ); ?>
+<div <?php themename_tbay_product_class($class); ?> data-product-id="<?php echo esc_attr($product->get_id()); ?>">
+    <?php do_action( 'themename_content_product_item_before' ); ?>
 	<?php
         /**
          * Hook: woocommerce_before_shop_loop_item.
@@ -29,7 +29,7 @@ array_push($class, $class_flash_sale);
 	<div class="product-content">
 		
 		<div class="block-inner">
-			<figure class="image <?php lasa_product_block_image_class(); ?>">
+			<figure class="image <?php themename_product_block_image_class(); ?>">
 				<a title="<?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>" class="product-image">
 					<?php
                         /**
@@ -43,27 +43,27 @@ array_push($class, $class_flash_sale);
 				
 				<?php
                     /**
-                    * lasa_tbay_after_shop_loop_item_title hook
+                    * themename_tbay_after_shop_loop_item_title hook
                     *
                     */
-                    do_action('lasa_tbay_after_shop_loop_item_title');
+                    do_action('themename_tbay_after_shop_loop_item_title');
                 ?>
 			
-			<?php lasa_tbay_item_deal_ended_flash_sale($flash_sales, $end_date); ?>
+			<?php themename_tbay_item_deal_ended_flash_sale($flash_sales, $end_date); ?>
 			</figure>
 
-            <?php lasa_woo_product_time_countdown($countdown, $countdown_title); ?>
+            <?php themename_woo_product_time_countdown($countdown, $countdown_title); ?>
             
 			<div class="group-buttons">	
 				<?php
                     /**
-                    * lasa_woocommerce_group_buttons hook
+                    * themename_woocommerce_group_buttons hook
                     *
-                    * @hooked lasa_the_yith_wishlist - 20
-                    * @hooked lasa_the_yith_compare - 30
-                    * @hooked lasa_the_quick_view - 40
+                    * @hooked themename_the_yith_wishlist - 20
+                    * @hooked themename_the_yith_compare - 30
+                    * @hooked themename_the_quick_view - 40
                     */
-                    do_action('lasa_woocommerce_group_buttons', $product->get_id());
+                    do_action('themename_woocommerce_group_buttons', $product->get_id());
                 ?>
 		    </div>
 
@@ -81,11 +81,11 @@ array_push($class, $class_flash_sale);
         <div class="group-add-to-cart">
             <?php 
                 /**
-                * lasa_woocommerce_group_add_to_cart hook
+                * themename_woocommerce_group_add_to_cart hook
                 *
                 * @hooked woocommerce_template_loop_add_to_cart - 10
                 */
-                do_action( 'lasa_woocommerce_group_add_to_cart', $product->get_id() );
+                do_action( 'themename_woocommerce_group_add_to_cart', $product->get_id() );
             ?>
         </div>
 		
@@ -93,25 +93,25 @@ array_push($class, $class_flash_sale);
 
             <?php
                 /**
-                * lasa_woo_show_brands hook
+                * themename_woo_show_brands hook
                 *
                 * @hooked the_brands_the_name - 10
                 */
-                do_action('lasa_woo_show_brands');
+                do_action('themename_woo_show_brands');
             ?>
 			<?php
-                do_action('lasa_woo_before_shop_loop_item_caption');
+                do_action('themename_woo_before_shop_loop_item_caption');
             ?>
 
-            <?php lasa_the_product_name(); ?>
+            <?php themename_the_product_name(); ?>
 
             <?php
                 /**
-                * lasa_after_title_tbay_subtitle hook
+                * themename_after_title_tbay_subtitle hook
                 *
-                * @hooked lasa_woo_get_subtitle - 0
+                * @hooked themename_woo_get_subtitle - 0
                 */
-                do_action('lasa_after_title_tbay_subtitle');
+                do_action('themename_after_title_tbay_subtitle');
             ?>
             
 			<?php
@@ -127,28 +127,28 @@ array_push($class, $class_flash_sale);
 			<div class="group-content">
                 <?php
                     /**
-                    * lasa_woocommerce_loop_item_rating hook
+                    * themename_woocommerce_loop_item_rating hook
                     *
                     * @hooked woocommerce_template_loop_rating - 10
                     */
-                    do_action('lasa_woocommerce_loop_item_rating');
+                    do_action('themename_woocommerce_loop_item_rating');
                 ?>
             </div>
 
             <?php
-                do_action('lasa_tbay_variable_product');
+                do_action('themename_tbay_variable_product');
             ?>	
 
-            <?php lasa_tbay_stock_flash_sale($flash_sales); ?>
+            <?php themename_tbay_stock_flash_sale($flash_sales); ?>
 			
 			<?php
-                do_action('lasa_woo_after_shop_loop_item_caption');
+                do_action('themename_woo_after_shop_loop_item_caption');
             ?>
 		</div>
 
 		
 		<?php
-            do_action('lasa_woocommerce_after_product_block_grid');
+            do_action('themename_woocommerce_after_product_block_grid');
         ?>
     </div>
     

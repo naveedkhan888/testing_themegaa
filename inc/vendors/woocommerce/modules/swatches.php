@@ -1,9 +1,9 @@
 <?php
-if ( !lasa_woocommerce_activated() ) return;
+if ( !themename_woocommerce_activated() ) return;
 
 
-if (! function_exists('lasa_has_swatch')) {
-    function lasa_has_swatch($id, $attr_name, $value)
+if (! function_exists('themename_has_swatch')) {
+    function themename_has_swatch($id, $attr_name, $value)
     {
         $swatches = array();
 
@@ -33,8 +33,8 @@ if (! function_exists('lasa_has_swatch')) {
 }
 
 
-if (! function_exists('lasa_get_option_variations')) {
-    function lasa_get_option_variations($attribute_name, $available_variations, $option = false, $product_id = false)
+if (! function_exists('themename_get_option_variations')) {
+    function themename_get_option_variations($attribute_name, $available_variations, $option = false, $product_id = false)
     {
         $swatches_to_show = array();
         foreach ($available_variations as $key => $variation) {
@@ -66,7 +66,7 @@ if (! function_exists('lasa_get_option_variations')) {
             } else {
                 // Or get all variations with swatches to show by attribute name
                 
-                $swatch = lasa_has_swatch($product_id, $attribute_name, $val);
+                $swatch = themename_has_swatch($product_id, $attribute_name, $val);
                 $swatches_to_show[$val] = array_merge($swatch, $option_variation);
             }
         }
@@ -80,8 +80,8 @@ if (! function_exists('lasa_get_option_variations')) {
  * Show attribute swatches list
  * ------------------------------------------------------------------------------------------------
  */
-if (! function_exists('lasa_swatches_list')) {
-    function lasa_swatches_list($attribute_name = false)
+if (! function_exists('themename_swatches_list')) {
+    function themename_swatches_list($attribute_name = false)
     {
         global $product;
 
@@ -92,7 +92,7 @@ if (! function_exists('lasa_swatches_list')) {
         }
         
         if (! $attribute_name) {
-            $attribute_name = lasa_get_swatches_attribute();
+            $attribute_name = themename_get_swatches_attribute();
         }
 
 
@@ -107,7 +107,7 @@ if (! function_exists('lasa_swatches_list')) {
             return false;
         }
 
-        $swatches_to_show = lasa_get_option_variations($attribute_name, $available_variations, false, $id);
+        $swatches_to_show = themename_get_option_variations($attribute_name, $available_variations, false, $id);
 
 
         if (empty($swatches_to_show)) {
@@ -187,11 +187,11 @@ if (! function_exists('lasa_swatches_list')) {
     }
 }
 
-if (! function_exists('lasa_get_swatches_attribute')) {
-    function lasa_get_swatches_attribute()
+if (! function_exists('themename_get_swatches_attribute')) {
+    function themename_get_swatches_attribute()
     {
-        $custom = get_post_meta(get_the_ID(), '_lasa_attribute_select', true);
+        $custom = get_post_meta(get_the_ID(), '_themename_attribute_select', true);
 
-        return empty($custom) ? lasa_tbay_get_config('variation_swatch') : $custom;
+        return empty($custom) ? themename_tbay_get_config('variation_swatch') : $custom;
     }
 }

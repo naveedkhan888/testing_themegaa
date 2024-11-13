@@ -1,11 +1,11 @@
 <?php
-if (!function_exists('lasa_settings_global_colors_advanced')) {
-    function lasa_settings_global_colors_advanced($widget, $args)
+if (!function_exists('themename_settings_global_colors_advanced')) {
+    function themename_settings_global_colors_advanced($widget, $args)
     {
 		$default_colors_primary = [
 			[
 				'_id' => 'primary',
-				'title' => esc_html__( 'Primary', 'lasa' ),
+				'title' => esc_html__( 'Primary', 'themename' ),
 				'color' => '#cc0000',
 			],
 		];
@@ -13,7 +13,7 @@ if (!function_exists('lasa_settings_global_colors_advanced')) {
 		$default_colors_secondary = [
 			[
 				'_id' => 'secondary',
-				'title' => esc_html__( 'Secondary', 'lasa' ),
+				'title' => esc_html__( 'Secondary', 'themename' ),
 				'color' => '#CA6D6F',
 			],
 		];
@@ -21,12 +21,12 @@ if (!function_exists('lasa_settings_global_colors_advanced')) {
 		$default_colors = [
 			[
 				'_id' => 'text',
-				'title' => esc_html__( 'Text', 'lasa' ),
+				'title' => esc_html__( 'Text', 'themename' ),
 				'color' => '#121216',
 			],
 			[
 				'_id' => 'accent',
-				'title' => esc_html__( 'Border', 'lasa' ),
+				'title' => esc_html__( 'Border', 'themename' ),
 				'color' => '#DDDDDD',
 			],
 		];
@@ -42,5 +42,5 @@ if (!function_exists('lasa_settings_global_colors_advanced')) {
         );
     }
 
-    add_action('elementor/element/kit/section_global_colors/before_section_end', 'lasa_settings_global_colors_advanced', 10, 2);
+    add_action('elementor/element/kit/section_global_colors/before_section_end', 'themename_settings_global_colors_advanced', 10, 2);
 }

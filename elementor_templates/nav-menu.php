@@ -16,19 +16,19 @@ if (!$available_menus || empty($menu) || !is_nav_menu($menu)) {
     return;
 }
 
-$_id = lasa_tbay_random_key();
+$_id = themename_tbay_random_key();
 
 $args = [
     'echo'        => false,
     'menu'        => $menu,
     'container_class' => 'collapse navbar-collapse',
     'menu_id'     => 'menu-' . $this->get_nav_menu_index() . '-' . $_id,
-    'walker'      => new Lasa_Megamenu_Walker(),
+    'walker'      => new Themename_Megamenu_Walker(),
     'fallback_cb' => '__return_empty_string',
     'container'   => '',
 ];
 
-$args['menu_class'] = lasa_nav_menu_get_menu_class($layout);
+$args['menu_class'] = themename_nav_menu_get_menu_class($layout);
 
 $args_canvas = [
     'echo'        => false,
@@ -99,7 +99,7 @@ if ($layout === 'vertical') {
     $this->add_render_attribute('main-menu', 'class', 'vertical-submenu-'.$toggle_vertical_submenu_align);
 }
 
-if ( $ajax_toggle !== 'yes' && $show_content_menu === 'yes' && lasa_tbay_is_home_page() && !is_home() ) {
+if ( $ajax_toggle !== 'yes' && $show_content_menu === 'yes' && themename_tbay_is_home_page() && !is_home() ) {
     $this->add_render_attribute('wrapper', 'class', ['open' ,'setting-open']);
 }
 

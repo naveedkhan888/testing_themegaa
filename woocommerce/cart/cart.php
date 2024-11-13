@@ -24,10 +24,10 @@ do_action('woocommerce_before_cart'); ?>
 		<div class="col-lg-12 tb-cart-form">
 			<div class="shop_table shop_table_responsive cart woocommerce-cart-form__contents">
 				<div class="cart_item head">
-					<div class="product-info"><?php esc_html_e('Product', 'lasa'); ?></div>
-					<div class="product-price"><?php esc_html_e('Price', 'lasa'); ?></div>
-					<div class="product-quantity"><?php esc_html_e('Qty', 'lasa'); ?></div>
-					<div class="product-subtotal"><?php esc_html_e('Total', 'lasa'); ?></div>
+					<div class="product-info"><?php esc_html_e('Product', 'themename'); ?></div>
+					<div class="product-price"><?php esc_html_e('Price', 'themename'); ?></div>
+					<div class="product-quantity"><?php esc_html_e('Qty', 'themename'); ?></div>
+					<div class="product-subtotal"><?php esc_html_e('Total', 'themename'); ?></div>
 					<div class="product-remove">&nbsp;</div>
 				</div>
 				<?php do_action('woocommerce_before_cart_contents'); ?>
@@ -49,7 +49,7 @@ do_action('woocommerce_before_cart'); ?>
                         $product_permalink = apply_filters('woocommerce_cart_item_permalink', $_product->is_visible() ? $_product->get_permalink($cart_item) : '', $cart_item, $cart_item_key); ?>
 						<div class="<?php echo esc_attr(apply_filters('woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key)); ?>">
 
-							<div class="product-info" data-title="<?php esc_attr_e('Product', 'lasa'); ?>">
+							<div class="product-info" data-title="<?php esc_attr_e('Product', 'themename'); ?>">
 								<?php
                                     $thumbnail = apply_filters('woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key);
 
@@ -78,18 +78,18 @@ do_action('woocommerce_before_cart'); ?>
 
 											// Backorder notification.
 									if ($_product->backorders_require_notification() && $_product->is_on_backorder($cart_item['quantity'])) {
-										echo wp_kses_post(apply_filters('woocommerce_cart_item_backorder_notification', '<p class="backorder_notification">'.esc_html__('Available on backorder', 'lasa').'</p>', $product_id));
+										echo wp_kses_post(apply_filters('woocommerce_cart_item_backorder_notification', '<p class="backorder_notification">'.esc_html__('Available on backorder', 'themename').'</p>', $product_id));
 									} ?>
 								</span>
 								
 							</div>
 
-							<div class="product-price" data-title="<?php esc_attr_e('Price', 'lasa'); ?>">
+							<div class="product-price" data-title="<?php esc_attr_e('Price', 'themename'); ?>">
 								<?php
                                     echo apply_filters('woocommerce_cart_item_price', WC()->cart->get_product_price($_product), $cart_item, $cart_item_key); // PHPCS: XSS ok.?>
 							</div>
 
-							<div class="product-quantity" data-title="<?php esc_attr_e('Qty', 'lasa'); ?>">
+							<div class="product-quantity" data-title="<?php esc_attr_e('Qty', 'themename'); ?>">
 								<?php
                                     if ($_product->is_sold_individually()) {
                                         $product_quantity = sprintf('1 <input type="hidden" name="cart[%s][qty]" value="1" />', $cart_item_key);
@@ -106,7 +106,7 @@ do_action('woocommerce_before_cart'); ?>
                         echo apply_filters('woocommerce_cart_item_quantity', $product_quantity, $cart_item_key, $cart_item); ?>
 							</div>
 
-							<div class="product-subtotal price" data-title="<?php esc_attr_e('Total', 'lasa'); ?>">
+							<div class="product-subtotal price" data-title="<?php esc_attr_e('Total', 'themename'); ?>">
 								<?php
                                     echo apply_filters('woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal($_product, $cart_item['quantity']), $cart_item, $cart_item_key); ?>
 							</div>
@@ -117,7 +117,7 @@ do_action('woocommerce_before_cart'); ?>
                                         '<a href="%s" class="remove" aria-label="%s" data-product_id="%s" data-product_sku="%s"><i class="tb-icon tb-icon-trash"></i></a>',
                                         esc_url(wc_get_cart_remove_url($cart_item_key)),
 										/* translators: %s is the product name */
-										esc_attr( sprintf( __( 'Remove %s from cart', 'lasa' ), wp_strip_all_tags( $product_name ) ) ),
+										esc_attr( sprintf( __( 'Remove %s from cart', 'themename' ), wp_strip_all_tags( $product_name ) ) ),
                                         esc_attr($product_id),
                                         esc_attr($_product->get_sku())
                                     ), $cart_item_key); ?>
@@ -133,12 +133,12 @@ do_action('woocommerce_before_cart'); ?>
 				<?php if (wc_get_page_id('shop') > 0) : ?>
 					<div class="continue-to-shop pull-left hidden-xs">
 						<a href="<?php echo esc_url(apply_filters('woocommerce_return_to_shop_redirect', wc_get_page_permalink('shop'))); ?>">
-							<i class="tb-icon tb-icon-chevron-left"></i><?php esc_html_e('Continue Shopping', 'lasa'); ?>
+							<i class="tb-icon tb-icon-chevron-left"></i><?php esc_html_e('Continue Shopping', 'themename'); ?>
 						</a>
 					</div>
 				<?php endif; ?>
 				<div class="update-cart pull-right">
-				<button type="submit" class="button<?php echo esc_attr(wc_wp_theme_get_element_class_name('button') ? ' '.wc_wp_theme_get_element_class_name('button') : ''); ?>" name="update_cart" value="<?php esc_attr_e('Update cart', 'lasa'); ?>"><?php esc_html_e('Update cart', 'lasa'); ?></button>
+				<button type="submit" class="button<?php echo esc_attr(wc_wp_theme_get_element_class_name('button') ? ' '.wc_wp_theme_get_element_class_name('button') : ''); ?>" name="update_cart" value="<?php esc_attr_e('Update cart', 'themename'); ?>"><?php esc_html_e('Update cart', 'themename'); ?></button>
 				</div>
 
 				<?php do_action('woocommerce_cart_actions'); ?>
@@ -154,8 +154,8 @@ do_action('woocommerce_before_cart'); ?>
 				<div class="col-lg-4 col-md-6">
 					<?php if (wc_coupons_enabled()) { ?>
 						<div class="coupon">
-							<label for="coupon_code"><?php esc_html_e('Coupon', 'lasa'); ?></label>
-							<div class="box"><input type="text" name="coupon_code" id="coupon_code" value="" class="text" placeholder="<?php esc_attr_e('Enter coupon code here...', 'lasa'); ?>" /><button type="submit" class="button<?php echo esc_attr(wc_wp_theme_get_element_class_name('button') ? ' '.wc_wp_theme_get_element_class_name('button') : ''); ?>" name="apply_coupon" value="<?php esc_attr_e('Apply coupon', 'lasa'); ?>"><?php esc_html_e('Apply coupon', 'lasa'); ?></button></div>
+							<label for="coupon_code"><?php esc_html_e('Coupon', 'themename'); ?></label>
+							<div class="box"><input type="text" name="coupon_code" id="coupon_code" value="" class="text" placeholder="<?php esc_attr_e('Enter coupon code here...', 'themename'); ?>" /><button type="submit" class="button<?php echo esc_attr(wc_wp_theme_get_element_class_name('button') ? ' '.wc_wp_theme_get_element_class_name('button') : ''); ?>" name="apply_coupon" value="<?php esc_attr_e('Apply coupon', 'themename'); ?>"><?php esc_html_e('Apply coupon', 'themename'); ?></button></div>
 							<?php do_action('woocommerce_cart_coupon'); ?>
 						</div>	
 					<?php } ?>
@@ -176,13 +176,13 @@ do_action('woocommerce_before_cart'); ?>
 				</div>
 				<div class="col-lg-4">
 					<div class="wc-proceed-to-checkout">
-						<?php do_action('lasa_woocommerce_proceed_to_checkout'); ?>
+						<?php do_action('themename_woocommerce_proceed_to_checkout'); ?>
 					</div>
 				</div>
 			</div>
 		</div>
 
-		<?php do_action('lasa_woocommerce_cross_sell_display'); ?>
+		<?php do_action('themename_woocommerce_cross_sell_display'); ?>
 	</div>
 
 	<?php do_action('woocommerce_after_cart_contents'); ?>

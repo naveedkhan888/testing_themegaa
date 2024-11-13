@@ -1,6 +1,6 @@
 <?php
 
-if (! defined('ABSPATH') || function_exists('Lasa_Elementor_Product_Flash_Sales')) {
+if (! defined('ABSPATH') || function_exists('Themename_Elementor_Product_Flash_Sales')) {
     exit; // Exit if accessed directly.
 }
 
@@ -8,7 +8,7 @@ use Elementor\Controls_Manager;
 use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Typography;
 
-class Lasa_Elementor_Product_Flash_Sales extends Lasa_Elementor_Carousel_Base
+class Themename_Elementor_Product_Flash_Sales extends Themename_Elementor_Carousel_Base
 {
     public function get_name()
     {
@@ -17,12 +17,12 @@ class Lasa_Elementor_Product_Flash_Sales extends Lasa_Elementor_Carousel_Base
 
     public function get_title()
     {
-        return esc_html__('Lasa Product Flash Sales', 'lasa');
+        return esc_html__('Themename Product Flash Sales', 'themename');
     }
 
     public function get_categories()
     {
-        return [ 'lasa-elements', 'woocommerce-elements'];
+        return [ 'themename-elements', 'woocommerce-elements'];
     }
 
     public function get_icon()
@@ -42,7 +42,7 @@ class Lasa_Elementor_Product_Flash_Sales extends Lasa_Elementor_Carousel_Base
      */
     public function get_script_depends()
     {
-        return ['slick', 'lasa-custom-slick', 'jquery-countdowntimer'];
+        return ['slick', 'themename-custom-slick', 'jquery-countdowntimer'];
     }
 
     public function get_keywords()
@@ -57,7 +57,7 @@ class Lasa_Elementor_Product_Flash_Sales extends Lasa_Elementor_Carousel_Base
         $this->start_controls_section(
             'general',
             [
-                'label' => esc_html__('General', 'lasa'),
+                'label' => esc_html__('General', 'themename'),
             ]
         );
 
@@ -77,7 +77,7 @@ class Lasa_Elementor_Product_Flash_Sales extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'main_advanced',
             [
-                'label' => esc_html__('Main', 'lasa'),
+                'label' => esc_html__('Main', 'themename'),
                 'type' => Controls_Manager::HEADING,
             ]
         );
@@ -85,9 +85,9 @@ class Lasa_Elementor_Product_Flash_Sales extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'date_title',
             [
-                'label' => esc_html__('Title Date', 'lasa'),
+                'label' => esc_html__('Title Date', 'themename'),
                 'type' => Controls_Manager::TEXT,
-                'default' => esc_html__('Ends in: ', 'lasa'),
+                'default' => esc_html__('Ends in: ', 'themename'),
                 'label_block' => true,
             ]
         );
@@ -95,9 +95,9 @@ class Lasa_Elementor_Product_Flash_Sales extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'date_title_ended',
             [
-                'label' => esc_html__('Title deal ended', 'lasa'),
+                'label' => esc_html__('Title deal ended', 'themename'),
                 'type' => Controls_Manager::TEXT,
-                'default' => esc_html__('Deal ended.', 'lasa'),
+                'default' => esc_html__('Deal ended.', 'themename'),
                 'label_block' => true,
             ]
         );
@@ -106,22 +106,22 @@ class Lasa_Elementor_Product_Flash_Sales extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'end_date',
             [
-                'label' => esc_html__('End Date', 'lasa'),
+                'label' => esc_html__('End Date', 'themename'),
                 'type' => Controls_Manager::DATE_TIME,
                 'label_block' => true,
-                'placeholder' => esc_html__('Choose the end time', 'lasa'),
+                'placeholder' => esc_html__('Choose the end time', 'themename'),
             ]
         );
 
         $this->add_control(
             'layout_type',
             [
-                'label'     => esc_html__('Layout Type', 'lasa'),
+                'label'     => esc_html__('Layout Type', 'themename'),
                 'type'      => Controls_Manager::SELECT,
                 'default'   => 'grid',
                 'options'   => [
-                    'grid'      => esc_html__('Grid', 'lasa'),
-                    'carousel'  => esc_html__('Carousel', 'lasa'),
+                    'grid'      => esc_html__('Grid', 'themename'),
+                    'carousel'  => esc_html__('Carousel', 'themename'),
                 ],
             ]
         );
@@ -129,7 +129,7 @@ class Lasa_Elementor_Product_Flash_Sales extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'product_style',
             [
-                'label' => esc_html__('Product Style', 'lasa'),
+                'label' => esc_html__('Product Style', 'themename'),
                 'type' => Controls_Manager::SELECT,
                 'default' => 'inner',
                 'options' => $this->get_template_product(),
@@ -143,7 +143,7 @@ class Lasa_Elementor_Product_Flash_Sales extends Lasa_Elementor_Carousel_Base
             $this->add_control(
                 'sale_campaign',
                 [
-                    'label'     => esc_html__('Select campaign', 'lasa'),
+                    'label'     => esc_html__('Select campaign', 'themename'),
                     'type'      => Controls_Manager::SELECT2,
                     'options'   => $list_campaigns,
                     'default'   => array_keys($list_campaigns)[0],
@@ -153,9 +153,9 @@ class Lasa_Elementor_Product_Flash_Sales extends Lasa_Elementor_Carousel_Base
             $this->add_control(
                 'limit',
                 [
-                    'label' => esc_html__('Number of products', 'lasa'),
+                    'label' => esc_html__('Number of products', 'themename'),
                     'type' => Controls_Manager::NUMBER,
-                    'description' => esc_html__('Number of products to show ( -1 = all )', 'lasa'),
+                    'description' => esc_html__('Number of products to show ( -1 = all )', 'themename'),
                     'default' => -1,
                     'min'  => -1,
                 ]
@@ -165,7 +165,7 @@ class Lasa_Elementor_Product_Flash_Sales extends Lasa_Elementor_Carousel_Base
                 'sale_html_campaign',
                 [
                     'type'            => Controls_Manager::RAW_HTML,
-                    'raw'             => sprintf(__('You don not have any campaigns. <br>Go to the <strong><a href="%s" target="_blank">Discount Campaign screen</a></strong> to create one.', 'lasa'), admin_url('edit.php?post_type=tb_discount_campaign')),
+                    'raw'             => sprintf(__('You don not have any campaigns. <br>Go to the <strong><a href="%s" target="_blank">Discount Campaign screen</a></strong> to create one.', 'themename'), admin_url('edit.php?post_type=tb_discount_campaign')),
                     'separator'       => 'after',
                     'content_classes' => 'elementor-panel-alert elementor-panel-alert-info',
                 ]
@@ -175,7 +175,7 @@ class Lasa_Elementor_Product_Flash_Sales extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'enable_readmore',
             [
-                'label' => esc_html__('Enable Button "Read More" ', 'lasa'),
+                'label' => esc_html__('Enable Button "Read More" ', 'themename'),
                 'type' => Controls_Manager::SWITCHER,
                 'default' => 'yes',
             ]
@@ -187,7 +187,7 @@ class Lasa_Elementor_Product_Flash_Sales extends Lasa_Elementor_Carousel_Base
         $this->start_controls_section(
             'section_style_heading_fl',
             [
-                'label' => esc_html__('Style Heading Flash Sale', 'lasa'),
+                'label' => esc_html__('Style Heading Flash Sale', 'themename'),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -195,7 +195,7 @@ class Lasa_Elementor_Product_Flash_Sales extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'enable_heading_fl_align_vertical_center',
             [
-                'label' => esc_html__('Enable Alignment Center', 'lasa'),
+                'label' => esc_html__('Enable Alignment Center', 'themename'),
                 'type' => Controls_Manager::SWITCHER,
                 'default' => '',
                 'prefix_class' => 'heading-align-center-',
@@ -206,31 +206,31 @@ class Lasa_Elementor_Product_Flash_Sales extends Lasa_Elementor_Carousel_Base
         $this->add_responsive_control(
             'heading_fl_text_align',
             [
-                'label' => esc_html__('Justify Content', 'lasa'),
+                'label' => esc_html__('Justify Content', 'themename'),
                 'type' => Controls_Manager::CHOOSE,
                 'options' => [
                     'flex-start' => [
-                        'title' => esc_html__('Start', 'lasa'),
+                        'title' => esc_html__('Start', 'themename'),
                         'icon' => 'eicon-flex eicon-align-start-v',
                     ],
                     'center' => [
-                        'title' => esc_html__('center', 'lasa'),
+                        'title' => esc_html__('center', 'themename'),
                         'icon' => 'eicon-flex eicon-align-center-v',
                     ],
                     'flex-end' => [
-                        'title' => esc_html__('End', 'lasa'),
+                        'title' => esc_html__('End', 'themename'),
                         'icon' => 'eicon-flex eicon-justify-end-h',
                     ],
                     'space-between' => [
-                        'title' => esc_html__('Space Between', 'lasa'),
+                        'title' => esc_html__('Space Between', 'themename'),
                         'icon' => 'eicon-flex eicon-justify-space-between-h',
                     ],
                     'space-around' => [
-                        'title' => esc_html__('Space Around', 'lasa'),
+                        'title' => esc_html__('Space Around', 'themename'),
                         'icon' => 'eicon-flex eicon-justify-space-around-h',
                     ],
                     'space-evenly' => [
-                        'title' => esc_html__('Space Evenly', 'lasa'),
+                        'title' => esc_html__('Space Evenly', 'themename'),
                         'icon' => 'eicon-flex eicon-justify-space-evenly-h',
                     ],
                 ], 
@@ -244,7 +244,7 @@ class Lasa_Elementor_Product_Flash_Sales extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'heading_fl_bg',
             [
-                'label'     => esc_html__('Background', 'lasa'),
+                'label'     => esc_html__('Background', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .top-flash-sale-wrapper' => 'background: {{VALUE}}',
@@ -254,7 +254,7 @@ class Lasa_Elementor_Product_Flash_Sales extends Lasa_Elementor_Carousel_Base
         $this->add_responsive_control(
             'heading_fl_padding',
             [
-                'label'      => esc_html__('Padding', 'lasa'),
+                'label'      => esc_html__('Padding', 'themename'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', 'em', '%' ],
                 'default' => [
@@ -273,7 +273,7 @@ class Lasa_Elementor_Product_Flash_Sales extends Lasa_Elementor_Carousel_Base
         $this->add_responsive_control(
             'heading_fl_margin',
             [
-                'label'      => esc_html__('Margin', 'lasa'),
+                'label'      => esc_html__('Margin', 'themename'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', 'em', '%' ],
                 'default' => [
@@ -303,7 +303,7 @@ class Lasa_Elementor_Product_Flash_Sales extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'heading_timer',
             [
-                'label' => esc_html__('Timer', 'lasa'),
+                'label' => esc_html__('Timer', 'themename'),
                 'type' => Controls_Manager::HEADING,
                 'separator'   => 'before',
             ]
@@ -320,7 +320,7 @@ class Lasa_Elementor_Product_Flash_Sales extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'timer_bg',
             [
-                'label' => esc_html__('Background', 'lasa'),
+                'label' => esc_html__('Background', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -332,7 +332,7 @@ class Lasa_Elementor_Product_Flash_Sales extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'timer_color',
             [
-                'label' => esc_html__('Color', 'lasa'),
+                'label' => esc_html__('Color', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -345,7 +345,7 @@ class Lasa_Elementor_Product_Flash_Sales extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'heading_label_timer',
             [
-                'label' => esc_html__('Label timer', 'lasa'),
+                'label' => esc_html__('Label timer', 'themename'),
                 'type' => Controls_Manager::HEADING,
                 'separator'   => 'before',
             ]
@@ -362,7 +362,7 @@ class Lasa_Elementor_Product_Flash_Sales extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'label_timer_color',
             [
-                'label' => esc_html__('Color', 'lasa'),
+                'label' => esc_html__('Color', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -380,7 +380,7 @@ class Lasa_Elementor_Product_Flash_Sales extends Lasa_Elementor_Carousel_Base
         $this->start_controls_section(
             'section_readmore',
             [
-                'label' => esc_html__('Read More Options', 'lasa'),
+                'label' => esc_html__('Read More Options', 'themename'),
                 'type'  => Controls_Manager::SECTION,
                 'condition' => [
                     'enable_readmore' => 'yes'
@@ -391,12 +391,12 @@ class Lasa_Elementor_Product_Flash_Sales extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'readmore_position',
             [
-                'label'     => esc_html__('Position', 'lasa'),
+                'label'     => esc_html__('Position', 'themename'),
                 'type'      => Controls_Manager::SELECT,
                 'default'   => 'bottom',
                 'options'   => [
-                    'top'      => esc_html__('Top', 'lasa'),
-                    'bottom'  => esc_html__('Bottom', 'lasa'),
+                    'top'      => esc_html__('Top', 'themename'),
+                    'bottom'  => esc_html__('Bottom', 'themename'),
                 ],
             ]
         );
@@ -404,9 +404,9 @@ class Lasa_Elementor_Product_Flash_Sales extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'readmore_text',
             [
-                'label' => esc_html__('Button "Read More" Custom Text', 'lasa'),
+                'label' => esc_html__('Button "Read More" Custom Text', 'themename'),
                 'type' => Controls_Manager::TEXT,
-                'default' => esc_html__('Read More', 'lasa'),
+                'default' => esc_html__('Read More', 'themename'),
                 'label_block' => true,
             ]
         );
@@ -417,7 +417,7 @@ class Lasa_Elementor_Product_Flash_Sales extends Lasa_Elementor_Carousel_Base
             $this->add_control(
                 'readmore_page',
                 [
-                    'label'        => esc_html__('Page', 'lasa'),
+                    'label'        => esc_html__('Page', 'themename'),
                     'type'         => Controls_Manager::SELECT2,
                     'options'      => $pages,
                     'default'      => array_keys($pages)[0],
@@ -431,7 +431,7 @@ class Lasa_Elementor_Product_Flash_Sales extends Lasa_Elementor_Carousel_Base
                 'readmore_page',
                 [
                     'type'            => Controls_Manager::RAW_HTML,
-                    'raw'             => sprintf(__('<strong>There are no pages in your site.</strong><br>Go to the <a href="%s" target="_blank">pages screen</a> to create one.', 'lasa'), admin_url('edit.php?post_type=page')),
+                    'raw'             => sprintf(__('<strong>There are no pages in your site.</strong><br>Go to the <a href="%s" target="_blank">pages screen</a> to create one.', 'themename'), admin_url('edit.php?post_type=page')),
                     'separator'       => 'after',
                     'content_classes' => 'elementor-panel-alert elementor-panel-alert-info',
                 ]
@@ -463,7 +463,7 @@ class Lasa_Elementor_Product_Flash_Sales extends Lasa_Elementor_Carousel_Base
 
 
         if (count($ids) === 0) {
-            echo '<div class="not-product-flash-sales">'. esc_html__('Please select display campaign', 'lasa')  .'</div>';
+            echo '<div class="not-product-flash-sales">'. esc_html__('Please select display campaign', 'themename')  .'</div>';
             return;
         }
         
@@ -545,4 +545,4 @@ class Lasa_Elementor_Product_Flash_Sales extends Lasa_Elementor_Carousel_Base
         return $product_ids;
     }
 }
-$widgets_manager->register(new Lasa_Elementor_Product_Flash_Sales());
+$widgets_manager->register(new Themename_Elementor_Product_Flash_Sales());

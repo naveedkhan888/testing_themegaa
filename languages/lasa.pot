@@ -1,8 +1,8 @@
-# Copyright (C) 2024 Thembay Theme
-# This file is distributed under the same license as the Thembay Theme package.
+# Copyright (C) 2024 Xperttheme Theme
+# This file is distributed under the same license as the Xperttheme Theme package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Thembay Theme\n"
+"Project-Id-Version: Xperttheme Theme\n"
 "MIME-Version: 1.0.8\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -150,7 +150,7 @@ msgid "Show All"
 msgstr ""
 
 #: footers/footer-default.php:42
-msgid "Copyright &copy; 2024 - lasa. All Rights Reserved. <br/> Powered by <a href=\"//thembay.com\" class=\"theme-color\">ThemBay</a>"
+msgid "Copyright &copy; 2024 - themename. All Rights Reserved. <br/> Powered by <a href=\"//xperttheme.com\" class=\"theme-color\">XpertTheme</a>"
 msgstr ""
 
 #: inc/classes/class-main.php:192
@@ -2130,7 +2130,7 @@ msgid "Column apply when the width is between 576px and 767px"
 msgstr ""
 
 #: inc/vendors/elementor/class-elementor.php:112
-msgid "Lasa Elements"
+msgid "Themename Elements"
 msgstr ""
 
 #: inc/vendors/elementor/elements/customize/controls/accordion.php:40
@@ -2222,7 +2222,7 @@ msgid "Only Show Home Page"
 msgstr ""
 
 #: inc/vendors/elementor/elements/general/banner.php:50
-msgid "Lasa Banner"
+msgid "Themename Banner"
 msgstr ""
 
 #: inc/vendors/redux-framework/config/01-general.php:16
@@ -2310,7 +2310,7 @@ msgid "Enter your description"
 msgstr ""
 
 #: inc/vendors/elementor/elements/general/before-after-image-slider.php:44
-msgid "Lasa Before After Image Slider"
+msgid "Themename Before After Image Slider"
 msgstr ""
 
 #: inc/vendors/elementor/elements/general/before-after-image-slider.php:88
@@ -2398,7 +2398,7 @@ msgid "Enter Animation"
 msgstr ""
 
 #: inc/vendors/elementor/elements/general/brands.php:46
-msgid "Lasa Brands"
+msgid "Themename Brands"
 msgstr ""
 
 #: inc/vendors/elementor/elements/woocommerce/products.php:85
@@ -2438,7 +2438,7 @@ msgid "Brand Items"
 msgstr ""
 
 #: inc/vendors/elementor/elements/general/button.php:47
-msgid "Lasa Button"
+msgid "Themename Button"
 msgstr ""
 
 #: inc/vendors/elementor/elements/general/newsletter.php:426
@@ -2510,7 +2510,7 @@ msgid "Digits"
 msgstr ""
 
 #: inc/vendors/elementor/elements/general/feature-list-image.php:48
-msgid "Lasa Feature List Image"
+msgid "Themename Feature List Image"
 msgstr ""
 
 #: inc/vendors/elementor/elements/general/feature-list.php:106
@@ -2562,11 +2562,11 @@ msgid "Feature Item Title"
 msgstr ""
 
 #: inc/vendors/elementor/elements/general/feature-list.php:48
-msgid "Lasa Feature List"
+msgid "Themename Feature List"
 msgstr ""
 
 #: inc/vendors/elementor/elements/general/gallery.php:47
-msgid "Lasa Gallery"
+msgid "Themename Gallery"
 msgstr ""
 
 #: inc/vendors/elementor/elements/general/gallery.php:111
@@ -2586,11 +2586,11 @@ msgid "Text on photo"
 msgstr ""
 
 #: inc/vendors/elementor/elements/general/heading.php:43
-msgid "Lasa Heading"
+msgid "Themename Heading"
 msgstr ""
 
 #: inc/vendors/elementor/elements/general/image-color-tab.php:47
-msgid "Lasa Image Color Tab"
+msgid "Themename Image Color Tab"
 msgstr ""
 
 #: inc/vendors/elementor/elements/general/image-color-tab.php:86
@@ -2626,7 +2626,7 @@ msgid "Choose Image Color "
 msgstr ""
 
 #: inc/vendors/elementor/elements/general/image-tab.php:49
-msgid "Lasa Image Tab"
+msgid "Themename Image Tab"
 msgstr ""
 
 #: inc/vendors/elementor/elements/general/image-tab.php:140
@@ -2658,7 +2658,7 @@ msgid "Image Content"
 msgstr ""
 
 #: inc/vendors/elementor/elements/general/list-custom-fonts.php:46
-msgid "Lasa List Icons Tbay Custom Fonts"
+msgid "Themename List Icons Tbay Custom Fonts"
 msgstr ""
 
 #: inc/vendors/elementor/elements/general/list-custom-fonts.php:119
@@ -2678,7 +2678,7 @@ msgid "Click to copy class"
 msgstr ""
 
 #: inc/vendors/elementor/elements/general/list-menu.php:18
-msgid "Lasa List Menu"
+msgid "Themename List Menu"
 msgstr ""
 
 #: page-templates/parts/device/offcanvas-smartmenu.php:15
@@ -2706,7 +2706,7 @@ msgid "Style List Menu"
 msgstr ""
 
 #: inc/vendors/elementor/elements/general/menu-vertical.php:19
-msgid "Lasa Menu Vertical"
+msgid "Themename Menu Vertical"
 msgstr ""
 
 #: inc/vendors/elementor/elements/general/menu-vertical.php:78
@@ -2718,7 +2718,7 @@ msgid "List Style Type"
 msgstr ""
 
 #: inc/vendors/elementor/elements/general/newsletter.php:40
-msgid "Lasa newsletter"
+msgid "Themename newsletter"
 msgstr ""
 
 #: inc/vendors/elementor/elements/general/newsletter.php:79
@@ -2786,7 +2786,7 @@ msgid "Button Color"
 msgstr ""
 
 #: inc/vendors/elementor/elements/general/our-team.php:46
-msgid "Lasa Our Team"
+msgid "Themename Our Team"
 msgstr ""
 
 #: inc/vendors/elementor/elements/general/testimonials.php:105
@@ -2894,7 +2894,7 @@ msgid "Description 4"
 msgstr ""
 
 #: inc/vendors/elementor/elements/general/portfolios.php:49
-msgid "Lasa Portfolios"
+msgid "Themename Portfolios"
 msgstr ""
 
 #: inc/vendors/woocommerce/classes/class-wc-shop.php:162
@@ -2938,7 +2938,7 @@ msgid "Sorry no portfolio, please add a new portfolio"
 msgstr ""
 
 #: inc/vendors/elementor/elements/general/posts-grid.php:21
-msgid "Lasa Posts Grid"
+msgid "Themename Posts Grid"
 msgstr ""
 
 #: inc/vendors/elementor/elements/general/posts-grid.php:63
@@ -2986,7 +2986,7 @@ msgid "Comments Text"
 msgstr ""
 
 #: inc/vendors/elementor/elements/general/shortcode-carousel.php:46
-msgid "Lasa Shortcode Carousel"
+msgid "Themename Shortcode Carousel"
 msgstr ""
 
 #: inc/vendors/elementor/elements/general/shortcode-carousel.php:96
@@ -2998,7 +2998,7 @@ msgid "List Shortcode"
 msgstr ""
 
 #: inc/vendors/elementor/elements/general/shortcode-carousel.php:114
-msgid "Go to the <a href=\"%s\" target=\"_blank\">Thembay Shortcode</a> to manage your."
+msgid "Go to the <a href=\"%s\" target=\"_blank\">Xperttheme Shortcode</a> to manage your."
 msgstr ""
 
 #: inc/vendors/elementor/elements/general/shortcode-carousel.php:150
@@ -3010,7 +3010,7 @@ msgid "Columns Mobile"
 msgstr ""
 
 #: inc/vendors/elementor/elements/general/store-notice.php:48
-msgid "Lasa Store Notice"
+msgid "Themename Store Notice"
 msgstr ""
 
 #: inc/vendors/elementor/elements/general/store-notice.php:88
@@ -3034,7 +3034,7 @@ msgid "Background Hover"
 msgstr ""
 
 #: inc/vendors/elementor/elements/general/template.php:43
-msgid "Lasa Template"
+msgid "Themename Template"
 msgstr ""
 
 #: inc/widgets/template_elementor.php:63
@@ -3058,7 +3058,7 @@ msgid "Choose Template"
 msgstr ""
 
 #: inc/vendors/elementor/elements/general/testimonials-tab.php:48
-msgid "Lasa Testimonials Tab"
+msgid "Themename Testimonials Tab"
 msgstr ""
 
 #: inc/vendors/elementor/elements/general/testimonials-tab.php:143
@@ -3098,7 +3098,7 @@ msgid "Testimonials Icon"
 msgstr ""
 
 #: inc/vendors/elementor/elements/general/testimonials.php:47
-msgid "Lasa Testimonials"
+msgid "Themename Testimonials"
 msgstr ""
 
 #: inc/vendors/elementor/elements/woocommerce/custom-image-list-categories.php:143
@@ -3154,7 +3154,7 @@ msgid "testimonial qs"
 msgstr ""
 
 #: inc/vendors/elementor/elements/general/text-box.php:48
-msgid "Lasa Text Box"
+msgid "Themename Text Box"
 msgstr ""
 
 #: inc/vendors/elementor/elements/general/text-box.php:81
@@ -3182,7 +3182,7 @@ msgid "Style Content"
 msgstr ""
 
 #: inc/vendors/elementor/elements/general/wpforms-button-popup.php:47
-msgid "Lasa WPForms Button Popup"
+msgid "Themename WPForms Button Popup"
 msgstr ""
 
 #: inc/vendors/elementor/elements/general/wpforms-button-popup.php:101
@@ -3215,7 +3215,7 @@ msgid "Select a form"
 msgstr ""
 
 #: inc/vendors/elementor/elements/header/account.php:21
-msgid "Lasa Account"
+msgid "Themename Account"
 msgstr ""
 
 #: inc/vendors/elementor/elements/header/account.php:63
@@ -3271,7 +3271,7 @@ msgid "Login/Register"
 msgstr ""
 
 #: inc/vendors/elementor/elements/header/canvas-menu-template.php:46
-msgid "Lasa Canvas Menu Template"
+msgid "Themename Canvas Menu Template"
 msgstr ""
 
 #: inc/vendors/elementor/elements/header/canvas-menu-template.php:100
@@ -3283,7 +3283,7 @@ msgid "Content Align"
 msgstr ""
 
 #: inc/vendors/elementor/elements/header/compare.php:19
-msgid "Lasa Compare"
+msgid "Themename Compare"
 msgstr ""
 
 #: inc/vendors/elementor/elements/header/wishlist.php:75
@@ -3295,7 +3295,7 @@ msgid "My Compare"
 msgstr ""
 
 #: inc/vendors/elementor/elements/header/currency.php:19
-msgid "Lasa Currency"
+msgid "Themename Currency"
 msgstr ""
 
 #: inc/vendors/elementor/elements/header/currency.php:42
@@ -3331,7 +3331,7 @@ msgid "Style Currency"
 msgstr ""
 
 #: inc/vendors/elementor/elements/header/custom-language.php:20
-msgid "Lasa Language"
+msgid "Themename Language"
 msgstr ""
 
 #: inc/vendors/elementor/elements/header/custom-language.php:69
@@ -3339,7 +3339,7 @@ msgid "Style Language"
 msgstr ""
 
 #: inc/vendors/elementor/elements/header/mini-cart.php:23
-msgid "Lasa Mini Cart"
+msgid "Themename Mini Cart"
 msgstr ""
 
 #: inc/vendors/elementor/elements/header/mini-cart.php:48
@@ -3399,7 +3399,7 @@ msgid "Position Horizontal"
 msgstr ""
 
 #: inc/vendors/elementor/elements/header/mobile-menu.php:23
-msgid "Lasa Mobile Menu"
+msgid "Themename Mobile Menu"
 msgstr ""
 
 #: inc/vendors/elementor/elements/header/mobile-menu.php:61
@@ -3423,7 +3423,7 @@ msgid "Icon Style"
 msgstr ""
 
 #: inc/vendors/elementor/elements/header/nav-menu.php:23
-msgid "Lasa Nav Menu"
+msgid "Themename Nav Menu"
 msgstr ""
 
 #: inc/vendors/elementor/elements/woocommerce/product-tabs.php:111
@@ -3583,7 +3583,7 @@ msgid "Hover Text Color"
 msgstr ""
 
 #: inc/vendors/elementor/elements/header/product-recently-viewed-header.php:24
-msgid "Lasa Product Recently Viewed Header"
+msgid "Themename Product Recently Viewed Header"
 msgstr ""
 
 #: inc/vendors/elementor/elements/woocommerce/product-recently-viewed-main.php:73
@@ -3627,7 +3627,7 @@ msgid "Columns and max item"
 msgstr ""
 
 #: inc/vendors/elementor/elements/header/search-canvas.php:20
-msgid "Lasa Search Canvas"
+msgid "Themename Search Canvas"
 msgstr ""
 
 #: inc/vendors/elementor/elements/header/search-popup.php:46
@@ -3727,7 +3727,7 @@ msgid "Search in:"
 msgstr ""
 
 #: inc/vendors/elementor/elements/header/search-form.php:21
-msgid "Lasa Search Form"
+msgid "Themename Search Form"
 msgstr ""
 
 #: inc/vendors/elementor/elements/header/search-form.php:34
@@ -3803,11 +3803,11 @@ msgid "Search products..."
 msgstr ""
 
 #: inc/vendors/elementor/elements/header/search-popup.php:20
-msgid "Lasa Search Popup"
+msgid "Themename Search Popup"
 msgstr ""
 
 #: inc/vendors/elementor/elements/header/site-logo.php:19
-msgid "Lasa Site Logo"
+msgid "Themename Site Logo"
 msgstr ""
 
 #: inc/vendors/elementor/elements/header/site-logo.php:73
@@ -3823,7 +3823,7 @@ msgid "Logo"
 msgstr ""
 
 #: inc/vendors/elementor/elements/header/wishlist.php:22
-msgid "Lasa Wishlist"
+msgid "Themename Wishlist"
 msgstr ""
 
 #: inc/vendors/woocommerce/classes/class-wc.php:508
@@ -3835,7 +3835,7 @@ msgid "Show Total"
 msgstr ""
 
 #: inc/vendors/elementor/elements/woocommerce/custom-image-list-categories.php:48
-msgid "Lasa Custom Image List Categories"
+msgid "Themename Custom Image List Categories"
 msgstr ""
 
 #: inc/vendors/elementor/elements/woocommerce/custom-image-list-categories.php:96
@@ -3899,7 +3899,7 @@ msgid "products"
 msgstr ""
 
 #: inc/vendors/elementor/elements/woocommerce/custom-image-list-tags.php:19
-msgid "Lasa Custom Image List Tags"
+msgid "Themename Custom Image List Tags"
 msgstr ""
 
 #: inc/vendors/elementor/elements/woocommerce/product-list-tags.php:72
@@ -3959,7 +3959,7 @@ msgid "Icon Item Padding"
 msgstr ""
 
 #: inc/vendors/elementor/elements/woocommerce/list-categories-product.php:46
-msgid "Lasa List Categories Product"
+msgid "Themename List Categories Product"
 msgstr ""
 
 #: inc/vendors/elementor/elements/woocommerce/list-categories-product.php:94
@@ -3979,7 +3979,7 @@ msgid "No"
 msgstr ""
 
 #: inc/vendors/elementor/elements/woocommerce/product-categories-tabs.php:48
-msgid "Lasa Product Categories Tabs"
+msgid "Themename Product Categories Tabs"
 msgstr ""
 
 #: inc/vendors/elementor/elements/woocommerce/product-categories-tabs.php:94
@@ -4055,7 +4055,7 @@ msgid "Show all"
 msgstr ""
 
 #: inc/vendors/elementor/elements/woocommerce/product-category.php:46
-msgid "Lasa Product Category"
+msgid "Themename Product Category"
 msgstr ""
 
 #: inc/vendors/elementor/elements/woocommerce/product-category.php:94
@@ -4063,7 +4063,7 @@ msgid "Product Category"
 msgstr ""
 
 #: inc/vendors/elementor/elements/woocommerce/product-count-down.php:18
-msgid "Lasa Product CountDown"
+msgid "Themename Product CountDown"
 msgstr ""
 
 #: inc/vendors/elementor/elements/woocommerce/product-flash-sales.php:88
@@ -4087,7 +4087,7 @@ msgid "Please select display campaign"
 msgstr ""
 
 #: inc/vendors/elementor/elements/woocommerce/product-flash-sales.php:20
-msgid "Lasa Product Flash Sales"
+msgid "Themename Product Flash Sales"
 msgstr ""
 
 #: inc/vendors/redux-framework/config/05-style.php:97
@@ -4143,15 +4143,15 @@ msgid "Label timer"
 msgstr ""
 
 #: inc/vendors/elementor/elements/woocommerce/product-list-tags.php:18
-msgid "Lasa Icon List Tags"
+msgid "Themename Icon List Tags"
 msgstr ""
 
 #: inc/vendors/elementor/elements/woocommerce/product-recently-viewed-main.php:18
-msgid "Lasa Product Recently Viewed Main"
+msgid "Themename Product Recently Viewed Main"
 msgstr ""
 
 #: inc/vendors/elementor/elements/woocommerce/product-tabs.php:48
-msgid "Lasa Product Tabs"
+msgid "Themename Product Tabs"
 msgstr ""
 
 #: inc/vendors/elementor/elements/woocommerce/product-tabs.php:96
@@ -4175,11 +4175,11 @@ msgid "Show Tabs"
 msgstr ""
 
 #: inc/vendors/elementor/elements/woocommerce/products.php:18
-msgid "Lasa Products"
+msgid "Themename Products"
 msgstr ""
 
 #: inc/vendors/elementor/elements/woocommerce/single-product-home.php:19
-msgid "Lasa Single Product Home Page"
+msgid "Themename Single Product Home Page"
 msgstr ""
 
 #: inc/vendors/elementor/elements/woocommerce/single-product-home.php:68
@@ -4231,7 +4231,7 @@ msgid "Product Meta"
 msgstr ""
 
 #: inc/vendors/elementor/elements/woocommerce/woocommerce-tags.php:18
-msgid "Lasa Woocommerce Tags"
+msgid "Themename Woocommerce Tags"
 msgstr ""
 
 #: inc/vendors/elementor/elements/woocommerce/woocommerce-tags.php:50
@@ -4255,7 +4255,7 @@ msgid "Material Design Iconic"
 msgstr ""
 
 #: inc/vendors/elementor/icons/icons.php:48
-msgid "Thembay Custom"
+msgid "Xperttheme Custom"
 msgstr ""
 
 #: inc/vendors/megamenu/includes/admin/class-admin-assets.php:61
@@ -4579,7 +4579,7 @@ msgid "Copyright Text"
 msgstr ""
 
 #: inc/vendors/redux-framework/config/03-footer.php:29
-msgid "Copyright  &#64; 2024 Lasa Designed by ThemBay. All Rights Reserved."
+msgid "Copyright  &#64; 2024 Themename Designed by XpertTheme. All Rights Reserved."
 msgstr ""
 
 #: inc/vendors/redux-framework/config/04-mobile.php:116
@@ -5739,7 +5739,7 @@ msgid "Version "
 msgstr ""
 
 #: inc/vendors/woocommerce/wc-admin.php:13
-msgid "Lasa Options"
+msgid "Themename Options"
 msgstr ""
 
 #: inc/vendors/redux-framework/redux-config.php:134
@@ -6096,7 +6096,7 @@ msgid "Sort by:"
 msgstr ""
 
 #: inc/widgets/popup_newsletter.php:12
-msgid "Lasa Popup Newsletter"
+msgid "Themename Popup Newsletter"
 msgstr ""
 
 #: inc/widgets/popup_newsletter.php:13
@@ -6136,7 +6136,7 @@ msgid "Page URL:"
 msgstr ""
 
 #: inc/widgets/recent_post.php:12
-msgid "Lasa Recent Posts"
+msgid "Themename Recent Posts"
 msgstr ""
 
 #: inc/widgets/recent_post.php:13
@@ -6152,7 +6152,7 @@ msgid "Num Posts:"
 msgstr ""
 
 #: inc/widgets/socials.php:12
-msgid "Lasa Socials"
+msgid "Themename Socials"
 msgstr ""
 
 #: inc/widgets/socials.php:13
@@ -6160,11 +6160,11 @@ msgid "Socials for website."
 msgstr ""
 
 #: inc/widgets/template_elementor.php:11
-msgid "Lasa Template Custom Block"
+msgid "Themename Template Custom Block"
 msgstr ""
 
 #: inc/widgets/template_elementor.php:13
-msgid "Embed your saved Thembay Template Custom Block"
+msgid "Embed your saved Xperttheme Template Custom Block"
 msgstr ""
 
 #: inc/widgets/template_elementor.php:95
@@ -6184,7 +6184,7 @@ msgid "Search for posts..."
 msgstr ""
 
 #: page-templates/parts/productsearchform.php:64
-msgid "Enter at least 2 clasacters"
+msgid "Enter at least 2 cthemenamecters"
 msgstr ""
 
 #: page-templates/parts/productsearchform.php:14

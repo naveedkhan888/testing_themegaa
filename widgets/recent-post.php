@@ -42,7 +42,7 @@ if ($query->have_posts()): ?>
 	            <?php } ?>
 
 				<ul class="entry-meta-list">
-					  <li class="entry-date"><?php echo lasa_time_link(); ?></li>
+					  <li class="entry-date"><?php echo themename_time_link(); ?></li>
                 </ul>
 	        </div>
 		</li>

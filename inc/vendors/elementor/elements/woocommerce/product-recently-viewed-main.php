@@ -1,12 +1,12 @@
 <?php
 
-if (! defined('ABSPATH') || function_exists('Lasa_Elementor_Product_Recently_Viewed_Main')) {
+if (! defined('ABSPATH') || function_exists('Themename_Elementor_Product_Recently_Viewed_Main')) {
     exit; // Exit if accessed directly.
 }
 
 use Elementor\Controls_Manager;
 
-class Lasa_Elementor_Product_Recently_Viewed_Main extends Lasa_Elementor_Carousel_Base
+class Themename_Elementor_Product_Recently_Viewed_Main extends Themename_Elementor_Carousel_Base
 {
     public function get_name()
     {
@@ -15,12 +15,12 @@ class Lasa_Elementor_Product_Recently_Viewed_Main extends Lasa_Elementor_Carouse
 
     public function get_title()
     {
-        return esc_html__('Lasa Product Recently Viewed Main', 'lasa');
+        return esc_html__('Themename Product Recently Viewed Main', 'themename');
     }
 
     public function get_categories()
     {
-        return [ 'lasa-elements', 'woocommerce-elements'];
+        return [ 'themename-elements', 'woocommerce-elements'];
     }
 
     public function get_icon()
@@ -40,7 +40,7 @@ class Lasa_Elementor_Product_Recently_Viewed_Main extends Lasa_Elementor_Carouse
      */
     public function get_script_depends()
     {
-        return ['slick', 'lasa-custom-slick'];
+        return ['slick', 'themename-custom-slick'];
     }
 
     public function get_keywords()
@@ -55,14 +55,14 @@ class Lasa_Elementor_Product_Recently_Viewed_Main extends Lasa_Elementor_Carouse
         $this->start_controls_section(
             'general',
             [
-                'label' => esc_html__('General', 'lasa'),
+                'label' => esc_html__('General', 'themename'),
             ]
         );
 
         $this->add_control(
             'advanced',
             [
-                'label' => esc_html__('Advanced', 'lasa'),
+                'label' => esc_html__('Advanced', 'themename'),
                 'type' => Controls_Manager::HEADING,
             ]
         );
@@ -70,9 +70,9 @@ class Lasa_Elementor_Product_Recently_Viewed_Main extends Lasa_Elementor_Carouse
         $this->add_control(
             'empty',
             [
-                'label' => esc_html__('Empty Result - Custom Paragraph', 'lasa'),
+                'label' => esc_html__('Empty Result - Custom Paragraph', 'themename'),
                 'type' => Controls_Manager::TEXTAREA,
-                'default' => esc_html__('You have no recently viewed item.', 'lasa'),
+                'default' => esc_html__('You have no recently viewed item.', 'themename'),
                 'dynamic' => [
                     'active' => true,
                 ]
@@ -82,12 +82,12 @@ class Lasa_Elementor_Product_Recently_Viewed_Main extends Lasa_Elementor_Carouse
         $this->add_control(
             'align_empty',
             [
-                'label' => esc_html__('Align Empty Result', 'lasa'),
+                'label' => esc_html__('Align Empty Result', 'themename'),
                 'type' => Controls_Manager::SELECT,
                 'options' => [
-                    'left' => esc_html__('Left', 'lasa'),
-                    'center' => esc_html__('Center', 'lasa'),
-                    'right' => esc_html__('Right', 'lasa')
+                    'left' => esc_html__('Left', 'themename'),
+                    'center' => esc_html__('Center', 'themename'),
+                    'right' => esc_html__('Right', 'themename')
                 ],
                 'default' => 'center',
                 'dynamic' => [
@@ -105,7 +105,7 @@ class Lasa_Elementor_Product_Recently_Viewed_Main extends Lasa_Elementor_Carouse
         $this->add_control(
             'enable_readmore',
             [
-                'label' => esc_html__('Enable Button "Read More" ', 'lasa'),
+                'label' => esc_html__('Enable Button "Read More" ', 'themename'),
                 'type' => Controls_Manager::SWITCHER,
                 'default' => 'yes',
             ]
@@ -124,9 +124,9 @@ class Lasa_Elementor_Product_Recently_Viewed_Main extends Lasa_Elementor_Carouse
         $this->add_control(
             'limit',
             [
-                'label' => esc_html__('Number of products', 'lasa'),
+                'label' => esc_html__('Number of products', 'themename'),
                 'type' => Controls_Manager::NUMBER,
-                'description' => esc_html__('Number of products to show ( -1 = all )', 'lasa'),
+                'description' => esc_html__('Number of products to show ( -1 = all )', 'themename'),
                 'default' => 8,
                 'min'  => -1,
             ]
@@ -135,12 +135,12 @@ class Lasa_Elementor_Product_Recently_Viewed_Main extends Lasa_Elementor_Carouse
         $this->add_control(
             'layout_type',
             [
-                'label'     => esc_html__('Layout Type', 'lasa'),
+                'label'     => esc_html__('Layout Type', 'themename'),
                 'type'      => Controls_Manager::SELECT,
                 'default'   => 'grid',
                 'options'   => [
-                    'grid'      => esc_html__('Grid', 'lasa'),
-                    'carousel'  => esc_html__('Carousel', 'lasa'),
+                    'grid'      => esc_html__('Grid', 'themename'),
+                    'carousel'  => esc_html__('Carousel', 'themename'),
                 ],
             ]
         );
@@ -148,7 +148,7 @@ class Lasa_Elementor_Product_Recently_Viewed_Main extends Lasa_Elementor_Carouse
         $this->add_control(
             'product_style',
             [
-                'label' => esc_html__('Product Style', 'lasa'),
+                'label' => esc_html__('Product Style', 'themename'),
                 'type' => Controls_Manager::SELECT,
                 'default' => 'inner',
                 'options' => $this->get_template_product(),
@@ -162,7 +162,7 @@ class Lasa_Elementor_Product_Recently_Viewed_Main extends Lasa_Elementor_Carouse
         $this->start_controls_section(
             'section_readmore',
             [
-                'label' => esc_html__('Read More Options', 'lasa'),
+                'label' => esc_html__('Read More Options', 'themename'),
                 'type'  => Controls_Manager::SECTION,
                 'condition' => [
                     'enable_readmore' => 'yes'
@@ -173,9 +173,9 @@ class Lasa_Elementor_Product_Recently_Viewed_Main extends Lasa_Elementor_Carouse
         $this->add_control(
             'readmore_text',
             [
-                'label' => esc_html__('Button "Read More" Custom Text', 'lasa'),
+                'label' => esc_html__('Button "Read More" Custom Text', 'themename'),
                 'type' => Controls_Manager::TEXT,
-                'default' => esc_html__('Read More', 'lasa'),
+                'default' => esc_html__('Read More', 'themename'),
                 'label_block' => true,
             ]
         );
@@ -186,7 +186,7 @@ class Lasa_Elementor_Product_Recently_Viewed_Main extends Lasa_Elementor_Carouse
             $this->add_control(
                 'readmore_page',
                 [
-                    'label'        => esc_html__('Page', 'lasa'),
+                    'label'        => esc_html__('Page', 'themename'),
                     'type'         => Controls_Manager::SELECT2,
                     'options'      => $pages,
                     'default'      => array_keys($pages)[0],
@@ -200,7 +200,7 @@ class Lasa_Elementor_Product_Recently_Viewed_Main extends Lasa_Elementor_Carouse
                 'readmore_page',
                 [
                     'type'            => Controls_Manager::RAW_HTML,
-                    'raw'             => sprintf(__('<strong>There are no pages in your site.</strong><br>Go to the <a href="%s" target="_blank">pages screen</a> to create one.', 'lasa'), admin_url('edit.php?post_type=page')),
+                    'raw'             => sprintf(__('<strong>There are no pages in your site.</strong><br>Go to the <a href="%s" target="_blank">pages screen</a> to create one.', 'themename'), admin_url('edit.php?post_type=page')),
                     'separator'       => 'after',
                     'content_classes' => 'elementor-panel-alert elementor-panel-alert-info',
                 ]
@@ -219,7 +219,7 @@ class Lasa_Elementor_Product_Recently_Viewed_Main extends Lasa_Elementor_Carouse
     {
         $settings = $this->get_settings_for_display();
         extract($settings);
-        $products_list              =  lasa_tbay_wc_track_user_get_cookie();
+        $products_list              =  themename_tbay_wc_track_user_get_cookie();
         $all                        =  count($products_list);
 
         if (!empty($readmore_page)) {
@@ -236,9 +236,9 @@ class Lasa_Elementor_Product_Recently_Viewed_Main extends Lasa_Elementor_Carouse
         $settings = $this->get_settings_for_display();
         extract($settings);
 
-        $args   = lasa_tbay_get_products_recently_viewed($limit);
+        $args   = themename_tbay_get_products_recently_viewed($limit);
 
-        $args   =  apply_filters('lasa_list_recently_viewed_products_args', $args);
+        $args   =  apply_filters('themename_list_recently_viewed_products_args', $args);
         $loop   = new WP_Query($args);
 
         if (!$loop->have_posts()) {
@@ -254,4 +254,4 @@ class Lasa_Elementor_Product_Recently_Viewed_Main extends Lasa_Elementor_Carouse
         $this->render_btn_readmore($limit);
     }
 }
-$widgets_manager->register(new Lasa_Elementor_Product_Recently_Viewed_Main());
+$widgets_manager->register(new Themename_Elementor_Product_Recently_Viewed_Main());

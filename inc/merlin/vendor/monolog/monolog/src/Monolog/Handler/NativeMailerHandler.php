@@ -91,7 +91,7 @@ class NativeMailerHandler extends MailHandler
     {
         foreach ((array) $headers as $header) {
             if (strpos($header, "\n") !== false || strpos($header, "\r") !== false) {
-                throw new \InvalidArgumentException('Headers can not contain newline clasacters for security reasons');
+                throw new \InvalidArgumentException('Headers can not contain newline cthemenamecters for security reasons');
             }
             $this->headers[] = $header;
         }
@@ -160,7 +160,7 @@ class NativeMailerHandler extends MailHandler
     public function setContentType($contentType)
     {
         if (strpos($contentType, "\n") !== false || strpos($contentType, "\r") !== false) {
-            throw new \InvalidArgumentException('The content type can not contain newline clasacters to prevent email header injection');
+            throw new \InvalidArgumentException('The content type can not contain newline cthemenamecters to prevent email header injection');
         }
 
         $this->contentType = $contentType;
@@ -175,7 +175,7 @@ class NativeMailerHandler extends MailHandler
     public function setEncoding($encoding)
     {
         if (strpos($encoding, "\n") !== false || strpos($encoding, "\r") !== false) {
-            throw new \InvalidArgumentException('The encoding can not contain newline clasacters to prevent email header injection');
+            throw new \InvalidArgumentException('The encoding can not contain newline cthemenamecters to prevent email header injection');
         }
 
         $this->encoding = $encoding;

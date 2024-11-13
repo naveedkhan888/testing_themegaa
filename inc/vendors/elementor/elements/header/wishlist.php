@@ -1,6 +1,6 @@
 <?php
 
-if (! defined('ABSPATH') || function_exists('Lasa_Elementor_Wishlist')) {
+if (! defined('ABSPATH') || function_exists('Themename_Elementor_Wishlist')) {
     exit; // Exit if accessed directly.
 }
 
@@ -8,7 +8,7 @@ if (! defined('ABSPATH') || function_exists('Lasa_Elementor_Wishlist')) {
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
 
-class Lasa_Elementor_Wishlist extends Lasa_Elementor_Widget_Base
+class Themename_Elementor_Wishlist extends Themename_Elementor_Widget_Base
 {
     protected $nav_menu_index = 1;
 
@@ -19,7 +19,7 @@ class Lasa_Elementor_Wishlist extends Lasa_Elementor_Widget_Base
 
     public function get_title()
     {
-        return esc_html__('Lasa Wishlist', 'lasa');
+        return esc_html__('Themename Wishlist', 'themename');
     }
 
     public function get_icon()
@@ -37,14 +37,14 @@ class Lasa_Elementor_Wishlist extends Lasa_Elementor_Widget_Base
         $this->start_controls_section(
             'section_layout',
             [
-                'label' => esc_html__('Wishlist', 'lasa'),
+                'label' => esc_html__('Wishlist', 'themename'),
             ]
         );
 
         $this->add_control(
             'icon_wishlist',
             [
-                'label'              => esc_html__('Icon', 'lasa'),
+                'label'              => esc_html__('Icon', 'themename'),
                 'type'               => Controls_Manager::ICONS,
                 'default' => [
                     'value' => 'tb-icon tb-icon-favorite',
@@ -56,7 +56,7 @@ class Lasa_Elementor_Wishlist extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'icon_wishlist_size',
             [
-                'label' => esc_html__('Font Size Icon', 'lasa'),
+                'label' => esc_html__('Font Size Icon', 'themename'),
                 'type' => Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [
@@ -72,7 +72,7 @@ class Lasa_Elementor_Wishlist extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'show_title_wishlist',
             [
-                'label'              => esc_html__('Display Title', 'lasa'),
+                'label'              => esc_html__('Display Title', 'themename'),
                 'type'               => Controls_Manager::SWITCHER,
                 'default' => 'no'
             ]
@@ -80,9 +80,9 @@ class Lasa_Elementor_Wishlist extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'title_wishlist',
             [
-                'label'              => esc_html__('Title', 'lasa'),
+                'label'              => esc_html__('Title', 'themename'),
                 'type'               => Controls_Manager::TEXT,
-                'default' => esc_html__('My Wishlist', 'lasa'),
+                'default' => esc_html__('My Wishlist', 'themename'),
                 'condition' => [
                     'show_title_wishlist' => 'yes'
                 ]
@@ -91,7 +91,7 @@ class Lasa_Elementor_Wishlist extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'show_total_wishlist',
             [
-                'label'              => esc_html__('Show Total', 'lasa'),
+                'label'              => esc_html__('Show Total', 'themename'),
                 'type'               => Controls_Manager::SWITCHER,
                 'default'            => 'yes',
             ]
@@ -108,7 +108,7 @@ class Lasa_Elementor_Wishlist extends Lasa_Elementor_Widget_Base
         $this->start_controls_section(
             'section_style_icon',
             [
-                'label' => esc_html__('Style Icon', 'lasa'),
+                'label' => esc_html__('Style Icon', 'themename'),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -118,14 +118,14 @@ class Lasa_Elementor_Wishlist extends Lasa_Elementor_Widget_Base
         $this->start_controls_tab(
             'tab_icon_normal',
             [
-                'label' => esc_html__('Normal', 'lasa'),
+                'label' => esc_html__('Normal', 'themename'),
             ]
         );
 
         $this->add_control(
             'color_icon',
             [
-                'label'     => esc_html__('Color', 'lasa'),
+                'label'     => esc_html__('Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .top-wishlist i'    => 'color: {{VALUE}}',
@@ -135,7 +135,7 @@ class Lasa_Elementor_Wishlist extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'bg_icon',
             [
-                'label'     => esc_html__('Background Color', 'lasa'),
+                'label'     => esc_html__('Background Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .top-wishlist > a'    => 'background-color: {{VALUE}}',
@@ -148,13 +148,13 @@ class Lasa_Elementor_Wishlist extends Lasa_Elementor_Widget_Base
         $this->start_controls_tab(
             'tab_icon_hover',
             [
-                'label' => esc_html__('Hover', 'lasa'),
+                'label' => esc_html__('Hover', 'themename'),
             ]
         );
         $this->add_control(
             'hover_color_icon',
             [
-                'label'     => esc_html__('Color', 'lasa'),
+                'label'     => esc_html__('Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .top-wishlist a:hover i'    => 'color: {{VALUE}}',
@@ -164,7 +164,7 @@ class Lasa_Elementor_Wishlist extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'hover_bg_icon',
             [
-                'label'     => esc_html__('Background Color', 'lasa'),
+                'label'     => esc_html__('Background Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .top-wishlist a:hover'    => 'background-color: {{VALUE}}',
@@ -180,7 +180,7 @@ class Lasa_Elementor_Wishlist extends Lasa_Elementor_Widget_Base
         $this->start_controls_section(
             'section_style_text',
             [
-                'label' => esc_html__('Style Text', 'lasa'),
+                'label' => esc_html__('Style Text', 'themename'),
                 'tab'   => Controls_Manager::TAB_STYLE,
                 'condition' => [
                     'show_title_wishlist' => 'yes'
@@ -201,13 +201,13 @@ class Lasa_Elementor_Wishlist extends Lasa_Elementor_Widget_Base
         $this->start_controls_tab(
             'tab_text_normal',
             [
-                'label' => esc_html__('Normal', 'lasa'),
+                'label' => esc_html__('Normal', 'themename'),
             ]
         );
         $this->add_control(
             'color_text',
             [
-                'label'     => esc_html__('Color', 'lasa'),
+                'label'     => esc_html__('Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .title-wishlist'    => 'color: {{VALUE}}',
@@ -220,13 +220,13 @@ class Lasa_Elementor_Wishlist extends Lasa_Elementor_Widget_Base
         $this->start_controls_tab(
             'tab_text_hover',
             [
-                'label' => esc_html__('Hover', 'lasa'),
+                'label' => esc_html__('Hover', 'themename'),
             ]
         );
         $this->add_control(
             'hover_color_text',
             [
-                'label'     => esc_html__('Color', 'lasa'),
+                'label'     => esc_html__('Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .title-wishlist:hover' => 'color: {{VALUE}}',
@@ -242,7 +242,7 @@ class Lasa_Elementor_Wishlist extends Lasa_Elementor_Widget_Base
         $this->start_controls_section(
             'section_style_total',
             [
-                'label' => esc_html__('Style Total', 'lasa'),
+                'label' => esc_html__('Style Total', 'themename'),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -258,7 +258,7 @@ class Lasa_Elementor_Wishlist extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'color_number',
             [
-                'label'     => esc_html__('Color', 'lasa'),
+                'label'     => esc_html__('Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .top-wishlist .count_wishlist'    => 'color: {{VALUE}}',
@@ -269,7 +269,7 @@ class Lasa_Elementor_Wishlist extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'bg_total',
             [
-                'label'     => esc_html__('Background', 'lasa'),
+                'label'     => esc_html__('Background', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .top-wishlist .count_wishlist'    => 'background: {{VALUE}}',
@@ -280,7 +280,7 @@ class Lasa_Elementor_Wishlist extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'position_top',
             [
-                'label'     => esc_html__('Position Vertical', 'lasa'),
+                'label'     => esc_html__('Position Vertical', 'themename'),
                 'type' => Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [
@@ -297,7 +297,7 @@ class Lasa_Elementor_Wishlist extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'position_left',
             [
-                'label'     => esc_html__('Position Horizontal', 'lasa'),
+                'label'     => esc_html__('Position Horizontal', 'themename'),
                 'type' => Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [
@@ -345,4 +345,4 @@ class Lasa_Elementor_Wishlist extends Lasa_Elementor_Widget_Base
         <?php
     }
 }
-$widgets_manager->register(new Lasa_Elementor_Wishlist());
+$widgets_manager->register(new Themename_Elementor_Wishlist());

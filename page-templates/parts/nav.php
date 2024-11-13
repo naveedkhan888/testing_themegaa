@@ -4,7 +4,7 @@
         $locations  = get_nav_menu_locations();
         $menu_id    = $locations[ $tbay_location ] ;
         $menu_obj   = wp_get_nav_menu_object( $menu_id );
-        $menu_name  = lasa_get_transliterate($menu_obj->slug);
+        $menu_name  = themename_get_transliterate($menu_obj->slug);
     } else {
         $tbay_location = $menu_name = '';
     }
@@ -18,7 +18,7 @@
         'menu_id' => 'primary-menu', 
     );
 
-    $args['walker']             =   new Lasa_Megamenu_Walker();
+    $args['walker']             =   new Themename_Megamenu_Walker();
 
     wp_nav_menu($args);
 ?>

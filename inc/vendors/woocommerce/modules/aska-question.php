@@ -1,15 +1,15 @@
 <?php
-if ( !lasa_woocommerce_activated() ) return;
+if ( !themename_woocommerce_activated() ) return;
 
 /**
  * ------------------------------------------------------------------------------------------------
  * Size Guide button
  * ------------------------------------------------------------------------------------------------
  */
-if (! function_exists('lasa_the_aska_question')) {
-    function lasa_the_aska_question( $product_id )
+if (! function_exists('themename_the_aska_question')) {
+    function themename_the_aska_question( $product_id )
     {
-        $aska_question          = maybe_unserialize(lasa_tbay_get_config('single_aska_question'));
+        $aska_question          = maybe_unserialize(themename_tbay_get_config('single_aska_question'));
 
         if( empty(trim($aska_question)) ) return;
         
@@ -17,8 +17,8 @@ if (! function_exists('lasa_the_aska_question')) {
         wp_enqueue_style('magnific-popup');
 
 
-        $title = lasa_tbay_get_config('single_aska_question_title');
-        $icon = lasa_tbay_get_config('single_aska_question_icon');
+        $title = themename_tbay_get_config('single_aska_question_title');
+        $icon = themename_tbay_get_config('single_aska_question_icon');
 
         $product    = wc_get_product( $product_id );
         $image_id   = $product->get_image_id();
@@ -35,7 +35,7 @@ if (! function_exists('lasa_the_aska_question')) {
             </a>
             <div id="tbay-content-aska-question" class="tbay-popup-content popup-aska-question zoom-anim-dialog mfp-hide">
                 <div class="content">
-                    <h3 class="tbay-headling-popup"><?php esc_html_e('Ask a Question', 'lasa'); ?></h3>
+                    <h3 class="tbay-headling-popup"><?php esc_html_e('Ask a Question', 'themename'); ?></h3>
                     <div class="tbay-product d-flex">
                         <div class="image">
                             <?php echo trim($image); ?>  

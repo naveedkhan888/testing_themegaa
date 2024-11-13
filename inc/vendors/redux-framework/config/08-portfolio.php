@@ -14,13 +14,13 @@ Redux::set_section(
 	$opt_name,
 	array(
         'icon' => 'zmdi zmdi-case',
-        'title' => esc_html__('Portfolio', 'lasa'),
+        'title' => esc_html__('Portfolio', 'themename'),
         'fields' => array(
             array(
 				'id'       => 'page_portfolio',
 				'type'     => 'select',
 				'data'     => 'pages',
-				'title'    => esc_html__( 'Select Page Portfolio', 'lasa' ),
+				'title'    => esc_html__( 'Select Page Portfolio', 'themename' ),
 			),
         )
 	)

@@ -1,6 +1,6 @@
 <?php
 
-if (! defined('ABSPATH') || function_exists('Lasa_Elementor_List_Categories_Product')) {
+if (! defined('ABSPATH') || function_exists('Themename_Elementor_List_Categories_Product')) {
     exit; // Exit if accessed directly.
 }
 
@@ -14,7 +14,7 @@ use Elementor\Controls_Manager;
  *
  * @since 1.0.0
  */
-class Lasa_Elementor_List_Categories_Product extends Lasa_Elementor_Carousel_Base
+class Themename_Elementor_List_Categories_Product extends Themename_Elementor_Carousel_Base
 {
     /**
      * Get widget name.
@@ -43,12 +43,12 @@ class Lasa_Elementor_List_Categories_Product extends Lasa_Elementor_Carousel_Bas
      */
     public function get_title()
     {
-        return esc_html__('Lasa List Categories Product', 'lasa');
+        return esc_html__('Themename List Categories Product', 'themename');
     }
 
     public function get_categories()
     {
-        return [ 'lasa-elements', 'woocommerce-elements'];
+        return [ 'themename-elements', 'woocommerce-elements'];
     }
     
     /**
@@ -76,7 +76,7 @@ class Lasa_Elementor_List_Categories_Product extends Lasa_Elementor_Carousel_Bas
      */
     public function get_script_depends()
     {
-        return ['slick', 'lasa-custom-slick'];
+        return ['slick', 'themename-custom-slick'];
     }
 
     public function get_keywords()
@@ -91,15 +91,15 @@ class Lasa_Elementor_List_Categories_Product extends Lasa_Elementor_Carousel_Bas
         $this->start_controls_section(
             'section_general',
             [
-                'label' => esc_html__('List Categories Product', 'lasa'),
+                'label' => esc_html__('List Categories Product', 'themename'),
             ]
         );
         $this->add_control(
             'limit',
             [
-                'label' => esc_html__('Number of categories', 'lasa'),
+                'label' => esc_html__('Number of categories', 'themename'),
                 'type' => Controls_Manager::NUMBER,
-                'description' => esc_html__('Number of categories to show ( -1 = all )', 'lasa'),
+                'description' => esc_html__('Number of categories to show ( -1 = all )', 'themename'),
                 'min'  => -1,
                 'default' => 6,
             ]
@@ -107,7 +107,7 @@ class Lasa_Elementor_List_Categories_Product extends Lasa_Elementor_Carousel_Bas
         $this->add_control(
             'show_count',
             [
-                'label' => esc_html__('Show Count', 'lasa'),
+                'label' => esc_html__('Show Count', 'themename'),
                 'type' => Controls_Manager::SWITCHER,
                 
             ]
@@ -116,19 +116,19 @@ class Lasa_Elementor_List_Categories_Product extends Lasa_Elementor_Carousel_Bas
         $this->add_control(
             'advanced',
             [
-                'label' => esc_html__('Advanced', 'lasa'),
+                'label' => esc_html__('Advanced', 'themename'),
                 'type' => Controls_Manager::HEADING,
             ]
         );
         $this->add_control(
             'layout_type',
             [
-                'label'     => esc_html__('Layout Type', 'lasa'),
+                'label'     => esc_html__('Layout Type', 'themename'),
                 'type'      => Controls_Manager::SELECT,
                 'default'   => 'grid',
                 'options'   => [
-                    'grid'      => esc_html__('Grid', 'lasa'),
-                    'carousel'  => esc_html__('Carousel', 'lasa'),
+                    'grid'      => esc_html__('Grid', 'themename'),
+                    'carousel'  => esc_html__('Carousel', 'themename'),
                 ],
             ]
         );
@@ -144,20 +144,20 @@ class Lasa_Elementor_List_Categories_Product extends Lasa_Elementor_Carousel_Bas
         $this->add_control(
             'show_all',
             [
-                'label'     => esc_html__('Display Show All', 'lasa'),
+                'label'     => esc_html__('Display Show All', 'themename'),
                 'type'      => Controls_Manager::SELECT,
                 'default' => 'no',
                 'options' => [
-                    'no' => esc_html__('No', 'lasa'),
-                    'show' => esc_html__('Show All', 'lasa')
+                    'no' => esc_html__('No', 'themename'),
+                    'show' => esc_html__('Show All', 'themename')
                 ]
             ]
         );
         $this->add_control(
             'text_button',
             [
-                'label'     => esc_html__('Text Button', 'lasa'),
-                'default'   => esc_html__('View all products', 'lasa'),
+                'label'     => esc_html__('Text Button', 'themename'),
+                'default'   => esc_html__('View all products', 'themename'),
                 'type'      => Controls_Manager::TEXT,
                 'condition' => [
                     'show_all' => 'show'
@@ -167,7 +167,7 @@ class Lasa_Elementor_List_Categories_Product extends Lasa_Elementor_Carousel_Bas
         $this->add_control(
             'icon_button',
             [
-                'label'     => esc_html__('Icon Button', 'lasa'),
+                'label'     => esc_html__('Icon Button', 'themename'),
                 'type'      => Controls_Manager::ICONS,
                 'default' => [
                     'value' => 'tb-icon tb-icon-arrow-right',
@@ -222,7 +222,7 @@ class Lasa_Elementor_List_Categories_Product extends Lasa_Elementor_Carousel_Bas
                                         <?php
                                             if ($show_count === 'yes') {
                                                 ?>
-                                                <span class="count-item"><?php echo trim($count).' '.esc_html__('products', 'lasa'); ?></span>
+                                                <span class="count-item"><?php echo trim($count).' '.esc_html__('products', 'themename'); ?></span>
                                                 <?php
                                             } ?>
                                         
@@ -258,4 +258,4 @@ class Lasa_Elementor_List_Categories_Product extends Lasa_Elementor_Carousel_Bas
         }
     }
 }
-$widgets_manager->register(new Lasa_Elementor_List_Categories_Product());
+$widgets_manager->register(new Themename_Elementor_List_Categories_Product());

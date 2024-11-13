@@ -826,9 +826,9 @@ class MenuDropdownsAJAX {
         menu_mobile_id += "_" + jQuery("#main-mobile-menu-mmenu-wrapper").data("id");
       }
 
-      storageKey = lasa_settings.storage_key + "_megamenu_" + menu_mobile_id;
+      storageKey = themename_settings.storage_key + "_megamenu_" + menu_mobile_id;
     } else {
-      storageKey = lasa_settings.storage_key + "_megamenu_" + $menu.closest("nav").data("id");
+      storageKey = themename_settings.storage_key + "_megamenu_" + $menu.closest("nav").data("id");
     }
 
     unparsedData = localStorage.getItem(storageKey);
@@ -854,11 +854,11 @@ class MenuDropdownsAJAX {
       }
     } else {
       jQuery.ajax({
-        url: lasa_settings.ajaxurl,
+        url: themename_settings.ajaxurl,
         data: {
-          action: "lasa_load_html_dropdowns",
+          action: "themename_load_html_dropdowns",
           ids: ids,
-          security: lasa_settings.wp_megamenunonce
+          security: themename_settings.wp_megamenunonce
         },
         dataType: "json",
         method: "POST",
@@ -918,7 +918,7 @@ class MenuDropdownsAJAX {
   }
 
   removeDuplicatedStylesFromHTML(html, callback) {
-    if (lasa_settings.combined_css) {
+    if (themename_settings.combined_css) {
       callback(html);
       return;
     } else {
@@ -933,7 +933,7 @@ class MenuDropdownsAJAX {
 
 class MenuClickAJAX {
   constructor() {
-    if (typeof lasa_settings === "undefined") return;
+    if (typeof themename_settings === "undefined") return;
 
     this._initmenuClickAJAX();
   }
@@ -950,7 +950,7 @@ class MenuClickAJAX {
             layout = element.data("wrapper")["layout"];
         var nav = type_menu === "toggle" ? element.find(".category-inside-content > nav") : element.find(".menu-canvas-content > nav");
         var slug = nav.data("id");
-        var storageKey = lasa_settings.storage_key + "_" + slug + "_" + layout;
+        var storageKey = themename_settings.storage_key + "_" + slug + "_" + layout;
         var storedData = false;
         var unparsedData = localStorage.getItem(storageKey);
 
@@ -972,13 +972,13 @@ class MenuClickAJAX {
           }
         } else {
           jQuery.ajax({
-            url: lasa_settings.ajaxurl,
+            url: themename_settings.ajaxurl,
             data: {
-              action: "lasa_load_html_click",
+              action: "themename_load_html_click",
               slug: slug,
               type_menu: type_menu,
               layout: layout,
-              security: lasa_settings.wp_menuclicknonce
+              security: themename_settings.wp_menuclicknonce
             },
             dataType: "json",
             method: "POST",
@@ -1028,7 +1028,7 @@ class CanvastemplateAJAX {
         const element = $this.parent().find(".canvas-menu-content");
         const nav = element.find(".canvas-content-ajax");
         const id = $this.data("id");
-        const storageKey = lasa_settings.storage_key + "_canvas_template_" + id;
+        const storageKey = themename_settings.storage_key + "_canvas_template_" + id;
         let storedData = false;
         const unparsedData = localStorage.getItem(storageKey);
 
@@ -1045,11 +1045,11 @@ class CanvastemplateAJAX {
           jQuery(document.body).trigger("tbay_load_canvas_template_html_click");
         } else {
           jQuery.ajax({
-            url: lasa_settings.ajaxurl,
+            url: themename_settings.ajaxurl,
             data: {
-              action: "lasa_load_html_canvas_template_click",
+              action: "themename_load_html_canvas_template_click",
               id: id,
-              security: lasa_settings.wp_templateclicknonce
+              security: themename_settings.wp_templateclicknonce
             },
             dataType: "json",
             method: "POST",
@@ -1161,7 +1161,7 @@ class TimeTo {
 
 class AutoComplete {
   constructor() {
-    if (typeof jQuery.Autocomplete === "undefined" || typeof lasa_settings === "undefined") return;
+    if (typeof jQuery.Autocomplete === "undefined" || typeof themename_settings === "undefined") return;
 
     this._callAjaxSearch();
   }
@@ -1169,8 +1169,8 @@ class AutoComplete {
   _callAjaxSearch() {
     const _this = this;
 
-    const url = `${lasa_settings.ajaxurl}?action=lasa_autocomplete_search&security=${lasa_settings.wp_searchnonce}`;
-    const form = jQuery("form.searchform.lasa-ajax-search");
+    const url = `${themename_settings.ajaxurl}?action=themename_autocomplete_search&security=${themename_settings.wp_searchnonce}`;
+    const form = jQuery("form.searchform.themename-ajax-search");
 
     const RegEx = value => value.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
 
@@ -1200,7 +1200,7 @@ class AutoComplete {
           }
 
           if (suggestion[0].view_all) {
-            jQuery(container).append(`<div class="view-all-products"><span>${lasa_settings.show_all_text}</span></div>`);
+            jQuery(container).append(`<div class="view-all-products"><span>${themename_settings.show_all_text}</span></div>`);
           }
         },
         onSearchComplete: (query, suggestions) => {
@@ -1274,7 +1274,7 @@ class AutoComplete {
 
   _AutoAppendTo(autosearch) {
     const form = autosearch.parents("form");
-    const appendTo = typeof form.data("appendto") !== "undefined" ? form.data("appendto") : form.find(".lasa-search-results");
+    const appendTo = typeof form.data("appendto") !== "undefined" ? form.data("appendto") : form.find(".themename-search-results");
     return appendTo;
   }
 
@@ -1329,7 +1329,7 @@ class TBMmenu {
       jQuery("html").addClass("html-mmenu");
     }
 
-    const text_cancel = typeof lasa_settings !== "undefined" ? lasa_settings.cancel : "";
+    const text_cancel = typeof themename_settings !== "undefined" ? themename_settings.cancel : "";
     Mmenu.i18n({
       cancel: text_cancel
     });
@@ -1462,7 +1462,7 @@ class Gallery {
 
 class CountDownTimer {
   constructor() {
-    if (typeof jQuery.fn.tbayCountDown === "undefined" || typeof lasa_settings === "undefined") return;
+    if (typeof jQuery.fn.tbayCountDown === "undefined" || typeof themename_settings === "undefined") return;
 
     this._CountDownTimer();
   }
@@ -1530,7 +1530,7 @@ class CountDownTimer {
 
 class Sticky {
   constructor() {
-    if (typeof lasa_settings === "undefined" || typeof jQuery.fn.hcSticky === "undefined") return;
+    if (typeof themename_settings === "undefined" || typeof jQuery.fn.hcSticky === "undefined") return;
     let sticky_menu_bar = jQuery("#sticky-menu-bar").outerHeight() || 0;
 
     this._tbayProductSingleStick(sticky_menu_bar);
@@ -1558,7 +1558,7 @@ class Sticky {
 
 class Magnific {
   constructor() {
-    if (typeof jQuery.magnificPopup === "undefined" || typeof lasa_settings === "undefined") return;
+    if (typeof jQuery.magnificPopup === "undefined" || typeof themename_settings === "undefined") return;
 
     this._list_search_form_popup();
 
@@ -1653,8 +1653,8 @@ var CustomFontsHandler = function ($scope, $) {
 };
 
 jQuery(window).on("elementor/frontend/init", function () {
-  if (elementorFrontend.isEditMode() && typeof lasa_settings !== "undefined" && Array.isArray(lasa_settings.elements_ready.customfonts)) {
-    jQuery.each(lasa_settings.elements_ready.customfonts, function (index, value) {
+  if (elementorFrontend.isEditMode() && typeof themename_settings !== "undefined" && Array.isArray(themename_settings.elements_ready.customfonts)) {
+    jQuery.each(themename_settings.elements_ready.customfonts, function (index, value) {
       elementorFrontend.hooks.addAction("frontend/element_ready/tbay-" + value + ".default", CustomFontsHandler);
     });
   }
@@ -1665,8 +1665,8 @@ var AutoCompleteHandler = function ($scope, $) {
 };
 
 jQuery(window).on("elementor/frontend/init", function () {
-  if (elementorFrontend.isEditMode() && typeof lasa_settings !== "undefined" && Array.isArray(lasa_settings.elements_ready.autocomplete)) {
-    jQuery.each(lasa_settings.elements_ready.autocomplete, function (index, value) {
+  if (elementorFrontend.isEditMode() && typeof themename_settings !== "undefined" && Array.isArray(themename_settings.elements_ready.autocomplete)) {
+    jQuery.each(themename_settings.elements_ready.autocomplete, function (index, value) {
       elementorFrontend.hooks.addAction("frontend/element_ready/tbay-" + value + ".default", AutoCompleteHandler);
     });
   }
@@ -1677,7 +1677,7 @@ var CndkBeforeAfterHandler = function ($scope, $) {
 };
 
 jQuery(window).on("elementor/frontend/init", function () {
-  if (elementorFrontend.isEditMode() && typeof lasa_settings !== "undefined") {
+  if (elementorFrontend.isEditMode() && typeof themename_settings !== "undefined") {
     elementorFrontend.hooks.addAction("frontend/element_ready/tbay-before-after-image-slider.default", CndkBeforeAfterHandler);
   }
 });
@@ -1690,8 +1690,8 @@ jQuery(document.body).on("tbay_quick_view", () => {
   new CountDownTimer();
 });
 jQuery(window).on("elementor/frontend/init", function () {
-  if (elementorFrontend.isEditMode() && typeof lasa_settings !== "undefined" && Array.isArray(lasa_settings.elements_ready.countdowntimer)) {
-    jQuery.each(lasa_settings.elements_ready.countdowntimer, function (index, value) {
+  if (elementorFrontend.isEditMode() && typeof themename_settings !== "undefined" && Array.isArray(themename_settings.elements_ready.countdowntimer)) {
+    jQuery.each(themename_settings.elements_ready.countdowntimer, function (index, value) {
       elementorFrontend.hooks.addAction("frontend/element_ready/tbay-" + value + ".default", CountDownTimerHandler);
     });
   }
@@ -1702,8 +1702,8 @@ var IsotopeHandler = function ($scope, $) {
 };
 
 jQuery(window).on("elementor/frontend/init", function () {
-  if (elementorFrontend.isEditMode() && typeof lasa_settings !== "undefined" && Array.isArray(lasa_settings.elements_ready.isotope)) {
-    jQuery.each(lasa_settings.elements_ready.isotope, function (index, value) {
+  if (elementorFrontend.isEditMode() && typeof themename_settings !== "undefined" && Array.isArray(themename_settings.elements_ready.isotope)) {
+    jQuery.each(themename_settings.elements_ready.isotope, function (index, value) {
       elementorFrontend.hooks.addAction("frontend/element_ready/tbay-" + value + ".default", IsotopeHandler);
     });
   }

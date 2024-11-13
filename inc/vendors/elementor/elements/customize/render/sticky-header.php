@@ -1,13 +1,13 @@
 <?php
 
-if (!function_exists('lasa_before_render_sticky_header')) {
-    function lasa_before_render_sticky_header($element)
+if (!function_exists('themename_before_render_sticky_header')) {
+    function themename_before_render_sticky_header($element)
     {
 
         if( $element->get_data( 'isInner' ) ) return;
 
         if (function_exists('is_product')) {
-            $menu_bar   =  apply_filters('lasa_woo_product_menu_bar', 10, 2);
+            $menu_bar   =  apply_filters('themename_woo_product_menu_bar', 10, 2);
 
             if (is_product() &&  $menu_bar) {
                 return;
@@ -25,6 +25,6 @@ if (!function_exists('lasa_before_render_sticky_header')) {
         }
     }
 
-    add_action('elementor/frontend/section/before_render', 'lasa_before_render_sticky_header', 10, 2);
-    add_action('elementor/frontend/container/before_render', 'lasa_before_render_sticky_header', 10, 2);
+    add_action('elementor/frontend/section/before_render', 'themename_before_render_sticky_header', 10, 2);
+    add_action('elementor/frontend/container/before_render', 'themename_before_render_sticky_header', 10, 2);
 }

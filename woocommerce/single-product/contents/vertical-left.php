@@ -5,15 +5,15 @@
  * Displays all of the head element and everything up until the "site-content" div.
  *
  * @package WordPress
- * @subpackage Lasa
- * @since Lasa 1.0
+ * @subpackage Themename
+ * @since Themename 1.0
  */
 
 global $product;
 
 //check Enough number image thumbnail
 $attachment_ids 		= $product->get_gallery_image_ids();
-$video_url              = $product->get_meta('_lasa_video_url');
+$video_url              = $product->get_meta('_themename_video_url');
 
 $class_thumbnail         = (empty($attachment_ids) && empty($video_url)) ? 'no-gallery-image' : '';
 ?>

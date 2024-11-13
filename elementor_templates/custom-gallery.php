@@ -6,7 +6,7 @@
 extract($settings);
 
 $this->settings_layout();
-add_action( 'wp_footer', 'lasa_photoswipe' );
+add_action( 'wp_footer', 'themename_photoswipe' );
 $this->add_render_attribute('item', 'class', ['gallery-item', $layout_type]);
 ?>
 

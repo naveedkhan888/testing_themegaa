@@ -3,14 +3,14 @@ global $product;
 
 ?>
 <div class="product-block list" data-product-id="<?php echo esc_attr($product->get_id()); ?>">
-    <?php do_action( 'lasa_content_product_item_before' ); ?>
+    <?php do_action( 'themename_content_product_item_before' ); ?>
 	<?php
         /**
-        * Hook: lasa_woocommerce_before_shop_list_item.
+        * Hook: themename_woocommerce_before_shop_list_item.
         *
-        * @hooked lasa_remove_add_to_cart_list_product - 10
+        * @hooked themename_remove_add_to_cart_list_product - 10
         */
-        do_action('lasa_woocommerce_before_shop_list_item');
+        do_action('themename_woocommerce_before_shop_list_item');
     ?>
 	<div class="product-content row">
 		<div class="block-inner col-lg-4 col-4">
@@ -22,7 +22,7 @@ global $product;
                 */
                 do_action('woocommerce_before_shop_loop_item');
             ?>
-			<figure class="image <?php lasa_product_block_image_class(); ?>">
+			<figure class="image <?php themename_product_block_image_class(); ?>">
 				<a title="<?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>" class="product-image">
 					<?php
                         /**
@@ -37,10 +37,10 @@ global $product;
 
 				<?php
                     /**
-                    * lasa_tbay_after_shop_loop_item_title hook
+                    * themename_tbay_after_shop_loop_item_title hook
                     *
                     */
-                    do_action('lasa_tbay_after_shop_loop_item_title');
+                    do_action('themename_tbay_after_shop_loop_item_title');
                 ?>
 				<?php
                     /**
@@ -57,27 +57,27 @@ global $product;
             <div class="caption-right">
                 <?php               
                     /**
-                    * lasa_woo_list_right hook
+                    * themename_woo_list_right hook
                     *
-                    * @hooked lasa_the_product_name - 10
+                    * @hooked themename_the_product_name - 10
                     * @hooked woocommerce_template_loop_price - 20
                     * @hooked woocommerce_template_loop_rating - 30
                     */
-                    do_action('lasa_woo_list_right');
+                    do_action('themename_woo_list_right');
                 ?>
 
                 <?php
                     /**
-                    * lasa_after_title_tbay_subtitle hook
+                    * themename_after_title_tbay_subtitle hook
                     *
-                    * @hooked lasa_woo_get_subtitle - 0
+                    * @hooked themename_woo_get_subtitle - 0
                     */
-                    do_action('lasa_after_title_tbay_subtitle');
+                    do_action('themename_after_title_tbay_subtitle');
                 ?>
 
 
                 <?php
-                    do_action('lasa_woo_before_shop_list_caption');
+                    do_action('themename_woo_before_shop_list_caption');
                 ?>
                 
 				
@@ -93,13 +93,13 @@ global $product;
 				
 				   <?php
                     /**
-                    * lasa_woo_list_after_short_description hook
+                    * themename_woo_list_after_short_description hook
                     *
                     * @hooked the_woocommerce_variable - 5
                     * @hooked list_variable_swatches_pro - 5
-                    * @hooked lasa_tbay_total_sales - 15
+                    * @hooked themename_tbay_total_sales - 15
                     */
-                    do_action('lasa_woo_list_after_short_description');
+                    do_action('themename_woo_list_after_short_description');
                 ?>
 
 
@@ -116,21 +116,21 @@ global $product;
                 <div class="group-buttons">	
                     <?php
                         /**
-                        * lasa_woocommerce_group_buttons_list hook
+                        * themename_woocommerce_group_buttons_list hook
                         *
-                        * @hooked lasa_the_quick_view - 10
-                        * @hooked lasa_the_yith_compare - 20
-                        * @hooked lasa_the_yith_wishlist - 30
+                        * @hooked themename_the_quick_view - 10
+                        * @hooked themename_the_yith_compare - 20
+                        * @hooked themename_the_yith_wishlist - 30
                         * @hooked woocommerce_template_loop_add_to_cart - 40
                         */
-                        do_action('lasa_woocommerce_group_buttons_list', $product->get_id());
+                        do_action('themename_woocommerce_group_buttons_list', $product->get_id());
                     ?>
                 </div>
             </div>
 	    </div>
 	</div>
 	<?php
-        do_action('lasa_woocommerce_after_shop_list_item');
+        do_action('themename_woocommerce_after_shop_list_item');
     ?>
 </div>
 

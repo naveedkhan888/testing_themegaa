@@ -3,37 +3,37 @@
 /**
  * Set the content width based on the theme's design and stylesheet.
  *
- * @since Lasa 1.0
+ * @since Themename 1.0
  */
-define('LASA_THEME_VERSION', '1.0');
+define('THEMENAME_THEME_VERSION', '1.0');
 
 /**
  * ------------------------------------------------------------------------------------------------
  * Define constants.
  * ------------------------------------------------------------------------------------------------
  */
-define('LASA_THEME_DIR', get_template_directory_uri());
-define('LASA_THEMEROOT', get_template_directory());
-define('LASA_IMAGES', LASA_THEME_DIR . '/images');
-define('LASA_SCRIPTS', LASA_THEME_DIR . '/js');
+define('THEMENAME_THEME_DIR', get_template_directory_uri());
+define('THEMENAME_THEMEROOT', get_template_directory());
+define('THEMENAME_IMAGES', THEMENAME_THEME_DIR . '/images');
+define('THEMENAME_SCRIPTS', THEMENAME_THEME_DIR . '/js');
 
-define('LASA_STYLES', LASA_THEME_DIR . '/css');
+define('THEMENAME_STYLES', THEMENAME_THEME_DIR . '/css');
 
-define('LASA_INC', 'inc');
-define('LASA_MERLIN', LASA_INC . '/merlin');
-define('LASA_CLASSES', LASA_INC . '/classes');
-define('LASA_VENDORS', LASA_INC . '/vendors');
-define('LASA_CONFIG', LASA_VENDORS . '/redux-framework/config');
-define('LASA_WOOCOMMERCE', LASA_VENDORS . '/woocommerce');
-define('LASA_ELEMENTOR', LASA_THEMEROOT . '/inc/vendors/elementor');
-define('LASA_ELEMENTOR_TEMPLATES', LASA_THEMEROOT . '/elementor_templates');
-define('LASA_PAGE_TEMPLATES', LASA_THEMEROOT . '/page-templates');
-define('LASA_WIDGETS', LASA_INC . '/widgets');
+define('THEMENAME_INC', 'inc');
+define('THEMENAME_MERLIN', THEMENAME_INC . '/merlin');
+define('THEMENAME_CLASSES', THEMENAME_INC . '/classes');
+define('THEMENAME_VENDORS', THEMENAME_INC . '/vendors');
+define('THEMENAME_CONFIG', THEMENAME_VENDORS . '/redux-framework/config');
+define('THEMENAME_WOOCOMMERCE', THEMENAME_VENDORS . '/woocommerce');
+define('THEMENAME_ELEMENTOR', THEMENAME_THEMEROOT . '/inc/vendors/elementor');
+define('THEMENAME_ELEMENTOR_TEMPLATES', THEMENAME_THEMEROOT . '/elementor_templates');
+define('THEMENAME_PAGE_TEMPLATES', THEMENAME_THEMEROOT . '/page-templates');
+define('THEMENAME_WIDGETS', THEMENAME_INC . '/widgets');
 
-define('LASA_ASSETS', LASA_THEME_DIR . '/inc/assets');
-define('LASA_ASSETS_IMAGES', LASA_ASSETS    . '/images');
+define('THEMENAME_ASSETS', THEMENAME_THEME_DIR . '/inc/assets');
+define('THEMENAME_ASSETS_IMAGES', THEMENAME_ASSETS    . '/images');
 
-define('LASA_MIN_JS', '');
+define('THEMENAME_MIN_JS', '');
 
 define('TBAY_DISCOUNT_CAMPAIGN', true);
 define('TBAY_PORTFOLIOS', true);
@@ -42,18 +42,18 @@ if (! isset($content_width)) {
     $content_width = 660;
 }
 
-function lasa_tbay_get_config($name, $default = '')
+function themename_tbay_get_config($name, $default = '')
 {
-    global $lasa_options;
-    if (isset($lasa_options[$name])) {
-        return $lasa_options[$name];
+    global $themename_options;
+    if (isset($themename_options[$name])) {
+        return $themename_options[$name];
     }
     return $default;
 }
 
-function lasa_tbay_get_global_config($name, $default = '')
+function themename_tbay_get_global_config($name, $default = '')
 {
-    $options = get_option('lasa_tbay_theme_options', array());
+    $options = get_option('themename_tbay_theme_options', array());
     if (isset($options[$name])) {
         return $options[$name];
     }

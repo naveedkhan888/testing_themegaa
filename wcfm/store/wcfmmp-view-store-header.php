@@ -33,7 +33,7 @@ $store_address_info_class = '';
 				<?php do_action('wcfmmp_store_before_avatar', $store_user->get_id()); ?>
 				<div class="logo-wrapper">
 					<div class="logo_area">
-						<a href="#"><img src="<?php echo esc_url($gravatar); ?>" alt="<?php esc_attr_e('Logo', 'lasa'); ?>"/></a>
+						<a href="#"><img src="<?php echo esc_url($gravatar); ?>" alt="<?php esc_attr_e('Logo', 'themename'); ?>"/></a>
 					</div>
 					<div class="logo_area_after">
 						<?php do_action('wcfmmp_store_after_avatar', $store_user->get_id()); ?>

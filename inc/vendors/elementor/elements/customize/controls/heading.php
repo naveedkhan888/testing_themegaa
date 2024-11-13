@@ -1,14 +1,14 @@
 <?php
-if (!function_exists('lasa_heading_section_title_style')) {
-    function lasa_heading_section_title_style($widget)
+if (!function_exists('themename_heading_section_title_style')) {
+    function themename_heading_section_title_style($widget)
     {
         $widget->add_control(
             'enable_title_background_text',
             [
-                'label'   => esc_html__('Enable Background Text', 'lasa'),
+                'label'   => esc_html__('Enable Background Text', 'themename'),
                 'type'    => \Elementor\Controls_Manager::SWITCHER,
                 'prefix_class' => 'show-title-bg-text-',
-				'description' => esc_html__( 'When you enable this option, the text color will not receive it, it will change to the background text below', 'lasa' ),
+				'description' => esc_html__( 'When you enable this option, the text color will not receive it, it will change to the background text below', 'themename' ),
                 'default' => '',
             ]
         );
@@ -25,5 +25,5 @@ if (!function_exists('lasa_heading_section_title_style')) {
         );
     } 
 
-    add_action('elementor/element/heading/section_title_style/before_section_end', 'lasa_heading_section_title_style', 10, 2);
+    add_action('elementor/element/heading/section_title_style/before_section_end', 'themename_heading_section_title_style', 10, 2);
 }

@@ -1,6 +1,6 @@
 <?php
 
-if (! defined('ABSPATH') || function_exists('Lasa_Elementor_Gallery')) {
+if (! defined('ABSPATH') || function_exists('Themename_Elementor_Gallery')) {
     exit; // Exit if accessed directly.
 }
 
@@ -15,7 +15,7 @@ use Elementor\Group_Control_Typography;
  *
  * @since 1.0.0
  */
-class Lasa_Elementor_Gallery extends Lasa_Elementor_Carousel_Base
+class Themename_Elementor_Gallery extends Themename_Elementor_Carousel_Base
 {
     /**
      * Get widget name.
@@ -44,12 +44,12 @@ class Lasa_Elementor_Gallery extends Lasa_Elementor_Carousel_Base
      */
     public function get_title()
     {
-        return esc_html__('Lasa Gallery', 'lasa');
+        return esc_html__('Themename Gallery', 'themename');
     }
 
     public function get_script_depends()
     {
-        return [ 'slick', 'lasa-custom-slick', 'photoswipe', 'photoswipe-ui-default' ];
+        return [ 'slick', 'themename-custom-slick', 'photoswipe', 'photoswipe-ui-default' ];
     } 
 
     public function get_style_depends() {
@@ -86,19 +86,19 @@ class Lasa_Elementor_Gallery extends Lasa_Elementor_Carousel_Base
         $this->start_controls_section(
             'section_general',
             [
-                'label' => esc_html__('General', 'lasa'),
+                'label' => esc_html__('General', 'themename'),
             ]
         );
 
         $this->add_control(
             'layout_type',
             [
-                'label'     => esc_html__('Layout Type', 'lasa'),
+                'label'     => esc_html__('Layout Type', 'themename'),
                 'type'      => Controls_Manager::SELECT,
                 'default'   => 'grid',
                 'options'   => [
-                    'grid'      => esc_html__('Grid', 'lasa'),
-                    'carousel'  => esc_html__('Carousel', 'lasa'),
+                    'grid'      => esc_html__('Grid', 'themename'),
+                    'carousel'  => esc_html__('Carousel', 'themename'),
                 ],
             ]
         );
@@ -108,7 +108,7 @@ class Lasa_Elementor_Gallery extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'list_gallery',
             [
-                'label' => esc_html__('Gallery', 'lasa'),
+                'label' => esc_html__('Gallery', 'themename'),
                 'type' => Controls_Manager::REPEATER,
                 'fields' => $repeater->get_controls(),
                 'gallery_field' => '{{{ gallery }}}',
@@ -129,7 +129,7 @@ class Lasa_Elementor_Gallery extends Lasa_Elementor_Carousel_Base
         $this->start_controls_section(
             'section_style_gallery',
             [
-                'label' => esc_html__('Style', 'lasa'),
+                'label' => esc_html__('Style', 'themename'),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -137,18 +137,18 @@ class Lasa_Elementor_Gallery extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'gallery_effects',
             [
-                'label' => esc_html__('TB Effects', 'lasa'),
+                'label' => esc_html__('TB Effects', 'themename'),
                 'type' => Controls_Manager::SELECT,
                 'label_block' => true,
                 'default' => 'no',
-                'options' => lasa_list_controls_effects(),
+                'options' => themename_list_controls_effects(),
             ]
         );
                 
         $this->add_control(
             'heading_wrapper_style',
             [
-                'label' => esc_html__('Wrapper Gallery', 'lasa'),
+                'label' => esc_html__('Wrapper Gallery', 'themename'),
                 'type' => Controls_Manager::HEADING,
                 'separator'   => 'before',
             ]
@@ -157,7 +157,7 @@ class Lasa_Elementor_Gallery extends Lasa_Elementor_Carousel_Base
         $this->add_responsive_control(
             'wrapper_margin_style',
             [
-                'label' => esc_html__('Margin', 'lasa'),
+                'label' => esc_html__('Margin', 'themename'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px' ],
                 'selectors' => [
@@ -169,7 +169,7 @@ class Lasa_Elementor_Gallery extends Lasa_Elementor_Carousel_Base
         $this->add_responsive_control(
             'wrapper_padding_style',
             [
-                'label' => esc_html__('Padding', 'lasa'),
+                'label' => esc_html__('Padding', 'themename'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px' ],
                 'selectors' => [
@@ -181,7 +181,7 @@ class Lasa_Elementor_Gallery extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'heading_item_style',
             [
-                'label' => esc_html__('Item', 'lasa'),
+                'label' => esc_html__('Item', 'themename'),
                 'type' => Controls_Manager::HEADING,
                 'separator'   => 'before',
             ]
@@ -190,7 +190,7 @@ class Lasa_Elementor_Gallery extends Lasa_Elementor_Carousel_Base
         $this->add_responsive_control(
             'item_margin_style',
             [
-                'label' => esc_html__('Margin', 'lasa'),
+                'label' => esc_html__('Margin', 'themename'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px' ],
                 'selectors' => [
@@ -202,7 +202,7 @@ class Lasa_Elementor_Gallery extends Lasa_Elementor_Carousel_Base
         $this->add_responsive_control(
             'item_padding_style',
             [
-                'label' => esc_html__('Padding', 'lasa'),
+                'label' => esc_html__('Padding', 'themename'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px' ],
                 'selectors' => [
@@ -214,7 +214,7 @@ class Lasa_Elementor_Gallery extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'heading_image_style',
             [
-                'label' => esc_html__('Image', 'lasa'),
+                'label' => esc_html__('Image', 'themename'),
                 'type' => Controls_Manager::HEADING,
                 'separator'   => 'before',
             ]
@@ -223,7 +223,7 @@ class Lasa_Elementor_Gallery extends Lasa_Elementor_Carousel_Base
         $this->add_responsive_control(
             'image_margin_style',
             [
-                'label' => esc_html__('Margin', 'lasa'),
+                'label' => esc_html__('Margin', 'themename'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px' ],
                 'selectors' => [
@@ -235,7 +235,7 @@ class Lasa_Elementor_Gallery extends Lasa_Elementor_Carousel_Base
         $this->add_responsive_control(
             'image_padding_style',
             [
-                'label' => esc_html__('Padding', 'lasa'),
+                'label' => esc_html__('Padding', 'themename'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px' ],
                 'selectors' => [
@@ -247,7 +247,7 @@ class Lasa_Elementor_Gallery extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'heading_text_style',
             [
-                'label' => esc_html__('Text on photo', 'lasa'),
+                'label' => esc_html__('Text on photo', 'themename'),
                 'type' => Controls_Manager::HEADING,
                 'separator'   => 'before',
             ]
@@ -265,7 +265,7 @@ class Lasa_Elementor_Gallery extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'text_photo_color',
             [
-                'label'     => esc_html__('Color', 'lasa'),
+                'label'     => esc_html__('Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .tbay-element-custom-gallery .gallery-link::after' => 'color: {{VALUE}};',
@@ -276,19 +276,19 @@ class Lasa_Elementor_Gallery extends Lasa_Elementor_Carousel_Base
         $this->add_responsive_control(
             'text_photo_align',
             [
-                'label' => esc_html__('Align', 'lasa'),
+                'label' => esc_html__('Align', 'themename'),
                 'type' => Controls_Manager::CHOOSE,
                 'options' => [
                     'left' => [
-                        'title' => esc_html__('Left', 'lasa'),
+                        'title' => esc_html__('Left', 'themename'),
                         'icon' => 'eicon-text-align-left'
                     ],
                     'center' => [
-                        'title' => esc_html__('Center', 'lasa'),
+                        'title' => esc_html__('Center', 'themename'),
                         'icon' => 'eicon-text-align-center'
                     ],
                     'right' => [
-                        'title' => esc_html__('Right', 'lasa'),
+                        'title' => esc_html__('Right', 'themename'),
                         'icon' => 'eicon-text-align-right'
                     ],
                 ],
@@ -308,14 +308,14 @@ class Lasa_Elementor_Gallery extends Lasa_Elementor_Carousel_Base
         $repeater->add_control(
             'gallery',
             [
-                'label' => esc_html__('Choose Image', 'lasa'),
+                'label' => esc_html__('Choose Image', 'themename'),
                 'type' => Controls_Manager::MEDIA,
             ]
         );
         $repeater->add_control(
             'text_gallery',
             [
-                'label' => esc_html__('Text on photo', 'lasa'),
+                'label' => esc_html__('Text on photo', 'themename'),
                 'type' => Controls_Manager::TEXT,
             ]
         );
@@ -324,4 +324,4 @@ class Lasa_Elementor_Gallery extends Lasa_Elementor_Carousel_Base
     }
 
 }
-$widgets_manager->register(new Lasa_Elementor_Gallery());
+$widgets_manager->register(new Themename_Elementor_Gallery());

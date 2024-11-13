@@ -1,32 +1,32 @@
 <?php
-if ( !lasa_woocommerce_activated() ) return;
+if ( !themename_woocommerce_activated() ) return;
 
 // breadcrumb for woocommerce page
-if (!function_exists('lasa_tbay_woocommerce_breadcrumb_defaults')) {
-    function lasa_tbay_woocommerce_breadcrumb_defaults($args)
+if (!function_exists('themename_tbay_woocommerce_breadcrumb_defaults')) {
+    function themename_tbay_woocommerce_breadcrumb_defaults($args)
     {
-        if( lasa_checkout_optimized() ) return;
+        if( themename_checkout_optimized() ) return;
         
         global $post;
 
         if( is_product() ) {
-            $breadcrumb_img = lasa_tbay_get_config('woo_single_breadcrumb_image');
-            $breadcrumb_color = lasa_tbay_get_config('woo_single_breadcrumb_color');
-            $breadcrumbs_layout = lasa_tbay_get_config('single_product_breadcrumb_layout', 'color');
+            $breadcrumb_img = themename_tbay_get_config('woo_single_breadcrumb_image');
+            $breadcrumb_color = themename_tbay_get_config('woo_single_breadcrumb_color');
+            $breadcrumbs_layout = themename_tbay_get_config('single_product_breadcrumb_layout', 'color');
 
-            $breadcrumb_alignment = lasa_tbay_get_config('single_product_breadcrumb_text_alignment', 'center');
+            $breadcrumb_alignment = themename_tbay_get_config('single_product_breadcrumb_text_alignment', 'center');
         } else {
-            $breadcrumb_img = lasa_tbay_get_config('woo_breadcrumb_image');
-            $breadcrumb_color = lasa_tbay_get_config('woo_breadcrumb_color');
-            $breadcrumbs_layout = lasa_tbay_get_config('product_breadcrumb_layout', 'color');
+            $breadcrumb_img = themename_tbay_get_config('woo_breadcrumb_image');
+            $breadcrumb_color = themename_tbay_get_config('woo_breadcrumb_color');
+            $breadcrumbs_layout = themename_tbay_get_config('product_breadcrumb_layout', 'color');
 
-            $breadcrumb_alignment = lasa_tbay_get_config('product_breadcrumb_text_alignment', 'center');
+            $breadcrumb_alignment = themename_tbay_get_config('product_breadcrumb_text_alignment', 'center');
         }
 
         $style = array();
         $img = '';
 
-        $sidebar_configs = lasa_tbay_get_woocommerce_layout_configs();
+        $sidebar_configs = themename_tbay_get_woocommerce_layout_configs();
 
 
 
@@ -56,7 +56,7 @@ if (!function_exists('lasa_tbay_woocommerce_breadcrumb_defaults')) {
         $breadcrumbs_class .= ' '.$breadcrumb_alignment;
 
         if (isset($breadcrumb_img['url']) && !empty($breadcrumb_img['url']) && $breadcrumbs_layout !=='color' && $breadcrumbs_layout !=='text') {
-            $img = '<img src="'.esc_url($breadcrumb_img['url']).'" alt="'.esc_attr__('breadcrumb-img','lasa') .'" >';
+            $img = '<img src="'.esc_url($breadcrumb_img['url']).'" alt="'.esc_attr__('breadcrumb-img','themename') .'" >';
         }
 
         if ($breadcrumb_color && $breadcrumbs_layout !== 'image') {
@@ -84,7 +84,7 @@ if (!function_exists('lasa_tbay_woocommerce_breadcrumb_defaults')) {
             }  
         } else { 
             if( is_single() ) {
-                $nav = lasa_woo_product_nav_icon();
+                $nav = themename_woo_product_nav_icon();
                 $breadcrumbs_class .= ' active-nav-icon';
             } 
             

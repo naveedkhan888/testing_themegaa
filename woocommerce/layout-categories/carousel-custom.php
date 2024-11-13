@@ -1,7 +1,7 @@
 <?php
 
 wp_enqueue_script('slick');
-wp_enqueue_script('lasa-custom-slick');
+wp_enqueue_script('themename-custom-slick');
 
 $columns = isset($columns) ? $columns : 4;
 $rows_count = isset($rows) ? $rows : 1;
@@ -17,8 +17,8 @@ $disable_mobile          =      isset($disable_mobile) ? $disable_mobile : '';
 
 $countall = count($categoriestabs);
 
-$data_carousel = lasa_tbay_data_carousel($rows, $nav_type, $pagi_type, $loop_type, $auto_type, $autospeed_type, $disable_mobile);
-$responsive_carousel  = lasa_tbay_check_data_responsive_carousel($columns, $screen_desktop, $screen_desktopsmall, $screen_tablet, $screen_landscape_mobile, $screen_mobile);
+$data_carousel = themename_tbay_data_carousel($rows, $nav_type, $pagi_type, $loop_type, $auto_type, $autospeed_type, $disable_mobile);
+$responsive_carousel  = themename_tbay_check_data_responsive_carousel($columns, $screen_desktop, $screen_desktopsmall, $screen_tablet, $screen_landscape_mobile, $screen_mobile);
 
 if (! (isset($shop_now) && $shop_now == 'yes')) {
     $shop_now = '';

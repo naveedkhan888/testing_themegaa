@@ -1,6 +1,6 @@
 <?php
 
-if (! defined('ABSPATH') || function_exists('Lasa_Elementor_Countdown')) {
+if (! defined('ABSPATH') || function_exists('Themename_Elementor_Countdown')) {
     exit; // Exit if accessed directly.
 }
 
@@ -18,7 +18,7 @@ use Elementor\Group_Control_Background;
  *
  * @since 1.0.0
  */
-class Lasa_Elementor_Countdown extends Lasa_Elementor_Widget_Base
+class Themename_Elementor_Countdown extends Themename_Elementor_Widget_Base
 {
     /**
      * Get widget name.
@@ -47,7 +47,7 @@ class Lasa_Elementor_Countdown extends Lasa_Elementor_Widget_Base
      */
     public function get_title()
     {
-        return 'Lasa Countdown';
+        return 'Themename Countdown';
     }
 
  
@@ -80,21 +80,21 @@ class Lasa_Elementor_Countdown extends Lasa_Elementor_Widget_Base
         $this->start_controls_section(
             'section_general',
             [
-                'label' => esc_html__('General', 'lasa'),
+                'label' => esc_html__('General', 'themename'),
             ]
         );
 
         $this->add_control(
             'due_date',
             [
-                'label' => esc_html__('Due Date', 'lasa'),
+                'label' => esc_html__('Due Date', 'themename'),
                 'type' => Controls_Manager::DATE_TIME,
                 'default' => gmdate( 'Y-m-d H:i', strtotime( '+1 month' ) + ( get_option( 'gmt_offset' ) * HOUR_IN_SECONDS ) ),
 				/* translators: %s: Time zone. */
                 'dynamic' => [
 					'active' => true,
 				],
-                'description' => sprintf( esc_html__( 'Date set according to your timezone: %s.', 'lasa' ), Elementor\Utils::get_timezone_string() ),
+                'description' => sprintf( esc_html__( 'Date set according to your timezone: %s.', 'themename' ), Elementor\Utils::get_timezone_string() ),
                 'label_block' => true,
             ]
         );
@@ -102,10 +102,10 @@ class Lasa_Elementor_Countdown extends Lasa_Elementor_Widget_Base
 		$this->add_control(
 			'show_days',
 			[
-				'label' => esc_html__( 'Days', 'lasa' ),
+				'label' => esc_html__( 'Days', 'themename' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => esc_html__( 'Show', 'lasa' ),
-				'label_off' => esc_html__( 'Hide', 'lasa' ),
+				'label_on' => esc_html__( 'Show', 'themename' ),
+				'label_off' => esc_html__( 'Hide', 'themename' ),
 				'default' => 'yes',
 			]
 		);
@@ -113,10 +113,10 @@ class Lasa_Elementor_Countdown extends Lasa_Elementor_Widget_Base
 		$this->add_control(
 			'show_hours',
 			[
-				'label' => esc_html__( 'Hours', 'lasa' ),
+				'label' => esc_html__( 'Hours', 'themename' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => esc_html__( 'Show', 'lasa' ),
-				'label_off' => esc_html__( 'Hide', 'lasa' ),
+				'label_on' => esc_html__( 'Show', 'themename' ),
+				'label_off' => esc_html__( 'Hide', 'themename' ),
 				'default' => 'yes',
 			]
 		);
@@ -124,10 +124,10 @@ class Lasa_Elementor_Countdown extends Lasa_Elementor_Widget_Base
 		$this->add_control(
 			'show_minutes',
 			[
-				'label' => esc_html__( 'Minutes', 'lasa' ),
+				'label' => esc_html__( 'Minutes', 'themename' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => esc_html__( 'Show', 'lasa' ),
-				'label_off' => esc_html__( 'Hide', 'lasa' ),
+				'label_on' => esc_html__( 'Show', 'themename' ),
+				'label_off' => esc_html__( 'Hide', 'themename' ),
 				'default' => 'yes',
 			]
 		);
@@ -135,10 +135,10 @@ class Lasa_Elementor_Countdown extends Lasa_Elementor_Widget_Base
 		$this->add_control(
 			'show_seconds',
 			[
-				'label' => esc_html__( 'Seconds', 'lasa' ),
+				'label' => esc_html__( 'Seconds', 'themename' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => esc_html__( 'Show', 'lasa' ),
-				'label_off' => esc_html__( 'Hide', 'lasa' ),
+				'label_on' => esc_html__( 'Show', 'themename' ),
+				'label_off' => esc_html__( 'Hide', 'themename' ),
 				'default' => 'yes',
 			]
 		);
@@ -146,10 +146,10 @@ class Lasa_Elementor_Countdown extends Lasa_Elementor_Widget_Base
 		$this->add_control(
 			'show_separator',
 			[
-				'label' => esc_html__( 'Show Separator', 'lasa' ),
+				'label' => esc_html__( 'Show Separator', 'themename' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => esc_html__( 'Show', 'lasa' ),
-				'label_off' => esc_html__( 'Hide', 'lasa' ),
+				'label_on' => esc_html__( 'Show', 'themename' ),
+				'label_off' => esc_html__( 'Hide', 'themename' ),
 				'default' => '',
 				'prefix_class' => 'show-separator-',
 				'separator' => 'before',
@@ -159,7 +159,7 @@ class Lasa_Elementor_Countdown extends Lasa_Elementor_Widget_Base
 		$this->add_control(
 			'custom_separator',
 			[
-				'label' => esc_html__( 'Separator', 'lasa' ),
+				'label' => esc_html__( 'Separator', 'themename' ),
 				'type' => Controls_Manager::TEXT,
 				'default' => ':',
 				'condition' => [
@@ -175,10 +175,10 @@ class Lasa_Elementor_Countdown extends Lasa_Elementor_Widget_Base
 		$this->add_control(
 			'show_labels',
 			[
-				'label' => esc_html__( 'Show Label', 'lasa' ),
+				'label' => esc_html__( 'Show Label', 'themename' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => esc_html__( 'Show', 'lasa' ),
-				'label_off' => esc_html__( 'Hide', 'lasa' ),
+				'label_on' => esc_html__( 'Show', 'themename' ),
+				'label_off' => esc_html__( 'Hide', 'themename' ),
 				'default' => 'yes',
 				'prefix_class' => 'show-labels-',
 				'separator' => 'before',
@@ -188,7 +188,7 @@ class Lasa_Elementor_Countdown extends Lasa_Elementor_Widget_Base
 		$this->add_control(
 			'custom_labels',
 			[
-				'label' => esc_html__( 'Custom Label', 'lasa' ),
+				'label' => esc_html__( 'Custom Label', 'themename' ),
 				'type' => Controls_Manager::SWITCHER,
 				'condition' => [
 					'show_labels!' => '',
@@ -199,10 +199,10 @@ class Lasa_Elementor_Countdown extends Lasa_Elementor_Widget_Base
 		$this->add_control(
 			'label_days',
 			[
-				'label' => esc_html__( 'Days', 'lasa' ),
+				'label' => esc_html__( 'Days', 'themename' ),
 				'type' => Controls_Manager::TEXT,
-				'default' => esc_html__( 'Days', 'lasa' ),
-				'placeholder' => esc_html__( 'Days', 'lasa' ),
+				'default' => esc_html__( 'Days', 'themename' ),
+				'placeholder' => esc_html__( 'Days', 'themename' ),
 				'condition' => [
 					'show_labels!' => '',
 					'custom_labels!' => '',
@@ -217,10 +217,10 @@ class Lasa_Elementor_Countdown extends Lasa_Elementor_Widget_Base
 		$this->add_control(
 			'label_hours',
 			[
-				'label' => esc_html__( 'Hours', 'lasa' ),
+				'label' => esc_html__( 'Hours', 'themename' ),
 				'type' => Controls_Manager::TEXT,
-				'default' => esc_html__( 'Hours', 'lasa' ),
-				'placeholder' => esc_html__( 'Hours', 'lasa' ),
+				'default' => esc_html__( 'Hours', 'themename' ),
+				'placeholder' => esc_html__( 'Hours', 'themename' ),
 				'condition' => [
 					'show_labels!' => '',
 					'custom_labels!' => '',
@@ -235,10 +235,10 @@ class Lasa_Elementor_Countdown extends Lasa_Elementor_Widget_Base
 		$this->add_control(
 			'label_minutes',
 			[
-				'label' => esc_html__( 'Minutes', 'lasa' ),
+				'label' => esc_html__( 'Minutes', 'themename' ),
 				'type' => Controls_Manager::TEXT,
-				'default' => esc_html__( 'Minutes', 'lasa' ),
-				'placeholder' => esc_html__( 'Minutes', 'lasa' ),
+				'default' => esc_html__( 'Minutes', 'themename' ),
+				'placeholder' => esc_html__( 'Minutes', 'themename' ),
 				'condition' => [
 					'show_labels!' => '',
 					'custom_labels!' => '',
@@ -253,10 +253,10 @@ class Lasa_Elementor_Countdown extends Lasa_Elementor_Widget_Base
 		$this->add_control(
 			'label_seconds',
 			[
-				'label' => esc_html__( 'Seconds', 'lasa' ),
+				'label' => esc_html__( 'Seconds', 'themename' ),
 				'type' => Controls_Manager::TEXT,
-				'default' => esc_html__( 'Seconds', 'lasa' ),
-				'placeholder' => esc_html__( 'Seconds', 'lasa' ),
+				'default' => esc_html__( 'Seconds', 'themename' ),
+				'placeholder' => esc_html__( 'Seconds', 'themename' ),
 				'condition' => [
 					'show_labels!' => '',
 					'custom_labels!' => '',
@@ -281,7 +281,7 @@ class Lasa_Elementor_Countdown extends Lasa_Elementor_Widget_Base
         $this->start_controls_section(
             'section_box_style',
             [
-                'label' => esc_html__('Boxes', 'lasa'),
+                'label' => esc_html__('Boxes', 'themename'),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -290,19 +290,19 @@ class Lasa_Elementor_Countdown extends Lasa_Elementor_Widget_Base
 		$this->add_responsive_control(
             'box_style_align',
             [
-                'label' => esc_html__('Alignment', 'lasa'),
+                'label' => esc_html__('Alignment', 'themename'),
                 'type' => Controls_Manager::CHOOSE,
                 'options' => [
                     'left' => [
-                        'title' => esc_html__('left', 'lasa'),
+                        'title' => esc_html__('left', 'themename'),
                         'icon' => 'fa fa-align-left',
                     ],
                     'center' => [
-                        'title' => esc_html__('center', 'lasa'),
+                        'title' => esc_html__('center', 'themename'),
                         'icon' => 'fa fa-align-center',
                     ],
                     'right' => [
-                        'title' => esc_html__('right', 'lasa'),
+                        'title' => esc_html__('right', 'themename'),
                         'icon' => 'fa fa-align-right',
                     ],
                 ], 
@@ -315,7 +315,7 @@ class Lasa_Elementor_Countdown extends Lasa_Elementor_Widget_Base
 		$this->add_responsive_control(
 			'container_width',
 			[
-				'label' => esc_html__( 'Container Width', 'lasa' ),
+				'label' => esc_html__( 'Container Width', 'themename' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%', 'em', 'rem', 'vw', 'custom' ],
 				'default' => [
@@ -349,7 +349,7 @@ class Lasa_Elementor_Countdown extends Lasa_Elementor_Widget_Base
 		$this->start_controls_tab(
 			'box_tab_background_normal',
 			[
-				'label' => esc_html__( 'Normal', 'lasa' ),
+				'label' => esc_html__( 'Normal', 'themename' ),
 			]
 		);
 
@@ -366,7 +366,7 @@ class Lasa_Elementor_Countdown extends Lasa_Elementor_Widget_Base
 		$this->start_controls_tab(
 			'box_tab_background_hover',
 			[
-				'label' => esc_html__( 'Hover', 'lasa' ),
+				'label' => esc_html__( 'Hover', 'themename' ),
 			]
 		);
 
@@ -394,7 +394,7 @@ class Lasa_Elementor_Countdown extends Lasa_Elementor_Widget_Base
 		$this->add_control(
 			'box_border_radius',
 			[
-				'label' => esc_html__( 'Border Radius', 'lasa' ),
+				'label' => esc_html__( 'Border Radius', 'themename' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
 				'selectors' => [
@@ -406,7 +406,7 @@ class Lasa_Elementor_Countdown extends Lasa_Elementor_Widget_Base
 		$this->add_responsive_control(
 			'box_spacing',
 			[
-				'label' => esc_html__( 'Space Between', 'lasa' ),
+				'label' => esc_html__( 'Space Between', 'themename' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em', 'rem', 'custom' ],
 				'default' => [
@@ -430,7 +430,7 @@ class Lasa_Elementor_Countdown extends Lasa_Elementor_Widget_Base
 		$this->add_responsive_control(
 			'box_padding',
 			[
-				'label' => esc_html__( 'Padding', 'lasa' ),
+				'label' => esc_html__( 'Padding', 'themename' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em', 'rem', 'vw', 'custom' ],
 				'selectors' => [
@@ -447,7 +447,7 @@ class Lasa_Elementor_Countdown extends Lasa_Elementor_Widget_Base
 		$this->start_controls_section(
 			'section_content_style',
 			[
-				'label' => esc_html__('Content', 'lasa'),
+				'label' => esc_html__('Content', 'themename'),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -455,7 +455,7 @@ class Lasa_Elementor_Countdown extends Lasa_Elementor_Widget_Base
 		$this->add_control(
 			'heading_digits',
 			[
-				'label' => esc_html__( 'Digits', 'lasa' ),
+				'label' => esc_html__( 'Digits', 'themename' ),
 				'type' => Controls_Manager::HEADING,
 			]
 		);
@@ -464,7 +464,7 @@ class Lasa_Elementor_Countdown extends Lasa_Elementor_Widget_Base
 		$this->start_controls_tab(
 			'digits_tab_normal',
 			[
-				'label' => esc_html__( 'Normal', 'lasa' ),
+				'label' => esc_html__( 'Normal', 'themename' ),
 			]
 		);
 
@@ -472,7 +472,7 @@ class Lasa_Elementor_Countdown extends Lasa_Elementor_Widget_Base
 		$this->add_control(
 			'digits_color',
 			[
-				'label' => esc_html__( 'Color', 'lasa' ),
+				'label' => esc_html__( 'Color', 'themename' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .times > div span:not(.label)' => 'color: {{VALUE}};',
@@ -493,14 +493,14 @@ class Lasa_Elementor_Countdown extends Lasa_Elementor_Widget_Base
 		$this->start_controls_tab(
 			'digits_tab_background_hover',
 			[
-				'label' => esc_html__( 'Hover', 'lasa' ),
+				'label' => esc_html__( 'Hover', 'themename' ),
 			]
 		);
 
 		$this->add_control(
 			'digits_color_hover',
 			[
-				'label' => esc_html__( 'Color', 'lasa' ),
+				'label' => esc_html__( 'Color', 'themename' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .times >div:hover span:not(.label)' => 'color: {{VALUE}};',
@@ -533,7 +533,7 @@ class Lasa_Elementor_Countdown extends Lasa_Elementor_Widget_Base
 		$this->add_responsive_control(
 			'digits_padding',
 			[
-				'label' => esc_html__( 'Padding', 'lasa' ),
+				'label' => esc_html__( 'Padding', 'themename' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em', 'rem', 'vw', 'custom' ],
 				'selectors' => [
@@ -545,7 +545,7 @@ class Lasa_Elementor_Countdown extends Lasa_Elementor_Widget_Base
 		$this->add_control(
 			'heading_label',
 			[
-				'label' => esc_html__( 'Label', 'lasa' ),
+				'label' => esc_html__( 'Label', 'themename' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -556,7 +556,7 @@ class Lasa_Elementor_Countdown extends Lasa_Elementor_Widget_Base
 		$this->start_controls_tab(
 			'label_tab_normal',
 			[
-				'label' => esc_html__( 'Normal', 'lasa' ),
+				'label' => esc_html__( 'Normal', 'themename' ),
 			]
 		);
 
@@ -564,7 +564,7 @@ class Lasa_Elementor_Countdown extends Lasa_Elementor_Widget_Base
 		$this->add_control(
 			'label_color',
 			[
-				'label' => esc_html__( 'Color', 'lasa' ),
+				'label' => esc_html__( 'Color', 'themename' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .times span.label' => 'color: {{VALUE}};',
@@ -585,14 +585,14 @@ class Lasa_Elementor_Countdown extends Lasa_Elementor_Widget_Base
 		$this->start_controls_tab(
 			'label_tab_background_hover',
 			[
-				'label' => esc_html__( 'Hover', 'lasa' ),
+				'label' => esc_html__( 'Hover', 'themename' ),
 			]
 		);
 
 		$this->add_control(
 			'label_color_hover',
 			[
-				'label' => esc_html__( 'Color', 'lasa' ),
+				'label' => esc_html__( 'Color', 'themename' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .times >div:hover span.label' => 'color: {{VALUE}};',
@@ -633,7 +633,7 @@ class Lasa_Elementor_Countdown extends Lasa_Elementor_Widget_Base
 		$this->add_responsive_control(
 			'label_padding',
 			[
-				'label' => esc_html__( 'Padding', 'lasa' ),
+				'label' => esc_html__( 'Padding', 'themename' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em', 'rem', 'vw', 'custom' ],
 				'selectors' => [
@@ -649,4 +649,4 @@ class Lasa_Elementor_Countdown extends Lasa_Elementor_Widget_Base
 
 	}
 }
-$widgets_manager->register(new Lasa_Elementor_Countdown());
+$widgets_manager->register(new Themename_Elementor_Countdown());

@@ -28,7 +28,7 @@ if (! defined('ABSPATH')) {
 
 // If checkout registration is disabled and not logged in, the user cannot checkout.
 if (! $checkout->is_registration_enabled() && $checkout->is_registration_required() && ! is_user_logged_in()) {
-    echo esc_html(apply_filters('woocommerce_checkout_must_be_logged_in_message', esc_html__('You must be logged in to checkout.', 'lasa')));
+    echo esc_html(apply_filters('woocommerce_checkout_must_be_logged_in_message', esc_html__('You must be logged in to checkout.', 'themename')));
     return;
 }
 
@@ -72,18 +72,18 @@ if ( wc_coupons_enabled() ) {
 	<?php endif; ?> 
 	<div class="review-wrapper col-12 col-lg-6 col-xl-6 <?php echo esc_attr($class_review); ?>">
 		<div class="order-review">
-			<h3 id="order_review_heading"><?php esc_html_e('Your order', 'lasa'); ?></h3>
+			<h3 id="order_review_heading"><?php esc_html_e('Your order', 'themename'); ?></h3>
 
 			<?php do_action('woocommerce_checkout_before_order_review'); ?>
 
-			<div id="order_review" class="woocommerce-checkout-review-order <?php echo (lasa_compatible_checkout_order()) ? 'compatible-checkout' : '';  ?>">
+			<div id="order_review" class="woocommerce-checkout-review-order <?php echo (themename_compatible_checkout_order()) ? 'compatible-checkout' : '';  ?>">
 				<?php do_action('woocommerce_checkout_order_review'); ?>
 			</div>
 		</div>
 
-		<?php if (!lasa_compatible_checkout_order()) : ?>
+		<?php if (!themename_compatible_checkout_order()) : ?>
 			<div class="order-payment">
-				<h3 id="order_payment_heading"><?php esc_html_e('Payment method', 'lasa'); ?></h3>
+				<h3 id="order_payment_heading"><?php esc_html_e('Payment method', 'themename'); ?></h3>
 				<?php do_action('woocommerce_checkout_after_order_review'); ?>
 			</div>
 		<?php endif; ?>

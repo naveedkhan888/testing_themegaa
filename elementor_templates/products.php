@@ -13,7 +13,7 @@ if (isset($limit) && !((bool) $limit)) {
 $this->settings_layout();
 
 /** Get Query Products */
-$loop = lasa_get_query_products($categories, $cat_operator, $product_type, $limit, $orderby, $order);
+$loop = themename_get_query_products($categories, $cat_operator, $product_type, $limit, $orderby, $order);
 
 $this->add_render_attribute('row', 'class', ['products']);
 

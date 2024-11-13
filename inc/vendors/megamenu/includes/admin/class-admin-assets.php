@@ -3,11 +3,11 @@
 defined( 'ABSPATH' ) || exit();
 
 /**
- * Lasa_Megamenu_Walker
+ * Themename_Megamenu_Walker
  *
  * extends Walker_Nav_Menu
  */
-class Lasa_Admin_Megamenu_Assets {
+class Themename_Admin_Megamenu_Assets {
 
 	public static function init() {
 		add_action( 'admin_enqueue_scripts', array( __CLASS__, 'enqueue_scripts' ) );
@@ -15,9 +15,9 @@ class Lasa_Admin_Megamenu_Assets {
 	}
 
 	public static function add_scripts_editor() {
-		if ( isset( $_REQUEST['lasa-menu-editable'] ) && $_REQUEST['lasa-menu-editable'] ) {
-			wp_register_script( 'lasa-elementor-menu', get_template_directory_uri() . '/inc/vendors/megamenu/assets/js/editor.js', [], LASA_THEME_VERSION );
-			wp_enqueue_script( 'lasa-elementor-menu' );
+		if ( isset( $_REQUEST['themename-menu-editable'] ) && $_REQUEST['themename-menu-editable'] ) {
+			wp_register_script( 'themename-elementor-menu', get_template_directory_uri() . '/inc/vendors/megamenu/assets/js/editor.js', [], THEMENAME_THEME_VERSION );
+			wp_enqueue_script( 'themename-elementor-menu' );
 		}
 	}
 
@@ -49,29 +49,29 @@ class Lasa_Admin_Megamenu_Assets {
 			wp_enqueue_style( 'elementor-select2' );
 			wp_enqueue_style( 'wp-color-picker' );
 			wp_enqueue_script( 'wp-color-picker' );
-			wp_register_script( 'lasa-megamenu', get_template_directory_uri() . '/inc/vendors/megamenu/assets/js/admin.js', array(
+			wp_register_script( 'themename-megamenu', get_template_directory_uri() . '/inc/vendors/megamenu/assets/js/admin.js', array(
 				'jquery',
 				'backbone',
 				'underscore'
-			), LASA_THEME_VERSION, true );
-			wp_localize_script( 'lasa-megamenu', 'lasa_memgamnu_params', apply_filters( 'lasa_admin_megamenu_localize_scripts', array(
+			), THEMENAME_THEME_VERSION, true );
+			wp_localize_script( 'themename-megamenu', 'themename_memgamnu_params', apply_filters( 'themename_admin_megamenu_localize_scripts', array(
 				'ajaxurl' => admin_url( 'admin-ajax.php' ),
 				'i18n'    => array(
-					'close' => esc_html__( 'Close', 'lasa' ),
-					'submit' => esc_html__( 'Save', 'lasa' )
+					'close' => esc_html__( 'Close', 'themename' ),
+					'submit' => esc_html__( 'Save', 'themename' )
 				),
 				'nonces'  => array(
-					'load_menu_data' => wp_create_nonce( 'lasa-menu-data-nonce' )
+					'load_menu_data' => wp_create_nonce( 'themename-menu-data-nonce' )
 				)
 			) ) );
-			wp_enqueue_script( 'lasa-megamenu' );
+			wp_enqueue_script( 'themename-megamenu' );
 
-			wp_enqueue_style( 'lasa-megamenu', get_template_directory_uri() . '/inc/vendors/megamenu/assets/css/admin.css', array(), LASA_THEME_VERSION );
-			wp_enqueue_style('lasa-font-tbay-custom', LASA_STYLES . '/font-tbay-custom.css', array(), LASA_THEME_VERSION);
+			wp_enqueue_style( 'themename-megamenu', get_template_directory_uri() . '/inc/vendors/megamenu/assets/css/admin.css', array(), THEMENAME_THEME_VERSION );
+			wp_enqueue_style('themename-font-tbay-custom', THEMENAME_STYLES . '/font-tbay-custom.css', array(), THEMENAME_THEME_VERSION);
 		}
 
 	}
 
 }
 
-Lasa_Admin_Megamenu_Assets::init();
+Themename_Admin_Megamenu_Assets::init();

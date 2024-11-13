@@ -14,7 +14,7 @@ $layout_type = $settings['layout_type'];
 $this->settings_layout();
  
 /** Get Query Products */
-$loop = lasa_get_query_products($category, $cat_operator, $product_type, $limit, $orderby, $order);
+$loop = themename_get_query_products($category, $cat_operator, $product_type, $limit, $orderby, $order);
 
 $this->add_render_attribute('row', 'class', ['products']);
 

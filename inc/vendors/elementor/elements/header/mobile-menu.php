@@ -1,6 +1,6 @@
 <?php
 
-if (! defined('ABSPATH') || function_exists('Lasa_Elementor_Mobile_Menu')) {
+if (! defined('ABSPATH') || function_exists('Themename_Elementor_Mobile_Menu')) {
     exit; // Exit if accessed directly.
 }
 
@@ -9,7 +9,7 @@ use Elementor\Controls_Manager;
 use Elementor\Group_Control_Box_Shadow;
 use Elementor\Group_Control_Typography;
 
-class Lasa_Elementor_Mobile_Menu extends Lasa_Elementor_Widget_Base
+class Themename_Elementor_Mobile_Menu extends Themename_Elementor_Widget_Base
 {
     protected $nav_menu_index = 1;
 
@@ -20,7 +20,7 @@ class Lasa_Elementor_Mobile_Menu extends Lasa_Elementor_Widget_Base
 
     public function get_title()
     {
-        return esc_html__('Lasa Mobile Menu', 'lasa');
+        return esc_html__('Themename Mobile Menu', 'themename');
     }
 
     public function get_icon()
@@ -50,7 +50,7 @@ class Lasa_Elementor_Mobile_Menu extends Lasa_Elementor_Widget_Base
         $this->start_controls_section(
             'section_general',
             [
-                'label' => esc_html__('General', 'lasa'),
+                'label' => esc_html__('General', 'themename'),
             ]
         );
 
@@ -58,7 +58,7 @@ class Lasa_Elementor_Mobile_Menu extends Lasa_Elementor_Widget_Base
             'theme_options_screen',
             [
                 'type'            => Controls_Manager::RAW_HTML,
-                'raw'             => sprintf(__('<strong>You need to select Main Menu Mobile on your site.</strong><br>Go to the <a href="%s" target="_blank">Theme Options Screen</a>', 'lasa'), admin_url('admin.php?page=lasa_options')),
+                'raw'             => sprintf(__('<strong>You need to select Main Menu Mobile on your site.</strong><br>Go to the <a href="%s" target="_blank">Theme Options Screen</a>', 'themename'), admin_url('admin.php?page=themename_options')),
                 'separator'       => 'after',
                 'content_classes' => 'elementor-panel-alert elementor-panel-alert-success',
             ]
@@ -67,7 +67,7 @@ class Lasa_Elementor_Mobile_Menu extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'general_title_heading',
             [
-                'label' => esc_html__('Title', 'lasa'),
+                'label' => esc_html__('Title', 'themename'),
                 'type' => Controls_Manager::HEADING,
             ]
         );
@@ -75,7 +75,7 @@ class Lasa_Elementor_Mobile_Menu extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'general_title',
             [
-                'label' => esc_html__('Title', 'lasa'),
+                'label' => esc_html__('Title', 'themename'),
                 'type' => Controls_Manager::TEXT,
                 'label_block' => true,
             ]
@@ -84,7 +84,7 @@ class Lasa_Elementor_Mobile_Menu extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'general_title_tag',
             [
-                'label' => esc_html__('Title HTML Tag', 'lasa'),
+                'label' => esc_html__('Title HTML Tag', 'themename'),
                 'type' => Controls_Manager::SELECT,
                 'options' => [
                     'h1' => 'H1',
@@ -109,7 +109,7 @@ class Lasa_Elementor_Mobile_Menu extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'general_icon_heading',
             [
-                'label' => esc_html__('Icon', 'lasa'),
+                'label' => esc_html__('Icon', 'themename'),
                 'type' => Controls_Manager::HEADING,
             ]
         );
@@ -117,7 +117,7 @@ class Lasa_Elementor_Mobile_Menu extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'general_icon',
             [
-                'label' => esc_html__('Icon', 'lasa'),
+                'label' => esc_html__('Icon', 'themename'),
                 'type' => Controls_Manager::ICONS,
                 'label_block' => true,
                 'default' => [
@@ -130,12 +130,12 @@ class Lasa_Elementor_Mobile_Menu extends Lasa_Elementor_Widget_Base
         $this->add_control(
 			'icon_align',
 			[
-				'label' => esc_html__( 'Icon Position', 'lasa' ),
+				'label' => esc_html__( 'Icon Position', 'themename' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'left',
 				'options' => [
-					'left' => esc_html__( 'Before', 'lasa' ),
-					'right' => esc_html__( 'After', 'lasa' ),
+					'left' => esc_html__( 'Before', 'themename' ),
+					'right' => esc_html__( 'After', 'themename' ),
 				],
                 'condition' => [
                     'general_icon[value]!' => ''
@@ -153,7 +153,7 @@ class Lasa_Elementor_Mobile_Menu extends Lasa_Elementor_Widget_Base
         $this->start_controls_section(
             'section_style_mobile_menu',
             [
-                'label' => esc_html__('Mobile Menu', 'lasa'),
+                'label' => esc_html__('Mobile Menu', 'themename'),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -161,7 +161,7 @@ class Lasa_Elementor_Mobile_Menu extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'section_style_heading',
             [
-                'label' => esc_html__('Title Style', 'lasa'),
+                'label' => esc_html__('Title Style', 'themename'),
                 'type' => Controls_Manager::HEADING,
             ]
         );
@@ -180,14 +180,14 @@ class Lasa_Elementor_Mobile_Menu extends Lasa_Elementor_Widget_Base
         $this->start_controls_tab(
             'tab_style_title_normal',
             [
-                'label' => esc_html__('Normal', 'lasa'),
+                'label' => esc_html__('Normal', 'themename'),
             ]
         );
 
         $this->add_control(
             'title_color',
             [
-                'label'     => esc_html__('Color', 'lasa'),
+                'label'     => esc_html__('Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'default'   => '',
                 'selectors' => [
@@ -202,14 +202,14 @@ class Lasa_Elementor_Mobile_Menu extends Lasa_Elementor_Widget_Base
         $this->start_controls_tab(
             'tab_style_title_hover',
             [
-                'label' => esc_html__('Hover Active', 'lasa'),
+                'label' => esc_html__('Hover Active', 'themename'),
             ]
         );
 
         $this->add_control(
             'title_color_hover',
             [
-                'label'     => esc_html__('Color', 'lasa'),
+                'label'     => esc_html__('Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .btn-elementor-menu-mobile:hover .mobile-menu-title'  => 'color: {{VALUE}} !important' ,
@@ -224,7 +224,7 @@ class Lasa_Elementor_Mobile_Menu extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'style_title_margin',
             [
-                'label'     => esc_html__('Margin', 'lasa'),
+                'label'     => esc_html__('Margin', 'themename'),
                 'type'      => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'separator' => 'before',
@@ -237,7 +237,7 @@ class Lasa_Elementor_Mobile_Menu extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'style_title_padding',
             [
-                'label'     => esc_html__('Padding', 'lasa'),
+                'label'     => esc_html__('Padding', 'themename'),
                 'type'      => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
@@ -249,7 +249,7 @@ class Lasa_Elementor_Mobile_Menu extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'general_icon_style_heading',
             [
-                'label' => esc_html__('Icon Style', 'lasa'),
+                'label' => esc_html__('Icon Style', 'themename'),
                 'type' => Controls_Manager::HEADING,
             ]
         );
@@ -259,14 +259,14 @@ class Lasa_Elementor_Mobile_Menu extends Lasa_Elementor_Widget_Base
         $this->start_controls_tab(
             'tab_style_icon_normal',
             [
-                'label' => esc_html__('Normal', 'lasa'),
+                'label' => esc_html__('Normal', 'themename'),
             ]
         );
 
         $this->add_control(
             'icon_color',
             [
-                'label'     => esc_html__('Color', 'lasa'),
+                'label'     => esc_html__('Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'default'   => '',
                 'selectors' => [
@@ -281,14 +281,14 @@ class Lasa_Elementor_Mobile_Menu extends Lasa_Elementor_Widget_Base
         $this->start_controls_tab(
             'tab_style_icon_hover',
             [
-                'label' => esc_html__('Hover', 'lasa'),
+                'label' => esc_html__('Hover', 'themename'),
             ]
         );
 
         $this->add_control(
             'icon_color_hover',
             [
-                'label'     => esc_html__('Text Color', 'lasa'),
+                'label'     => esc_html__('Text Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .btn-elementor-menu-mobile:hover .mobile-menu-icon'  => 'color: {{VALUE}} !important' ,
@@ -303,7 +303,7 @@ class Lasa_Elementor_Mobile_Menu extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'style_icon_size',
             [
-                'label'     => esc_html__('Font Size Icon', 'lasa'),
+                'label'     => esc_html__('Font Size Icon', 'themename'),
                 'type'      => Controls_Manager::SLIDER,
                 'range'     => [
                     'px' => [
@@ -321,7 +321,7 @@ class Lasa_Elementor_Mobile_Menu extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'style_icon_margin',
             [
-                'label'     => esc_html__('Margin', 'lasa'),
+                'label'     => esc_html__('Margin', 'themename'),
                 'type'      => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px'],
                 'selectors' => [
@@ -333,7 +333,7 @@ class Lasa_Elementor_Mobile_Menu extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'style_icon_padding',
             [
-                'label'     => esc_html__('Padding', 'lasa'),
+                'label'     => esc_html__('Padding', 'themename'),
                 'type'      => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px'],
                 'selectors' => [
@@ -345,4 +345,4 @@ class Lasa_Elementor_Mobile_Menu extends Lasa_Elementor_Widget_Base
         $this->end_controls_section();
     }
 }
-$widgets_manager->register(new Lasa_Elementor_Mobile_Menu());
+$widgets_manager->register(new Themename_Elementor_Mobile_Menu());

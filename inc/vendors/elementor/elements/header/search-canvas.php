@@ -1,6 +1,6 @@
 <?php
 
-if ( ! defined( 'ABSPATH' ) || function_exists('Lasa_Elementor_Search_Canvas') ) {
+if ( ! defined( 'ABSPATH' ) || function_exists('Themename_Elementor_Search_Canvas') ) {
     exit; // Exit if accessed directly.
 }
 
@@ -8,7 +8,7 @@ if ( ! defined( 'ABSPATH' ) || function_exists('Lasa_Elementor_Search_Canvas') )
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
 
-class Lasa_Elementor_Search_Canvas extends Lasa_Elementor_Widget_Base {
+class Themename_Elementor_Search_Canvas extends Themename_Elementor_Widget_Base {
 
     protected $nav_menu_index = 1;
 
@@ -17,7 +17,7 @@ class Lasa_Elementor_Search_Canvas extends Lasa_Elementor_Widget_Base {
     }
 
     public function get_title() {
-        return esc_html__('Lasa Search Canvas', 'lasa');
+        return esc_html__('Themename Search Canvas', 'themename');
     }
     
     public function get_icon() {
@@ -33,7 +33,7 @@ class Lasa_Elementor_Search_Canvas extends Lasa_Elementor_Widget_Base {
         $this->start_controls_section(
             'section_general',
             [
-                'label' => esc_html__('General', 'lasa'),
+                'label' => esc_html__('General', 'themename'),
             ]
         ); 
         $this->_register_form_canvas();
@@ -43,14 +43,14 @@ class Lasa_Elementor_Search_Canvas extends Lasa_Elementor_Widget_Base {
         $this->add_control(
             'advanced_show_result',
             [
-                'label' => esc_html__('Show Result', 'lasa'),
+                'label' => esc_html__('Show Result', 'themename'),
                 'type' => Controls_Manager::HEADING,
             ]
         );
         $this->add_control(
             'show_image_search',
             [
-                'label'   => esc_html__('Show Image of Search Result', 'lasa'),
+                'label'   => esc_html__('Show Image of Search Result', 'themename'),
                 'type'    => Controls_Manager::SWITCHER,
                 'default' => 'yes',
             ]
@@ -58,7 +58,7 @@ class Lasa_Elementor_Search_Canvas extends Lasa_Elementor_Widget_Base {
         $this->add_control(
             'show_price_search',
             [
-                'label'              => esc_html__('Show Price of Search Result', 'lasa'),
+                'label'              => esc_html__('Show Price of Search Result', 'themename'),
                 'type'               => Controls_Manager::SWITCHER,
                 'default' => 'yes',
                 'condition' => [
@@ -69,7 +69,7 @@ class Lasa_Elementor_Search_Canvas extends Lasa_Elementor_Widget_Base {
         $this->add_control(
             'show_price_under_title',
             [
-                'label'              => esc_html__('show price under title', 'lasa'),
+                'label'              => esc_html__('show price under title', 'themename'),
                 'type'               => Controls_Manager::SWITCHER,
                 'prefix_class'      => 'price-under-title-',
                 'default' => '',
@@ -83,19 +83,19 @@ class Lasa_Elementor_Search_Canvas extends Lasa_Elementor_Widget_Base {
         $this->add_control(
             'advanced_type_search',
             [
-                'label' => esc_html__('Form', 'lasa'),
+                'label' => esc_html__('Form', 'themename'),
                 'type' => Controls_Manager::HEADING,
             ]
         );
         $this->add_control(
             'search_type',
             [
-                'label'              => esc_html__('Search Result', 'lasa'),
+                'label'              => esc_html__('Search Result', 'themename'),
                 'type'               => Controls_Manager::SELECT,
                 'default' => 'product',
                 'options' => [
-                    'product'  => esc_html__('Product','lasa'),
-                    'post'  => esc_html__('Blog','lasa')
+                    'product'  => esc_html__('Product','themename'),
+                    'post'  => esc_html__('Blog','themename')
                 ]
             ]
         );
@@ -104,7 +104,7 @@ class Lasa_Elementor_Search_Canvas extends Lasa_Elementor_Widget_Base {
         $this->add_control(
             'autocomplete_search',
             [
-                'label'              => esc_html__('Auto-complete Search', 'lasa'),
+                'label'              => esc_html__('Auto-complete Search', 'themename'),
                 'type'               => Controls_Manager::SWITCHER,
                 'default' => true,
             ]
@@ -112,23 +112,23 @@ class Lasa_Elementor_Search_Canvas extends Lasa_Elementor_Widget_Base {
         $this->add_control(
             'placeholder_text',
             [
-                'label'              => esc_html__('Placeholder Text', 'lasa'),
+                'label'              => esc_html__('Placeholder Text', 'themename'),
                 'type'               => Controls_Manager::TEXT,
-                'default' => esc_html__('Search for products...','lasa'),
+                'default' => esc_html__('Search for products...','themename'),
             ]
         );
         $this->add_control(
             'vali_input_search',
             [
-                'label'              => esc_html__('Text Validate Input Search', 'lasa'),
+                'label'              => esc_html__('Text Validate Input Search', 'themename'),
                 'type'               => Controls_Manager::TEXT,
-                'default' => esc_html__('Enter at least 2 characters','lasa'),
+                'default' => esc_html__('Enter at least 2 characters','themename'),
             ]
         );
         $this->add_control(
             'min_characters_search',
             [
-                'label'              => esc_html__('Search Minimum Characters', 'lasa'),
+                'label'              => esc_html__('Search Minimum Characters', 'themename'),
                 'type'               => Controls_Manager::SLIDER,
                 'size_units' => ['px'],
                 'range' => [
@@ -148,7 +148,7 @@ class Lasa_Elementor_Search_Canvas extends Lasa_Elementor_Widget_Base {
         $this->add_control(
             'search_max_number_results',
             [
-                'label'              => esc_html__('Max Number of Search Results', 'lasa'),
+                'label'              => esc_html__('Max Number of Search Results', 'themename'),
                 'type'               => Controls_Manager::SLIDER,
                 'size_units' => ['px'],
                 'range' => [
@@ -172,7 +172,7 @@ class Lasa_Elementor_Search_Canvas extends Lasa_Elementor_Widget_Base {
         $this->add_control(
             'advanced_button_search',
             [
-                'label' => esc_html__('Button Search', 'lasa'),
+                'label' => esc_html__('Button Search', 'themename'),
                 'type' => Controls_Manager::HEADING,
                 'separator'    => 'before',
             ]
@@ -180,14 +180,14 @@ class Lasa_Elementor_Search_Canvas extends Lasa_Elementor_Widget_Base {
         $this->add_control(
             'text_button_search',
             [
-                'label'              => esc_html__('Button Search Text', 'lasa'),
+                'label'              => esc_html__('Button Search Text', 'themename'),
                 'type'               => Controls_Manager::TEXT,
             ]
         );
         $this->add_control(
             'icon_button_search',
             [
-                'label'              => esc_html__('Button Search Icon', 'lasa'),
+                'label'              => esc_html__('Button Search Icon', 'themename'),
                 'type'               => Controls_Manager::ICONS,
                 'default' => [
                     'value'   => 'icon-magnifier',
@@ -202,7 +202,7 @@ class Lasa_Elementor_Search_Canvas extends Lasa_Elementor_Widget_Base {
         $this->add_control(
             'advanced_categories_search',
             [
-                'label' => esc_html__('Categories Search', 'lasa'),
+                'label' => esc_html__('Categories Search', 'themename'),
                 'type' => Controls_Manager::HEADING,
                 'separator'    => 'before',
             ]
@@ -210,7 +210,7 @@ class Lasa_Elementor_Search_Canvas extends Lasa_Elementor_Widget_Base {
         $this->add_control(
             'enable_categories_search',
             [
-                'label'              => esc_html__('Enable Search in Categories', 'lasa'),
+                'label'              => esc_html__('Enable Search in Categories', 'themename'),
                 'type'               => Controls_Manager::SWITCHER,
                 'default' => 'yes',
             ]
@@ -218,9 +218,9 @@ class Lasa_Elementor_Search_Canvas extends Lasa_Elementor_Widget_Base {
         $this->add_control(
             'text_categories_search',
             [
-                'label'              => esc_html__('Search in Categories Text', 'lasa'),
+                'label'              => esc_html__('Search in Categories Text', 'themename'),
                 'type'               => Controls_Manager::TEXT,
-                'default' => esc_html__('All Categories','lasa'),
+                'default' => esc_html__('All Categories','themename'),
                 'condition' => [
                     'enable_categories_search' => 'yes'
                 ]
@@ -229,7 +229,7 @@ class Lasa_Elementor_Search_Canvas extends Lasa_Elementor_Widget_Base {
         $this->add_control(
             'count_categories_search',
             [
-                'label'              => esc_html__('Show count in Categories', 'lasa'),
+                'label'              => esc_html__('Show count in Categories', 'themename'),
                 'type'               => Controls_Manager::SWITCHER,
                 'default' => true,
                 'condition' => [
@@ -243,14 +243,14 @@ class Lasa_Elementor_Search_Canvas extends Lasa_Elementor_Widget_Base {
         $this->start_controls_section(
             'section_style_search_canvas',
             [
-                'label' => esc_html__('General', 'lasa'),
+                'label' => esc_html__('General', 'themename'),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
         $this->add_control(
             'heading_icon_search',
             [
-                'label' => esc_html__( 'Icon', 'lasa' ),
+                'label' => esc_html__( 'Icon', 'themename' ),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -258,7 +258,7 @@ class Lasa_Elementor_Search_Canvas extends Lasa_Elementor_Widget_Base {
         $this->add_control(
             'icon_search_size',
             [
-                'label' => esc_html__('Font Size', 'lasa'),
+                'label' => esc_html__('Font Size', 'themename'),
                 'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -279,7 +279,7 @@ class Lasa_Elementor_Search_Canvas extends Lasa_Elementor_Widget_Base {
         $this->add_control(
 			'border_radius_search',
 			[
-				'label' => esc_html__( 'Border Radius', 'lasa' ),
+				'label' => esc_html__( 'Border Radius', 'themename' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors' => [
@@ -290,7 +290,7 @@ class Lasa_Elementor_Search_Canvas extends Lasa_Elementor_Widget_Base {
         $this->add_control(
             'padding_search',
             [
-                'label'     => esc_html__('Padding Icon Search', 'lasa'),
+                'label'     => esc_html__('Padding Icon Search', 'themename'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px' ],
                 'selectors'  => [
@@ -305,14 +305,14 @@ class Lasa_Elementor_Search_Canvas extends Lasa_Elementor_Widget_Base {
         $this->start_controls_tab(
             'tab_icon_search_normal',
             [
-                'label' => esc_html__('Normal', 'lasa'),
+                'label' => esc_html__('Normal', 'themename'),
             ]
         );
 
         $this->add_control(
             'color_icon_search',
             [
-                'label'     => esc_html__('Color', 'lasa'),
+                'label'     => esc_html__('Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .btn-search-icon > i'      => 'color: {{VALUE}}',
@@ -324,7 +324,7 @@ class Lasa_Elementor_Search_Canvas extends Lasa_Elementor_Widget_Base {
         $this->add_control(
             'bg_icon_search',
             [
-                'label'     => esc_html__('Background', 'lasa'),
+                'label'     => esc_html__('Background', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .btn-search-icon > i,
@@ -339,14 +339,14 @@ class Lasa_Elementor_Search_Canvas extends Lasa_Elementor_Widget_Base {
         $this->start_controls_tab(
             'tab_icon_search_hover',
             [
-                'label' => esc_html__('Hover', 'lasa'),
+                'label' => esc_html__('Hover', 'themename'),
             ]
         );
 
         $this->add_control(
             'hover_color_icon_search',
             [
-                'label'     => esc_html__('Color', 'lasa'),
+                'label'     => esc_html__('Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .btn-search-icon > i:hover'        => 'color: {{VALUE}}',
@@ -358,7 +358,7 @@ class Lasa_Elementor_Search_Canvas extends Lasa_Elementor_Widget_Base {
         $this->add_control(
             'hover_bg_icon_search',
             [
-                'label'     => esc_html__('Background', 'lasa'),
+                'label'     => esc_html__('Background', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .btn-search-icon > i:hover,
@@ -373,7 +373,7 @@ class Lasa_Elementor_Search_Canvas extends Lasa_Elementor_Widget_Base {
         $this->add_control(
             'heading_text',
             [
-                'label' => esc_html__( 'Text', 'lasa' ),
+                'label' => esc_html__( 'Text', 'themename' ),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -395,14 +395,14 @@ class Lasa_Elementor_Search_Canvas extends Lasa_Elementor_Widget_Base {
         $this->start_controls_tab(
             'tab_text_search_normal',
             [
-                'label' => esc_html__('Normal', 'lasa'),
+                'label' => esc_html__('Normal', 'themename'),
             ]
         );
 
         $this->add_control(
             'color_text_search',
             [
-                'label'     => esc_html__('Color', 'lasa'),
+                'label'     => esc_html__('Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .btn-search-icon > .text'    => 'color: {{VALUE}}',
@@ -415,14 +415,14 @@ class Lasa_Elementor_Search_Canvas extends Lasa_Elementor_Widget_Base {
         $this->start_controls_tab(
             'tab_text_search_hover',
             [
-                'label' => esc_html__('Hover', 'lasa'),
+                'label' => esc_html__('Hover', 'themename'),
             ]
         );
 
         $this->add_control(
             'hover_color_text_search',
             [
-                'label'     => esc_html__('Color', 'lasa'),
+                'label'     => esc_html__('Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .btn-search-icon > .text:hover'    => 'color: {{VALUE}}',
@@ -447,9 +447,9 @@ class Lasa_Elementor_Search_Canvas extends Lasa_Elementor_Widget_Base {
         $settings = $this->get_settings_for_display();
         extract($settings);
         
-        $_id = lasa_tbay_random_key();
+        $_id = themename_tbay_random_key();
 
-        $class_active_ajax = lasa_switcher_to_boolean($autocomplete_search) ? 'lasa-ajax-search' : '';
+        $class_active_ajax = themename_switcher_to_boolean($autocomplete_search) ? 'themename-ajax-search' : '';
 
         $this->add_render_attribute(
             'search_form',
@@ -458,9 +458,9 @@ class Lasa_Elementor_Search_Canvas extends Lasa_Elementor_Widget_Base {
                     $class_active_ajax,
                     'searchform'
                 ],
-                'data-thumbnail' => lasa_switcher_to_boolean($show_image_search),
+                'data-thumbnail' => themename_switcher_to_boolean($show_image_search),
                 'data-appendto' => '.search-results-'.$_id,
-                'data-price' => lasa_switcher_to_boolean($show_price_search),
+                'data-price' => themename_switcher_to_boolean($show_price_search),
                 'data-minChars' => $min_characters_search['size'],
                 'data-post-type' => $search_type,
                 'data-count' => $search_max_number_results['size'],
@@ -487,7 +487,7 @@ class Lasa_Elementor_Search_Canvas extends Lasa_Elementor_Widget_Base {
 
                                 <input data-style="right" type="text" placeholder="<?php echo esc_attr($placeholder_text); ?>" name="s" required oninvalid="this.setCustomValidity('<?php echo esc_attr($vali_input_search) ?>')" oninput="setCustomValidity('')" class="tbay-search form-control input-sm"/>
                                 <div class="search-results-wrapper">
-                                    <div class="lasa-search-results search-results-<?php echo esc_attr( $_id );?>" ></div>
+                                    <div class="themename-search-results search-results-<?php echo esc_attr( $_id );?>" ></div>
                                 </div>
 
                                 <div class="button-group input-group-addon">
@@ -498,7 +498,7 @@ class Lasa_Elementor_Search_Canvas extends Lasa_Elementor_Widget_Base {
                                 </div>
                                     <?php if ( $enable_categories_search === 'yes' ): ?>
                                         <div class="select-category input-group-addon">
-                                            <span class="category-title"><?php esc_html_e( 'Search in:', 'lasa' ) ?></span>
+                                            <span class="category-title"><?php esc_html_e( 'Search in:', 'themename' ) ?></span>
                                             <?php if ( class_exists( 'WooCommerce' ) && $search_type === 'product' ) :
                                                 $args = array(
                                                     'show_option_none'   => $text_categories_search,
@@ -539,5 +539,5 @@ class Lasa_Elementor_Search_Canvas extends Lasa_Elementor_Widget_Base {
     }
 
 }
-$widgets_manager->register(new Lasa_Elementor_Search_Canvas());
+$widgets_manager->register(new Themename_Elementor_Search_Canvas());
 

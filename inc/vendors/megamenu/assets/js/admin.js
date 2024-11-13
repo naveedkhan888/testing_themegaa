@@ -1,9 +1,9 @@
 ( function($) {
-	var Lasa_Modal_Menu_Item = Backbone.View.extend({
+	var Themename_Modal_Menu_Item = Backbone.View.extend({
 
 		initialize: function( data ) {
 			this.model = new Backbone.Model( data );
-			this.template = '<span class="lasa-edit-menu"><i class="fa fa-pencil"></i> Mega</span>';
+			this.template = '<span class="themename-edit-menu"><i class="fa fa-pencil"></i> Mega</span>';
 
 			this.events = {
 				'click' : '_openModalHandler'
@@ -16,20 +16,20 @@
 		},
 
 		_openModalHandler: function() {
-			window.lasa_menu_modal = new Lasa_Modal( this.model );
+			window.themename_menu_modal = new Themename_Modal( this.model );
 		}
 
 	});
 
 	// Backbone Modal View
-	var Lasa_Modal = Backbone.View.extend({
+	var Themename_Modal = Backbone.View.extend({
 
 		initialize: function( model ) {
 			this.model = model;
 
 			this.events = {
 				'click .close' : '_closeHandler',
-				'click .lasa-modal-overlay' : '_closeHandler',
+				'click .themename-modal-overlay' : '_closeHandler',
 				'click #edit-megamenu' : '_editSubmenuContentHandler',
 				'submit #menu-edit-form' : '_submitEditMenuForm',
 				'change .toggle-select-setting select' : 'toggle'
@@ -64,15 +64,15 @@
 		},
 		render: function() {
 			var that = this;
-			this.template = $( '#tpl-lasa-menu-item-modal' ).html();
+			this.template = $( '#tpl-themename-menu-item-modal' ).html();
 			this.template = _.template( this.template, { variable: 'data' } )( this.model.toJSON() );
 			this.setElement( this.template );
 			$( 'body' ).append( this.el );
 			var data = this.model.toJSON(); 
 
 		
-			data.action = 'lasa_load_menu_data';
-			data.nonce = lasa_memgamnu_params.nonces.load_menu_data;
+			data.action = 'themename_load_menu_data';
+			data.nonce = themename_memgamnu_params.nonces.load_menu_data;
 
 			if( data.istop == true ){
 				$(".submenu-setting").show();
@@ -89,7 +89,7 @@
 			if ( this.model.get( 'is_loading' ) === true ) {
 				$.ajax({
 					type: 'POST',
-					url: lasa_memgamnu_params.ajaxurl,
+					url: themename_memgamnu_params.ajaxurl,
 					data: data,
 					beforeSend: function() {
 
@@ -117,19 +117,19 @@
 			var data = form.serializeArray();
 			data.push({
 				name: 'action',
-				value: 'lasa_update_menu_item_data'
+				value: 'themename_update_menu_item_data'
 			});
 
 			$.ajax({
-				url: lasa_memgamnu_params.ajaxurl,
+				url: themename_memgamnu_params.ajaxurl,
 				type: 'POST',
 				data: data,
 				beforeSend: function() {
-					form.find( '.lasa-modal-footer button' ).attr( 'disabled', true );
+					form.find( '.themename-modal-footer button' ).attr( 'disabled', true );
 					form.find( 'button[type="submit"]' ).prepend( '<i class="fa fa-spin fa-spinner"></i> ' );
 				}
 			}).always( function() {
-				form.find( '.lasa-modal-footer button' ).attr( 'disabled', false );
+				form.find( '.themename-modal-footer button' ).attr( 'disabled', false );
 			} ).done( function( res ) {
 				if ( res.status === true ) {
 					that.model.destroy();
@@ -189,7 +189,7 @@
 		var menu_id = li.attr( 'id' ).replace( 'menu-item-', '' );
 		menu_id = parseInt( menu_id );
 		var istop =  $(li).hasClass('menu-item-depth-0');
-		menu_title.append( new Lasa_Modal_Menu_Item({
+		menu_title.append( new Themename_Modal_Menu_Item({
 			menu_id: menu_id,
 			is_loading: true,
 			istop:istop?1:0
@@ -197,6 +197,6 @@
 	} ).on( 'mouseleave', '#menu-to-edit .menu-item-handle', function(e) {
 		var menu_item = $( this );
 		var menu_title = menu_item.find( '.item-title' );
-		menu_title.find( '.lasa-edit-menu' ).remove();
+		menu_title.find( '.themename-edit-menu' ).remove();
 	} );
 } )(jQuery);

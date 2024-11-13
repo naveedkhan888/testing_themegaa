@@ -1,6 +1,6 @@
 <?php
 
-if (! defined('ABSPATH') || function_exists('Lasa_Elementor_Canvas_Menu_Template')) {
+if (! defined('ABSPATH') || function_exists('Themename_Elementor_Canvas_Menu_Template')) {
     exit; // Exit if accessed directly.
 }
 
@@ -14,7 +14,7 @@ use Elementor\Controls_Manager;
  *
  * @since 1.0.0
  */
-class Lasa_Elementor_Canvas_Menu_Template extends Lasa_Elementor_Widget_Base
+class Themename_Elementor_Canvas_Menu_Template extends Themename_Elementor_Widget_Base
 {
     /**
      * Get widget name.
@@ -43,7 +43,7 @@ class Lasa_Elementor_Canvas_Menu_Template extends Lasa_Elementor_Widget_Base
      */
     public function get_title()
     {
-        return esc_html__('Lasa Canvas Menu Template', 'lasa');
+        return esc_html__('Themename Canvas Menu Template', 'themename');
     }
 
  
@@ -64,7 +64,7 @@ class Lasa_Elementor_Canvas_Menu_Template extends Lasa_Elementor_Widget_Base
 
     public function get_categories()
     {
-        return [ 'lasa-elements', 'lasa-header'];
+        return [ 'themename-elements', 'themename-header'];
     }
 
     protected function get_html_wrapper_class()
@@ -77,14 +77,14 @@ class Lasa_Elementor_Canvas_Menu_Template extends Lasa_Elementor_Widget_Base
         $this->start_controls_section(
             'section_general',
             [
-                'label' => esc_html__('General', 'lasa'),
+                'label' => esc_html__('General', 'themename'),
             ]
         );
         
         $this->add_control(
             'icon_menu_canvas',
             [
-                'label' => esc_html__('Choose Icon', 'lasa'),
+                'label' => esc_html__('Choose Icon', 'themename'),
                 'type' => Controls_Manager::ICONS,
             ]
         );
@@ -97,7 +97,7 @@ class Lasa_Elementor_Canvas_Menu_Template extends Lasa_Elementor_Widget_Base
                 [
                     'label' => false,
                     'type' => Controls_Manager::RAW_HTML,
-                    'raw'             => sprintf(__('<strong>There are no templates in your site.</strong><br>Go to the <a href="%s" target="_blank">Templates screen</a> to create one.', 'lasa'), admin_url('edit.php?post_type=elementor_library&tabs_group=library')),
+                    'raw'             => sprintf(__('<strong>There are no templates in your site.</strong><br>Go to the <a href="%s" target="_blank">Templates screen</a> to create one.', 'themename'), admin_url('edit.php?post_type=elementor_library&tabs_group=library')),
                 ]
             );
 
@@ -105,7 +105,7 @@ class Lasa_Elementor_Canvas_Menu_Template extends Lasa_Elementor_Widget_Base
         }
 
         $options = [
-            '0' => '— ' . esc_html__('Select', 'lasa') . ' —',
+            '0' => '— ' . esc_html__('Select', 'themename') . ' —',
         ];
 
         $types = [];
@@ -118,7 +118,7 @@ class Lasa_Elementor_Canvas_Menu_Template extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'template_id',
             [
-                'label' => esc_html__('Choose Template', 'lasa'),
+                'label' => esc_html__('Choose Template', 'themename'),
                 'type' => Controls_Manager::SELECT,
                 'default' => '0',
                 'options' => $options,
@@ -130,15 +130,15 @@ class Lasa_Elementor_Canvas_Menu_Template extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'canvas_menu_align',
             [
-                'label' => esc_html__('Content Align', 'lasa'),
+                'label' => esc_html__('Content Align', 'themename'),
                 'type' => Controls_Manager::CHOOSE,
                 'options' => [
                     'left' => [
-                        'title' => esc_html__('Left', 'lasa'),
+                        'title' => esc_html__('Left', 'themename'),
                         'icon' => 'eicon-text-align-left'
                     ],
                     'right' => [
-                        'title' => esc_html__('Right', 'lasa'),
+                        'title' => esc_html__('Right', 'themename'),
                         'icon' => 'eicon-text-align-right'
                     ],
                 ],
@@ -155,14 +155,14 @@ class Lasa_Elementor_Canvas_Menu_Template extends Lasa_Elementor_Widget_Base
         $this->start_controls_section(
             'section_style_icon',
             [
-                'label' => esc_html__('General', 'lasa'),
+                'label' => esc_html__('General', 'themename'),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
         $this->add_control(
             'icon_menu_size',
             [
-                'label' => esc_html__('Font Size Icon', 'lasa'),
+                'label' => esc_html__('Font Size Icon', 'themename'),
                 'type' => Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [
@@ -181,13 +181,13 @@ class Lasa_Elementor_Canvas_Menu_Template extends Lasa_Elementor_Widget_Base
         $this->start_controls_tab(
             'tab_icon_normal',
             [
-                'label' => esc_html__('Normal', 'lasa'),
+                'label' => esc_html__('Normal', 'themename'),
             ]
         );
         $this->add_control(
             'color_icon',
             [
-                'label'     => esc_html__('Color', 'lasa'),
+                'label'     => esc_html__('Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .btn-canvas-menu > i'    => 'color: {{VALUE}}',
@@ -197,7 +197,7 @@ class Lasa_Elementor_Canvas_Menu_Template extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'bg_icon',
             [
-                'label'     => esc_html__('Background Color', 'lasa'),
+                'label'     => esc_html__('Background Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .btn-canvas-menu > i'    => 'background-color: {{VALUE}}',
@@ -210,13 +210,13 @@ class Lasa_Elementor_Canvas_Menu_Template extends Lasa_Elementor_Widget_Base
         $this->start_controls_tab(
             'tab_icon_hover',
             [
-                'label' => esc_html__('Hover', 'lasa'),
+                'label' => esc_html__('Hover', 'themename'),
             ]
         );
         $this->add_control(
             'hover_color_icon',
             [
-                'label'     => esc_html__('Color', 'lasa'),
+                'label'     => esc_html__('Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .btn-canvas-menu > i:hover'    => 'color: {{VALUE}}',
@@ -226,7 +226,7 @@ class Lasa_Elementor_Canvas_Menu_Template extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'hover_bg_icon',
             [
-                'label'     => esc_html__('Background Color', 'lasa'),
+                'label'     => esc_html__('Background Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .btn-canvas-menu > i:hover'    => 'background-color: {{VALUE}}',
@@ -255,7 +255,7 @@ class Lasa_Elementor_Canvas_Menu_Template extends Lasa_Elementor_Widget_Base
             <a href="javascript:void(0);" class="close-canvas-menu" data-bs-dismiss="offcanvas"><i class="zmdi zmdi-close"></i></a>
             <div class="canvas-content-ajax">
             <?php
-            echo \Elementor\Plugin::instance()->frontend->get_builder_content_for_display( $template_id, lasa_get_elementor_css_print_method() );
+            echo \Elementor\Plugin::instance()->frontend->get_builder_content_for_display( $template_id, themename_get_elementor_css_print_method() );
         echo "</div></div>";
     }
     public function render_canvas_menu()
@@ -271,4 +271,4 @@ class Lasa_Elementor_Canvas_Menu_Template extends Lasa_Elementor_Widget_Base
         </div><?php
     }
 }
-$widgets_manager->register(new Lasa_Elementor_Canvas_Menu_Template());
+$widgets_manager->register(new Themename_Elementor_Canvas_Menu_Template());

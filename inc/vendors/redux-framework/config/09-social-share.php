@@ -14,12 +14,12 @@ Redux::set_section(
 	$opt_name,
 	array(
         'icon' => 'zmdi zmdi-share',
-        'title' => esc_html__('Social Share', 'lasa'),
+        'title' => esc_html__('Social Share', 'themename'),
         'fields' => array(
             array(
                 'id' => 'enable_code_share',
                 'type' => 'switch',
-                'title' => esc_html__('Enable Code Share', 'lasa'),
+                'title' => esc_html__('Enable Code Share', 'themename'),
                 'default' => true
             ),
             array(
@@ -27,7 +27,7 @@ Redux::set_section(
                 'type'     => 'sortable', 
                 'mode'     => 'checkbox',
                 'required' => array('enable_code_share','=',1),
-                'title'    => esc_html__('Sortable Sharing', 'lasa'),
+                'title'    => esc_html__('Sortable Sharing', 'themename'),
                 'options'  => array(
                     'facebook'      => 'Facebook',
                     'twitter'       => 'Twitter',

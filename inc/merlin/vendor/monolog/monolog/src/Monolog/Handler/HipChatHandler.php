@@ -98,7 +98,7 @@ class HipChatHandler extends SocketHandler
     public function __construct($token, $room, $name = 'Monolog', $notify = false, $level = Logger::CRITICAL, $bubble = true, $useSSL = true, $format = 'text', $host = 'api.hipchat.com', $version = self::API_V1)
     {
         if ($version == self::API_V1 && !$this->validateStringLength($name, static::MAXIMUM_NAME_LENGTH)) {
-            throw new \InvalidArgumentException('The supplied name is too long. HipChat\'s v1 API supports names up to 15 UTF-8 clasacters.');
+            throw new \InvalidArgumentException('The supplied name is too long. HipChat\'s v1 API supports names up to 15 UTF-8 cthemenamecters.');
         }
 
         $connectionString = $useSSL ? 'ssl://'.$host.':443' : $host.':80';
@@ -176,7 +176,7 @@ class HipChatHandler extends SocketHandler
         if ($this->version == self::API_V1) {
             $header = "POST /v1/rooms/message?format=json&auth_token={$this->token} HTTP/1.1\r\n";
         } else {
-            // needed for rooms with special (spaces, etc) clasacters in the name
+            // needed for rooms with special (spaces, etc) cthemenamecters in the name
             $room = rawurlencode($this->room);
             $header = "POST /v2/room/{$room}/notification?auth_token={$this->token} HTTP/1.1\r\n";
         }
@@ -328,10 +328,10 @@ class HipChatHandler extends SocketHandler
      * Validates the length of a string.
      *
      * If the `mb_strlen()` function is available, it will use that, as HipChat
-     * allows UTF-8 clasacters. Otherwise, it will fall back to `strlen()`.
+     * allows UTF-8 cthemenamecters. Otherwise, it will fall back to `strlen()`.
      *
      * Note that this might cause false failures in the specific case of using
-     * a valid name with less than 16 clasacters, but 16 or more bytes, on a
+     * a valid name with less than 16 cthemenamecters, but 16 or more bytes, on a
      * system where `mb_strlen()` is unavailable.
      *
      * @param string $str

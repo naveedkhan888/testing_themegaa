@@ -5,45 +5,45 @@
 defined('ABSPATH') or die(); // Exit if accessed directly
 
 if ( class_exists('WC_AJAX') ) :
-    class LASA_WC_AJAX extends WC_AJAX
+    class THEMENAME_WC_AJAX extends WC_AJAX
     {
 
         /**
          * Hook in ajax handlers.
          */
-        public static function lasa_init()
+        public static function themename_init()
         {
             add_action('init', array(__CLASS__, 'define_ajax'), 0);
             add_action('template_redirect', array(__CLASS__, 'do_wc_ajax'), 0);
             
-            self::lasa_add_ajax_events();
+            self::themename_add_ajax_events();
         }
 
         /**
          * Hook in methods - uses WordPress ajax handlers (admin-ajax).
          */
-        public static function lasa_add_ajax_events()
+        public static function themename_add_ajax_events()
         {
             /**
              * Register ajax event
              */
             $ajax_events = array(
-                'lasa_quantity_mini_cart',
-                'lasa_product_remove',
-                'lasa_products_categories_tab_shortcode',
-                'lasa_products_tab_shortcode',
-                'lasa_products_list_ajax',
-                'lasa_products_grid_ajax', 
-                'lasa_single_add_to_cart', 
-                'lasa_popup_variation_name', 
+                'themename_quantity_mini_cart',
+                'themename_product_remove',
+                'themename_products_categories_tab_shortcode',
+                'themename_products_tab_shortcode',
+                'themename_products_list_ajax',
+                'themename_products_grid_ajax', 
+                'themename_single_add_to_cart', 
+                'themename_popup_variation_name', 
             );
 
             if ( defined('YITH_WCWL') ) {
-                $ajax_events[] = 'lasa_update_wishlist_count';
+                $ajax_events[] = 'themename_update_wishlist_count';
             }
 
-            if ( lasa_tbay_get_config('enable_quickview', true) ) {
-                $ajax_events[] = 'lasa_quickview_product';
+            if ( themename_tbay_get_config('enable_quickview', true) ) {
+                $ajax_events[] = 'themename_quickview_product';
             }
 
                
@@ -57,8 +57,8 @@ if ( class_exists('WC_AJAX') ) :
 
         }
 
-        public static function lasa_quantity_mini_cart() { 
-            check_ajax_referer( 'lasa-minicartquantity-nonce', 'security' );
+        public static function themename_quantity_mini_cart() { 
+            check_ajax_referer( 'themename-minicartquantity-nonce', 'security' );
              
             // Set item key as the hash found in input.qty's name
             $cart_item_key = $_REQUEST['hash'];
@@ -98,8 +98,8 @@ if ( class_exists('WC_AJAX') ) :
             die();
         }
 
-        public static function lasa_product_remove() {
-            check_ajax_referer( 'lasa-productremove-nonce', 'security' );
+        public static function themename_product_remove() {
+            check_ajax_referer( 'themename-productremove-nonce', 'security' );
 
             // Get mini cart
             ob_start();
@@ -133,8 +133,8 @@ if ( class_exists('WC_AJAX') ) :
             die();
         }   
 
-        public static function lasa_update_wishlist_count() {  
-            check_ajax_referer( 'lasa-wishlistcount-nonce', 'security' );
+        public static function themename_update_wishlist_count() {  
+            check_ajax_referer( 'themename-wishlistcount-nonce', 'security' );
 
             ob_start();
 
@@ -149,17 +149,17 @@ if ( class_exists('WC_AJAX') ) :
             die();
         }
 
-        public static function lasa_products_categories_tab_shortcode() {
+        public static function themename_products_categories_tab_shortcode() {
             if ( ! empty( $_POST['atts'] ) ) {
-                check_ajax_referer( 'lasa-productscategoriestab-nonce', 'security' );
+                check_ajax_referer( 'themename-productscategoriestab-nonce', 'security' );
 
                 ob_start();
 
-                $atts               = lasa_clean( $_POST['atts'] );  
-                $categories         = lasa_clean( $_POST['value'] );
+                $atts               = themename_clean( $_POST['atts'] );  
+                $categories         = themename_clean( $_POST['value'] );
                 $atts['categories'] = $categories;
     
-                $data = lasa_elementor_products_ajax_template( $atts );
+                $data = themename_elementor_products_ajax_template( $atts );
 
                 wp_send_json_success( $data ); 
 
@@ -167,17 +167,17 @@ if ( class_exists('WC_AJAX') ) :
             } 
         }
 
-        public static function lasa_products_tab_shortcode() {
+        public static function themename_products_tab_shortcode() {
             if ( ! empty( $_POST['atts'] ) ) {
-                check_ajax_referer( 'lasa-productstab-nonce', 'security' );
+                check_ajax_referer( 'themename-productstab-nonce', 'security' );
 
                 ob_start();
 
-                $atts                   = lasa_clean( $_POST['atts'] );
-                $product_type           = lasa_clean( $_POST['value'] );
+                $atts                   = themename_clean( $_POST['atts'] );
+                $product_type           = themename_clean( $_POST['value'] );
                 $atts['product_type']   = $product_type;
     
-                $data = lasa_elementor_products_ajax_template( $atts );
+                $data = themename_elementor_products_ajax_template( $atts );
  
                 wp_send_json_success( $data );
 
@@ -185,13 +185,13 @@ if ( class_exists('WC_AJAX') ) :
             } 
         }   
 
-        public static function lasa_products_grid_ajax() {
-            check_ajax_referer( 'lasa-productsgrid-nonce', 'security' );
+        public static function themename_products_grid_ajax() {
+            check_ajax_referer( 'themename-productsgrid-nonce', 'security' );
 
             // prepare our arguments for the query
             $args = json_decode(stripslashes($_POST['query']), true);
             
-            lasa_order_by_query($args['orderby'], $args['order']);
+            themename_order_by_query($args['orderby'], $args['order']);
          
             // it is always better to use WP_Query but not here
             query_posts($args);
@@ -218,13 +218,13 @@ if ( class_exists('WC_AJAX') ) :
             die();
         }
 
-        public static function lasa_products_list_ajax() {
-            check_ajax_referer( 'lasa-productslist-nonce', 'security' );
+        public static function themename_products_list_ajax() {
+            check_ajax_referer( 'themename-productslist-nonce', 'security' );
 
             // prepare our arguments for the query
             $args = json_decode(stripslashes($_POST['query']), true);
 
-            lasa_order_by_query($args['orderby'], $args['order']);
+            themename_order_by_query($args['orderby'], $args['order']);
 
             if (isset($_GET['paged'])) {
                 $args['paged'] = intval($_GET['paged']);
@@ -255,7 +255,7 @@ if ( class_exists('WC_AJAX') ) :
             die();
         }  
          
-        public static function lasa_quickview_product()
+        public static function themename_quickview_product()
         {     
             if (!empty($_GET['product_id'])) {
 
@@ -302,7 +302,7 @@ if ( class_exists('WC_AJAX') ) :
                 if (isset($variation[$taxonomy])) {
                     // Get value from post data
                     if ($attribute['is_taxonomy']) {
-                        // Don't use wc_clean as it destroys sanitized clasacters
+                        // Don't use wc_clean as it destroys sanitized cthemenamecters
                         $value = sanitize_title(stripslashes($variation[$taxonomy]));
                     } else {
                         $value = wc_clean(stripslashes($variation[$taxonomy]));
@@ -340,7 +340,7 @@ if ( class_exists('WC_AJAX') ) :
             );
         }
 
-        public static function lasa_single_add_to_cart() {
+        public static function themename_single_add_to_cart() {
             /**
              * Clear Old Notices
              */
@@ -374,7 +374,7 @@ if ( class_exists('WC_AJAX') ) :
                     $mini_cart = ob_get_clean();
                     
                     $woo_mess = wc_print_notices(true);
-                    $woo_mess = empty($woo_mess) ? '<div class="woocommerce-message text-center" role="alert">' . esc_html__('Product added to cart successfully!', 'lasa') . '</div>' : $woo_mess;
+                    $woo_mess = empty($woo_mess) ? '<div class="woocommerce-message text-center" role="alert">' . esc_html__('Product added to cart successfully!', 'themename') . '</div>' : $woo_mess;
 
                     // Fragments and mini cart are returned
                     $data = array(
@@ -397,7 +397,7 @@ if ( class_exists('WC_AJAX') ) :
              */
             else {
                 if (!isset($_REQUEST['product_id']) || !is_numeric(wp_unslash($_REQUEST['product_id']))){
-                    wc_add_notice(esc_html__('Sorry, Product is not existing.', 'lasa'), 'error');
+                    wc_add_notice(esc_html__('Sorry, Product is not existing.', 'themename'), 'error');
                     wp_send_json(array(
                         'error' => true,
                         'message' => wc_print_notices(true)
@@ -412,7 +412,7 @@ if ( class_exists('WC_AJAX') ) :
                 $type       = (!isset($_REQUEST['product_type']) || !in_array($_REQUEST['product_type'], array('simple', 'variation', 'variable'))) ? false : $_REQUEST['product_type'];
                 
                 if (!$type) {
-                    wc_add_notice(esc_html__('Sorry, Product is not existing.', 'lasa'), 'error');
+                    wc_add_notice(esc_html__('Sorry, Product is not existing.', 'themename'), 'error');
                     wp_send_json(array(
                         'error' => true,
                         'message' => wc_print_notices(true)
@@ -484,9 +484,9 @@ if ( class_exists('WC_AJAX') ) :
                     // If there was an error adding to the cart, redirect to the product page to show any errors
                     if (isset($validate_attr['missing_attributes'])) {
                         $number = count($validate_attr['missing_attributes']);
-                        wc_add_notice( _n('%s is a required field', '%s are required fields', $number, 'lasa'), 'error');
+                        wc_add_notice( _n('%s is a required field', '%s are required fields', $number, 'themename'), 'error');
                     } else {
-                        wc_add_notice(esc_html__('Sorry, Maybe product empty in stock.', 'lasa'), 'error');
+                        wc_add_notice(esc_html__('Sorry, Maybe product empty in stock.', 'themename'), 'error');
                     }
 
                     $data = array(
@@ -500,9 +500,9 @@ if ( class_exists('WC_AJAX') ) :
             }
         } 
 
-        public static function lasa_popup_variation_name() {
+        public static function themename_popup_variation_name() {
             if (!empty($_POST['variation_id'])) {    
-                check_ajax_referer( 'lasa-popupvariationname-nonce', 'security' );
+                check_ajax_referer( 'themename-popupvariationname-nonce', 'security' );
 
                 $variation_id = $_POST['variation_id'];
   
@@ -517,13 +517,13 @@ if ( class_exists('WC_AJAX') ) :
     }
 
     /**
-     * Init LASA WC AJAX
+     * Init THEMENAME WC AJAX
      */
     if (isset($_REQUEST['wc-ajax'])) {
-        add_action('init', 'lasa_init_wc_ajax');
-        if (!function_exists('lasa_init_wc_ajax')) :
-            function lasa_init_wc_ajax() {
-                LASA_WC_AJAX::lasa_init();
+        add_action('init', 'themename_init_wc_ajax');
+        if (!function_exists('themename_init_wc_ajax')) :
+            function themename_init_wc_ajax() {
+                THEMENAME_WC_AJAX::themename_init();
             }
         endif;
     }

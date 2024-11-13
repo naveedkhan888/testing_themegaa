@@ -18,7 +18,7 @@ $this->add_render_attribute('wrapper', 'class', [ $this->deal_end_class() ]);
             <div class="top-flash-sale-wrapper">
                 <?php $this->render_element_heading();
             if (isset($end_date) && !empty($end_date)) {
-                lasa_tbay_countdown_flash_sale($end_date, $date_title, $date_title_ended, true);
+                themename_tbay_countdown_flash_sale($end_date, $date_title, $date_title_ended, true);
             } 
             
             if( $readmore_position === 'top' ) {

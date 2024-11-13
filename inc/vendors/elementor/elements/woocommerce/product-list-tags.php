@@ -1,12 +1,12 @@
 <?php
 
-if (! defined('ABSPATH') || function_exists('Lasa_Elementor_Product_List_Tags')) {
+if (! defined('ABSPATH') || function_exists('Themename_Elementor_Product_List_Tags')) {
     exit; // Exit if accessed directly.
 }
 
 use Elementor\Controls_Manager;
 
-class Lasa_Elementor_Product_List_Tags extends Lasa_Elementor_Carousel_Base
+class Themename_Elementor_Product_List_Tags extends Themename_Elementor_Carousel_Base
 {
     public function get_name()
     {
@@ -15,17 +15,17 @@ class Lasa_Elementor_Product_List_Tags extends Lasa_Elementor_Carousel_Base
 
     public function get_title()
     { 
-        return esc_html__('Lasa Icon List Tags', 'lasa');
+        return esc_html__('Themename Icon List Tags', 'themename');
     }
 
     public function get_script_depends()
     {
-        return [ 'lasa-custom-slick', 'slick' ];
+        return [ 'themename-custom-slick', 'slick' ];
     }
 
     public function get_categories()
     {
-        return [ 'lasa-elements', 'woocommerce-elements'];
+        return [ 'themename-elements', 'woocommerce-elements'];
     }
 
     public function get_icon()
@@ -45,7 +45,7 @@ class Lasa_Elementor_Product_List_Tags extends Lasa_Elementor_Carousel_Base
         $this->start_controls_section(
             'general',
             [
-                'label' => esc_html__('General', 'lasa'),
+                'label' => esc_html__('General', 'themename'),
             ]
         );
 
@@ -58,7 +58,7 @@ class Lasa_Elementor_Product_List_Tags extends Lasa_Elementor_Carousel_Base
             $repeater->add_control(
                 'tag_slug',
                 [
-                    'label'     => esc_html__('Tag', 'lasa'),
+                    'label'     => esc_html__('Tag', 'themename'),
                     'type'      => Controls_Manager::SELECT,
                     'options'   => $tag_slug,
                     'default'   => $tag_default
@@ -69,7 +69,7 @@ class Lasa_Elementor_Product_List_Tags extends Lasa_Elementor_Carousel_Base
                 'tag_slug',
                 [
                     'type'            => Controls_Manager::RAW_HTML,
-                    'raw'             => sprintf(__('<strong>There are no tags in your site.</strong><br>Go to the <a href="%s" target="_blank">Tags screen</a> to create one.', 'lasa'), admin_url('edit-tags.php?taxonomy=product_tag&post_type=product')),
+                    'raw'             => sprintf(__('<strong>There are no tags in your site.</strong><br>Go to the <a href="%s" target="_blank">Tags screen</a> to create one.', 'themename'), admin_url('edit-tags.php?taxonomy=product_tag&post_type=product')),
                     'separator'       => 'after',
                     'content_classes' => 'elementor-panel-alert elementor-panel-alert-info',
                 ]
@@ -80,7 +80,7 @@ class Lasa_Elementor_Product_List_Tags extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'tags',
             [
-                'label' => esc_html__('List Tags', 'lasa'),
+                'label' => esc_html__('List Tags', 'themename'),
                 'type' => Controls_Manager::REPEATER,
                 'fields' => $repeater->get_controls(),
             ]
@@ -112,4 +112,4 @@ class Lasa_Elementor_Product_List_Tags extends Lasa_Elementor_Carousel_Base
         <?php
     }
 }
-$widgets_manager->register(new Lasa_Elementor_Product_List_Tags());
+$widgets_manager->register(new Themename_Elementor_Product_List_Tags());

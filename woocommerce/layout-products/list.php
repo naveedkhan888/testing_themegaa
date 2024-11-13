@@ -1,6 +1,6 @@
 <?php
 	$product_item 	= isset($product_item) ? $product_item : 'list';
-	$skin 			= lasa_tbay_get_theme();
+	$skin 			= themename_tbay_get_theme();
 ?>
 <ul class="tbay-w-products-list">
 	<?php while ($loop->have_posts()) : $loop->the_post(); global $product; ?>

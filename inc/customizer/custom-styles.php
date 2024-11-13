@@ -1,6 +1,6 @@
 <?php
-if (!function_exists('lasa_hex2rgba_opacity')) {
-	function lasa_hex2rgba_opacity($color, $opacity = false) {
+if (!function_exists('themename_hex2rgba_opacity')) {
+	function themename_hex2rgba_opacity($color, $opacity = false) {
 	
 		$default = 'rgb(0,0,0)';
 	
@@ -40,14 +40,14 @@ if (!function_exists('lasa_hex2rgba_opacity')) {
 }
 
 
-if (!function_exists('lasa_tbay_color_lightens_darkens')) {
+if (!function_exists('themename_tbay_color_lightens_darkens')) {
     /**
      * Lightens/darkens a given colour (hex format), returning the altered colour in hex format.7
      * @param str $hex Colour as hexadecimal (with or without hash);
      * @percent float $percent Decimal ( 0.2 = lighten by 20%(), -0.4 = darken by 40%() )
      * @return str Lightened/Darkend colour as hexadecimal (with hash);
      */
-    function lasa_tbay_color_lightens_darkens($hex, $percent)
+    function themename_tbay_color_lightens_darkens($hex, $percent)
     {
 		if( empty($hex) ) return $hex;
         
@@ -75,8 +75,8 @@ if (!function_exists('lasa_tbay_color_lightens_darkens')) {
 
 
 
-if (!function_exists('lasa_tbay_default_theme_primary_color')) {
-    function lasa_tbay_default_theme_primary_color()
+if (!function_exists('themename_tbay_default_theme_primary_color')) {
+    function themename_tbay_default_theme_primary_color()
     {
 		$theme_variable = array();
 
@@ -87,74 +87,74 @@ if (!function_exists('lasa_tbay_default_theme_primary_color')) {
 		$theme_variable['header_mobile_bg'] 	= '#fff';
 		$theme_variable['header_mobile_color'] 	= '#191919';
 
-        return apply_filters('lasa_get_default_theme_color', $theme_variable);
+        return apply_filters('themename_get_default_theme_color', $theme_variable);
     }
 }
 
-if ( !function_exists ('lasa_tbay_default_theme_primary_fonts') ) {
-	function lasa_tbay_default_theme_primary_fonts() {
+if ( !function_exists ('themename_tbay_default_theme_primary_fonts') ) {
+	function themename_tbay_default_theme_primary_fonts() {
 
 		$theme_variable = array();
 
 		$theme_variable['main_font'] 	= 'Poppins';
 		$theme_variable['font_second_enable'] 	= false;
 
-		return apply_filters( 'lasa_get_default_theme_fonts', $theme_variable);
+		return apply_filters( 'themename_get_default_theme_fonts', $theme_variable);
 	}
 }
 
-if (!function_exists('lasa_tbay_check_empty_customize')) {
-    function lasa_tbay_check_empty_customize($option, $default){
+if (!function_exists('themename_tbay_check_empty_customize')) {
+    function themename_tbay_check_empty_customize($option, $default){
 	 	echo !empty($option) ? esc_html($option) : esc_html($default);
 	}
 }
 
 
-if (!function_exists('lasa_tbay_theme_primary_color')) {
-    function lasa_tbay_theme_primary_color()
+if (!function_exists('themename_tbay_theme_primary_color')) {
+    function themename_tbay_theme_primary_color()
     {
-		$default_color 		= lasa_tbay_default_theme_primary_color(); 
-		$boby_bg   			= lasa_tbay_get_config('boby_bg');
+		$default_color 		= themename_tbay_default_theme_primary_color(); 
+		$boby_bg   			= themename_tbay_get_config('boby_bg');
 
 
-		$main_color   = lasa_tbay_get_config(('main_color'),$default_color['main_color']);
+		$main_color   = themename_tbay_get_config(('main_color'),$default_color['main_color']);
 
 		if( !empty($default_color['enable_main_color_text']) ) {
-			$main_color_text   = lasa_tbay_get_config(('main_color_text'),$default_color['main_color_text']);
+			$main_color_text   = themename_tbay_get_config(('main_color_text'),$default_color['main_color_text']);
 		}
 
-		$header_mobile_bg   = lasa_tbay_get_config(('header_mobile_bg'),$default_color['header_mobile_bg']);
-		$header_mobile_color   = lasa_tbay_get_config(('header_mobile_color'),$default_color['header_mobile_color']);
+		$header_mobile_bg   = themename_tbay_get_config(('header_mobile_bg'),$default_color['header_mobile_bg']);
+		$header_mobile_color   = themename_tbay_get_config(('header_mobile_color'),$default_color['header_mobile_color']);
 
 		
 
 		if( !empty($default_color['btn_text_color']) ) {
-			$btn_text_color   = lasa_tbay_get_config(('btn_text_color'),$default_color['btn_text_color']);
+			$btn_text_color   = themename_tbay_get_config(('btn_text_color'),$default_color['btn_text_color']);
 		} else {
-			$btn_text_color   = lasa_tbay_get_config('btn_text_color');  
+			$btn_text_color   = themename_tbay_get_config('btn_text_color');  
 		}
 		?>
 		:root {
-			--tb-theme-color: <?php lasa_tbay_check_empty_customize( $main_color, $default_color['main_color']) ?>;
+			--tb-theme-color: <?php themename_tbay_check_empty_customize( $main_color, $default_color['main_color']) ?>;
 			--tb-theme-body: <?php echo ( !empty($boby_bg['background-color']) ) ? $boby_bg['background-color'] : $default_color['boby_bg']; ?>;
-			--tb-theme-color-bg-opacity-01: <?php lasa_tbay_check_empty_customize( lasa_hex2rgba_opacity($main_color, 0.08), $default_color['main_color']) ?>;
-			--tb-theme-color-bg-opacity-02: <?php lasa_tbay_check_empty_customize( lasa_hex2rgba_opacity($main_color, 0.2), $default_color['main_color']) ?>;
-			--tb-theme-color-hover: <?php lasa_tbay_check_empty_customize( lasa_tbay_color_lightens_darkens($main_color, -0.05), lasa_tbay_color_lightens_darkens($default_color['main_color'], -0.05) );  ?>;
-			--tb-header-mobile-bg: <?php lasa_tbay_check_empty_customize($header_mobile_bg, $default_color['header_mobile_bg']) ?>;
-			--tb-header-mobile-color: <?php lasa_tbay_check_empty_customize($header_mobile_color, $default_color['header_mobile_color'] )?>;
+			--tb-theme-color-bg-opacity-01: <?php themename_tbay_check_empty_customize( themename_hex2rgba_opacity($main_color, 0.08), $default_color['main_color']) ?>;
+			--tb-theme-color-bg-opacity-02: <?php themename_tbay_check_empty_customize( themename_hex2rgba_opacity($main_color, 0.2), $default_color['main_color']) ?>;
+			--tb-theme-color-hover: <?php themename_tbay_check_empty_customize( themename_tbay_color_lightens_darkens($main_color, -0.05), themename_tbay_color_lightens_darkens($default_color['main_color'], -0.05) );  ?>;
+			--tb-header-mobile-bg: <?php themename_tbay_check_empty_customize($header_mobile_bg, $default_color['header_mobile_bg']) ?>;
+			--tb-header-mobile-color: <?php themename_tbay_check_empty_customize($header_mobile_color, $default_color['header_mobile_color'] )?>;
 
 			<?php if( !empty($default_color['enable_main_color_text']) ) : ?>
-				--tb-theme-color-text: <?php lasa_tbay_check_empty_customize( $main_color_text, $default_color['main_color_text']) ?>;
+				--tb-theme-color-text: <?php themename_tbay_check_empty_customize( $main_color_text, $default_color['main_color_text']) ?>;
 			<?php else: ?>
-				--tb-theme-color-text: <?php lasa_tbay_check_empty_customize( $main_color, $default_color['main_color']) ?>;
+				--tb-theme-color-text: <?php themename_tbay_check_empty_customize( $main_color, $default_color['main_color']) ?>;
 			<?php endif; ?>
 
 			<?php if( !empty($default_color['enable_main_color_second']) && $default_color['enable_main_color_second'] ) : ?>
-				--tb-theme-color-second: <?php lasa_tbay_check_empty_customize( lasa_tbay_get_config(('main_color_second'),$default_color['main_color_second']), $default_color['main_color_second']) ?>;
+				--tb-theme-color-second: <?php themename_tbay_check_empty_customize( themename_tbay_get_config(('main_color_second'),$default_color['main_color_second']), $default_color['main_color_second']) ?>;
 			<?php endif; ?>
 
 			<?php if( !empty($btn_text_color) ) : ?>
-				--tb-btn-text-color: <?php lasa_tbay_check_empty_customize( $btn_text_color, '') ?>;
+				--tb-btn-text-color: <?php themename_tbay_check_empty_customize( $btn_text_color, '') ?>;
 			<?php endif; ?>
 			
 		} 
@@ -162,16 +162,16 @@ if (!function_exists('lasa_tbay_theme_primary_color')) {
     }
 }
  
-if (!function_exists('lasa_tbay_custom_styles')) {
-    function lasa_tbay_custom_styles()
+if (!function_exists('themename_tbay_custom_styles')) {
+    function themename_tbay_custom_styles()
     {
 		ob_start();
 
-		lasa_tbay_theme_primary_color();
+		themename_tbay_theme_primary_color();
 
-		$default_fonts 		= lasa_tbay_default_theme_primary_fonts();
+		$default_fonts 		= themename_tbay_default_theme_primary_fonts();
 
-		if ( !lasa_redux_framework_activated() ) {
+		if ( !themename_redux_framework_activated() ) {
 			?>  
 			:root { 
 				--tb-text-primary-font: '<?php echo trim($default_fonts['main_font']); ?>'; 
@@ -181,20 +181,20 @@ if (!function_exists('lasa_tbay_custom_styles')) {
         }
 
 		/*End Theme Color*/
-		if (lasa_redux_framework_activated()) {
-			$logo_img_width        		= lasa_tbay_get_config('logo_img_width');
-			$logo_padding        		= lasa_tbay_get_config('logo_padding');
+		if (themename_redux_framework_activated()) {
+			$logo_img_width        		= themename_tbay_get_config('logo_img_width');
+			$logo_padding        		= themename_tbay_get_config('logo_padding');
 
-			$logo_img_width_mobile 		= lasa_tbay_get_config('logo_img_width_mobile');
-			$logo_mobile_padding 		= lasa_tbay_get_config('logo_mobile_padding');
+			$logo_img_width_mobile 		= themename_tbay_get_config('logo_img_width_mobile');
+			$logo_mobile_padding 		= themename_tbay_get_config('logo_mobile_padding');
 
-			$checkout_img_width 		= lasa_tbay_get_config('checkout_img_width');
+			$checkout_img_width 		= themename_tbay_get_config('checkout_img_width');
 
-			$custom_css 			= lasa_tbay_get_config('custom_css');
-			$css_desktop 			= lasa_tbay_get_config('css_desktop');
-			$css_tablet 			= lasa_tbay_get_config('css_tablet');
-			$css_wide_mobile 		= lasa_tbay_get_config('css_wide_mobile');
-			$css_mobile         	= lasa_tbay_get_config('css_mobile');
+			$custom_css 			= themename_tbay_get_config('custom_css');
+			$css_desktop 			= themename_tbay_get_config('css_desktop');
+			$css_tablet 			= themename_tbay_get_config('css_tablet');
+			$css_wide_mobile 		= themename_tbay_get_config('css_wide_mobile');
+			$css_mobile         	= themename_tbay_get_config('css_mobile');
 
 			$primary_font  =  $default_fonts['main_font'];
 
@@ -203,21 +203,21 @@ if (!function_exists('lasa_tbay_custom_styles')) {
 			}
 
 
-			$show_typography        = (bool) lasa_tbay_get_config('show_typography', false);
+			$show_typography        = (bool) themename_tbay_get_config('show_typography', false);
 			
 			if ($show_typography) {
-                $font_source 			= lasa_tbay_get_config('font_source');
+                $font_source 			= themename_tbay_get_config('font_source');
 
-				if ( !empty(lasa_tbay_get_config('main_font')['font-family']) ) {
-					$primary_font 			= lasa_tbay_get_config('main_font')['font-family'];
+				if ( !empty(themename_tbay_get_config('main_font')['font-family']) ) {
+					$primary_font 			= themename_tbay_get_config('main_font')['font-family'];
 				}
-				if ( !empty(lasa_tbay_get_config('main_font_second')['font-family']) ) {
-					$second_font					= lasa_tbay_get_config('main_font_second')['font-family'];
+				if ( !empty(themename_tbay_get_config('main_font_second')['font-family']) ) {
+					$second_font					= themename_tbay_get_config('main_font_second')['font-family'];
 				}
-                $main_google_font_face = lasa_tbay_get_config('main_google_font_face');
-                $main_custom_font_face = lasa_tbay_get_config('main_custom_font_face');
-                $main_second_google_font_face 	= lasa_tbay_get_config('main_second_google_font_face');
-                $main_second_custom_font_face 	= lasa_tbay_get_config('main_second_custom_font_face');
+                $main_google_font_face = themename_tbay_get_config('main_google_font_face');
+                $main_custom_font_face = themename_tbay_get_config('main_custom_font_face');
+                $main_second_google_font_face 	= themename_tbay_get_config('main_second_google_font_face');
+                $main_second_custom_font_face 	= themename_tbay_get_config('main_second_custom_font_face');
  
                 if ($font_source  == "2" && $main_google_font_face) {
                     $primary_font = $main_google_font_face;
@@ -354,11 +354,11 @@ if (!function_exists('lasa_tbay_custom_styles')) {
 
 		$custom_css = implode($new_lines);
 
-		wp_enqueue_style('lasa-style', LASA_THEME_DIR . '/style.css', array(), '1.0');
+		wp_enqueue_style('themename-style', THEMENAME_THEME_DIR . '/style.css', array(), '1.0');
 
-		wp_add_inline_style('lasa-style', $custom_css);
+		wp_add_inline_style('themename-style', $custom_css);
 		
     }
 
-    add_action('wp_enqueue_scripts', 'lasa_tbay_custom_styles', 200);
+    add_action('wp_enqueue_scripts', 'themename_tbay_custom_styles', 200);
 }

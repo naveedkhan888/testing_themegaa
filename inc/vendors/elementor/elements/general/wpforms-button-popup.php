@@ -1,6 +1,6 @@
 <?php
 
-if (! defined('ABSPATH') || function_exists('Lasa_Elementor_WPForms_Button_Popup')) {
+if (! defined('ABSPATH') || function_exists('Themename_Elementor_WPForms_Button_Popup')) {
     exit; // Exit if accessed directly.
 }
 
@@ -15,7 +15,7 @@ use Elementor\Group_Control_Typography;
  *
  * @since 1.0.0
  */
-class Lasa_Elementor_WPForms_Button_Popup extends Lasa_Elementor_Widget_Base
+class Themename_Elementor_WPForms_Button_Popup extends Themename_Elementor_Widget_Base
 {
     /**
      * Get widget name.
@@ -44,7 +44,7 @@ class Lasa_Elementor_WPForms_Button_Popup extends Lasa_Elementor_Widget_Base
      */
     public function get_title()
     {
-        return esc_html__('Lasa WPForms Button Popup', 'lasa');
+        return esc_html__('Themename WPForms Button Popup', 'themename');
     }
 
  
@@ -77,14 +77,14 @@ class Lasa_Elementor_WPForms_Button_Popup extends Lasa_Elementor_Widget_Base
         $this->start_controls_section(
             'general_content_section',
             [
-                'label' => esc_html__('General', 'lasa'),
+                'label' => esc_html__('General', 'themename'),
             ]
         );
 
         $this->add_control(
             'button_title',
             [
-                'label' => esc_html__('Title', 'lasa'),
+                'label' => esc_html__('Title', 'themename'),
                 'type' => Controls_Manager::TEXT,
                 'label_block' => true,
                 'separator' => 'before',
@@ -98,7 +98,7 @@ class Lasa_Elementor_WPForms_Button_Popup extends Lasa_Elementor_Widget_Base
                 'form_id',
                 [
                     'type'            => Controls_Manager::RAW_HTML,
-                    'raw'             => sprintf(__('<strong>There are no forms in your site.</strong><br>Go to the <a href="%s" target="_blank">Forms screen</a> to create one.', 'lasa'), admin_url('admin.php?page=wpforms-overview')),
+                    'raw'             => sprintf(__('<strong>There are no forms in your site.</strong><br>Go to the <a href="%s" target="_blank">Forms screen</a> to create one.', 'themename'), admin_url('admin.php?page=wpforms-overview')),
                     'separator'       => 'after',
                     'content_classes' => 'elementor-panel-alert elementor-panel-alert-info',
                 ]
@@ -107,7 +107,7 @@ class Lasa_Elementor_WPForms_Button_Popup extends Lasa_Elementor_Widget_Base
             $this->add_control(
                 'form_id',
                 [
-                    'label' => esc_html__('Wpforms Select', 'lasa'),
+                    'label' => esc_html__('Wpforms Select', 'themename'),
                     'type' => Controls_Manager::SELECT,
                     'label_block' => true,
                     'options' => $forms,
@@ -125,7 +125,7 @@ class Lasa_Elementor_WPForms_Button_Popup extends Lasa_Elementor_Widget_Base
 				'type'            => Controls_Manager::RAW_HTML,
 				'raw'             => sprintf(
 					wp_kses( /* translators: %s - WPForms documentation link. */
-						__( '<b>Heads up!</b> Don\'t forget to test your form. <a href="%s" target="_blank" rel="noopener noreferrer">Check out our complete guide!</a>', 'lasa' ),
+						__( '<b>Heads up!</b> Don\'t forget to test your form. <a href="%s" target="_blank" rel="noopener noreferrer">Check out our complete guide!</a>', 'themename' ),
 						[
 							'b'  => [],
 							'br' => [],
@@ -151,7 +151,7 @@ class Lasa_Elementor_WPForms_Button_Popup extends Lasa_Elementor_Widget_Base
 		$this->start_controls_section(
 			'section_display',
 			[
-				'label'     => esc_html__( 'Display Options', 'lasa' ),
+				'label'     => esc_html__( 'Display Options', 'themename' ),
 				'tab'       => Controls_Manager::TAB_CONTENT,
 				'condition' => [
 					'form_id!' => '0',
@@ -162,10 +162,10 @@ class Lasa_Elementor_WPForms_Button_Popup extends Lasa_Elementor_Widget_Base
 		$this->add_control(
 			'display_form_name',
 			[
-				'label'        => esc_html__( 'Form Name', 'lasa' ),
+				'label'        => esc_html__( 'Form Name', 'themename' ),
 				'type'         => Controls_Manager::SWITCHER,
-				'label_on'     => esc_html__( 'Show', 'lasa' ),
-				'label_off'    => esc_html__( 'Hide', 'lasa' ),
+				'label_on'     => esc_html__( 'Show', 'themename' ),
+				'label_off'    => esc_html__( 'Hide', 'themename' ),
 				'return_value' => 'yes',
 				'condition'    => [
 					'form_id!' => '0',
@@ -176,10 +176,10 @@ class Lasa_Elementor_WPForms_Button_Popup extends Lasa_Elementor_Widget_Base
 		$this->add_control(
 			'display_form_description',
 			[
-				'label'        => esc_html__( 'Form Description', 'lasa' ),
+				'label'        => esc_html__( 'Form Description', 'themename' ),
 				'type'         => Controls_Manager::SWITCHER,
-				'label_on'     => esc_html__( 'Show', 'lasa' ),
-				'label_off'    => esc_html__( 'Hide', 'lasa' ),
+				'label_on'     => esc_html__( 'Show', 'themename' ),
+				'label_off'    => esc_html__( 'Hide', 'themename' ),
 				'separator'    => 'after',
 				'return_value' => 'yes',
 				'condition'    => [
@@ -198,7 +198,7 @@ class Lasa_Elementor_WPForms_Button_Popup extends Lasa_Elementor_Widget_Base
         $this->start_controls_section(
             'section_general_style',
             [
-                'label' => esc_html__('General', 'lasa'),
+                'label' => esc_html__('General', 'themename'),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -214,19 +214,19 @@ class Lasa_Elementor_WPForms_Button_Popup extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'general_text_align',
             [
-                'label' => esc_html__('Align', 'lasa'),
+                'label' => esc_html__('Align', 'themename'),
                 'type' => Controls_Manager::CHOOSE,
                 'options' => [
                     'left' => [
-                        'title' => esc_html__('Left', 'lasa'),
+                        'title' => esc_html__('Left', 'themename'),
                         'icon' => 'fa fa-align-left'
                     ],
                     'center' => [
-                        'title' => esc_html__('Center', 'lasa'),
+                        'title' => esc_html__('Center', 'themename'),
                         'icon' => 'fa fa-align-center'
                     ],
                     'right' => [
-                        'title' => esc_html__('Right', 'lasa'),
+                        'title' => esc_html__('Right', 'themename'),
                         'icon' => 'fa fa-align-right'
                     ],
                 ],
@@ -240,7 +240,7 @@ class Lasa_Elementor_WPForms_Button_Popup extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'general_text_padding',
             [
-                'label'      => esc_html__('Padding', 'lasa'),
+                'label'      => esc_html__('Padding', 'themename'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors'  => [
@@ -252,7 +252,7 @@ class Lasa_Elementor_WPForms_Button_Popup extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'general_text_margin',
             [
-                'label'      => esc_html__('Margin', 'lasa'),
+                'label'      => esc_html__('Margin', 'themename'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors'  => [
@@ -266,14 +266,14 @@ class Lasa_Elementor_WPForms_Button_Popup extends Lasa_Elementor_Widget_Base
         $this->start_controls_tab(
             'general_tab_normal',
             [
-                'label' => esc_html__('Normal', 'lasa'),
+                'label' => esc_html__('Normal', 'themename'),
             ]
         );
 
         $this->add_control(
             'general_text_color',
             [
-                'label' => esc_html__('Color', 'lasa'),
+                'label' => esc_html__('Color', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -285,7 +285,7 @@ class Lasa_Elementor_WPForms_Button_Popup extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'general_text_bg_color',
             [
-                'label' => esc_html__('Background', 'lasa'),
+                'label' => esc_html__('Background', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -302,14 +302,14 @@ class Lasa_Elementor_WPForms_Button_Popup extends Lasa_Elementor_Widget_Base
         $this->start_controls_tab(
             'general_tab_hover',
             [
-                'label' => esc_html__('Hover', 'lasa'),
+                'label' => esc_html__('Hover', 'themename'),
             ]
         );
 
         $this->add_control(
             'general_text_color_hover',
             [
-                'label' => esc_html__('Color', 'lasa'),
+                'label' => esc_html__('Color', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -321,7 +321,7 @@ class Lasa_Elementor_WPForms_Button_Popup extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'general_bg_color_hover',
             [
-                'label' => esc_html__('Background', 'lasa'),
+                'label' => esc_html__('Background', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -353,7 +353,7 @@ class Lasa_Elementor_WPForms_Button_Popup extends Lasa_Elementor_Widget_Base
             $forms = wpforms()->form->get();
 
             if ( ! empty( $forms ) ) {
-                $forms_list[0] = esc_html__( 'Select a form', 'lasa' );
+                $forms_list[0] = esc_html__( 'Select a form', 'themename' );
                 foreach ( $forms as $form ) {
                     $forms_list[ $form->ID ] = mb_strlen( $form->post_title ) > 100 ? mb_substr( $form->post_title, 0, 97 ) . '...' : $form->post_title;
                 }
@@ -398,4 +398,4 @@ class Lasa_Elementor_WPForms_Button_Popup extends Lasa_Elementor_Widget_Base
         
     }
 }
-$widgets_manager->register(new Lasa_Elementor_WPForms_Button_Popup());
+$widgets_manager->register(new Themename_Elementor_WPForms_Button_Popup());

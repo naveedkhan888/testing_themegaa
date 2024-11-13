@@ -1,13 +1,13 @@
 <?php
 
-if (! defined('ABSPATH') || function_exists('Lasa_Elementor_Compare')) {
+if (! defined('ABSPATH') || function_exists('Themename_Elementor_Compare')) {
     exit; // Exit if accessed directly.
 }
 
 
 use Elementor\Controls_Manager;
 
-class Lasa_Elementor_Compare extends Lasa_Elementor_Widget_Base
+class Themename_Elementor_Compare extends Themename_Elementor_Widget_Base
 {
     public function get_name()
     {
@@ -16,7 +16,7 @@ class Lasa_Elementor_Compare extends Lasa_Elementor_Widget_Base
 
     public function get_title()
     {
-        return esc_html__('Lasa Compare', 'lasa');
+        return esc_html__('Themename Compare', 'themename');
     }
 
     public function get_icon()
@@ -34,14 +34,14 @@ class Lasa_Elementor_Compare extends Lasa_Elementor_Widget_Base
         $this->start_controls_section(
             'section_general',
             [
-                'label' => esc_html__('General', 'lasa'),
+                'label' => esc_html__('General', 'themename'),
             ]
         );
 
         $this->add_control(
             'icon_compare',
             [
-                'label'              => esc_html__('Icon', 'lasa'),
+                'label'              => esc_html__('Icon', 'themename'),
                 'type'               => Controls_Manager::ICONS,
                 'default' => [
                     'value' => 'tb-icon tb-icon-sync',
@@ -52,7 +52,7 @@ class Lasa_Elementor_Compare extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'icon_compare_size',
             [
-                'label' => esc_html__('Font Size Icon', 'lasa'),
+                'label' => esc_html__('Font Size Icon', 'themename'),
                 'type' => Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [
@@ -68,7 +68,7 @@ class Lasa_Elementor_Compare extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'show_title_compare',
             [
-                'label'              => esc_html__('Display Title', 'lasa'),
+                'label'              => esc_html__('Display Title', 'themename'),
                 'type'               => Controls_Manager::SWITCHER,
                 'default' => 'no'
             ]
@@ -76,9 +76,9 @@ class Lasa_Elementor_Compare extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'title_compare',
             [
-                'label'              => esc_html__('Title', 'lasa'),
+                'label'              => esc_html__('Title', 'themename'),
                 'type'               => Controls_Manager::TEXT,
-                'default' => esc_html__('My Compare', 'lasa'),
+                'default' => esc_html__('My Compare', 'themename'),
                 'condition' => [
                     'show_title_compare' => 'yes'
                 ]
@@ -95,7 +95,7 @@ class Lasa_Elementor_Compare extends Lasa_Elementor_Widget_Base
         $this->start_controls_section(
             'section_style_icon',
             [
-                'label' => esc_html__('Style Icon', 'lasa'),
+                'label' => esc_html__('Style Icon', 'themename'),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -104,13 +104,13 @@ class Lasa_Elementor_Compare extends Lasa_Elementor_Widget_Base
         $this->start_controls_tab(
             'tab_icon_normal',
             [
-                'label' => esc_html__('Normal', 'lasa'),
+                'label' => esc_html__('Normal', 'themename'),
             ]
         );
         $this->add_control(
             'color_icon',
             [
-                'label'     => esc_html__('Color', 'lasa'),
+                'label'     => esc_html__('Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .element-btn-compare i'    => 'color: {{VALUE}}',
@@ -120,7 +120,7 @@ class Lasa_Elementor_Compare extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'bg_icon',
             [
-                'label'     => esc_html__('Background Color', 'lasa'),
+                'label'     => esc_html__('Background Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .element-btn-compare i'    => 'background-color: {{VALUE}}',
@@ -133,13 +133,13 @@ class Lasa_Elementor_Compare extends Lasa_Elementor_Widget_Base
         $this->start_controls_tab(
             'tab_icon_hover',
             [
-                'label' => esc_html__('Hover', 'lasa'),
+                'label' => esc_html__('Hover', 'themename'),
             ]
         );
         $this->add_control(
             'hover_color_icon',
             [
-                'label'     => esc_html__('Color', 'lasa'),
+                'label'     => esc_html__('Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .element-btn-compare i:hover'    => 'color: {{VALUE}}',
@@ -149,7 +149,7 @@ class Lasa_Elementor_Compare extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'hover_bg_icon',
             [
-                'label'     => esc_html__('Background Color', 'lasa'),
+                'label'     => esc_html__('Background Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .element-btn-compare i:hover'    => 'background-color: {{VALUE}}',
@@ -165,7 +165,7 @@ class Lasa_Elementor_Compare extends Lasa_Elementor_Widget_Base
         $this->start_controls_section(
             'section_style_text',
             [
-                'label' => esc_html__('Style Text', 'lasa'),
+                'label' => esc_html__('Style Text', 'themename'),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -174,13 +174,13 @@ class Lasa_Elementor_Compare extends Lasa_Elementor_Widget_Base
         $this->start_controls_tab(
             'tab_text_normal',
             [
-                'label' => esc_html__('Normal', 'lasa'),
+                'label' => esc_html__('Normal', 'themename'),
             ]
         );
         $this->add_control(
             'color_text',
             [
-                'label'     => esc_html__('Color', 'lasa'),
+                'label'     => esc_html__('Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .title-compare'    => 'color: {{VALUE}}',
@@ -193,13 +193,13 @@ class Lasa_Elementor_Compare extends Lasa_Elementor_Widget_Base
         $this->start_controls_tab(
             'tab_text_hover',
             [
-                'label' => esc_html__('Hover', 'lasa'),
+                'label' => esc_html__('Hover', 'themename'),
             ]
         );
         $this->add_control(
             'hover_color_text',
             [
-                'label'     => esc_html__('Color', 'lasa'),
+                'label'     => esc_html__('Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .title-compare:hover' => 'color: {{VALUE}}',
@@ -256,4 +256,4 @@ class Lasa_Elementor_Compare extends Lasa_Elementor_Widget_Base
         <?php
     }
 }
-$widgets_manager->register(new Lasa_Elementor_Compare());
+$widgets_manager->register(new Themename_Elementor_Compare());

@@ -1,13 +1,13 @@
 <?php
 
-if (! defined('ABSPATH') || function_exists('Lasa_Elementor_Products')) {
+if (! defined('ABSPATH') || function_exists('Themename_Elementor_Products')) {
     exit; // Exit if accessed directly.
 }
 
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
 
-class Lasa_Elementor_Single_Product_Home extends Lasa_Elementor_Widget_Base
+class Themename_Elementor_Single_Product_Home extends Themename_Elementor_Widget_Base
 {
     public function get_name()
     {
@@ -16,12 +16,12 @@ class Lasa_Elementor_Single_Product_Home extends Lasa_Elementor_Widget_Base
 
     public function get_title()
     {
-        return esc_html__('Lasa Single Product Home Page', 'lasa');
+        return esc_html__('Themename Single Product Home Page', 'themename');
     }
 
     public function get_categories()
     {
-        return [ 'lasa-elements', 'woocommerce-elements'];
+        return [ 'themename-elements', 'woocommerce-elements'];
     }
 
     public function get_icon()
@@ -40,15 +40,15 @@ class Lasa_Elementor_Single_Product_Home extends Lasa_Elementor_Widget_Base
         $this->start_controls_section(
             'general',
             [
-                'label' => esc_html__('General', 'lasa'),
+                'label' => esc_html__('General', 'themename'),
             ]
         );
 
-        if( lasa_elementor_pro_activated() ) {
+        if( themename_elementor_pro_activated() ) {
             $this->add_control(
                 'product_id',
                 [
-                    'label' => esc_html__( 'Product ID', 'lasa' ),
+                    'label' => esc_html__( 'Product ID', 'themename' ),
                     'type' => ElementorPro\Modules\QueryControl\Module::QUERY_CONTROL_ID,
                     'options' => [],
                     'label_block' => true,
@@ -65,7 +65,7 @@ class Lasa_Elementor_Single_Product_Home extends Lasa_Elementor_Widget_Base
             $this->add_control(
                 'product_id',
                 array(
-                    'label'       => esc_html__( 'Product ID', 'lasa' ),
+                    'label'       => esc_html__( 'Product ID', 'themename' ),
                     'type'        => Controls_Manager::NUMBER,
                     'input_type'  => 'text',
                     'placeholder' => '123',
@@ -77,7 +77,7 @@ class Lasa_Elementor_Single_Product_Home extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'show_image',
             [
-                'label'     => esc_html__('Show Image', 'lasa'),
+                'label'     => esc_html__('Show Image', 'themename'),
                 'type'      => Controls_Manager::SWITCHER,
                 'default' => 'yes'
             ]
@@ -86,7 +86,7 @@ class Lasa_Elementor_Single_Product_Home extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'show_title',
             [
-                'label'     => esc_html__('Show Title', 'lasa'),
+                'label'     => esc_html__('Show Title', 'themename'),
                 'type'      => Controls_Manager::SWITCHER,
                 'default' => 'yes'
             ]
@@ -95,7 +95,7 @@ class Lasa_Elementor_Single_Product_Home extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'show_price',
             [
-                'label'     => esc_html__('Show Price', 'lasa'),
+                'label'     => esc_html__('Show Price', 'themename'),
                 'type'      => Controls_Manager::SWITCHER,
                 'default' => 'yes'
             ]
@@ -104,7 +104,7 @@ class Lasa_Elementor_Single_Product_Home extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'show_rating',
             [
-                'label'     => esc_html__('Show Rating', 'lasa'),
+                'label'     => esc_html__('Show Rating', 'themename'),
                 'type'      => Controls_Manager::SWITCHER,
                 'default' => 'no'
             ]
@@ -113,7 +113,7 @@ class Lasa_Elementor_Single_Product_Home extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'show_short_description',
             [
-                'label'     => esc_html__('Show Short Description', 'lasa'),
+                'label'     => esc_html__('Show Short Description', 'themename'),
                 'type'      => Controls_Manager::SWITCHER,
                 'default' => 'yes'
             ]
@@ -122,7 +122,7 @@ class Lasa_Elementor_Single_Product_Home extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'show_form_cart',
             [
-                'label'     => esc_html__('Show Form Cart', 'lasa'),
+                'label'     => esc_html__('Show Form Cart', 'themename'),
                 'type'      => Controls_Manager::SWITCHER,
                 'default' => 'yes'
             ]
@@ -131,7 +131,7 @@ class Lasa_Elementor_Single_Product_Home extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'show_meta',
             [
-                'label'     => esc_html__('Show Product Meta', 'lasa'),
+                'label'     => esc_html__('Show Product Meta', 'themename'),
                 'type'      => Controls_Manager::SWITCHER,
                 'default' => 'no'
             ]
@@ -145,7 +145,7 @@ class Lasa_Elementor_Single_Product_Home extends Lasa_Elementor_Widget_Base
         $this->start_controls_section(
             'section_content',
             [
-                'label' => esc_html__('Product', 'lasa'),
+                'label' => esc_html__('Product', 'themename'),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -153,7 +153,7 @@ class Lasa_Elementor_Single_Product_Home extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'style_content_title',
             [
-                'label' => esc_html__('Title', 'lasa'),
+                'label' => esc_html__('Title', 'themename'),
                 'type' => Controls_Manager::HEADING,
             ]
         );
@@ -169,7 +169,7 @@ class Lasa_Elementor_Single_Product_Home extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'style_content_title_margin',
             [
-                'label'     => esc_html__('Margin', 'lasa'),
+                'label'     => esc_html__('Margin', 'themename'),
                 'type'      => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
@@ -181,7 +181,7 @@ class Lasa_Elementor_Single_Product_Home extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'style_content_price',
             [
-                'label' => esc_html__('Price', 'lasa'),
+                'label' => esc_html__('Price', 'themename'),
                 'separator'    => 'before',
                 'type' => Controls_Manager::HEADING,
             ]
@@ -198,7 +198,7 @@ class Lasa_Elementor_Single_Product_Home extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'style_content_price_margin',
             [
-                'label'     => esc_html__('Margin', 'lasa'),
+                'label'     => esc_html__('Margin', 'themename'),
                 'type'      => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
@@ -210,7 +210,7 @@ class Lasa_Elementor_Single_Product_Home extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'style_content_rating',
             [
-                'label' => esc_html__('Rating', 'lasa'),
+                'label' => esc_html__('Rating', 'themename'),
                 'separator'    => 'before',
                 'type' => Controls_Manager::HEADING,
             ]
@@ -220,7 +220,7 @@ class Lasa_Elementor_Single_Product_Home extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'style_content_rating_margin',
             [
-                'label'     => esc_html__('Margin', 'lasa'),
+                'label'     => esc_html__('Margin', 'themename'),
                 'type'      => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
@@ -232,7 +232,7 @@ class Lasa_Elementor_Single_Product_Home extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'style_content_short_description',
             [
-                'label' => esc_html__('Short Description', 'lasa'),
+                'label' => esc_html__('Short Description', 'themename'),
                 'separator'    => 'before',
                 'type' => Controls_Manager::HEADING,
             ]
@@ -251,7 +251,7 @@ class Lasa_Elementor_Single_Product_Home extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'style_content_short_description_margin',
             [
-                'label'     => esc_html__('Margin', 'lasa'),
+                'label'     => esc_html__('Margin', 'themename'),
                 'type'      => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
@@ -263,7 +263,7 @@ class Lasa_Elementor_Single_Product_Home extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'style_content_form_cart',
             [
-                'label' => esc_html__('Form Cart', 'lasa'),
+                'label' => esc_html__('Form Cart', 'themename'),
                 'separator'    => 'before',
                 'type' => Controls_Manager::HEADING,
             ]
@@ -272,7 +272,7 @@ class Lasa_Elementor_Single_Product_Home extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'style_content_form_cart_margin',
             [
-                'label'     => esc_html__('Margin', 'lasa'),
+                'label'     => esc_html__('Margin', 'themename'),
                 'type'      => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
@@ -284,7 +284,7 @@ class Lasa_Elementor_Single_Product_Home extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'style_content_product_meta',
             [
-                'label' => esc_html__('Product Meta', 'lasa'),
+                'label' => esc_html__('Product Meta', 'themename'),
                 'separator'    => 'before',
                 'type' => Controls_Manager::HEADING,
             ]
@@ -293,7 +293,7 @@ class Lasa_Elementor_Single_Product_Home extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'style_content_product_meta_margin',
             [
-                'label'     => esc_html__('Margin', 'lasa'),
+                'label'     => esc_html__('Margin', 'themename'),
                 'type'      => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
@@ -399,11 +399,11 @@ class Lasa_Elementor_Single_Product_Home extends Lasa_Elementor_Widget_Base
         $post = get_post( $product_id, OBJECT ); 
         setup_postdata( $post );
 
-        remove_action('woocommerce_after_add_to_cart_button', array( Lasa_Single_WooCommerce::getInstance(), 'product_group_buttons'), 20);
+        remove_action('woocommerce_after_add_to_cart_button', array( Themename_Single_WooCommerce::getInstance(), 'product_group_buttons'), 20);
 
         woocommerce_template_single_add_to_cart();
 
-        add_action('woocommerce_after_add_to_cart_button', array( Lasa_Single_WooCommerce::getInstance(), 'product_group_buttons'), 20);
+        add_action('woocommerce_after_add_to_cart_button', array( Themename_Single_WooCommerce::getInstance(), 'product_group_buttons'), 20);
         
         wp_reset_postdata();
     }
@@ -421,4 +421,4 @@ class Lasa_Elementor_Single_Product_Home extends Lasa_Elementor_Widget_Base
     }
     
 }
-$widgets_manager->register(new Lasa_Elementor_Single_Product_Home());
+$widgets_manager->register(new Themename_Elementor_Single_Product_Home());

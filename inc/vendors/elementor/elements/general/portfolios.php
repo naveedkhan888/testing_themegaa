@@ -1,6 +1,6 @@
 <?php
 
-if (! defined('ABSPATH') || function_exists('Lasa_Elementor_Portfolios')) {
+if (! defined('ABSPATH') || function_exists('Themename_Elementor_Portfolios')) {
     exit; // Exit if accessed directly.
 }
 
@@ -17,7 +17,7 @@ use Elementor\Group_Control_Background;
  *
  * @since 1.0.0
  */
-class Lasa_Elementor_Portfolios extends Lasa_Elementor_Carousel_Base
+class Themename_Elementor_Portfolios extends Themename_Elementor_Carousel_Base
 {
     /**
      * Get widget name.
@@ -46,11 +46,11 @@ class Lasa_Elementor_Portfolios extends Lasa_Elementor_Carousel_Base
      */
     public function get_title()
     {
-        return esc_html__('Lasa Portfolios', 'lasa');
+        return esc_html__('Themename Portfolios', 'themename');
     }
 
     public function get_script_depends() {
-        return [ 'isotope', 'lasa-custom-slick', 'slick' ];
+        return [ 'isotope', 'themename-custom-slick', 'slick' ];
     } 
  
     /**
@@ -81,20 +81,20 @@ class Lasa_Elementor_Portfolios extends Lasa_Elementor_Carousel_Base
         $this->start_controls_section(
             'section_general',
             [
-                'label' => esc_html__('General', 'lasa'),
+                'label' => esc_html__('General', 'themename'),
             ]
         );
 
         $this->add_control(
             'layout_type',
             [
-                'label'     => esc_html__('Layout Type', 'lasa'),
+                'label'     => esc_html__('Layout Type', 'themename'),
                 'type'      => Controls_Manager::SELECT,
                 'default'   => 'filter',
                 'options'   => [
-                    'filter'      => esc_html__('Filter', 'lasa'),
-                    'grid'      => esc_html__('Grid', 'lasa'),
-                    'carousel'  => esc_html__('Carousel', 'lasa'),
+                    'filter'      => esc_html__('Filter', 'themename'),
+                    'grid'      => esc_html__('Grid', 'themename'),
+                    'carousel'  => esc_html__('Carousel', 'themename'),
                 ],
                 'separator'    => 'after',
             ]
@@ -103,9 +103,9 @@ class Lasa_Elementor_Portfolios extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'limit',
             [
-                'label' => esc_html__('Number Of Portfolios', 'lasa'),
+                'label' => esc_html__('Number Of Portfolios', 'themename'),
                 'type' => Controls_Manager::NUMBER,
-                'description' => esc_html__('Number of portfolios to show ( -1 = all )', 'lasa'),
+                'description' => esc_html__('Number of portfolios to show ( -1 = all )', 'themename'),
                 'default' => -1,
                 'min'  => -1
             ]
@@ -114,7 +114,7 @@ class Lasa_Elementor_Portfolios extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'order',
             [
-                'label' => esc_html__('Order', 'lasa'),
+                'label' => esc_html__('Order', 'themename'),
                 'type' => Controls_Manager::SELECT,
                 'options'   => [
                     'DESC'     =>  'DESC',
@@ -127,7 +127,7 @@ class Lasa_Elementor_Portfolios extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'orderby',
             [
-                'label' => esc_html__('Order By', 'lasa'),
+                'label' => esc_html__('Order By', 'themename'),
                 'type' => Controls_Manager::SELECT,
                 'options'   => [
                     'none'     =>  'None',
@@ -149,7 +149,7 @@ class Lasa_Elementor_Portfolios extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'filters',
             [
-                'label' => esc_html__('Tags Filters', 'lasa'),
+                'label' => esc_html__('Tags Filters', 'themename'),
                 'type' => Controls_Manager::REPEATER,
                 'fields' => $repeater->get_controls(),
                 'condition' => [
@@ -169,7 +169,7 @@ class Lasa_Elementor_Portfolios extends Lasa_Elementor_Carousel_Base
         $this->start_controls_section(
             'section_style_filter_content',
             [
-                'label' => esc_html__('Heading Filter', 'lasa'),
+                'label' => esc_html__('Heading Filter', 'themename'),
                 'tab'   => Controls_Manager::TAB_STYLE,
                 'condition' => $condition,
             ]
@@ -178,7 +178,7 @@ class Lasa_Elementor_Portfolios extends Lasa_Elementor_Carousel_Base
         $this->add_responsive_control(
             'filter_style_margin_content',
             [
-                'label' => esc_html__('Margin Content', 'lasa'),
+                'label' => esc_html__('Margin Content', 'themename'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'selectors' => [
@@ -190,19 +190,19 @@ class Lasa_Elementor_Portfolios extends Lasa_Elementor_Carousel_Base
         $this->add_responsive_control(
             'filter_style_align',
             [
-                'label' => esc_html__('Align', 'lasa'),
+                'label' => esc_html__('Align', 'themename'),
                 'type' => Controls_Manager::CHOOSE,
                 'options' => [
                     'left' => [
-                        'title' => esc_html__('Left', 'lasa'),
+                        'title' => esc_html__('Left', 'themename'),
                         'icon' => 'eicon-text-align-left'
                     ],
                     'center' => [
-                        'title' => esc_html__('Center', 'lasa'),
+                        'title' => esc_html__('Center', 'themename'),
                         'icon' => 'eicon-text-align-center'
                     ],
                     'right' => [
-                        'title' => esc_html__('Right', 'lasa'),
+                        'title' => esc_html__('Right', 'themename'),
                         'icon' => 'eicon-text-align-right'
                     ],
                 ],
@@ -224,7 +224,7 @@ class Lasa_Elementor_Portfolios extends Lasa_Elementor_Carousel_Base
         $this->add_control(
 			'filter_style_button_color',
 			[
-				'label' => esc_html__( 'Color', 'lasa' ),
+				'label' => esc_html__( 'Color', 'themename' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} #pf-filters .butto' => 'color: {{VALUE}};',
@@ -235,7 +235,7 @@ class Lasa_Elementor_Portfolios extends Lasa_Elementor_Carousel_Base
         $this->add_responsive_control(
             'filter_style_margin',
             [
-                'label' => esc_html__('Margin Item', 'lasa'),
+                'label' => esc_html__('Margin Item', 'themename'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'separator'    => 'before',
@@ -248,7 +248,7 @@ class Lasa_Elementor_Portfolios extends Lasa_Elementor_Carousel_Base
         $this->add_responsive_control(
             'filter_style_padding',
             [
-                'label' => esc_html__('Padding Item', 'lasa'),
+                'label' => esc_html__('Padding Item', 'themename'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'selectors' => [
@@ -267,7 +267,7 @@ class Lasa_Elementor_Portfolios extends Lasa_Elementor_Carousel_Base
         $repeater->add_control(
             'filter_tag',
             [
-                'label' => esc_html__('Tag', 'lasa'),
+                'label' => esc_html__('Tag', 'themename'),
                 'type' => Controls_Manager::SELECT,
                 'label_block' => true,
 				'multiple' => true,
@@ -296,7 +296,7 @@ class Lasa_Elementor_Portfolios extends Lasa_Elementor_Carousel_Base
         $results = array();
         if (!is_wp_error($categories)) {
             foreach ($categories as $category) {
-                $results[lasa_get_transliterate($category->slug)] = $category->name.' ('.$category->count.') ';
+                $results[themename_get_transliterate($category->slug)] = $category->name.' ('.$category->count.') ';
             }
         }
         return $results;
@@ -361,7 +361,7 @@ class Lasa_Elementor_Portfolios extends Lasa_Elementor_Carousel_Base
             // Restore original Post Data.
             wp_reset_postdata();
         } else {
-            esc_html_e( 'Sorry no portfolio, please add a new portfolio', 'lasa' );
+            esc_html_e( 'Sorry no portfolio, please add a new portfolio', 'themename' );
         }
     }
 
@@ -383,4 +383,4 @@ class Lasa_Elementor_Portfolios extends Lasa_Elementor_Carousel_Base
         return $list_tags;
     }
 }
-$widgets_manager->register(new Lasa_Elementor_Portfolios());
+$widgets_manager->register(new Themename_Elementor_Portfolios());

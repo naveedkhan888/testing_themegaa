@@ -12,7 +12,7 @@
                 $form = mc4wp_get_form();
                 echo do_shortcode('[mc4wp_form id="'. $form->ID .'"]');
             } catch (Exception $e) {
-                esc_html_e('Please create a newsletter form from Mailchip plugins', 'lasa');
+                esc_html_e('Please create a newsletter form from Mailchip plugins', 'themename');
             }
         }
     ?>

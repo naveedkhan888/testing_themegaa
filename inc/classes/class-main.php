@@ -1,9 +1,9 @@
 <?php
 
 /**
- * Class lasa_setup_theme'
+ * Class themename_setup_theme'
  */
-class lasa_setup_theme
+class themename_setup_theme
 {
     public function __construct()
     {
@@ -29,60 +29,60 @@ class lasa_setup_theme
      */
     public function add_scripts()
     {
-        if (lasa_is_remove_scripts()) {
+        if (themename_is_remove_scripts()) {
             return;
         }
        
-        $suffix = (lasa_tbay_get_config('minified_js', false)) ? '.min' : LASA_MIN_JS;
+        $suffix = (themename_tbay_get_config('minified_js', false)) ? '.min' : THEMENAME_MIN_JS;
 
         // load bootstrap style
         if (is_rtl()) {
-            wp_enqueue_style('bootstrap', LASA_STYLES . '/bootstrap.rtl.css', array(), '5.3');
+            wp_enqueue_style('bootstrap', THEMENAME_STYLES . '/bootstrap.rtl.css', array(), '5.3');
         } else {
-            wp_enqueue_style('bootstrap', LASA_STYLES . '/bootstrap.css', array(), '5.3');
+            wp_enqueue_style('bootstrap', THEMENAME_STYLES . '/bootstrap.css', array(), '5.3');
         }
         
-        $skin = lasa_tbay_get_theme();
+        $skin = themename_tbay_get_theme();
         // Load our main stylesheet.
         if (is_rtl()) {
-            $css_path =  LASA_STYLES . '/template.rtl.css';
-            $css_skin =  LASA_STYLES . '/skins/'.$skin.'/type.rtl.css';
+            $css_path =  THEMENAME_STYLES . '/template.rtl.css';
+            $css_skin =  THEMENAME_STYLES . '/skins/'.$skin.'/type.rtl.css';
         } else {
-            $css_path =  LASA_STYLES . '/template.css';
-            $css_skin =  LASA_STYLES . '/skins/'.$skin.'/type.css';
+            $css_path =  THEMENAME_STYLES . '/template.css';
+            $css_skin =  THEMENAME_STYLES . '/skins/'.$skin.'/type.css';
 
         }
 
         $css_array = array();
 
-        if (lasa_elementor_activated()) {
+        if (themename_elementor_activated()) {
             array_push($css_array, 'elementor-frontend');
         }
-        wp_enqueue_style('lasa-template', $css_path, $css_array, LASA_THEME_VERSION);
+        wp_enqueue_style('themename-template', $css_path, $css_array, THEMENAME_THEME_VERSION);
 
-        wp_enqueue_style( 'lasa-skin', $css_skin, array(), LASA_THEME_VERSION );
-        wp_enqueue_style('lasa-style', LASA_THEME_DIR . '/style.css', array(), LASA_THEME_VERSION);
+        wp_enqueue_style( 'themename-skin', $css_skin, array(), THEMENAME_THEME_VERSION );
+        wp_enqueue_style('themename-style', THEMENAME_THEME_DIR . '/style.css', array(), THEMENAME_THEME_VERSION);
 
         /*Put CSS elementor post to header*/
-        lasa_get_elementor_post_scripts(); 
+        themename_get_elementor_post_scripts(); 
 
         //load font awesome
-        wp_enqueue_style('font-awesome', LASA_STYLES . '/font-awesome.css', array(), '5.10.2');
+        wp_enqueue_style('font-awesome', THEMENAME_STYLES . '/font-awesome.css', array(), '5.10.2');
 
         //load font custom icon tbay
-        wp_enqueue_style('lasa-font-tbay-custom', LASA_STYLES . '/font-tbay-custom.css', array(), '1.0.0');
+        wp_enqueue_style('themename-font-tbay-custom', THEMENAME_STYLES . '/font-tbay-custom.css', array(), '1.0.0');
 
         //load simple-line-icons
-        wp_enqueue_style('simple-line-icons', LASA_STYLES . '/simple-line-icons.css', array(), '2.4.0');
+        wp_enqueue_style('simple-line-icons', THEMENAME_STYLES . '/simple-line-icons.css', array(), '2.4.0');
 
         //load material font icons
-        wp_enqueue_style('material-design-iconic-font', LASA_STYLES . '/material-design-iconic-font.css', array(), '2.2.0');
+        wp_enqueue_style('material-design-iconic-font', THEMENAME_STYLES . '/material-design-iconic-font.css', array(), '2.2.0');
 
         // load animate version 3.5.0
-        wp_enqueue_style('animate', LASA_STYLES . '/animate.css', array(), '3.5.0');
+        wp_enqueue_style('animate', THEMENAME_STYLES . '/animate.css', array(), '3.5.0');
 
         
-        wp_enqueue_script('lasa-skip-link-fix', LASA_SCRIPTS . '/skip-link-fix' . $suffix . '.js', array(), LASA_THEME_VERSION, true);
+        wp_enqueue_script('themename-skip-link-fix', THEMENAME_SCRIPTS . '/skip-link-fix' . $suffix . '.js', array(), THEMENAME_THEME_VERSION, true);
 
         if (is_singular() && comments_open() && get_option('thread_comments')) {
             wp_enqueue_script('comment-reply');
@@ -90,95 +90,95 @@ class lasa_setup_theme
 
 
         /*mmenu menu*/ 
-        wp_register_script('jquery-mmenu', LASA_SCRIPTS . '/jquery.mmenu' . $suffix . '.js', array( 'underscore' ), '7.0.5', true);
+        wp_register_script('jquery-mmenu', THEMENAME_SCRIPTS . '/jquery.mmenu' . $suffix . '.js', array( 'underscore' ), '7.0.5', true);
      
         /*Treeview menu*/
-        wp_enqueue_style('jquery-treeview', LASA_STYLES . '/jquery.treeview.css', array(), '1.0.0');
+        wp_enqueue_style('jquery-treeview', THEMENAME_STYLES . '/jquery.treeview.css', array(), '1.0.0');
         
-        wp_register_script('popper', LASA_SCRIPTS . '/popper' . $suffix . '.js', array(), '1.12.9', true);
+        wp_register_script('popper', THEMENAME_SCRIPTS . '/popper' . $suffix . '.js', array(), '1.12.9', true);
 
         if (class_exists('WeDevs_Dokan')) {
             wp_dequeue_script('dokan-tooltip');
         }
          
-        wp_enqueue_script('hc-sticky', LASA_SCRIPTS . '/hc-sticky' . $suffix . '.js', array('jquery'), '2.2.7', true);
+        wp_enqueue_script('hc-sticky', THEMENAME_SCRIPTS . '/hc-sticky' . $suffix . '.js', array('jquery'), '2.2.7', true);
 
-        wp_enqueue_script('bootstrap', LASA_SCRIPTS . '/bootstrap' . $suffix . '.js', array('popper'), '5.3', true);
+        wp_enqueue_script('bootstrap', THEMENAME_SCRIPTS . '/bootstrap' . $suffix . '.js', array('popper'), '5.3', true);
 
-        wp_enqueue_script('waypoints', LASA_SCRIPTS . '/jquery.waypoints' . $suffix . '.js', array(), '4.0.0', true);
+        wp_enqueue_script('waypoints', THEMENAME_SCRIPTS . '/jquery.waypoints' . $suffix . '.js', array(), '4.0.0', true);
 
-        wp_enqueue_script('js-cookie', LASA_SCRIPTS . '/js.cookie' . $suffix . '.js', array(), '2.1.4', true);
+        wp_enqueue_script('js-cookie', THEMENAME_SCRIPTS . '/js.cookie' . $suffix . '.js', array(), '2.1.4', true);
   
         /*slick jquery*/
-        wp_register_script('slick', LASA_SCRIPTS . '/slick' . $suffix . '.js', array(), '1.0.0', true);
-        wp_register_script('lasa-custom-slick', LASA_SCRIPTS . '/custom-slick' . $suffix . '.js', array(), LASA_THEME_VERSION, true);
+        wp_register_script('slick', THEMENAME_SCRIPTS . '/slick' . $suffix . '.js', array(), '1.0.0', true);
+        wp_register_script('themename-custom-slick', THEMENAME_SCRIPTS . '/custom-slick' . $suffix . '.js', array(), THEMENAME_THEME_VERSION, true);
   
         // Add before after image
-        wp_register_script( 'before-after-image', LASA_SCRIPTS . '/cndk.beforeafter' . $suffix . '.js', array('lasa-script' ), '0.0.2', true ); 
-        wp_register_style( 'before-after-image', LASA_STYLES . '/cndk.beforeafter.css', array(), '0.0.2' );
+        wp_register_script( 'before-after-image', THEMENAME_SCRIPTS . '/cndk.beforeafter' . $suffix . '.js', array('themename-script' ), '0.0.2', true ); 
+        wp_register_style( 'before-after-image', THEMENAME_STYLES . '/cndk.beforeafter.css', array(), '0.0.2' );
 
         // Add js Sumoselect version 3.0.2
-        wp_register_style('sumoselect', LASA_STYLES . '/sumoselect.css', array(), '1.0.0', 'all');
-        wp_register_script('jquery-sumoselect', LASA_SCRIPTS . '/jquery.sumoselect' . $suffix . '.js', array( ), '3.0.2', true);
+        wp_register_style('sumoselect', THEMENAME_STYLES . '/sumoselect.css', array(), '1.0.0', 'all');
+        wp_register_script('jquery-sumoselect', THEMENAME_SCRIPTS . '/jquery.sumoselect' . $suffix . '.js', array( ), '3.0.2', true);
 
-        wp_register_style('photoswipe', LASA_STYLES . '/photoswipe/photoswipe.min.css', array(), '4.1.3', true); 
-        wp_register_style('photoswipe-default-skin', LASA_STYLES . '/photoswipe/default-skin.min.css', array('photoswipe'), '4.1.3', true);
-        wp_register_script('photoswipe', LASA_SCRIPTS . '/photoswipe' . $suffix . '.js', array( ), '4.1.3', true);
-        wp_register_script('photoswipe-ui-default', LASA_SCRIPTS . '/photoswipe-ui-default' . $suffix . '.js', array( 'photoswipe' ), '4.1.1-wc', true);
+        wp_register_style('photoswipe', THEMENAME_STYLES . '/photoswipe/photoswipe.min.css', array(), '4.1.3', true); 
+        wp_register_style('photoswipe-default-skin', THEMENAME_STYLES . '/photoswipe/default-skin.min.css', array('photoswipe'), '4.1.3', true);
+        wp_register_script('photoswipe', THEMENAME_SCRIPTS . '/photoswipe' . $suffix . '.js', array( ), '4.1.3', true);
+        wp_register_script('photoswipe-ui-default', THEMENAME_SCRIPTS . '/photoswipe-ui-default' . $suffix . '.js', array( 'photoswipe' ), '4.1.1-wc', true);
 
-        wp_register_script('jquery-autocomplete', LASA_SCRIPTS . '/jquery.autocomplete' . $suffix . '.js', array('lasa-script' ), '1.0.0', true);
+        wp_register_script('jquery-autocomplete', THEMENAME_SCRIPTS . '/jquery.autocomplete' . $suffix . '.js', array('themename-script' ), '1.0.0', true);
         wp_enqueue_script('jquery-autocomplete');
 
-        wp_register_style('magnific-popup', LASA_STYLES . '/magnific-popup.css', array(), '1.1.0');
-        wp_register_script('jquery-magnific-popup', LASA_SCRIPTS . '/jquery.magnific-popup' . $suffix . '.js', array( ), '1.1.0', true);
+        wp_register_style('magnific-popup', THEMENAME_STYLES . '/magnific-popup.css', array(), '1.1.0');
+        wp_register_script('jquery-magnific-popup', THEMENAME_SCRIPTS . '/jquery.magnific-popup' . $suffix . '.js', array( ), '1.1.0', true);
 
-        wp_register_script('jquery-countdowntimer', LASA_SCRIPTS . '/jquery.countdowntimer' . $suffix . '.js', array( ), '20150315', true);
+        wp_register_script('jquery-countdowntimer', THEMENAME_SCRIPTS . '/jquery.countdowntimer' . $suffix . '.js', array( ), '20150315', true);
  
         wp_enqueue_script('jquery-countdowntimer'); 
 
-        wp_enqueue_script('lasa-script', LASA_SCRIPTS . '/functions' . $suffix . '.js', array('jquery-core', 'js-cookie'), LASA_THEME_VERSION, true);
+        wp_enqueue_script('themename-script', THEMENAME_SCRIPTS . '/functions' . $suffix . '.js', array('jquery-core', 'js-cookie'), THEMENAME_THEME_VERSION, true);
        
-        if (lasa_tbay_get_config('header_js') != "") {
-            wp_add_inline_script('lasa-script', lasa_tbay_get_config('header_js'));
+        if (themename_tbay_get_config('header_js') != "") {
+            wp_add_inline_script('themename-script', themename_tbay_get_config('header_js'));
         }
   
-        $config = lasa_localize_translate();
+        $config = themename_localize_translate();
 
-        wp_localize_script('lasa-script', 'lasa_settings', $config);
+        wp_localize_script('themename-script', 'themename_settings', $config);
     }
 
     public function footer_scripts()
     {
-        if (lasa_tbay_get_config('footer_js') != "") {
-            $footer_js = lasa_tbay_get_config('footer_js');
+        if (themename_tbay_get_config('footer_js') != "") {
+            $footer_js = themename_tbay_get_config('footer_js');
             echo trim($footer_js);
         }
     }
 
     public function remove_fonts_redux_url()
     {
-        $show_typography  = lasa_tbay_get_config('show_typography', false);
+        $show_typography  = themename_tbay_get_config('show_typography', false);
         if (!$show_typography) {
-            wp_dequeue_style('redux-google-fonts-lasa_tbay_theme_options');
+            wp_dequeue_style('redux-google-fonts-themename_tbay_theme_options');
         }
     }
    
     public function load_admin_styles()
     {
-        wp_enqueue_style('material-design-iconic-font', LASA_STYLES . '/material-design-iconic-font.css', array(), '2.2.0');
-        wp_enqueue_style('lasa-custom-admin', LASA_STYLES . '/admin/custom-admin.css', array(), '1.0.0');
+        wp_enqueue_style('material-design-iconic-font', THEMENAME_STYLES . '/material-design-iconic-font.css', array(), '2.2.0');
+        wp_enqueue_style('themename-custom-admin', THEMENAME_STYLES . '/admin/custom-admin.css', array(), '1.0.0');
 
-        $suffix = (lasa_tbay_get_config('minified_js', false)) ? '.min' : LASA_MIN_JS;
-        wp_enqueue_script('lasa-admin', LASA_SCRIPTS . '/admin/admin' . $suffix . '.js', array( ), LASA_THEME_VERSION, true);
+        $suffix = (themename_tbay_get_config('minified_js', false)) ? '.min' : THEMENAME_MIN_JS;
+        wp_enqueue_script('themename-admin', THEMENAME_SCRIPTS . '/admin/admin' . $suffix . '.js', array( ), THEMENAME_THEME_VERSION, true);
     }
 
     public function add_mvx_frontend_enqueue_scripts($is_vendor_dashboard)
     {
-        if (!lasa_is_remove_scripts()) {
+        if (!themename_is_remove_scripts()) {
             return;
         }
 
-        wp_enqueue_style('lasa-vendor', LASA_STYLES . '/admin/custom-vendor.css', array(), '1.0');
+        wp_enqueue_style('themename-vendor', THEMENAME_STYLES . '/admin/custom-vendor.css', array(), '1.0');
     }
 
     /**
@@ -189,9 +189,9 @@ class lasa_setup_theme
     public function widgets_init()
     {
         register_sidebar(array(
-            'name'          => esc_html__('Sidebar Default', 'lasa'),
+            'name'          => esc_html__('Sidebar Default', 'themename'),
             'id'            => 'sidebar-default',
-            'description'   => esc_html__('Add widgets here to appear in your Sidebar.', 'lasa'),
+            'description'   => esc_html__('Add widgets here to appear in your Sidebar.', 'themename'),
             'before_widget' => '<aside id="%1$s" class="widget %2$s">',
             'after_widget'  => '</aside>',
             'before_title'  => '<h2 class="widget-title">',
@@ -202,9 +202,9 @@ class lasa_setup_theme
         /* Check WPML */
         if (function_exists('icl_object_id')) {
             register_sidebar(array(
-                'name'          => esc_html__('WPML Sidebar', 'lasa'),
+                'name'          => esc_html__('WPML Sidebar', 'themename'),
                 'id'            => 'wpml-sidebar',
-                'description'   => esc_html__('Add widgets here to appear.', 'lasa'),
+                'description'   => esc_html__('Add widgets here to appear.', 'themename'),
                 'before_widget' => '<aside id="%1$s" class="widget %2$s">',
                 'after_widget'  => '</aside>',
                 'before_title'  => '<h2 class="widget-title">',
@@ -214,9 +214,9 @@ class lasa_setup_theme
         /* End check WPML */
 
         register_sidebar(array(
-            'name'          => esc_html__('Footer', 'lasa'),
+            'name'          => esc_html__('Footer', 'themename'),
             'id'            => 'footer',
-            'description'   => esc_html__('Add widgets here to appear in your sidebar.', 'lasa'),
+            'description'   => esc_html__('Add widgets here to appear in your sidebar.', 'themename'),
             'before_widget' => '<aside id="%1$s" class="widget %2$s">',
             'after_widget'  => '</aside>',
             'before_title'  => '<h2 class="widget-title">',
@@ -261,22 +261,22 @@ class lasa_setup_theme
         /*
          * Make theme available for translation.
          * Translations can be filed in the /languages/ directory.
-         * If you're building a theme based on lasa, use a find and replace
-         * to change 'lasa' to the name of your theme in all the template files
+         * If you're building a theme based on themename, use a find and replace
+         * to change 'themename' to the name of your theme in all the template files
          */
-        load_theme_textdomain('lasa', LASA_THEMEROOT . '/languages');
+        load_theme_textdomain('themename', THEMENAME_THEMEROOT . '/languages');
 
         // Add default posts and comments RSS feed links to head.
         add_theme_support('automatic-feed-links');
 
         add_theme_support("post-thumbnails");
 
-        add_image_size('lasa_avatar_post_carousel', 100, 100, true);
+        add_image_size('themename_avatar_post_carousel', 100, 100, true);
 
         // This theme styles the visual editor with editor-style.css to match the theme style.
-        $font_source = lasa_tbay_get_config('show_typography', false);
+        $font_source = themename_tbay_get_config('show_typography', false);
         if (!$font_source) {
-            add_editor_style(array( 'css/editor-style.css', lasa_fonts_url() ));
+            add_editor_style(array( 'css/editor-style.css', themename_fonts_url() ));
         }
 
         /*
@@ -306,18 +306,18 @@ class lasa_setup_theme
             'aside', 'image', 'video', 'gallery', 'audio'
         ));
 
-        $color_scheme  = lasa_tbay_get_color_scheme();
+        $color_scheme  = themename_tbay_get_color_scheme();
         $default_color = trim($color_scheme[0], '#');
 
         // Setup the WordPress core custom background feature.
-        add_theme_support('custom-background', apply_filters('lasa_custom_background_args', array(
+        add_theme_support('custom-background', apply_filters('themename_custom_background_args', array(
             'default-color'      => $default_color,
             'default-attachment' => 'fixed',
         )));
 
         add_action('wp_login', array( $this, 'edit_post_show_excerpt'), 10, 2);
 
-        if( apply_filters('lasa_remove_widgets_block_editor', true) ) {
+        if( apply_filters('themename_remove_widgets_block_editor', true) ) {
             remove_theme_support( 'block-templates' );
             remove_theme_support( 'widgets-block-editor' );
 
@@ -327,14 +327,14 @@ class lasa_setup_theme
 
         // This theme uses wp_nav_menu() in two locations.
         register_nav_menus(array(
-            'primary'           => esc_html__('Primary Menu', 'lasa'),
-            'mobile-menu'       => esc_html__('Mobile Menu', 'lasa'),
-            'nav-category-menu'  => esc_html__('Nav Category Menu', 'lasa'),
-            'track-order'  => esc_html__('Tracking Order Menu', 'lasa'),
+            'primary'           => esc_html__('Primary Menu', 'themename'),
+            'mobile-menu'       => esc_html__('Mobile Menu', 'themename'),
+            'nav-category-menu'  => esc_html__('Nav Category Menu', 'themename'),
+            'track-order'  => esc_html__('Tracking Order Menu', 'themename'),
         ));
 
         update_option('page_template', 'elementor_header_footer');
     }
 }
 
-return new lasa_setup_theme();
+return new themename_setup_theme();

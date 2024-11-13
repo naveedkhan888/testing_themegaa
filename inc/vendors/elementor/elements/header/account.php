@@ -1,13 +1,13 @@
 <?php
 
-if (! defined('ABSPATH') || function_exists('Lasa_Elementor_Account')) {
+if (! defined('ABSPATH') || function_exists('Themename_Elementor_Account')) {
     exit; // Exit if accessed directly.
 }
 
 use Elementor\Group_Control_Border;
 use Elementor\Controls_Manager;
 
-class Lasa_Elementor_Account extends Lasa_Elementor_Widget_Base
+class Themename_Elementor_Account extends Themename_Elementor_Widget_Base
 {
     protected $nav_menu_index = 1;
 
@@ -18,7 +18,7 @@ class Lasa_Elementor_Account extends Lasa_Elementor_Widget_Base
 
     public function get_title()
     {
-        return esc_html__('Lasa Account', 'lasa');
+        return esc_html__('Themename Account', 'themename');
     }
 
     public function get_icon()
@@ -41,14 +41,14 @@ class Lasa_Elementor_Account extends Lasa_Elementor_Widget_Base
         $this->start_controls_section(
             'section_layout',
             [
-                'label' => esc_html__('Account', 'lasa'),
+                'label' => esc_html__('Account', 'themename'),
             ]
         );
 
         $this->add_control(
             'icon_account',
             [
-                'label'              => esc_html__('Icon', 'lasa'),
+                'label'              => esc_html__('Icon', 'themename'),
                 'type'               => Controls_Manager::ICONS,
                 'default' => [
                     'value' => 'tb-icon tb-icon-user',
@@ -60,7 +60,7 @@ class Lasa_Elementor_Account extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'show_text_account',
             [
-                'label'              => esc_html__('Display Text Account', 'lasa'),
+                'label'              => esc_html__('Display Text Account', 'themename'),
                 'type'               => Controls_Manager::SWITCHER,
                 'default' => 'no'
             ]
@@ -68,7 +68,7 @@ class Lasa_Elementor_Account extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'text_before',
             [
-                'label'              => esc_html__('Text Before Login', 'lasa'),
+                'label'              => esc_html__('Text Before Login', 'themename'),
                 'type'               => Controls_Manager::TEXT,
                 'condition'          => [
                     'show_text_account' => 'yes'
@@ -78,7 +78,7 @@ class Lasa_Elementor_Account extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'text_after',
             [
-                'label'              => esc_html__('Text After Login', 'lasa'),
+                'label'              => esc_html__('Text After Login', 'themename'),
                 'type'               => Controls_Manager::TEXT,
                 'condition'          => [
                     'show_text_account' => 'yes'
@@ -88,7 +88,7 @@ class Lasa_Elementor_Account extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'show_sub_account',
             [
-                'label'              => esc_html__('Display Sub Menu', 'lasa'),
+                'label'              => esc_html__('Display Sub Menu', 'themename'),
                 'type'               => Controls_Manager::SWITCHER,
                 'default' => 'yes',
             ]
@@ -100,7 +100,7 @@ class Lasa_Elementor_Account extends Lasa_Elementor_Widget_Base
             $this->add_control(
                 'sub_menu_account',
                 [
-                    'label'        => esc_html__('Choose Menu', 'lasa'),
+                    'label'        => esc_html__('Choose Menu', 'themename'),
                     'type'         => Controls_Manager::SELECT,
                     'options'      => $menus,
                     'default'      => array_keys($menus)[0],
@@ -109,7 +109,7 @@ class Lasa_Elementor_Account extends Lasa_Elementor_Widget_Base
                     'condition'    => [
                         'show_sub_account'  => 'yes'
                     ],
-                    'description'  => sprintf(__('Go to the <a href="%s" target="_blank">Menus screen</a> to manage your menus.', 'lasa'), admin_url('nav-menus.php')),
+                    'description'  => sprintf(__('Go to the <a href="%s" target="_blank">Menus screen</a> to manage your menus.', 'themename'), admin_url('nav-menus.php')),
                 ]
             );
         } else {
@@ -117,7 +117,7 @@ class Lasa_Elementor_Account extends Lasa_Elementor_Widget_Base
                 'sub_menu_account',
                 [
                     'type'            => Controls_Manager::RAW_HTML,
-                    'raw'             => sprintf(__('<strong>There are no menus in your site.</strong><br>Go to the <a href="%s" target="_blank">Menus screen</a> to create one.', 'lasa'), admin_url('nav-menus.php?action=edit&menu=0')),
+                    'raw'             => sprintf(__('<strong>There are no menus in your site.</strong><br>Go to the <a href="%s" target="_blank">Menus screen</a> to create one.', 'themename'), admin_url('nav-menus.php?action=edit&menu=0')),
                     'separator'       => 'after',
                     'content_classes' => 'elementor-panel-alert elementor-panel-alert-info',
                 ]
@@ -127,7 +127,7 @@ class Lasa_Elementor_Account extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'show_popup_login',
             [
-                'label'              => esc_html__('Display Popup Login', 'lasa'),
+                'label'              => esc_html__('Display Popup Login', 'themename'),
                 'type'               => Controls_Manager::SWITCHER,
                 'default' => 'yes',
             ]
@@ -142,14 +142,14 @@ class Lasa_Elementor_Account extends Lasa_Elementor_Widget_Base
         $this->start_controls_section(
             'section_style_icon',
             [
-                'label' => esc_html__('Style Icon', 'lasa'),
+                'label' => esc_html__('Style Icon', 'themename'),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
         $this->add_control(
             'icon_account_size',
             [
-                'label' => esc_html__('Font Size', 'lasa'),
+                'label' => esc_html__('Font Size', 'themename'),
                 'type' => Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [
@@ -165,7 +165,7 @@ class Lasa_Elementor_Account extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'margin_icon_account',
             [
-                'label'     => esc_html__('Margin Icon Account', 'lasa'),
+                'label'     => esc_html__('Margin Icon Account', 'themename'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px' ],
                 'selectors'  => [
@@ -176,7 +176,7 @@ class Lasa_Elementor_Account extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'padding_icon_account',
             [
-                'label'     => esc_html__('Padding Icon Account', 'lasa'),
+                'label'     => esc_html__('Padding Icon Account', 'themename'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px' ],
                 'selectors'  => [
@@ -189,14 +189,14 @@ class Lasa_Elementor_Account extends Lasa_Elementor_Widget_Base
         $this->start_controls_tab(
             'tab_icon_normal',
             [
-                'label' => esc_html__('Normal', 'lasa'),
+                'label' => esc_html__('Normal', 'themename'),
             ]
         );
 
         $this->add_control(
             'color_icon',
             [
-                'label'     => esc_html__('Color', 'lasa'),
+                'label'     => esc_html__('Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .tbay-login a i'    => 'color: {{VALUE}}',
@@ -206,7 +206,7 @@ class Lasa_Elementor_Account extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'bg_icon',
             [
-                'label'     => esc_html__('Background Color', 'lasa'),
+                'label'     => esc_html__('Background Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .tbay-login > a'    => 'background-color: {{VALUE}}',
@@ -221,13 +221,13 @@ class Lasa_Elementor_Account extends Lasa_Elementor_Widget_Base
         $this->start_controls_tab(
             'tab_icon_hover',
             [
-                'label' => esc_html__('Hover', 'lasa'),
+                'label' => esc_html__('Hover', 'themename'),
             ]
         );
         $this->add_control(
             'hover_color_icon',
             [
-                'label'     => esc_html__('Color', 'lasa'),
+                'label'     => esc_html__('Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .tbay-login > a:hover i'    => 'color: {{VALUE}}',
@@ -237,7 +237,7 @@ class Lasa_Elementor_Account extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'hover_bg_icon',
             [
-                'label'     => esc_html__('Background Color', 'lasa'),
+                'label'     => esc_html__('Background Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .tbay-login > a:hover'    => 'background-color: {{VALUE}}',
@@ -253,7 +253,7 @@ class Lasa_Elementor_Account extends Lasa_Elementor_Widget_Base
         $this->start_controls_section(
             'section_style_text',
             [
-                'label' => esc_html__('Style Text', 'lasa'),
+                'label' => esc_html__('Style Text', 'themename'),
                 'tab'   => Controls_Manager::TAB_STYLE,
                 'condition' => [
                     'show_text_account' => 'yes',
@@ -274,13 +274,13 @@ class Lasa_Elementor_Account extends Lasa_Elementor_Widget_Base
         $this->start_controls_tab(
             'tab_text_normal',
             [
-                'label' => esc_html__('Normal', 'lasa'),
+                'label' => esc_html__('Normal', 'themename'),
             ]
         );
         $this->add_control(
             'color_text',
             [
-                'label'     => esc_html__('Color', 'lasa'),
+                'label'     => esc_html__('Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .text-account'    => 'color: {{VALUE}}',
@@ -293,13 +293,13 @@ class Lasa_Elementor_Account extends Lasa_Elementor_Widget_Base
         $this->start_controls_tab(
             'tab_text_hover',
             [
-                'label' => esc_html__('Hover', 'lasa'),
+                'label' => esc_html__('Hover', 'themename'),
             ]
         );
         $this->add_control(
             'hover_color_text',
             [
-                'label'     => esc_html__('Color', 'lasa'),
+                'label'     => esc_html__('Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .text-account:hover' => 'color: {{VALUE}}',
@@ -331,14 +331,14 @@ class Lasa_Elementor_Account extends Lasa_Elementor_Widget_Base
             if(!empty($text_after)) {
                 $name = $text_after.','.' '.$name;
             }else {
-                $name = esc_html__('Hi,', 'lasa').' '.$name;
+                $name = esc_html__('Hi,', 'themename').' '.$name;
             }
             
         } else {
             if(!empty($text_before)) {
                 $name = $text_before;
             }else {
-                $name = esc_html__('Login/Register', 'lasa');
+                $name = esc_html__('Login/Register', 'themename');
             }
             
         }
@@ -367,4 +367,4 @@ class Lasa_Elementor_Account extends Lasa_Elementor_Widget_Base
         wp_nav_menu($args);
     }
 }
-$widgets_manager->register(new Lasa_Elementor_Account());
+$widgets_manager->register(new Themename_Elementor_Account());

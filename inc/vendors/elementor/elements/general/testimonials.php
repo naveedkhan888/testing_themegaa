@@ -1,6 +1,6 @@
 <?php
 
-if (! defined('ABSPATH') || function_exists('Lasa_Elementor_Testimonials')) {
+if (! defined('ABSPATH') || function_exists('Themename_Elementor_Testimonials')) {
     exit; // Exit if accessed directly.
 }
 
@@ -15,7 +15,7 @@ use Elementor\Group_Control_Typography;
  *
  * @since 1.0.0
  */
-class Lasa_Elementor_Testimonials extends Lasa_Elementor_Carousel_Base
+class Themename_Elementor_Testimonials extends Themename_Elementor_Carousel_Base
 {
     /**
      * Get widget name.
@@ -44,12 +44,12 @@ class Lasa_Elementor_Testimonials extends Lasa_Elementor_Carousel_Base
      */
     public function get_title()
     {
-        return esc_html__('Lasa Testimonials', 'lasa');
+        return esc_html__('Themename Testimonials', 'themename');
     }
 
     public function get_script_depends()
     {
-        return [ 'lasa-custom-slick', 'slick' ];
+        return [ 'themename-custom-slick', 'slick' ];
     }
  
     /**
@@ -82,19 +82,19 @@ class Lasa_Elementor_Testimonials extends Lasa_Elementor_Carousel_Base
         $this->start_controls_section(
             'section_general',
             [
-                'label' => esc_html__('General', 'lasa'),
+                'label' => esc_html__('General', 'themename'),
             ]
         );
  
         $this->add_control(
             'layout_type',
             [
-                'label'     => esc_html__('Layout Type', 'lasa'),
+                'label'     => esc_html__('Layout Type', 'themename'),
                 'type'      => Controls_Manager::SELECT,
                 'default'   => 'grid',
                 'options'   => [
-                    'grid'      => esc_html__('Grid', 'lasa'),
-                    'carousel'  => esc_html__('Carousel', 'lasa'),
+                    'grid'      => esc_html__('Grid', 'themename'),
+                    'carousel'  => esc_html__('Carousel', 'themename'),
                 ],
             ]
         );
@@ -102,14 +102,14 @@ class Lasa_Elementor_Testimonials extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'layout_style',
             [
-                'label'     => esc_html__('Layout Style', 'lasa'),
+                'label'     => esc_html__('Layout Style', 'themename'),
                 'type'      => Controls_Manager::SELECT,
                 'default'   => 'style1',
                 'options'   => [
-                    'style1'    => esc_html__('Style 1', 'lasa'),
-                    'style2'    => esc_html__('Style 2', 'lasa'),
-                    'style3'    => esc_html__('Style 3', 'lasa'),
-                    'style4'    => esc_html__('Style 4', 'lasa'),
+                    'style1'    => esc_html__('Style 1', 'themename'),
+                    'style2'    => esc_html__('Style 2', 'themename'),
+                    'style3'    => esc_html__('Style 3', 'themename'),
+                    'style4'    => esc_html__('Style 4', 'themename'),
                 ],
             ]
         );
@@ -119,7 +119,7 @@ class Lasa_Elementor_Testimonials extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'testimonials',
             [
-                'label' => esc_html__('Testimonials Items', 'lasa'),
+                'label' => esc_html__('Testimonials Items', 'themename'),
                 'type' => Controls_Manager::REPEATER,
                 'condition' => [
                     'layout_style!' => 'style4'
@@ -135,7 +135,7 @@ class Lasa_Elementor_Testimonials extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'testimonials_style4',
             [
-                'label' => esc_html__('Testimonials Items', 'lasa'),
+                'label' => esc_html__('Testimonials Items', 'themename'),
                 'type' => Controls_Manager::REPEATER,
                 'condition' => [
                     'layout_style' => 'style4'
@@ -157,7 +157,7 @@ class Lasa_Elementor_Testimonials extends Lasa_Elementor_Carousel_Base
         $this->start_controls_section(
             'section_style_testimonials',
             [
-                'label' => esc_html__('Style Testimonials', 'lasa'),
+                'label' => esc_html__('Style Testimonials', 'themename'),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -165,7 +165,7 @@ class Lasa_Elementor_Testimonials extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'heading_style_testimonials_content',
             [
-                'label' => esc_html__('Content', 'lasa'),
+                'label' => esc_html__('Content', 'themename'),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -175,7 +175,7 @@ class Lasa_Elementor_Testimonials extends Lasa_Elementor_Carousel_Base
         $this->add_responsive_control(
             'testimonials_content_margin',
             [
-                'label' => esc_html__('Margin', 'lasa'),
+                'label' => esc_html__('Margin', 'themename'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'selectors' => [
@@ -189,7 +189,7 @@ class Lasa_Elementor_Testimonials extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'heading_style_testimonials_description',
             [
-                'label' => esc_html__('Description', 'lasa'),
+                'label' => esc_html__('Description', 'themename'),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -206,7 +206,7 @@ class Lasa_Elementor_Testimonials extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'testimonials_description_color',
             [
-                'label' => esc_html__('Color', 'lasa'),
+                'label' => esc_html__('Color', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -218,7 +218,7 @@ class Lasa_Elementor_Testimonials extends Lasa_Elementor_Carousel_Base
         $this->add_responsive_control(
             'testimonials_description_margin',
             [
-                'label' => esc_html__('Margin', 'lasa'),
+                'label' => esc_html__('Margin', 'themename'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'selectors' => [
@@ -230,7 +230,7 @@ class Lasa_Elementor_Testimonials extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'heading_style_testimonials_subtitle',
             [
-                'label' => esc_html__('Sub Title', 'lasa'),
+                'label' => esc_html__('Sub Title', 'themename'),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -247,7 +247,7 @@ class Lasa_Elementor_Testimonials extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'testimonials_subtitle_color',
             [
-                'label' => esc_html__('Color', 'lasa'),
+                'label' => esc_html__('Color', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -259,7 +259,7 @@ class Lasa_Elementor_Testimonials extends Lasa_Elementor_Carousel_Base
         $this->add_responsive_control(
             'testimonials_subtitle_margin',
             [
-                'label' => esc_html__('Margin', 'lasa'),
+                'label' => esc_html__('Margin', 'themename'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'selectors' => [
@@ -271,7 +271,7 @@ class Lasa_Elementor_Testimonials extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'heading_style_testimonials_name',
             [
-                'label' => esc_html__('Name', 'lasa'),
+                'label' => esc_html__('Name', 'themename'),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -288,7 +288,7 @@ class Lasa_Elementor_Testimonials extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'testimonials_name_color',
             [
-                'label' => esc_html__('Color', 'lasa'),
+                'label' => esc_html__('Color', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -300,7 +300,7 @@ class Lasa_Elementor_Testimonials extends Lasa_Elementor_Carousel_Base
         $this->add_responsive_control(
             'testimonials_name_margin',
             [
-                'label' => esc_html__('Margin', 'lasa'),
+                'label' => esc_html__('Margin', 'themename'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'selectors' => [
@@ -313,7 +313,7 @@ class Lasa_Elementor_Testimonials extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'heading_style_testimonials_subname',
             [
-                'label' => esc_html__('Sub Name', 'lasa'),
+                'label' => esc_html__('Sub Name', 'themename'),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -330,7 +330,7 @@ class Lasa_Elementor_Testimonials extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'testimonials_subname_color',
             [
-                'label' => esc_html__('Color', 'lasa'),
+                'label' => esc_html__('Color', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -342,7 +342,7 @@ class Lasa_Elementor_Testimonials extends Lasa_Elementor_Carousel_Base
         $this->add_responsive_control(
             'testimonials_subname_margin',
             [
-                'label' => esc_html__('Margin', 'lasa'),
+                'label' => esc_html__('Margin', 'themename'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'selectors' => [
@@ -354,7 +354,7 @@ class Lasa_Elementor_Testimonials extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'heading_style_testimonials_img',
             [
-                'label' => esc_html__('Image', 'lasa'),
+                'label' => esc_html__('Image', 'themename'),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -362,7 +362,7 @@ class Lasa_Elementor_Testimonials extends Lasa_Elementor_Carousel_Base
         $this->add_responsive_control(
             'testimonials_img_max_width',
             [
-                'label' => esc_html__('Max Width', 'lasa'),
+                'label' => esc_html__('Max Width', 'themename'),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => [ 'px', '%' ],
                 'range' => [
@@ -379,7 +379,7 @@ class Lasa_Elementor_Testimonials extends Lasa_Elementor_Carousel_Base
         $this->add_responsive_control(
             'testimonials_img_border_radius',
             [
-                'label' => esc_html__('Border Radius', 'lasa'),
+                'label' => esc_html__('Border Radius', 'themename'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'selectors' => [
@@ -390,7 +390,7 @@ class Lasa_Elementor_Testimonials extends Lasa_Elementor_Carousel_Base
         $this->add_responsive_control(
             'testimonials_img_padding',
             [
-                'label' => esc_html__('Padding', 'lasa'),
+                'label' => esc_html__('Padding', 'themename'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'selectors' => [
@@ -402,7 +402,7 @@ class Lasa_Elementor_Testimonials extends Lasa_Elementor_Carousel_Base
         $this->add_responsive_control(
             'testimonials_img_margin',
             [
-                'label' => esc_html__('Margin', 'lasa'),
+                'label' => esc_html__('Margin', 'themename'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'selectors' => [
@@ -421,7 +421,7 @@ class Lasa_Elementor_Testimonials extends Lasa_Elementor_Carousel_Base
         $repeater->add_control(
             'testimonial_image',
             [
-                'label' => esc_html__('Choose Image: Avatar', 'lasa'),
+                'label' => esc_html__('Choose Image: Avatar', 'themename'),
                 'type' => Controls_Manager::MEDIA,
                 'default' => [
                     'url' => Elementor\Utils::get_placeholder_image_src(),
@@ -432,21 +432,21 @@ class Lasa_Elementor_Testimonials extends Lasa_Elementor_Carousel_Base
         $repeater->add_control(
             'title_excerpt',
             [
-                'label' => esc_html__('Excerpt', 'lasa'),
+                'label' => esc_html__('Excerpt', 'themename'),
                 'type' => Controls_Manager::HEADING,
             ]
         );
         $repeater->add_control(
             'testimonial_excerpt',
             [
-                'label' => esc_html__('Description', 'lasa'),
+                'label' => esc_html__('Description', 'themename'),
                 'type' => Controls_Manager::TEXTAREA,
             ]
         );
         $repeater->add_control(
             'testimonial_subtitle',
             [
-                'label' => esc_html__('Sub-title', 'lasa'),
+                'label' => esc_html__('Sub-title', 'themename'),
                 'type' => Controls_Manager::TEXTAREA,
             ]
         );
@@ -454,14 +454,14 @@ class Lasa_Elementor_Testimonials extends Lasa_Elementor_Carousel_Base
         $repeater->add_control(
             'testimonial_name',
             [
-                'label' => esc_html__('Name', 'lasa'),
+                'label' => esc_html__('Name', 'themename'),
                 'type' => Controls_Manager::TEXT,
             ]
         );
         $repeater->add_control(
             'testimonial_sub_name',
             [
-                'label' => esc_html__('Sub Name', 'lasa'),
+                'label' => esc_html__('Sub Name', 'themename'),
                 'type' => Controls_Manager::TEXT,
             ]
         );
@@ -476,14 +476,14 @@ class Lasa_Elementor_Testimonials extends Lasa_Elementor_Carousel_Base
         $repeater->add_control(
             'title_excerpt',
             [
-                'label' => esc_html__('Excerpt', 'lasa'),
+                'label' => esc_html__('Excerpt', 'themename'),
                 'type' => Controls_Manager::HEADING,
             ]
         );
         $repeater->add_control(
             'testimonial_excerpt',
             [
-                'label' => esc_html__('Description', 'lasa'),
+                'label' => esc_html__('Description', 'themename'),
                 'type' => Controls_Manager::TEXTAREA,
             ]
         );
@@ -491,14 +491,14 @@ class Lasa_Elementor_Testimonials extends Lasa_Elementor_Carousel_Base
         $repeater->add_control(
             'testimonial_name',
             [
-                'label' => esc_html__('Name', 'lasa'),
+                'label' => esc_html__('Name', 'themename'),
                 'type' => Controls_Manager::TEXT,
             ]
         );
         $repeater->add_control(
             'testimonial_subtitle',
             [
-                'label' => esc_html__('Sub Title', 'lasa'),
+                'label' => esc_html__('Sub Title', 'themename'),
                 'type' => Controls_Manager::TEXT,
             ]
         );
@@ -506,7 +506,7 @@ class Lasa_Elementor_Testimonials extends Lasa_Elementor_Carousel_Base
         $repeater->add_control(
             'testimonial_label_date',
             [
-                'label' => esc_html__('Label Date', 'lasa'),
+                'label' => esc_html__('Label Date', 'themename'),
                 'type' => Controls_Manager::TEXT,
             ]
         );
@@ -523,40 +523,40 @@ class Lasa_Elementor_Testimonials extends Lasa_Elementor_Carousel_Base
                     'url' => Elementor\Utils::get_placeholder_image_src(),
                 ],
                 
-                'testimonial_name' => esc_html__('Name 1', 'lasa'),
-                'testimonial_sub_name' => esc_html__('Sub name 1', 'lasa'),
-                'testimonial_excerpt' => esc_html__('Lorem ipsum dolor sit amet, in mel unum delicatissimi conclusionemque', 'lasa'),
-                'testimonial_subtitle' => esc_html__('This is text sub-title', 'lasa'),
+                'testimonial_name' => esc_html__('Name 1', 'themename'),
+                'testimonial_sub_name' => esc_html__('Sub name 1', 'themename'),
+                'testimonial_excerpt' => esc_html__('Lorem ipsum dolor sit amet, in mel unum delicatissimi conclusionemque', 'themename'),
+                'testimonial_subtitle' => esc_html__('This is text sub-title', 'themename'),
             ],
             [
                 'testimonial_image' => [
                     'url' => Elementor\Utils::get_placeholder_image_src(),
                 ],
                 
-                'testimonial_name' => esc_html__('Name 2', 'lasa'),
-                'testimonial_sub_name' => esc_html__('Sub name 2', 'lasa'),
-                'testimonial_excerpt' => esc_html__('Lorem ipsum dolor sit amet, in mel unum delicatissimi conclusionemque', 'lasa'),
-                'testimonial_subtitle' => esc_html__('This is text sub-title', 'lasa'),
+                'testimonial_name' => esc_html__('Name 2', 'themename'),
+                'testimonial_sub_name' => esc_html__('Sub name 2', 'themename'),
+                'testimonial_excerpt' => esc_html__('Lorem ipsum dolor sit amet, in mel unum delicatissimi conclusionemque', 'themename'),
+                'testimonial_subtitle' => esc_html__('This is text sub-title', 'themename'),
             ],
             [
                 'testimonial_image' => [
                     'url' => Elementor\Utils::get_placeholder_image_src(),
                 ],
                 
-                'testimonial_name' => esc_html__('Name 3', 'lasa'),
-                'testimonial_sub_name' => esc_html__('Sub name 3', 'lasa'),
-                'testimonial_excerpt' => esc_html__('Lorem ipsum dolor sit amet, in mel unum delicatissimi conclusionemque', 'lasa'),
-                'testimonial_subtitle' => esc_html__('This is text sub-title', 'lasa'),
+                'testimonial_name' => esc_html__('Name 3', 'themename'),
+                'testimonial_sub_name' => esc_html__('Sub name 3', 'themename'),
+                'testimonial_excerpt' => esc_html__('Lorem ipsum dolor sit amet, in mel unum delicatissimi conclusionemque', 'themename'),
+                'testimonial_subtitle' => esc_html__('This is text sub-title', 'themename'),
             ],
             [
                 'testimonial_image' => [
                     'url' => Elementor\Utils::get_placeholder_image_src(),
                 ],
                 
-                'testimonial_name' => esc_html__('Name 4', 'lasa'),
-                'testimonial_sub_name' => esc_html__('Sub name 4', 'lasa'),
+                'testimonial_name' => esc_html__('Name 4', 'themename'),
+                'testimonial_sub_name' => esc_html__('Sub name 4', 'themename'),
                 'testimonial_excerpt' => 'Lorem ipsum dolor sit amet, in mel unum delicatissimi conclusionemque',
-                'testimonial_subtitle' => esc_html__('This is text sub-title', 'lasa'),
+                'testimonial_subtitle' => esc_html__('This is text sub-title', 'themename'),
             ],
         ];
 
@@ -574,7 +574,7 @@ class Lasa_Elementor_Testimonials extends Lasa_Elementor_Carousel_Base
                         </div>
 
                         <div class="testimonial-right flex-grow-1">
-                            <img class="testimonial-qs" alt="<?php esc_attr_e('testimonial qs', 'lasa'); ?>" src="<?php echo esc_url_raw(LASA_IMAGES .'/testi-qs.png') ?>">
+                            <img class="testimonial-qs" alt="<?php esc_attr_e('testimonial qs', 'themename'); ?>" src="<?php echo esc_url_raw(THEMENAME_IMAGES .'/testi-qs.png') ?>">
                             <div class="testimonial-rating"></div>
                             <?php $this->render_item_excerpt($item); ?>
                             <?php $this->render_item_subtitle($item); ?>
@@ -729,4 +729,4 @@ class Lasa_Elementor_Testimonials extends Lasa_Elementor_Carousel_Base
         }
     }
 }
-$widgets_manager->register(new Lasa_Elementor_Testimonials());
+$widgets_manager->register(new Themename_Elementor_Testimonials());

@@ -1,9 +1,9 @@
 <?php
-if ( !lasa_woocommerce_activated() ) return;
+if ( !themename_woocommerce_activated() ) return;
 
 // Two product thumbnail
-if (!function_exists('lasa_tbay_woocommerce_get_two_product_thumbnail')) {
-    function lasa_tbay_woocommerce_get_two_product_thumbnail()
+if (!function_exists('themename_tbay_woocommerce_get_two_product_thumbnail')) {
+    function themename_tbay_woocommerce_get_two_product_thumbnail()
     {
         global $product;
 
@@ -26,20 +26,20 @@ if (!function_exists('lasa_tbay_woocommerce_get_two_product_thumbnail')) {
                 $output .= wp_get_attachment_image($attachment_ids[0], $size, false, array('class' => 'image-hover' ));
             }
         } else {
-            $output .= '<img src="'.wc_placeholder_img_src().'" alt="'. esc_attr__('Placeholder', 'lasa'). '" class="'. esc_attr($class) .'" width="'. esc_attr($placeholder_width) .'" height="'. esc_attr($placeholder_height) .'" />';
+            $output .= '<img src="'.wc_placeholder_img_src().'" alt="'. esc_attr__('Placeholder', 'themename'). '" class="'. esc_attr($class) .'" width="'. esc_attr($placeholder_width) .'" height="'. esc_attr($placeholder_height) .'" />';
         }
         return trim($output);
     }
 }
 
 // Slider product thumbnail
-if (!function_exists('lasa_tbay_woocommerce_get_silder_product_thumbnail')) {
-    function lasa_tbay_woocommerce_get_silder_product_thumbnail()
+if (!function_exists('themename_tbay_woocommerce_get_silder_product_thumbnail')) {
+    function themename_tbay_woocommerce_get_silder_product_thumbnail()
     {
         global $product;
 
         wp_enqueue_script('slick');
-        wp_enqueue_script('lasa-custom-slick');
+        wp_enqueue_script('themename-custom-slick');
 
         $size = 'woocommerce_thumbnail';
         $placeholder = wc_get_image_size($size);
@@ -67,7 +67,7 @@ if (!function_exists('lasa_tbay_woocommerce_get_silder_product_thumbnail')) {
         } else {
             $output .= '<div class="gallery_item first tbay-image-loaded">';
 
-            $output .= '<img src="'.wc_placeholder_img_src().'" alt="'. esc_attr__('Placeholder', 'lasa') .'" class="'. esc_attr($class) .'" width="'. esc_attr($placeholder_width) .'" height="'. esc_attr($placeholder_height) .'" />';
+            $output .= '<img src="'.wc_placeholder_img_src().'" alt="'. esc_attr__('Placeholder', 'themename') .'" class="'. esc_attr($class) .'" width="'. esc_attr($placeholder_width) .'" height="'. esc_attr($placeholder_height) .'" />';
             $output .= '</div>';
         }
 
@@ -75,10 +75,10 @@ if (!function_exists('lasa_tbay_woocommerce_get_silder_product_thumbnail')) {
     }
 }
 
-if (!function_exists('lasa_product_block_image_class')) {
-    function lasa_product_block_image_class($class = '')
+if (!function_exists('themename_product_block_image_class')) {
+    function themename_product_block_image_class($class = '')
     {
-        $images_mode   = apply_filters('lasa_woo_display_image_mode', 10, 2);
+        $images_mode   = apply_filters('themename_woo_display_image_mode', 10, 2);
 
         if ($images_mode !=  'slider') {
             return;
@@ -89,10 +89,10 @@ if (!function_exists('lasa_product_block_image_class')) {
     }
 }
 
-if (!function_exists('lasa_slick_carousel_product_block_image_class')) {
-    function lasa_slick_carousel_product_block_image_class($class = '')
+if (!function_exists('themename_slick_carousel_product_block_image_class')) {
+    function themename_slick_carousel_product_block_image_class($class = '')
     {
-        $images_mode   = apply_filters('lasa_woo_display_image_mode', 10, 2);
+        $images_mode   = apply_filters('themename_woo_display_image_mode', 10, 2);
 
         if ($images_mode !=  'slider') {
             return;
@@ -104,20 +104,20 @@ if (!function_exists('lasa_slick_carousel_product_block_image_class')) {
 }
 
 
-if (!function_exists('lasa_tbay_product_class')) {
-    function lasa_tbay_product_class($class = array())
+if (!function_exists('themename_tbay_product_class')) {
+    function themename_tbay_product_class($class = array())
     {
 
         $class_array    = array();
 
-        $class_varible  = lasa_is_product_variable_sale();
+        $class_varible  = themename_is_product_variable_sale();
 
         $class    = trim(join(' ', $class));
         if (!is_array($class)) {
             $class = explode(" ", $class);
         }
 
-        array_push($class_array, "product-block", "grid", "product", lasa_tbay_get_theme(), $class_varible);
+        array_push($class_array, "product-block", "grid", "product", themename_tbay_get_theme(), $class_varible);
 
         $class_array    = array_merge($class_array, $class);
 

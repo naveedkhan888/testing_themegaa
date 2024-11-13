@@ -1,23 +1,23 @@
 <?php
-if (!function_exists('lasa_customize_section_accordion')) {
-    function lasa_customize_section_accordion($widget)
+if (!function_exists('themename_customize_section_accordion')) {
+    function themename_customize_section_accordion($widget)
     {
 		$widget->add_responsive_control(
             'accordion_style_align',
             [
-                'label' => esc_html__('Alignment', 'lasa'),
+                'label' => esc_html__('Alignment', 'themename'),
                 'type' => Elementor\Controls_Manager::CHOOSE,
                 'options' => [
                     'left' => [
-                        'title' => esc_html__('left', 'lasa'),
+                        'title' => esc_html__('left', 'themename'),
                         'icon' => 'fa fa-align-left',
                     ],
                     'center' => [
-                        'title' => esc_html__('center', 'lasa'),
+                        'title' => esc_html__('center', 'themename'),
                         'icon' => 'fa fa-align-center',
                     ],
                     'right' => [
-                        'title' => esc_html__('right', 'lasa'),
+                        'title' => esc_html__('right', 'themename'),
                         'icon' => 'fa fa-align-right',
                     ],
                 ], 
@@ -27,17 +27,17 @@ if (!function_exists('lasa_customize_section_accordion')) {
             ]
         ); 
     } 
-    add_action('elementor/element/accordion/section_title_style/before_section_end', 'lasa_customize_section_accordion', 10, 2);
+    add_action('elementor/element/accordion/section_title_style/before_section_end', 'themename_customize_section_accordion', 10, 2);
 }
 
 
-if (!function_exists('lasa_customize_section_accordion_icon')) {
-    function lasa_customize_section_accordion_icon($widget)
+if (!function_exists('themename_customize_section_accordion_icon')) {
+    function themename_customize_section_accordion_icon($widget)
     {
 		$widget->add_responsive_control(
             'accordion_style_icon_margin_top',
             [
-                'label' => esc_html__( 'Margin Top', 'lasa' ),
+                'label' => esc_html__( 'Margin Top', 'themename' ),
 				'type' => Elementor\Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -57,7 +57,7 @@ if (!function_exists('lasa_customize_section_accordion_icon')) {
 		$widget->add_control(
 			'accordion_style_font_size',
 			[
-				'label' => esc_html__( 'Font Size', 'lasa' ),
+				'label' => esc_html__( 'Font Size', 'themename' ),
 				'type' => Elementor\Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range' => [
@@ -73,16 +73,16 @@ if (!function_exists('lasa_customize_section_accordion_icon')) {
 		);
 
     } 
-    add_action('elementor/element/accordion/section_toggle_style_icon/before_section_end', 'lasa_customize_section_accordion_icon', 10, 2);
+    add_action('elementor/element/accordion/section_toggle_style_icon/before_section_end', 'themename_customize_section_accordion_icon', 10, 2);
 }
 
-if (!function_exists('lasa_customize_section_accordion_content')) {
-    function lasa_customize_section_accordion_content($widget)
+if (!function_exists('themename_customize_section_accordion_content')) {
+    function themename_customize_section_accordion_content($widget)
     {
 		$widget->add_responsive_control(
 			'accordion_style_content_spacing',
 			[
-				'label' => esc_html__( 'Spacing', 'lasa' ),
+				'label' => esc_html__( 'Spacing', 'themename' ),
 				'type' => Elementor\Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -96,5 +96,5 @@ if (!function_exists('lasa_customize_section_accordion_content')) {
 			]
 		);
     } 
-    add_action('elementor/element/accordion/section_toggle_style_content/before_section_end', 'lasa_customize_section_accordion_content', 10, 2);
+    add_action('elementor/element/accordion/section_toggle_style_content/before_section_end', 'themename_customize_section_accordion_content', 10, 2);
 }

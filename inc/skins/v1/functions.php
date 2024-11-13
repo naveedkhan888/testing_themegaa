@@ -1,9 +1,9 @@
 <?php 
 
-if (!function_exists('lasa_tbay_private_size_image_setup')) {
-    function lasa_tbay_private_size_image_setup()
+if (!function_exists('themename_tbay_private_size_image_setup')) {
+    function themename_tbay_private_size_image_setup()
     {
-        if (lasa_tbay_get_global_config('config_media', false)) {
+        if (themename_tbay_get_global_config('config_media', false)) {
             return;
         }
 
@@ -18,26 +18,26 @@ if (!function_exists('lasa_tbay_private_size_image_setup')) {
         update_option('large_size_w', 770);
         update_option('large_size_h', 466); 
     }
-    add_action('after_setup_theme', 'lasa_tbay_private_size_image_setup');
+    add_action('after_setup_theme', 'themename_tbay_private_size_image_setup');
 }
   
 /**
  *  Include Load Google Front
  */
 
-if ( !function_exists('lasa_fonts_url') ) {
-	function lasa_fonts_url() {
+if ( !function_exists('themename_fonts_url') ) {
+	function themename_fonts_url() {
         /**
          * Load Google Front
          */
 
         $fonts_url = '';
 
-        /* Translators: If there are clasacters in your language that are not
+        /* Translators: If there are cthemenamecters in your language that are not
         * supported by Montserrat, translate this to 'off'. Do not translate
         * into your own language.
         */
-        $google_font       = _x('on', 'Poppins font: on or off', 'lasa');
+        $google_font       = _x('on', 'Poppins font: on or off', 'themename');
 
      
         if ('off' !== $google_font) {
@@ -62,17 +62,17 @@ if ( !function_exists('lasa_fonts_url') ) {
 	}
 }
 
-if ( !function_exists('lasa_tbay_fonts_url') ) {
-	function lasa_tbay_fonts_url() {  
-        $show_typography  = lasa_tbay_get_config('show_typography', false);
-        $font_source      = lasa_tbay_get_config('font_source', "1");
-        $font_google_code = lasa_tbay_get_config('font_google_code');
+if ( !function_exists('themename_tbay_fonts_url') ) {
+	function themename_tbay_fonts_url() {  
+        $show_typography  = themename_tbay_get_config('show_typography', false);
+        $font_source      = themename_tbay_get_config('font_source', "1");
+        $font_google_code = themename_tbay_get_config('font_google_code');
 
         if( !$show_typography ) {
-			wp_enqueue_style( 'lasa-theme-fonts', lasa_fonts_url(), array(), false );
+			wp_enqueue_style( 'themename-theme-fonts', themename_fonts_url(), array(), false );
 		} else if ( $font_source == "2" && !empty($font_google_code) ) {
-            wp_enqueue_style('lasa-theme-fonts', $font_google_code, array(), null);
+            wp_enqueue_style('themename-theme-fonts', $font_google_code, array(), null);
 		}
 	}
-	add_action('wp_enqueue_scripts', 'lasa_tbay_fonts_url');
+	add_action('wp_enqueue_scripts', 'themename_tbay_fonts_url');
 }

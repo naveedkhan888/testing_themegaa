@@ -1,11 +1,11 @@
 <?php
-if (!function_exists('lasa_button_section_button')) {
-    function lasa_button_section_button($widget)
+if (!function_exists('themename_button_section_button')) {
+    function themename_button_section_button($widget)
     {
         $widget->add_responsive_control(
             'icon_font_size',
             [
-				'label' => esc_html__( 'Icon Font Size', 'lasa' ),
+				'label' => esc_html__( 'Icon Font Size', 'themename' ),
 				'type' => \Elementor\Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range' => [
@@ -26,14 +26,14 @@ if (!function_exists('lasa_button_section_button')) {
 		$widget->start_controls_tab(
 			'tab_button_icon_style',
 			[
-				'label' => esc_html__('Normal', 'lasa'),
+				'label' => esc_html__('Normal', 'themename'),
 			]
 		);
 
 		$widget->add_control(
 			'tab_button_icon_color',
 			[
-				'label' => esc_html__('Icon Color', 'lasa'),
+				'label' => esc_html__('Icon Color', 'themename'),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
@@ -48,14 +48,14 @@ if (!function_exists('lasa_button_section_button')) {
 		$widget->start_controls_tab(
 			'tab_button_icon_style_hover',
 			[
-				'label' => esc_html__('Hover', 'lasa'),
+				'label' => esc_html__('Hover', 'themename'),
 			]
 		);
 
 		$widget->add_control(
 			'tab_button_icon_color_hover',
 			[
-				'label' => esc_html__('Icon Color', 'lasa'),
+				'label' => esc_html__('Icon Color', 'themename'),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
@@ -70,5 +70,5 @@ if (!function_exists('lasa_button_section_button')) {
 		$widget->end_controls_tabs();
     } 
 
-    add_action('elementor/element/button/section_style/before_section_end', 'lasa_button_section_button', 10, 2);
+    add_action('elementor/element/button/section_style/before_section_end', 'themename_button_section_button', 10, 2);
 }

@@ -86,8 +86,8 @@ class Carousel {
       slidesToScroll: slidesToShow,
       mobileFirst: true,
       vertical: false,
-      prevArrow: '<button type="button" class="slick-prev">' + lasa_settings.slick_prev + "</button>",
-      nextArrow: '<button type="button" class="slick-next">' + lasa_settings.slick_next + "</button>",
+      prevArrow: '<button type="button" class="slick-prev">' + themename_settings.slick_prev + "</button>",
+      nextArrow: '<button type="button" class="slick-next">' + themename_settings.slick_next + "</button>",
       rtl: jQuery("html").attr("dir") == "rtl"
     };
 
@@ -246,8 +246,8 @@ jQuery(document.body).on('wc-product-gallery-after-init', () => {
   slider.tbaySlickSlider();
 });
 jQuery(window).on("elementor/frontend/init", function () {
-  if (elementorFrontend.isEditMode() && typeof lasa_settings !== "undefined" && Array.isArray(lasa_settings.elements_ready.slick)) {
-    jQuery.each(lasa_settings.elements_ready.slick, function (index, value) {
+  if (elementorFrontend.isEditMode() && typeof themename_settings !== "undefined" && Array.isArray(themename_settings.elements_ready.slick)) {
+    jQuery.each(themename_settings.elements_ready.slick, function (index, value) {
       elementorFrontend.hooks.addAction("frontend/element_ready/tbay-" + value + ".default", () => {
         const carousel = new Carousel();
         carousel.CarouselSlick();

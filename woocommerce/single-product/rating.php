@@ -33,17 +33,17 @@ if ($rating_count > 0) : ?>
 
 	<div class="woocommerce-product-rating">
 		<?php echo wc_get_rating_html($average, $rating_count); ?>
-		<?php if (comments_open()) : ?><a href="#reviews" class="woocommerce-review-link"><?php printf(_n('%s customer review', '%s customer reviews', $review_count, 'lasa'), '<span class="count">' . trim($review_count) . '</span>'); ?></a><?php endif ?>
+		<?php if (comments_open()) : ?><a href="#reviews" class="woocommerce-review-link"><?php printf(_n('%s customer review', '%s customer reviews', $review_count, 'themename'), '<span class="count">' . trim($review_count) . '</span>'); ?></a><?php endif ?>
 
-		<?php do_action('lasa_woo_after_single_rating'); ?> 
+		<?php do_action('themename_woo_after_single_rating'); ?> 
 	</div>
 
 <?php else : ?>
 	<div class="woocommerce-product-rating">
 		<div class="star-rating">
 		</div>
-		<?php if (comments_open()) : ?><a href="#reviews" class="woocommerce-review-link"><?php printf(_n('%s customer review', '%s customer reviews', $review_count, 'lasa'), '<span class="count">' . trim($review_count) . '</span>'); ?></a><?php endif ?>
-		<?php do_action('lasa_woo_after_single_rating'); ?> 
+		<?php if (comments_open()) : ?><a href="#reviews" class="woocommerce-review-link"><?php printf(_n('%s customer review', '%s customer reviews', $review_count, 'themename'), '<span class="count">' . trim($review_count) . '</span>'); ?></a><?php endif ?>
+		<?php do_action('themename_woo_after_single_rating'); ?> 
 	</div>
 
 <?php endif; ?>

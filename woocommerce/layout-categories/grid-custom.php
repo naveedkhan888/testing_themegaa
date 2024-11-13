@@ -15,7 +15,7 @@ $layout = 'v1';
 <?php
     foreach ($categoriestabs as $tab) {
         $cat = get_term_by('id', $tab['category'], 'product_cat');
-        $cat_count      =   lasa_get_product_count_of_category($tab['category']);
+        $cat_count      =   themename_get_product_count_of_category($tab['category']);
 
         if (isset($tab['images']) && $tab['images']) {
             $cat_id 		= 	$tab['images'];
@@ -31,7 +31,7 @@ $layout = 'v1';
             $cat_slug 		= 	$cat->slug;
             $cat_link 		= 	get_term_link($cat->slug, 'product_cat');
         } else {
-            $cat_name       = esc_html__('Shop', 'lasa');
+            $cat_name       = esc_html__('Shop', 'themename');
             $cat_link 		= 	get_permalink(wc_get_page_id('shop'));
         }
 

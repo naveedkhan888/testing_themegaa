@@ -1,7 +1,7 @@
 <?php
 
 $cat            =   get_term_by('id', $tab['category'], 'product_cat');
-$cat_count      =   lasa_get_product_count_of_category($tab['category']);
+$cat_count      =   themename_get_product_count_of_category($tab['category']);
  
 
 if (isset($cat) && $cat) {
@@ -9,7 +9,7 @@ if (isset($cat) && $cat) {
     $cat_slug       =   $cat->slug;
     $cat_link       =   get_term_link($cat->slug, 'product_cat');
 } else {
-    $cat_name       = esc_html__('Shop', 'lasa');
+    $cat_name       = esc_html__('Shop', 'themename');
     $cat_link       =   get_permalink(wc_get_page_id('shop'));
 }
 
@@ -45,13 +45,13 @@ $have_icon = (isset($iconClass) && $iconClass) ? 'cat-icon' : 'cat-img';
         <?php if ((isset($shop_now) && $shop_now == 'yes')) { ?>
             <div class="cat-hover">
                 <?php if ($count_item == 'yes') { ?>
-                    <span class="count-item"><?php echo trim($cat_count).' '. apply_filters('lasa_tbay_categories_count_item', esc_html__('products', 'lasa')); ?></span>
+                    <span class="count-item"><?php echo trim($cat_count).' '. apply_filters('themename_tbay_categories_count_item', esc_html__('products', 'themename')); ?></span>
                 <?php } ?>
                 <a href="<?php echo esc_url($cat_link); ?>" class="shop-now"><?php echo trim($shop_now_text); ?></a>
             </div>
             <?php } else { ?>
             <?php if ($count_item == 'yes') { ?>
-                <span class="count-item"><?php echo trim($cat_count).' '.apply_filters('lasa_tbay_categories_count_item', esc_html__('products', 'lasa')); ?></span>
+                <span class="count-item"><?php echo trim($cat_count).' '.apply_filters('themename_tbay_categories_count_item', esc_html__('products', 'themename')); ?></span>
 
             <?php } ?>      
         <?php } ?>

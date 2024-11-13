@@ -1,8 +1,8 @@
 <?php
 get_header();
 
-$sidebar_configs = lasa_tbay_get_blog_layout_configs();
-$blog_archive_layout =  (isset($_GET['blog_archive_layout']))  ? $_GET['blog_archive_layout'] : lasa_tbay_get_config('blog_archive_layout', 'main-right');
+$sidebar_configs = themename_tbay_get_blog_layout_configs();
+$blog_archive_layout =  (isset($_GET['blog_archive_layout']))  ? $_GET['blog_archive_layout'] : themename_tbay_get_config('blog_archive_layout', 'main-right');
 if (isset($sidebar_configs['sidebar'])) {
     $sidebar_id = $sidebar_configs['sidebar']['id'];
     if (!is_active_sidebar($sidebar_id)) {
@@ -11,9 +11,9 @@ if (isset($sidebar_configs['sidebar'])) {
 }
 $class_row = ($blog_archive_layout === 'main-right') ? 'tb-column-reverse tb-custom-blog' : 'tb-custom-blog';
 
-lasa_tbay_render_breadcrumbs();
+themename_tbay_render_breadcrumbs();
 
-$class_main = apply_filters('lasa_tbay_post_content_class', 'container');
+$class_main = apply_filters('themename_tbay_post_content_class', 'container');
 
 
 $blog_columns = apply_filters('loop_blog_columns', 1);
@@ -44,7 +44,7 @@ $data_responsive .= ' data-mobile='. esc_attr($screen_mobile) .'';
 
 $main_class = $sidebar_configs['main']['class'];
 
-if ( !lasa_redux_framework_activated() ) {
+if ( !themename_redux_framework_activated() ) {
     $sidebar_id = 'sidebar-default';
     
     if (isset($sidebar_configs['sidebar'])  && is_active_sidebar($sidebar_id)) {
@@ -62,7 +62,7 @@ if ( !lasa_redux_framework_activated() ) {
 <!-- .page-header -->
 <section id="main-container" class="main-content <?php echo esc_attr($class_main); ?>">
 
-	<?php do_action('lasa_post_template_main_container_before'); ?>
+	<?php do_action('themename_post_template_main_container_before'); ?>
 
 	<div class="row <?php echo esc_attr($class_row); ?>">
 		
@@ -77,7 +77,7 @@ if ( !lasa_redux_framework_activated() ) {
 		<div id="main-content" class="<?php echo esc_attr($main_class); ?>">
 			<div id="main" class="site-main layout-blog">
 
-				<?php do_action('lasa_post_template_main_content_before'); ?>
+				<?php do_action('themename_post_template_main_content_before'); ?>
 
 				<div class="row grid" <?php echo trim($data_responsive); ?>>
 					<?php if (have_posts()) : ?>
@@ -107,15 +107,15 @@ if ( !lasa_redux_framework_activated() ) {
 				</div>
 				<?php
                     // Previous/next page navigation.
-                    lasa_tbay_paging_nav();
+                    themename_tbay_paging_nav();
                 ?>
-				<?php do_action('lasa_post_template_main_content_after'); ?>
+				<?php do_action('themename_post_template_main_content_after'); ?>
 
 			</div><!-- .site-main -->
 		</div><!-- .content-area -->
 		
 	</div>
 
-	<?php do_action('lasa_post_template_main_container_after'); ?>
+	<?php do_action('themename_post_template_main_container_after'); ?>
 </section>
 <?php get_footer(); ?>

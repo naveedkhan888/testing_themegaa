@@ -9,8 +9,8 @@ if (class_exists('YITH_WooCommerce_Question_Answer')) {
     add_filter('woocommerce_product_tabs', array( $YWQA, 'show_question_answer_tab' ), 5);
 }
 
-if (!function_exists('lasa_dokan_price_kses')) {
-    function lasa_dokan_price_kses()
+if (!function_exists('themename_dokan_price_kses')) {
+    function themename_dokan_price_kses()
     {
         $array = array(
             'span' => array(
@@ -23,13 +23,13 @@ if (!function_exists('lasa_dokan_price_kses')) {
 
         return $array;
     }
-    add_filter('dokan_price_kses', 'lasa_dokan_price_kses', 100, 2);
+    add_filter('dokan_price_kses', 'themename_dokan_price_kses', 100, 2);
 }
 
-if (!function_exists('lasa_dokan_vendor_name')) {
-    function lasa_dokan_vendor_name()
+if (!function_exists('themename_dokan_vendor_name')) {
+    function themename_dokan_vendor_name()
     {
-        $active = lasa_tbay_get_config('show_vendor_name', true);
+        $active = themename_tbay_get_config('show_vendor_name', true);
         
         if (!$active && !is_singular('product')) {
             return;
@@ -49,7 +49,7 @@ if (!function_exists('lasa_dokan_vendor_name')) {
             $shop_name = $shop_info['store_name'];
         }
 
-        $sold_by_text = apply_filters('vendor_sold_by_text', esc_html__('Vendor:', 'lasa')); ?>
+        $sold_by_text = apply_filters('vendor_sold_by_text', esc_html__('Vendor:', 'themename')); ?>
         <div class="sold-by-meta sold-dokan">
             <span class="sold-by-label"><?php echo wp_strip_all_tags($sold_by_text); ?> </span>
             <a href="<?php echo esc_url(dokan_get_store_url($author_id)); ?>"><?php echo wp_strip_all_tags($shop_name); ?></a>
@@ -58,13 +58,13 @@ if (!function_exists('lasa_dokan_vendor_name')) {
         <?php
     }
 
-    add_action('lasa_woo_after_shop_loop_item_caption', 'lasa_dokan_vendor_name', 5);
-    add_action('lasa_woo_after_single_rating', 'lasa_dokan_vendor_name', 15);
-    add_action('lasa_woo_list_after_short_description', 'lasa_dokan_vendor_name', 15);
+    add_action('themename_woo_after_shop_loop_item_caption', 'themename_dokan_vendor_name', 5);
+    add_action('themename_woo_after_single_rating', 'themename_dokan_vendor_name', 15);
+    add_action('themename_woo_list_after_short_description', 'themename_dokan_vendor_name', 15);
 }
 
-if (!function_exists('lasa_dokan_get_title_mobile')) {
-    function lasa_dokan_get_title_mobile($title)
+if (!function_exists('themename_dokan_get_title_mobile')) {
+    function themename_dokan_get_title_mobile($title)
     {
         if (!dokan_is_store_page()) {
             return $title;
@@ -81,17 +81,17 @@ if (!function_exists('lasa_dokan_get_title_mobile')) {
 
         return $store_name;
     }
-    add_filter('lasa_get_filter_title_mobile', 'lasa_dokan_get_title_mobile', 10);
+    add_filter('themename_get_filter_title_mobile', 'themename_dokan_get_title_mobile', 10);
 }
 
 // Number of products per row
-if (!function_exists('lasa_dokan_set_columns_more_from_seller_tab')) {
-    function lasa_dokan_set_columns_more_from_seller_tab($number)
+if (!function_exists('themename_dokan_set_columns_more_from_seller_tab')) {
+    function themename_dokan_set_columns_more_from_seller_tab($number)
     {
         if (isset($_GET['seller_tab_columns']) && is_numeric($_GET['seller_tab_columns'])) {
             $value = $_GET['seller_tab_columns'];
         } else {
-            $value = lasa_tbay_get_config('seller_tab_columns');
+            $value = themename_tbay_get_config('seller_tab_columns');
         }
 
         if (in_array($value, array(1, 2, 3, 4, 5, 6))) {
@@ -101,13 +101,13 @@ if (!function_exists('lasa_dokan_set_columns_more_from_seller_tab')) {
     }
 }
 
-if (!function_exists('lasa_dokan_set_per_page_more_from_seller_tab')) {
-    function lasa_dokan_set_per_page_more_from_seller_tab($number)
+if (!function_exists('themename_dokan_set_per_page_more_from_seller_tab')) {
+    function themename_dokan_set_per_page_more_from_seller_tab($number)
     {
         if (isset($_GET['seller_tab_per_page']) && is_numeric($_GET['seller_tab_per_page'])) {
             $value = $_GET['seller_tab_per_page'];
         } else {
-            $value = lasa_tbay_get_config('seller_tab_per_page');
+            $value = themename_tbay_get_config('seller_tab_per_page');
         }
 
         if (is_numeric($value) && $value) {
@@ -115,16 +115,16 @@ if (!function_exists('lasa_dokan_set_per_page_more_from_seller_tab')) {
         }
         return $number;
     }
-    add_filter('lasa_dokan_set_per_page_seller_tab', 'lasa_dokan_set_per_page_more_from_seller_tab', 10, 1);
+    add_filter('themename_dokan_set_per_page_seller_tab', 'themename_dokan_set_per_page_more_from_seller_tab', 10, 1);
 }
-if (function_exists('dokan_seller_product_tab') &&  !function_exists('lasa_dokan_seller_product_tab')) {
-    function lasa_dokan_seller_product_tab($tabs)
+if (function_exists('dokan_seller_product_tab') &&  !function_exists('themename_dokan_seller_product_tab')) {
+    function themename_dokan_seller_product_tab($tabs)
     {
-        $active = lasa_tbay_get_config('show_info_vendor_tab', true);
+        $active = themename_tbay_get_config('show_info_vendor_tab', true);
         
         if ($active) {
             $tabs['seller'] = array(
-                'title'    => esc_html__('Vendor Info', 'lasa'),
+                'title'    => esc_html__('Vendor Info', 'themename'),
                 'priority' => 99,
                 'callback' => 'dokan_product_seller_tab'
             );
@@ -134,7 +134,7 @@ if (function_exists('dokan_seller_product_tab') &&  !function_exists('lasa_dokan
 
         return $tabs;
     }
-    add_filter('woocommerce_product_tabs', 'lasa_dokan_seller_product_tab', 20);
+    add_filter('woocommerce_product_tabs', 'themename_dokan_seller_product_tab', 20);
 }
 
 /**
@@ -146,25 +146,25 @@ if (function_exists('dokan_seller_product_tab') &&  !function_exists('lasa_dokan
  * @param array $tabs
  * @return int
  */
-if (function_exists('dokan_set_more_from_seller_tab') &&  !function_exists('lasa_dokan_set_more_from_seller_tab')) {
-    function lasa_dokan_set_more_from_seller_tab($tabs)
+if (function_exists('dokan_set_more_from_seller_tab') &&  !function_exists('themename_dokan_set_more_from_seller_tab')) {
+    function themename_dokan_set_more_from_seller_tab($tabs)
     {
         if (check_more_seller_product_tab()) {
             $tabs['more_seller_product'] = array(
-                'title'     => esc_html__('More Products', 'lasa'),
+                'title'     => esc_html__('More Products', 'themename'),
                 'priority'  => 99,
-                'callback'  => 'lasa_dokan_get_more_products_from_seller',
+                'callback'  => 'themename_dokan_get_more_products_from_seller',
             );
         }
 
         return $tabs;
     }
     remove_action('woocommerce_product_tabs', 'dokan_set_more_from_seller_tab', 10);
-    add_action('woocommerce_product_tabs', 'lasa_dokan_set_more_from_seller_tab', 20);
+    add_action('woocommerce_product_tabs', 'themename_dokan_set_more_from_seller_tab', 20);
 }
 
-if (!function_exists('lasa_dokan_get_more_products_from_seller')) {
-    function lasa_dokan_get_more_products_from_seller($seller_id = 0, $posts_per_page = 6)
+if (!function_exists('themename_dokan_get_more_products_from_seller')) {
+    function themename_dokan_get_more_products_from_seller($seller_id = 0, $posts_per_page = 6)
     {
         global $post;
 
@@ -173,7 +173,7 @@ if (!function_exists('lasa_dokan_get_more_products_from_seller')) {
         }
 
         if (! is_int($posts_per_page)) {
-            $posts_per_page = apply_filters('lasa_dokan_set_per_page_seller_tab', 4);
+            $posts_per_page = apply_filters('themename_dokan_set_per_page_seller_tab', 4);
         }
 
         $args = array(
@@ -187,13 +187,13 @@ if (!function_exists('lasa_dokan_get_more_products_from_seller')) {
         $products = new WP_Query($args);
 
         if ($products->have_posts()) {
-            $heading = esc_html(apply_filters('lasa_woocommerce_product_more_product_heading', esc_html__('More Products From This Vendor', 'lasa')));
+            $heading = esc_html(apply_filters('themename_woocommerce_product_more_product_heading', esc_html__('More Products From This Vendor', 'themename')));
             
             if ($heading): ?>
               <h2><?php echo esc_html($heading); ?></h2>
             <?php endif;
 
-            add_filter('loop_shop_columns', 'lasa_dokan_set_columns_more_from_seller_tab', 10, 1);
+            add_filter('loop_shop_columns', 'themename_dokan_set_columns_more_from_seller_tab', 10, 1);
             woocommerce_product_loop_start();
 
             while ($products->have_posts()) {
@@ -203,17 +203,17 @@ if (!function_exists('lasa_dokan_get_more_products_from_seller')) {
 
             woocommerce_product_loop_end();
         } else {
-            esc_html_e('No product has been found!', 'lasa');
+            esc_html_e('No product has been found!', 'themename');
         }
 
         wp_reset_postdata();
     }
 }
 
-if (!function_exists('lasa_dokan_get_number_of_products_of_vendor')) {
-    function lasa_dokan_get_number_of_products_of_vendor()
+if (!function_exists('themename_dokan_get_number_of_products_of_vendor')) {
+    function themename_dokan_get_number_of_products_of_vendor()
     {
-        if (!lasa_woo_is_vendor_page()) {
+        if (!themename_woo_is_vendor_page()) {
             return;
         }
 
@@ -235,24 +235,24 @@ if (!function_exists('lasa_dokan_get_number_of_products_of_vendor')) {
 
         if ($total <= $per_page || -1 === $per_page) {
             /* translators: %d: total results */
-            printf(_n('Showing the single result', 'Showing all %d results', $total, 'lasa'), $total);
+            printf(_n('Showing the single result', 'Showing all %d results', $total, 'themename'), $total);
         } else {
             $first = ($per_page * $current) - $per_page + 1;
             $last  = min($total, $per_page * $current);
 
             /* translators: 1: first result 2: last result 3: total results */
-            printf(_nx('Showing the single result', 'Showing %1$d&ndash;%2$d of %3$d results', $total, 'with first and last result', 'lasa'), $first, $last, $total);
+            printf(_nx('Showing the single result', 'Showing %1$d&ndash;%2$d of %3$d results', $total, 'with first and last result', 'themename'), $first, $last, $total);
         }
 
         echo '</p>';
     }
-    add_action('woocommerce_before_shop_loop', 'lasa_dokan_get_number_of_products_of_vendor', 20);
+    add_action('woocommerce_before_shop_loop', 'themename_dokan_get_number_of_products_of_vendor', 20);
 }
 
-if (! function_exists('lasa_dokan_description')) {
-    function lasa_dokan_description($description)
+if (! function_exists('themename_dokan_description')) {
+    function themename_dokan_description($description)
     {
-        if (!lasa_woo_is_vendor_page()) {
+        if (!themename_woo_is_vendor_page()) {
             return $description;
         }
 
@@ -265,13 +265,13 @@ if (! function_exists('lasa_dokan_description')) {
 
         return $description;
     }
-    add_filter('the_content', 'lasa_dokan_description', 10, 1);
+    add_filter('the_content', 'themename_dokan_description', 10, 1);
 }
 
 if ( ! function_exists( 'tbay_get_sidebar_dokan' ) ) {
     function tbay_get_sidebar_dokan() {
         $sidebar = array();
-        $sidebar['id'] =  lasa_tbay_get_config('product_archive_sidebar');
+        $sidebar['id'] =  themename_tbay_get_config('product_archive_sidebar');
         return $sidebar;
     }
 }

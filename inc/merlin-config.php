@@ -1,8 +1,8 @@
 <?php
 
-require_once(get_parent_theme_file_path(LASA_INC . '/merlin-data/elementor.php'));
+require_once(get_parent_theme_file_path(THEMENAME_INC . '/merlin-data/elementor.php'));
 
-class Lasa_Merlin_Config
+class Themename_Merlin_Config
 {
 
     public function __construct()
@@ -45,69 +45,69 @@ class Lasa_Merlin_Config
                 // EDD_Theme_Updater_Admin item_slug.
             ),
             $strings = array(
-                'admin-menu'          => esc_html__('Theme Setup', 'lasa'),
+                'admin-menu'          => esc_html__('Theme Setup', 'themename'),
 
                 /* translators: 1: Title Tag 2: Theme Name 3: Closing Title Tag */
-                'title%s%s%s%s'       => esc_html__('%1$s%2$s Themes &lsaquo; Theme Setup: %3$s%4$s', 'lasa'),
-                'return-to-dashboard' => esc_html__('Return to the dashboard', 'lasa'),
-                'ignore'              => esc_html__('Disable this wizard', 'lasa'),
+                'title%s%s%s%s'       => esc_html__('%1$s%2$s Themes &lsaquo; Theme Setup: %3$s%4$s', 'themename'),
+                'return-to-dashboard' => esc_html__('Return to the dashboard', 'themename'),
+                'ignore'              => esc_html__('Disable this wizard', 'themename'),
 
-                'btn-skip'                 => esc_html__('Skip', 'lasa'),
-                'btn-next'                 => esc_html__('Next', 'lasa'),
-                'btn-start'                => esc_html__('Start', 'lasa'),
-                'btn-no'                   => esc_html__('Cancel', 'lasa'),
-                'btn-plugins-install'      => esc_html__('Install', 'lasa'),
-                'btn-child-install'        => esc_html__('Install', 'lasa'),
-                'btn-content-install'      => esc_html__('Install', 'lasa'),
-                'btn-import'               => esc_html__('Import', 'lasa'),
-                'btn-license-activate'     => esc_html__('Activate', 'lasa'),
-                'btn-license-skip'         => esc_html__('Later', 'lasa'),
-
-                /* translators: Theme Name */
-                'license-header%s'         => esc_html__('Activate %s', 'lasa'),
-                /* translators: Theme Name */
-                'license-header-success%s' => esc_html__('%s is Activated', 'lasa'),
-                /* translators: Theme Name */
-                'license%s'                => esc_html__('Enter your license key to enable remote updates and theme support.', 'lasa'),
-                'license-label'            => esc_html__('License key', 'lasa'),
-                'license-success%s'        => esc_html__('The theme is already registered, so you can go to the next step!', 'lasa'),
-                'license-json-success%s'   => esc_html__('Your theme is activated! Remote updates and theme support are enabled.', 'lasa'),
-                'license-tooltip'          => esc_html__('Need help?', 'lasa'),
+                'btn-skip'                 => esc_html__('Skip', 'themename'),
+                'btn-next'                 => esc_html__('Next', 'themename'),
+                'btn-start'                => esc_html__('Start', 'themename'),
+                'btn-no'                   => esc_html__('Cancel', 'themename'),
+                'btn-plugins-install'      => esc_html__('Install', 'themename'),
+                'btn-child-install'        => esc_html__('Install', 'themename'),
+                'btn-content-install'      => esc_html__('Install', 'themename'),
+                'btn-import'               => esc_html__('Import', 'themename'),
+                'btn-license-activate'     => esc_html__('Activate', 'themename'),
+                'btn-license-skip'         => esc_html__('Later', 'themename'),
 
                 /* translators: Theme Name */
-                'welcome-header%s'         => esc_html__('Welcome to %s', 'lasa'),
-                'welcome-header-success%s' => esc_html__('Hi. Welcome back', 'lasa'),
-                'welcome%s'                => esc_html__('This wizard will set up your theme, install plugins, and import content. It is optional & should take only a few minutes.', 'lasa'),
-                'welcome-success%s'        => esc_html__('You may have already run this theme setup wizard. If you would like to proceed anyway, click on the "Start" button below.', 'lasa'),
+                'license-header%s'         => esc_html__('Activate %s', 'themename'),
+                /* translators: Theme Name */
+                'license-header-success%s' => esc_html__('%s is Activated', 'themename'),
+                /* translators: Theme Name */
+                'license%s'                => esc_html__('Enter your license key to enable remote updates and theme support.', 'themename'),
+                'license-label'            => esc_html__('License key', 'themename'),
+                'license-success%s'        => esc_html__('The theme is already registered, so you can go to the next step!', 'themename'),
+                'license-json-success%s'   => esc_html__('Your theme is activated! Remote updates and theme support are enabled.', 'themename'),
+                'license-tooltip'          => esc_html__('Need help?', 'themename'),
 
-                'child-header'         => esc_html__('Install Child Theme', 'lasa'),
-                'child-header-success' => esc_html__('You\'re good to go!', 'lasa'),
-                'child'                => esc_html__('Let\'s build & activate a child theme so you may easily make theme changes.', 'lasa'),
-                'child-success%s'      => esc_html__('Your child theme has already been installed and is now activated, if it wasn\'t already.', 'lasa'),
-                'child-action-link'    => esc_html__('Learn about child themes', 'lasa'),
-                'child-json-success%s' => esc_html__('Awesome. Your child theme has already been installed and is now activated.', 'lasa'),
-                'child-json-already%s' => esc_html__('Awesome. Your child theme has been created and is now activated.', 'lasa'),
+                /* translators: Theme Name */
+                'welcome-header%s'         => esc_html__('Welcome to %s', 'themename'),
+                'welcome-header-success%s' => esc_html__('Hi. Welcome back', 'themename'),
+                'welcome%s'                => esc_html__('This wizard will set up your theme, install plugins, and import content. It is optional & should take only a few minutes.', 'themename'),
+                'welcome-success%s'        => esc_html__('You may have already run this theme setup wizard. If you would like to proceed anyway, click on the "Start" button below.', 'themename'),
 
-                'plugins-header'         => esc_html__('Install Plugins', 'lasa'),
-                'plugins-header-success' => esc_html__('You\'re up to speed!', 'lasa'),
-                'plugins'                => esc_html__('Let\'s install some essential WordPress plugins to get your site up to speed.', 'lasa'),
-                'plugins-success%s'      => esc_html__('The required WordPress plugins are all installed and up to date. Press "Next" to continue the setup wizard.', 'lasa'),
-                'plugins-action-link'    => esc_html__('Advanced', 'lasa'),
+                'child-header'         => esc_html__('Install Child Theme', 'themename'),
+                'child-header-success' => esc_html__('You\'re good to go!', 'themename'),
+                'child'                => esc_html__('Let\'s build & activate a child theme so you may easily make theme changes.', 'themename'),
+                'child-success%s'      => esc_html__('Your child theme has already been installed and is now activated, if it wasn\'t already.', 'themename'),
+                'child-action-link'    => esc_html__('Learn about child themes', 'themename'),
+                'child-json-success%s' => esc_html__('Awesome. Your child theme has already been installed and is now activated.', 'themename'),
+                'child-json-already%s' => esc_html__('Awesome. Your child theme has been created and is now activated.', 'themename'),
 
-                'import-header'      => esc_html__('Import Content', 'lasa'),
-                'import'             => esc_html__('Let\'s import content to your website, to help you get familiar with the theme.', 'lasa'),
-                'import-action-link' => esc_html__('Advanced', 'lasa'),
+                'plugins-header'         => esc_html__('Install Plugins', 'themename'),
+                'plugins-header-success' => esc_html__('You\'re up to speed!', 'themename'),
+                'plugins'                => esc_html__('Let\'s install some essential WordPress plugins to get your site up to speed.', 'themename'),
+                'plugins-success%s'      => esc_html__('The required WordPress plugins are all installed and up to date. Press "Next" to continue the setup wizard.', 'themename'),
+                'plugins-action-link'    => esc_html__('Advanced', 'themename'),
 
-                'ready-header'      => esc_html__('All done. Have fun!', 'lasa'),
+                'import-header'      => esc_html__('Import Content', 'themename'),
+                'import'             => esc_html__('Let\'s import content to your website, to help you get familiar with the theme.', 'themename'),
+                'import-action-link' => esc_html__('Advanced', 'themename'),
+
+                'ready-header'      => esc_html__('All done. Have fun!', 'themename'),
 
                 /* translators: Theme Author */
-                'ready%s'           => esc_html__('Your theme has been all set up. Enjoy your new theme by %s.', 'lasa'),
-                'ready-action-link' => esc_html__('Extras', 'lasa'),
-                'ready-big-button'  => esc_html__('View your website', 'lasa'),
-                'ready-link-1'      => sprintf('<a href="%1$s" target="_blank">%2$s</a>', 'https://tickets.thembay.com/', esc_html__('Ticket System', 'lasa')),
-                'ready-link-2'      => sprintf('<a href="%1$s">%2$s</a>', 'https://thembay-docs.gitbook.io/lasa/', esc_html__('Documentation', 'lasa')),
-                'ready-link-3'      => sprintf('<a href="%1$s">%2$s</a>', 'https://www.youtube.com/c/thembay/', esc_html__('Video Tutorials', 'lasa')),
-                'ready-link-4'      => sprintf('<a href="%1$s">%2$s</a>', 'https://forums.thembay.com/', esc_html__('Forums', 'lasa')),
+                'ready%s'           => esc_html__('Your theme has been all set up. Enjoy your new theme by %s.', 'themename'),
+                'ready-action-link' => esc_html__('Extras', 'themename'),
+                'ready-big-button'  => esc_html__('View your website', 'themename'),
+                'ready-link-1'      => sprintf('<a href="%1$s" target="_blank">%2$s</a>', 'https://tickets.xperttheme.com/', esc_html__('Ticket System', 'themename')),
+                'ready-link-2'      => sprintf('<a href="%1$s">%2$s</a>', 'https://xperttheme-docs.gitbook.io/themename/', esc_html__('Documentation', 'themename')),
+                'ready-link-3'      => sprintf('<a href="%1$s">%2$s</a>', 'https://www.youtube.com/c/xperttheme/', esc_html__('Video Tutorials', 'themename')),
+                'ready-link-4'      => sprintf('<a href="%1$s">%2$s</a>', 'https://forums.xperttheme.com/', esc_html__('Forums', 'themename')),
             )
         );
     }
@@ -119,11 +119,11 @@ class Lasa_Merlin_Config
 	/**
 	 * @version    1.0
 	 * @package    {$slug_no_hyphens}
-	 * @author     Thembay Team <support@thembay.com>
-	 * @copyright  Copyright (C) 2024 Thembay.com. All Rights Reserved.
+	 * @author     Xperttheme Team <support@xperttheme.com>
+	 * @copyright  Copyright (C) 2024 Xperttheme.com. All Rights Reserved.
 	 * @license    GNU/GPL v2 or later http://www.gnu.org/licenses/gpl-2.0.html
 	 *
-	 * Websites: https://thembay.com
+	 * Websites: https://xperttheme.com
 	 */
   function {$slug_no_hyphens}_child_enqueue_styles() {
     wp_enqueue_style( '{$slug}-style', get_template_directory_uri() . '/style.css' );
@@ -149,8 +149,8 @@ class Lasa_Merlin_Config
         $render_output = "/**
 * Theme Name: {$parent} Child
 * Description: This is a child theme for {$parent}
-* Author: Thembay
-* Author URI: https://thembay.com/
+* Author: Xperttheme
+* Author URI: https://xperttheme.com/
 * Version: {$version}
 * Template: {$slug}
 */\n
@@ -165,7 +165,7 @@ class Lasa_Merlin_Config
     {
         $_imports = $this->import_files();
         $selected_import = $_imports[ $selected_import ];
-        $check_oneclick  = get_option('lasa_check_oneclick', []);
+        $check_oneclick  = get_option('themename_check_oneclick', []);
 
         // setup Home page
         $home = get_page_by_path($selected_import['home']);
@@ -178,10 +178,10 @@ class Lasa_Merlin_Config
             $this->setup_mailchimp();
         }
         
-        if (! isset($check_oneclick[ $selected_import['home'] ]) || apply_filters('lasa_reset_import_rev_sliders', false)) {
+        if (! isset($check_oneclick[ $selected_import['home'] ]) || apply_filters('themename_reset_import_rev_sliders', false)) {
             $check_oneclick[ $selected_import['home'] ] = true;
             $this->import_revslider($selected_import['rev_sliders']);
-            update_option('lasa_check_oneclick', $check_oneclick);
+            update_option('themename_check_oneclick', $check_oneclick);
         }
 
         $this->setup_options_after_import();
@@ -371,30 +371,30 @@ class Lasa_Merlin_Config
 
         /**Price**/
         $settings['by_price']['show'] = '3';
-        $settings['by_price']['title_text'] = esc_html__('Price', 'lasa');
+        $settings['by_price']['title_text'] = esc_html__('Price', 'themename');
 
         /**Categories**/
         $settings['tax']['product_cat'] = '1';
         $settings['tax_type']['product_cat'] = 'radio';
         $settings['show_title_label']['product_cat'] = '1';
-        $settings['custom_tax_label']['product_cat'] = esc_html__('Categories', 'lasa');
+        $settings['custom_tax_label']['product_cat'] = esc_html__('Categories', 'themename');
 
         /**Size**/
         $settings['tax']['pa_size'] = '0';
         $settings['tax_type']['pa_size'] = 'label';
         $settings['show_title_label']['pa_size'] = '1';
-        $settings['custom_tax_label']['pa_size'] = esc_html__('Product Size', 'lasa');
+        $settings['custom_tax_label']['pa_size'] = esc_html__('Product Size', 'themename');
 
         /**Color**/
         $settings['tax']['pa_color'] = '1';
         $settings['show_title_label']['pa_color'] = '1';
-        $settings['custom_tax_label']['pa_color'] = esc_html__('Product Color', 'lasa');
+        $settings['custom_tax_label']['pa_color'] = esc_html__('Product Color', 'themename');
 
         /**Tag**/
         $settings['tax']['product_tag'] = '1';
         $settings['tax_type']['product_tag'] = 'label';
         $settings['show_title_label']['product_tag'] = '1';
-        $settings['custom_tax_label']['product_tag'] = esc_html__('Product Tags', 'lasa');
+        $settings['custom_tax_label']['product_tag'] = esc_html__('Product Tags', 'themename');
 
         
         $settings['by_onsales']['show'] = '0';
@@ -412,7 +412,7 @@ class Lasa_Merlin_Config
             $settings['tax']['yith_product_brand'] = '1';
             $settings['tax_type']['yith_product_brand'] = 'label';
             $settings['show_title_label']['yith_product_brand'] = '1';
-            $settings['custom_tax_label']['yith_product_brand'] = esc_html__('Brands', 'lasa');
+            $settings['custom_tax_label']['yith_product_brand'] = esc_html__('Brands', 'themename');
         }
 
         update_option('woof_settings', $settings);
@@ -598,7 +598,7 @@ class Lasa_Merlin_Config
 
     public function import_files()
     {
-        $data = new Lasa_Merlin_Elementor;
+        $data = new Themename_Merlin_Elementor;
 
         $demo_1 	            = $data->import_files_demo_1();
         $demo_2 	            = $data->import_files_demo_2();
@@ -614,4 +614,4 @@ class Lasa_Merlin_Config
     }
 }
 
-return new Lasa_Merlin_Config();
+return new Themename_Merlin_Config();

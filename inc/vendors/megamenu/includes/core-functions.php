@@ -6,10 +6,10 @@ defined( 'ABSPATH' ) || exit();
  *
  * @return array menu settings data
  */
-if (! function_exists('lasa_megamenu_get_item_data')) {
-	function lasa_megamenu_get_item_data($menu_id = false)
+if (! function_exists('themename_megamenu_get_item_data')) {
+	function themename_megamenu_get_item_data($menu_id = false)
 	{
-		return get_post_meta($menu_id, 'lasa_megamenu_item_data', true);
+		return get_post_meta($menu_id, 'themename_megamenu_item_data', true);
 	}
 }
 
@@ -19,11 +19,11 @@ if (! function_exists('lasa_megamenu_get_item_data')) {
  * @param $menu_id
  * @param $data
  */
-if (! function_exists('lasa_megamenu_update_item_data')) {
-	function lasa_megamenu_update_item_data($menu_id = false, $data = array())
+if (! function_exists('themename_megamenu_update_item_data')) {
+	function themename_megamenu_update_item_data($menu_id = false, $data = array())
 	{
-		update_post_meta($menu_id, 'lasa_megamenu_item_data', $data);
-		do_action('lasa_menu_item_updated', $menu_id, $data);
+		update_post_meta($menu_id, 'themename_megamenu_item_data', $data);
+		do_action('themename_menu_item_updated', $menu_id, $data);
 	}
 }
 
@@ -32,11 +32,11 @@ if (! function_exists('lasa_megamenu_update_item_data')) {
  *
  * @param int $menu_id
  */
-if (! function_exists('lasa_megamenu_delete_item_data')) {
-	function lasa_megamenu_delete_item_data($menu_id = false)
+if (! function_exists('themename_megamenu_delete_item_data')) {
+	function themename_megamenu_delete_item_data($menu_id = false)
 	{
-		delete_post_meta($menu_id, 'lasa_megamenu_item_data');
-		do_action('lasa_megamenu_item_deleted', $menu_id);
+		delete_post_meta($menu_id, 'themename_megamenu_item_data');
+		do_action('themename_megamenu_item_deleted', $menu_id);
 	}
 }
 
@@ -47,17 +47,17 @@ if (! function_exists('lasa_megamenu_delete_item_data')) {
  *
  * @return boolean
  */
-if (! function_exists('lasa_megamenu_get_post_related_menu')) {
-	function lasa_megamenu_get_post_related_menu($menu_id = false)
+if (! function_exists('themename_megamenu_get_post_related_menu')) {
+	function themename_megamenu_get_post_related_menu($menu_id = false)
 	{
-		$post_id = get_post_meta($menu_id, 'lasa_elementor_post_id', true);
+		$post_id = get_post_meta($menu_id, 'themename_elementor_post_id', true);
 
-		return apply_filters('lasa_post_related_menu_post_id', $post_id, $menu_id);
+		return apply_filters('themename_post_related_menu_post_id', $post_id, $menu_id);
 	}
 }
 
-if (! function_exists('lasa_get_name_menu_item')) {
-    function lasa_get_name_menu_item($menu_id = false)
+if (! function_exists('themename_get_name_menu_item')) {
+    function themename_get_name_menu_item($menu_id = false)
     {
 		$object_id        	= get_post_meta( $menu_id, '_menu_item_object_id', true );
 		$object_type        = get_post_meta( $menu_id, '_menu_item_type', true );
@@ -82,15 +82,15 @@ if (! function_exists('lasa_get_name_menu_item')) {
  *
  * @param $menu_id
  */
-if (! function_exists('lasa_megamenu_create_related_post')) {
-	function lasa_megamenu_create_related_post($menu_id = false)
+if (! function_exists('themename_megamenu_create_related_post')) {
+	function themename_megamenu_create_related_post($menu_id = false)
 	{
-		$menu_name = lasa_get_name_menu_item( $menu_id );
+		$menu_name = themename_get_name_menu_item( $menu_id );
 
-		$name 	= 'Thembay Megamenu ' . $menu_name;
-		$slug 	= 'thembay-megamenu-' . $menu_id;
+		$name 	= 'Xperttheme Megamenu ' . $menu_name;
+		$slug 	= 'xperttheme-megamenu-' . $menu_id;
 
-		$args = apply_filters('lasa_megamenu_create_related_post_args', array(
+		$args = apply_filters('themename_megamenu_create_related_post_args', array(
 			'post_type'   => 'tbay_custom_post',
 			'post_title'  => $name,
 			'post_name'   => $slug,
@@ -103,13 +103,13 @@ if (! function_exists('lasa_megamenu_create_related_post')) {
 
 		$post_related_id = wp_insert_post($args);
 		// save elementor_post_id meta value
-		update_post_meta($menu_id, 'lasa_elementor_post_id', $post_related_id);
-		update_post_meta($menu_id, 'lasa_elementor_post_name', $slug);
+		update_post_meta($menu_id, 'themename_elementor_post_id', $post_related_id);
+		update_post_meta($menu_id, 'themename_elementor_post_name', $slug);
 		
 		// trigger events
-		do_action('lasa_megamenu_releated_post_created', $post_related_id, $args);
+		do_action('themename_megamenu_releated_post_created', $post_related_id, $args);
 
-		return apply_filters('lasa_megamenu_create_releated_post', $post_related_id);
+		return apply_filters('themename_megamenu_create_releated_post', $post_related_id);
 	}
 }
 
@@ -120,21 +120,21 @@ if (! function_exists('lasa_megamenu_create_related_post')) {
  *
  * @return string html
  */
-if (! function_exists('lasa_megamenu_get_icon_html')) {
-	function lasa_megamenu_get_icon_html(string $icon, $data)
+if (! function_exists('themename_megamenu_get_icon_html')) {
+	function themename_megamenu_get_icon_html(string $icon, $data)
 	{
 		$style = '';
 		if (isset($data['icon_color']) && $data['icon_color']) {
 			$style .= 'style="color:' . $data['icon_color'] . '"';
 		}
 
-		return apply_filters('lasa_menu_icon_html', '<i class="menu-icon ' . $icon . '" ' . $style . '></i>');
+		return apply_filters('themename_menu_icon_html', '<i class="menu-icon ' . $icon . '" ' . $style . '></i>');
 	}
 }
 
 
-if (! function_exists('lasa_megamenu_get_icons')) {
-	function lasa_megamenu_get_icons() {
+if (! function_exists('themename_megamenu_get_icons')) {
+	function themename_megamenu_get_icons() {
 		$jsonfile = get_theme_file_uri('/inc/vendors/elementor/icons/json/tbay-custom.json');
 		$request  = wp_remote_get($jsonfile, array('sslverify' => FALSE) );
 		$response = wp_remote_retrieve_body($request);

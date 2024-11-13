@@ -19,7 +19,7 @@ $this->settings_layout();
             $this->add_render_attribute('row', 'class', 'pf-isotope');    
         ?>
         <div id="pf-filters" class="pf-button-group button-group">
-            <button class="button is-checked" data-filter="*"><?php esc_html_e('Show All', 'lasa'); ?></button>
+            <button class="button is-checked" data-filter="*"><?php esc_html_e('Show All', 'themename'); ?></button>
             <?php $this->render_portfolios_filters(); ?>
         </div>
 

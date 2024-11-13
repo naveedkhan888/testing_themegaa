@@ -33,7 +33,7 @@ if ($vendor) {
     if ('' != $vendor->description) {
         $html .= $vendor->description;
     }
-    $html .= '<p><a class="mvx-more-products" href="' . $vendor->permalink . '">' . sprintf(__('More Products from %1$s', 'lasa'), $vendor->page_title) . '</a></p>';
+    $html .= '<p><a class="mvx-more-products" href="' . $vendor->permalink . '">' . sprintf(__('More Products from %1$s', 'themename'), $vendor->page_title) . '</a></p>';
     $html .= apply_filters('mvx_after_seller_info_tab', '');
     $html .= '</div>';
     echo trim($html);

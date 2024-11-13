@@ -1,12 +1,12 @@
 <?php
 
-if (! defined('ABSPATH') || function_exists('Lasa_Elementor_Woocommerce_Tags')) {
+if (! defined('ABSPATH') || function_exists('Themename_Elementor_Woocommerce_Tags')) {
     exit; // Exit if accessed directly.
 }
 
 use Elementor\Controls_Manager;
 
-class Lasa_Elementor_Woocommerce_Tags extends Lasa_Elementor_Widget_Base
+class Themename_Elementor_Woocommerce_Tags extends Themename_Elementor_Widget_Base
 {
     public function get_name()
     {
@@ -15,12 +15,12 @@ class Lasa_Elementor_Woocommerce_Tags extends Lasa_Elementor_Widget_Base
 
     public function get_title()
     {
-        return esc_html__('Lasa Woocommerce Tags', 'lasa');
+        return esc_html__('Themename Woocommerce Tags', 'themename');
     }
 
     public function get_categories()
     {
-        return [ 'lasa-elements', 'woocommerce-elements'];
+        return [ 'themename-elements', 'woocommerce-elements'];
     }
 
     public function get_icon()
@@ -40,14 +40,14 @@ class Lasa_Elementor_Woocommerce_Tags extends Lasa_Elementor_Widget_Base
         $this->start_controls_section(
             'general',
             [
-                'label' => esc_html__('General', 'lasa'),
+                'label' => esc_html__('General', 'themename'),
             ]
         );
 
         $this->add_control(
             'limit',
             [
-                'label' => esc_html__('Number tag to show ( -1 = all )', 'lasa'),
+                'label' => esc_html__('Number tag to show ( -1 = all )', 'themename'),
                 'type' => Controls_Manager::NUMBER,
                 'default' => 6,
                 'min'  => -1
@@ -62,7 +62,7 @@ class Lasa_Elementor_Woocommerce_Tags extends Lasa_Elementor_Widget_Base
         extract($settings);
 
         if ($limit === 0) {
-            echo '<p>'. esc_html__('Please select the number of tags again', 'lasa') .'</p>';
+            echo '<p>'. esc_html__('Please select the number of tags again', 'themename') .'</p>';
             return;
         }
 
@@ -90,10 +90,10 @@ class Lasa_Elementor_Woocommerce_Tags extends Lasa_Elementor_Widget_Base
                 $list .= '</ul>';
             }
         } else {
-            $list .= '<p>'. esc_html__('Sorry, but no tags were found', 'lasa') .'</p>';
+            $list .= '<p>'. esc_html__('Sorry, but no tags were found', 'themename') .'</p>';
         }
 
         echo trim($list);
     }
 }
-$widgets_manager->register(new Lasa_Elementor_Woocommerce_Tags());
+$widgets_manager->register(new Themename_Elementor_Woocommerce_Tags());

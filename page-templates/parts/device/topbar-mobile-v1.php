@@ -1,9 +1,9 @@
 <?php
-    if( lasa_checkout_optimized() ) return;
+    if( themename_checkout_optimized() ) return;
     $class_top_bar 	=  '';
 
-    $always_display_logo 			= lasa_tbay_get_config('always_display_logo', true);
-    if (!$always_display_logo && !lasa_catalog_mode_active() && lasa_woocommerce_activated() && (is_product() || is_cart() || is_checkout())) {
+    $always_display_logo 			= themename_tbay_get_config('always_display_logo', true);
+    if (!$always_display_logo && !themename_catalog_mode_active() && themename_woocommerce_activated() && (is_product() || is_cart() || is_checkout())) {
         $class_top_bar .= ' active-home-icon';
     }
 ?>
@@ -11,26 +11,26 @@
 
 	<?php
         /**
-        * lasa_before_header_mobile hook
+        * themename_before_header_mobile hook
         */
-        do_action('lasa_before_header_mobile');
+        do_action('themename_before_header_mobile');
 
         /**
-        * Hook: lasa_header_mobile_content.
+        * Hook: themename_header_mobile_content.
         *
-        * @hooked lasa_the_button_mobile_menu - 5
-        * @hooked lasa_the_logo_mobile - 10
-        * @hooked lasa_the_title_page_mobile - 10
+        * @hooked themename_the_button_mobile_menu - 5
+        * @hooked themename_the_logo_mobile - 10
+        * @hooked themename_the_title_page_mobile - 10
         */
 
-        do_action('lasa_header_mobile_content');
+        do_action('themename_header_mobile_content');
 
         /**
-        * lasa_after_header_mobile hook
+        * themename_after_header_mobile hook
 
-        * @hooked lasa_the_search_header_mobile - 5
+        * @hooked themename_the_search_header_mobile - 5
         */
         
-        do_action('lasa_after_header_mobile');
+        do_action('themename_after_header_mobile');
     ?>
 </div>

@@ -3,14 +3,14 @@
  * The template for displaying search results pages.
  *
  * @package WordPress
- * @subpackage Lasa
- * @since Lasa 1.0
+ * @subpackage Themename
+ * @since Themename 1.0
  */
 
 get_header();
 
 
-if ( !lasa_redux_framework_activated() ) {
+if ( !themename_redux_framework_activated() ) {
     $colContent = (is_active_sidebar('sidebar-default')) ? 9 : 12; ?>
 	<div id="primary" class="content-area content-index search-content">
 		<div id="main" class="site-main">
@@ -20,7 +20,7 @@ if ( !lasa_redux_framework_activated() ) {
 	                <!-- MAIN CONTENT -->
 	                <div class="col-xl-<?php echo esc_attr($colContent); ?> ">
 	                	    <header class="page-header">
-						        <h1 class="page-title"><?php printf(__('Search Results for:', 'lasa') . ' %s', '<span>' . get_search_query() . '</span>'); ?></h1>
+						        <h1 class="page-title"><?php printf(__('Search Results for:', 'themename') . ' %s', '<span>' . get_search_query() . '</span>'); ?></h1>
 						    </header><!-- .page-header -->
 	                        <?php  if (have_posts()) :
                                 while (have_posts()) : the_post(); ?>
@@ -30,7 +30,7 @@ if ( !lasa_redux_framework_activated() ) {
 									<?php
                                 // End the loop.
                                 endwhile;
-    lasa_tbay_paging_nav(); ?>
+    themename_tbay_paging_nav(); ?>
 	                        <?php else : ?>
 	                            <?php get_template_part('post-formats/content/content', 'none'); ?>
 	                        <?php endif; ?>
@@ -48,14 +48,14 @@ if ( !lasa_redux_framework_activated() ) {
 
 	<?php
 } else {
-        $sidebar_configs = lasa_tbay_get_blog_layout_configs();
-        $blog_archive_layout =  (isset($_GET['blog_archive_layout']))  ? $_GET['blog_archive_layout'] : lasa_tbay_get_config('blog_archive_layout', 'main-right');
+        $sidebar_configs = themename_tbay_get_blog_layout_configs();
+        $blog_archive_layout =  (isset($_GET['blog_archive_layout']))  ? $_GET['blog_archive_layout'] : themename_tbay_get_config('blog_archive_layout', 'main-right');
 
         $class_row = ($blog_archive_layout === 'main-right') ? 'tb-column-reverse tb-custom-blog' : 'tb-custom-blog';
 
-        $class_main = apply_filters('lasa_tbay_post_content_class', 'container');
+        $class_main = apply_filters('themename_tbay_post_content_class', 'container');
 
-        lasa_tbay_render_breadcrumbs(); ?>
+        themename_tbay_render_breadcrumbs(); ?>
 	<header class="page-header">
 		<div class="content <?php echo esc_attr($class_main); ?>">
 		<?php
@@ -95,7 +95,7 @@ if ( !lasa_redux_framework_activated() ) {
                     endwhile;
 
         // Previous/next page navigation.
-        lasa_tbay_paging_nav();
+        themename_tbay_paging_nav();
 
         // If no content, include the "No posts found" template.
         else :

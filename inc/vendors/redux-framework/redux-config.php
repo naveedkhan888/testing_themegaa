@@ -4,9 +4,9 @@
  * For full documentation, please visit: http://docs.reduxframework.com/
  */
 
-if ( !lasa_redux_framework_activated() )  return;
+if ( !themename_redux_framework_activated() )  return;
 
-$opt_name = 'lasa_tbay_theme_options';
+$opt_name = 'themename_tbay_theme_options';
 
 $theme = wp_get_theme();
 
@@ -16,15 +16,15 @@ $args = array(
     // This is where your data is stored in the database and also becomes your global variable name.
     'display_name'      => $theme->get('Name'),
     // Name that appears at the top of your panel
-    'display_version'   => esc_html__('Version ', 'lasa').$theme->get('Version'),
+    'display_version'   => esc_html__('Version ', 'themename').$theme->get('Version'),
     'ajax_save'         => true,
     // Version that appears at the top of your panel
     'menu_type'         => 'menu',
     //Specify if the admin menu should appear or not. Options: menu or submenu (Under appearance only)
     'allow_sub_menu'    => true,
     // Show the sections below the admin menu item or not
-    'menu_title'        => esc_html__('Lasa Options', 'lasa'),
-    'page_title'        => esc_html__('Lasa Options', 'lasa'),
+    'menu_title'        => esc_html__('Themename Options', 'themename'),
+    'page_title'        => esc_html__('Themename Options', 'themename'),
 
     // You will need to generate a Google API key to use this feature.
     // Please visit: https://developers.google.com/fonts/docs/developer_api#Auth
@@ -41,7 +41,7 @@ $args = array(
     // Choose an icon for the admin bar menu
     'admin_bar_priority' => 50,
     // Choose an priority for the admin bar menu
-    'global_variable' => 'lasa_options',
+    'global_variable' => 'themename_options',
     // Set a different name for your global variable other than the opt_name
     'dev_mode' => false,
     'forced_dev_mode_off' => false,
@@ -64,7 +64,7 @@ $args = array(
     // Force your panel to always open to a specific tab (by id)
     'page_icon' => 'icon-themes',
     // Icon displayed in the admin panel next to your menu_title
-    'page_slug' => 'lasa_options',
+    'page_slug' => 'themename_options',
     // Page slug used to denote the panel
     'save_defaults' => true,
     // On load save the defaults to DB before user clicks save or not
@@ -127,24 +127,24 @@ Redux::set_args( $opt_name, $args );
 
 Redux::disable_demo();
 
-if (!function_exists('lasa_settings_columns')) {
-    function lasa_settings_columns()
+if (!function_exists('themename_settings_columns')) {
+    function themename_settings_columns()
     {
         $settings = array(
-            '1' => esc_html__('1 Column', 'lasa'),
-            '2' => esc_html__('2 Columns', 'lasa'),
-            '3' => esc_html__('3 Columns', 'lasa'),
-            '4' => esc_html__('4 Columns', 'lasa'),
-            '5' => esc_html__('5 Columns', 'lasa'),
-            '6' => esc_html__('6 Columns', 'lasa')
+            '1' => esc_html__('1 Column', 'themename'),
+            '2' => esc_html__('2 Columns', 'themename'),
+            '3' => esc_html__('3 Columns', 'themename'),
+            '4' => esc_html__('4 Columns', 'themename'),
+            '5' => esc_html__('5 Columns', 'themename'),
+            '6' => esc_html__('6 Columns', 'themename')
         );
 
         return $settings;
     }
 }
 
-if (!function_exists('lasa_settings_aspect_ratio')) {
-    function lasa_settings_aspect_ratio()
+if (!function_exists('themename_settings_aspect_ratio')) {
+    function themename_settings_aspect_ratio()
     {
         $settings = array(
             '16_9' => '16:9',
@@ -155,14 +155,14 @@ if (!function_exists('lasa_settings_aspect_ratio')) {
     }
 }
 
-if (!function_exists('lasa_settings_blog_image_size')) {
-    function lasa_settings_blog_image_size()
+if (!function_exists('themename_settings_blog_image_size')) {
+    function themename_settings_blog_image_size()
     {
         $settings = array(
-            'thumbnail'         => esc_html__('Thumbnail', 'lasa'),
-            'medium'            => esc_html__('Medium', 'lasa'),
-            'large'             => esc_html__('Large', 'lasa'),
-            'full'              => esc_html__('Full', 'lasa'),
+            'thumbnail'         => esc_html__('Thumbnail', 'themename'),
+            'medium'            => esc_html__('Medium', 'themename'),
+            'large'             => esc_html__('Large', 'themename'),
+            'full'              => esc_html__('Full', 'themename'),
         );
 
         return $settings;

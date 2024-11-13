@@ -33,7 +33,7 @@ echo '<div class="add-cart">';
             esc_attr(isset($args['quantity']) ? $args['quantity'] : 1),
             esc_attr(isset($args['class']) ? $args['class'] : 'button'),
             isset( $args['attributes'] ) ? wc_implode_html_attributes( $args['attributes'] ) : '',
-            apply_filters('lasa_get_icon_add_to_cart', '<i class="tb-icon tb-icon-cart"></i>'),
+            apply_filters('themename_get_icon_add_to_cart', '<i class="tb-icon tb-icon-cart"></i>'),
             esc_html($product->add_to_cart_text())
         ),
         $product,

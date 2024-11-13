@@ -1,16 +1,16 @@
 'use strict';
 
 const ADDED_TO_CART_EVENT = "added_to_cart";
-const PRODUCT_LIST_AJAX_SHOP_PAGE = "lasa_products_list_ajax";
-const PRODUCT_GRID_AJAX_SHOP_PAGE = "lasa_products_grid_ajax";
+const PRODUCT_LIST_AJAX_SHOP_PAGE = "themename_products_list_ajax";
+const PRODUCT_GRID_AJAX_SHOP_PAGE = "themename_products_grid_ajax";
 
 class AjaxCart {
   constructor() {
-    if (typeof lasa_settings === "undefined") return;
+    if (typeof themename_settings === "undefined") return;
 
     let _this = this;
 
-    _this.ajaxCartPosition = lasa_settings.cart_position;
+    _this.ajaxCartPosition = themename_settings.cart_position;
 
     switch (_this.ajaxCartPosition) {
       case "popup":
@@ -37,7 +37,7 @@ class AjaxCart {
   _initAjaxPopupContent(button) {
     var _this = this;
 
-    if (button.closest("form.cart").find('input[name="lasa_buy_now"]').length > 0 && button.closest("form.cart").find('input[name="lasa_buy_now"]').val() === "1") return;
+    if (button.closest("form.cart").find('input[name="themename_buy_now"]').length > 0 && button.closest("form.cart").find('input[name="themename_buy_now"]').val() === "1") return;
     let title = "";
 
     if (button.closest("form.cart").length > 0) {
@@ -46,7 +46,7 @@ class AjaxCart {
       if (jQuery(form).find('input[name="data-type"]').length === 0) return;
 
       if (variation_id !== 0) {
-        var urlAjax = lasa_settings.wc_ajax_url.toString().replace("%%endpoint%%", "lasa_popup_variation_name");
+        var urlAjax = themename_settings.wc_ajax_url.toString().replace("%%endpoint%%", "themename_popup_variation_name");
         title = _this._initAjaxPopupVariationName(variation_id, urlAjax);
       } else {
         title = button.closest(".product").find(".product_title").html();
@@ -63,9 +63,9 @@ class AjaxCart {
   _initAjaxPopupShow(title) {
     let cart_popup = jQuery("#tbay-cart-popup"),
         cart_popup_content = jQuery("#tbay-cart-popup").find(".toast-body"),
-        cart_notification = lasa_settings.popup_cart_noti,
+        cart_notification = themename_settings.popup_cart_noti,
         string = "";
-    string += lasa_settings.popup_cart_icon;
+    string += themename_settings.popup_cart_icon;
     string += `<p>"${title}" ${cart_notification}</p>`;
 
     if (!wc_add_to_cart_params.is_cart) {
@@ -86,7 +86,7 @@ class AjaxCart {
       url: urlAjax,
       data: {
         variation_id: variation_id,
-        security: lasa_settings.wp_popupvariationnamenonce
+        security: themename_settings.wp_popupvariationnamenonce
       },
       dataType: "json",
       method: "POST",
@@ -103,7 +103,7 @@ class AjaxCart {
       return false;
     }
 
-    if (lasa_settings.ajax_popup_quick) {
+    if (themename_settings.ajax_popup_quick) {
       jQuery(`.ajax_cart_popup`).on("click", ".ajax_add_to_cart, .single_add_to_cart_button", function (e) {
         let button = jQuery(this);
         if (button.parent().hasClass("shop-now") && !button.parent().hasClass("ajax-single-cart")) return;
@@ -121,7 +121,7 @@ class AjaxCart {
 
   _initAjaxCartOffCanvas(position) {
     jQuery(`.ajax_cart_${position}`).on(ADDED_TO_CART_EVENT, function () {
-      if (lasa_settings.mobile) position = "mobile";
+      if (themename_settings.mobile) position = "mobile";
       var Offcanvasopen = new bootstrap.Offcanvas(`#cart-offcanvas-${position}`);
       Offcanvasopen.show();
       jQuery(document.body).trigger("wc_fragments_refreshed");
@@ -149,7 +149,7 @@ class AjaxCart {
   }
 
   _callRemoveProductAjax(product_id, cart_item_key, thisItem, event) {
-    var urlAjax = lasa_settings.wc_ajax_url.toString().replace("%%endpoint%%", "lasa_product_remove");
+    var urlAjax = themename_settings.wc_ajax_url.toString().replace("%%endpoint%%", "themename_product_remove");
     jQuery.ajax({
       type: "POST",
       dataType: "json",
@@ -157,7 +157,7 @@ class AjaxCart {
       data: {
         product_id: product_id,
         cart_item_key: cart_item_key,
-        security: lasa_settings.wp_productremovenonce
+        security: themename_settings.wp_productremovenonce
       },
       beforeSend: function () {
         thisItem.find(".mini_cart_content").append('<div class="ajax-loader-wapper"><div class="ajax-loader"></div></div>').fadeTo("slow", 0.3);
@@ -186,7 +186,7 @@ class AjaxCart {
   _initEventMiniCartAjaxQuantity() {
     var timeout;
     jQuery("body").on("change", ".mini-cart-item .qty", function () {
-      var urlAjax = lasa_settings.wc_ajax_url.toString().replace("%%endpoint%%", "lasa_quantity_mini_cart"),
+      var urlAjax = themename_settings.wc_ajax_url.toString().replace("%%endpoint%%", "themename_quantity_mini_cart"),
           input = jQuery(this),
           wrap = jQuery(input).parents(".mini_cart_content"),
           hash = jQuery(input).attr("name").replace(/cart\[([\w]+)\]\[qty\]/g, "$1"),
@@ -213,7 +213,7 @@ class AjaxCart {
           data: {
             hash: hash,
             quantity: quantity,
-            security: lasa_settings.wp_minicartquantitynonce
+            security: themename_settings.wp_minicartquantitynonce
           },
           beforeSend: function () {
             wrap.append('<div class="ajax-loader-wapper"><div class="ajax-loader"></div></div>').fadeTo("slow", 0.3);
@@ -254,12 +254,12 @@ class WishList {
     jQuery(document).on('added_to_wishlist removed_from_wishlist', () => {
       var counter = jQuery('.count_wishlist').find('> span');
       if (counter.length === 0) return;
-      var urlAjax = lasa_settings.wc_ajax_url.toString().replace('%%endpoint%%', 'lasa_update_wishlist_count');
+      var urlAjax = themename_settings.wc_ajax_url.toString().replace('%%endpoint%%', 'themename_update_wishlist_count');
       jQuery.ajax({
         url: urlAjax,
         type: 'POST',
         data: {
-          security: lasa_settings.wp_wishlistcountnonce
+          security: themename_settings.wp_wishlistcountnonce
         },
         dataType: 'json',
         success: function (data) {
@@ -269,7 +269,7 @@ class WishList {
           counter.block({
             message: null,
             overlayCSS: {
-              background: '#fff url(' + lasa_settings.loader + ') no-repeat center',
+              background: '#fff url(' + themename_settings.loader + ') no-repeat center',
               opacity: 0.5,
               cursor: 'none'
             }
@@ -294,14 +294,14 @@ class ProductItem {
       if (jQuery(this).attr('type') == 'hidden') {
         jQuery(this).parents('.quantity').addClass('hidden');
       } else {
-        jQuery(`<button class="minus" type="button" value="&nbsp;">${lasa_settings.quantity_minus}</button>`).insertBefore(jQuery(this));
-        jQuery(`<button class="plus" type="button" value="&nbsp;">${lasa_settings.quantity_plus}</button>`).insertAfter(jQuery(this));
+        jQuery(`<button class="minus" type="button" value="&nbsp;">${themename_settings.quantity_minus}</button>`).insertBefore(jQuery(this));
+        jQuery(`<button class="plus" type="button" value="&nbsp;">${themename_settings.quantity_plus}</button>`).insertAfter(jQuery(this));
       }
     });
   }
 
   _initOnChangeQuantity(callback) {
-    if (typeof lasa_settings === "undefined") return;
+    if (typeof themename_settings === "undefined") return;
 
     this._initAddButtonQuantity();
 
@@ -383,7 +383,7 @@ class ProductItem {
   }
 
   _initQuantityMode() {
-    if (typeof lasa_settings === "undefined" || !lasa_settings.quantity_mode) return;
+    if (typeof themename_settings === "undefined" || !themename_settings.quantity_mode) return;
     jQuery(".woocommerce .products").on("click", ".quantity .qty", function () {
       return false;
     });
@@ -432,7 +432,7 @@ class Cart {
     const onChangeQuantity = () => {
       updateCart.prop("disabled", false);
 
-      if (typeof lasa_settings !== "undefined" && lasa_settings.ajax_update_quantity) {
+      if (typeof themename_settings !== "undefined" && themename_settings.ajax_update_quantity) {
         jQuery("[name='update_cart']").trigger("click");
       }
     };
@@ -485,7 +485,7 @@ class Checkout {
   _initEventCheckoutAjaxQuantity() {
     var timeout;
     jQuery("body").on("change input", ".woocommerce-checkout-review-order-table .quantity .qty", function () {
-      var urlAjax = lasa_settings.wc_ajax_url.toString().replace("%%endpoint%%", "lasa_quantity_mini_cart"),
+      var urlAjax = themename_settings.wc_ajax_url.toString().replace("%%endpoint%%", "themename_quantity_mini_cart"),
           input = jQuery(this),
           hash = jQuery(input).attr("name").replace(/cart\[([\w]+)\]\[qty\]/g, "$1"),
           max = parseFloat(jQuery(input).attr("max"));
@@ -511,7 +511,7 @@ class Checkout {
           data: {
             hash: hash,
             quantity: quantity,
-            security: lasa_settings.wp_minicartquantitynonce
+            security: themename_settings.wp_minicartquantitynonce
           },
           beforeSend: function () {
             jQuery('form.checkout').trigger('update');
@@ -564,7 +564,7 @@ class WooCommon {
 
 class QuickView {
   constructor() {
-    if (typeof jQuery.magnificPopup === "undefined" || typeof lasa_settings === "undefined") return;
+    if (typeof jQuery.magnificPopup === "undefined" || typeof themename_settings === "undefined") return;
 
     this._init_tbay_quick_view();
   }
@@ -579,14 +579,14 @@ class QuickView {
       let mainClass = self.attr("data-effect");
       let is_blocked = false,
           product_id = jQuery(this).data("product_id"),
-          url = lasa_settings.wc_ajax_url.toString().replace("%%endpoint%%", "lasa_quickview_product") + "&product_id=" + product_id;
+          url = themename_settings.wc_ajax_url.toString().replace("%%endpoint%%", "themename_quickview_product") + "&product_id=" + product_id;
 
-      if (typeof lasa_settings.loader !== "undefined") {
+      if (typeof themename_settings.loader !== "undefined") {
         is_blocked = true;
         self.block({
           message: null,
           overlayCSS: {
-            background: "#fff url(" + lasa_settings.loader + ") no-repeat center",
+            background: "#fff url(" + themename_settings.loader + ") no-repeat center",
             opacity: 0.5,
             cursor: "none"
           }
@@ -603,10 +603,10 @@ class QuickView {
     $.get(url, function (data, status) {
       $.magnificPopup.open({
         removalDelay: 0,
-        closeMarkup: '<button title="%title%" type="button" class="mfp-close"> ' + lasa_settings.close + "</button>",
+        closeMarkup: '<button title="%title%" type="button" class="mfp-close"> ' + themename_settings.close + "</button>",
         callbacks: {
           beforeOpen: function () {
-            this.st.mainClass = mainClass + " lasa-quickview";
+            this.st.mainClass = mainClass + " themename-quickview";
           }
         },
         items: {
@@ -723,7 +723,7 @@ class StickyBar {
 
 class DisplayMode {
   constructor() {
-    if (typeof lasa_settings === "undefined") return;
+    if (typeof themename_settings === "undefined") return;
 
     this._initModeListShopPage();
 
@@ -741,12 +741,12 @@ class DisplayMode {
     jQuery("#display-mode-list").on("click", function () {
       if (jQuery(this).hasClass("active")) return;
       var event = jQuery(this),
-          urlAjax = lasa_settings.wc_ajax_url.toString().replace("%%endpoint%%", PRODUCT_LIST_AJAX_SHOP_PAGE);
+          urlAjax = themename_settings.wc_ajax_url.toString().replace("%%endpoint%%", PRODUCT_LIST_AJAX_SHOP_PAGE);
       jQuery.ajax({
         url: urlAjax,
         data: {
-          query: lasa_settings.posts,
-          security: lasa_settings.wp_productslistnonce
+          query: themename_settings.posts,
+          security: themename_settings.wp_productslistnonce
         },
         dataType: "json",
         method: "POST",
@@ -770,7 +770,7 @@ class DisplayMode {
 
             jQuery(document.body).trigger("tbay_display_mode");
             event.closest("#tbay-main-content").find(".display-products").removeClass("load-ajax");
-            Cookies.set("lasa_display_mode", "list", {
+            Cookies.set("themename_display_mode", "list", {
               expires: 0.1,
               path: "/"
             });
@@ -786,13 +786,13 @@ class DisplayMode {
     jQuery("#display-mode-grid").on("click", function () {
       if (jQuery(this).hasClass("active")) return;
       var event = jQuery(this),
-          urlAjax = lasa_settings.wc_ajax_url.toString().replace("%%endpoint%%", PRODUCT_GRID_AJAX_SHOP_PAGE);
+          urlAjax = themename_settings.wc_ajax_url.toString().replace("%%endpoint%%", PRODUCT_GRID_AJAX_SHOP_PAGE);
       event.closest("#tbay-main-content").find("div.display-products");
       jQuery.ajax({
         url: urlAjax,
         data: {
-          query: lasa_settings.posts,
-          security: lasa_settings.wp_productsgridnonce
+          query: themename_settings.posts,
+          security: themename_settings.wp_productsgridnonce
         },
         dataType: "json",
         method: "POST",
@@ -817,7 +817,7 @@ class DisplayMode {
 
             jQuery(document.body).trigger("tbay_display_mode");
             event.closest("#tbay-main-content").find(".display-products").removeClass("load-ajax");
-            Cookies.set("lasa_display_mode", "grid", {
+            Cookies.set("themename_display_mode", "grid", {
               expires: 0.1,
               path: "/"
             });
@@ -912,7 +912,7 @@ class SingleProduct {
 
     _this._initBuyNow();
 
-    if (lasa_settings.mobile_form_cart_style === "popup") {
+    if (themename_settings.mobile_form_cart_style === "popup") {
       _this._initChangeImageVarible();
 
       _this._initOpenAttributeMobile();
@@ -1044,7 +1044,7 @@ class SingleProduct {
       e.preventDefault();
       let productform = jQuery(this).closest("form.cart"),
           submit_btn = productform.find('[type="submit"]'),
-          buy_now = productform.find('input[name="lasa_buy_now"]'),
+          buy_now = productform.find('input[name="themename_buy_now"]'),
           is_disabled = submit_btn.is(".disabled");
 
       if (is_disabled) {
@@ -1069,11 +1069,11 @@ class SingleProduct {
   }
 
   _initFeatureVideo() {
-    if (typeof lasa_settings === "undefined") return;
-    let featured = jQuery(document).find(lasa_settings.img_class_container + ".tbay_featured_content");
+    if (typeof themename_settings === "undefined") return;
+    let featured = jQuery(document).find(themename_settings.img_class_container + ".tbay_featured_content");
     if (featured.length === 0) return;
     let featured_index = featured.index(),
-        featured_gallery_thumbnail = jQuery(lasa_settings.thumbnail_gallery_class_element).get(featured_index);
+        featured_gallery_thumbnail = jQuery(themename_settings.thumbnail_gallery_class_element).get(featured_index);
     jQuery(featured_gallery_thumbnail).addClass("tbay_featured_thumbnail");
   }
 
@@ -1196,20 +1196,20 @@ class SingleProduct {
 
     if (jQuery("#shop-now").length > 0 && !jQuery("#shop-now").hasClass("ajax-single-cart")) return;
     jQuery("body").on("click", "form.cart .single_add_to_cart_button", function () {
-      if (jQuery(this).closest("form.cart").find('input[name="lasa_buy_now"]').length > 0 && jQuery(this).closest("form.cart").find('input[name="lasa_buy_now"]').val() === "1") return;
+      if (jQuery(this).closest("form.cart").find('input[name="themename_buy_now"]').length > 0 && jQuery(this).closest("form.cart").find('input[name="themename_buy_now"]').val() === "1") return;
 
       var flag_adding = true,
           _this2 = jQuery(this),
           form = jQuery(_this2).parents("form.cart");
 
-      jQuery("body").trigger("lasa_before_click_single_add_to_cart", [form]);
-      let enable_ajax = jQuery(form).find('input[name="lasa-enable-addtocart-ajax"]');
+      jQuery("body").trigger("themename_before_click_single_add_to_cart", [form]);
+      let enable_ajax = jQuery(form).find('input[name="themename-enable-addtocart-ajax"]');
 
       if (jQuery(enable_ajax).length <= 0 || jQuery(enable_ajax).val() !== "1") {
         flag_adding = false;
         return;
       } else {
-        let disabled = jQuery(_this2).hasClass("disabled") || jQuery(_this2).hasClass("lasa-ct-disabled") ? true : false,
+        let disabled = jQuery(_this2).hasClass("disabled") || jQuery(_this2).hasClass("themename-ct-disabled") ? true : false,
             product_id = !disabled ? jQuery(form).find('input[name="data-product_id"]').val() : false;
 
         if (product_id && !jQuery(_this2).hasClass("loading")) {
@@ -1243,8 +1243,8 @@ class SingleProduct {
     var form = jQuery(_this).parents("form.cart");
     if (type === "grouped") return;
 
-    if (typeof lasa_settings !== "undefined" && typeof lasa_settings.wc_ajax_url !== "undefined") {
-      var urlAjax = lasa_settings.wc_ajax_url.toString().replace("%%endpoint%%", "lasa_single_add_to_cart");
+    if (typeof themename_settings !== "undefined" && typeof themename_settings.wc_ajax_url !== "undefined") {
+      var urlAjax = themename_settings.wc_ajax_url.toString().replace("%%endpoint%%", "themename_single_add_to_cart");
       var data = {
         product_id: product_id,
         quantity: quantity,
@@ -1255,11 +1255,11 @@ class SingleProduct {
 
       if (jQuery(form).length > 0) {
         if (type === "simple") {
-          jQuery(form).find(".lasa-custom-fields").append('<input type="hidden" name="add-to-cart" value="' + product_id + '" />');
+          jQuery(form).find(".themename-custom-fields").append('<input type="hidden" name="add-to-cart" value="' + product_id + '" />');
         }
 
         data = jQuery(form).serializeArray();
-        jQuery(form).find('.lasa-custom-fields [name="add-to-cart"]').remove();
+        jQuery(form).find('.themename-custom-fields [name="add-to-cart"]').remove();
       }
 
       jQuery.ajax({
@@ -1269,7 +1269,7 @@ class SingleProduct {
         cache: false,
         data: data,
         beforeSend: function () {
-          jQuery(_this).removeClass("added lasa-added").addClass("loading");
+          jQuery(_this).removeClass("added themename-added").addClass("loading");
         },
         success: function (res) {
           if (!res.error) {
@@ -1284,7 +1284,7 @@ class SingleProduct {
                 });
 
                 if (!jQuery(_this).hasClass("added")) {
-                  jQuery(_this).addClass("added lasa-added");
+                  jQuery(_this).addClass("added themename-added");
                 }
               }
 
@@ -1311,7 +1311,7 @@ class SingleProduct {
 
 class ProductTabs {
   constructor() {
-    if (typeof lasa_settings === "undefined") return;
+    if (typeof themename_settings === "undefined") return;
 
     this._initProductTabs();
   }
@@ -1331,13 +1331,13 @@ class ProductTabs {
           return;
         }
 
-        var urlAjax = lasa_settings.wc_ajax_url.toString().replace("%%endpoint%%", "lasa_products_tab_shortcode");
+        var urlAjax = themename_settings.wc_ajax_url.toString().replace("%%endpoint%%", "themename_products_tab_shortcode");
         jQuery.ajax({
           url: urlAjax,
           data: {
             atts: atts,
             value: value,
-            security: lasa_settings.wp_productstabnonce
+            security: themename_settings.wp_productstabnonce
           },
           dataType: "json",
           method: "POST",
@@ -1369,7 +1369,7 @@ class ProductTabs {
 
 class ProductCategoriesTabs {
   constructor() {
-    if (typeof lasa_settings === "undefined") return;
+    if (typeof themename_settings === "undefined") return;
 
     this._initProductCategoriesTabs();
   }
@@ -1390,13 +1390,13 @@ class ProductCategoriesTabs {
         }
 
         jQuery(id).parent().addClass("load-ajax");
-        var urlAjax = lasa_settings.wc_ajax_url.toString().replace("%%endpoint%%", "lasa_products_categories_tab_shortcode");
+        var urlAjax = themename_settings.wc_ajax_url.toString().replace("%%endpoint%%", "themename_products_categories_tab_shortcode");
         jQuery.ajax({
           url: urlAjax,
           data: {
             atts: atts,
             value: value,
-            security: lasa_settings.wp_productscategoriestabnonce
+            security: themename_settings.wp_productscategoriestabnonce
           },
           dataType: "json",
           method: "POST",
@@ -1425,7 +1425,7 @@ class ProductCategoriesTabs {
 
 class CollapseDescriptionTab {
   constructor() {
-    if (!lasa_settings.collapse_details_tab) return;
+    if (!themename_settings.collapse_details_tab) return;
     jQuery(window).on("load", () => {
       this._intCollapseDescriptionTab();
     });
@@ -1436,12 +1436,12 @@ class CollapseDescriptionTab {
 
     if (wrap.length > 0) {
       const current_height = wrap.find(".tbay-product-description--content").height();
-      const max_height = lasa_settings.maximum_height_collapse;
+      const max_height = themename_settings.maximum_height_collapse;
 
       if (current_height > max_height) {
         wrap.addClass("fix-height").css("max-height", parseInt(max_height));
-        wrap.append(`<div class="tbay-description-toggle tbay-description-toggle__less"><a title="${lasa_settings.show_less}" href="javascript:void(0);">${lasa_settings.show_less}</a></div>`);
-        wrap.append(`<div class="tbay-description-toggle tbay-description-toggle__more"><a title="${lasa_settings.show_more}" href="javascript:void(0);">${lasa_settings.show_more}</a></div>`);
+        wrap.append(`<div class="tbay-description-toggle tbay-description-toggle__less"><a title="${themename_settings.show_less}" href="javascript:void(0);">${themename_settings.show_less}</a></div>`);
+        wrap.append(`<div class="tbay-description-toggle tbay-description-toggle__more"><a title="${themename_settings.show_more}" href="javascript:void(0);">${themename_settings.show_more}</a></div>`);
         jQuery("body").on("click", ".tbay-description-toggle__more", () => {
           wrap.removeClass("fix-height").css("max-height", "none");
           jQuery("body .tbay-description-toggle__more").hide();
@@ -1497,8 +1497,8 @@ jQuery(document.body).on("tbay_ajax_tabs_products", () => {
   product_item._initAddButtonQuantity();
 });
 jQuery(window).on("elementor/frontend/init", function () {
-  if (elementorFrontend.isEditMode() && typeof lasa_settings !== "undefined" && Array.isArray(lasa_settings.elements_ready.products)) {
-    jQuery.each(lasa_settings.elements_ready.products, function (index, value) {
+  if (elementorFrontend.isEditMode() && typeof themename_settings !== "undefined" && Array.isArray(themename_settings.elements_ready.products)) {
+    jQuery.each(themename_settings.elements_ready.products, function (index, value) {
       elementorFrontend.hooks.addAction("frontend/element_ready/tbay-" + value + ".default", AddButtonQuantity);
     });
   }
@@ -1509,8 +1509,8 @@ var AjaxProductTabs = function ($scope, $) {
 };
 
 jQuery(window).on("elementor/frontend/init", function () {
-  if (elementorFrontend.isEditMode() && typeof lasa_settings !== "undefined" && elementorFrontend.isEditMode() && Array.isArray(lasa_settings.elements_ready.ajax_tabs)) {
-    jQuery.each(lasa_settings.elements_ready.ajax_tabs, function (index, value) {
+  if (elementorFrontend.isEditMode() && typeof themename_settings !== "undefined" && elementorFrontend.isEditMode() && Array.isArray(themename_settings.elements_ready.ajax_tabs)) {
+    jQuery.each(themename_settings.elements_ready.ajax_tabs, function (index, value) {
       elementorFrontend.hooks.addAction("frontend/element_ready/tbay-" + value + ".default", AjaxProductTabs);
     });
   }

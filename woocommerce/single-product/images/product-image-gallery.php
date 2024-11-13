@@ -11,7 +11,7 @@ if (isset($count) && $count > 0) {
     wp_enqueue_script('hc-sticky');
 }
 
-$sidebar_configs    = lasa_tbay_get_woocommerce_layout_configs();
+$sidebar_configs    = themename_tbay_get_woocommerce_layout_configs();
 $images_layout      = ( !empty($sidebar_configs['thumbnail']) ) ? $sidebar_configs['thumbnail'] : 'horizontal';
 $is_rtl 			= (is_rtl()) ? 'yes' : 'no';
 
@@ -34,7 +34,7 @@ $wrapper_classes   		= apply_filters('woocommerce_single_product_image_gallery_c
 
 	<div class="woocommerce-product-gallery__wrapper">
 		<?php
-        do_action('lasa_woocommerce_before_product_thumbnails');
+        do_action('themename_woocommerce_before_product_thumbnails');
         
         if ($product->get_image_id()) {
             $html = wc_get_gallery_image_html($post_thumbnail_id, true);
@@ -43,7 +43,7 @@ $wrapper_classes   		= apply_filters('woocommerce_single_product_image_gallery_c
             'woocommerce-product-gallery__image woocommerce-product-gallery__image--placeholder' :
             'woocommerce-product-gallery__image--placeholder';
             $html              = sprintf( '<div class="%s">', esc_attr( $wrapper_classname ) );
-            $html .= sprintf('<img src="%s" alt="%s" class="wp-post-image" />', esc_url(wc_placeholder_img_src('woocommerce_single')), esc_attr__('Awaiting product image', 'lasa'));
+            $html .= sprintf('<img src="%s" alt="%s" class="wp-post-image" />', esc_url(wc_placeholder_img_src('woocommerce_single')), esc_attr__('Awaiting product image', 'themename'));
             $html .= '</div>';
         }
 
@@ -52,6 +52,6 @@ $wrapper_classes   		= apply_filters('woocommerce_single_product_image_gallery_c
         ?>
 	</div>
     <?php 
-		do_action( 'lasa_woocommerce_after_product_thumbnails' );
+		do_action( 'themename_woocommerce_after_product_thumbnails' );
 	?>
 </div>

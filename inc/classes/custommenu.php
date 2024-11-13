@@ -1,7 +1,7 @@
 <?php
 
-if (!class_exists("Lasa_Tbay_Custom_Nav_Menu")) {
-    class Lasa_Tbay_Custom_Nav_Menu extends Walker_Nav_Menu
+if (!class_exists("Themename_Tbay_Custom_Nav_Menu")) {
+    class Themename_Tbay_Custom_Nav_Menu extends Walker_Nav_Menu
     {
         
        /**
@@ -111,15 +111,15 @@ if (!class_exists("Lasa_Tbay_Custom_Nav_Menu")) {
             if (isset($item->tbay_text_label) && !empty($item->tbay_text_label)) {
                 switch ($item->tbay_text_label) {
                     case 'label_new':
-                        $text_label  = esc_html__('New', 'lasa');
+                        $text_label  = esc_html__('New', 'themename');
                         break;
 
                     case 'label_hot':
-                        $text_label  = esc_html__('Hot', 'lasa');
+                        $text_label  = esc_html__('Hot', 'themename');
                         break;
 
                     case 'label_featured':
-                        $text_label  = esc_html__('Sale', 'lasa');
+                        $text_label  = esc_html__('Sale', 'themename');
                         break;
 
                     default:

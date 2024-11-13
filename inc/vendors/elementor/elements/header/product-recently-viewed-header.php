@@ -1,12 +1,12 @@
 <?php
-if (! defined('ABSPATH') || function_exists('Lasa_Elementor_Product_Recently_Viewed_Header')) {
+if (! defined('ABSPATH') || function_exists('Themename_Elementor_Product_Recently_Viewed_Header')) {
     exit; // Exit if accessed directly.
 }
 
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
 
-class Lasa_Elementor_Product_Recently_Viewed_Header extends Lasa_Elementor_Widget_Base
+class Themename_Elementor_Product_Recently_Viewed_Header extends Themename_Elementor_Widget_Base
 {
     public function get_name()
     {
@@ -21,12 +21,12 @@ class Lasa_Elementor_Product_Recently_Viewed_Header extends Lasa_Elementor_Widge
 
     public function get_title()
     {
-        return esc_html__('Lasa Product Recently Viewed Header', 'lasa');
+        return esc_html__('Themename Product Recently Viewed Header', 'themename');
     }
 
     public function get_categories()
     {
-        return [ 'lasa-elements', 'woocommerce-elements'];
+        return [ 'themename-elements', 'woocommerce-elements'];
     }
 
     public function get_icon()
@@ -46,7 +46,7 @@ class Lasa_Elementor_Product_Recently_Viewed_Header extends Lasa_Elementor_Widge
      */
     public function get_script_depends()
     {
-        return ['slick', 'lasa-custom-slick'];
+        return ['slick', 'themename-custom-slick'];
     }
 
     public function get_keywords()
@@ -59,7 +59,7 @@ class Lasa_Elementor_Product_Recently_Viewed_Header extends Lasa_Elementor_Widge
         $this->start_controls_section(
             'general',
             [
-                'label' => esc_html__('General', 'lasa'),
+                'label' => esc_html__('General', 'themename'),
             ]
         );
 
@@ -68,7 +68,7 @@ class Lasa_Elementor_Product_Recently_Viewed_Header extends Lasa_Elementor_Widge
         $this->add_control(
             'advanced',
             [
-                'label' => esc_html__('Advanced', 'lasa'),
+                'label' => esc_html__('Advanced', 'themename'),
                 'type' => Controls_Manager::HEADING,
             ]
         );
@@ -76,9 +76,9 @@ class Lasa_Elementor_Product_Recently_Viewed_Header extends Lasa_Elementor_Widge
         $this->add_control(
             'empty',
             [
-                'label' => esc_html__('Empty Result - Custom Paragraph', 'lasa'),
+                'label' => esc_html__('Empty Result - Custom Paragraph', 'themename'),
                 'type' => Controls_Manager::TEXTAREA,
-                'default' => esc_html__('You have no recently viewed item.', 'lasa'),
+                'default' => esc_html__('You have no recently viewed item.', 'themename'),
                 'dynamic' => [
                     'active' => true,
                 ]
@@ -88,12 +88,12 @@ class Lasa_Elementor_Product_Recently_Viewed_Header extends Lasa_Elementor_Widge
         $this->add_control(
             'align_empty',
             [
-                'label' => esc_html__('Align Empty Result', 'lasa'),
+                'label' => esc_html__('Align Empty Result', 'themename'),
                 'type' => Controls_Manager::SELECT,
                 'options' => [
-                    'left' => esc_html__('Left', 'lasa'),
-                    'center' => esc_html__('Center', 'lasa'),
-                    'right' => esc_html__('Right', 'lasa')
+                    'left' => esc_html__('Left', 'themename'),
+                    'center' => esc_html__('Center', 'themename'),
+                    'right' => esc_html__('Right', 'themename')
                 ],
                 'default' => 'center',
                 'dynamic' => [
@@ -109,7 +109,7 @@ class Lasa_Elementor_Product_Recently_Viewed_Header extends Lasa_Elementor_Widge
         $this->add_control(
             'enable_readmore',
             [
-                'label' => esc_html__('Enable Button "Read More" ', 'lasa'),
+                'label' => esc_html__('Enable Button "Read More" ', 'themename'),
                 'type' => Controls_Manager::SWITCHER,
                 'default' => 'yes',
             ]
@@ -126,7 +126,7 @@ class Lasa_Elementor_Product_Recently_Viewed_Header extends Lasa_Elementor_Widge
         $this->start_controls_section(
             'section_readmore',
             [
-                'label' => esc_html__('Read More Options', 'lasa'),
+                'label' => esc_html__('Read More Options', 'themename'),
                 'type'  => Controls_Manager::SECTION,
                 'condition' => [
                     'enable_readmore' => 'yes'
@@ -137,9 +137,9 @@ class Lasa_Elementor_Product_Recently_Viewed_Header extends Lasa_Elementor_Widge
         $this->add_control(
             'readmore_text',
             [
-                'label' => esc_html__('Button "Read More" Custom Text', 'lasa'),
+                'label' => esc_html__('Button "Read More" Custom Text', 'themename'),
                 'type' => Controls_Manager::TEXT,
-                'default' => esc_html__('Read More', 'lasa'),
+                'default' => esc_html__('Read More', 'themename'),
                 'label_block' => true,
             ]
         );
@@ -150,7 +150,7 @@ class Lasa_Elementor_Product_Recently_Viewed_Header extends Lasa_Elementor_Widge
             $this->add_control(
                 'readmore_page',
                 [
-                    'label'        => esc_html__('Page', 'lasa'),
+                    'label'        => esc_html__('Page', 'themename'),
                     'type'         => Controls_Manager::SELECT2,
                     'options'      => $pages,
                     'default'      => array_keys($pages)[0],
@@ -164,7 +164,7 @@ class Lasa_Elementor_Product_Recently_Viewed_Header extends Lasa_Elementor_Widge
                 'readmore_page',
                 [
                     'type'            => Controls_Manager::RAW_HTML,
-                    'raw'             => sprintf(__('<strong>There are no pages in your site.</strong><br>Go to the <a href="%s" target="_blank">pages screen</a> to create one.', 'lasa'), admin_url('edit.php?post_type=page')),
+                    'raw'             => sprintf(__('<strong>There are no pages in your site.</strong><br>Go to the <a href="%s" target="_blank">pages screen</a> to create one.', 'themename'), admin_url('edit.php?post_type=page')),
                     'separator'       => 'after',
                     'content_classes' => 'elementor-panel-alert elementor-panel-alert-info',
                 ]
@@ -177,7 +177,7 @@ class Lasa_Elementor_Product_Recently_Viewed_Header extends Lasa_Elementor_Widge
         $this->start_controls_section(
             'section_style_icon_header', 
             [
-                'label' => esc_html__('Icon', 'lasa'),
+                'label' => esc_html__('Icon', 'themename'),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -185,7 +185,7 @@ class Lasa_Elementor_Product_Recently_Viewed_Header extends Lasa_Elementor_Widge
         $this->add_control(
             'icon_recently_viewed_size',
             [
-                'label' => esc_html__('Font Size Icon', 'lasa'),
+                'label' => esc_html__('Font Size Icon', 'themename'),
                 'type' => Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [
@@ -202,7 +202,7 @@ class Lasa_Elementor_Product_Recently_Viewed_Header extends Lasa_Elementor_Widge
         $this->add_responsive_control(
             'margin_icon_recently',
             [
-                'label'     => esc_html__('Margin', 'lasa'),
+                'label'     => esc_html__('Margin', 'themename'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px' ],
                 'selectors'  => [
@@ -213,7 +213,7 @@ class Lasa_Elementor_Product_Recently_Viewed_Header extends Lasa_Elementor_Widge
         $this->add_responsive_control(
             'padding_icon_recently',
             [
-                'label'     => esc_html__('Padding', 'lasa'),
+                'label'     => esc_html__('Padding', 'themename'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px' ],
                 'selectors'  => [
@@ -226,13 +226,13 @@ class Lasa_Elementor_Product_Recently_Viewed_Header extends Lasa_Elementor_Widge
         $this->start_controls_tab(
             'tab_icon_recently_normal',
             [
-                'label' => esc_html__('Normal', 'lasa'),
+                'label' => esc_html__('Normal', 'themename'),
             ]
         );
         $this->add_control(
             'color_text',
             [
-                'label'     => esc_html__('Color', 'lasa'),
+                'label'     => esc_html__('Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .header-title i'    => 'color: {{VALUE}}',
@@ -245,13 +245,13 @@ class Lasa_Elementor_Product_Recently_Viewed_Header extends Lasa_Elementor_Widge
         $this->start_controls_tab(
             'tab_icon_recently_hover',
             [
-                'label' => esc_html__('Hover', 'lasa'),
+                'label' => esc_html__('Hover', 'themename'),
             ]
         );
         $this->add_control(
             'hover_color_text',
             [
-                'label'     => esc_html__('Color', 'lasa'),
+                'label'     => esc_html__('Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .header-title i:hover' => 'color: {{VALUE}}',
@@ -269,7 +269,7 @@ class Lasa_Elementor_Product_Recently_Viewed_Header extends Lasa_Elementor_Widge
         $this->start_controls_section(
             'section_style_heading_header',
             [
-                'label' => esc_html__('Heading', 'lasa'),
+                'label' => esc_html__('Heading', 'themename'),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -284,7 +284,7 @@ class Lasa_Elementor_Product_Recently_Viewed_Header extends Lasa_Elementor_Widge
         $this->add_responsive_control(
             'heading_header_style_margin',
             [
-                'label' => esc_html__('Margin', 'lasa'),
+                'label' => esc_html__('Margin', 'themename'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'selectors' => [
@@ -296,7 +296,7 @@ class Lasa_Elementor_Product_Recently_Viewed_Header extends Lasa_Elementor_Widge
         $this->add_responsive_control(
             'heading_header_style_padding',
             [
-                'label' => esc_html__('Padding', 'lasa'),
+                'label' => esc_html__('Padding', 'themename'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'selectors' => [
@@ -309,14 +309,14 @@ class Lasa_Elementor_Product_Recently_Viewed_Header extends Lasa_Elementor_Widge
         $this->start_controls_tab(
             'heading_header_tab_normal',
             [
-                'label' => esc_html__('Normal', 'lasa'),
+                'label' => esc_html__('Normal', 'themename'),
             ]
         );
 
         $this->add_control(
             'heading_header_color',
             [
-                'label' => esc_html__('Color', 'lasa'),
+                'label' => esc_html__('Color', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -327,7 +327,7 @@ class Lasa_Elementor_Product_Recently_Viewed_Header extends Lasa_Elementor_Widge
         $this->add_control(
             'heading_header_bg',
             [
-                'label' => esc_html__('Background', 'lasa'),
+                'label' => esc_html__('Background', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -342,14 +342,14 @@ class Lasa_Elementor_Product_Recently_Viewed_Header extends Lasa_Elementor_Widge
         $this->start_controls_tab(
             'heading_header_tab_hover',
             [
-                'label' => esc_html__('Hover', 'lasa'),
+                'label' => esc_html__('Hover', 'themename'),
             ]
         );
 
         $this->add_control(
             'heading_header_color_hover',
             [
-                'label' => esc_html__('Hover', 'lasa'),
+                'label' => esc_html__('Hover', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -361,7 +361,7 @@ class Lasa_Elementor_Product_Recently_Viewed_Header extends Lasa_Elementor_Widge
         $this->add_control(
             'heading_header_bg_hover',
             [
-                'label' => esc_html__('Background', 'lasa'),
+                'label' => esc_html__('Background', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -381,7 +381,7 @@ class Lasa_Elementor_Product_Recently_Viewed_Header extends Lasa_Elementor_Widge
         $this->add_control(
             'advanced_header',
             [
-                'label' => esc_html__('Header', 'lasa'),
+                'label' => esc_html__('Header', 'themename'),
                 'type' => Controls_Manager::HEADING,
             ]
         );
@@ -389,7 +389,7 @@ class Lasa_Elementor_Product_Recently_Viewed_Header extends Lasa_Elementor_Widge
         $this->add_control(
             'icon_recently_viewed',
             [
-                'label'              => esc_html__('Icon', 'lasa'),
+                'label'              => esc_html__('Icon', 'themename'),
                 'type'               => Controls_Manager::ICONS,
                 'default' => [
                     'value' => 'tb-icon tb-icon-recently-viewed',
@@ -402,7 +402,7 @@ class Lasa_Elementor_Product_Recently_Viewed_Header extends Lasa_Elementor_Widge
         $this->add_control(
             'show_title_recently_viewed',
             [
-                'label'              => esc_html__('Display Title', 'lasa'),
+                'label'              => esc_html__('Display Title', 'themename'),
                 'type'               => Controls_Manager::SWITCHER,
                 'default' => 'no'
             ]
@@ -411,9 +411,9 @@ class Lasa_Elementor_Product_Recently_Viewed_Header extends Lasa_Elementor_Widge
         $this->add_control(
             'header_title',
             [
-                'label' => esc_html__('Title', 'lasa'),
+                'label' => esc_html__('Title', 'themename'),
                 'type' => Controls_Manager::TEXT,
-                'default' => esc_html__('Recently Viewed', 'lasa'),
+                'default' => esc_html__('Recently Viewed', 'themename'),
                 'label_block' => true,
                 'condition' => [
                     'show_title_recently_viewed' => 'yes'
@@ -424,7 +424,7 @@ class Lasa_Elementor_Product_Recently_Viewed_Header extends Lasa_Elementor_Widge
         $this->add_control(
             'header_column',
             [
-                'label'     => esc_html__('Columns and max item', 'lasa'),
+                'label'     => esc_html__('Columns and max item', 'themename'),
                 'type'      => Controls_Manager::SELECT,
                 'default'   => 8,
                 'separator'    => 'after',
@@ -435,7 +435,7 @@ class Lasa_Elementor_Product_Recently_Viewed_Header extends Lasa_Elementor_Widge
 
     public function get_max_columns()
     {
-        $value = apply_filters('lasa_admin_elementor_recently_viewed_header_columns', [
+        $value = apply_filters('themename_admin_elementor_recently_viewed_header_columns', [
            4 => 4,
            5 => 5,
            6 => 6,
@@ -452,8 +452,8 @@ class Lasa_Elementor_Product_Recently_Viewed_Header extends Lasa_Elementor_Widge
 
     private function get_recently_viewed($limit)
     {
-        $args = lasa_tbay_get_products_recently_viewed($limit);
-        $args = apply_filters('lasa_list_recently_viewed_products_args', $args);
+        $args = themename_tbay_get_products_recently_viewed($limit);
+        $args = apply_filters('themename_list_recently_viewed_products_args', $args);
 
         $products = new WP_Query($args);
 
@@ -480,7 +480,7 @@ class Lasa_Elementor_Product_Recently_Viewed_Header extends Lasa_Elementor_Widge
         $settings = $this->get_settings_for_display();
         extract($settings);
 
-        $products_list      = lasa_tbay_wc_track_user_get_cookie();
+        $products_list      = themename_tbay_wc_track_user_get_cookie();
 
         if ( !empty($products_list) ) {
             $content                    =  $this->get_recently_viewed($header_column);
@@ -518,7 +518,7 @@ class Lasa_Elementor_Product_Recently_Viewed_Header extends Lasa_Elementor_Widge
     {
         $settings = $this->get_settings_for_display();
         extract($settings);
-        $products_list              =  lasa_tbay_wc_track_user_get_cookie();
+        $products_list              =  themename_tbay_wc_track_user_get_cookie();
         $all                        =  count($products_list);
 
         if (!empty($readmore_page)) {
@@ -530,4 +530,4 @@ class Lasa_Elementor_Product_Recently_Viewed_Header extends Lasa_Elementor_Widge
         <?php endif;
     }
 }
-$widgets_manager->register(new Lasa_Elementor_Product_Recently_Viewed_Header());
+$widgets_manager->register(new Themename_Elementor_Product_Recently_Viewed_Header());

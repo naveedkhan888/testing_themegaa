@@ -1,6 +1,6 @@
 <?php
 
-if (! defined('ABSPATH') || function_exists('Lasa_Elementor_Mini_Cart')) {
+if (! defined('ABSPATH') || function_exists('Themename_Elementor_Mini_Cart')) {
     exit; // Exit if accessed directly.
 }
 
@@ -9,7 +9,7 @@ use Elementor\Controls_Manager;
 use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Typography;
 
-class Lasa_Elementor_Mini_Cart extends Lasa_Elementor_Widget_Base
+class Themename_Elementor_Mini_Cart extends Themename_Elementor_Widget_Base
 {
     protected $nav_menu_index = 1;
 
@@ -20,7 +20,7 @@ class Lasa_Elementor_Mini_Cart extends Lasa_Elementor_Widget_Base
 
     public function get_title()
     {
-        return esc_html__('Lasa Mini Cart', 'lasa');
+        return esc_html__('Themename Mini Cart', 'themename');
     }
 
     public function get_icon()
@@ -38,14 +38,14 @@ class Lasa_Elementor_Mini_Cart extends Lasa_Elementor_Widget_Base
         $this->start_controls_section(
             'section_layout',
             [
-                'label' => esc_html__('Mini Cart', 'lasa'),
+                'label' => esc_html__('Mini Cart', 'themename'),
             ]
         );
 
         $this->add_control(
             'heading_mini_cart',
             [
-                'label' => esc_html__('Mini Cart', 'lasa'),
+                'label' => esc_html__('Mini Cart', 'themename'),
                 'type' => Controls_Manager::HEADING,
             ]
         );
@@ -53,7 +53,7 @@ class Lasa_Elementor_Mini_Cart extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'icon_mini_cart',
             [
-                'label'              => esc_html__('Icon', 'lasa'),
+                'label'              => esc_html__('Icon', 'themename'),
                 'type'               => Controls_Manager::ICONS,
                 'default' => [
                     'value' => 'tb-icon tb-icon-bag',
@@ -64,7 +64,7 @@ class Lasa_Elementor_Mini_Cart extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'icon_mini_cart_size',
             [
-                'label' => esc_html__('Font Size Icon', 'lasa'),
+                'label' => esc_html__('Font Size Icon', 'themename'),
                 'type' => Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [
@@ -80,7 +80,7 @@ class Lasa_Elementor_Mini_Cart extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'show_title_mini_cart',
             [
-                'label'              => esc_html__('Display Title "Mini-Cart"', 'lasa'),
+                'label'              => esc_html__('Display Title "Mini-Cart"', 'themename'),
                 'type'               => Controls_Manager::SWITCHER,
                 'default' => ''
             ]
@@ -88,9 +88,9 @@ class Lasa_Elementor_Mini_Cart extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'title_mini_cart',
             [
-                'label'              => esc_html__('"Mini-Cart" Title', 'lasa'),
+                'label'              => esc_html__('"Mini-Cart" Title', 'themename'),
                 'type'               => Controls_Manager::TEXT,
-                'default'            => esc_html__('Shopping cart', 'lasa'),
+                'default'            => esc_html__('Shopping cart', 'themename'),
                 'condition'          => [
                     'show_title_mini_cart' => 'yes'
                 ]
@@ -100,7 +100,7 @@ class Lasa_Elementor_Mini_Cart extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'price_mini_cart',
             [
-                'label'              => esc_html__('Show "Mini-Cart" Price', 'lasa'),
+                'label'              => esc_html__('Show "Mini-Cart" Price', 'themename'),
                 'type'               => Controls_Manager::SWITCHER,
                 'default'            => 'yes',
                 'separator'    => 'after',
@@ -122,7 +122,7 @@ class Lasa_Elementor_Mini_Cart extends Lasa_Elementor_Widget_Base
         $this->start_controls_section(
             'section_style_icon',
             [
-                'label' => esc_html__('Style Icon', 'lasa'),
+                'label' => esc_html__('Style Icon', 'themename'),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -130,7 +130,7 @@ class Lasa_Elementor_Mini_Cart extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'margin_icon_cart',
             [
-                'label'     => esc_html__('Margin Icon Cart', 'lasa'),
+                'label'     => esc_html__('Margin Icon Cart', 'themename'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px' ],
                 'selectors'  => [
@@ -144,14 +144,14 @@ class Lasa_Elementor_Mini_Cart extends Lasa_Elementor_Widget_Base
         $this->start_controls_tab(
             'tab_icon_normal',
             [
-                'label' => esc_html__('Normal', 'lasa'),
+                'label' => esc_html__('Normal', 'themename'),
             ]
         );
 
         $this->add_control(
             'color_icon',
             [
-                'label'     => esc_html__('Color', 'lasa'),
+                'label'     => esc_html__('Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .cart-dropdown .cart-icon'    => 'color: {{VALUE}}',
@@ -161,7 +161,7 @@ class Lasa_Elementor_Mini_Cart extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'bg_icon',
             [
-                'label'     => esc_html__('Background Color', 'lasa'),
+                'label'     => esc_html__('Background Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .cart-dropdown .cart-icon'    => 'background-color: {{VALUE}}',
@@ -176,13 +176,13 @@ class Lasa_Elementor_Mini_Cart extends Lasa_Elementor_Widget_Base
         $this->start_controls_tab(
             'tab_icon_hover',
             [
-                'label' => esc_html__('Hover', 'lasa'),
+                'label' => esc_html__('Hover', 'themename'),
             ]
         );
         $this->add_control(
             'hover_color_icon',
             [
-                'label'     => esc_html__('Color', 'lasa'),
+                'label'     => esc_html__('Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .cart-dropdown .cart-icon:hover'    => 'color: {{VALUE}}',
@@ -192,7 +192,7 @@ class Lasa_Elementor_Mini_Cart extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'hover_bg_icon',
             [
-                'label'     => esc_html__('Background Color', 'lasa'),
+                'label'     => esc_html__('Background Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .cart-dropdown .cart-icon:hover'    => 'background-color: {{VALUE}}',
@@ -209,7 +209,7 @@ class Lasa_Elementor_Mini_Cart extends Lasa_Elementor_Widget_Base
         $this->start_controls_section(
             'section_style_text',
             [
-                'label' => esc_html__('Style Text', 'lasa'),
+                'label' => esc_html__('Style Text', 'themename'),
                 'tab'   => Controls_Manager::TAB_STYLE,
                 'condition' => [
                     'show_title_mini_cart' => 'yes'
@@ -227,7 +227,7 @@ class Lasa_Elementor_Mini_Cart extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'style_border_radius_text',
             [
-                'label'     => esc_html__('Border Radius', 'lasa'),
+                'label'     => esc_html__('Border Radius', 'themename'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px' ],
                 'selectors'  => [
@@ -239,7 +239,7 @@ class Lasa_Elementor_Mini_Cart extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'margin_text_cart',
             [
-                'label'     => esc_html__('Margin Text Cart', 'lasa'),
+                'label'     => esc_html__('Margin Text Cart', 'themename'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px' ],
                 'selectors'  => [
@@ -251,7 +251,7 @@ class Lasa_Elementor_Mini_Cart extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'padding_text_cart',
             [
-                'label'     => esc_html__('Padding Text Cart', 'lasa'),
+                'label'     => esc_html__('Padding Text Cart', 'themename'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px' ],
                 'selectors'  => [
@@ -265,13 +265,13 @@ class Lasa_Elementor_Mini_Cart extends Lasa_Elementor_Widget_Base
         $this->start_controls_tab(
             'tab_text_normal',
             [
-                'label' => esc_html__('Normal', 'lasa'),
+                'label' => esc_html__('Normal', 'themename'),
             ]
         );
         $this->add_control(
             'style_color_text',
             [
-                'label'     => esc_html__('Color', 'lasa'),
+                'label'     => esc_html__('Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .cart-dropdown .text-cart'    => 'color: {{VALUE}}',
@@ -281,7 +281,7 @@ class Lasa_Elementor_Mini_Cart extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'style_bg_text',
             [
-                'label'     => esc_html__('Background', 'lasa'),
+                'label'     => esc_html__('Background', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .cart-dropdown .text-cart'    => 'background: {{VALUE}}',
@@ -295,13 +295,13 @@ class Lasa_Elementor_Mini_Cart extends Lasa_Elementor_Widget_Base
         $this->start_controls_tab(
             'style_tab_text_hover',
             [
-                'label' => esc_html__('Hover', 'lasa'),
+                'label' => esc_html__('Hover', 'themename'),
             ]
         );
         $this->add_control(
             'style_bg_text_hover',
             [
-                'label'     => esc_html__('Background', 'lasa'),
+                'label'     => esc_html__('Background', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .cart-dropdown .text-cart:hover' => 'background: {{VALUE}}',
@@ -311,7 +311,7 @@ class Lasa_Elementor_Mini_Cart extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'style_color_text_hover',
             [
-                'label'     => esc_html__('Color', 'lasa'),
+                'label'     => esc_html__('Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .cart-dropdown .text-cart:hover' => 'color: {{VALUE}}',
@@ -327,7 +327,7 @@ class Lasa_Elementor_Mini_Cart extends Lasa_Elementor_Widget_Base
         $this->start_controls_section(
             'section_style_popup_cart',
             [
-                'label' => esc_html__('Style Popup', 'lasa'),
+                'label' => esc_html__('Style Popup', 'themename'),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -341,7 +341,7 @@ class Lasa_Elementor_Mini_Cart extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'border_radius_popup_cart',
             [
-                'label'     => esc_html__('Border Radius', 'lasa'),
+                'label'     => esc_html__('Border Radius', 'themename'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px' ],
                 'selectors'  => [
@@ -352,7 +352,7 @@ class Lasa_Elementor_Mini_Cart extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'position_popup_cart',
             [
-                'label' => esc_html__('Position Popup', 'lasa'),
+                'label' => esc_html__('Position Popup', 'themename'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px' ,'%'],
                 'selectors' => [
@@ -369,7 +369,7 @@ class Lasa_Elementor_Mini_Cart extends Lasa_Elementor_Widget_Base
         $this->start_controls_section(
             'section_style_price_cart',
             [
-                'label' => esc_html__('Style Price', 'lasa'),
+                'label' => esc_html__('Style Price', 'themename'),
                 'tab'   => Controls_Manager::TAB_STYLE,
                 'condition' => [
                     'price_mini_cart' => 'yes'
@@ -380,7 +380,7 @@ class Lasa_Elementor_Mini_Cart extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'cart_price_margin',
             [
-                'label'     => esc_html__('Margin', 'lasa'),
+                'label'     => esc_html__('Margin', 'themename'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px' ],
                 'selectors'  => [
@@ -402,14 +402,14 @@ class Lasa_Elementor_Mini_Cart extends Lasa_Elementor_Widget_Base
         $this->start_controls_tab(
             'tab_price_normal',
             [
-                'label' => esc_html__('Normal', 'lasa'),
+                'label' => esc_html__('Normal', 'themename'),
             ]
         );
 
         $this->add_control(
             'color_cart_price',
             [
-                'label'     => esc_html__('Color', 'lasa'),
+                'label'     => esc_html__('Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .subtotal .woocommerce-Price-amount' => 'color: {{VALUE}}',
@@ -422,14 +422,14 @@ class Lasa_Elementor_Mini_Cart extends Lasa_Elementor_Widget_Base
         $this->start_controls_tab(
             'tab_price_hover',
             [
-                'label' => esc_html__('Hover', 'lasa'),
+                'label' => esc_html__('Hover', 'themename'),
             ]
         );
 
         $this->add_control(
             'color_cart_price_hover',
             [
-                'label'     => esc_html__('Color', 'lasa'),
+                'label'     => esc_html__('Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .subtotal .woocommerce-Price-amount:hover' => 'color: {{VALUE}}',
@@ -448,7 +448,7 @@ class Lasa_Elementor_Mini_Cart extends Lasa_Elementor_Widget_Base
         $this->start_controls_section(
             'section_style_total',
             [
-                'label' => esc_html__('Style Total', 'lasa'),
+                'label' => esc_html__('Style Total', 'themename'),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -465,7 +465,7 @@ class Lasa_Elementor_Mini_Cart extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'icon_border_radius',
             [
-                'label' => esc_html__('Border Radius', 'lasa'),
+                'label' => esc_html__('Border Radius', 'themename'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'selectors' => [
@@ -477,7 +477,7 @@ class Lasa_Elementor_Mini_Cart extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'color_number',
             [
-                'label'     => esc_html__('Color', 'lasa'),
+                'label'     => esc_html__('Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .cart-icon span.mini-cart-items'    => 'color: {{VALUE}}',
@@ -488,7 +488,7 @@ class Lasa_Elementor_Mini_Cart extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'bg_total',
             [
-                'label'     => esc_html__('Background', 'lasa'),
+                'label'     => esc_html__('Background', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .cart-icon span.mini-cart-items'    => 'background: {{VALUE}}',
@@ -499,7 +499,7 @@ class Lasa_Elementor_Mini_Cart extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'position_top',
             [
-                'label'     => esc_html__('Position Vertical', 'lasa'),
+                'label'     => esc_html__('Position Vertical', 'themename'),
                 'type' => Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [
@@ -516,7 +516,7 @@ class Lasa_Elementor_Mini_Cart extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'position_left',
             [
-                'label'     => esc_html__('Position Horizontal', 'lasa'),
+                'label'     => esc_html__('Position Horizontal', 'themename'),
                 'type' => Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [
@@ -546,7 +546,7 @@ class Lasa_Elementor_Mini_Cart extends Lasa_Elementor_Widget_Base
             'price_mini_cart'                => $price_mini_cart,
         ];
         
-        lasa_tbay_get_woocommerce_mini_cart($args);
+        themename_tbay_get_woocommerce_mini_cart($args);
     }
 }
-$widgets_manager->register(new Lasa_Elementor_Mini_Cart());
+$widgets_manager->register(new Themename_Elementor_Mini_Cart());

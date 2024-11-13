@@ -1,36 +1,36 @@
-<?php if (! defined('LASA_THEME_DIR')) {
+<?php if (! defined('THEMENAME_THEME_DIR')) {
     exit('No direct script access allowed');
 }
 /**
- * Custom template tags for lasa
+ * Custom template tags for themename
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
  * @package WordPress
- * @subpackage Lasa
- * @since Lasa 1.0
+ * @subpackage Themename
+ * @since Themename 1.0
  */
 
-if (! function_exists('lasa_tbay_comment_nav')) :
+if (! function_exists('themename_tbay_comment_nav')) :
 /**
  * Display navigation to next/previous comments when applicable.
  *
- * @since Lasa 1.0
+ * @since Themename 1.0
  */
-function lasa_tbay_comment_nav()
+function themename_tbay_comment_nav()
 {
     // Are there comments to navigate through?
     if (get_comment_pages_count() > 1 && get_option('page_comments')) :
     ?>
 	<nav class="navigation comment-navigation">
-		<h2 class="screen-reader-text"><?php esc_html_e('Comment navigation', 'lasa'); ?></h2>
+		<h2 class="screen-reader-text"><?php esc_html_e('Comment navigation', 'themename'); ?></h2>
 		<div class="nav-links">
 			<?php
-                if ($prev_link = get_previous_comments_link(esc_html__('Older Comments', 'lasa'))) :
+                if ($prev_link = get_previous_comments_link(esc_html__('Older Comments', 'themename'))) :
                     printf('<div class="nav-previous">%s</div>', $prev_link);
     endif;
 
-    if ($next_link = get_next_comments_link(esc_html__('Newer Comments', 'lasa'))) :
+    if ($next_link = get_next_comments_link(esc_html__('Newer Comments', 'themename'))) :
                     printf('<div class="nav-next">%s</div>', $next_link);
     endif; ?>
 		</div><!-- .nav-links -->
@@ -40,7 +40,7 @@ function lasa_tbay_comment_nav()
 }
 endif;
 
-if (! function_exists('lasa_edit_link')) :
+if (! function_exists('themename_edit_link')) :
     /**
      * Returns an accessibility-friendly link to edit a post or page.
      *
@@ -49,12 +49,12 @@ if (! function_exists('lasa_edit_link')) :
      * of the template hierarchy and their content. Helpful when/if the single-page
      * layout with multiple posts/pages shown gets confusing.
      */
-    function lasa_edit_link()
+    function themename_edit_link()
     {
         edit_post_link(
             sprintf(
                 /* translators: %s: Post title. */
-                __('Edit<span class="screen-reader-text"> "%s"</span>', 'lasa'),
+                __('Edit<span class="screen-reader-text"> "%s"</span>', 'themename'),
                 get_the_title()
             ),
             '<span class="edit-link">',
@@ -64,23 +64,23 @@ if (! function_exists('lasa_edit_link')) :
 endif;
 
 
-if (! function_exists('lasa_tbay_entry_meta')) :
+if (! function_exists('themename_tbay_entry_meta')) :
 /**
  * Prints HTML with meta information for the categories, tags.
  *
- * @since Lasa 1.0
+ * @since Themename 1.0
  */
-function lasa_tbay_entry_meta()
+function themename_tbay_entry_meta()
 {
     if (is_sticky() && is_home() && ! is_paged()) {
-        printf('<span class="sticky-post">%s</span>', esc_html__('Featured', 'lasa'));
+        printf('<span class="sticky-post">%s</span>', esc_html__('Featured', 'themename'));
     }
 
     $format = get_post_format();
     if (current_theme_supports('post-formats', $format)) {
         printf(
             '<span class="entry-format">%1$s<a href="%2$s">%3$s</a></span>',
-            sprintf('<span class="screen-reader-text">%s </span>', _x('Format', 'Used before post format.', 'lasa')),
+            sprintf('<span class="screen-reader-text">%s </span>', _x('Format', 'Used before post format.', 'themename')),
             esc_url(get_post_format_link($format)),
             get_post_format_string($format)
         );
@@ -103,7 +103,7 @@ function lasa_tbay_entry_meta()
 
         printf(
             '<span class="posted-on"><span class="screen-reader-text">%1$s </span><a href="%2$s" rel="bookmark">%3$s</a></span>',
-            _x('Posted on', 'Used before publish date.', 'lasa'),
+            _x('Posted on', 'Used before publish date.', 'themename'),
             esc_url(get_permalink()),
             $time_string
         );
@@ -113,26 +113,26 @@ function lasa_tbay_entry_meta()
         if (is_singular() || is_multi_author()) {
             printf(
                 '<span class="byline"><span class="author vcard"><span class="screen-reader-text">%1$s </span><a class="url fn n" href="%2$s">%3$s</a></span></span>',
-                _x('Author', 'Used before post author name.', 'lasa'),
+                _x('Author', 'Used before post author name.', 'themename'),
                 esc_url(get_author_posts_url(get_the_author_meta('ID'))),
                 get_the_author()
             );
         }
 
-        $categories_list = get_the_category_list(_x(', ', 'Used between list items, there is a space after the comma.', 'lasa'));
-        if ($categories_list && lasa_tbay_categorized_blog()) {
+        $categories_list = get_the_category_list(_x(', ', 'Used between list items, there is a space after the comma.', 'themename'));
+        if ($categories_list && themename_tbay_categorized_blog()) {
             printf(
                 '<span class="cat-links"><span class="screen-reader-text">%1$s </span>%2$s</span>',
-                _x('Categories', 'Used before category names.', 'lasa'),
+                _x('Categories', 'Used before category names.', 'themename'),
                 $categories_list
             );
         }
 
-        $tags_list = get_the_tag_list('', _x(', ', 'Used between list items, there is a space after the comma.', 'lasa'));
+        $tags_list = get_the_tag_list('', _x(', ', 'Used between list items, there is a space after the comma.', 'themename'));
         if ($tags_list) {
             printf(
                 '<span class="tags-links"><span class="screen-reader-text">%1$s </span>%2$s</span>',
-                _x('Tags', 'Used before tag names.', 'lasa'),
+                _x('Tags', 'Used before tag names.', 'themename'),
                 $tags_list
             );
         }
@@ -144,7 +144,7 @@ function lasa_tbay_entry_meta()
 
         printf(
             '<span class="full-size-link"><span class="screen-reader-text">%1$s </span><a href="%2$s">%3$s &times; %4$s</a></span>',
-            _x('Full size', 'Used before full size attachment link.', 'lasa'),
+            _x('Full size', 'Used before full size attachment link.', 'themename'),
             esc_url(wp_get_attachment_url()),
             $metadata['width'],
             $metadata['height']
@@ -154,7 +154,7 @@ function lasa_tbay_entry_meta()
     if (! is_single() && ! post_password_required() && (comments_open() || get_comments_number())) {
         echo '<span class="comments-link">';
         /* translators: %s: post title */
-        comments_popup_link(sprintf(esc_html__('Leave a comment<span class="screen-reader-text"> on %s</span>', 'lasa'), get_the_title()));
+        comments_popup_link(sprintf(esc_html__('Leave a comment<span class="screen-reader-text"> on %s</span>', 'themename'), get_the_title()));
         echo '</span>';
     }
 }
@@ -163,13 +163,13 @@ endif;
 /**
  * Determine whether blog/site has more than one category.
  *
- * @since Lasa 1.0
+ * @since Themename 1.0
  *
  * @return bool True of there is more than one category, false otherwise.
  */
-function lasa_tbay_categorized_blog()
+function themename_tbay_categorized_blog()
 {
-    if (false === ($all_the_cool_cats = get_transient('lasa_tbay_categories'))) {
+    if (false === ($all_the_cool_cats = get_transient('themename_tbay_categories'))) {
         // Create an array of all the categories that are attached to posts.
         $all_the_cool_cats = get_categories(array(
             'fields'     => 'ids',
@@ -182,33 +182,33 @@ function lasa_tbay_categorized_blog()
         // Count the number of categories that are attached to the posts.
         $all_the_cool_cats = count($all_the_cool_cats);
 
-        set_transient('lasa_tbay_categories', $all_the_cool_cats);
+        set_transient('themename_tbay_categories', $all_the_cool_cats);
     }
 
     if ($all_the_cool_cats > 1) {
-        // This blog has more than 1 category so lasa_tbay_categorized_blog should return true.
+        // This blog has more than 1 category so themename_tbay_categorized_blog should return true.
         return true;
     } else {
-        // This blog has only 1 category so lasa_tbay_categorized_blog should return false.
+        // This blog has only 1 category so themename_tbay_categorized_blog should return false.
         return false;
     }
 }
 
 /**
- * Flush out the transients used in {@see lasa_tbay_categorized_blog()}.
+ * Flush out the transients used in {@see themename_tbay_categorized_blog()}.
  *
- * @since Lasa 1.0
+ * @since Themename 1.0
  */
-function lasa_tbay_category_transient_flusher()
+function themename_tbay_category_transient_flusher()
 {
     // Like, beat it. Dig?
-    delete_transient('lasa_tbay_categories');
+    delete_transient('themename_tbay_categories');
 }
-add_action('edit_category', 'lasa_tbay_category_transient_flusher');
-add_action('save_post', 'lasa_tbay_category_transient_flusher');
+add_action('edit_category', 'themename_tbay_category_transient_flusher');
+add_action('save_post', 'themename_tbay_category_transient_flusher');
 
-if (! function_exists('lasa_tbay_post_thumbnail')) {
-    function lasa_tbay_post_thumbnail()
+if (! function_exists('themename_tbay_post_thumbnail')) {
+    function themename_tbay_post_thumbnail()
     {
         if (post_password_required() || is_attachment() || ! has_post_thumbnail()) {
             return;
@@ -225,7 +225,7 @@ if (! function_exists('lasa_tbay_post_thumbnail')) {
 		<?php else : ?>
 
 			<?php
-                $image_size 	= apply_filters('lasa_archive_blog_size_image', 'medium'); ?>
+                $image_size 	= apply_filters('themename_archive_blog_size_image', 'medium'); ?>
 
 		<a class="post-<?php echo esc_attr($image_size); ?>" href="<?php the_permalink(); ?>" aria-hidden="true">
 			<?php
@@ -236,8 +236,8 @@ if (! function_exists('lasa_tbay_post_thumbnail')) {
     }
 }
 
-if (! function_exists('lasa_tbay_post_categories')) {
-    function lasa_tbay_post_categories($post)
+if (! function_exists('themename_tbay_post_categories')) {
+    function themename_tbay_post_categories($post)
     {
         $cat = wp_get_post_categories($post->ID);
         $k   = count($cat);
@@ -253,32 +253,32 @@ if (! function_exists('lasa_tbay_post_categories')) {
     }
 }
 
-if (! function_exists('lasa_tbay_short_top_meta')) {
-    function lasa_tbay_short_top_meta($post)
+if (! function_exists('themename_tbay_short_top_meta')) {
+    function themename_tbay_short_top_meta($post)
     {
         ?>
         <div class="entry-create">
-            <span class="entry-date"><?php echo lasa_time_link(); ?></span>
-            <span class="author"><?php esc_html_e('/ By ', 'lasa');
+            <span class="entry-date"><?php echo themename_time_link(); ?></span>
+            <span class="author"><?php esc_html_e('/ By ', 'themename');
         echo get_the_author_posts_link(); ?></span>
         </div>
 		<?php
     }
 }
 
-if (! function_exists('lasa_tbay_get_link_url')) :
+if (! function_exists('themename_tbay_get_link_url')) :
 /**
  * Return the post URL.
  *
  * Falls back to the post permalink if no URL is found in the post.
  *
- * @since Lasa 1.0
+ * @since Themename 1.0
  *
  * @see get_url_in_content()
  *
  * @return string The Link format URL.
  */
-function lasa_tbay_get_link_url()
+function themename_tbay_get_link_url()
 {
     $has_url = get_url_in_content(get_the_content());
 
@@ -286,25 +286,25 @@ function lasa_tbay_get_link_url()
 }
 endif;
 
-if (! function_exists('lasa_tbay_excerpt_more') && ! is_admin()) :
+if (! function_exists('themename_tbay_excerpt_more') && ! is_admin()) :
 /**
  * Replaces "[...]" (appended to automatically generated excerpts) with ... and a 'Continue reading' link.
  *
- * @since Lasa 1.0
+ * @since Themename 1.0
  *
  * @return string 'Continue reading' link prepended with an ellipsis.
  */
-function lasa_tbay_excerpt_more($more)
+function themename_tbay_excerpt_more($more)
 {
     $link = sprintf(
         '<a href="%1$s" class="more-link">%2$s</a>',
         esc_url(get_permalink(get_the_ID())),
         /* translators: %s: Name of current post */
-        sprintf(esc_html__('Continue reading %s', 'lasa'), '<span class="screen-reader-text">' . get_the_title(get_the_ID()) . '</span>')
+        sprintf(esc_html__('Continue reading %s', 'themename'), '<span class="screen-reader-text">' . get_the_title(get_the_ID()) . '</span>')
     );
     return ' &hellip; ' . $link;
 }
-add_filter('excerpt_more', 'lasa_tbay_excerpt_more');
+add_filter('excerpt_more', 'themename_tbay_excerpt_more');
 endif;
 
 /**
@@ -312,12 +312,12 @@ endif;
  * Display meta information for a specific post
  * ------------------------------------------------------------------------------------------------
  */
-if (! function_exists('lasa_post_meta')) {
-    function lasa_post_meta($atts = array())
+if (! function_exists('themename_post_meta')) {
+    function themename_post_meta($atts = array())
     {
-        $text_domain =   esc_html__(' Comments', 'lasa');
+        $text_domain =   esc_html__(' Comments', 'themename');
         if (get_comments_number() == 1) {
-            $text_domain = esc_html__(' Comment', 'lasa');
+            $text_domain = esc_html__(' Comment', 'themename');
         }
         
 
@@ -341,7 +341,7 @@ if (! function_exists('lasa_post_meta')) {
                 <?php if ($author == 1): ?>
                     <li class="entry-author">
                         <i class="tb-icon tb-icon-profile"></i>
-                        <span><?php esc_html_e('By ', 'lasa'); ?></span> <?php echo get_the_author_posts_link(); ?>
+                        <span><?php esc_html_e('By ', 'themename'); ?></span> <?php echo get_the_author_posts_link(); ?>
                     </li>
                 <?php endif ?>
 
@@ -367,7 +367,7 @@ if (! function_exists('lasa_post_meta')) {
                 <?php
                     if ( $date == 1) {
                         ?>
-                            <li class="entry-date"><i class="tb-icon tb-icon-clock"></i><?php echo lasa_time_link(); ?></li>
+                            <li class="entry-date"><i class="tb-icon tb-icon-clock"></i><?php echo themename_time_link(); ?></li>
                         <?php
                     } 
                 ?>
@@ -379,7 +379,7 @@ if (! function_exists('lasa_post_meta')) {
 
                 <?php // Edit link?>
                 <?php if (is_user_logged_in() && $edit == 1): ?>
-                    <li class="edit-link"><?php edit_post_link(esc_html__('Edit', 'lasa')); ?></li>
+                    <li class="edit-link"><?php edit_post_link(esc_html__('Edit', 'themename')); ?></li>
                 <?php endif; ?>
 					
 			</ul>
@@ -394,8 +394,8 @@ if (! function_exists('lasa_post_meta')) {
  * The archive title
  * ------------------------------------------------------------------------------------------------
  */
-if (! function_exists('lasa_post_archive_the_title')) {
-    function lasa_post_archive_the_title()
+if (! function_exists('themename_post_archive_the_title')) {
+    function themename_post_archive_the_title()
     {
         if (get_the_title()) {
             ?>
@@ -412,8 +412,8 @@ if (! function_exists('lasa_post_archive_the_title')) {
  * The short description archive
  * ------------------------------------------------------------------------------------------------
  */
-if (! function_exists('lasa_post_archive_the_short_description')) {
-    function lasa_post_archive_the_short_description()
+if (! function_exists('themename_post_archive_the_short_description')) {
+    function themename_post_archive_the_short_description()
     {
         if (empty(get_the_excerpt()) || get_the_excerpt() == '&nbsp;') {
             return;
@@ -421,12 +421,12 @@ if (! function_exists('lasa_post_archive_the_short_description')) {
 
         if (has_excerpt()) { ?>
 			<div class="entry-description">
-				<?php echo lasa_tbay_substring(get_the_excerpt(), 30, '[...]'); ?>
+				<?php echo themename_tbay_substring(get_the_excerpt(), 30, '[...]'); ?>
 			</div>
 		<?php } else {
             ?>
 				<div class="entry-description">
-					<?php echo lasa_tbay_substring(get_the_content(), 25, '...'); ?>
+					<?php echo themename_tbay_substring(get_the_content(), 25, '...'); ?>
 				</div>
 			<?php
         }
@@ -437,13 +437,13 @@ if (! function_exists('lasa_post_archive_the_short_description')) {
  * The read more archive
  * ------------------------------------------------------------------------------------------------
  */
-if (! function_exists('lasa_post_archive_the_read_more')) {
-    function lasa_post_archive_the_read_more( $text = '' )
+if (! function_exists('themename_post_archive_the_read_more')) {
+    function themename_post_archive_the_read_more( $text = '' )
     {
         if( !empty($text) ) {
             $custom_readmore = $text;
         } else {
-            $custom_readmore	= lasa_tbay_get_config('text_readmore', esc_html__('Continue Reading', 'lasa')); 
+            $custom_readmore	= themename_tbay_get_config('text_readmore', esc_html__('Continue Reading', 'themename')); 
         }
         ?>
 			<div class="more">
@@ -453,8 +453,8 @@ if (! function_exists('lasa_post_archive_the_read_more')) {
     }
 }
 
-if (! function_exists('lasa_search_title_query')) {
-    function lasa_search_title_query($search, $wp_query)
+if (! function_exists('themename_search_title_query')) {
+    function themename_search_title_query($search, $wp_query)
     {
         if (! empty($search) && ! empty($wp_query->query_vars['search_terms'])) {
             global $wpdb;
@@ -484,23 +484,23 @@ if (! function_exists('lasa_search_title_query')) {
  * Ajax search
  * ------------------------------------------------------------------------------------------------
  */
-if ( ! function_exists( 'lasa_init_product_search' ) ) {
-	function lasa_init_product_search() {
-        if( lasa_woocommerce_activated() ) {
-            if ( apply_filters( 'lasa_search_query_in', lasa_tbay_get_config('search_query_in', 'title') === 'all' ) ) {
-                add_filter( 'posts_search', 'lasa_product_search_sku', 9 );
+if ( ! function_exists( 'themename_init_product_search' ) ) {
+	function themename_init_product_search() {
+        if( themename_woocommerce_activated() ) {
+            if ( apply_filters( 'themename_search_query_in', themename_tbay_get_config('search_query_in', 'title') === 'all' ) ) {
+                add_filter( 'posts_search', 'themename_product_search_sku', 9 );
             } else {
-                add_filter('posts_search', 'lasa_product_search_title', 20, 2);
+                add_filter('posts_search', 'themename_product_search_title', 20, 2);
             }
         }
 	}
 
-	add_action( 'init', 'lasa_init_product_search', 10 ); 
+	add_action( 'init', 'themename_init_product_search', 10 ); 
 }
 
-if ( ! function_exists( 'lasa_product_search_sku' ) ) {
-	function lasa_product_search_sku( $where ) {
-        if ( !lasa_redux_framework_activated() ) return $where;
+if ( ! function_exists( 'themename_product_search_sku' ) ) {
+	function themename_product_search_sku( $where ) {
+        if ( !themename_redux_framework_activated() ) return $where;
 
 		global $wp;
 		
@@ -516,12 +516,12 @@ if ( ! function_exists( 'lasa_product_search_sku' ) ) {
 
 		$s = $wp->query_vars['s'];
 
-        return lasa_sku_search_query( $where, $s );
+        return themename_sku_search_query( $where, $s );
 	}
 }
 
-if ( ! function_exists( 'lasa_sku_search_query' ) ) {
-	function lasa_sku_search_query( $where, $s ) {
+if ( ! function_exists( 'themename_sku_search_query' ) ) {
+	function themename_sku_search_query( $where, $s ) {
 		global $wpdb;
 
 		$search_ids = array();
@@ -560,12 +560,12 @@ if ( ! function_exists( 'lasa_sku_search_query' ) ) {
 	}
 }
 
-if (! function_exists('lasa_product_search_title')) {
-    function lasa_product_search_title($where, $wp_query)
+if (! function_exists('themename_product_search_title')) {
+    function themename_product_search_title($where, $wp_query)
     {
-        if ( !lasa_redux_framework_activated() ) return $where;
+        if ( !themename_redux_framework_activated() ) return $where;
 
-        $where = lasa_search_title_query($where, $wp_query);
+        $where = themename_search_title_query($where, $wp_query);
 
         return $where;
     }
@@ -577,25 +577,25 @@ if (! function_exists('wp_body_open')) :
      *
      * Added for backwards compatibility to support pre 5.2.0 WordPress versions.
      *
-     * @since Lasa 1.5
+     * @since Themename 1.5
      */
     function wp_body_open()
     {
         /**
          * Triggered after the opening <body> tag.
          *
-         * @since Lasa 1.5
+         * @since Themename 1.5
          */
         do_action('wp_body_open');
     }
 endif;
 
 
-if (! function_exists('lasa_time_link')) :
+if (! function_exists('themename_time_link')) :
 /**
  * Gets a nicely formatted string for the published date.
  */
-function lasa_time_link()
+function themename_time_link()
 {
     $time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 
@@ -610,7 +610,7 @@ function lasa_time_link()
     // Wrap the time string in a link, and preface it with 'Posted on'.
     return sprintf(
         /* translators: %s: post date */
-        __('%sPosted on%s %s', 'lasa'),
+        __('%sPosted on%s %s', 'themename'),
         '<span class="screen-reader-text">',
         '</span>',
         '<a href="' . esc_url(get_permalink()) . '" rel="bookmark">' . trim($time_string) . '</a>'
@@ -619,8 +619,8 @@ function lasa_time_link()
 endif;
 
 
-if (! function_exists('lasa_photoswipe')) {
-    function lasa_photoswipe( ) {
+if (! function_exists('themename_photoswipe')) {
+    function themename_photoswipe( ) {
         ?>
         <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="pswp__bg"></div>
@@ -633,10 +633,10 @@ if (! function_exists('lasa_photoswipe')) {
                 <div class="pswp__ui pswp__ui--hidden">
                     <div class="pswp__top-bar">
                         <div class="pswp__counter"></div>
-                        <button class="pswp__button pswp__button--close" aria-label="<?php esc_attr_e( 'Close (Esc)', 'lasa' ); ?>"></button>
-                        <button class="pswp__button pswp__button--share" aria-label="<?php esc_attr_e( 'Share', 'lasa' ); ?>"></button>
-                        <button class="pswp__button pswp__button--fs" aria-label="<?php esc_attr_e( 'Toggle fullscreen', 'lasa' ); ?>"></button>
-                        <button class="pswp__button pswp__button--zoom" aria-label="<?php esc_attr_e( 'Zoom in/out', 'lasa' ); ?>"></button>
+                        <button class="pswp__button pswp__button--close" aria-label="<?php esc_attr_e( 'Close (Esc)', 'themename' ); ?>"></button>
+                        <button class="pswp__button pswp__button--share" aria-label="<?php esc_attr_e( 'Share', 'themename' ); ?>"></button>
+                        <button class="pswp__button pswp__button--fs" aria-label="<?php esc_attr_e( 'Toggle fullscreen', 'themename' ); ?>"></button>
+                        <button class="pswp__button pswp__button--zoom" aria-label="<?php esc_attr_e( 'Zoom in/out', 'themename' ); ?>"></button>
                         <div class="pswp__preloader">
                             <div class="pswp__preloader__icn">
                                 <div class="pswp__preloader__cut">
@@ -648,8 +648,8 @@ if (! function_exists('lasa_photoswipe')) {
                     <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
                         <div class="pswp__share-tooltip"></div>
                     </div>
-                    <button class="pswp__button pswp__button--arrow--left" aria-label="<?php esc_attr_e( 'Previous (arrow left)', 'lasa' ); ?>"></button>
-                    <button class="pswp__button pswp__button--arrow--right" aria-label="<?php esc_attr_e( 'Next (arrow right)', 'lasa' ); ?>"></button>
+                    <button class="pswp__button pswp__button--arrow--left" aria-label="<?php esc_attr_e( 'Previous (arrow left)', 'themename' ); ?>"></button>
+                    <button class="pswp__button pswp__button--arrow--right" aria-label="<?php esc_attr_e( 'Next (arrow right)', 'themename' ); ?>"></button>
                     <div class="pswp__caption">
                         <div class="pswp__caption__center"></div>
                     </div>

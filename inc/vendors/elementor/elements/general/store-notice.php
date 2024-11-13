@@ -1,6 +1,6 @@
 <?php
 
-if (! defined('ABSPATH') || function_exists('Lasa_Elementor_Store_Notice')) {
+if (! defined('ABSPATH') || function_exists('Themename_Elementor_Store_Notice')) {
     exit; // Exit if accessed directly.
 }
 
@@ -16,7 +16,7 @@ use Elementor\Group_Control_Background;
  *
  * @since 1.0.0
  */
-class Lasa_Elementor_Store_Notice extends Lasa_Elementor_Widget_Base
+class Themename_Elementor_Store_Notice extends Themename_Elementor_Widget_Base
 {
     /**
      * Get widget name.
@@ -45,7 +45,7 @@ class Lasa_Elementor_Store_Notice extends Lasa_Elementor_Widget_Base
      */
     public function get_title()
     {
-        return esc_html__('Lasa Store Notice', 'lasa');
+        return esc_html__('Themename Store Notice', 'themename');
     }
  
     /**
@@ -76,7 +76,7 @@ class Lasa_Elementor_Store_Notice extends Lasa_Elementor_Widget_Base
         $this->start_controls_section(
             'section_general',
             [
-                'label' => esc_html__('General', 'lasa'),
+                'label' => esc_html__('General', 'themename'),
             ]
         );
 
@@ -85,7 +85,7 @@ class Lasa_Elementor_Store_Notice extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'tabs',
             [
-                'label' => esc_html__('Tabs Notice', 'lasa'),
+                'label' => esc_html__('Tabs Notice', 'themename'),
                 'type' => Controls_Manager::REPEATER,
                 'fields' => $repeater->get_controls(),
             ]
@@ -94,14 +94,14 @@ class Lasa_Elementor_Store_Notice extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'marquee_timing',
             [
-                'label' => esc_html__('Marquee Timing', 'lasa'),
+                'label' => esc_html__('Marquee Timing', 'themename'),
                 'type' => Controls_Manager::NUMBER,
                 'default' => 30,
                 'separator' => 'before',
                 'selectors' => [
-                    '{{WRAPPER}} .noticeMarquee .content' => '--lasa-marquee-timing: {{VALUE}}s;',
+                    '{{WRAPPER}} .noticeMarquee .content' => '--themename-marquee-timing: {{VALUE}}s;',
                 ],
-                'description' => esc_html__('Marquee speed up and slow down', 'lasa'),
+                'description' => esc_html__('Marquee speed up and slow down', 'themename'),
             ]
         );
 
@@ -118,7 +118,7 @@ class Lasa_Elementor_Store_Notice extends Lasa_Elementor_Widget_Base
         $repeater->add_control(
             'tab_content',
             [
-                'label' => esc_html__('Content', 'lasa'),
+                'label' => esc_html__('Content', 'themename'),
                 'type' => Controls_Manager::TEXTAREA,
             ]
         );
@@ -131,7 +131,7 @@ class Lasa_Elementor_Store_Notice extends Lasa_Elementor_Widget_Base
         $this->start_controls_section(
             'section_style_tab_content',
             [
-                'label' => esc_html__('Content', 'lasa'),
+                'label' => esc_html__('Content', 'themename'),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -150,14 +150,14 @@ class Lasa_Elementor_Store_Notice extends Lasa_Elementor_Widget_Base
         $this->start_controls_tab(
             'tab_content_tab_normal',
             [
-                'label' => esc_html__('Normal', 'lasa'),
+                'label' => esc_html__('Normal', 'themename'),
             ]
         );
 
         $this->add_control(
             'tab_content_color',
             [
-                'label' => esc_html__('Color', 'lasa'),
+                'label' => esc_html__('Color', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -169,7 +169,7 @@ class Lasa_Elementor_Store_Notice extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'tab_content_bg',
             [
-                'label' => esc_html__('Background', 'lasa'),
+                'label' => esc_html__('Background', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -183,14 +183,14 @@ class Lasa_Elementor_Store_Notice extends Lasa_Elementor_Widget_Base
         $this->start_controls_tab(
             'tab_content_tab_hover',
             [
-                'label' => esc_html__('Hover', 'lasa'),
+                'label' => esc_html__('Hover', 'themename'),
             ]
         );
 
         $this->add_control(
             'tab_content_color_hover',
             [
-                'label' => esc_html__('Color Hover', 'lasa'),
+                'label' => esc_html__('Color Hover', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .noticeMarquee .content > p:hover' => 'color: {{VALUE}} !important;',
@@ -201,7 +201,7 @@ class Lasa_Elementor_Store_Notice extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'tab_content_bg_hover',
             [
-                'label' => esc_html__('Background Hover', 'lasa'),
+                'label' => esc_html__('Background Hover', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .noticeMarquee .content:hover' => 'background: {{VALUE}} !important;',
@@ -217,7 +217,7 @@ class Lasa_Elementor_Store_Notice extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'tab_content_padding',
             [
-                'label'      => esc_html__('Padding', 'lasa'),
+                'label'      => esc_html__('Padding', 'themename'),
                 'separator' => 'before',
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', 'em', '%' ],
@@ -229,7 +229,7 @@ class Lasa_Elementor_Store_Notice extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'tab_content_margin',
             [
-                'label'      => esc_html__('Margin', 'lasa'),
+                'label'      => esc_html__('Margin', 'themename'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', 'em', '%' ],
                 'selectors'  => [
@@ -253,4 +253,4 @@ class Lasa_Elementor_Store_Notice extends Lasa_Elementor_Widget_Base
         <?php
     }
 }
-$widgets_manager->register(new Lasa_Elementor_Store_Notice());
+$widgets_manager->register(new Themename_Elementor_Store_Notice());

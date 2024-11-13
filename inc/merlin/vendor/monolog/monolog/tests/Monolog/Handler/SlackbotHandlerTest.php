@@ -15,7 +15,7 @@ use Monolog\TestCase;
 use Monolog\Logger;
 
 /**
- * @author Lasalan Dobrev <hkdobrev@gmail.com>
+ * @author Themenamelan Dobrev <hkdobrev@gmail.com>
  * @see    https://slack.com/apps/A0F81R8ET-slackbot
  * @coversDefaultClass Monolog\Handler\SlackbotHandler
  */

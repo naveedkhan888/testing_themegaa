@@ -1,13 +1,13 @@
 <?php
 
-if (! defined('ABSPATH') || function_exists('Lasa_Elementor_Search_Form')) {
+if (! defined('ABSPATH') || function_exists('Themename_Elementor_Search_Form')) {
     exit; // Exit if accessed directly.
 }
 
 
 use Elementor\Controls_Manager;
 
-class Lasa_Elementor_Search_Form extends Lasa_Elementor_Widget_Base
+class Themename_Elementor_Search_Form extends Themename_Elementor_Widget_Base
 {
     protected $nav_menu_index = 1;
 
@@ -18,7 +18,7 @@ class Lasa_Elementor_Search_Form extends Lasa_Elementor_Widget_Base
 
     public function get_title()
     {
-        return esc_html__('Lasa Search Form', 'lasa');
+        return esc_html__('Themename Search Form', 'themename');
     }
     
     public function get_icon()
@@ -31,7 +31,7 @@ class Lasa_Elementor_Search_Form extends Lasa_Elementor_Widget_Base
         $this->start_controls_section(
             'section_layout',
             [
-                'label' => esc_html__('Search Form', 'lasa'),
+                'label' => esc_html__('Search Form', 'themename'),
             ]
         );
        
@@ -42,14 +42,14 @@ class Lasa_Elementor_Search_Form extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'advanced_show_result',
             [
-                'label' => esc_html__('Show Result', 'lasa'),
+                'label' => esc_html__('Show Result', 'themename'),
                 'type' => Controls_Manager::HEADING,
             ]
         );
         $this->add_control(
             'show_subtitle_search',
             [
-                'label'   => esc_html__('Show Subtitle of Search Result', 'lasa'),
+                'label'   => esc_html__('Show Subtitle of Search Result', 'themename'),
                 'type'    => Controls_Manager::SWITCHER,
                 'default' => 'yes',
             ]
@@ -57,7 +57,7 @@ class Lasa_Elementor_Search_Form extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'show_image_search',
             [
-                'label'   => esc_html__('Show Image of Search Result', 'lasa'),
+                'label'   => esc_html__('Show Image of Search Result', 'themename'),
                 'type'    => Controls_Manager::SWITCHER,
                 'default' => 'yes',
             ]
@@ -65,7 +65,7 @@ class Lasa_Elementor_Search_Form extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'show_price_search',
             [
-                'label'              => esc_html__('Show Price of Search Result', 'lasa'),
+                'label'              => esc_html__('Show Price of Search Result', 'themename'),
                 'type'               => Controls_Manager::SWITCHER,
                 'default' => 'yes',
             ]
@@ -74,7 +74,7 @@ class Lasa_Elementor_Search_Form extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'show_price_under_title',
             [
-                'label'              => esc_html__('show price under title', 'lasa'),
+                'label'              => esc_html__('show price under title', 'themename'),
                 'type'               => Controls_Manager::SWITCHER,
                 'prefix_class'      => 'price-under-title-',
                 'default' => '',
@@ -90,7 +90,7 @@ class Lasa_Elementor_Search_Form extends Lasa_Elementor_Widget_Base
         $this->start_controls_section(
             'section_style_icon',
             [
-                'label' => esc_html__('Style Search Form', 'lasa'),
+                'label' => esc_html__('Style Search Form', 'themename'),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -98,7 +98,7 @@ class Lasa_Elementor_Search_Form extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'search_form_line_height',
             [
-                'label' => esc_html__('Line Height', 'lasa'),
+                'label' => esc_html__('Line Height', 'themename'),
                 'type' => Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [
@@ -120,7 +120,7 @@ class Lasa_Elementor_Search_Form extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'search_form_width',
             [
-                'label' => esc_html__('Width', 'lasa'),
+                'label' => esc_html__('Width', 'themename'),
                 'type' => Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [
@@ -143,7 +143,7 @@ class Lasa_Elementor_Search_Form extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'padding_tbay_search_form',
             [
-                'label'     => esc_html__('Padding Search Form', 'lasa'),
+                'label'     => esc_html__('Padding Search Form', 'themename'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px' ],
                 'selectors'  => [
@@ -155,7 +155,7 @@ class Lasa_Elementor_Search_Form extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'bg_tbay_search_form',
             [
-                'label'     => esc_html__('Background', 'lasa'),
+                'label'     => esc_html__('Background', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .tbay-search-form .form-group .input-group'    => 'background: {{VALUE}}',
@@ -166,15 +166,15 @@ class Lasa_Elementor_Search_Form extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'border_style_tbay_search_form',
             [
-                'label' => esc_html__('Border Type', 'lasa'),
+                'label' => esc_html__('Border Type', 'themename'),
                 'type' => Controls_Manager::SELECT,
                 'options' => [
-                    '' => esc_html__('None', 'lasa'),
-                    'solid' => esc_html__('Solid', 'lasa'),
-                    'double' => esc_html__('Double', 'lasa'),
-                    'dotted' => esc_html__('Dotted', 'lasa'),
-                    'dashed' => esc_html__('Dashed', 'lasa'),
-                    'groove' => esc_html__('Groove', 'lasa'),
+                    '' => esc_html__('None', 'themename'),
+                    'solid' => esc_html__('Solid', 'themename'),
+                    'double' => esc_html__('Double', 'themename'),
+                    'dotted' => esc_html__('Dotted', 'themename'),
+                    'dashed' => esc_html__('Dashed', 'themename'),
+                    'groove' => esc_html__('Groove', 'themename'),
                 ],
                 'selectors' => [
                     '{{WRAPPER}} .tbay-search-form .form-group .input-group' => 'border-style: {{VALUE}};',
@@ -184,7 +184,7 @@ class Lasa_Elementor_Search_Form extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'border_width_tbay_search_form',
             [
-                'label' => esc_html__('Width', 'lasa'),
+                'label' => esc_html__('Width', 'themename'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px' ],
 
@@ -200,7 +200,7 @@ class Lasa_Elementor_Search_Form extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'border_color_tbay_search_form',
             [
-                'label' => esc_html__('Border Color', 'lasa'),
+                'label' => esc_html__('Border Color', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -215,7 +215,7 @@ class Lasa_Elementor_Search_Form extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'border_radius_tbay_search_form',
             [
-                'label'     => esc_html__('Border Radius Search Form', 'lasa'),
+                'label'     => esc_html__('Border Radius Search Form', 'themename'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px' ,'%'],
                 'selectors'  => [
@@ -228,7 +228,7 @@ class Lasa_Elementor_Search_Form extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'advanced_categories_search_style',
             [
-                'label' => esc_html__('Categories Search', 'lasa'),
+                'label' => esc_html__('Categories Search', 'themename'),
                 'type' => Controls_Manager::HEADING,
                 'separator'    => 'before',
                 'condition' => [
@@ -239,7 +239,7 @@ class Lasa_Elementor_Search_Form extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'bg_category_search',
             [
-                'label'     => esc_html__('Background', 'lasa'),
+                'label'     => esc_html__('Background', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .tbay-search-form .select-category'    => 'background: {{VALUE}}',
@@ -252,7 +252,7 @@ class Lasa_Elementor_Search_Form extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'color_category_search',
             [
-                'label'     => esc_html__('Color', 'lasa'),
+                'label'     => esc_html__('Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .tbay-search-form .select-category','{{WRAPPER}} .tbay-search-form .select-category > select'    => 'color: {{VALUE}}',
@@ -266,7 +266,7 @@ class Lasa_Elementor_Search_Form extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'padding_category_search',
             [
-                'label'     => esc_html__('Padding', 'lasa'),
+                'label'     => esc_html__('Padding', 'themename'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px' ],
                 'selectors'  => [
@@ -278,15 +278,15 @@ class Lasa_Elementor_Search_Form extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'border_style_category_search',
             [
-                'label' => esc_html__('Border Type', 'lasa'),
+                'label' => esc_html__('Border Type', 'themename'),
                 'type' => Controls_Manager::SELECT,
                 'options' => [
-                    '' => esc_html__('None', 'lasa'),
-                    'solid' => esc_html__('Solid', 'lasa'),
-                    'double' => esc_html__('Double', 'lasa'),
-                    'dotted' => esc_html__('Dotted', 'lasa'),
-                    'dashed' => esc_html__('Dashed', 'lasa'),
-                    'groove' => esc_html__('Groove', 'lasa'),
+                    '' => esc_html__('None', 'themename'),
+                    'solid' => esc_html__('Solid', 'themename'),
+                    'double' => esc_html__('Double', 'themename'),
+                    'dotted' => esc_html__('Dotted', 'themename'),
+                    'dashed' => esc_html__('Dashed', 'themename'),
+                    'groove' => esc_html__('Groove', 'themename'),
                 ],
                 'selectors' => [
                     '{{WRAPPER}} .tbay-search-form .select-category' => 'border-style: {{VALUE}};',
@@ -300,7 +300,7 @@ class Lasa_Elementor_Search_Form extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'border_width_category_search',
             [
-                'label' => esc_html__('Width', 'lasa'),
+                'label' => esc_html__('Width', 'themename'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px' ],
 
@@ -316,7 +316,7 @@ class Lasa_Elementor_Search_Form extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'border_color_category_search',
             [
-                'label' => esc_html__('Color', 'lasa'),
+                'label' => esc_html__('Color', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -331,7 +331,7 @@ class Lasa_Elementor_Search_Form extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'border_radius_category_search',
             [
-                'label'     => esc_html__('Border Radius Search Form', 'lasa'),
+                'label'     => esc_html__('Border Radius Search Form', 'themename'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px' ,'%'],
                 'selectors'  => [
@@ -347,7 +347,7 @@ class Lasa_Elementor_Search_Form extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'advanced_btn_search_style',
             [
-                'label' => esc_html__('Button Search', 'lasa'),
+                'label' => esc_html__('Button Search', 'themename'),
                 'type' => Controls_Manager::HEADING,
                 'separator'    => 'before',
             ]
@@ -355,7 +355,7 @@ class Lasa_Elementor_Search_Form extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'padding_btn',
             [
-                'label'     => esc_html__('Padding Button Search', 'lasa'),
+                'label'     => esc_html__('Padding Button Search', 'themename'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px' ],
                 'selectors'  => [
@@ -366,7 +366,7 @@ class Lasa_Elementor_Search_Form extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'margin_btn',
             [
-                'label'     => esc_html__('Margin Button Search', 'lasa'),
+                'label'     => esc_html__('Margin Button Search', 'themename'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px' ],
                 'selectors'  => [
@@ -378,7 +378,7 @@ class Lasa_Elementor_Search_Form extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'border_radius_btn_search',
             [
-                'label'     => esc_html__('Border Radius Button Group Search', 'lasa'),
+                'label'     => esc_html__('Border Radius Button Group Search', 'themename'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px' ,'%'],
                 'selectors'  => [ 
@@ -394,13 +394,13 @@ class Lasa_Elementor_Search_Form extends Lasa_Elementor_Widget_Base
         $this->start_controls_tab(
             'tab_btn_search_normal',
             [
-                'label' => esc_html__('Normal', 'lasa'),
+                'label' => esc_html__('Normal', 'themename'),
             ]
         );
         $this->add_control(
             'color_btn_search',
             [
-                'label'     => esc_html__('Color', 'lasa'),
+                'label'     => esc_html__('Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .tbay-search-form .button-search i,
@@ -411,7 +411,7 @@ class Lasa_Elementor_Search_Form extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'bg_btn_search',
             [
-                'label'     => esc_html__('Background Color', 'lasa'),
+                'label'     => esc_html__('Background Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .tbay-search-form .button-search,{{WRAPPER}} .tbay-search-form .button-group'    => 'background-color: {{VALUE}}',
@@ -424,13 +424,13 @@ class Lasa_Elementor_Search_Form extends Lasa_Elementor_Widget_Base
         $this->start_controls_tab(
             'tab_btn_search_hover',
             [
-                'label' => esc_html__('Hover', 'lasa'),
+                'label' => esc_html__('Hover', 'themename'),
             ]
         );
         $this->add_control(
             'hover_color_btn_search',
             [
-                'label'     => esc_html__('Color', 'lasa'),
+                'label'     => esc_html__('Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .tbay-search-form .button-search:hover i,
@@ -441,7 +441,7 @@ class Lasa_Elementor_Search_Form extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'hover_bg_btn_search',
             [
-                'label'     => esc_html__('Background Color', 'lasa'),
+                'label'     => esc_html__('Background Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .tbay-search-form .button-search:hover'    => 'background-color: {{VALUE}}',
@@ -454,7 +454,7 @@ class Lasa_Elementor_Search_Form extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'advanced_input_search_style',
             [
-                'label' => esc_html__('Input Search', 'lasa'),
+                'label' => esc_html__('Input Search', 'themename'),
                 'type' => Controls_Manager::HEADING,
                 'separator'    => 'before',
             ]
@@ -462,7 +462,7 @@ class Lasa_Elementor_Search_Form extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'bg_input',
             [
-                'label'     => esc_html__('Background Input Search', 'lasa'),
+                'label'     => esc_html__('Background Input Search', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .tbay-search-form .tbay-search'    => 'background: {{VALUE}}',
@@ -472,7 +472,7 @@ class Lasa_Elementor_Search_Form extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'color_input',
             [
-                'label'     => esc_html__('Color Input Search', 'lasa'),
+                'label'     => esc_html__('Color Input Search', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .tbay-search-form .tbay-search'    => 'color: {{VALUE}}',
@@ -483,15 +483,15 @@ class Lasa_Elementor_Search_Form extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'border_style_input_search',
             [
-                'label' => esc_html__('Border Type', 'lasa'),
+                'label' => esc_html__('Border Type', 'themename'),
                 'type' => Controls_Manager::SELECT,
                 'options' => [
-                    '' => esc_html__('None', 'lasa'),
-                    'solid' => esc_html__('Solid', 'lasa'),
-                    'double' => esc_html__('Double', 'lasa'),
-                    'dotted' => esc_html__('Dotted', 'lasa'),
-                    'dashed' => esc_html__('Dashed', 'lasa'),
-                    'groove' => esc_html__('Groove', 'lasa'),
+                    '' => esc_html__('None', 'themename'),
+                    'solid' => esc_html__('Solid', 'themename'),
+                    'double' => esc_html__('Double', 'themename'),
+                    'dotted' => esc_html__('Dotted', 'themename'),
+                    'dashed' => esc_html__('Dashed', 'themename'),
+                    'groove' => esc_html__('Groove', 'themename'),
                 ],
                 'selectors' => [
                     '{{WRAPPER}} .tbay-search-form .tbay-search' => 'border-style: {{VALUE}};',
@@ -504,7 +504,7 @@ class Lasa_Elementor_Search_Form extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'border_width_input_search',
             [
-                'label' => esc_html__('Width', 'lasa'),
+                'label' => esc_html__('Width', 'themename'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px' ],
 
@@ -520,7 +520,7 @@ class Lasa_Elementor_Search_Form extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'border_color_input_search',
             [
-                'label' => esc_html__('Color', 'lasa'),
+                'label' => esc_html__('Color', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -535,7 +535,7 @@ class Lasa_Elementor_Search_Form extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'border_radius_input_search',
             [
-                'label'     => esc_html__('Border Radius Search Form', 'lasa'),
+                'label'     => esc_html__('Border Radius Search Form', 'themename'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px' ,'%'],
                 'selectors'  => [
@@ -551,7 +551,7 @@ class Lasa_Elementor_Search_Form extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'input_search_padding',
             [
-                'label'      => esc_html__('Padding', 'lasa'),
+                'label'      => esc_html__('Padding', 'themename'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', 'em', '%' ],
                 'selectors'  => [
@@ -568,19 +568,19 @@ class Lasa_Elementor_Search_Form extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'advanced_type_search',
             [
-                'label' => esc_html__('Form', 'lasa'),
+                'label' => esc_html__('Form', 'themename'),
                 'type' => Controls_Manager::HEADING,
             ]
         );
         $this->add_control(
             'search_type',
             [
-                'label'              => esc_html__('Search Result', 'lasa'),
+                'label'              => esc_html__('Search Result', 'themename'),
                 'type'               => Controls_Manager::SELECT,
                 'default' => 'product',
                 'options' => [
-                    'product'  => esc_html__('Product', 'lasa'),
-                    'post'  => esc_html__('Blog', 'lasa')
+                    'product'  => esc_html__('Product', 'themename'),
+                    'post'  => esc_html__('Blog', 'themename')
                 ]
             ]
         );
@@ -589,7 +589,7 @@ class Lasa_Elementor_Search_Form extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'autocomplete_search',
             [
-                'label'              => esc_html__('Auto-complete Search', 'lasa'),
+                'label'              => esc_html__('Auto-complete Search', 'themename'),
                 'type'               => Controls_Manager::SWITCHER,
                 'default' => 'yes',
             ]
@@ -597,23 +597,23 @@ class Lasa_Elementor_Search_Form extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'placeholder_text',
             [
-                'label'              => esc_html__('Placeholder Text', 'lasa'),
+                'label'              => esc_html__('Placeholder Text', 'themename'),
                 'type'               => Controls_Manager::TEXT,
-                'default'            => esc_html__('Search products...', 'lasa'),
+                'default'            => esc_html__('Search products...', 'themename'),
             ]
         );
         $this->add_control(
             'vali_input_search',
             [
-                'label'              => esc_html__('Text Validate Input Search', 'lasa'),
+                'label'              => esc_html__('Text Validate Input Search', 'themename'),
                 'type'               => Controls_Manager::TEXT,
-                'default'            => esc_html__('Enter at least 2 characters', 'lasa'),
+                'default'            => esc_html__('Enter at least 2 characters', 'themename'),
             ]
         );
         $this->add_control(
             'min_characters_search',
             [
-                'label'              => esc_html__('Search Minimum Characters', 'lasa'),
+                'label'              => esc_html__('Search Minimum Characters', 'themename'),
                 'type'               => Controls_Manager::SLIDER,
                 'size_units' => ['px'],
                 'range' => [
@@ -633,7 +633,7 @@ class Lasa_Elementor_Search_Form extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'search_max_number_results',
             [
-                'label'              => esc_html__('Max Number of Search Results', 'lasa'),
+                'label'              => esc_html__('Max Number of Search Results', 'themename'),
                 'type'               => Controls_Manager::SLIDER,
                 'size_units' => ['px'],
                 'range' => [
@@ -657,7 +657,7 @@ class Lasa_Elementor_Search_Form extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'advanced_button_search',
             [
-                'label' => esc_html__('Button Search', 'lasa'),
+                'label' => esc_html__('Button Search', 'themename'),
                 'type' => Controls_Manager::HEADING,
                 'separator'    => 'before',
             ]
@@ -665,7 +665,7 @@ class Lasa_Elementor_Search_Form extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'text_button_search',
             [
-                'label'              => esc_html__('Button Search Text', 'lasa'),
+                'label'              => esc_html__('Button Search Text', 'themename'),
                 'type'               => Controls_Manager::TEXT,
                 'default' => '',
             ]
@@ -673,7 +673,7 @@ class Lasa_Elementor_Search_Form extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'icon_button_search',
             [
-                'label'              => esc_html__('Button Search Icon', 'lasa'),
+                'label'              => esc_html__('Button Search Icon', 'themename'),
                 'type'               => Controls_Manager::ICONS,
                 'default' => [
                     'library' => 'tb-icon',
@@ -684,7 +684,7 @@ class Lasa_Elementor_Search_Form extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'icon_button_search_size',
             [
-                'label' => esc_html__('Font Size Icon', 'lasa'),
+                'label' => esc_html__('Font Size Icon', 'themename'),
                 'type' => Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [
@@ -704,7 +704,7 @@ class Lasa_Elementor_Search_Form extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'advanced_categories_search',
             [
-                'label'         => esc_html__('Categories Search', 'lasa'),
+                'label'         => esc_html__('Categories Search', 'themename'),
                 'type'          => Controls_Manager::HEADING,
                 'separator'     => 'before',
             ]
@@ -712,7 +712,7 @@ class Lasa_Elementor_Search_Form extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'enable_categories_search',
             [
-                'label'              => esc_html__('Enable Search in Categories', 'lasa'),
+                'label'              => esc_html__('Enable Search in Categories', 'themename'),
                 'type'               => Controls_Manager::SWITCHER,
                 'default' => 'no',
             ]
@@ -720,9 +720,9 @@ class Lasa_Elementor_Search_Form extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'text_categories_search',
             [
-                'label'              => esc_html__('Search in Categories Text', 'lasa'),
+                'label'              => esc_html__('Search in Categories Text', 'themename'),
                 'type'               => Controls_Manager::TEXT,
-                'default'            =>  esc_html__('All Categories', 'lasa'),
+                'default'            =>  esc_html__('All Categories', 'themename'),
                 'condition' => [
                     'enable_categories_search' => 'yes'
                 ]
@@ -731,7 +731,7 @@ class Lasa_Elementor_Search_Form extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'count_categories_search',
             [
-                'label'              => esc_html__('Show count in Categories', 'lasa'),
+                'label'              => esc_html__('Show count in Categories', 'themename'),
                 'type'               => Controls_Manager::SWITCHER,
                 'default' => 'yes',
                 'condition' => [
@@ -755,8 +755,8 @@ class Lasa_Elementor_Search_Form extends Lasa_Elementor_Widget_Base
         $settings = $this->get_settings_for_display();
         extract($settings);
         
-        $_id = lasa_tbay_random_key();
-        $class_active_ajax = (lasa_switcher_to_boolean($autocomplete_search)) ? 'lasa-ajax-search' : '';
+        $_id = themename_tbay_random_key();
+        $class_active_ajax = (themename_switcher_to_boolean($autocomplete_search)) ? 'themename-ajax-search' : '';
 
         $this->add_render_attribute(
             'search_form',
@@ -765,10 +765,10 @@ class Lasa_Elementor_Search_Form extends Lasa_Elementor_Widget_Base
                     $class_active_ajax,
                     'searchform'
                 ],
-                'data-thumbnail' => lasa_switcher_to_boolean($show_image_search),
-                'data-subtitle' => lasa_switcher_to_boolean($show_subtitle_search),
+                'data-thumbnail' => themename_switcher_to_boolean($show_image_search),
+                'data-subtitle' => themename_switcher_to_boolean($show_subtitle_search),
                 'data-appendto' => '.search-results-'.$_id,
-                'data-price' => lasa_switcher_to_boolean($show_price_search),
+                'data-price' => themename_switcher_to_boolean($show_price_search),
                 'data-minChars' => $min_characters_search['size'],
                 'data-post-type' => $search_type,
                 'data-count' => $search_max_number_results['size'],
@@ -784,7 +784,7 @@ class Lasa_Elementor_Search_Form extends Lasa_Elementor_Widget_Base
                                     <?php if (class_exists('WooCommerce') && $search_type === 'product') :
                                         $args = array(
                                             'show_option_none'   => $text_categories_search,
-                                            'show_count' => lasa_switcher_to_boolean($count_categories_search),
+                                            'show_count' => themename_switcher_to_boolean($count_categories_search),
                                             'hierarchical' => true,
                                             'id' => 'product-cat-'.$_id,
                                             'show_uncategorized' => 0
@@ -794,7 +794,7 @@ class Lasa_Elementor_Search_Form extends Lasa_Elementor_Widget_Base
                                     <?php elseif ($search_type === 'post'):
                                         $args = array(
                                             'show_option_all' => $text_categories_search,
-                                            'show_count' => lasa_switcher_to_boolean($count_categories_search),
+                                            'show_count' => themename_switcher_to_boolean($count_categories_search),
                                             'hierarchical' => true,
                                             'show_uncategorized' => 0,
                                             'name' => 'category',
@@ -814,7 +814,7 @@ class Lasa_Elementor_Search_Form extends Lasa_Elementor_Widget_Base
                         <input data-style="right" type="text" placeholder="<?php echo esc_attr($placeholder_text); ?>" name="s" required oninvalid="this.setCustomValidity('<?php echo esc_attr($vali_input_search) ?>')" oninput="setCustomValidity('')" class="tbay-search form-control input-sm"/>
                         
                         <div class="search-results-wrapper">
-                            <div class="lasa-search-results search-results-<?php echo esc_attr($_id); ?>" ></div>
+                            <div class="themename-search-results search-results-<?php echo esc_attr($_id); ?>" ></div>
                         </div>
 
                         <div class="button-group input-group-addon">
@@ -838,4 +838,4 @@ class Lasa_Elementor_Search_Form extends Lasa_Elementor_Widget_Base
         <?php
     }
 }
-$widgets_manager->register(new Lasa_Elementor_Search_Form());
+$widgets_manager->register(new Themename_Elementor_Search_Form());

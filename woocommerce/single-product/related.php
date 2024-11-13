@@ -33,7 +33,7 @@ if (sizeof($related_products) == 0) {
 if (isset($_GET['releated_columns'])) {
     $columns = $_GET['releated_columns'];
 } else {
-    $columns = lasa_tbay_get_config('releated_product_columns', 4);
+    $columns = themename_tbay_get_config('releated_product_columns', 4);
 }
 
 $columns_desktopsmall = 4;
@@ -41,9 +41,9 @@ $columns_tablet = 3;
 $columns_mobile = 2;
 $rows = 1;
 
-$show_product_releated = lasa_tbay_get_config('enable_product_releated', true);
+$show_product_releated = themename_tbay_get_config('enable_product_releated', true);
 
-$heading = apply_filters('woocommerce_product_related_products_heading', esc_html__('Related products', 'lasa'));
+$heading = apply_filters('woocommerce_product_related_products_heading', esc_html__('Related products', 'themename'));
  
 if ($related_products && $show_product_releated) : ?> 
 	<div class="related products tbay-element tbay-element-product" id="product-related">

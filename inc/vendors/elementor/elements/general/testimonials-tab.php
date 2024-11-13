@@ -1,6 +1,6 @@
 <?php
 
-if (! defined('ABSPATH') || function_exists('Lasa_Elementor_Testimonials_Tab')) {
+if (! defined('ABSPATH') || function_exists('Themename_Elementor_Testimonials_Tab')) {
     exit; // Exit if accessed directly.
 }
 
@@ -16,7 +16,7 @@ use Elementor\Group_Control_Background;
  *
  * @since 1.0.0
  */
-class Lasa_Elementor_Testimonials_Tab extends Lasa_Elementor_Widget_Base
+class Themename_Elementor_Testimonials_Tab extends Themename_Elementor_Widget_Base
 {
     /**
      * Get widget name.
@@ -45,7 +45,7 @@ class Lasa_Elementor_Testimonials_Tab extends Lasa_Elementor_Widget_Base
      */
     public function get_title()
     {
-        return esc_html__('Lasa Testimonials Tab', 'lasa');
+        return esc_html__('Themename Testimonials Tab', 'themename');
     }
  
     /**
@@ -78,7 +78,7 @@ class Lasa_Elementor_Testimonials_Tab extends Lasa_Elementor_Widget_Base
         $this->start_controls_section(
             'section_general',
             [
-                'label' => esc_html__('General', 'lasa'),
+                'label' => esc_html__('General', 'themename'),
             ]
         );
 
@@ -87,7 +87,7 @@ class Lasa_Elementor_Testimonials_Tab extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'tabs',
             [
-                'label' => esc_html__('Tab Items', 'lasa'),
+                'label' => esc_html__('Tab Items', 'themename'),
                 'type' => Controls_Manager::REPEATER,
                 'fields' => $repeater->get_controls(),
                 'default' => $this->register_set_tabs_default(),
@@ -97,7 +97,7 @@ class Lasa_Elementor_Testimonials_Tab extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'testimonials_icon',
             [
-                'label' => esc_html__('Choose Icon', 'lasa'),
+                'label' => esc_html__('Choose Icon', 'themename'),
                 'type' => Controls_Manager::ICONS,
                 'default' => [
                     'value' => 'tb-icon tb-icon-quote-2',
@@ -121,14 +121,14 @@ class Lasa_Elementor_Testimonials_Tab extends Lasa_Elementor_Widget_Base
         $repeater->add_control(
             'tab_name',
             [
-                'label' => esc_html__('Tab Title', 'lasa'),
+                'label' => esc_html__('Tab Title', 'themename'),
                 'type' => Controls_Manager::TEXT,
             ]
         );
         $repeater->add_control(
             'tab_content',
             [
-                'label' => esc_html__('Content', 'lasa'),
+                'label' => esc_html__('Content', 'themename'),
                 'type' => Controls_Manager::WYSIWYG,
             ]
         );
@@ -140,16 +140,16 @@ class Lasa_Elementor_Testimonials_Tab extends Lasa_Elementor_Widget_Base
     {
         $defaults = [
             [
-                'tab_name' => esc_html__('Tab name 1', 'lasa'),
-                'tab_content' => esc_html__('Lorem ipsum dolor sit amet, in mel unum delicatissimi conclusionemque', 'lasa'),
+                'tab_name' => esc_html__('Tab name 1', 'themename'),
+                'tab_content' => esc_html__('Lorem ipsum dolor sit amet, in mel unum delicatissimi conclusionemque', 'themename'),
             ],
             [
-                'tab_name' => esc_html__('Tab name 2', 'lasa'),
-                'tab_content' => esc_html__('Lorem ipsum dolor sit amet, in mel unum delicatissimi conclusionemque 2', 'lasa'),
+                'tab_name' => esc_html__('Tab name 2', 'themename'),
+                'tab_content' => esc_html__('Lorem ipsum dolor sit amet, in mel unum delicatissimi conclusionemque 2', 'themename'),
             ],
             [
-                'tab_name' => esc_html__('Tab name 3', 'lasa'),
-                'tab_content' => esc_html__('Lorem ipsum dolor sit amet, in mel unum delicatissimi conclusionemque 3', 'lasa'),
+                'tab_name' => esc_html__('Tab name 3', 'themename'),
+                'tab_content' => esc_html__('Lorem ipsum dolor sit amet, in mel unum delicatissimi conclusionemque 3', 'themename'),
             ],
         ];
 
@@ -161,7 +161,7 @@ class Lasa_Elementor_Testimonials_Tab extends Lasa_Elementor_Widget_Base
         $this->start_controls_section(
             'section_style_testimonials_tab_title',
             [
-                'label' => esc_html__('Testimonials Tab Title', 'lasa'),
+                'label' => esc_html__('Testimonials Tab Title', 'themename'),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -169,19 +169,19 @@ class Lasa_Elementor_Testimonials_Tab extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'testimonials_tab_title_align',
             [
-                'label' => esc_html__('Align', 'lasa'),
+                'label' => esc_html__('Align', 'themename'),
                 'type' => Controls_Manager::CHOOSE,
                 'options' => [
                     'start' => [
-                        'title' => esc_html__('Left', 'lasa'),
+                        'title' => esc_html__('Left', 'themename'),
                         'icon' => 'eicon-text-align-left'
                     ],
                     'center' => [
-                        'title' => esc_html__('Center', 'lasa'),
+                        'title' => esc_html__('Center', 'themename'),
                         'icon' => 'eicon-text-align-center'
                     ],
                     'end' => [
-                        'title' => esc_html__('Right', 'lasa'),
+                        'title' => esc_html__('Right', 'themename'),
                         'icon' => 'eicon-text-align-right'
                     ],
                 ],
@@ -206,14 +206,14 @@ class Lasa_Elementor_Testimonials_Tab extends Lasa_Elementor_Widget_Base
         $this->start_controls_tab(
             'testimonials_tab_title_tab_normal',
             [
-                'label' => esc_html__('Normal', 'lasa'),
+                'label' => esc_html__('Normal', 'themename'),
             ]
         );
 
         $this->add_control(
             'testimonials_tab_title_color',
             [
-                'label' => esc_html__('Text Color', 'lasa'),
+                'label' => esc_html__('Text Color', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -243,14 +243,14 @@ class Lasa_Elementor_Testimonials_Tab extends Lasa_Elementor_Widget_Base
         $this->start_controls_tab(
             'testimonials_tab_title_tab_hover',
             [
-                'label' => esc_html__('Hover', 'lasa'),
+                'label' => esc_html__('Hover', 'themename'),
             ]
         );
 
         $this->add_control(
             'testimonials_tab_title_color_hover',
             [
-                'label' => esc_html__('Text Color', 'lasa'),
+                'label' => esc_html__('Text Color', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -284,7 +284,7 @@ class Lasa_Elementor_Testimonials_Tab extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'testimonials_tab_title_radius',
             [
-                'label' => esc_html__('Border Radius', 'lasa'),
+                'label' => esc_html__('Border Radius', 'themename'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'separator'    => 'before',
@@ -297,7 +297,7 @@ class Lasa_Elementor_Testimonials_Tab extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'testimonials_tab_title_padding',
             [
-                'label'      => esc_html__('Padding', 'lasa'),
+                'label'      => esc_html__('Padding', 'themename'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', 'em', '%' ],
                 'selectors'  => [
@@ -308,7 +308,7 @@ class Lasa_Elementor_Testimonials_Tab extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'testimonials_tab_title_margin',
             [
-                'label'      => esc_html__('Margin', 'lasa'),
+                'label'      => esc_html__('Margin', 'themename'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', 'em', '%' ],
                 'selectors'  => [
@@ -320,7 +320,7 @@ class Lasa_Elementor_Testimonials_Tab extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'testimonials_under_title_bg',
             [
-                'label' => esc_html__('Background under title', 'lasa'),
+                'label' => esc_html__('Background under title', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -337,7 +337,7 @@ class Lasa_Elementor_Testimonials_Tab extends Lasa_Elementor_Widget_Base
         $this->start_controls_section(
             'section_style_testimonials_tab_content',
             [
-                'label' => esc_html__('Testimonials Content', 'lasa'),
+                'label' => esc_html__('Testimonials Content', 'themename'),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -345,19 +345,19 @@ class Lasa_Elementor_Testimonials_Tab extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'testimonials_tab_content_align',
             [
-                'label' => esc_html__('Align', 'lasa'),
+                'label' => esc_html__('Align', 'themename'),
                 'type' => Controls_Manager::CHOOSE,
                 'options' => [
                     'left' => [
-                        'title' => esc_html__('Left', 'lasa'),
+                        'title' => esc_html__('Left', 'themename'),
                         'icon' => 'eicon-text-align-left'
                     ],
                     'center' => [
-                        'title' => esc_html__('Center', 'lasa'),
+                        'title' => esc_html__('Center', 'themename'),
                         'icon' => 'eicon-text-align-center'
                     ],
                     'right' => [
-                        'title' => esc_html__('Right', 'lasa'),
+                        'title' => esc_html__('Right', 'themename'),
                         'icon' => 'eicon-text-align-right'
                     ],
                 ], 
@@ -382,14 +382,14 @@ class Lasa_Elementor_Testimonials_Tab extends Lasa_Elementor_Widget_Base
         $this->start_controls_tab(
             'testimonials_tab_content_tab_normal',
             [
-                'label' => esc_html__('Normal', 'lasa'),
+                'label' => esc_html__('Normal', 'themename'),
             ]
         );
 
         $this->add_control(
             'testimonials_tab_content_color',
             [
-                'label' => esc_html__('Text Color', 'lasa'),
+                'label' => esc_html__('Text Color', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -419,14 +419,14 @@ class Lasa_Elementor_Testimonials_Tab extends Lasa_Elementor_Widget_Base
         $this->start_controls_tab(
             'testimonials_tab_content_tab_hover',
             [
-                'label' => esc_html__('Hover', 'lasa'),
+                'label' => esc_html__('Hover', 'themename'),
             ]
         );
 
         $this->add_control(
             'testimonials_tab_content_color_hover',
             [
-                'label' => esc_html__('Text Color', 'lasa'),
+                'label' => esc_html__('Text Color', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -457,7 +457,7 @@ class Lasa_Elementor_Testimonials_Tab extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'testimonials_tab_content_radius',
             [
-                'label' => esc_html__('Border Radius', 'lasa'),
+                'label' => esc_html__('Border Radius', 'themename'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'separator'    => 'before',
@@ -470,7 +470,7 @@ class Lasa_Elementor_Testimonials_Tab extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'testimonials_tab_content_padding',
             [
-                'label'      => esc_html__('Padding', 'lasa'),
+                'label'      => esc_html__('Padding', 'themename'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', 'em', '%' ],
                 'selectors'  => [
@@ -481,7 +481,7 @@ class Lasa_Elementor_Testimonials_Tab extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'testimonials_tab_content_margin',
             [
-                'label'      => esc_html__('Margin', 'lasa'),
+                'label'      => esc_html__('Margin', 'themename'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', 'em', '%' ],
                 'selectors'  => [
@@ -497,7 +497,7 @@ class Lasa_Elementor_Testimonials_Tab extends Lasa_Elementor_Widget_Base
     $this->start_controls_section(
         'section_style_testimonials_tab_icon',
         [
-            'label' => esc_html__('Testimonials Icon', 'lasa'),
+            'label' => esc_html__('Testimonials Icon', 'themename'),
             'tab'   => Controls_Manager::TAB_STYLE,
         ]
     );
@@ -506,7 +506,7 @@ class Lasa_Elementor_Testimonials_Tab extends Lasa_Elementor_Widget_Base
     $this->add_responsive_control(
         'testimonials_tab_icon_size',
         [
-            'label' => esc_html__('Font Size', 'lasa'),
+            'label' => esc_html__('Font Size', 'themename'),
             'type' => Controls_Manager::SLIDER,
             'range' => [
                 'px' => [
@@ -526,14 +526,14 @@ class Lasa_Elementor_Testimonials_Tab extends Lasa_Elementor_Widget_Base
     $this->start_controls_tab(
         'testimonials_tab_icon_tab_normal',
         [
-            'label' => esc_html__('Normal', 'lasa'),
+            'label' => esc_html__('Normal', 'themename'),
         ]
     );
 
     $this->add_control(
         'testimonials_tab_icon_color',
         [
-            'label' => esc_html__('Text Color', 'lasa'),
+            'label' => esc_html__('Text Color', 'themename'),
             'type' => Controls_Manager::COLOR,
             'default' => '',
             'selectors' => [
@@ -547,14 +547,14 @@ class Lasa_Elementor_Testimonials_Tab extends Lasa_Elementor_Widget_Base
     $this->start_controls_tab(
         'testimonials_tab_icon_tab_hover',
         [
-            'label' => esc_html__('Hover', 'lasa'),
+            'label' => esc_html__('Hover', 'themename'),
         ]
     );
 
     $this->add_control(
         'testimonials_tab_icon_color_hover',
         [
-            'label' => esc_html__('Text Color', 'lasa'),
+            'label' => esc_html__('Text Color', 'themename'),
             'type' => Controls_Manager::COLOR,
             'default' => '',
             'selectors' => [
@@ -570,7 +570,7 @@ class Lasa_Elementor_Testimonials_Tab extends Lasa_Elementor_Widget_Base
     $this->add_responsive_control(
         'testimonials_tab_icon_padding',
         [
-            'label'      => esc_html__('Padding', 'lasa'),
+            'label'      => esc_html__('Padding', 'themename'),
             'type'       => Controls_Manager::DIMENSIONS,
             'size_units' => [ 'px', 'em', '%' ],
             'selectors'  => [
@@ -581,7 +581,7 @@ class Lasa_Elementor_Testimonials_Tab extends Lasa_Elementor_Widget_Base
     $this->add_responsive_control(
         'testimonials_tab_icon_margin',
         [
-            'label'      => esc_html__('Margin', 'lasa'),
+            'label'      => esc_html__('Margin', 'themename'),
             'type'       => Controls_Manager::DIMENSIONS,
             'size_units' => [ 'px', 'em', '%' ],
             'selectors'  => [
@@ -642,4 +642,4 @@ class Lasa_Elementor_Testimonials_Tab extends Lasa_Elementor_Widget_Base
         <?php
     }
 }
-$widgets_manager->register(new Lasa_Elementor_Testimonials_Tab());
+$widgets_manager->register(new Themename_Elementor_Testimonials_Tab());

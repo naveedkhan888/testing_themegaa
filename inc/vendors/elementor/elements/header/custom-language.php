@@ -1,6 +1,6 @@
 <?php
 
-if (! defined('ABSPATH') || function_exists('Lasa_Elementor_Custom_Language')) {
+if (! defined('ABSPATH') || function_exists('Themename_Elementor_Custom_Language')) {
     exit; // Exit if accessed directly.
 }
 
@@ -8,7 +8,7 @@ if (! defined('ABSPATH') || function_exists('Lasa_Elementor_Custom_Language')) {
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
 
-class Lasa_Elementor_Custom_Language extends Lasa_Elementor_Widget_Base
+class Themename_Elementor_Custom_Language extends Themename_Elementor_Widget_Base
 {
     public function get_name()
     {
@@ -17,7 +17,7 @@ class Lasa_Elementor_Custom_Language extends Lasa_Elementor_Widget_Base
 
     public function get_title()
     {
-        return esc_html__('Lasa Language', 'lasa');
+        return esc_html__('Themename Language', 'themename');
     }
 
     public function get_icon()
@@ -30,9 +30,9 @@ class Lasa_Elementor_Custom_Language extends Lasa_Elementor_Widget_Base
         return 'w-auto elementor-widget-' . $this->get_name();
     }
        
-    protected function lasa_custom_language()
+    protected function themename_custom_language()
     {
-        do_action('lasa_tbay_header_custom_language');
+        do_action('themename_tbay_header_custom_language');
     }
 
     protected function register_controls()
@@ -40,18 +40,18 @@ class Lasa_Elementor_Custom_Language extends Lasa_Elementor_Widget_Base
         $this->start_controls_section(
             'section_layout',
             [
-                'label' => esc_html__('General', 'lasa'),
+                'label' => esc_html__('General', 'themename'),
             ]
         );
 
         $this->add_control(
             'position_sub_menu',
             [
-                'label'     => esc_html__('Position Sub Menu', 'lasa'),
+                'label'     => esc_html__('Position Sub Menu', 'themename'),
                 'type'      => Controls_Manager::SELECT,
                 'options' => [
-                    'top' => esc_html__('Top', 'lasa'),
-                    'bottom' => esc_html__('Bottom', 'lasa'),
+                    'top' => esc_html__('Top', 'themename'),
+                    'bottom' => esc_html__('Bottom', 'themename'),
                 ],
                 'default' => 'top',
                 'prefix_class' => 'sub-menu-',
@@ -66,7 +66,7 @@ class Lasa_Elementor_Custom_Language extends Lasa_Elementor_Widget_Base
         $this->start_controls_section(
             'section_style_custom_language',
             [
-                'label' => esc_html__('Style Language', 'lasa'),
+                'label' => esc_html__('Style Language', 'themename'),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -84,14 +84,14 @@ class Lasa_Elementor_Custom_Language extends Lasa_Elementor_Widget_Base
         $this->start_controls_tab(
             'custom_language_tab_normal',
             [
-                'label' => esc_html__('Normal', 'lasa'),
+                'label' => esc_html__('Normal', 'themename'),
             ]
         );
 
         $this->add_control(
             'custom_language_color',
             [
-                'label' => esc_html__('Color', 'lasa'),
+                'label' => esc_html__('Color', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -104,7 +104,7 @@ class Lasa_Elementor_Custom_Language extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'custom_language_bg',
             [
-                'label' => esc_html__('Background', 'lasa'),
+                'label' => esc_html__('Background', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -119,14 +119,14 @@ class Lasa_Elementor_Custom_Language extends Lasa_Elementor_Widget_Base
         $this->start_controls_tab(
             'custom_language_tab_hover',
             [
-                'label' => esc_html__('Hover', 'lasa'),
+                'label' => esc_html__('Hover', 'themename'),
             ]
         );
 
         $this->add_control(
             'custom_language_color_hover',
             [
-                'label' => esc_html__('Hover Color', 'lasa'),
+                'label' => esc_html__('Hover Color', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '', 
                 'selectors' => [
@@ -140,7 +140,7 @@ class Lasa_Elementor_Custom_Language extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'custom_language_bg_hover',
             [
-                'label' => esc_html__('Background', 'lasa'),
+                'label' => esc_html__('Background', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -156,7 +156,7 @@ class Lasa_Elementor_Custom_Language extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'custom_language_padding',
             [
-                'label'     => esc_html__('Padding', 'lasa'),
+                'label'     => esc_html__('Padding', 'themename'),
                 'type'      => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
@@ -168,7 +168,7 @@ class Lasa_Elementor_Custom_Language extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'custom_language_margin',
             [
-                'label'     => esc_html__('Margin', 'lasa'),
+                'label'     => esc_html__('Margin', 'themename'),
                 'type'      => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
@@ -180,4 +180,4 @@ class Lasa_Elementor_Custom_Language extends Lasa_Elementor_Widget_Base
         $this->end_controls_section();
     }
 }
-$widgets_manager->register(new Lasa_Elementor_Custom_Language());
+$widgets_manager->register(new Themename_Elementor_Custom_Language());

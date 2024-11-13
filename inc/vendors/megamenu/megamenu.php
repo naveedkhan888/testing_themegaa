@@ -3,7 +3,7 @@
 defined( 'ABSPATH' ) || exit();
 
 
-class Lasa_Megamenu {
+class Themename_Megamenu {
 
 	private $menu_items  = [];
 
@@ -11,15 +11,15 @@ class Lasa_Megamenu {
 		$this->includes_core();
 		$this->includes();
 
-		if( lasa_elementor_activated() ) {
+		if( themename_elementor_activated() ) {
 			add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 		}
 
-		add_filter( 'lasa_nav_menu_args', [ $this, 'set_menu_args' ], 99999 );
+		add_filter( 'themename_nav_menu_args', [ $this, 'set_menu_args' ], 99999 );
 	}
 
 	public function set_menu_args( $args ) {
-		$args['walker'] = new Lasa_Megamenu_Walker();
+		$args['walker'] = new Themename_Megamenu_Walker();
 
 		return $args;
 	}
@@ -43,4 +43,4 @@ class Lasa_Megamenu {
 	}
 }
 
-return new Lasa_Megamenu();
+return new Themename_Megamenu();

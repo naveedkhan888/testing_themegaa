@@ -1,7 +1,7 @@
 <?php
 namespace Elementor; // Custom widgets must be defined in the Elementor namespace
 
-if (! defined('ABSPATH') || function_exists('Lasa_Widget_Shortcode')) {
+if (! defined('ABSPATH') || function_exists('Themename_Widget_Shortcode')) {
     exit; // Exit if accessed directly.
 }
 /**
@@ -11,7 +11,7 @@ if (! defined('ABSPATH') || function_exists('Lasa_Widget_Shortcode')) {
  *
  * @since 1.0.0
  */
-class Lasa_Widget_Shortcode extends Widget_Shortcode
+class Themename_Widget_Shortcode extends Widget_Shortcode
 {
 
 	/**
@@ -26,14 +26,14 @@ class Lasa_Widget_Shortcode extends Widget_Shortcode
 		$this->start_controls_section(
 			'section_shortcode',
 			[
-				'label' => esc_html__( 'Shortcode', 'lasa' ),
+				'label' => esc_html__( 'Shortcode', 'themename' ),
 			]
 		);
 
 		$this->add_control(
 			'shortcode',
 			[
-				'label' => esc_html__( 'Enter your shortcode', 'lasa' ),
+				'label' => esc_html__( 'Enter your shortcode', 'themename' ),
 				'type' => Controls_Manager::TEXTAREA,
 				'dynamic' => [
 					'active' => true,
@@ -46,7 +46,7 @@ class Lasa_Widget_Shortcode extends Widget_Shortcode
 		$this->add_control(
             'only_home_page',
             [
-                'label'              => esc_html__('Only Show Home Page', 'lasa'),
+                'label'              => esc_html__('Only Show Home Page', 'themename'),
                 'type'               => Controls_Manager::SWITCHER,
                 'default'            => 'no',
             ]
@@ -67,7 +67,7 @@ class Lasa_Widget_Shortcode extends Widget_Shortcode
 		$shortcode = $this->get_settings_for_display( 'shortcode' );
 		$only_home_page = $this->get_settings_for_display( 'only_home_page' );
 
-		if(!lasa_tbay_is_home_page() && $only_home_page === 'yes') {
+		if(!themename_tbay_is_home_page() && $only_home_page === 'yes') {
 			return;
 		}
 
@@ -76,4 +76,4 @@ class Lasa_Widget_Shortcode extends Widget_Shortcode
 		<div class="elementor-shortcode"><?php echo trim($shortcode);
 	}
 }
-$widgets_manager->register(new Lasa_Widget_Shortcode());
+$widgets_manager->register(new Themename_Widget_Shortcode());

@@ -19,7 +19,7 @@ use Monolog\Formatter\FormatterInterface;
  * Slack record utility helping to log to Slack webhooks or API.
  *
  * @author Greg Kedzierski <greg@gregkedzierski.com>
- * @author Lasalan Dobrev <hkdobrev@gmail.com>
+ * @author Themenamelan Dobrev <hkdobrev@gmail.com>
  * @see    https://api.slack.com/incoming-webhooks
  * @see    https://api.slack.com/docs/message-attachments
  */

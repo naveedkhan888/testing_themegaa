@@ -13,8 +13,8 @@ defined( 'ABSPATH' ) || exit;
 Redux::set_section(
 	$opt_name,
 	array(
-        'title' => esc_html__('Import / Export', 'lasa'),
-        'desc' => esc_html__('Import and Export your Redux Framework settings from file, text or URL.', 'lasa'),
+        'title' => esc_html__('Import / Export', 'themename'),
+        'desc' => esc_html__('Import and Export your Redux Framework settings from file, text or URL.', 'themename'),
         'icon' => 'zmdi zmdi-download',
         'fields' => array(
             array(

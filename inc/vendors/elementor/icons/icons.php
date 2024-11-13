@@ -1,12 +1,12 @@
 <?php
 
-if (! function_exists('lasa_elementor_icon_control_simple_line_icons')) {
-    add_action('elementor/icons_manager/additional_tabs', 'lasa_elementor_icon_control_simple_line_icons');
-    function lasa_elementor_icon_control_simple_line_icons($tabs)
+if (! function_exists('themename_elementor_icon_control_simple_line_icons')) {
+    add_action('elementor/icons_manager/additional_tabs', 'themename_elementor_icon_control_simple_line_icons');
+    function themename_elementor_icon_control_simple_line_icons($tabs)
     {
         $tabs['simple-line-icons'] = [
             'name'          => 'simple-line-icons',
-            'label'         => esc_html__('Simple Line Icons', 'lasa'),
+            'label'         => esc_html__('Simple Line Icons', 'themename'),
             'prefix'        => 'icon-',
             'displayPrefix' => 'sim-icon',
             'labelIcon'     => 'fa fa-font-awesome',
@@ -19,13 +19,13 @@ if (! function_exists('lasa_elementor_icon_control_simple_line_icons')) {
     }
 }
 
-if (! function_exists('lasa_elementor_icon_control_material_design_iconic')) {
-    add_action('elementor/icons_manager/additional_tabs', 'lasa_elementor_icon_control_material_design_iconic');
-    function lasa_elementor_icon_control_material_design_iconic($tabs)
+if (! function_exists('themename_elementor_icon_control_material_design_iconic')) {
+    add_action('elementor/icons_manager/additional_tabs', 'themename_elementor_icon_control_material_design_iconic');
+    function themename_elementor_icon_control_material_design_iconic($tabs)
     {
         $tabs['material-design-iconic'] = [
             'name'          => 'material-design-iconic',
-            'label'         => esc_html__('Material Design Iconic', 'lasa'),
+            'label'         => esc_html__('Material Design Iconic', 'themename'),
             'prefix'        => 'zmdi-',
             'displayPrefix' => 'zmdi',
             'labelIcon'     => 'fa fa-font-awesome',
@@ -39,13 +39,13 @@ if (! function_exists('lasa_elementor_icon_control_material_design_iconic')) {
 }
 
 
-if (! function_exists('lasa_elementor_icon_control_tbay_custom')) {
-    add_action('elementor/icons_manager/additional_tabs', 'lasa_elementor_icon_control_tbay_custom', 10);
-    function lasa_elementor_icon_control_tbay_custom($tabs)
+if (! function_exists('themename_elementor_icon_control_tbay_custom')) {
+    add_action('elementor/icons_manager/additional_tabs', 'themename_elementor_icon_control_tbay_custom', 10);
+    function themename_elementor_icon_control_tbay_custom($tabs)
     {
         $tabs['tbay-custom'] = [
             'name'          => 'tbay-custom',
-            'label'         => esc_html__('Thembay Custom', 'lasa'),
+            'label'         => esc_html__('Xperttheme Custom', 'themename'),
             'prefix'        => 'tb-icon-',
             'displayPrefix' => 'tb-icon',
             'labelIcon'     => 'fa fa-font-awesome',

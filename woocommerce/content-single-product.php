@@ -19,7 +19,7 @@ defined('ABSPATH') || exit;
 
 global $product;
 
-$product_single_layout  =   (isset($_GET['product_single_layout']))   ?   $_GET['product_single_layout'] :  lasa_get_single_select_layout();
+$product_single_layout  =   (isset($_GET['product_single_layout']))   ?   $_GET['product_single_layout'] :  themename_get_single_select_layout();
 ?>
 <?php
     /**

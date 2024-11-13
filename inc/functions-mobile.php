@@ -1,4 +1,4 @@
-<?php if (! defined('LASA_THEME_DIR')) {
+<?php if (! defined('THEMENAME_THEME_DIR')) {
     exit('No direct script access allowed');
 }
 
@@ -7,8 +7,8 @@
  * Get Icon Mobile Menu
  * ------------------------------------------------------------------------------------------------
  */
-if (! function_exists('lasa_tbay_get_button_mobile_menu')) {
-    function lasa_tbay_get_button_mobile_menu()
+if (! function_exists('themename_tbay_get_button_mobile_menu')) {
+    function themename_tbay_get_button_mobile_menu()
     {
         $output 	= '';
         $output 	.= '<a href="javascript:void(0)" class="btn btn-sm mmenu-open">';
@@ -16,7 +16,7 @@ if (! function_exists('lasa_tbay_get_button_mobile_menu')) {
         $output  .= '</a>';
 
         
-        return apply_filters('lasa_tbay_get_button_mobile_menu', '<div class="active-mobile">'. $output . '</div>', 10);
+        return apply_filters('themename_tbay_get_button_mobile_menu', '<div class="active-mobile">'. $output . '</div>', 10);
     }
 }
 
@@ -26,11 +26,11 @@ if (! function_exists('lasa_tbay_get_button_mobile_menu')) {
  * ------------------------------------------------------------------------------------------------
  */
 
-if (! function_exists('lasa_the_button_mobile_menu')) {
-    function lasa_the_button_mobile_menu()
+if (! function_exists('themename_the_button_mobile_menu')) {
+    function themename_the_button_mobile_menu()
     {
         wp_enqueue_script('jquery-mmenu');
-        $ouput = lasa_tbay_get_button_mobile_menu();
+        $ouput = themename_tbay_get_button_mobile_menu();
         
         echo trim($ouput);
     }
@@ -41,10 +41,10 @@ if (! function_exists('lasa_the_button_mobile_menu')) {
  * Get Logo Mobile
  * ------------------------------------------------------------------------------------------------
  */
-if (! function_exists('lasa_tbay_get_logo_mobile')) {
-    function lasa_tbay_get_logo_mobile()
+if (! function_exists('themename_tbay_get_logo_mobile')) {
+    function themename_tbay_get_logo_mobile()
     {
-        $mobilelogo 			= lasa_tbay_get_config('mobile-logo');
+        $mobilelogo 			= themename_tbay_get_config('mobile-logo');
 
         $output 	= '<div class="mobile-logo">';
         if (isset($mobilelogo['url']) && !empty($mobilelogo['url'])) {
@@ -62,13 +62,13 @@ if (! function_exists('lasa_tbay_get_logo_mobile')) {
         } else {
             $output 		.= '<div class="logo-theme">';
             $output 	.= '<a href="'. esc_url(home_url('/')) .'">';
-            $output 	.= '<img class="logo-mobile-img" src="'. esc_url_raw(LASA_IMAGES .'/logo.svg') .'" alt="'. get_bloginfo('name') .'">';
+            $output 	.= '<img class="logo-mobile-img" src="'. esc_url_raw(THEMENAME_IMAGES .'/logo.svg') .'" alt="'. get_bloginfo('name') .'">';
             $output 	.= '</a>';
             $output 		.= '</div>';
         }
         $output 	.= '</div>';
         
-        return apply_filters('lasa_tbay_get_logo_mobile', $output, 10);
+        return apply_filters('themename_tbay_get_logo_mobile', $output, 10);
     }
 }
 
@@ -78,10 +78,10 @@ if (! function_exists('lasa_tbay_get_logo_mobile')) {
  * ------------------------------------------------------------------------------------------------
  */
 
-if (! function_exists('lasa_the_logo_mobile')) {
-    function lasa_the_logo_mobile()
+if (! function_exists('themename_the_logo_mobile')) {
+    function themename_the_logo_mobile()
     {
-        $ouput = lasa_tbay_get_logo_mobile();
+        $ouput = themename_tbay_get_logo_mobile();
         echo trim($ouput);
     }
 }
@@ -91,19 +91,19 @@ if (! function_exists('lasa_the_logo_mobile')) {
  * The Mini cart mobile
  * ------------------------------------------------------------------------------------------------
  */
-if (! function_exists('lasa_the_icon_mini_cart_mobile')) {
-    function lasa_the_icon_mini_cart_mobile()
+if (! function_exists('themename_the_icon_mini_cart_mobile')) {
+    function themename_the_icon_mini_cart_mobile()
     {
         ?><div class="device-mini_cart top-cart tbay-element-mini-cart"><?php
-            if (lasa_woocommerce_activated() && !lasa_catalog_mode_active()) {
+            if (themename_woocommerce_activated() && !themename_catalog_mode_active()) {
                 global $woocommerce;
-                $_id 	= lasa_tbay_random_key();
-                if (!lasa_woocommerce_activated() || lasa_catalog_mode_active()) {
+                $_id 	= themename_tbay_random_key();
+                if (!themename_woocommerce_activated() || themename_catalog_mode_active()) {
                     return;
                 } ?>
                     <?php 
                         if( !is_checkout() && !is_cart() ) {
-                            lasa_tbay_get_page_templates_parts('device/offcanvas-cart', 'mobile');
+                            themename_tbay_get_page_templates_parts('device/offcanvas-cart', 'mobile');
                         }
 
                         $data_dropdown = ( is_checkout() || is_cart() ) ? '' : 'data-bs-toggle="offcanvas" data-bs-target="#cart-offcanvas-mobile" aria-controls="cart-offcanvas-mobile"';
@@ -115,7 +115,7 @@ if (! function_exists('lasa_the_icon_mini_cart_mobile')) {
 									<span class="mini-cart-items">
 									<?php echo sprintf('%d', $woocommerce->cart->cart_contents_count); ?>
 									</span>
-								<span><?php esc_html_e('Cart', 'lasa'); ?></span>
+								<span><?php esc_html_e('Cart', 'themename'); ?></span>
 							</a>   
 						</div>
 					</div> 
@@ -129,10 +129,10 @@ if (! function_exists('lasa_the_icon_mini_cart_mobile')) {
  * The Mini cart header mobile
  * ------------------------------------------------------------------------------------------------
  */
-if (! function_exists('lasa_the_icon_mini_cart_header_mobile')) {
-    function lasa_the_icon_mini_cart_header_mobile()
+if (! function_exists('themename_the_icon_mini_cart_header_mobile')) {
+    function themename_the_icon_mini_cart_header_mobile()
     {
-        lasa_the_icon_mini_cart_mobile();
+        themename_the_icon_mini_cart_mobile();
     }
 }
 
@@ -142,20 +142,20 @@ if (! function_exists('lasa_the_icon_mini_cart_header_mobile')) {
  * The search header mobile
  * ------------------------------------------------------------------------------------------------
  */
-if (! function_exists('lasa_the_search_header_mobile')) {
-    function lasa_the_search_header_mobile()
+if (! function_exists('themename_the_search_header_mobile')) {
+    function themename_the_search_header_mobile()
     {
         ?>
 			<?php
-                $menu_mobile_search 	= lasa_tbay_get_config('menu_mobile_search', true);
-        if (!$menu_mobile_search && !lasa_tbay_is_home_page()) {
+                $menu_mobile_search 	= themename_tbay_get_config('menu_mobile_search', true);
+        if (!$menu_mobile_search && !themename_tbay_is_home_page()) {
             return;
         }
 
-        if ($menu_mobile_search || lasa_tbay_is_home_page()) {
+        if ($menu_mobile_search || themename_tbay_is_home_page()) {
             ?>
 					<div class="search-device"> 
-						<?php lasa_tbay_get_page_templates_parts('device/productsearchform', 'mobileheader'); ?>
+						<?php themename_tbay_get_page_templates_parts('device/productsearchform', 'mobileheader'); ?>
 					</div>
 					<?php
         } ?>
@@ -163,7 +163,7 @@ if (! function_exists('lasa_the_search_header_mobile')) {
 
 		<?php
     }
-    add_action('lasa_after_header_mobile', 'lasa_the_search_header_mobile', 5);
+    add_action('themename_after_header_mobile', 'themename_the_search_header_mobile', 5);
 }
 
 /**
@@ -171,10 +171,10 @@ if (! function_exists('lasa_the_search_header_mobile')) {
  * The Mini cart mobile
  * ------------------------------------------------------------------------------------------------
  */
-if (! function_exists('lasa_the_mini_cart_header_mobile')) {
-    function lasa_the_mini_cart_header_mobile()
+if (! function_exists('themename_the_mini_cart_header_mobile')) {
+    function themename_the_mini_cart_header_mobile()
     {
-        lasa_tbay_get_page_templates_parts('offcanvas-cart', 'right');
+        themename_tbay_get_page_templates_parts('offcanvas-cart', 'right');
     }
 }
 
@@ -183,16 +183,16 @@ if (! function_exists('lasa_the_mini_cart_header_mobile')) {
  * Top right header mobile
  * ------------------------------------------------------------------------------------------------
  */
-if (! function_exists('lasa_top_header_mobile')) {
-    function lasa_top_header_mobile() { ?>
+if (! function_exists('themename_top_header_mobile')) {
+    function themename_top_header_mobile() { ?>
 		<div class="top-right-mobile">
 			<?php
                 /**
-                * Hook: lasa_top_header_mobile.
+                * Hook: themename_top_header_mobile.
                 *
-                * @hooked lasa_the_mini_cart_header_mobile - 5
+                * @hooked themename_the_mini_cart_header_mobile - 5
                 */
-                do_action('lasa_top_header_mobile');
+                do_action('themename_top_header_mobile');
             ?>
 		</div>
 	<?php }
@@ -218,20 +218,20 @@ if (! function_exists('lasa_top_header_mobile')) {
  * Get Title Page Header Mobile
  * ------------------------------------------------------------------------------------------------
  */
-if (! function_exists('lasa_tbay_get_title_page_mobile')) {
-    function lasa_tbay_get_title_page_mobile()
+if (! function_exists('themename_tbay_get_title_page_mobile')) {
+    function themename_tbay_get_title_page_mobile()
     {
         $output = '';
 
-        if ( lasa_woocommerce_activated() && is_product_category() ) { 
-            $output     .= apply_filters('lasa_get_filter_title_mobile', 10, 2);
+        if ( themename_woocommerce_activated() && is_product_category() ) { 
+            $output     .= apply_filters('themename_get_filter_title_mobile', 10, 2);
         } else {
             $output     .= '<div class="topbar-title">';
-            $output     .= apply_filters('lasa_get_filter_title_mobile', 10, 2);
+            $output     .= apply_filters('themename_get_filter_title_mobile', 10, 2);
             $output     .= '</div>';
         }
         
-        return apply_filters('lasa_tbay_get_title_page_mobile', $output, 10);
+        return apply_filters('themename_tbay_get_title_page_mobile', $output, 10);
     }
 }
 
@@ -241,10 +241,10 @@ if (! function_exists('lasa_tbay_get_title_page_mobile')) {
  * ------------------------------------------------------------------------------------------------
  */
 
-if (! function_exists('lasa_the_title_page_mobile')) {
-    function lasa_the_title_page_mobile()
+if (! function_exists('themename_the_title_page_mobile')) {
+    function themename_the_title_page_mobile()
     {
-        $output = lasa_tbay_get_title_page_mobile();
+        $output = themename_tbay_get_title_page_mobile();
         echo trim($output);
     }
 }
@@ -254,16 +254,16 @@ if (! function_exists('lasa_the_title_page_mobile')) {
  * Get Icon Home Page On Header Mobile
  * ------------------------------------------------------------------------------------------------
  */
-if (! function_exists('lasa_tbay_get_icon_home_page_mobile')) {
-    function lasa_tbay_get_icon_home_page_mobile()
+if (! function_exists('themename_tbay_get_icon_home_page_mobile')) {
+    function themename_tbay_get_icon_home_page_mobile()
     {
         $output 	= '<div class="topbar-icon-home">';
         $output 	.= '<a href="'. esc_url(home_url('/')) .'">';
-        $output  	.= apply_filters('lasa_get_mobile_home_icon', '<i class="tb-icon tb-icon-home3"></i>', 2);
+        $output  	.= apply_filters('themename_get_mobile_home_icon', '<i class="tb-icon tb-icon-home3"></i>', 2);
         $output  	.= '</a>';
         $output  	.= '</div>';
         
-        return apply_filters('lasa_tbay_get_icon_home_page_mobile', $output, 10);
+        return apply_filters('themename_tbay_get_icon_home_page_mobile', $output, 10);
     }
 }
 
@@ -273,10 +273,10 @@ if (! function_exists('lasa_tbay_get_icon_home_page_mobile')) {
  * ------------------------------------------------------------------------------------------------
  */
 
-if (! function_exists('lasa_the_icon_home_page_mobile')) {
-    function lasa_the_icon_home_page_mobile()
+if (! function_exists('themename_the_icon_home_page_mobile')) {
+    function themename_the_icon_home_page_mobile()
     {
-        $ouput = lasa_tbay_get_icon_home_page_mobile();
+        $ouput = themename_tbay_get_icon_home_page_mobile();
         echo trim($ouput);
     }
 }
@@ -288,21 +288,21 @@ if (! function_exists('lasa_the_icon_home_page_mobile')) {
  * ------------------------------------------------------------------------------------------------
  */
 
-if (! function_exists('lasa_the_hook_header_mobile_all_page')) {
-    function lasa_the_hook_header_mobile_all_page()
+if (! function_exists('themename_the_hook_header_mobile_all_page')) {
+    function themename_the_hook_header_mobile_all_page()
     {
-        $always_display_logo 			= lasa_tbay_get_config('always_display_logo', true);
+        $always_display_logo 			= themename_tbay_get_config('always_display_logo', true);
 
         if ($always_display_logo) {
-            remove_action('lasa_header_mobile_content', 'lasa_the_icon_home_page_mobile', 10);
+            remove_action('themename_header_mobile_content', 'themename_the_icon_home_page_mobile', 10);
         }
         
-        if ($always_display_logo || lasa_tbay_is_home_page()) {
+        if ($always_display_logo || themename_tbay_is_home_page()) {
             return;
         }
 
-        remove_action('lasa_header_mobile_content', 'lasa_the_logo_mobile', 15);
-        add_action('lasa_header_mobile_content', 'lasa_the_title_page_mobile', 15);
+        remove_action('themename_header_mobile_content', 'themename_the_logo_mobile', 15);
+        add_action('themename_header_mobile_content', 'themename_the_title_page_mobile', 15);
     }
 }
 
@@ -319,19 +319,19 @@ if (! function_exists('lasa_the_hook_header_mobile_all_page')) {
  * Get Icon Home Page On Footer Mobile
  * ------------------------------------------------------------------------------------------------
  */
-if (! function_exists('lasa_tbay_get_icon_home_footer_mobile')) {
-    function lasa_tbay_get_icon_home_footer_mobile()
+if (! function_exists('themename_tbay_get_icon_home_footer_mobile')) {
+    function themename_tbay_get_icon_home_footer_mobile()
     {
         $active = (is_front_page()) ? 'active' : '';
 
         $output	 = '<div class="device-home '. $active .' ">';
         $output  .= '<a href="'. esc_url(home_url('/')) .'" >';
-        $output  .= apply_filters('lasa_get_mobile_home_icon', '<i class="tb-icon tb-icon-home3"></i>', 2);
-        $output  .= '<span>'. esc_html__('Home', 'lasa'). '</span>';
+        $output  .= apply_filters('themename_get_mobile_home_icon', '<i class="tb-icon tb-icon-home3"></i>', 2);
+        $output  .= '<span>'. esc_html__('Home', 'themename'). '</span>';
         $output  .='</a>';
         $output  .='</div>';
         
-        return apply_filters('lasa_tbay_get_icon_home_footer_mobile', $output, 10);
+        return apply_filters('themename_tbay_get_icon_home_footer_mobile', $output, 10);
     }
 }
 
@@ -341,10 +341,10 @@ if (! function_exists('lasa_tbay_get_icon_home_footer_mobile')) {
  * ------------------------------------------------------------------------------------------------
  */
 
-if (! function_exists('lasa_the_icon_home_footer_mobile')) {
-    function lasa_the_icon_home_footer_mobile()
+if (! function_exists('themename_the_icon_home_footer_mobile')) {
+    function themename_the_icon_home_footer_mobile()
     {
-        $ouput = lasa_tbay_get_icon_home_footer_mobile();
+        $ouput = themename_tbay_get_icon_home_footer_mobile();
         
         echo trim($ouput);
     }
@@ -355,8 +355,8 @@ if (! function_exists('lasa_the_icon_home_footer_mobile')) {
  * Get Icon Wishlist On Footer Mobile
  * ------------------------------------------------------------------------------------------------
  */
-if (! function_exists('lasa_tbay_get_icon_wishlist_footer_mobile')) {
-    function lasa_tbay_get_icon_wishlist_footer_mobile()
+if (! function_exists('themename_tbay_get_icon_wishlist_footer_mobile')) {
+    function themename_tbay_get_icon_wishlist_footer_mobile()
     {
         $output = '';
         
@@ -369,13 +369,13 @@ if (! function_exists('lasa_tbay_get_icon_wishlist_footer_mobile')) {
 
         $output	 .= '<div class="device-wishlist">';
         $output  .= '<a class="text-skin wishlist-icon" href="'. esc_url($wishlist_url) .'" >';
-        $output  .= apply_filters('lasa_get_mobile_wishlist_icon', '<i class="tb-icon tb-icon-favorite"></i>', 2);
+        $output  .= apply_filters('themename_get_mobile_wishlist_icon', '<i class="tb-icon tb-icon-favorite"></i>', 2);
         $output  .= '<span class="count count_wishlist"><span>'. esc_html($wishlist_count) .'</span></span>';
-        $output  .= '<span>'. esc_html__('Wishlist', 'lasa'). '</span>';
+        $output  .= '<span>'. esc_html__('Wishlist', 'themename'). '</span>';
         $output  .='</a>';
         $output  .='</div>';
         
-        return apply_filters('lasa_tbay_get_icon_wishlist_footer_mobile', $output, 10);
+        return apply_filters('themename_tbay_get_icon_wishlist_footer_mobile', $output, 10);
     }
 }
 
@@ -385,10 +385,10 @@ if (! function_exists('lasa_tbay_get_icon_wishlist_footer_mobile')) {
  * ------------------------------------------------------------------------------------------------
  */
 
-if (! function_exists('lasa_the_icon_wishlist_footer_mobile')) {
-    function lasa_the_icon_wishlist_footer_mobile()
+if (! function_exists('themename_the_icon_wishlist_footer_mobile')) {
+    function themename_the_icon_wishlist_footer_mobile()
     {
-        $ouput = lasa_tbay_get_icon_wishlist_footer_mobile();
+        $ouput = themename_tbay_get_icon_wishlist_footer_mobile();
         
         echo trim($ouput);
     }
@@ -399,32 +399,32 @@ if (! function_exists('lasa_the_icon_wishlist_footer_mobile')) {
  * Get Icon Account On Footer Mobile
  * ------------------------------------------------------------------------------------------------
  */
-if (! function_exists('lasa_tbay_get_icon_account_footer_mobile')) {
-    function lasa_tbay_get_icon_account_footer_mobile()
+if (! function_exists('themename_tbay_get_icon_account_footer_mobile')) {
+    function themename_tbay_get_icon_account_footer_mobile()
     {
         $output = '';
 
-        if (!lasa_woocommerce_activated() || lasa_catalog_mode_active()) {
+        if (!themename_woocommerce_activated() || themename_catalog_mode_active()) {
             return $output;
         }
 
-        $icon_text 	= apply_filters('lasa_get_mobile_user_icon', '<i class="tb-icon tb-icon-user"></i>', 2);
-        $icon_text .= '<span>'.esc_html__('Account', 'lasa').'</span>';
+        $icon_text 	= apply_filters('themename_get_mobile_user_icon', '<i class="tb-icon tb-icon-user"></i>', 2);
+        $icon_text .= '<span>'.esc_html__('Account', 'themename').'</span>';
 
         $active 	= (is_account_page()) ? 'active' : '';
 
         $output	 .= '<div class="device-account '. esc_attr($active) .'">';
         if (is_user_logged_in()) {
-            $output .= '<a class="logged-in" href="'. esc_url(get_permalink(get_option('woocommerce_myaccount_page_id'))) .'"  title="'. esc_attr__('Login', 'lasa') .'">';
+            $output .= '<a class="logged-in" href="'. esc_url(get_permalink(get_option('woocommerce_myaccount_page_id'))) .'"  title="'. esc_attr__('Login', 'themename') .'">';
         } else {
-            $output .= '<a class="popup-login" href="javascript:void(0);"  title="'. esc_attr__('Login', 'lasa') .'">';
+            $output .= '<a class="popup-login" href="javascript:void(0);"  title="'. esc_attr__('Login', 'themename') .'">';
         }
         $output .= $icon_text;
         $output .= '</a>';
 
         $output  .='</div>';
         
-        return apply_filters('lasa_tbay_get_icon_account_footer_mobile', $output, 10);
+        return apply_filters('themename_tbay_get_icon_account_footer_mobile', $output, 10);
     }
 }
 
@@ -434,40 +434,40 @@ if (! function_exists('lasa_tbay_get_icon_account_footer_mobile')) {
  * ------------------------------------------------------------------------------------------------
  */
 
-if (! function_exists('lasa_the_icon_account_footer_mobile')) {
-    function lasa_the_icon_account_footer_mobile()
+if (! function_exists('themename_the_icon_account_footer_mobile')) {
+    function themename_the_icon_account_footer_mobile()
     {
-        $ouput = lasa_tbay_get_icon_account_footer_mobile();
+        $ouput = themename_tbay_get_icon_account_footer_mobile();
         
         echo trim($ouput);
     }
 }
 
 
-if (! function_exists('lasa_the_custom_list_menu_icon')) {
-    function lasa_the_custom_list_menu_icon()
+if (! function_exists('themename_the_custom_list_menu_icon')) {
+    function themename_the_custom_list_menu_icon()
     {
-        $slides = lasa_tbay_get_config('mobile_footer_slides');
+        $slides = themename_tbay_get_config('mobile_footer_slides');
 
-        if (!lasa_tbay_get_config('mobile_footer_icon', true) || empty($slides)) {
+        if (!themename_tbay_get_config('mobile_footer_icon', true) || empty($slides)) {
             return;
         }
 
         $list_menu_icon = '';
         foreach ($slides as $key => $value) {
-            $list_menu_icon .= lasa_get_list_menu_icon($value);
+            $list_menu_icon .= themename_get_list_menu_icon($value);
         }
 
         if (!empty($list_menu_icon)) {
-            printf('<div class="list-menu-icon">%s</div>', apply_filters('lasa_list_menu_icon', $list_menu_icon));
+            printf('<div class="list-menu-icon">%s</div>', apply_filters('themename_list_menu_icon', $list_menu_icon));
         }
     }
 
-    add_action('lasa_footer_mobile_content', 'lasa_the_custom_list_menu_icon', 10);
+    add_action('themename_footer_mobile_content', 'themename_the_custom_list_menu_icon', 10);
 }
 
-if (! function_exists('lasa_get_list_menu_icon')) {
-    function lasa_get_list_menu_icon($value)
+if (! function_exists('themename_get_list_menu_icon')) {
+    function themename_get_list_menu_icon($value)
     {
         $title 	= (isset($value['title'])) ? $value['title'] : '';
         $link 	= (isset($value['url'])) ? $value['url'] : '';
@@ -481,7 +481,7 @@ if (! function_exists('lasa_get_list_menu_icon')) {
         if (isset($matches[1][0]) && !is_null($matches[1][0])) {
             $url_wishlist = $url_account = '';
 
-            if (lasa_woocommerce_activated() && !lasa_catalog_mode_active()) {
+            if (themename_woocommerce_activated() && !themename_catalog_mode_active()) {
                 $url_account 	= apply_filters('wpml_woo_myaccount_url', get_permalink(get_option('woocommerce_myaccount_page_id')));
                 $url_cart 		= apply_filters('wpml_woo_cart_url', wc_get_cart_url());
                 $url_checkout 	= apply_filters('wpml_woo_checkout_url', wc_get_checkout_url());
@@ -563,7 +563,7 @@ if (! function_exists('lasa_get_list_menu_icon')) {
             $output .= '<span class="count count_wishlist"><span>'. trim($wishlist_count) .'</span></span>';
         }
 
-        if (isset($matches[1][0])  && lasa_woocommerce_activated() && $matches[1][0] === 'cart') {
+        if (isset($matches[1][0])  && themename_woocommerce_activated() && $matches[1][0] === 'cart') {
             global $woocommerce;
             $output .= '<span class="mini-cart-items">'. trim($woocommerce->cart->cart_contents_count) .'</span>';
         }

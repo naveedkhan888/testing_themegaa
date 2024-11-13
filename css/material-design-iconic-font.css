@@ -174,7 +174,7 @@
   color: #ffffff;
 }
 /* Material Design Iconic Font uses the Unicode Private Use Area (PUA) to ensure screen
-   readers do not read off random clasacters that represent icons */
+   readers do not read off random cthemenamecters that represent icons */
 .zmdi-3d-rotation:before {
   content: '\f101';
 }

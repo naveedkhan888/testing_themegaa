@@ -1,5 +1,5 @@
 <?php
-if (!lasa_redux_framework_activated()) {
+if (!themename_redux_framework_activated()) {
     return;
 }
 
@@ -8,9 +8,9 @@ class Tbay_Widget_Popup_Newsletter extends Tbay_Widget
     public function __construct()
     {
         parent::__construct(
-            'lasa_popup_newsletter',
-            esc_html__('Lasa Popup Newsletter', 'lasa'),
-            array( 'description' => esc_html__('Show Popup Newsletter', 'lasa'), )
+            'themename_popup_newsletter',
+            esc_html__('Themename Popup Newsletter', 'themename'),
+            array( 'description' => esc_html__('Show Popup Newsletter', 'themename'), )
         );
         $this->widgetName = 'popup_newsletter';
         add_action('admin_enqueue_scripts', array($this, 'scripts'));
@@ -18,8 +18,8 @@ class Tbay_Widget_Popup_Newsletter extends Tbay_Widget
     
     public function scripts()
     {
-        $suffix = (lasa_tbay_get_config('minified_js', false)) ? '.min' : LASA_MIN_JS;
-        wp_enqueue_script('tbay-upload', WPTHEMBAY_ELEMENTOR_URL . 'assets/upload.js', array( 'jquery', 'wp-pointer' ), WPTHEMBAY_ELEMENTOR_VERSION, true);
+        $suffix = (themename_tbay_get_config('minified_js', false)) ? '.min' : THEMENAME_MIN_JS;
+        wp_enqueue_script('tbay-upload', WPXPERTTHEME_ELEMENTOR_URL . 'assets/upload.js', array( 'jquery', 'wp-pointer' ), WPXPERTTHEME_ELEMENTOR_VERSION, true);
     }
 
     public function getTemplate()
@@ -35,7 +35,7 @@ class Tbay_Widget_Popup_Newsletter extends Tbay_Widget
     public function form($instance)
     {
         $list_socials = apply_filters(
-            'lasa_popup_newsletter_list_socials',array(
+            'themename_popup_newsletter_list_socials',array(
                 'facebook'      => 'Facebook',
                 'twitter'       => 'Twitter',
                 'youtube-play'  => 'Youtube',
@@ -47,27 +47,27 @@ class Tbay_Widget_Popup_Newsletter extends Tbay_Widget
         $defaults = array(
             'title' => 'Newsletter',
             'description' => "Put your content here",
-            'message' => esc_html__('Message Close', 'lasa'),
+            'message' => esc_html__('Message Close', 'themename'),
             'image' => '',
             'socials' => array());
         $instance = wp_parse_args((array) $instance, $defaults);
         // Widget admin form?>
         <p>
-            <label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><strong><?php esc_html_e('Title:', 'lasa'); ?></strong></label>
+            <label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><strong><?php esc_html_e('Title:', 'themename'); ?></strong></label>
             <input type="text" id="<?php echo esc_attr($this->get_field_id('title')); ?>" name="<?php echo esc_attr($this->get_field_name('title')); ?>" value="<?php echo esc_attr($instance['title']) ; ?>" class="widefat" />
         </p>
                 
         <p>
-            <label for="<?php echo esc_attr($this->get_field_id('description')); ?>"><?php esc_html_e('Description:', 'lasa'); ?></label>
+            <label for="<?php echo esc_attr($this->get_field_id('description')); ?>"><?php esc_html_e('Description:', 'themename'); ?></label>
             <textarea class="widefat" id="<?php echo esc_attr($this->get_field_id('description')); ?>" name="<?php echo esc_attr($this->get_field_name('description')); ?>"  cols="20" rows="3"><?php echo trim($instance['description']) ; ?></textarea>
         </p>
 
         <p>
-            <label for="<?php echo esc_attr($this->get_field_id('message')); ?>"><?php esc_html_e('Message Close:', 'lasa'); ?></label>
+            <label for="<?php echo esc_attr($this->get_field_id('message')); ?>"><?php esc_html_e('Message Close:', 'themename'); ?></label>
             <textarea class="widefat" id="<?php echo esc_attr($this->get_field_id('message')); ?>" name="<?php echo esc_attr($this->get_field_name('message')); ?>"  cols="20" rows="3"><?php echo trim($instance['message']) ; ?></textarea>
         </p> 
 
-        <label for="<?php echo esc_attr($this->get_field_id('image')); ?>"><?php esc_html_e('Image:', 'lasa'); ?></label>
+        <label for="<?php echo esc_attr($this->get_field_id('image')); ?>"><?php esc_html_e('Image:', 'themename'); ?></label>
         <div class="screenshot">
             <?php if (isset($instance['image']) && $instance['image']) { ?>
                 <img src="<?php echo esc_url($instance['image']); ?>">
@@ -79,7 +79,7 @@ class Tbay_Widget_Popup_Newsletter extends Tbay_Widget
             <input type="button" class="button remove-image" value="Remove">
         </div>
         <p>
-            <label for="<?php echo esc_attr($this->get_field_id('socials')); ?>"><?php esc_html_e('Select socials:', 'lasa'); ?></label>
+            <label for="<?php echo esc_attr($this->get_field_id('socials')); ?>"><?php esc_html_e('Select socials:', 'themename'); ?></label>
             <br>
         <?php
             foreach ($list_socials as $key => $value):
@@ -89,7 +89,7 @@ class Tbay_Widget_Popup_Newsletter extends Tbay_Widget
                 <input class="checkbox" type="checkbox" <?php checked($checked, 1); ?> id="<?php echo esc_attr($key); ?>"
                     name="<?php echo esc_attr($this->get_field_name('socials')); ?>[<?php echo esc_attr($key); ?>][status]" />
                     <label for="<?php echo esc_attr($this->get_field_name('socials')); ?>[<?php echo esc_attr($key); ?>][status]">
-                        <?php echo esc_html__('Show ', 'lasa').esc_html($value); ?>
+                        <?php echo esc_html__('Show ', 'themename').esc_html($value); ?>
                     </label>
                 <input type="hidden" name="<?php echo esc_attr($this->get_field_name('socials')); ?>[<?php echo esc_attr($key); ?>][name]" value=<?php echo esc_attr($value); ?> />
                 </p>
@@ -98,7 +98,7 @@ class Tbay_Widget_Popup_Newsletter extends Tbay_Widget
                    $check_value =  ($checked)? 'block': 'none'; ?>
                 <p style="display: <?php echo trim($check_value); ?>" id="<?php echo esc_attr($this->get_field_id($key)); ?>" class="text_url <?php echo esc_attr($key); ?>">
                     <label for="<?php echo esc_attr($this->get_field_name('socials')); ?>[<?php echo esc_attr($key); ?>][page_url]">
-                        <?php echo esc_html($value).' '.esc_html__('Page URL:', 'lasa').' '; ?>
+                        <?php echo esc_html($value).' '.esc_html__('Page URL:', 'themename').' '; ?>
                     </label>
                     <input class="widefat" type="text"
                         id="<?php echo esc_attr($this->get_field_name('socials')); ?>[<?php echo esc_attr($key); ?>][page_url]"

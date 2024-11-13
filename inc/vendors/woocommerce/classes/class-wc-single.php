@@ -1,20 +1,20 @@
 <?php
-if (! defined('ABSPATH') || !lasa_woocommerce_activated()) {
+if (! defined('ABSPATH') || !themename_woocommerce_activated()) {
     exit;
 }
 
-if (! class_exists('Lasa_Single_WooCommerce')) :
+if (! class_exists('Themename_Single_WooCommerce')) :
 
 
-    class Lasa_Single_WooCommerce
+    class Themename_Single_WooCommerce
     {
         public static $instance;
         protected $counter;
 
         public static function getInstance()
         {
-            if (! isset(self::$instance) && ! (self::$instance instanceof Lasa_Single_WooCommerce)) {
-                self::$instance = new Lasa_Single_WooCommerce();
+            if (! isset(self::$instance) && ! (self::$instance instanceof Themename_Single_WooCommerce)) {
+                self::$instance = new Themename_Single_WooCommerce();
             }
 
             return self::$instance;
@@ -59,7 +59,7 @@ if (! class_exists('Lasa_Single_WooCommerce')) :
 
             add_filter('body_class', array( $this, 'class_body_single_product'), 10, 1);
 
-            add_filter('lasa_woo_tabs_style_single_product', array( $this, 'get_tabs_style_product'), 10, 1);
+            add_filter('themename_woo_tabs_style_single_product', array( $this, 'get_tabs_style_product'), 10, 1);
 
             add_action('woocommerce_before_add_to_cart_form', array( $this, 'the_product_single_time_countdown'), 25);
              
@@ -67,13 +67,13 @@ if (! class_exists('Lasa_Single_WooCommerce')) :
             if (!wp_is_mobile()) {
                 add_action('woocommerce_before_single_product', array( $this, 'the_sticky_menu_bar'), 30);
 
-                add_action('lasa_sticky_menu_bar_product_summary', 'lasa_woocommerce_single_title', 5);
-                add_action('lasa_sticky_menu_bar_product_summary', 'woocommerce_template_single_rating', 10);
-                add_action('lasa_sticky_menu_bar_product_summary', array( $this, 'the_product_single_one_page'), 15);
+                add_action('themename_sticky_menu_bar_product_summary', 'themename_woocommerce_single_title', 5);
+                add_action('themename_sticky_menu_bar_product_summary', 'woocommerce_template_single_rating', 10);
+                add_action('themename_sticky_menu_bar_product_summary', array( $this, 'the_product_single_one_page'), 15);
 
 
-                add_action('lasa_sticky_menu_bar_product_price_cart', 'woocommerce_template_single_price', 5);
-                add_action('lasa_sticky_menu_bar_product_price_cart', array( $this, 'the_sticky_menu_bar_custom_add_to_cart'), 10);
+                add_action('themename_sticky_menu_bar_product_price_cart', 'woocommerce_template_single_price', 5);
+                add_action('themename_sticky_menu_bar_product_price_cart', array( $this, 'the_sticky_menu_bar_custom_add_to_cart'), 10);
             }
 
 
@@ -85,7 +85,7 @@ if (! class_exists('Lasa_Single_WooCommerce')) :
 
             /** Video **/
             add_action('woocommerce_product_thumbnails', array( $this, 'get_video_audio_content_last' ), 99);
-            add_action('lasa_woocommerce_before_product_thumbnails', array($this,'get_video_audio_content_first'), 10, 2);
+            add_action('themename_woocommerce_before_product_thumbnails', array($this,'get_video_audio_content_first'), 10, 2);
 
 
             add_filter( 'woocommerce_single_product_zoom_enabled', array( $this, 'remove_support_zoom_image'), 10, 1 );
@@ -119,9 +119,9 @@ if (! class_exists('Lasa_Single_WooCommerce')) :
 
             $product_id = method_exists($product, 'get_id') === true ? $product->get_id() : $product->ID;
 
-            $tab_content    = maybe_unserialize(get_post_meta($product_id, '_lasa_custom_tab_content', true));
-            $name           = maybe_unserialize(get_post_meta($product_id, '_lasa_custom_tab_name', true));
-            $priority       = (int) maybe_unserialize(get_post_meta($product_id, '_lasa_custom_tab_priority', true));
+            $tab_content    = maybe_unserialize(get_post_meta($product_id, '_themename_custom_tab_content', true));
+            $name           = maybe_unserialize(get_post_meta($product_id, '_themename_custom_tab_name', true));
+            $priority       = (int) maybe_unserialize(get_post_meta($product_id, '_themename_custom_tab_priority', true));
 
             if (empty($tab_content)) {
                 return $tabs;
@@ -129,7 +129,7 @@ if (! class_exists('Lasa_Single_WooCommerce')) :
 
             $content = do_shortcode($tab_content);
 
-            $tabs['lasa-customtab'] = array(
+            $tabs['themename-customtab'] = array(
                 'title'		=> $name,
                 'priority'	=> $priority,
                 'callback'	=> array( $this, 'custom_product_tab_panel_content' ),
@@ -166,7 +166,7 @@ if (! class_exists('Lasa_Single_WooCommerce')) :
 
             $ptreviews = $this->photo_reviews_thumbnail_image();
 
-            add_image_size('lasa_photo_reviews_thumbnail_image', $ptreviews['width'], $ptreviews['height'], $ptreviews['crop']);
+            add_image_size('themename_photo_reviews_thumbnail_image', $ptreviews['width'], $ptreviews['height'], $ptreviews['crop']);
         }
 
         public function get_image_size_gallery_thumbnail()
@@ -185,12 +185,12 @@ if (! class_exists('Lasa_Single_WooCommerce')) :
  
         private function photo_reviews_thumbnail_image()
         {
-            $thumbnail_cropping    	= get_option('lasa_photo_reviews_thumbnail_image_cropping', 'yes');
+            $thumbnail_cropping    	= get_option('themename_photo_reviews_thumbnail_image_cropping', 'yes');
             $cropping    			= ($thumbnail_cropping == 'yes') ? true : false;
 
             return array(
-                'width'  => get_option('lasa_photo_reviews_thumbnail_image_width', 100),
-                'height' => get_option('lasa_photo_reviews_thumbnail_image_height', 133),
+                'width'  => get_option('themename_photo_reviews_thumbnail_image_width', 100),
+                'height' => get_option('themename_photo_reviews_thumbnail_image_height', 133),
                 'crop'   => $cropping,
             );
         }
@@ -205,12 +205,12 @@ if (! class_exists('Lasa_Single_WooCommerce')) :
             <div class="group-button">
                 <?php if (class_exists('YITH_WCWL')) { ?>
                 <div class="tbay-wishlist">
-                    <?php lasa_the_yith_wishlist(); ?>
+                    <?php themename_the_yith_wishlist(); ?>
                 </div>
                 <?php } ?>
                 <?php if (class_exists('YITH_Woocompare')) { ?>
                 <div class="tbay-compare">
-                    <?php lasa_the_yith_compare($product_id); ?>
+                    <?php themename_the_yith_compare($product_id); ?>
                 </div>
                 <?php } ?>
             </div>
@@ -220,12 +220,12 @@ if (! class_exists('Lasa_Single_WooCommerce')) :
 
         public function buy_now_html()
         {
-            if (lasa_catalog_mode_active()) {
+            if (themename_catalog_mode_active()) {
                 return;
             }
  
             global $product;
-            if (! intval(lasa_tbay_get_config('enable_buy_now', false))) {
+            if (! intval(themename_tbay_get_config('enable_buy_now', false))) {
                 return;
             }
 
@@ -236,21 +236,21 @@ if (! class_exists('Lasa_Single_WooCommerce')) :
             $class = 'tbay-buy-now button';
 
             if (!empty($product) && $product->is_type('variable')) {
-                $default_attributes = lasa_get_default_attributes($product);
-                $variation_id = lasa_find_matching_product_variation($product, $default_attributes);
+                $default_attributes = themename_get_default_attributes($product);
+                $variation_id = themename_find_matching_product_variation($product, $default_attributes);
                 
                 if (empty($variation_id)) {
                     $class .= ' disabled';
                 }
             }
      
-            echo '<button class="'. esc_attr($class) .'">'. esc_html__('Buy Now', 'lasa') .'</button>';
-            echo '<input type="hidden" value="0" name="lasa_buy_now" />';
+            echo '<button class="'. esc_attr($class) .'">'. esc_html__('Buy Now', 'themename') .'</button>';
+            echo '<input type="hidden" value="0" name="themename_buy_now" />';
         }
 
         public function buy_now_redirect($url)
         {
-            if (! isset($_REQUEST['lasa_buy_now']) || $_REQUEST['lasa_buy_now'] == false) {
+            if (! isset($_REQUEST['themename_buy_now']) || $_REQUEST['themename_buy_now'] == false) {
                 return $url;
             }
 
@@ -272,7 +272,7 @@ if (! class_exists('Lasa_Single_WooCommerce')) :
                 }
             }
 
-            $redirect = lasa_tbay_get_config('redirect_buy_now', 'cart') ;
+            $redirect = themename_tbay_get_config('redirect_buy_now', 'cart') ;
 
             switch ($redirect) {
                 case 'cart':
@@ -372,7 +372,7 @@ if (! class_exists('Lasa_Single_WooCommerce')) :
                 }
 
                 $outputs_content .= '</ul>';
-                $outputs .= '<div class="toogle-img-review-wrapper"><a  data-bs-toggle="collapse" href="#image-review-collapse" class="toogle-img-review"> '. $i. esc_html__(' Images from customers', 'lasa') .'</a></div>';
+                $outputs .= '<div class="toogle-img-review-wrapper"><a  data-bs-toggle="collapse" href="#image-review-collapse" class="toogle-img-review"> '. $i. esc_html__(' Images from customers', 'themename') .'</a></div>';
 
                 $outputs .= $outputs_content;
 
@@ -388,10 +388,10 @@ if (! class_exists('Lasa_Single_WooCommerce')) :
 
         public function share_box_html()
         {
-            if( !lasa_tbay_get_config('enable_code_share',false) || !lasa_tbay_get_config('enable_product_social_share', false) ) return;
+            if( !themename_tbay_get_config('enable_code_share',false) || !themename_tbay_get_config('enable_product_social_share', false) ) return;
 
             $image = get_the_post_thumbnail_url( get_the_ID(), 'full' );
-            lasa_custom_share_code( get_the_title(), get_permalink(), $image );
+            themename_custom_share_code( get_the_title(), get_permalink(), $image );
         }
 
         public function class_single_product($classes)
@@ -403,7 +403,7 @@ if (! class_exists('Lasa_Single_WooCommerce')) :
             $attachment_ids = $product->get_gallery_image_ids();
             $count = count($attachment_ids);
 
-            $sidebar_configs    = lasa_tbay_get_woocommerce_layout_configs();
+            $sidebar_configs    = themename_tbay_get_woocommerce_layout_configs();
             $images_layout      = ( !empty($sidebar_configs['thumbnail']) ) ? $sidebar_configs['thumbnail'] : 'horizontal';
             $images_position    = ( !empty($sidebar_configs['position']) ) ? $sidebar_configs['position'] : 'position';
 
@@ -430,7 +430,7 @@ if (! class_exists('Lasa_Single_WooCommerce')) :
 
             if( !is_object($product) ) return $classes;
 
-            $cart_style = lasa_get_mobile_form_cart_style();
+            $cart_style = themename_get_mobile_form_cart_style();
 
             if ($product->get_type() == 'external') {
                 $cart_style = 'default';
@@ -445,7 +445,7 @@ if (! class_exists('Lasa_Single_WooCommerce')) :
         public function get_tabs_style_product($tabs_layout)
         {
             if (is_singular('product')) {
-                $tabs_style       = lasa_tbay_get_config('style_single_tabs_style', 'tabs');
+                $tabs_style       = themename_tbay_get_config('style_single_tabs_style', 'tabs');
 
                 if (isset($_GET['tabs_product'])) {
                     $tabs_layout = $_GET['tabs_product'];
@@ -461,7 +461,7 @@ if (! class_exists('Lasa_Single_WooCommerce')) :
         {
             global $product;
 
-            $style_countdown   = lasa_tbay_get_config('enable_product_countdown', false);
+            $style_countdown   = themename_tbay_get_config('enable_product_countdown', false);
 
             if (isset($_GET['countdown'])) {
                 $countdown = $_GET['countdown'];
@@ -477,8 +477,8 @@ if (! class_exists('Lasa_Single_WooCommerce')) :
 
             wp_enqueue_script('jquery-countdowntimer');
             $time_sale = get_post_meta($product->get_id(), '_sale_price_dates_to', true);
-            $_id = lasa_tbay_random_key();
-            $dates = lasa_tbay_label_flash_sale();
+            $_id = themename_tbay_random_key();
+            $dates = themename_tbay_label_flash_sale();
             $days = $dates['days'];
             $hours = $dates['hours'];
             $mins = $dates['mins'];
@@ -487,10 +487,10 @@ if (! class_exists('Lasa_Single_WooCommerce')) :
 
             <div class="tbay-time-wrapper">
                 <div
-                    class="time tbay-time <?php echo ( lasa_tbay_get_config('enable_text_time_coutdown', false) ) ? 'label-coutdown' : '';?>">
+                    class="time tbay-time <?php echo ( themename_tbay_get_config('enable_text_time_coutdown', false) ) ? 'label-coutdown' : '';?>">
                     <div class="times-countdown">
                         <div class="title-end-times">
-                            <div class="date-title"><?php esc_html_e('Deal ends in: ', 'lasa'); ?></div>
+                            <div class="date-title"><?php esc_html_e('Deal ends in: ', 'themename'); ?></div>
                         </div>
                         <div class="tbay-countdown"
                             data-id="<?php echo esc_attr($_id); ?>-<?php echo esc_attr($product->get_id()); ?>"
@@ -538,7 +538,7 @@ if (! class_exists('Lasa_Single_WooCommerce')) :
         {
             global $post;
 
-            $menu_bar   =  apply_filters('lasa_woo_product_menu_bar', 10, 2);
+            $menu_bar   =  apply_filters('themename_woo_product_menu_bar', 10, 2);
 
             if (!$menu_bar) {
                 return;
@@ -561,13 +561,13 @@ if (! class_exists('Lasa_Single_WooCommerce')) :
                                 </div>
                                 <div class="media-body">
                                     <?php
-                                        do_action('lasa_sticky_menu_bar_product_summary'); ?>
+                                        do_action('themename_sticky_menu_bar_product_summary'); ?>
                                 </div>
                             </div>
                         </div>
                         <div class="menu-bar-right product col-lg-5">
                             <?php
-                                    do_action('lasa_sticky_menu_bar_product_price_cart'); ?>
+                                    do_action('themename_sticky_menu_bar_product_price_cart'); ?>
                         </div>
                     </div>
                 </div>
@@ -578,7 +578,7 @@ if (! class_exists('Lasa_Single_WooCommerce')) :
 
         public function the_product_single_one_page()
         {
-            $menu_bar   =  apply_filters('lasa_woo_product_menu_bar', 10, 2);
+            $menu_bar   =  apply_filters('themename_woo_product_menu_bar', 10, 2);
 
             if (isset($menu_bar) && $menu_bar) {
                 wp_enqueue_script('jquery-onepagenav'); 
@@ -600,7 +600,7 @@ if (! class_exists('Lasa_Single_WooCommerce')) :
 
         public function body_class_single_one_page($classes)
         {
-            $menu_bar   =  apply_filters('lasa_woo_product_menu_bar', 10, 2);
+            $menu_bar   =  apply_filters('themename_woo_product_menu_bar', 10, 2);
 
             if (isset($menu_bar) && $menu_bar && is_product()) {
                 $classes[] = 'tb-menu-bar';
@@ -614,11 +614,11 @@ if (! class_exists('Lasa_Single_WooCommerce')) :
 
             $class = 'shop-now';
 
-            if (intval(lasa_tbay_get_config('enable_buy_now', false)) && $product->get_type() !== 'external') {
+            if (intval(themename_tbay_get_config('enable_buy_now', false)) && $product->get_type() !== 'external') {
                 $class .= ' has-buy-now';
             }
 
-            if( lasa_tbay_get_config('enable_ajax_single_add_to_cart', false) ) {
+            if( themename_tbay_get_config('enable_ajax_single_add_to_cart', false) ) {
                 $class .= ' ajax-single-cart';
             }
 
@@ -638,14 +638,14 @@ if (! class_exists('Lasa_Single_WooCommerce')) :
 
         public function get_related_products_args($args)
         {
-            $args['posts_per_page'] = lasa_tbay_get_config('number_product_releated', 5); // 4 related products
+            $args['posts_per_page'] = themename_tbay_get_config('number_product_releated', 5); // 4 related products
 
             return $args;
         }
 
         public function get_featured_image_id($product, $video_id, $host)
         {
-            $thumbnail_id = $product->get_meta('_lasa_video_image_url');
+            $thumbnail_id = $product->get_meta('_themename_video_image_url');
             return $thumbnail_id;
         }
 
@@ -654,11 +654,11 @@ if (! class_exists('Lasa_Single_WooCommerce')) :
          */
         public function get_featured_video_args($product)
         {
-            $video_url  = $product->get_meta('_lasa_video_url');
+            $video_url  = $product->get_meta('_themename_video_url');
             $video_args = array();
 
             if (! empty($video_url)) {
-                list($host, $video_id) = explode(':', lasa_video_type_by_url($video_url));
+                list($host, $video_id) = explode(':', themename_video_type_by_url($video_url));
 
                 $video_args = array(
                     'video_id'      => $video_id,
@@ -672,7 +672,7 @@ if (! class_exists('Lasa_Single_WooCommerce')) :
 
         public function get_video_audio_content_last()
         {
-            if (lasa_tbay_get_config('video_position', 'last') === 'first') {
+            if (themename_tbay_get_config('video_position', 'last') === 'first') {
                 return;
             }
 
@@ -683,7 +683,7 @@ if (! class_exists('Lasa_Single_WooCommerce')) :
 
         public function get_video_audio_content_first()
         {
-            if (lasa_tbay_get_config('video_position', 'last') === 'last') {
+            if (themename_tbay_get_config('video_position', 'last') === 'last') {
                 return;
             }
 
@@ -716,7 +716,7 @@ if (! class_exists('Lasa_Single_WooCommerce')) :
 
         public function remove_review_tab($tabs)
         {
-            if (!lasa_tbay_get_config('enable_product_review_tab', true) && isset($tabs['reviews'])) {
+            if (!themename_tbay_get_config('enable_product_review_tab', true) && isset($tabs['reviews'])) {
                 unset($tabs['reviews']);
             }
             return $tabs;
@@ -725,7 +725,7 @@ if (! class_exists('Lasa_Single_WooCommerce')) :
 
         public function enable_zoom_image()
         {
-            $active = lasa_tbay_get_config('enable_zoom_image', true);
+            $active = themename_tbay_get_config('enable_zoom_image', true);
 
             if (isset($_GET['enable_zoom_image'])) {
                 $active = $_GET['enable_zoom_image'];
@@ -743,7 +743,7 @@ if (! class_exists('Lasa_Single_WooCommerce')) :
 
         public function get_photo_reviews_thumbnail_size($image_src, $image_post_id)
         {
-            $img_src     = wp_get_attachment_image_src($image_post_id, 'lasa_photo_reviews_thumbnail_image');
+            $img_src     = wp_get_attachment_image_src($image_post_id, 'themename_photo_reviews_thumbnail_image');
 
             return $img_src[0];
         }
@@ -757,17 +757,17 @@ if (! class_exists('Lasa_Single_WooCommerce')) :
 
         public function photo_reviews_reduce_array($reduce)
         {
-            array_push($reduce, 'lasa_photo_reviews_thumbnail_image');
+            array_push($reduce, 'themename_photo_reviews_thumbnail_image');
             return $reduce;
         }
 
         public function mobile_add_add_to_cart_button_content()
         {
-            if (lasa_catalog_mode_active()) {
+            if (themename_catalog_mode_active()) {
                 return;
             }
 
-            if (lasa_get_mobile_form_cart_style() === 'default') {
+            if (themename_get_mobile_form_cart_style() === 'default') {
                 return;
             }
 
@@ -791,11 +791,11 @@ if (! class_exists('Lasa_Single_WooCommerce')) :
 
         public function mobile_add_before_add_to_cart_button()
         {
-            if (lasa_catalog_mode_active()) {
+            if (themename_catalog_mode_active()) {
                 return;
             }
 
-            if (lasa_get_mobile_form_cart_style() === 'default') {
+            if (themename_get_mobile_form_cart_style() === 'default') {
                 return;
             }
             
@@ -810,11 +810,11 @@ if (! class_exists('Lasa_Single_WooCommerce')) :
 
         public function mobile_add_before_variations_form()
         {
-            if (lasa_catalog_mode_active()) {
+            if (themename_catalog_mode_active()) {
                 return;
             }
 
-            if (lasa_get_mobile_form_cart_style() === 'default') {
+            if (themename_get_mobile_form_cart_style() === 'default') {
                 return;
             }
 
@@ -823,11 +823,11 @@ if (! class_exists('Lasa_Single_WooCommerce')) :
         
         public function mobile_before_grouped_product_list()
         {
-            if (lasa_catalog_mode_active()) {
+            if (themename_catalog_mode_active()) {
                 return;
             }
 
-            if (lasa_get_mobile_form_cart_style() === 'default') {
+            if (themename_get_mobile_form_cart_style() === 'default') {
                 return;
             }
 
@@ -842,11 +842,11 @@ if (! class_exists('Lasa_Single_WooCommerce')) :
 
         public function mobile_add_btn_after_add_to_cart_form()
         {
-            if (lasa_catalog_mode_active()) {
+            if (themename_catalog_mode_active()) {
                 return;
             }
 
-            if (lasa_get_mobile_form_cart_style() === 'default') {
+            if (themename_get_mobile_form_cart_style() === 'default') {
                 return;
             }
 
@@ -857,14 +857,14 @@ if (! class_exists('Lasa_Single_WooCommerce')) :
             }
 
             $class = '';
-            if (lasa_tbay_get_config('enable_buy_now', false)) {
+            if (themename_tbay_get_config('enable_buy_now', false)) {
                 $class .= ' has-buy-now';
             } ?>
             <div id="mobile-close-infor-wrapper"></div>
             <div class="mobile-btn-cart-click <?php echo esc_attr($class); ?>">
-                <div id="tbay-click-addtocart"><?php esc_html_e('Add to cart', 'lasa') ?></div>
-                <?php if (lasa_tbay_get_config('enable_buy_now', false)) : ?>
-                <div id="tbay-click-buy-now"><?php esc_html_e('Buy Now', 'lasa') ?></div>
+                <div id="tbay-click-addtocart"><?php esc_html_e('Add to cart', 'themename') ?></div>
+                <?php if (themename_tbay_get_config('enable_buy_now', false)) : ?>
+                <div id="tbay-click-buy-now"><?php esc_html_e('Buy Now', 'themename') ?></div>
                 <?php endif; ?>
             </div>
             <?php
@@ -872,11 +872,11 @@ if (! class_exists('Lasa_Single_WooCommerce')) :
 
         public function mobile_add_before_add_to_cart_form()
         {
-            if (lasa_catalog_mode_active()) {
+            if (themename_catalog_mode_active()) {
                 return;
             }
 
-            if (lasa_get_mobile_form_cart_style() === 'default') {
+            if (themename_get_mobile_form_cart_style() === 'default') {
                 return;
             }
 
@@ -899,7 +899,7 @@ if (! class_exists('Lasa_Single_WooCommerce')) :
                 if (isset($selected_attributes[$key]) && !empty($selected_attributes[$key])) {
                     $default = get_term_by('slug', $selected_attributes[$key], $key)->name;
                 } else {
-                    $default = esc_html__('Choose an option ', 'lasa');
+                    $default = esc_html__('Choose an option ', 'themename');
                 }
 
                 array_push($default_attributes, $default);
@@ -928,12 +928,12 @@ if (! class_exists('Lasa_Single_WooCommerce')) :
             }
     
             $btn_ajax_value = '0';
-            if ( 'yes' !== get_option('woocommerce_cart_redirect_after_add') && 'yes' === get_option('woocommerce_enable_ajax_add_to_cart') && lasa_tbay_get_config('enable_ajax_single_add_to_cart', false) ) {
+            if ( 'yes' !== get_option('woocommerce_cart_redirect_after_add') && 'yes' === get_option('woocommerce_enable_ajax_add_to_cart') && themename_tbay_get_config('enable_ajax_single_add_to_cart', false) ) {
                 $btn_ajax_value = '1';
             } 
                
-            echo '<div class="lasa-custom-fields d-none">';
-            echo '<input type="hidden" name="lasa-enable-addtocart-ajax" value="' . esc_attr($btn_ajax_value) . '" />';
+            echo '<div class="themename-custom-fields d-none">';
+            echo '<input type="hidden" name="themename-enable-addtocart-ajax" value="' . esc_attr($btn_ajax_value) . '" />';
             echo '<input type="hidden" name="data-product_id" value="' . esc_attr($product->get_id()) . '" />';
             echo '<input type="hidden" name="data-type" value="' . esc_attr($product_type) . '" />';
             
@@ -942,10 +942,10 @@ if (! class_exists('Lasa_Single_WooCommerce')) :
     }
 endif;
 
-if (!function_exists('lasa_single_wooCommerce')) {
-    function lasa_single_wooCommerce()
+if (!function_exists('themename_single_wooCommerce')) {
+    function themename_single_wooCommerce()
     {
-        return Lasa_Single_WooCommerce::getInstance();
+        return Themename_Single_WooCommerce::getInstance();
     }
-    lasa_single_wooCommerce();
+    themename_single_wooCommerce();
 }

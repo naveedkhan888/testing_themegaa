@@ -17,14 +17,14 @@ $class_main = $class_left = '';
             ?>
             <figure class="entry-thumb <?php echo(!has_post_thumbnail() ? 'no-thumb' : ''); ?>">
 
-                <?php lasa_tbay_post_thumbnail(); ?>
+                <?php themename_tbay_post_thumbnail(); ?>
 
             </figure>
             <?php
         } 
         
         if (get_the_category_list()): ?>
-            <div class="entry-category"><?php lasa_the_post_category_full() ?></div>
+            <div class="entry-category"><?php themename_the_post_category_full() ?></div>
         <?php endif;
         ?>
 
@@ -37,7 +37,7 @@ $class_main = $class_left = '';
         } ?>
 
         <div class="entry-header"> 
-            <?php lasa_post_meta(array(
+            <?php themename_post_meta(array(
                 'date'     		=> 1,
                 'author'   		=> 1,
                 'comments' 		=> 1,
@@ -50,22 +50,22 @@ $class_main = $class_left = '';
         
         <div class="post-excerpt entry-content">
 
-            <?php the_content(esc_html__('Continue Reading', 'lasa')); ?>
+            <?php the_content(esc_html__('Continue Reading', 'themename')); ?>
 
-            <div class="lasa-tag-socials-box"><?php do_action('lasa_tbay_post_tag_socials') ?></div>
+            <div class="themename-tag-socials-box"><?php do_action('themename_tbay_post_tag_socials') ?></div>
 
-            <?php do_action('lasa_tbay_post_bottom') ?>
+            <?php do_action('themename_tbay_post_bottom') ?>
 
             
         </div><!-- /entry-content -->
         
         <?php
             wp_link_pages(array(
-                'before'      => '<div class="page-links"><span class="page-links-title">' . esc_html__('Pages:', 'lasa') . '</span>',
+                'before'      => '<div class="page-links"><span class="page-links-title">' . esc_html__('Pages:', 'themename') . '</span>',
                 'after'       => '</div>',
                 'link_before' => '<span>',
                 'link_after'  => '</span>',
-                'pagelink'    => '<span class="screen-reader-text">' . esc_html__('Page', 'lasa') . ' </span>%',
+                'pagelink'    => '<span class="screen-reader-text">' . esc_html__('Page', 'themename') . ' </span>%',
                 'separator'   => '<span class="screen-reader-text">, </span>',
             ));
         ?>

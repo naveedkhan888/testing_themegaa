@@ -17,7 +17,7 @@ use Monolog\Formatter\LineFormatter;
 use Monolog\Handler\Slack\SlackRecord;
 
 /**
- * @author Lasalan Dobrev <hkdobrev@gmail.com>
+ * @author Themenamelan Dobrev <hkdobrev@gmail.com>
  * @see    https://api.slack.com/incoming-webhooks
  * @coversDefaultClass Monolog\Handler\SlackWebhookHandler
  */

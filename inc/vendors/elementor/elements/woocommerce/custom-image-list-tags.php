@@ -1,13 +1,13 @@
 <?php
 
-if (! defined('ABSPATH') || function_exists('Lasa_Elementor_Custom_Image_List_Tags')) {
+if (! defined('ABSPATH') || function_exists('Themename_Elementor_Custom_Image_List_Tags')) {
     exit; // Exit if accessed directly.
 }
 
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
 
-class Lasa_Elementor_Custom_Image_List_Tags extends Lasa_Elementor_Carousel_Base
+class Themename_Elementor_Custom_Image_List_Tags extends Themename_Elementor_Carousel_Base
 {
     public function get_name()
     {
@@ -16,17 +16,17 @@ class Lasa_Elementor_Custom_Image_List_Tags extends Lasa_Elementor_Carousel_Base
 
     public function get_title()
     {
-        return esc_html__('Lasa Custom Image List Tags', 'lasa');
+        return esc_html__('Themename Custom Image List Tags', 'themename');
     }
 
     public function get_script_depends()
     {
-        return [ 'lasa-custom-slick', 'slick' ];
+        return [ 'themename-custom-slick', 'slick' ];
     }
 
     public function get_categories()
     {
-        return [ 'lasa-elements', 'woocommerce-elements'];
+        return [ 'themename-elements', 'woocommerce-elements'];
     }
 
     public function get_icon()
@@ -46,19 +46,19 @@ class Lasa_Elementor_Custom_Image_List_Tags extends Lasa_Elementor_Carousel_Base
         $this->start_controls_section(
             'general',
             [
-                'label' => esc_html__('General', 'lasa'),
+                'label' => esc_html__('General', 'themename'),
             ]
         );
 
         $this->add_control(
             'layout_type',
             [
-                'label'     => esc_html__('Layout Type', 'lasa'),
+                'label'     => esc_html__('Layout Type', 'themename'),
                 'type'      => Controls_Manager::SELECT,
                 'default'   => 'grid',
                 'options'   => [
-                    'grid'      => esc_html__('Grid', 'lasa'),
-                    'carousel'  => esc_html__('Carousel', 'lasa'),
+                    'grid'      => esc_html__('Grid', 'themename'),
+                    'carousel'  => esc_html__('Carousel', 'themename'),
                 ],
             ]
         );
@@ -71,7 +71,7 @@ class Lasa_Elementor_Custom_Image_List_Tags extends Lasa_Elementor_Carousel_Base
             $repeater->add_control(
                 'tag_slug',
                 [
-                    'label'     => esc_html__('Tag', 'lasa'),
+                    'label'     => esc_html__('Tag', 'themename'),
                     'type'      => Controls_Manager::SELECT,
                     'options'   => $tag_slug,
                     'default'   => $tag_default
@@ -82,7 +82,7 @@ class Lasa_Elementor_Custom_Image_List_Tags extends Lasa_Elementor_Carousel_Base
                 'tag_slug',
                 [
                     'type'            => Controls_Manager::RAW_HTML,
-                    'raw'             => sprintf(__('<strong>There are no tags in your site.</strong><br>Go to the <a href="%s" target="_blank">Tags screen</a> to create one.', 'lasa'), admin_url('edit-tags.php?taxonomy=product_tag&post_type=product')),
+                    'raw'             => sprintf(__('<strong>There are no tags in your site.</strong><br>Go to the <a href="%s" target="_blank">Tags screen</a> to create one.', 'themename'), admin_url('edit-tags.php?taxonomy=product_tag&post_type=product')),
                     'separator'       => 'after',
                     'content_classes' => 'elementor-panel-alert elementor-panel-alert-info',
                 ]
@@ -92,15 +92,15 @@ class Lasa_Elementor_Custom_Image_List_Tags extends Lasa_Elementor_Carousel_Base
         $repeater->add_control(
             'tag_style',
             [
-                'label' => esc_html__('Choose Style', 'lasa'),
+                'label' => esc_html__('Choose Style', 'themename'),
                 'type' => Controls_Manager::CHOOSE,
                 'options' => [
                     'images' => [
-                        'title' => esc_html__('Image', 'lasa'),
+                        'title' => esc_html__('Image', 'themename'),
                         'icon' => 'fa fa-image',
                     ],
                     'icon' => [
-                        'title' => esc_html__('Icon', 'lasa'),
+                        'title' => esc_html__('Icon', 'themename'),
                         'icon' => 'fa fa-info',
                     ],
                 ],
@@ -111,7 +111,7 @@ class Lasa_Elementor_Custom_Image_List_Tags extends Lasa_Elementor_Carousel_Base
         $repeater->add_control(
             'image',
             [
-                'label' => esc_html__('Choose Image', 'lasa'),
+                'label' => esc_html__('Choose Image', 'themename'),
                 'type' => Controls_Manager::MEDIA,
                 'default' => [
                     'url' => Elementor\Utils::get_placeholder_image_src(),
@@ -125,7 +125,7 @@ class Lasa_Elementor_Custom_Image_List_Tags extends Lasa_Elementor_Carousel_Base
         $repeater->add_control(
             'icon',
             [
-                'label'       => esc_html__('Icon Button', 'lasa'),
+                'label'       => esc_html__('Icon Button', 'themename'),
                 'type'        => Controls_Manager::ICONS,
                 'label_block' => true,
                 'default'     => [
@@ -141,7 +141,7 @@ class Lasa_Elementor_Custom_Image_List_Tags extends Lasa_Elementor_Carousel_Base
         $repeater->add_control(
             'tag_add_link',
             [
-                'label' => esc_html__('Add Custom Link', 'lasa'),
+                'label' => esc_html__('Add Custom Link', 'themename'),
                 'type' => Controls_Manager::SWITCHER,
                 'default' => 'no',
             ]
@@ -150,9 +150,9 @@ class Lasa_Elementor_Custom_Image_List_Tags extends Lasa_Elementor_Carousel_Base
         $repeater->add_control(
             'tag_custom_link',
             [
-                'label'         => esc_html__('Link to', 'lasa'),
+                'label'         => esc_html__('Link to', 'themename'),
                 'type'          => Controls_Manager::URL,
-                'placeholder'   => esc_html__('https://your-link.com', 'lasa'),
+                'placeholder'   => esc_html__('https://your-link.com', 'themename'),
                 'condition'     => [
                     'tag_add_link'  => 'yes',
                 ]
@@ -162,7 +162,7 @@ class Lasa_Elementor_Custom_Image_List_Tags extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'tags',
             [
-                'label' => esc_html__('List Tags', 'lasa'),
+                'label' => esc_html__('List Tags', 'themename'),
                 'type' => Controls_Manager::REPEATER,
                 'fields' => $repeater->get_controls(),
             ]
@@ -182,7 +182,7 @@ class Lasa_Elementor_Custom_Image_List_Tags extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'show_before_text',
             [
-                'label'     => esc_html__('Show Before Text', 'lasa'),
+                'label'     => esc_html__('Show Before Text', 'themename'),
                 'type'      => Controls_Manager::SWITCHER,
                 'default' => 'yes',
                 'separator' => 'before',
@@ -192,7 +192,7 @@ class Lasa_Elementor_Custom_Image_List_Tags extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'show_all',
             [
-                'label'     => esc_html__('Button Show All', 'lasa'),
+                'label'     => esc_html__('Button Show All', 'themename'),
                 'type'      => Controls_Manager::SWITCHER,
                 'default' => 'no',
                 'separator' => 'before',
@@ -201,8 +201,8 @@ class Lasa_Elementor_Custom_Image_List_Tags extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'text_button',
             [
-                'label'     => esc_html__('Text Button', 'lasa'),
-                'default'   => esc_html__('View all products', 'lasa'),
+                'label'     => esc_html__('Text Button', 'themename'),
+                'default'   => esc_html__('View all products', 'themename'),
                 'type'      => Controls_Manager::TEXT,
                 'condition' => [
                     'show_all' => 'yes'
@@ -212,7 +212,7 @@ class Lasa_Elementor_Custom_Image_List_Tags extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'icon_button',
             [
-                'label'     => esc_html__('Icon Button', 'lasa'),
+                'label'     => esc_html__('Icon Button', 'themename'),
                 'type'      => Controls_Manager::ICONS,
                 'default' => [
                     'value' => 'tb-icon tb-icon-arrow-right',
@@ -226,8 +226,8 @@ class Lasa_Elementor_Custom_Image_List_Tags extends Lasa_Elementor_Carousel_Base
         $this->add_control(
             'show_count',
             [
-                'label'     => esc_html__('Show Count', 'lasa'),
-                'description' => esc_html__('Display the product number of the tags', 'lasa'),
+                'label'     => esc_html__('Show Count', 'themename'),
+                'description' => esc_html__('Display the product number of the tags', 'themename'),
                 'type'      => Controls_Manager::SWITCHER,
                 'default' => 'no'
             ]
@@ -238,14 +238,14 @@ class Lasa_Elementor_Custom_Image_List_Tags extends Lasa_Elementor_Carousel_Base
         $this->start_controls_section(
             'section_content',
             [
-                'label' => esc_html__('Content', 'lasa'),
+                'label' => esc_html__('Content', 'themename'),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
         $this->add_responsive_control(
             'size',
             [
-                'label' => esc_html__('Font Size Icon', 'lasa'),
+                'label' => esc_html__('Font Size Icon', 'themename'),
                 'type' => Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [
@@ -269,19 +269,19 @@ class Lasa_Elementor_Custom_Image_List_Tags extends Lasa_Elementor_Carousel_Base
         $this->add_responsive_control(
             'align_content',
             [
-                'label' => esc_html__('Alignment Tag Icon', 'lasa'),
+                'label' => esc_html__('Alignment Tag Icon', 'themename'),
                 'type' => Controls_Manager::CHOOSE,
                 'options' => [
                     'flex-start' => [
-                        'title' => esc_html__('Left', 'lasa'),
+                        'title' => esc_html__('Left', 'themename'),
                         'icon' => 'fa fa-align-left',
                     ],
                     'center' => [
-                        'title' => esc_html__('Center', 'lasa'),
+                        'title' => esc_html__('Center', 'themename'),
                         'icon' => 'fa fa-align-center',
                     ],
                     'flex-end' => [
-                        'title' => esc_html__('Right', 'lasa'),
+                        'title' => esc_html__('Right', 'themename'),
                         'icon' => 'fa fa-align-right',
                     ],
                 ],
@@ -295,19 +295,19 @@ class Lasa_Elementor_Custom_Image_List_Tags extends Lasa_Elementor_Carousel_Base
         $this->add_responsive_control(
             'align_content_img',
             [
-                'label' => esc_html__('Alignment Tag Image', 'lasa'),
+                'label' => esc_html__('Alignment Tag Image', 'themename'),
                 'type' => Controls_Manager::CHOOSE,
                 'options' => [
                     'left' => [
-                        'title' => esc_html__('Left', 'lasa'),
+                        'title' => esc_html__('Left', 'themename'),
                         'icon' => 'fa fa-align-left',
                     ],
                     'center' => [
-                        'title' => esc_html__('Center', 'lasa'),
+                        'title' => esc_html__('Center', 'themename'),
                         'icon' => 'fa fa-align-center',
                     ],
                     'right' => [
-                        'title' => esc_html__('Right', 'lasa'),
+                        'title' => esc_html__('Right', 'themename'),
                         'icon' => 'fa fa-align-right',
                     ],
                 ],
@@ -321,7 +321,7 @@ class Lasa_Elementor_Custom_Image_List_Tags extends Lasa_Elementor_Carousel_Base
         $this->add_responsive_control(
             'item_padding',
             [
-                'label' => esc_html__('Item Padding', 'lasa'),
+                'label' => esc_html__('Item Padding', 'themename'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px' ],
                 'selectors' => [
@@ -332,7 +332,7 @@ class Lasa_Elementor_Custom_Image_List_Tags extends Lasa_Elementor_Carousel_Base
         $this->add_responsive_control(
             'icon_item_padding',
             [
-                'label' => esc_html__('Icon Item Padding', 'lasa'),
+                'label' => esc_html__('Icon Item Padding', 'themename'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px' ],
                 'selectors' => [
@@ -359,7 +359,7 @@ class Lasa_Elementor_Custom_Image_List_Tags extends Lasa_Elementor_Carousel_Base
         }
 
         $tag_name       = $tag->name;
-        $tag_count      = lasa_get_product_count_of_tags($tag);
+        $tag_count      = themename_get_product_count_of_tags($tag);
         $count_item     = $show_count;
 
         /*Array tab*/
@@ -403,4 +403,4 @@ class Lasa_Elementor_Custom_Image_List_Tags extends Lasa_Elementor_Carousel_Base
         }
     }
 }
-$widgets_manager->register(new Lasa_Elementor_Custom_Image_List_Tags());
+$widgets_manager->register(new Themename_Elementor_Custom_Image_List_Tags());

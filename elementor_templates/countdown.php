@@ -8,10 +8,10 @@ $this->settings_layout();
 extract($settings);
 
 if( $custom_labels !== 'yes' ) {
-    $label_days = esc_html__( 'Days', 'lasa' );
-    $label_hours = esc_html__( 'Hours', 'lasa' );
-    $label_minutes = esc_html__( 'Minutes', 'lasa' );
-    $label_seconds = esc_html__( 'Seconds', 'lasa' );
+    $label_days = esc_html__( 'Days', 'themename' );
+    $label_hours = esc_html__( 'Hours', 'themename' );
+    $label_minutes = esc_html__( 'Minutes', 'themename' );
+    $label_seconds = esc_html__( 'Seconds', 'themename' );
 }
 
 

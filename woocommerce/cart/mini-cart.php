@@ -61,7 +61,7 @@ do_action('woocommerce_before_mini_cart');
 										<?php echo wc_get_formatted_cart_item_data($cart_item); ?>
 
 										<?php 
-											if ( lasa_tbay_get_config('show_mini_cart_qty', false) ) :
+											if ( themename_tbay_get_config('show_mini_cart_qty', false) ) :
 												if ($_product->is_sold_individually()) :
 													$product_quantity = sprintf('<input type="hidden" name="cart[%s][qty]" value="1" />', $cart_item_key);
 												else :
@@ -98,12 +98,12 @@ do_action('woocommerce_before_mini_cart');
                                 '<a href="%s" class="remove" aria-label="%s" data-product_id="%s" data-cart_item_key="%s" data-product_sku="%s" data-success_message="%s"><i class="tb-icon tb-icon-trash"></i></a>',
                                 esc_url(wc_get_cart_remove_url($cart_item_key)),
 															/* translators: %s is the product name */
-															esc_attr( sprintf( __( 'Remove %s from cart', 'lasa' ), wp_strip_all_tags( $product_name ) ) ),
+															esc_attr( sprintf( __( 'Remove %s from cart', 'themename' ), wp_strip_all_tags( $product_name ) ) ),
                                 esc_attr($product_id),
                                 esc_attr($cart_item_key),
                                 esc_attr($_product->get_sku()),
 																/* translators: %s is the product name */
-																esc_attr( sprintf( __( '&ldquo;%s&rdquo; has been removed from your cart', 'lasa' ), wp_strip_all_tags( $product_name ) ) )
+																esc_attr( sprintf( __( '&ldquo;%s&rdquo; has been removed from your cart', 'themename' ), wp_strip_all_tags( $product_name ) ) )
                             ), $cart_item_key); ?>
 								</div>
 							</li>
@@ -116,8 +116,8 @@ do_action('woocommerce_before_mini_cart');
 				</ul><!-- end product list -->
 			<?php else: ?>
 				<ul class="cart_empty <?php echo esc_attr($args['list_class']); ?>">
-					<li><span><?php esc_html_e('Your cart is empty', 'lasa') ?></span></li>
-					<li class="total"><a class="button wc-continue" href="<?php echo esc_url(apply_filters('woocommerce_return_to_shop_redirect', wc_get_page_permalink('shop'))); ?>"><?php esc_html_e('Continue Shopping', 'lasa') ?><i class="tb-icon tb-icon-angle-right"></i></a></li>
+					<li><span><?php esc_html_e('Your cart is empty', 'themename') ?></span></li>
+					<li class="total"><a class="button wc-continue" href="<?php echo esc_url(apply_filters('woocommerce_return_to_shop_redirect', wc_get_page_permalink('shop'))); ?>"><?php esc_html_e('Continue Shopping', 'themename') ?><i class="tb-icon tb-icon-angle-right"></i></a></li>
 				</ul>
 			<?php endif; ?>
 
@@ -138,8 +138,8 @@ do_action('woocommerce_before_mini_cart');
 					<?php do_action('woocommerce_widget_shopping_cart_before_buttons'); ?>
 
 					<p class="buttons">
-						<a href="<?php echo esc_url(wc_get_cart_url()); ?>" class="button view-cart"><?php esc_html_e('View Cart', 'lasa'); ?></a>
-						<a href="<?php echo esc_url(wc_get_checkout_url());?>" class="button checkout"><?php esc_html_e('Checkout', 'lasa'); ?></a>
+						<a href="<?php echo esc_url(wc_get_cart_url()); ?>" class="button view-cart"><?php esc_html_e('View Cart', 'themename'); ?></a>
+						<a href="<?php echo esc_url(wc_get_checkout_url());?>" class="button checkout"><?php esc_html_e('Checkout', 'themename'); ?></a>
 					</p>
 				</div>
 			<?php endif; ?>

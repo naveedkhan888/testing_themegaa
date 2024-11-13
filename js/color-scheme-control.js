@@ -5,7 +5,7 @@
  */
 
 ( function( api ) {
-	var cssTemplate = wp.template( 'lasa-color-scheme' ),
+	var cssTemplate = wp.template( 'themename-color-scheme' ),
 		colorSchemeKeys = [
 			'background_color',
 			'header_background_color',
@@ -59,10 +59,10 @@
 		// Add additional colors.
 		colors.secondary_textcolor = Color( colors.textcolor ).toCSS( 'rgba', 0.7 );
 		colors.border_color = Color( colors.textcolor ).toCSS( 'rgba', 0.1 );
-		colors.border_lasa_color = Color( colors.textcolor ).toCSS( 'rgba', 0.3 );
+		colors.border_themename_color = Color( colors.textcolor ).toCSS( 'rgba', 0.3 );
 		colors.secondary_sidebar_textcolor = Color( colors.sidebar_textcolor ).toCSS( 'rgba', 0.7 );
 		colors.sidebar_border_color = Color( colors.sidebar_textcolor ).toCSS( 'rgba', 0.1 );
-		colors.sidebar_border_lasa_color = Color( colors.sidebar_textcolor ).toCSS( 'rgba', 0.3 );
+		colors.sidebar_border_themename_color = Color( colors.sidebar_textcolor ).toCSS( 'rgba', 0.3 );
 
 		css = cssTemplate( colors );
 

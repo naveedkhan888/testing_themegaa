@@ -1,10 +1,10 @@
 <?php
-    if( lasa_checkout_optimized() ) return;
+    if( themename_checkout_optimized() ) return;
     /**
-     * lasa_before_topbar_mobile hook
+     * themename_before_topbar_mobile hook
      */
-    do_action('lasa_before_footer_mobile');
-    $mobile_footer_slides = lasa_tbay_get_config('mobile_footer_slides');
+    do_action('themename_before_footer_mobile');
+    $mobile_footer_slides = themename_tbay_get_config('mobile_footer_slides');
 ?>
 
 
@@ -15,22 +15,22 @@
             <div class="footer-device-mobile d-xl-none clearfix">
             <?php
                 /**
-                * lasa_before_footer_mobile hook
+                * themename_before_footer_mobile hook
                 */
-                do_action('lasa_before_footer_mobile');
+                do_action('themename_before_footer_mobile');
 
         /**
-        * Hook: lasa_footer_mobile_content.
+        * Hook: themename_footer_mobile_content.
         *
-        * @hooked lasa_the_custom_list_menu_icon - 10
+        * @hooked themename_the_custom_list_menu_icon - 10
         */
 
-        do_action('lasa_footer_mobile_content');
+        do_action('themename_footer_mobile_content');
 
         /**
-        * lasa_after_footer_mobile hook
+        * themename_after_footer_mobile hook
         */
-        do_action('lasa_after_footer_mobile'); ?>
+        do_action('themename_after_footer_mobile'); ?>
             </div>
         <?php
     }

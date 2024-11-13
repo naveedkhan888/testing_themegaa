@@ -21,10 +21,10 @@ if (! defined('ABSPATH')) {
 
 global $post;
 
-$heading = (apply_filters('woocommerce_product_description_heading', esc_html__('Product Description ', 'lasa')));
+$heading = (apply_filters('woocommerce_product_description_heading', esc_html__('Product Description ', 'themename')));
 
 ?>
-<div class="tbay-product-description <?php echo ( (bool) lasa_tbay_get_config('enable_collapse_product_details_tab', false) ) ? 'fix-height' : '' ?>">
+<div class="tbay-product-description <?php echo ( (bool) themename_tbay_get_config('enable_collapse_product_details_tab', false) ) ? 'fix-height' : '' ?>">
   <?php if ($heading): ?>
     <h2 class="title-desc"><?php echo esc_html($heading); ?></h2>
   <?php endif; ?>

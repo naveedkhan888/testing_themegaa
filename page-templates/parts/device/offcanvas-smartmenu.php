@@ -6,13 +6,13 @@
     }
 
     
-    $mmenu_langue           = lasa_tbay_get_config('enable_mmenu_langue', false);
-    $mmenu_currency         = lasa_tbay_get_config('enable_mmenu_currency', false);
+    $mmenu_langue           = themename_tbay_get_config('enable_mmenu_langue', false);
+    $mmenu_currency         = themename_tbay_get_config('enable_mmenu_currency', false);
 
-    $menu_mobile_select    =  lasa_tbay_get_config('menu_mobile_select');
+    $menu_mobile_select    =  themename_tbay_get_config('menu_mobile_select');
 ?>
   
-<div id="tbay-mobile-smartmenu" data-title="<?php esc_attr_e('Menu', 'lasa'); ?>" class="tbay-mmenu d-xl-none"> 
+<div id="tbay-mobile-smartmenu" data-title="<?php esc_attr_e('Menu', 'themename'); ?>" class="tbay-mmenu d-xl-none"> 
 
     <div class="tbay-offcanvas-body">
         
@@ -27,14 +27,14 @@
             if( !empty($theme_locations) ) {
                 $theme_locations = get_nav_menu_locations();
                 $menu_obj = get_term( $theme_locations[$tbay_location], 'nav_menu' );
-                $menu_name = lasa_get_transliterate($menu_obj->name);
+                $menu_name = themename_get_transliterate($menu_obj->name);
             } else {
                 $menu_name = '';
             }
 
         } else {
             $menu_obj = wp_get_nav_menu_object($menu_mobile_select);
-            $menu_name = lasa_get_transliterate($menu_obj->slug);
+            $menu_name = themename_get_transliterate($menu_obj->slug);
         }
         ?>
         <nav id="tbay-mobile-menu-navbar" class="menu navbar navbar-offcanvas navbar-static" data-id="menu-<?php echo esc_attr($menu_name); ?>" >
@@ -54,8 +54,8 @@
                 $args['menu_id']            =   'main-mobile-menu-mmenu-wrapper';
                 $args['items_wrap']         =   '<ul id="%1$s" class="%2$s" data-id="'. $menu_name .'">%3$s</ul>';
 
-                if( class_exists('Lasa_Megamenu_Walker') ) {
-                    $args['walker']             =   new Lasa_Megamenu_Walker();
+                if( class_exists('Themename_Megamenu_Walker') ) {
+                    $args['walker']             =   new Themename_Megamenu_Walker();
                 } else { 
                     $args['walker']             =   new Walker_Nav_Menu();
                 }
@@ -79,7 +79,7 @@
                     <div class="mm-bottom-langue-currency ">
                         <?php if ($mmenu_langue): ?>
                             <div class="mm-bottom-langue">
-                                <?php do_action('lasa_tbay_header_custom_language'); ?>
+                                <?php do_action('themename_tbay_header_custom_language'); ?>
                             </div>
                         <?php endif; ?>
                 

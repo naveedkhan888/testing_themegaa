@@ -1,6 +1,6 @@
 <?php
 
-if (! defined('ABSPATH') || function_exists('Lasa_Elementor_Newsletter')) {
+if (! defined('ABSPATH') || function_exists('Themename_Elementor_Newsletter')) {
     exit; // Exit if accessed directly.
 }
 
@@ -8,7 +8,7 @@ use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Typography;
 use Elementor\Controls_Manager;
 
-class Lasa_Elementor_Newsletter extends Lasa_Elementor_Widget_Base
+class Themename_Elementor_Newsletter extends Themename_Elementor_Widget_Base
 {
     /**
      * Get widget name.
@@ -37,7 +37,7 @@ class Lasa_Elementor_Newsletter extends Lasa_Elementor_Widget_Base
      */
     public function get_title()
     {
-        return esc_html__('Lasa newsletter', 'lasa');
+        return esc_html__('Themename newsletter', 'themename');
     }
 
     /**
@@ -68,7 +68,7 @@ class Lasa_Elementor_Newsletter extends Lasa_Elementor_Widget_Base
         $this->start_controls_section(
             'general',
             [
-                'label' => esc_html__('General', 'lasa'),
+                'label' => esc_html__('General', 'themename'),
             ]
         );
 
@@ -76,10 +76,10 @@ class Lasa_Elementor_Newsletter extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'form_style',
             [
-                'label'        => esc_html__('Form Style Block', 'lasa'),
+                'label'        => esc_html__('Form Style Block', 'themename'),
                 'type'         => Controls_Manager::SWITCHER,
-                'label_off' => esc_html__('Off', 'lasa'),
-                'label_on'  => esc_html__('On', 'lasa'),
+                'label_off' => esc_html__('Off', 'themename'),
+                'label_on'  => esc_html__('On', 'themename'),
                 'default'   => '',
                 'selectors' => [
                     '{{WRAPPER}} .tbay-element-newsletter .mc4wp-form-fields' => 'display: flex; flex-direction: column;',
@@ -90,19 +90,19 @@ class Lasa_Elementor_Newsletter extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'form_style_align_content',
             [
-                'label' => esc_html__('Alignment Form Style', 'lasa'),
+                'label' => esc_html__('Alignment Form Style', 'themename'),
                 'type' => Controls_Manager::CHOOSE,
                 'options' => [
                     'flex-start' => [
-                        'title' => esc_html__('Left', 'lasa'),
+                        'title' => esc_html__('Left', 'themename'),
                         'icon' => 'fa fa-align-left',
                     ],
                     'center' => [
-                        'title' => esc_html__('Center', 'lasa'),
+                        'title' => esc_html__('Center', 'themename'),
                         'icon' => 'fa fa-align-center',
                     ],
                     'flex-end' => [
-                        'title' => esc_html__('Right', 'lasa'),
+                        'title' => esc_html__('Right', 'themename'),
                         'icon' => 'fa fa-align-right',
                     ],
                 ],
@@ -116,7 +116,7 @@ class Lasa_Elementor_Newsletter extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'heading_input',
             [
-                'label' => esc_html__('Input', 'lasa'),
+                'label' => esc_html__('Input', 'themename'),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -126,7 +126,7 @@ class Lasa_Elementor_Newsletter extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'width_input',
             [
-                'label'      => esc_html__('Input Width', 'lasa'),
+                'label'      => esc_html__('Input Width', 'themename'),
                 'type'       => Controls_Manager::SLIDER,
                 'range'      => [
                     'px' => [
@@ -148,10 +148,10 @@ class Lasa_Elementor_Newsletter extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'text_hide',
             [
-                'label'        => esc_html__('Hide Text', 'lasa'),
+                'label'        => esc_html__('Hide Text', 'themename'),
                 'type'         => Controls_Manager::SWITCHER,
-                'label_off'    => esc_html__('Off', 'lasa'),
-                'label_on'     => esc_html__('On', 'lasa'),
+                'label_off'    => esc_html__('Off', 'themename'),
+                'label_on'     => esc_html__('On', 'themename'),
                 'default'      => '',
                 'return_value' => 'none',
                 'selectors'    => [
@@ -163,7 +163,7 @@ class Lasa_Elementor_Newsletter extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'heading_button',
             [
-                'label' => esc_html__('Button', 'lasa'),
+                'label' => esc_html__('Button', 'themename'),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -172,10 +172,10 @@ class Lasa_Elementor_Newsletter extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'icon_hide',
             [
-                'label'        => esc_html__('Hide Icon', 'lasa'),
+                'label'        => esc_html__('Hide Icon', 'themename'),
                 'type'         => Controls_Manager::SWITCHER,
-                'label_off'    => esc_html__('Off', 'lasa'),
-                'label_on'     => esc_html__('On', 'lasa'),
+                'label_off'    => esc_html__('Off', 'themename'),
+                'label_on'     => esc_html__('On', 'themename'),
                 'default'      => '',
                 'return_value' => 'none',
                 'selectors'    => [
@@ -187,7 +187,7 @@ class Lasa_Elementor_Newsletter extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'icon_font_size',
             [
-                'label' => esc_html__('Font Size Icon', 'lasa'),
+                'label' => esc_html__('Font Size Icon', 'themename'),
                 'type' => Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [
@@ -204,7 +204,7 @@ class Lasa_Elementor_Newsletter extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'icon_margin',
             [
-                'label'      => esc_html__('Margin Icon', 'lasa'),
+                'label'      => esc_html__('Margin Icon', 'themename'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', 'em', '%' ],
                 'selectors'  => [
@@ -216,19 +216,19 @@ class Lasa_Elementor_Newsletter extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'setting_align',
             [
-                'label'     => esc_html__('Alignment', 'lasa'),
+                'label'     => esc_html__('Alignment', 'themename'),
                 'type'      => Controls_Manager::CHOOSE,
                 'options'   => [
                     'flex-start' => [
-                        'title' => esc_html__('Left', 'lasa'),
+                        'title' => esc_html__('Left', 'themename'),
                         'icon'  => 'fa fa-align-left',
                     ],
                     'center'     => [
-                        'title' => esc_html__('Center', 'lasa'),
+                        'title' => esc_html__('Center', 'themename'),
                         'icon'  => 'fa fa-align-center',
                     ],
                     'flex-end'   => [
-                        'title' => esc_html__('Right', 'lasa'),
+                        'title' => esc_html__('Right', 'themename'),
                         'icon'  => 'fa fa-align-right',
                     ],
                 ],
@@ -246,7 +246,7 @@ class Lasa_Elementor_Newsletter extends Lasa_Elementor_Widget_Base
             Group_Control_Typography::get_type(),
             [
                 'name' => 'button_text_typography',
-                'label'     => esc_html__('Button text typography', 'lasa'),
+                'label'     => esc_html__('Button text typography', 'themename'),
                 'selector' => '{{WRAPPER}} button[type="submit"]',
             ]
         );
@@ -254,7 +254,7 @@ class Lasa_Elementor_Newsletter extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'width_button',
             [
-                'label'      => esc_html__('Buton width', 'lasa'),
+                'label'      => esc_html__('Buton width', 'themename'),
                 'type'       => Controls_Manager::SLIDER,
                 'range'      => [
                     'px' => [
@@ -279,7 +279,7 @@ class Lasa_Elementor_Newsletter extends Lasa_Elementor_Widget_Base
         $this->start_controls_section(
             'mailchip_style_input',
             [
-                'label' => esc_html__('Input', 'lasa'),
+                'label' => esc_html__('Input', 'themename'),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -287,7 +287,7 @@ class Lasa_Elementor_Newsletter extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'input_background',
             [
-                'label'     => esc_html__('Background Color', 'lasa'),
+                'label'     => esc_html__('Background Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .tbay-element-newsletter input[type="email"]' => 'background-color: {{VALUE}};',
@@ -298,7 +298,7 @@ class Lasa_Elementor_Newsletter extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'input_color',
             [
-                'label'     => esc_html__('Color', 'lasa'),
+                'label'     => esc_html__('Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .tbay-element-newsletter input[type="email"]' => 'color: {{VALUE}};',
@@ -309,7 +309,7 @@ class Lasa_Elementor_Newsletter extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'placeholder_color',
             [
-                'label'     => esc_html__('Placeholder Color', 'lasa'),
+                'label'     => esc_html__('Placeholder Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .tbay-element-newsletter ::-webkit-input-placeholder' => 'color: {{VALUE}};',
@@ -322,19 +322,19 @@ class Lasa_Elementor_Newsletter extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'align_input',
             [
-                'label'     => esc_html__('Alignment', 'lasa'),
+                'label'     => esc_html__('Alignment', 'themename'),
                 'type'      => Controls_Manager::CHOOSE,
                 'options'   => [
                     'left'   => [
-                        'title' => esc_html__('Left', 'lasa'),
+                        'title' => esc_html__('Left', 'themename'),
                         'icon'  => 'fa fa-align-left',
                     ],
                     'center' => [
-                        'title' => esc_html__('Center', 'lasa'),
+                        'title' => esc_html__('Center', 'themename'),
                         'icon'  => 'fa fa-align-center',
                     ],
                     'right'  => [
-                        'title' => esc_html__('Right', 'lasa'),
+                        'title' => esc_html__('Right', 'themename'),
                         'icon'  => 'fa fa-align-right',
                     ],
                 ],
@@ -359,7 +359,7 @@ class Lasa_Elementor_Newsletter extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'input_border_radius',
             [
-                'label'      => esc_html__('Border Radius', 'lasa'),
+                'label'      => esc_html__('Border Radius', 'themename'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'default'    => [
@@ -378,7 +378,7 @@ class Lasa_Elementor_Newsletter extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'input_padding',
             [
-                'label'      => esc_html__('Padding', 'lasa'),
+                'label'      => esc_html__('Padding', 'themename'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', 'em', '%' ],
                 'selectors'  => [
@@ -389,7 +389,7 @@ class Lasa_Elementor_Newsletter extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'input_margin',
             [
-                'label'      => esc_html__('Margin', 'lasa'),
+                'label'      => esc_html__('Margin', 'themename'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', 'em', '%' ],
                 'selectors'  => [
@@ -402,7 +402,7 @@ class Lasa_Elementor_Newsletter extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'input_height',
             [
-                'label'      => esc_html__('Height', 'lasa'),
+                'label'      => esc_html__('Height', 'themename'),
                 'type'       => Controls_Manager::SLIDER,
                 'range'      => [
                     'px' => [
@@ -423,7 +423,7 @@ class Lasa_Elementor_Newsletter extends Lasa_Elementor_Widget_Base
         $this->start_controls_section(
             'mailchip_style_button',
             [
-                'label' => esc_html__('Button', 'lasa'),
+                'label' => esc_html__('Button', 'themename'),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -442,14 +442,14 @@ class Lasa_Elementor_Newsletter extends Lasa_Elementor_Widget_Base
         $this->start_controls_tab(
             'tab_button_normal',
             [
-                'label' => esc_html__('Normal', 'lasa'),
+                'label' => esc_html__('Normal', 'themename'),
             ]
         );
 
         $this->add_control(
             'button_bacground',
             [
-                'label'     => esc_html__('Background Color', 'lasa'),
+                'label'     => esc_html__('Background Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .tbay-element-newsletter button[type="submit"]' => 'background-color: {{VALUE}};',
@@ -460,7 +460,7 @@ class Lasa_Elementor_Newsletter extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'button_color',
             [
-                'label'     => esc_html__('Color', 'lasa'),
+                'label'     => esc_html__('Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .tbay-element-newsletter button[type="submit"]' => 'color: {{VALUE}};',
@@ -473,14 +473,14 @@ class Lasa_Elementor_Newsletter extends Lasa_Elementor_Widget_Base
         $this->start_controls_tab(
             'tab_button_hover',
             [
-                'label' => esc_html__('Hover', 'lasa'),
+                'label' => esc_html__('Hover', 'themename'),
             ]
         );
 
         $this->add_control(
             'button_bacground_hover',
             [
-                'label'     => esc_html__('Background Color', 'lasa'),
+                'label'     => esc_html__('Background Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .tbay-element-newsletter button[type="submit"]:hover' => 'background-color: {{VALUE}};',
@@ -491,7 +491,7 @@ class Lasa_Elementor_Newsletter extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'button_color_hover',
             [
-                'label'     => esc_html__('Color', 'lasa'),
+                'label'     => esc_html__('Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .tbay-element-newsletter button[type="submit"]:hover' => 'color: {{VALUE}};',
@@ -502,7 +502,7 @@ class Lasa_Elementor_Newsletter extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'button_border_hover',
             [
-                'label'     => esc_html__('Border Color', 'lasa'),
+                'label'     => esc_html__('Border Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .tbay-element-newsletter button[type="submit"]:hover' => 'border-color: {{VALUE}};',
@@ -515,14 +515,14 @@ class Lasa_Elementor_Newsletter extends Lasa_Elementor_Widget_Base
         $this->start_controls_tab(
             'tab_button_focus',
             [
-                'label' => esc_html__('Focus', 'lasa'),
+                'label' => esc_html__('Focus', 'themename'),
             ]
         );
 
         $this->add_control(
             'button_bacground_focus',
             [
-                'label'     => esc_html__('Background Color', 'lasa'),
+                'label'     => esc_html__('Background Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .tbay-element-newsletter button[type="submit"]:forcus' => 'background-color: {{VALUE}};',
@@ -533,7 +533,7 @@ class Lasa_Elementor_Newsletter extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'button_color_focus',
             [
-                'label'     => esc_html__('Button Color', 'lasa'),
+                'label'     => esc_html__('Button Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .tbay-element-newsletter button[type="submit"]:focus' => 'color: {{VALUE}};',
@@ -544,7 +544,7 @@ class Lasa_Elementor_Newsletter extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'button_border_focus',
             [
-                'label'     => esc_html__('Border Color', 'lasa'),
+                'label'     => esc_html__('Border Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .tbay-element-newsletter button[type="submit"]:focus' => 'border-color: {{VALUE}};',
@@ -570,7 +570,7 @@ class Lasa_Elementor_Newsletter extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'button_border_radius',
             [
-                'label'      => esc_html__('Border Radius', 'lasa'),
+                'label'      => esc_html__('Border Radius', 'themename'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'default'    => [
@@ -589,7 +589,7 @@ class Lasa_Elementor_Newsletter extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'button_padding',
             [
-                'label'      => esc_html__('Padding', 'lasa'),
+                'label'      => esc_html__('Padding', 'themename'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', 'em', '%' ],
                 'selectors'  => [
@@ -600,7 +600,7 @@ class Lasa_Elementor_Newsletter extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'button_margin',
             [
-                'label'      => esc_html__('Margin', 'lasa'),
+                'label'      => esc_html__('Margin', 'themename'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', 'em', '%' ],
                 'selectors'  => [
@@ -612,7 +612,7 @@ class Lasa_Elementor_Newsletter extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'button_height',
             [
-                'label'      => esc_html__('Height', 'lasa'),
+                'label'      => esc_html__('Height', 'themename'),
                 'type'       => Controls_Manager::SLIDER,
                 'range'      => [
                     'px' => [
@@ -630,4 +630,4 @@ class Lasa_Elementor_Newsletter extends Lasa_Elementor_Widget_Base
         $this->end_controls_section();
     }
 }
-$widgets_manager->register(new Lasa_Elementor_Newsletter());
+$widgets_manager->register(new Themename_Elementor_Newsletter());

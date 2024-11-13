@@ -6,10 +6,10 @@ if (!class_exists('MVX')) {
 
 update_option('is_enable_store_sidebar_position', false);
 
-if (!function_exists('lasa_mvx_vendor_name')) {
-    function lasa_mvx_vendor_name()
+if (!function_exists('themename_mvx_vendor_name')) {
+    function themename_mvx_vendor_name()
     {
-        $active = lasa_tbay_get_config('show_vendor_name', true);
+        $active = themename_tbay_get_config('show_vendor_name', true);
 
         if (!$active) {
             return;
@@ -24,7 +24,7 @@ if (!function_exists('lasa_mvx_vendor_name')) {
             return;
         }
 
-        $sold_by_text = apply_filters('mvx_sold_by_text', esc_html__('Sold by:', 'lasa')); 
+        $sold_by_text = apply_filters('mvx_sold_by_text', esc_html__('Sold by:', 'themename')); 
         
         if( get_mvx_vendor_settings('display_product_seller', 'settings_general') && apply_filters( 'mvx_enable_sold_by_on_wc_blocks_product_grid', true, $product ) ) :
         ?> 
@@ -38,16 +38,16 @@ if (!function_exists('lasa_mvx_vendor_name')) {
     }
 
     add_filter('mvx_sold_by_text_after_products_shop_page', '__return_false');
-    add_action('lasa_woo_after_shop_loop_item_caption', 'lasa_mvx_vendor_name', 15);
-    add_action('lasa_woo_after_single_rating', 'lasa_mvx_vendor_name', 15);
-    add_action('lasa_woo_list_after_short_description', 'lasa_mvx_vendor_name', 15);
+    add_action('themename_woo_after_shop_loop_item_caption', 'themename_mvx_vendor_name', 15);
+    add_action('themename_woo_after_single_rating', 'themename_mvx_vendor_name', 15);
+    add_action('themename_woo_list_after_short_description', 'themename_mvx_vendor_name', 15);
 }
 
 /*Get title My Account in top bar mobile*/
-if (! function_exists('lasa_tbay_mvx_get_title_mobile')) {
-    function lasa_tbay_mvx_get_title_mobile($title = '')
+if (! function_exists('themename_tbay_mvx_get_title_mobile')) {
+    function themename_tbay_mvx_get_title_mobile($title = '')
     {
-        if (lasa_woo_is_vendor_page()) {
+        if (themename_woo_is_vendor_page()) {
             $vendor_id  = get_queried_object()->term_id;
             $vendor     = get_mvx_vendor_by_term($vendor_id);
 
@@ -56,11 +56,11 @@ if (! function_exists('lasa_tbay_mvx_get_title_mobile')) {
 
         return $title;
     }
-    add_filter('lasa_get_filter_title_mobile', 'lasa_tbay_mvx_get_title_mobile');
+    add_filter('themename_get_filter_title_mobile', 'themename_tbay_mvx_get_title_mobile');
 }
 
-if (! function_exists('lasa_tbay_mvx_description')) {
-    function lasa_tbay_mvx_description($description)
+if (! function_exists('themename_tbay_mvx_description')) {
+    function themename_tbay_mvx_description($description)
     {
         global $MVX;
 
@@ -76,23 +76,23 @@ if (! function_exists('lasa_tbay_mvx_description')) {
 
         return $description;
     }
-    add_filter('the_content', 'lasa_tbay_mvx_description', 10, 1);
+    add_filter('the_content', 'themename_tbay_mvx_description', 10, 1);
 }
 
 /*Fix WCMP 3.7*/
-if ( !function_exists('lasa_mvx_load_default_vendor_store') ) {
-    function lasa_mvx_load_default_vendor_store() {
+if ( !function_exists('themename_mvx_load_default_vendor_store') ) {
+    function themename_mvx_load_default_vendor_store() {
         return true;
     }
-    add_filter( 'mvx_load_default_vendor_store', 'lasa_mvx_load_default_vendor_store', 10, 1 );
+    add_filter( 'mvx_load_default_vendor_store', 'themename_mvx_load_default_vendor_store', 10, 1 );
 }
 
-if ( !function_exists('lasa_mvx_store_sidebar_args') ) {
-    function lasa_mvx_store_sidebar_args() {
+if ( !function_exists('themename_mvx_store_sidebar_args') ) {
+    function themename_mvx_store_sidebar_args() {
         $sidebars = array(
-            'name'          => esc_html__( 'MultiVendor Marketplace Store Sidebar ', 'lasa' ),
+            'name'          => esc_html__( 'MultiVendor Marketplace Store Sidebar ', 'themename' ),
             'id'            => 'mvx-marketplace-store',
-            'description'   => esc_html__( 'Add widgets here to appear in your site.', 'lasa' ),
+            'description'   => esc_html__( 'Add widgets here to appear in your site.', 'themename' ),
             'before_widget' => '<aside id="%1$s" class="widget %2$s">',
             'after_widget'  => '</aside>',
             'before_title'  => '<h2 class="widget-title">',
@@ -101,6 +101,6 @@ if ( !function_exists('lasa_mvx_store_sidebar_args') ) {
 
         return $sidebars;
     }
-    add_filter( 'mvx_store_sidebar_args', 'lasa_mvx_store_sidebar_args', 10, 1 );
+    add_filter( 'mvx_store_sidebar_args', 'themename_mvx_store_sidebar_args', 10, 1 );
 }
 /*End fix WCMP 3.7*/

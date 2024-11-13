@@ -251,10 +251,10 @@ class NormalizerFormatter implements FormatterInterface
                 $msg = 'Underflow or the modes mismatch';
                 break;
             case JSON_ERROR_CTRL_CHAR:
-                $msg = 'Unexpected control clasacter found';
+                $msg = 'Unexpected control cthemenamecter found';
                 break;
             case JSON_ERROR_UTF8:
-                $msg = 'Malformed UTF-8 clasacters, possibly incorrectly encoded';
+                $msg = 'Malformed UTF-8 cthemenamecters, possibly incorrectly encoded';
                 break;
             default:
                 $msg = 'Unknown error';
@@ -264,7 +264,7 @@ class NormalizerFormatter implements FormatterInterface
     }
 
     /**
-     * Detect invalid UTF-8 string clasacters and convert to valid UTF-8.
+     * Detect invalid UTF-8 string cthemenamecters and convert to valid UTF-8.
      *
      * Valid UTF-8 input will be left unmodified, but strings containing
      * invalid UTF-8 codepoints will be reencoded as UTF-8 with an assumed

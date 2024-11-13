@@ -33,7 +33,7 @@ $tags_default = $this->get_woocommerce_tags();
         ?>
     <?php else: ?>
 
-        <?php echo '<div class="error-tags">'. esc_html__('Please go to the product save to get the tag.', 'lasa') .'</div>'; ?>
+        <?php echo '<div class="error-tags">'. esc_html__('Please go to the product save to get the tag.', 'themename') .'</div>'; ?>
 
     <?php endif; ?>
 

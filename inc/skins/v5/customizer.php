@@ -1,23 +1,23 @@
 <?php
 /**
- * lasa Customizer functionality
+ * themename Customizer functionality
  *
  * @package WordPress
- * @subpackage Lasa
- * @since Lasa 1.0
+ * @subpackage Themename
+ * @since Themename 1.0
  */
 
 /**
  * Add postMessage support for site title and description for the Customizer.
  *
- * @since Lasa 1.0
+ * @since Themename 1.0
  *
  * @param WP_Customize_Manager $wp_customize Customizer object.
  */
 
-function lasa_tbay_customize_register($wp_customize)
+function themename_tbay_customize_register($wp_customize)
 {
-    $color_scheme = lasa_tbay_get_color_scheme();
+    $color_scheme = themename_tbay_get_color_scheme();
 
     $wp_customize->get_setting('blogname')->transport        = 'postMessage';
     $wp_customize->get_setting('blogdescription')->transport = 'postMessage';
@@ -25,15 +25,15 @@ function lasa_tbay_customize_register($wp_customize)
     // Add color scheme setting and control.
     $wp_customize->add_setting('color_scheme', array(
         'default'           => 'default',
-        'sanitize_callback' => 'lasa_tbay_sanitize_color_scheme',
+        'sanitize_callback' => 'themename_tbay_sanitize_color_scheme',
         'transport'         => 'postMessage',
     ));
 
     $wp_customize->add_control('color_scheme', array(
-        'label'    => esc_html__('Base Color Scheme', 'lasa'),
+        'label'    => esc_html__('Base Color Scheme', 'themename'),
         'section'  => 'colors',
         'type'     => 'select',
-        'choices'  => lasa_tbay_get_color_scheme_choices(),
+        'choices'  => themename_tbay_get_color_scheme_choices(),
         'priority' => 1,
     ));
 
@@ -45,8 +45,8 @@ function lasa_tbay_customize_register($wp_customize)
     ));
 
     $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'sidebar_textcolor', array(
-        'label'       => esc_html__('Header and Sidebar Text Color', 'lasa'),
-        'description' => esc_html__('Applied to the header on small screens and the sidebar on wide screens.', 'lasa'),
+        'label'       => esc_html__('Header and Sidebar Text Color', 'themename'),
+        'description' => esc_html__('Applied to the header on small screens and the sidebar on wide screens.', 'themename'),
         'section'     => 'colors',
     )));
 
@@ -61,13 +61,13 @@ function lasa_tbay_customize_register($wp_customize)
     ));
 
     $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'header_background_color', array(
-        'label'       => esc_html__('Header and Sidebar Background Color', 'lasa'),
-        'description' => esc_html__('Applied to the header on small screens and the sidebar on wide screens.', 'lasa'),
+        'label'       => esc_html__('Header and Sidebar Background Color', 'themename'),
+        'description' => esc_html__('Applied to the header on small screens and the sidebar on wide screens.', 'themename'),
         'section'     => 'colors',
     )));
 
     // Add an additional description to the header image section.
-    $wp_customize->get_section('header_image')->description = esc_html__('Applied to the header on small screens and the sidebar on wide screens.', 'lasa');
+    $wp_customize->get_section('header_image')->description = esc_html__('Applied to the header on small screens and the sidebar on wide screens.', 'themename');
     $wp_customize->remove_section('header_image');
     $wp_customize->remove_section('colors');
     $wp_customize->remove_section('background_image');
@@ -88,8 +88,8 @@ function lasa_tbay_customize_register($wp_customize)
         $wp_customize->add_control(
             'tbay_woocommerce_thumbnail_image_width',
             array(
-                'label'       => esc_html__('Tbay thumbnail image width', 'lasa'),
-                'description' => esc_html__('Image size used for the mini cart or single product image thumbnail.', 'lasa'),
+                'label'       => esc_html__('Tbay thumbnail image width', 'themename'),
+                'description' => esc_html__('Image size used for the mini cart or single product image thumbnail.', 'themename'),
                 'section'     => 'woocommerce_product_images',
                 'settings'    => 'tbay_woocommerce_thumbnail_image_width',
                 'type'        => 'number',
@@ -114,8 +114,8 @@ function lasa_tbay_customize_register($wp_customize)
         $wp_customize->add_control(
             'tbay_woocommerce_thumbnail_image_height',
             array(
-                'label'       => esc_html__('Tbay thumbnail image height', 'lasa'),
-                'description' => esc_html__('Image size used for the mini cart or single product image thumbnail.', 'lasa'),
+                'label'       => esc_html__('Tbay thumbnail image height', 'themename'),
+                'description' => esc_html__('Image size used for the mini cart or single product image thumbnail.', 'themename'),
                 'section'     => 'woocommerce_product_images',
                 'settings'    => 'tbay_woocommerce_thumbnail_image_height',
                 'type'        => 'number',
@@ -141,8 +141,8 @@ function lasa_tbay_customize_register($wp_customize)
         $wp_customize->add_control(
             'tbay_woocommerce_thumbnail_cropping',
             array(
-                'label'    => esc_html__('Enable cropped', 'lasa'),
-                'description' => esc_html__('Images will be cropped to a custom size above.', 'lasa'),
+                'label'    => esc_html__('Enable cropped', 'themename'),
+                'description' => esc_html__('Images will be cropped to a custom size above.', 'themename'),
                 'section'  => 'woocommerce_product_images',
                 'settings' => 'tbay_woocommerce_thumbnail_cropping',
                 'type'     => 'checkbox',
@@ -154,7 +154,7 @@ function lasa_tbay_customize_register($wp_customize)
     /*Add new  customize Woo Photo Reviews thumbnail*/
     if (class_exists('VI_Woo_Photo_Reviews')) {
         $wp_customize->add_setting(
-            'lasa_photo_reviews_thumbnail_image_width',
+            'themename_photo_reviews_thumbnail_image_width',
             array(
                 'default'              => 70,
                 'type'                 => 'option',
@@ -165,12 +165,12 @@ function lasa_tbay_customize_register($wp_customize)
         );
 
         $wp_customize->add_control(
-            'lasa_photo_reviews_thumbnail_image_width',
+            'themename_photo_reviews_thumbnail_image_width',
             array(
-                'label'       => esc_html__('Photo Reviews thumbnail image width', 'lasa'),
-                'description' => esc_html__('Image size used for the comment photo review.', 'lasa'),
+                'label'       => esc_html__('Photo Reviews thumbnail image width', 'themename'),
+                'description' => esc_html__('Image size used for the comment photo review.', 'themename'),
                 'section'     => 'woocommerce_product_images',
-                'settings'    => 'lasa_photo_reviews_thumbnail_image_width',
+                'settings'    => 'themename_photo_reviews_thumbnail_image_width',
                 'type'        => 'number',
                 'input_attrs' => array(
                     'min'  => 0,
@@ -180,7 +180,7 @@ function lasa_tbay_customize_register($wp_customize)
         );
 
         $wp_customize->add_setting(
-            'lasa_photo_reviews_thumbnail_image_height',
+            'themename_photo_reviews_thumbnail_image_height',
             array(
                 'default'              => 70,
                 'type'                 => 'option',
@@ -191,12 +191,12 @@ function lasa_tbay_customize_register($wp_customize)
         );
 
         $wp_customize->add_control(
-            'lasa_photo_reviews_thumbnail_image_height',
+            'themename_photo_reviews_thumbnail_image_height',
             array(
-                'label'       => esc_html__('Photo Reviews thumbnail image height', 'lasa'),
-                'description' => esc_html__('Image size used for the comment photo review.', 'lasa'),
+                'label'       => esc_html__('Photo Reviews thumbnail image height', 'themename'),
+                'description' => esc_html__('Image size used for the comment photo review.', 'themename'),
                 'section'     => 'woocommerce_product_images',
-                'settings'    => 'lasa_photo_reviews_thumbnail_image_height',
+                'settings'    => 'themename_photo_reviews_thumbnail_image_height',
                 'type'        => 'number',
                 'input_attrs' => array(
                     'min'  => 0,
@@ -206,7 +206,7 @@ function lasa_tbay_customize_register($wp_customize)
         );
 
         $wp_customize->add_setting(
-            'lasa_photo_reviews_thumbnail_image_cropping',
+            'themename_photo_reviews_thumbnail_image_cropping',
             array(
                 'default'              => 'yes',
                 'type'                 => 'option',
@@ -217,24 +217,24 @@ function lasa_tbay_customize_register($wp_customize)
         );
 
         $wp_customize->add_control(
-            'lasa_photo_reviews_thumbnail_image_cropping',
+            'themename_photo_reviews_thumbnail_image_cropping',
             array(
-                'label'    => esc_html__('Enable cropped photo reviews thumbnail', 'lasa'),
-                'description' => esc_html__('Images will be cropped to a custom size above.', 'lasa'),
+                'label'    => esc_html__('Enable cropped photo reviews thumbnail', 'themename'),
+                'description' => esc_html__('Images will be cropped to a custom size above.', 'themename'),
                 'section'  => 'woocommerce_product_images',
-                'settings' => 'lasa_photo_reviews_thumbnail_image_cropping',
+                'settings' => 'themename_photo_reviews_thumbnail_image_cropping',
                 'type'     => 'checkbox',
             )
         );
     }
 }
-add_action('customize_register', 'lasa_tbay_customize_register', 20);
+add_action('customize_register', 'themename_tbay_customize_register', 20);
 
 
 /**
- * Register color schemes for lasa.
+ * Register color schemes for themename.
  *
- * Can be filtered with {@see 'lasa_color_schemes'}.
+ * Can be filtered with {@see 'themename_color_schemes'}.
  *
  * The order of colors in a colors array:
  * 1. Main Background Color.
@@ -244,18 +244,18 @@ add_action('customize_register', 'lasa_tbay_customize_register', 20);
  * 5. Sidebar Text and Link Color.
  * 6. Meta Box Background Color.
  *
- * @since Lasa 1.0
+ * @since Themename 1.0
  *
  * @return array An associative array of color scheme options.
  */
-function lasa_tbay_get_color_schemes()
+function themename_tbay_get_color_schemes()
 {
     /**
-     * Filter the color schemes registered for use with lasa.
+     * Filter the color schemes registered for use with themename.
      *
      * The default schemes include 'default', 'dark', 'yellow', 'pink', 'purple', and 'blue'.
      *
-     * @since Lasa 1.0
+     * @since Themename 1.0
      *
      * @param array $schemes {
      *     Associative array of color schemes data.
@@ -271,9 +271,9 @@ function lasa_tbay_get_color_schemes()
      *     }
      * }
      */
-    return apply_filters('lasa_tbay_color_schemes', array(
+    return apply_filters('themename_tbay_color_schemes', array(
         'default' => array(
-            'label'  => esc_html__('Default', 'lasa'),
+            'label'  => esc_html__('Default', 'themename'),
             'colors' => array(
                 '#f1f1f1',
                 '#ffffff',
@@ -284,7 +284,7 @@ function lasa_tbay_get_color_schemes()
             ),
         ),
         'dark'    => array(
-            'label'  => esc_html__('Dark', 'lasa'),
+            'label'  => esc_html__('Dark', 'themename'),
             'colors' => array(
                 '#111111',
                 '#202020',
@@ -295,7 +295,7 @@ function lasa_tbay_get_color_schemes()
             ),
         ),
         'yellow'  => array(
-            'label'  => esc_html__('Yellow', 'lasa'),
+            'label'  => esc_html__('Yellow', 'themename'),
             'colors' => array(
                 '#f4ca16',
                 '#ffdf00',
@@ -306,7 +306,7 @@ function lasa_tbay_get_color_schemes()
             ),
         ),
         'pink'    => array(
-            'label'  => esc_html__('Pink', 'lasa'),
+            'label'  => esc_html__('Pink', 'themename'),
             'colors' => array(
                 '#ffe5d1',
                 '#e53b51',
@@ -317,7 +317,7 @@ function lasa_tbay_get_color_schemes()
             ),
         ),
         'purple'  => array(
-            'label'  => esc_html__('Purple', 'lasa'),
+            'label'  => esc_html__('Purple', 'themename'),
             'colors' => array(
                 '#674970',
                 '#2e2256',
@@ -328,7 +328,7 @@ function lasa_tbay_get_color_schemes()
             ),
         ),
         'blue'   => array(
-            'label'  => esc_html__('Blue', 'lasa'),
+            'label'  => esc_html__('Blue', 'themename'),
             'colors' => array(
                 '#e9f2f9',
                 '#55c3dc',
@@ -341,18 +341,18 @@ function lasa_tbay_get_color_schemes()
     ));
 }
 
-if (! function_exists('lasa_tbay_get_color_scheme')) :
+if (! function_exists('themename_tbay_get_color_scheme')) :
 /**
- * Get the current lasa color scheme.
+ * Get the current themename color scheme.
  *
- * @since Lasa 1.0
+ * @since Themename 1.0
  *
  * @return array An associative array of either the current or default color scheme hex values.
  */
-function lasa_tbay_get_color_scheme()
+function themename_tbay_get_color_scheme()
 {
     $color_scheme_option = get_theme_mod('color_scheme', 'default');
-    $color_schemes       = lasa_tbay_get_color_schemes();
+    $color_schemes       = themename_tbay_get_color_schemes();
 
     if (array_key_exists($color_scheme_option, $color_schemes)) {
         return $color_schemes[ $color_scheme_option ]['colors'];
@@ -360,19 +360,19 @@ function lasa_tbay_get_color_scheme()
 
     return $color_schemes['default']['colors'];
 }
-endif; // lasa_tbay_get_color_scheme
+endif; // themename_tbay_get_color_scheme
 
-if (! function_exists('lasa_tbay_get_color_scheme_choices')) :
+if (! function_exists('themename_tbay_get_color_scheme_choices')) :
 /**
- * Returns an array of color scheme choices registered for lasa.
+ * Returns an array of color scheme choices registered for themename.
  *
- * @since Lasa 1.0
+ * @since Themename 1.0
  *
  * @return array Array of color schemes.
  */
-function lasa_tbay_get_color_scheme_choices()
+function themename_tbay_get_color_scheme_choices()
 {
-    $color_schemes                = lasa_tbay_get_color_schemes();
+    $color_schemes                = themename_tbay_get_color_schemes();
     $color_scheme_control_options = array();
 
     foreach ($color_schemes as $color_scheme => $value) {
@@ -381,20 +381,20 @@ function lasa_tbay_get_color_scheme_choices()
 
     return $color_scheme_control_options;
 }
-endif; // lasa_tbay_get_color_scheme_choices
+endif; // themename_tbay_get_color_scheme_choices
 
-if (! function_exists('lasa_tbay_sanitize_color_scheme')) :
+if (! function_exists('themename_tbay_sanitize_color_scheme')) :
 /**
  * Sanitization callback for color schemes.
  *
- * @since Lasa 1.0
+ * @since Themename 1.0
  *
  * @param string $value Color scheme name value.
  * @return string Color scheme name.
  */
-function lasa_tbay_sanitize_color_scheme($value)
+function themename_tbay_sanitize_color_scheme($value)
 {
-    $color_schemes = lasa_tbay_get_color_scheme_choices();
+    $color_schemes = themename_tbay_get_color_scheme_choices();
 
     if (! array_key_exists($value, $color_schemes)) {
         $value = 'default';
@@ -402,31 +402,31 @@ function lasa_tbay_sanitize_color_scheme($value)
 
     return $value;
 }
-endif; // lasa_sanitize_color_scheme
+endif; // themename_sanitize_color_scheme
 
 /**
  * Binds JS listener to make Customizer color_scheme control.
  *
  * Passes color scheme data as colorScheme global.
  *
- * @since Lasa 1.0
+ * @since Themename 1.0
  */
-function lasa_tbay_customize_control_js()
+function themename_tbay_customize_control_js()
 {
-    $suffix = (lasa_tbay_get_config('minified_js', false)) ? '.min' : LASA_MIN_JS;
-    wp_enqueue_script('color-scheme-control', LASA_SCRIPTS . '/color-scheme-control' . $suffix . '.js', array( 'customize-controls', 'iris', 'underscore', 'wp-util' ), '20141216', true);
-    wp_localize_script('color-scheme-control', 'colorScheme', lasa_tbay_get_color_schemes());
+    $suffix = (themename_tbay_get_config('minified_js', false)) ? '.min' : THEMENAME_MIN_JS;
+    wp_enqueue_script('color-scheme-control', THEMENAME_SCRIPTS . '/color-scheme-control' . $suffix . '.js', array( 'customize-controls', 'iris', 'underscore', 'wp-util' ), '20141216', true);
+    wp_localize_script('color-scheme-control', 'colorScheme', themename_tbay_get_color_schemes());
 }
-add_action('customize_controls_enqueue_scripts', 'lasa_tbay_customize_control_js');
+add_action('customize_controls_enqueue_scripts', 'themename_tbay_customize_control_js');
 
 /**
  * Binds JS handlers to make the Customizer preview reload changes asynchronously.
  *
- * @since Lasa 1.0
+ * @since Themename 1.0
  */
-function lasa_tbay_customize_preview_js()
+function themename_tbay_customize_preview_js()
 {
-    $suffix = (lasa_tbay_get_config('minified_js', false)) ? '.min' : LASA_MIN_JS;
-    wp_enqueue_script('lasa-customize-preview', LASA_SCRIPTS . '/customize-preview' . $suffix . '.js', array( 'customize-preview' ), '20141216', true);
+    $suffix = (themename_tbay_get_config('minified_js', false)) ? '.min' : THEMENAME_MIN_JS;
+    wp_enqueue_script('themename-customize-preview', THEMENAME_SCRIPTS . '/customize-preview' . $suffix . '.js', array( 'customize-preview' ), '20141216', true);
 }
-add_action('customize_preview_init', 'lasa_tbay_customize_preview_js');
+add_action('customize_preview_init', 'themename_tbay_customize_preview_js');

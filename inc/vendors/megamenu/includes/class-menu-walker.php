@@ -2,11 +2,11 @@
 defined('ABSPATH') || exit();
 
 /**
- * Lasa_Megamenu_Walker
+ * Themename_Megamenu_Walker
  *
  * extends Walker_Nav_Menu
  */
-class Lasa_Megamenu_Walker extends Walker_Nav_Menu {
+class Themename_Megamenu_Walker extends Walker_Nav_Menu {
 
     function start_lvl( &$output, $depth = 0, $args = array() ) {
         $indent = str_repeat("\t", $depth);
@@ -165,7 +165,7 @@ class Lasa_Megamenu_Walker extends Walker_Nav_Menu {
                 if($icon_class == 1) {
                     $icon_class = $item->mega_data['icon_custom'];
                 }
-                $icon = lasa_megamenu_get_icon_html($icon_class, $item->mega_data);
+                $icon = themename_megamenu_get_icon_html($icon_class, $item->mega_data);
             }
         }
 
@@ -190,7 +190,7 @@ class Lasa_Megamenu_Walker extends Walker_Nav_Menu {
          */
         $title = apply_filters('nav_menu_item_title', $title, $item, $args, $depth);
         
-        $post_id = lasa_megamenu_get_post_related_menu($item->ID);
+        $post_id = themename_megamenu_get_post_related_menu($item->ID);
 
         $item_output = $args->before; 
         $item_output .= '<a' . $attributes . '>';
@@ -246,7 +246,7 @@ class Lasa_Megamenu_Walker extends Walker_Nav_Menu {
             return;
         }
 
-        $element->mega_data = lasa_megamenu_get_item_data($element->ID);
+        $element->mega_data = themename_megamenu_get_item_data($element->ID);
 
         if ($this->is_active_megamenu($element, $depth) && $depth == 0) {
             $id_field = $this->db_fields['id'];
@@ -276,14 +276,14 @@ class Lasa_Megamenu_Walker extends Walker_Nav_Menu {
      */
     public function render_megamenu_elementor($item, $args, $depth) {
         $output = "";
-        if ( lasa_elementor_activated() ) {
-            $post_id = lasa_megamenu_get_post_related_menu($item->ID);
+        if ( themename_elementor_activated() ) {
+            $post_id = themename_megamenu_get_post_related_menu($item->ID);
 
             if( empty( $post_id )  ) return;
 
-            $post_id = lasa_wpml_object_id( $post_id, 'post', true, apply_filters( 'wpml_current_language', NULL ) );
+            $post_id = themename_wpml_object_id( $post_id, 'post', true, apply_filters( 'wpml_current_language', NULL ) );
 
-            $content = Elementor\Plugin::instance()->frontend->get_builder_content_for_display($post_id, lasa_get_elementor_css_print_method());
+            $content = Elementor\Plugin::instance()->frontend->get_builder_content_for_display($post_id, themename_get_elementor_css_print_method());
 
             $style = "";
 
@@ -294,7 +294,7 @@ class Lasa_Megamenu_Walker extends Walker_Nav_Menu {
                 $classes = array('dropdown-menu', 'mega-menu', 'custom-subwidth');
             }
 
-            if( lasa_tbay_get_config('ajax_dropdown_megamenu', false) ) {  
+            if( themename_tbay_get_config('ajax_dropdown_megamenu', false) ) {  
                 $classes[]      = "dropdown-load-ajax";
                 $output_content = "<div class=\"dropdown-html-placeholder\" data-id=\"$post_id\"></div>";
             } else {

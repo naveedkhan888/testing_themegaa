@@ -1,4 +1,4 @@
-#lasa-modal{
+#themename-modal{
     position: fixed;
     top: 0;
     left: 0;
@@ -6,14 +6,14 @@
     bottom: 0;
     z-index: 999999;
 }
-.lasa-modal-overlay{
+.themename-modal-overlay{
 	position: relative;
     width: 100%;
     height: 100%;
     background-color: #000;
     opacity: 0.7;
 }
-#lasa-modal-body{
+#themename-modal-body{
   	position: absolute;
   	box-shadow: 0px 5px 21px rgba(0,0,0,0.3);
     top: 50%;
@@ -32,37 +32,37 @@
     -moz-transition: all 0.3s;
     -o-transition: all 0.3s;
 }
-#lasa-modal-body.loading{
+#themename-modal-body.loading{
     padding: 0;
 }
-#lasa-modal-body.loading .lasa-modal-content i {
+#themename-modal-body.loading .themename-modal-content i {
     position: inherit;
 }
-#lasa-modal-body.edit-menu-active{
+#themename-modal-body.edit-menu-active{
     width: 90%;
     height: 90%;
     padding: 0;
 }
-#lasa-modal-body.edit-menu-active .lasa-modal-content{
+#themename-modal-body.edit-menu-active .themename-modal-content{
     padding: 0;
     width: 100%;
     height: 100%;
     max-height: 100%;
 }
-#lasa-modal-body.edit-menu-active .lasa-modal-content iframe{
+#themename-modal-body.edit-menu-active .themename-modal-content iframe{
     width: 100%;
     height: 100%
 }
-.lasa-modal-content{
+.themename-modal-content{
 	max-height: calc(100vh - 200px);
 	padding: 10px 15px;
 	overflow-y: auto;
 }
-.lasa-modal-content .wp-picker-holder{
+.themename-modal-content .wp-picker-holder{
     position: absolute;
     z-index: 9;
 }
-.lasa-modal-content i{
+.themename-modal-content i{
     font-size: 30px;
     position: absolute;
     top: 50%;
@@ -72,33 +72,33 @@
     -moz-transform: translate( -50%, -50% );
     -o-transform: translate( -50%, -50% );
 }
-.lasa-modal-content .form-group{
+.themename-modal-content .form-group{
     padding: 10px 15px;
     border-bottom: 1px solid #eee;
     display: flex;
     flex-wrap: wrap;
 }
-.lasa-modal-content .form-group > .des {
+.themename-modal-content .form-group > .des {
     margin: 10px 0 0 168px;
 }
-.lasa-modal-content .form-control{
+.themename-modal-content .form-control{
     min-width: 400px;
     padding: 8px 10px;
     border-radius: 3px;
     border: 1px solid #eee;
 }
-.lasa-modal-content .form-group > label{
+.themename-modal-content .form-group > label{
     min-width: 150px;
     display: inline-block;
     margin-right: 15px;
 }
-.lasa-modal-content .form-group > input[type="checkbox"]{
+.themename-modal-content .form-group > input[type="checkbox"]{
     margin: 0 10px;
 }
 .select2-container{
     z-index: 9999999;
 }
-.lasa-modal-footer{
+.themename-modal-footer{
     display: block;
     position: absolute;
     bottom: 0;
@@ -108,7 +108,7 @@
     background-color: #fff;
     border-top: 1px solid #dedede;
 }
-.lasa-edit-menu{
+.themename-edit-menu{
 	margin-left: 10px;
     background: red; 
     color:#FFF;
@@ -121,10 +121,10 @@
     top: 9px;
     z-index: 999;
 }
-.lasa-edit-menu:hover{
+.themename-edit-menu:hover{
 	cursor: pointer;
 }
-.lasa-switcher-wrap{
+.themename-switcher-wrap{
     height: 20px;
     border-radius: 25px;
     display: inline-block;
@@ -135,10 +135,10 @@
     background-color: white;
     transform: translateZ(0);
 }
-.lasa-switcher-wrap .sw-enable{
+.themename-switcher-wrap .sw-enable{
     background-color: #49c66a;
 }
-.lasa-switcher-wrap label span {
+.themename-switcher-wrap label span {
     font-size: 7px;
     line-height: 12px;
     text-transform: uppercase;
@@ -148,20 +148,20 @@
     opacity: 1;
     transition: all 0.4s ease;
 }
-.lasa-switcher-wrap label {
+.themename-switcher-wrap label {
     display: block;
     float: left;
     background-color: #eceeef;
     transition: all 0.4s ease;
 }
-.lasa-switcher-wrap .sw-disable {
+.themename-switcher-wrap .sw-disable {
     padding: 4px 12px 4px 4px;
 }
-.lasa-switcher-wrap .lasa-input-switcher-true:checked ~ .state-marker {
+.themename-switcher-wrap .themename-input-switcher-true:checked ~ .state-marker {
     left: 100%;
     margin-left: -19px;
 }
-.lasa-switcher-wrap .state-marker {
+.themename-switcher-wrap .state-marker {
     background-color: white;
     display: block;
     position: absolute;
@@ -174,12 +174,12 @@
     transition: all 0.4s cubic-bezier(0.77, 0, 0.175, 1);
     box-sizing: border-box;
 }
-.lasa-switcher-wrap .lasa-input-switcher-true:checked ~ .sw-enable span {
+.themename-switcher-wrap .themename-input-switcher-true:checked ~ .sw-enable span {
     opacity: 1;
     color: white;
     text-shadow: 0 1px rgba(0,0,0,0.2);
 }
-.lasa-switcher-wrap .lasa-input-switcher {
+.themename-switcher-wrap .themename-input-switcher {
     display: none;
 }
 #edit-megamenu {

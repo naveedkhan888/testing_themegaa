@@ -1,19 +1,19 @@
 <?php
-if (! defined('ABSPATH') || !lasa_woocommerce_activated()) {
+if (! defined('ABSPATH') || !themename_woocommerce_activated()) {
     exit;
 }
 
-if (! class_exists('Lasa_Cart')) :
+if (! class_exists('Themename_Cart')) :
 
 
-    class Lasa_Cart
+    class Themename_Cart
     {
         public static $instance;
 
         public static function getInstance()
         {
-            if (! isset(self::$instance) && ! (self::$instance instanceof Lasa_Cart)) {
-                self::$instance = new Lasa_Cart();
+            if (! isset(self::$instance) && ! (self::$instance instanceof Themename_Cart)) {
+                self::$instance = new Themename_Cart();
             }
 
             return self::$instance;
@@ -29,7 +29,7 @@ if (! class_exists('Lasa_Cart')) :
         {
             add_action( 'wp_footer', array( $this, 'add_to_cart_modal_html'), 20 );
 
-            add_filter('lasa_cart_position', array( $this, 'woocommerce_cart_position'), 10, 1);
+            add_filter('themename_cart_position', array( $this, 'woocommerce_cart_position'), 10, 1);
 
             add_filter('body_class', array( $this, 'body_classes_cart_postion' ), 40, 1);
 
@@ -37,7 +37,7 @@ if (! class_exists('Lasa_Cart')) :
             add_filter('wc_add_to_cart_message_html', array( $this, 'add_to_cart_message_html_mobile'), 10, 1);
 
             /*Show Add to Cart on mobile*/
-            add_filter('lasa_show_cart_mobile', array( $this, 'show_cart_mobile'), 10, 1);
+            add_filter('themename_show_cart_mobile', array( $this, 'show_cart_mobile'), 10, 1);
             add_filter('body_class', array( $this, 'body_classes_show_cart_mobile'), 10, 1);
 
             /*Show Free Shipping*/
@@ -63,17 +63,17 @@ if (! class_exists('Lasa_Cart')) :
 
         public function woocommerce_cart_position()
         {
-            if ( apply_filters('lasa_check_cart_position_is_mobile', wp_is_mobile()) ) {
+            if ( apply_filters('themename_check_cart_position_is_mobile', wp_is_mobile()) ) {
                 return 'right';
             }
 
             $position_array = array("popup", "left", "right", "no-popup");
 
-            $position = lasa_tbay_get_config('woo_mini_cart_position', 'popup');
+            $position = themename_tbay_get_config('woo_mini_cart_position', 'popup');
 
             $position = (isset($_GET['ajax_cart'])) ? $_GET['ajax_cart'] : $position;
 
-            $position =  (!in_array($position, $position_array)) ? lasa_tbay_get_config('woo_mini_cart_position', 'popup') : $position;
+            $position =  (!in_array($position, $position_array)) ? themename_tbay_get_config('woo_mini_cart_position', 'popup') : $position;
 
             return $position;
         }
@@ -81,7 +81,7 @@ if (! class_exists('Lasa_Cart')) :
 
         public function body_classes_cart_postion($classes)
         {
-            $position = apply_filters('lasa_cart_position', 10, 2);
+            $position = apply_filters('themename_cart_position', 10, 2);
 
             $class = (isset($_GET['ajax_cart'])) ? 'ajax_cart_'.$_GET['ajax_cart'] : 'ajax_cart_'.$position;
 
@@ -93,11 +93,11 @@ if (! class_exists('Lasa_Cart')) :
 
         public function add_to_cart_message_html_mobile($message)
         {
-            if (isset($_REQUEST['lasa_buy_now']) && $_REQUEST['lasa_buy_now'] == true) {
+            if (isset($_REQUEST['themename_buy_now']) && $_REQUEST['themename_buy_now'] == true) {
                 return __return_empty_string();
             }
 
-            if (wp_is_mobile() && ! intval(lasa_tbay_get_config('enable_buy_now', false))) {
+            if (wp_is_mobile() && ! intval(themename_tbay_get_config('enable_buy_now', false))) {
                 return __return_empty_string();
             } else {
                 return $message;
@@ -106,7 +106,7 @@ if (! class_exists('Lasa_Cart')) :
 
         public function show_cart_mobile()
         {
-            $active = lasa_tbay_get_config('enable_add_cart_mobile', false);
+            $active = themename_tbay_get_config('enable_add_cart_mobile', false);
 
             $active = (isset($_GET['add_cart_mobile'])) ? $_GET['add_cart_mobile'] : $active;
 
@@ -116,7 +116,7 @@ if (! class_exists('Lasa_Cart')) :
         public function body_classes_show_cart_mobile($classes)
         {
             $class = '';
-            $active = apply_filters('lasa_show_cart_mobile', 10, 2);
+            $active = apply_filters('themename_show_cart_mobile', 10, 2);
             if (isset($active) && $active) {
                 $class = 'tb-addtocart-mb';
             }
@@ -134,7 +134,7 @@ if (! class_exists('Lasa_Cart')) :
         }
 
         public function subtotal_free_shipping( $return = false ) {
-            if ( WC()->cart->is_empty() || !lasa_tbay_get_config('show_cart_free_shipping', false) ) {
+            if ( WC()->cart->is_empty() || !themename_tbay_get_config('show_cart_free_shipping', false) ) {
 				return;
 			}
 
@@ -153,7 +153,7 @@ if (! class_exists('Lasa_Cart')) :
             
             $shipping_country = WC()->customer->get_shipping_country();
 
-            $free_shipping_min = lasa_get_free_shipping_minimum($shipping_country);
+            $free_shipping_min = themename_get_free_shipping_minimum($shipping_country);
 
             if( !is_null( $free_shipping_min ) ){
                 $min_amounts[] = $free_shipping_min;
@@ -202,7 +202,7 @@ if (! class_exists('Lasa_Cart')) :
                             
                             $content .= '<div class="tbay-total-condition-desc">' .
                             sprintf(
-                                wp_kses(__('Spend %s more to reach <strong>FREE SHIPPING!</strong> <br /><span class="hide-in-cart">to add more products to your cart and receive free shipping for order %s.</span>', 'lasa'), $allowed_html),
+                                wp_kses(__('Spend %s more to reach <strong>FREE SHIPPING!</strong> <br /><span class="hide-in-cart">to add more products to your cart and receive free shipping for order %s.</span>', 'themename'), $allowed_html),
                                 wc_price($spend),
                                 wc_price($min_amount)
                             ) . 
@@ -213,7 +213,7 @@ if (! class_exists('Lasa_Cart')) :
                             $content .= '<div class="tbay-total-condition-wrap">';
                             $content .= '<div class="tbay-total-condition-desc">';
                             $content .= sprintf(
-                                esc_html__("Congratulations! You get free shipping with your order greater %s.", 'lasa'),
+                                esc_html__("Congratulations! You get free shipping with your order greater %s.", 'themename'),
                                 wc_price($min_amount)
                             );
                             $content .= '</div>';
@@ -237,10 +237,10 @@ if (! class_exists('Lasa_Cart')) :
 endif;
 
 
-if (!function_exists('lasa_cart')) {
-    function lasa_cart()
+if (!function_exists('themename_cart')) {
+    function themename_cart()
     {
-        return Lasa_Cart::getInstance();
+        return Themename_Cart::getInstance();
     }
-    lasa_cart();
+    themename_cart();
 }

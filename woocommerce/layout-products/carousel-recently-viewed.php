@@ -1,13 +1,13 @@
 <?php
 
 wp_enqueue_script('slick');
-wp_enqueue_script('lasa-custom-slick');
+wp_enqueue_script('themename-custom-slick');
     
 $inner = 'inner';
 
 $columns 		= isset($columns) ? $columns : 4;
 
-$skin 			= lasa_tbay_get_theme();
+$skin 			= themename_tbay_get_theme();
 
 $only_image 	= isset($only_image) ? $only_image : false;
 
@@ -33,14 +33,14 @@ $screen_mobile           	=      isset($screen_mobile) ? $screen_mobile : 1;
 
 $disable_mobile          =      isset($disable_mobile) ? $disable_mobile : '';
 
-$data_carousel = lasa_tbay_data_carousel($rows, $nav_type, $pagi_type, $loop_type, $auto_type, $autospeed_type, $disable_mobile);
-$responsive_carousel  = lasa_tbay_check_data_responsive_carousel($columns, $screen_desktop, $screen_desktopsmall, $screen_tablet, $screen_landscape_mobile, $screen_mobile);
+$data_carousel = themename_tbay_data_carousel($rows, $nav_type, $pagi_type, $loop_type, $auto_type, $autospeed_type, $disable_mobile);
+$responsive_carousel  = themename_tbay_check_data_responsive_carousel($columns, $screen_desktop, $screen_desktopsmall, $screen_tablet, $screen_landscape_mobile, $screen_mobile);
 
 $class_item = ($rows_count != 1) ? 'row-no-one' : '';
 
 $classes = array('products-grid', 'product');
 ?>
-<div class="owl-carousel products rows-<?php echo esc_attr($rows_count); ?> <?php echo esc_attr($class_item); ?> <?php lasa_slick_carousel_product_block_image_class(); ?>" <?php echo trim($responsive_carousel); ?>  <?php echo trim($data_carousel); ?> >
+<div class="owl-carousel products rows-<?php echo esc_attr($rows_count); ?> <?php echo esc_attr($class_item); ?> <?php themename_slick_carousel_product_block_image_class(); ?>" <?php echo trim($responsive_carousel); ?>  <?php echo trim($data_carousel); ?> >
     <?php while ($loop->have_posts()): $loop->the_post(); global $product; ?>
 		
 		<div class="item">

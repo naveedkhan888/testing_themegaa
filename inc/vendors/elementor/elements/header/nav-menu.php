@@ -1,6 +1,6 @@
 <?php
 
-if (! defined('ABSPATH') || function_exists('Lasa_Elementor_Nav_Menu')) {
+if (! defined('ABSPATH') || function_exists('Themename_Elementor_Nav_Menu')) {
     exit; // Exit if accessed directly.
 }
 
@@ -9,7 +9,7 @@ use Elementor\Controls_Manager;
 use Elementor\Group_Control_Box_Shadow;
 use Elementor\Group_Control_Typography;
 
-class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
+class Themename_Elementor_Nav_Menu extends Themename_Elementor_Widget_Base
 {
     protected $nav_menu_index = 1;
 
@@ -20,7 +20,7 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
 
     public function get_title()
     {
-        return esc_html__('Lasa Nav Menu', 'lasa');
+        return esc_html__('Themename Nav Menu', 'themename');
     }
 
     public function get_icon()
@@ -54,7 +54,7 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->start_controls_section(
             'section_layout',
             [
-                'label' => esc_html__('Layout', 'lasa'),
+                'label' => esc_html__('Layout', 'themename'),
             ]
         );
 
@@ -64,13 +64,13 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
             $this->add_control(
                 'menu',
                 [
-                    'label'        => esc_html__('Menu', 'lasa'),
+                    'label'        => esc_html__('Menu', 'themename'),
                     'type'         => Controls_Manager::SELECT,
                     'options'      => $menus,
                     'default'      => array_keys($menus)[0],
                     'save_default' => true,
                     'separator'    => 'after',
-                    'description'  => sprintf(__('Go to the <a href="%s" target="_blank">Menus screen</a> to manage your menus.', 'lasa'), admin_url('nav-menus.php')),
+                    'description'  => sprintf(__('Go to the <a href="%s" target="_blank">Menus screen</a> to manage your menus.', 'themename'), admin_url('nav-menus.php')),
                 ]
             );
         } else {
@@ -78,7 +78,7 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
                 'menu',
                 [
                     'type'            => Controls_Manager::RAW_HTML,
-                    'raw'             => sprintf(__('<strong>There are no menus in your site.</strong><br>Go to the <a href="%s" target="_blank">Menus screen</a> to create one.', 'lasa'), admin_url('nav-menus.php?action=edit&menu=0')),
+                    'raw'             => sprintf(__('<strong>There are no menus in your site.</strong><br>Go to the <a href="%s" target="_blank">Menus screen</a> to create one.', 'themename'), admin_url('nav-menus.php?action=edit&menu=0')),
                     'separator'       => 'after',
                     'content_classes' => 'elementor-panel-alert elementor-panel-alert-info',
                 ]
@@ -88,13 +88,13 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'layout',
             [
-                'label'              => esc_html__('Layout Menu', 'lasa'),
+                'label'              => esc_html__('Layout Menu', 'themename'),
                 'type'               => Controls_Manager::SELECT,
                 'default'            => 'horizontal',
                 'options'            => [
-                    'horizontal' => esc_html__('Horizontal', 'lasa'),
-                    'vertical'   => esc_html__('Vertical', 'lasa'),
-                    'treeview'   => esc_html__('Tree View', 'lasa'),
+                    'horizontal' => esc_html__('Horizontal', 'themename'),
+                    'vertical'   => esc_html__('Vertical', 'themename'),
+                    'treeview'   => esc_html__('Tree View', 'themename'),
                 ],
                 'frontend_available' => true,
             ]
@@ -103,7 +103,7 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'expand_tree',
             [
-                'label'        => esc_html__('Expand Tree', 'lasa'),
+                'label'        => esc_html__('Expand Tree', 'themename'),
                 'type'         => Controls_Manager::SWITCHER,
                 'default'      => '',
                 'condition' => [
@@ -115,19 +115,19 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'align_items',
             [
-                'label'        => esc_html__('Align', 'lasa'),
+                'label'        => esc_html__('Align', 'themename'),
                 'type'         => Controls_Manager::CHOOSE,
                 'options'      => [
                     'flex-start'    => [
-                        'title' => esc_html__('Start', 'lasa'),
+                        'title' => esc_html__('Start', 'themename'),
                         'icon'  => 'fa fa-align-left',
                     ],
                     'center'  => [
-                        'title' => esc_html__('Center', 'lasa'),
+                        'title' => esc_html__('Center', 'themename'),
                         'icon'  => 'fa fa-align-center',
                     ],
                     'flex-end'   => [
-                        'title' => esc_html__('End', 'lasa'),
+                        'title' => esc_html__('End', 'themename'),
                         'icon'  => 'fa fa-align-right',
                     ],
                 ],
@@ -145,7 +145,7 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'hidden_indicator',
             [
-                'label'        => esc_html__('Hidden Submenu Indicator', 'lasa'),
+                'label'        => esc_html__('Hidden Submenu Indicator', 'themename'),
                 'type'         => Controls_Manager::SWITCHER,
                 'default'      => true,
                 'prefix_class' => 'hidden-indicator-',
@@ -158,13 +158,13 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'type_menu',
             [
-                'label'              => esc_html__('Type Menu', 'lasa'),
+                'label'              => esc_html__('Type Menu', 'themename'),
                 'type'               => Controls_Manager::SELECT,
                 'default'            => 'none',
                 'options'            => [
-                    'none'      => esc_html__('None', 'lasa'),
-                    'toggle'    => esc_html__('Toggle Menu', 'lasa'),
-                    'canvas'    => esc_html__('Canvas Menu', 'lasa'),
+                    'none'      => esc_html__('None', 'themename'),
+                    'toggle'    => esc_html__('Toggle Menu', 'themename'),
+                    'canvas'    => esc_html__('Canvas Menu', 'themename'),
                 ],
                 'condition' => [
                     'layout!' => 'horizontal',
@@ -176,7 +176,7 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'show_canvas_menu_class',
             [
-                'label' => esc_html__('Show Canvas Menu Class', 'lasa'),
+                'label' => esc_html__('Show Canvas Menu Class', 'themename'),
                 'type' => Controls_Manager::HIDDEN,
                 'prefix_class' => 'width-auto-',
                 'default' => 'yes',
@@ -205,7 +205,7 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->start_controls_section(
             'section_style_main-menu',
             [
-                'label' => esc_html__('Main Menu', 'lasa'),
+                'label' => esc_html__('Main Menu', 'themename'),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -213,7 +213,7 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'bg_menu',
             [
-                'label'     => esc_html__('Background Color Full', 'lasa'),
+                'label'     => esc_html__('Background Color Full', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .nav-menu-{{ID}}'    => 'background-color: {{VALUE}}',
@@ -234,14 +234,14 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->start_controls_tab(
             'tab_menu_item_normal',
             [
-                'label' => esc_html__('Normal', 'lasa'),
+                'label' => esc_html__('Normal', 'themename'),
             ]
         );
 
         $this->add_control(
             'color_menu_item',
             [
-                'label'     => esc_html__('Text Color', 'lasa'),
+                'label'     => esc_html__('Text Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'default'   => '',
                 'selectors' => [
@@ -269,13 +269,13 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->start_controls_tab(
             'tab_menu_item_hover',
             [
-                'label' => esc_html__('Hover Active', 'lasa'),
+                'label' => esc_html__('Hover Active', 'themename'),
             ]
         );
         $this->add_control(
             'bg_menu_item_hover',
             [
-                'label'     => esc_html__('Background Color', 'lasa'),
+                'label'     => esc_html__('Background Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .nav-menu-{{ID}} > ul > li> a:hover,
@@ -290,7 +290,7 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'color_menu_item_hover',
             [
-                'label'     => esc_html__('Text Color', 'lasa'),
+                'label'     => esc_html__('Text Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .nav-menu-{{ID}} > ul > li> a:hover,
@@ -328,7 +328,7 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'padding_menu_item',
             [
-                'label'     => esc_html__('Padding', 'lasa'),
+                'label'     => esc_html__('Padding', 'themename'),
                 'type'      => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
@@ -340,10 +340,10 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'no_margin_menu_item_first_item',
             [
-                'label'        => esc_html__('No Margin-Left First Item', 'lasa'),
+                'label'        => esc_html__('No Margin-Left First Item', 'themename'),
                 'type'         => Controls_Manager::SWITCHER,
-                'label_off' => esc_html__('Off', 'lasa'),
-                'label_on'  => esc_html__('On', 'lasa'),
+                'label_off' => esc_html__('Off', 'themename'),
+                'label_on'  => esc_html__('On', 'themename'),
                 'default'   => '',
                 'condition' => [
                     'layout' => 'horizontal',
@@ -357,10 +357,10 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'no_margin_menu_item_last_item',
             [
-                'label'        => esc_html__('No Margin-Right Last Item', 'lasa'),
+                'label'        => esc_html__('No Margin-Right Last Item', 'themename'),
                 'type'         => Controls_Manager::SWITCHER,
-                'label_off' => esc_html__('Off', 'lasa'),
-                'label_on'  => esc_html__('On', 'lasa'),
+                'label_off' => esc_html__('Off', 'themename'),
+                'label_on'  => esc_html__('On', 'themename'),
                 'default'   => '',
                 'condition' => [
                     'layout' => 'horizontal',
@@ -374,7 +374,7 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'margin_menu_item',
             [
-                'label'     => esc_html__('Margin', 'lasa'),
+                'label'     => esc_html__('Margin', 'themename'),
                 'type'      => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
@@ -386,7 +386,7 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'size_icon_menu_item',
             [
-                'label'     => esc_html__('Font Size Icon', 'lasa'),
+                'label'     => esc_html__('Font Size Icon', 'themename'),
                 'type'      => Controls_Manager::SLIDER,
                 'range'     => [
                     'px' => [
@@ -407,7 +407,7 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->start_controls_section(
             'section_style_canvas',
             [
-                'label'     => esc_html__('Canvas', 'lasa'),
+                'label'     => esc_html__('Canvas', 'themename'),
                 'tab'       => Controls_Manager::TAB_STYLE,
                 'condition' => [
                     'type_menu' => 'canvas',
@@ -418,7 +418,7 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'style_toggle_menu_canvas_heading',
             [
-                'label' => esc_html__('Menu Canvas Content', 'lasa'),
+                'label' => esc_html__('Menu Canvas Content', 'themename'),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -427,7 +427,7 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'style_toggle_menu_canvas_content_padding',
             [
-                'label' => esc_html__('Padding', 'lasa'),
+                'label' => esc_html__('Padding', 'themename'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'selectors' => [
@@ -439,7 +439,7 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'style_toggle_menu_canvas_content_margin',
             [
-                'label' => esc_html__('Margin', 'lasa'),
+                'label' => esc_html__('Margin', 'themename'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'selectors' => [
@@ -452,7 +452,7 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'toggle_menu_canvas_icon_style_heading',
             [
-                'label' => esc_html__('Icon content', 'lasa'),
+                'label' => esc_html__('Icon content', 'themename'),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -470,7 +470,7 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'toggle_menu_canvas_icon_padding',
             [
-                'label' => esc_html__('Padding', 'lasa'),
+                'label' => esc_html__('Padding', 'themename'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'selectors' => [
@@ -482,7 +482,7 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'toggle_menu_canvas_icon_margin',
             [
-                'label' => esc_html__('Margin', 'lasa'),
+                'label' => esc_html__('Margin', 'themename'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'selectors' => [
@@ -495,7 +495,7 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'toggle_menu_icon_style_heading',
             [
-                'label' => esc_html__('Icon', 'lasa'),
+                'label' => esc_html__('Icon', 'themename'),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -504,7 +504,7 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'toggle_canvas_icon_color',
             [
-                'label' => esc_html__('Color', 'lasa'),
+                'label' => esc_html__('Color', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .btn-canvas-menu i' => 'color: {{VALUE}};',
@@ -515,7 +515,7 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'toggle_menu_canvas_icon_size_style',
             [
-                'label' => esc_html__('Font Size Icon', 'lasa'),
+                'label' => esc_html__('Font Size Icon', 'themename'),
                 'type' => Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [
@@ -532,7 +532,7 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'toggle_canvas_icon_padding',
             [
-                'label' => esc_html__('Padding', 'lasa'),
+                'label' => esc_html__('Padding', 'themename'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'selectors' => [
@@ -544,7 +544,7 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'toggle_menu_icon_title_style_heading',
             [
-                'label' => esc_html__('Title next to the icon', 'lasa'),
+                'label' => esc_html__('Title next to the icon', 'themename'),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -562,7 +562,7 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'toggle_canvas_title_color',
             [
-                'label' => esc_html__('Color', 'lasa'),
+                'label' => esc_html__('Color', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .btn-canvas-menu .toggle-canvas-icon-title' => 'color: {{VALUE}};',
@@ -573,15 +573,15 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'toggle_canvas_icon_title_align',
             [
-                'label' => esc_html__('Alignment Title', 'lasa'),
+                'label' => esc_html__('Alignment Title', 'themename'),
                 'type' => Controls_Manager::CHOOSE,
                 'options' => [
                     'left' => [
-                        'title' => esc_html__('Left', 'lasa'),
+                        'title' => esc_html__('Left', 'themename'),
                         'icon' => 'fa fa-align-left',
                     ],
                     'right' => [
-                        'title' => esc_html__('Right', 'lasa'),
+                        'title' => esc_html__('Right', 'themename'),
                         'icon' => 'fa fa-align-right',
                     ],
                 ],
@@ -595,7 +595,7 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'toggle_canvas_icon_title_margin',
             [
-                'label' => esc_html__('Margin', 'lasa'),
+                'label' => esc_html__('Margin', 'themename'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'selectors' => [
@@ -607,7 +607,7 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'toggle_canvas_icon_title_padding',
             [
-                'label' => esc_html__('Padding', 'lasa'),
+                'label' => esc_html__('Padding', 'themename'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'selectors' => [
@@ -620,7 +620,7 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'toggle_canvas_content_style_heading',
             [
-                'label' => esc_html__('Positioning Content', 'lasa'),
+                'label' => esc_html__('Positioning Content', 'themename'),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -629,15 +629,15 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'toggle_canvas_content_align',
             [
-                'label' => esc_html__('Positioning Content', 'lasa'),
+                'label' => esc_html__('Positioning Content', 'themename'),
                 'type' => Controls_Manager::CHOOSE,
                 'options' => [
                     'left' => [
-                        'title' => esc_html__('Left', 'lasa'),
+                        'title' => esc_html__('Left', 'themename'),
                         'icon' => 'fa fa-align-left',
                     ],
                     'right' => [
-                        'title' => esc_html__('Right', 'lasa'),
+                        'title' => esc_html__('Right', 'themename'),
                         'icon' => 'fa fa-align-right',
                     ],
                 ],
@@ -649,7 +649,7 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'toggle_canvas_content_title_style_heading',
             [
-                'label' => esc_html__('Title Content', 'lasa'),
+                'label' => esc_html__('Title Content', 'themename'),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -658,7 +658,7 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'toggle_canvas_title_hidden',
             [
-                'label' => esc_html__( 'Hidden Title', 'lasa' ),
+                'label' => esc_html__( 'Hidden Title', 'themename' ),
                 'type' => Controls_Manager::SWITCHER,
                 'prefix_class' => 'canvas-title-hidden-',
                 'default' => '',
@@ -678,15 +678,15 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'toggle_canvas_title_align',
             [
-                'label' => esc_html__('Alignment Title', 'lasa'),
+                'label' => esc_html__('Alignment Title', 'themename'),
                 'type' => Controls_Manager::CHOOSE,
                 'options' => [
                     'left' => [
-                        'title' => esc_html__('Left', 'lasa'),
+                        'title' => esc_html__('Left', 'themename'),
                         'icon' => 'fa fa-align-left',
                     ],
                     'right' => [
-                        'title' => esc_html__('Right', 'lasa'),
+                        'title' => esc_html__('Right', 'themename'),
                         'icon' => 'fa fa-align-right',
                     ],
                 ],
@@ -705,7 +705,7 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->start_controls_section(
             'section_style_dropdown',
             [
-                'label'     => esc_html__('Dropdown', 'lasa'),
+                'label'     => esc_html__('Dropdown', 'themename'),
                 'tab'       => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -713,7 +713,7 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'custom_dropdown_sub_space',
             [
-                'label'     => esc_html__('Dropdown Custom-Sub Space Wrapper', 'lasa'),
+                'label'     => esc_html__('Dropdown Custom-Sub Space Wrapper', 'themename'),
                 'type'      => Controls_Manager::SLIDER,
                 'range'     => [
                     'px' => [
@@ -740,7 +740,7 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'dropdown_Heading',
             [
-                'label'     => esc_html__('Heading sub title megamenu', 'lasa'),
+                'label'     => esc_html__('Heading sub title megamenu', 'themename'),
                 'type'      => Controls_Manager::SLIDER,
                 'range'     => [
                     'px' => [
@@ -759,14 +759,14 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->start_controls_tab(
             'tab_dropdown_item_normal',
             [
-                'label' => esc_html__('Normal', 'lasa'),
+                'label' => esc_html__('Normal', 'themename'),
             ]
         );
 
         $this->add_control(
             'color_dropdown_item',
             [
-                'label'     => esc_html__('Text Color', 'lasa'),
+                'label'     => esc_html__('Text Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'default'   => '',
                 'selectors' => [
@@ -780,7 +780,7 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'background_color_dropdown_item',
             [
-                'label'     => esc_html__('Background Color', 'lasa'),
+                'label'     => esc_html__('Background Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'default'   => '',
                 'selectors' => [
@@ -796,14 +796,14 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->start_controls_tab(
             'tab_dropdown_item_hover',
             [
-                'label' => esc_html__('Hover', 'lasa'),
+                'label' => esc_html__('Hover', 'themename'),
             ]
         );
 
         $this->add_control(
             'color_dropdown_item_hover',
             [
-                'label'     => esc_html__('Text Color', 'lasa'),
+                'label'     => esc_html__('Text Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'default'   => '',
                 'selectors' => [
@@ -818,7 +818,7 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'background_color_dropdown_item_hover',
             [
-                'label'     => esc_html__('Background Color', 'lasa'),
+                'label'     => esc_html__('Background Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'default'   => '',
                 'selectors' => [
@@ -847,7 +847,7 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'padding_horizontal_dropdown_item',
             [
-                'label'     => esc_html__('Horizontal Padding', 'lasa'),
+                'label'     => esc_html__('Horizontal Padding', 'themename'),
                 'type'      => Controls_Manager::SLIDER,
                 'selectors' => [
                     '{{WRAPPER}} .dropdown-menu > li, {{WRAPPER}} .active-mega-menu .menu > li'       => 'padding-left: {{SIZE}}{{UNIT}}; padding-right: {{SIZE}}{{UNIT}}',
@@ -860,7 +860,7 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'padding_vertical_dropdown_item',
             [
-                'label'     => esc_html__('Vertical Padding', 'lasa'),
+                'label'     => esc_html__('Vertical Padding', 'themename'),
                 'type'      => Controls_Manager::SLIDER,
                 'range'     => [
                     'px' => [
@@ -876,7 +876,7 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'dropdown_padding',
             [
-                'label'      => esc_html__('Padding', 'lasa'),
+                'label'      => esc_html__('Padding', 'themename'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors'  => [
@@ -893,7 +893,7 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->start_controls_section(
             'section_toggle_menu',
             [
-                'label' => esc_html__('Toggle Menu', 'lasa'),
+                'label' => esc_html__('Toggle Menu', 'themename'),
                 'condition' => [
                     'type_menu' => 'toggle',
                     'layout!' => 'horizontal',
@@ -904,23 +904,23 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'toggle_menu_align',
             [
-                'label' => esc_html__('Alignment', 'lasa'),
+                'label' => esc_html__('Alignment', 'themename'),
                 'type' => Controls_Manager::CHOOSE,
                 'options' => [
                     'left' => [
-                        'title' => esc_html__('Left', 'lasa'),
+                        'title' => esc_html__('Left', 'themename'),
                         'icon' => 'fa fa-align-left',
                     ],
                     'center' => [
-                        'title' => esc_html__('Center', 'lasa'),
+                        'title' => esc_html__('Center', 'themename'),
                         'icon' => 'fa fa-align-center',
                     ],
                     'right' => [
-                        'title' => esc_html__('Right', 'lasa'),
+                        'title' => esc_html__('Right', 'themename'),
                         'icon' => 'fa fa-align-right',
                     ],
                     'justify' => [
-                        'title' => esc_html__('Justified', 'lasa'),
+                        'title' => esc_html__('Justified', 'themename'),
                         'icon' => 'fa fa-align-justify',
                     ],
                 ],
@@ -936,7 +936,7 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'toggle_menu_title_heading',
             [
-                'label' => esc_html__('Title', 'lasa'),
+                'label' => esc_html__('Title', 'themename'),
                 'type' => Controls_Manager::HEADING,
             ]
         );
@@ -944,9 +944,9 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'toggle_menu_title',
             [
-                'label' => esc_html__('Title', 'lasa'),
+                'label' => esc_html__('Title', 'themename'),
                 'type' => Controls_Manager::TEXT,
-                'default' => esc_html__('Title', 'lasa'),
+                'default' => esc_html__('Title', 'themename'),
                 'label_block' => true,
             ]
         );
@@ -954,7 +954,7 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'toggle_menu_title_tag',
             [
-                'label' => esc_html__('Title HTML Tag', 'lasa'),
+                'label' => esc_html__('Title HTML Tag', 'themename'),
                 'type' => Controls_Manager::SELECT,
                 'options' => [
                     'h1' => 'H1',
@@ -975,7 +975,7 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'toggle_content_menu',
             [
-                'label' => esc_html__('Toggle content menu', 'lasa'),
+                'label' => esc_html__('Toggle content menu', 'themename'),
                 'type' => Controls_Manager::SWITCHER,
                 'prefix_class' => 'elementor-toggle-content-menu-',
                 'default' => 'yes',
@@ -985,10 +985,10 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'ajax_toggle',
             [
-                'label' => esc_html__( 'Ajax Toggle Menu', 'lasa' ),
+                'label' => esc_html__( 'Ajax Toggle Menu', 'themename' ),
                 'type' => Controls_Manager::SWITCHER,
                 'default' => 'yes',
-                'description' => esc_html__( 'Show/hidden Ajax Toggle Menu', 'lasa' ), 
+                'description' => esc_html__( 'Show/hidden Ajax Toggle Menu', 'themename' ), 
                 'condition' => [
                     'toggle_content_menu' => 'yes',
                 ],
@@ -998,8 +998,8 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'show_content_menu',
             [
-                'label' => esc_html__('Show content menu', 'lasa'),
-                'description' => esc_html__('Show content menu on home page', 'lasa'),
+                'label' => esc_html__('Show content menu', 'themename'),
+                'description' => esc_html__('Show content menu on home page', 'themename'),
                 'type' => Controls_Manager::SWITCHER,
                 'prefix_class' => 'elementor-show-content-menu-',
                 'default'      => 'no',
@@ -1013,7 +1013,7 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'show_toggle_menu_icon',
             [
-                'label' => esc_html__('Show Icon', 'lasa'),
+                'label' => esc_html__('Show Icon', 'themename'),
                 'type' => Controls_Manager::SWITCHER,
             ]
         );
@@ -1022,7 +1022,7 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'toggle_menu_icon_heading',
             [
-                'label' => esc_html__('Icon', 'lasa'),
+                'label' => esc_html__('Icon', 'themename'),
                 'type' => Controls_Manager::HEADING,
                 'condition' => [
                     'show_toggle_menu_icon!' => '',
@@ -1033,7 +1033,7 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'toggle_menu_icon',
             [
-                'label' => esc_html__('Icon', 'lasa'),
+                'label' => esc_html__('Icon', 'themename'),
                 'type' => Controls_Manager::ICONS,
                 'label_block' => true,
                 'default' => [
@@ -1056,7 +1056,7 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->start_controls_section(
             'section_vertical_menu',
             [
-                'label' => esc_html__('Vertical Menu', 'lasa'),
+                'label' => esc_html__('Vertical Menu', 'themename'),
                 'condition' => [
                     'layout' => 'vertical',
                 ],
@@ -1066,19 +1066,19 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'toggle_vertical_submenu_align',
             [
-                'label' => esc_html__('Alignment Sub Menu', 'lasa'),
+                'label' => esc_html__('Alignment Sub Menu', 'themename'),
                 'type' => Controls_Manager::CHOOSE,
                 'options' => [
                     'left' => [
-                        'title' => esc_html__('Left', 'lasa'),
+                        'title' => esc_html__('Left', 'themename'),
                         'icon' => 'fa fa-align-left',
                     ],
                     'center' => [
-                        'title' => esc_html__('Center', 'lasa'),
+                        'title' => esc_html__('Center', 'themename'),
                         'icon' => 'fa fa-align-center',
                     ],
                     'right' => [
-                        'title' => esc_html__('Right', 'lasa'),
+                        'title' => esc_html__('Right', 'themename'),
                         'icon' => 'fa fa-align-right',
                     ],
                 ],
@@ -1094,7 +1094,7 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->start_controls_section(
             'section_canvas_menu',
             [
-                'label' => esc_html__('Canvas Menu', 'lasa'),
+                'label' => esc_html__('Canvas Menu', 'themename'),
                 'condition' => [
                     'type_menu' => 'canvas',
                     'layout!' => 'horizontal',
@@ -1105,7 +1105,7 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'toggle_canvas_icon_heading',
             [
-                'label' => esc_html__('Icon', 'lasa'),
+                'label' => esc_html__('Icon', 'themename'),
                 'type' => Controls_Manager::HEADING,
             ]
         );
@@ -1113,7 +1113,7 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'toggle_canvas_menu_icon',
             [
-                'label' => esc_html__('Icon', 'lasa'),
+                'label' => esc_html__('Icon', 'themename'),
                 'type' => Controls_Manager::ICONS,
                 'label_block' => true,
                 'default' => [
@@ -1126,9 +1126,9 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'toggle_canvas_icon_title',
             [
-                'label' => esc_html__('Title', 'lasa'),
+                'label' => esc_html__('Title', 'themename'),
                 'type' => Controls_Manager::TEXT,
-                'default' => esc_html__('Title', 'lasa'),
+                'default' => esc_html__('Title', 'themename'),
                 'label_block' => true,
             ]
         );
@@ -1136,7 +1136,7 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'toggle_canvas_icon_title_tag',
             [
-                'label' => esc_html__('Title HTML Tag', 'lasa'),
+                'label' => esc_html__('Title HTML Tag', 'themename'),
                 'type' => Controls_Manager::SELECT,
                 'options' => [
                     'h1' => 'H1',
@@ -1156,7 +1156,7 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'toggle_canvas_title_heading',
             [
-                'label' => esc_html__('Title Content', 'lasa'),
+                'label' => esc_html__('Title Content', 'themename'),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -1165,16 +1165,16 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'toggle_canvas_title',
             [
-                'label' => esc_html__('Title', 'lasa'),
+                'label' => esc_html__('Title', 'themename'),
                 'type' => Controls_Manager::TEXT,
-                'default' => esc_html__('Title', 'lasa'),
+                'default' => esc_html__('Title', 'themename'),
                 'label_block' => true,
             ]
         );
         $this->add_control(
             'toggle_canvas_title_tag',
             [
-                'label' => esc_html__('Title HTML Tag', 'lasa'),
+                'label' => esc_html__('Title HTML Tag', 'themename'),
                 'type' => Controls_Manager::SELECT,
                 'options' => [
                     'h1' => 'H1',
@@ -1194,9 +1194,9 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'ajax_canvas',
             [
-                'label' => esc_html__( 'Ajax canvas Menu', 'lasa' ),
+                'label' => esc_html__( 'Ajax canvas Menu', 'themename' ),
                 'type' => Controls_Manager::SWITCHER,
-                'description' => esc_html__( 'Show/hidden Ajax canvas Menu', 'lasa' ), 
+                'description' => esc_html__( 'Show/hidden Ajax canvas Menu', 'themename' ), 
                 'default' => 'yes',
                 'condition' => [ 
                     'type_menu' => 'canvas',
@@ -1213,7 +1213,7 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->start_controls_section(
             'section_style_toggle_menu',
             [
-                'label' => esc_html__('Toggle Menu', 'lasa'),
+                'label' => esc_html__('Toggle Menu', 'themename'),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition' => [
                     'type_menu' => 'toggle',
@@ -1226,7 +1226,7 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'toggle_menu_title_style_heading',
             [
-                'label' => esc_html__('Title', 'lasa'),
+                'label' => esc_html__('Title', 'themename'),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -1244,7 +1244,7 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'toggle_menu_color',
             [
-                'label'     => esc_html__('Text Color', 'lasa'),
+                'label'     => esc_html__('Text Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'default'   => '',
                 'selectors' => [
@@ -1255,7 +1255,7 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'toggle_menu_color_hover',
             [
-                'label'     => esc_html__('Hover Text Color', 'lasa'),
+                'label'     => esc_html__('Hover Text Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'default'   => '',
                 'selectors' => [
@@ -1268,7 +1268,7 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'style_toggle_menu',
             [
-                'label'     => esc_html__('Background Color', 'lasa'),
+                'label'     => esc_html__('Background Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'separator' => 'before',
                 'selectors' => [
@@ -1280,7 +1280,7 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'toggle_menu_border_radius',
             [
-                'label' => esc_html__('Border Radius', 'lasa'),
+                'label' => esc_html__('Border Radius', 'themename'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'selectors' => [
@@ -1292,7 +1292,7 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'toggle_menu_padding',
             [
-                'label' => esc_html__('Padding', 'lasa'),
+                'label' => esc_html__('Padding', 'themename'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'selectors' => [
@@ -1304,7 +1304,7 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->add_responsive_control(
             'toggle_menu_margin',
             [
-                'label' => esc_html__('Margin', 'lasa'),
+                'label' => esc_html__('Margin', 'themename'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'selectors' => [
@@ -1316,7 +1316,7 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'toggle_toogle_menu_icon_style_heading',
             [
-                'label' => esc_html__('Icon', 'lasa'),
+                'label' => esc_html__('Icon', 'themename'),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -1326,7 +1326,7 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         $this->add_control(
             'toggle_menu_icon_size_style',
             [
-                'label' => esc_html__('Font Size Icon', 'lasa'),
+                'label' => esc_html__('Font Size Icon', 'themename'),
                 'type' => Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [
@@ -1434,4 +1434,4 @@ class Lasa_Elementor_Nav_Menu extends Lasa_Elementor_Widget_Base
         echo trim($ouput);
     }
 }
-$widgets_manager->register(new Lasa_Elementor_Nav_Menu());
+$widgets_manager->register(new Themename_Elementor_Nav_Menu());

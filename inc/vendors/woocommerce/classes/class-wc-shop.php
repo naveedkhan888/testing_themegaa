@@ -1,19 +1,19 @@
 <?php
-if (! defined('ABSPATH') || !lasa_woocommerce_activated()) {
+if (! defined('ABSPATH') || !themename_woocommerce_activated()) {
     exit;
 }
 
-if (! class_exists('Lasa_Shop_WooCommerce')) :
+if (! class_exists('Themename_Shop_WooCommerce')) :
 
 
-    class Lasa_Shop_WooCommerce
+    class Themename_Shop_WooCommerce
     {
         public static $instance;
 
         public static function getInstance()
         {
-            if (! isset(self::$instance) && ! (self::$instance instanceof Lasa_Shop_WooCommerce)) {
-                self::$instance = new Lasa_Shop_WooCommerce();
+            if (! isset(self::$instance) && ! (self::$instance instanceof Themename_Shop_WooCommerce)) {
+                self::$instance = new Themename_Shop_WooCommerce();
             }
 
             return self::$instance;
@@ -55,62 +55,62 @@ if (! class_exists('Lasa_Shop_WooCommerce')) :
 
 
             /*display image mode*/
-            add_filter('lasa_woo_display_image_mode', array( $this, 'get_display_image_mode'), 10, 1);
+            add_filter('themename_woo_display_image_mode', array( $this, 'get_display_image_mode'), 10, 1);
 
             add_action('woocommerce_before_shop_loop_item_title', array( $this, 'the_display_image_mode'), 10);
 
             /*swatches*/
-            add_action('lasa_tbay_variable_product', array( $this, 'the_woocommerce_variable'), 20);
-            add_action('lasa_woo_list_after_short_description', array( $this, 'the_woocommerce_variable'), 5);
+            add_action('themename_tbay_variable_product', array( $this, 'the_woocommerce_variable'), 20);
+            add_action('themename_woo_list_after_short_description', array( $this, 'the_woocommerce_variable'), 5);
 
-            add_action('lasa_woocommerce_before_shop_list_item', array( $this, 'remove_variable_on_list'), 10);
+            add_action('themename_woocommerce_before_shop_list_item', array( $this, 'remove_variable_on_list'), 10);
 
             /*Shop Query*/
             add_action('woocommerce_product_query', array( $this, 'product_per_page_query'), 10, 2);
 
             /*Product Archive Sidebar Top*/
-            add_action('lasa_woo_template_main_wrapper_before', array( $this, 'shop_product_top_archive'), 30);
+            add_action('themename_woo_template_main_wrapper_before', array( $this, 'shop_product_top_archive'), 30);
 
             /*Product Archive Sidebar Bottom*/ 
             add_action('woocommerce_after_main_wrapper_container', array( $this, 'shop_product_bottom_archive'), 99);
             
 
-            add_filter('lasa_get_woocommerce_sub_categories', array( $this, 'show_product_subcategories'), 10, 1);
+            add_filter('themename_get_woocommerce_sub_categories', array( $this, 'show_product_subcategories'), 10, 1);
 
 
             add_filter('woocommerce_show_page_title', array( $this, 'remove_title_product_archives_active'), 10, 1);
 
-            add_filter('lasa_woo_config_display_mode', array( $this, 'display_modes_active'), 10, 1);
+            add_filter('themename_woo_config_display_mode', array( $this, 'display_modes_active'), 10, 1);
 
             /*The YITH BRAND*/
-            add_action('lasa_woo_show_brands', array( $this, 'the_brands_the_name'), 5);
-            add_action('lasa_woo_before_shop_list_caption', array( $this, 'the_brands_the_name'), 10);
+            add_action('themename_woo_show_brands', array( $this, 'the_brands_the_name'), 5);
+            add_action('themename_woo_before_shop_list_caption', array( $this, 'the_brands_the_name'), 10);
             
             /* sold */
-            add_action('lasa_woo_list_sold', array( $this, 'lasa_tbay_total_sales'), 5);
+            add_action('themename_woo_list_sold', array( $this, 'themename_tbay_total_sales'), 5);
         }
 
         public function remove_variable_on_list()
         {
-            remove_action('lasa_tbay_after_shop_loop_item_title', array( $this, 'the_woocommerce_variable'), 20);
+            remove_action('themename_tbay_after_shop_loop_item_title', array( $this, 'the_woocommerce_variable'), 20);
         }
 
         public function shop_display_modes()
         {
-            $active  = apply_filters('lasa_woo_config_display_mode', 10, 2);
+            $active  = apply_filters('themename_woo_config_display_mode', 10, 2);
             
-            if (!$active || !wc_get_loop_prop('is_paginated') || (!woocommerce_products_will_display() && !lasa_woo_is_vendor_page())) {
+            if (!$active || !wc_get_loop_prop('is_paginated') || (!woocommerce_products_will_display() && !themename_woo_is_vendor_page())) {
                 return;
             }
             
-            $woo_mode      = lasa_tbay_woocommerce_get_display_mode();
+            $woo_mode      = themename_tbay_woocommerce_get_display_mode();
 
             $grid = ($woo_mode == 'grid') ? 'active' : '';
             $list = ($woo_mode == 'list') ? 'active' : '';
             ?>
 	        <div class="display-mode-warpper">
-                <a href="javascript:void(0);" id="display-mode-grid" class="display-mode-btn <?php echo esc_attr($grid); ?>" title="<?php esc_attr_e('Grid', 'lasa'); ?>" ><i class="tb-icon tb-icon-grid-2"></i></a>
-                <a href="javascript:void(0);" id="display-mode-list" class="display-mode-btn list <?php echo esc_attr($list); ?>" title="<?php esc_attr_e('List', 'lasa'); ?>" ><i class="tb-icon tb-icon-task-square"></i></a>
+                <a href="javascript:void(0);" id="display-mode-grid" class="display-mode-btn <?php echo esc_attr($grid); ?>" title="<?php esc_attr_e('Grid', 'themename'); ?>" ><i class="tb-icon tb-icon-grid-2"></i></a>
+                <a href="javascript:void(0);" id="display-mode-list" class="display-mode-btn list <?php echo esc_attr($list); ?>" title="<?php esc_attr_e('List', 'themename'); ?>" ><i class="tb-icon tb-icon-task-square"></i></a>
 	        </div>
 
 	        <?php
@@ -121,13 +121,13 @@ if (! class_exists('Lasa_Shop_WooCommerce')) :
         {
             $active = false;
 
-            if (lasa_woo_is_vendor_page()) {
+            if (themename_woo_is_vendor_page()) {
                 $active = true;
             } else {
                 if (is_product_category() || is_product_tag() || is_product_taxonomy() || is_shop()) {
                     $page = 'product_archive_sidebar';
         
-                    $sidebar = lasa_tbay_get_config($page);
+                    $sidebar = themename_tbay_get_config($page);
                     if (is_active_sidebar($sidebar)) {
                         $active = true;
                     }
@@ -147,7 +147,7 @@ if (! class_exists('Lasa_Shop_WooCommerce')) :
             if (!$this->is_check_woocommerce_show_sidebar()) {
                 return;
             }
-            if (lasa_woo_is_mvx_vendor_store()) {
+            if (themename_woo_is_mvx_vendor_store()) {
                 $sidebar = 'mvx-marketplace-store';
 
                 if (!is_active_sidebar($sidebar)) {
@@ -155,18 +155,18 @@ if (! class_exists('Lasa_Shop_WooCommerce')) :
                 }
             }
 
-            $product_archive_layout  =   (isset($_GET['product_archive_layout'])) ? $_GET['product_archive_layout'] : lasa_tbay_get_config('product_archive_layout', 'shop-left');
+            $product_archive_layout  =   (isset($_GET['product_archive_layout'])) ? $_GET['product_archive_layout'] : themename_tbay_get_config('product_archive_layout', 'shop-left');
 
             $filter_class = ($product_archive_layout !== 'full-width') ? ' d-xl-none' : '';
  
-            echo '<div class="filter-btn-wrapper'. esc_attr($filter_class) .'"><button id="button-filter-btn" class="button-filter-btn hidden-lg hidden-md" type="submit"><i class="tb-icon tb-icon-filter" aria-hidden="true"></i>'. esc_html__('Filter', 'lasa') .'</button></div>';
+            echo '<div class="filter-btn-wrapper'. esc_attr($filter_class) .'"><button id="button-filter-btn" class="button-filter-btn hidden-lg hidden-md" type="submit"><i class="tb-icon tb-icon-filter" aria-hidden="true"></i>'. esc_html__('Filter', 'themename') .'</button></div>';
             echo '<div id="filter-close"></div>';
         }
         
         public function shop_filter_before()
         {
-            $notproducts =  (lasa_is_check_hidden_filter()) ? ' hidden' : '';
-            $columns     = lasa_tbay_get_config('mobile_product_number', 'two');
+            $notproducts =  (themename_is_check_hidden_filter()) ? ' hidden' : '';
+            $columns     = themename_tbay_get_config('mobile_product_number', 'two');
 
             echo '<div class="tbay-filter'. esc_attr($notproducts) . ' tbmb-pr-'. esc_attr($columns) .'">';
         }
@@ -190,7 +190,7 @@ if (! class_exists('Lasa_Shop_WooCommerce')) :
 
         public function shop_product_top_sidebar()
         {
-            $sidebar_configs = lasa_tbay_get_woocommerce_layout_configs();
+            $sidebar_configs = themename_tbay_get_woocommerce_layout_configs();
 
             if (!is_product()  && isset($sidebar_configs['product_top_sidebar']) && $sidebar_configs['product_top_sidebar']) {
                 ?>
@@ -212,7 +212,7 @@ if (! class_exists('Lasa_Shop_WooCommerce')) :
             if (isset($_GET['product_per_page']) && is_numeric($_GET['product_per_page'])) {
                 $value = $_GET['product_per_page'];
             } else {
-                $value = lasa_tbay_get_config('number_products_per_page', 12);
+                $value = themename_tbay_get_config('number_products_per_page', 12);
             }
 
             if (is_numeric($value) && $value) {
@@ -227,7 +227,7 @@ if (! class_exists('Lasa_Shop_WooCommerce')) :
             if (isset($_GET['product_columns']) && is_numeric($_GET['product_columns'])) {
                 $value = $_GET['product_columns'];
             } else {
-                $value = lasa_tbay_get_config('product_columns', 5);
+                $value = themename_tbay_get_config('product_columns', 5);
             }
 
             if (in_array($value, array(1, 2, 3, 4, 5, 6))) {
@@ -240,7 +240,7 @@ if (! class_exists('Lasa_Shop_WooCommerce')) :
 
         public function get_display_image_mode($mode)
         {
-            $mode = lasa_tbay_get_config('product_display_image_mode', 'one');
+            $mode = themename_tbay_get_config('product_display_image_mode', 'one');
 
             $mode = (isset($_GET['display_image_mode'])) ? $_GET['display_image_mode'] : $mode;
 
@@ -253,7 +253,7 @@ if (! class_exists('Lasa_Shop_WooCommerce')) :
 
         public function the_display_image_mode()
         {
-            $images_mode   = apply_filters('lasa_woo_display_image_mode', 10, 2);
+            $images_mode   = apply_filters('themename_woo_display_image_mode', 10, 2);
 
             if (wp_is_mobile()) {
                 $images_mode = 'one';
@@ -265,7 +265,7 @@ if (! class_exists('Lasa_Shop_WooCommerce')) :
                     break;
 
                 case 'two':
-                    echo lasa_tbay_woocommerce_get_two_product_thumbnail();
+                    echo themename_tbay_woocommerce_get_two_product_thumbnail();
                     break;
                     
                 default:
@@ -286,29 +286,29 @@ if (! class_exists('Lasa_Shop_WooCommerce')) :
         
 
         /*stock*/
-        public function lasa_tbay_total_sales()
+        public function themename_tbay_total_sales()
         {
             global $product;
             $total_sales        = $product->get_total_sales(); ?>
-				<div class="sold"><?php esc_html_e(' Sold: ', 'lasa'); ?><span class="sold-total"><?php echo esc_html($total_sales) ?></span></div>
+				<div class="sold"><?php esc_html_e(' Sold: ', 'themename'); ?><span class="sold-total"><?php echo esc_html($total_sales) ?></span></div>
 			<?php
         }
         public function the_woocommerce_variable()
         {
             global $product;
 
-            $active = apply_filters('lasa_enable_variation_selector', 10, 2);
+            $active = apply_filters('themename_enable_variation_selector', 10, 2);
 
             if ($product->is_type('variable') && class_exists('Woo_Variation_Swatches') && $active) {
                 ?>
-	            	<?php echo lasa_swatches_list(); ?>
+	            	<?php echo themename_swatches_list(); ?>
 	            <?php
             }
         }
         
         public function shop_category_image()
         {
-            $active = apply_filters('lasa_woo_pro_des_image', 10, 2);
+            $active = apply_filters('themename_woo_pro_des_image', 10, 2);
 
             if (!$active) {
                 return;
@@ -327,7 +327,7 @@ if (! class_exists('Lasa_Shop_WooCommerce')) :
 
         public function shop_remove_des_image()
         {
-            $active = apply_filters('lasa_woo_pro_des_image', 10, 2);
+            $active = apply_filters('themename_woo_pro_des_image', 10, 2);
             
     
             if (!$active) {
@@ -338,8 +338,8 @@ if (! class_exists('Lasa_Shop_WooCommerce')) :
 
         public function product_per_page_query($q)
         {
-            $default            = lasa_tbay_get_config('number_products_per_page');
-            $product_per_page   = lasa_woocommerce_get_fillter('product_per_page', $default);
+            $default            = themename_tbay_get_config('number_products_per_page');
+            $product_per_page   = themename_woocommerce_get_fillter('product_per_page', $default);
             if (function_exists('woocommerce_products_will_display') && $q->is_main_query()) :
                 $q->set('posts_per_page', $product_per_page);
             endif;
@@ -406,7 +406,7 @@ if (! class_exists('Lasa_Shop_WooCommerce')) :
 
         public function title_product_archives_active()
         {
-            $active = lasa_tbay_get_config('title_product_archives', false);
+            $active = themename_tbay_get_config('title_product_archives', false);
 
             $active = (isset($_GET['title_product_archives'])) ? (boolean)$_GET['title_product_archives'] : (boolean)$active;
 
@@ -425,7 +425,7 @@ if (! class_exists('Lasa_Shop_WooCommerce')) :
 
         public function display_modes_active()
         {
-            $active = lasa_tbay_get_config('enable_display_mode', false);
+            $active = themename_tbay_get_config('enable_display_mode', false);
 
             $active = (isset($_GET['enable_display_mode'])) ? (boolean)$_GET['enable_display_mode'] : (boolean)$active;
 
@@ -435,7 +435,7 @@ if (! class_exists('Lasa_Shop_WooCommerce')) :
 
         public function the_brands_the_name()
         {
-            if (!lasa_tbay_get_config('enable_brand', false)) {
+            if (!themename_tbay_get_config('enable_brand', false)) {
                 return;
             }
 
@@ -470,10 +470,10 @@ if (! class_exists('Lasa_Shop_WooCommerce')) :
 endif;
 
 
-if (!function_exists('lasa_shop_wooCommerce')) {
-    function lasa_shop_wooCommerce()
+if (!function_exists('themename_shop_wooCommerce')) {
+    function themename_shop_wooCommerce()
     {
-        return Lasa_Shop_WooCommerce::getInstance();
+        return Themename_Shop_WooCommerce::getInstance();
     }
-    lasa_shop_wooCommerce();
+    themename_shop_wooCommerce();
 }

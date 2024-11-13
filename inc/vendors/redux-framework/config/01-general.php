@@ -13,19 +13,19 @@ Redux::set_section(
 	$opt_name,
 	array(
         'icon' => 'zmdi zmdi-settings',
-        'title' => esc_html__('General', 'lasa'),
+        'title' => esc_html__('General', 'themename'),
         'fields' => array(
             array(
                 'id'            => 'config_media',
                 'type'          => 'switch',
-                'title'         => esc_html__('Enable Config Image Size', 'lasa'),
-                'subtitle'      => esc_html__('Config image size in WooCommerce and Media Setting', 'lasa'),
+                'title'         => esc_html__('Enable Config Image Size', 'themename'),
+                'subtitle'      => esc_html__('Config image size in WooCommerce and Media Setting', 'themename'),
                 'default'       => false
             ),
             array(
                 'id' => 'ajax_dropdown_megamenu',
                 'type' => 'switch',
-                'title' => esc_html__('Enable "Ajax Dropdown" Mega Menu', 'lasa'),
+                'title' => esc_html__('Enable "Ajax Dropdown" Mega Menu', 'themename'),
                 'default' => false,
             ),
         )
