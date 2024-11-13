@@ -365,7 +365,7 @@ if (! function_exists('themename_tbay_get_icon_wishlist_footer_mobile')) {
         }
 
         $wishlist_url 	= YITH_WCWL()->get_wishlist_url();
-        $wishlist_count = YITH_WCWL_Wishlists::count_items_in_wishlist();
+        $wishlist_count = YITH_WCWL()->count_products();
 
         $output	 .= '<div class="device-wishlist">';
         $output  .= '<a class="text-skin wishlist-icon" href="'. esc_url($wishlist_url) .'" >';
@@ -559,7 +559,7 @@ if (! function_exists('themename_get_list_menu_icon')) {
         }
 
         if (isset($matches[1][0])  && class_exists('YITH_WCWL') && $matches[1][0] === 'wishlist') {
-            $wishlist_count = YITH_WCWL_Wishlists::count_items_in_wishlist();
+            $wishlist_count = YITH_WCWL()->count_products();
             $output .= '<span class="count count_wishlist"><span>'. trim($wishlist_count) .'</span></span>';
         }
 
