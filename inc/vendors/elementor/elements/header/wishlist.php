@@ -323,7 +323,7 @@ class Themename_Elementor_Wishlist extends Themename_Elementor_Widget_Base
         $settings = $this->get_settings();
         extract($settings);
         $url_wishlist = YITH_WCWL()->get_wishlist_url();
-        $count_wishlist = YITH_WCWL()->count_items_in_wishlist(); ?>
+        $count_wishlist = YITH_WCWL()->count_products(); ?>
         <a href="<?php echo esc_url($url_wishlist)?>" <?php $this->print_render_attribute_string('wishlist'); ?>>
             <?php $this->render_item_icon($icon_wishlist); ?>
            <?php if ($show_total_wishlist === 'yes') {
