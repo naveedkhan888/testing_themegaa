@@ -622,7 +622,7 @@ abstract class Themename_Elementor_Widget_Base extends Elementor\Widget_Base
         );
         
         $this->add_control(
-            'hheading_title_border_after_height',
+            'hheading_title_border_after_height_second',
             [
                 'label'     => esc_html__('Height', 'themename'),
                 'type' => Controls_Manager::SLIDER,
