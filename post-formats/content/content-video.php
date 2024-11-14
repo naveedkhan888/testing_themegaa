@@ -8,7 +8,7 @@
  */
 $class_main = $class_left = '';
 
-$videolink =  get_post_meta(get_the_ID(), 'tbay_post_video_link', true);
+$videolink =  get_post_meta(get_the_ID(), 'xptheme_post_video_link', true);
 
 if (!(isset($videolink) && $videolink)) {
     $content = apply_filters('the_content', get_the_content());
@@ -23,7 +23,7 @@ if (!(isset($videolink) && $videolink)) {
 ?>
 <div class="entry-single">
   <article id="post-<?php the_ID(); ?>" <?php post_class($class_main); ?>>
-	<?php echo themename_tbay_post_media(get_the_excerpt()); ?>
+	<?php echo themename_xptheme_post_media(get_the_excerpt()); ?>
     <?php $class_image = ($videolink) ? 'post-preview' : ''; ?>
         <?php
             if ($videolink || has_post_thumbnail()) {
@@ -32,7 +32,7 @@ if (!(isset($videolink) && $videolink)) {
                         <?php if ($videolink) : ?>
                             <div class="video-thumb video-responsive"><?php echo wp_oembed_get($videolink); ?></div>
                         <?php elseif (has_post_thumbnail()) : ?>
-                            <?php themename_tbay_post_thumbnail(); ?>
+                            <?php themename_xptheme_post_thumbnail(); ?>
                         <?php endif; ?>
                     </div>
                 <?php
@@ -67,9 +67,9 @@ if (!(isset($videolink) && $videolink)) {
 
             <?php the_content(esc_html__('Continue Reading', 'themename')); ?>
 
-            <div class="themename-tag-socials-box"><?php do_action('themename_tbay_post_tag_socials') ?></div>
+            <div class="themename-tag-socials-box"><?php do_action('themename_xptheme_post_tag_socials') ?></div>
 
-            <?php do_action('themename_tbay_post_bottom') ?>
+            <?php do_action('themename_xptheme_post_bottom') ?>
             
         </div><!-- /entry-content -->
 

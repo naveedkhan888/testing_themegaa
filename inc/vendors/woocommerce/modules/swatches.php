@@ -128,7 +128,7 @@ if (! function_exists('themename_swatches_list')) {
 
 
         $out = '';
-        $out .=  '<div class="tbay-swatches-wrapper"><ul data-attribute_name="attribute_'. $attribute_name .'">';
+        $out .=  '<div class="xptheme-swatches-wrapper"><ul data-attribute_name="attribute_'. $attribute_name .'">';
 
         foreach ($swatches_to_show as $key => $swatch) {
             $style = $class = '';
@@ -176,7 +176,7 @@ if (! function_exists('themename_swatches_list')) {
             } 
 
             $out .= '<li class="swatch-item variable-item-'. esc_attr($swatch['type']) .'"><div class="variable-item-contents">';
-                $out .= '<a href="javascript:void(0)" class="swatch-item-tbay '. esc_attr($class) .' swatch swatch-'. strtolower($slug) .'" style="' . esc_attr($style) .'" ' . trim($data) . ' title="'. esc_attr($name) .'">' . trim($name) . '</a>';
+                $out .= '<a href="javascript:void(0)" class="swatch-item-xptheme '. esc_attr($class) .' swatch swatch-'. strtolower($slug) .'" style="' . esc_attr($style) .'" ' . trim($data) . ' title="'. esc_attr($name) .'">' . trim($name) . '</a>';
             $out .= '</div></li>';
         }
 
@@ -192,6 +192,6 @@ if (! function_exists('themename_get_swatches_attribute')) {
     {
         $custom = get_post_meta(get_the_ID(), '_themename_attribute_select', true);
 
-        return empty($custom) ? themename_tbay_get_config('variation_swatch') : $custom;
+        return empty($custom) ? themename_xptheme_get_config('variation_swatch') : $custom;
     }
 }

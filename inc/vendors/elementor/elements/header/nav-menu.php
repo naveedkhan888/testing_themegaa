@@ -15,7 +15,7 @@ class Themename_Elementor_Nav_Menu extends Themename_Elementor_Widget_Base
 
     public function get_name()
     {
-        return 'tbay-nav-menu';
+        return 'xptheme-nav-menu';
     }
 
     public function get_title()
@@ -294,16 +294,16 @@ class Themename_Elementor_Nav_Menu extends Themename_Elementor_Widget_Base
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .nav-menu-{{ID}} > ul > li> a:hover,
-                    {{WRAPPER}} .tbay-element-nav-menu .nav-menu-{{ID}} > ul > li:hover> a >.caret,
-                    {{WRAPPER}} .tbay-element-nav-menu .nav-menu-{{ID}} > ul > li:focus> a >.caret,
-                    {{WRAPPER}} .tbay-element-nav-menu .nav-menu-{{ID}} > ul > li.current-menu-parent > a >.caret,
+                    {{WRAPPER}} .xptheme-element-nav-menu .nav-menu-{{ID}} > ul > li:hover> a >.caret,
+                    {{WRAPPER}} .xptheme-element-nav-menu .nav-menu-{{ID}} > ul > li:focus> a >.caret,
+                    {{WRAPPER}} .xptheme-element-nav-menu .nav-menu-{{ID}} > ul > li.current-menu-parent > a >.caret,
                     {{WRAPPER}} .nav-menu-{{ID}} > ul > li> a:hover i,
                     {{WRAPPER}} .nav-menu-{{ID}} > ul > li> a:focus i,
                     {{WRAPPER}} .nav-menu-{{ID}} > ul > li> a.active i,
                     {{WRAPPER}} .nav-menu-{{ID}} > ul > li > a:focus,
                     {{WRAPPER}} .nav-menu-{{ID}} > ul > li:hover > a,
                     {{WRAPPER}} .nav-menu-{{ID}} > ul > li.current-menu-parent > a, 
-                    {{WRAPPER}} .tbay-element-nav-menu .nav-menu-{{ID}} > ul > li.current-menu-item > a, 
+                    {{WRAPPER}} .xptheme-element-nav-menu .nav-menu-{{ID}} > ul > li.current-menu-item > a, 
                     {{WRAPPER}} .nav-menu-{{ID}} > ul > li.current_page_item > a,
                     {{WRAPPER}} .nav-menu-{{ID}} > ul > li.current_page_parent > a'  => 'color: {{VALUE}} !important' ,
                 ],
@@ -1118,7 +1118,7 @@ class Themename_Elementor_Nav_Menu extends Themename_Elementor_Widget_Base
                 'label_block' => true,
                 'default' => [
                     'value' => 'tb-icon tb-icon-text-align-right',
-                    'library' => 'tbay-custom',
+                    'library' => 'xptheme-custom',
                 ],
             ]
         );

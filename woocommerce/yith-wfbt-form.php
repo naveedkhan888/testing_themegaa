@@ -27,9 +27,9 @@ if (!(defined('YITH_WFBT_PREMIUM') && YITH_WFBT_PREMIUM)) {
     $url        = wp_nonce_url($url, 'yith_bought_together');
     $is_wc_30   = version_compare(WC()->version, '3.0.0', '>='); ?>
 
-	<div class="yith-wfbt-section tbay-element woocommerce">
+	<div class="yith-wfbt-section xptheme-element woocommerce">
 		<?php if ($title != '') {
-        echo '<h3 class="heading-tbay-title">' . esc_html($title) . '</h3>';
+        echo '<h3 class="heading-xptheme-title">' . esc_html($title) . '</h3>';
     }
 
     if (! empty($additional_text)) {

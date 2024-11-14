@@ -3,7 +3,7 @@ if (!themename_redux_framework_activated()) {
     return;
 }
 
-class Tbay_Widget_Recent_Post extends Tbay_Widget
+class Xptheme_Widget_Recent_Post extends Xptheme_Widget
 {
     public function __construct()
     {

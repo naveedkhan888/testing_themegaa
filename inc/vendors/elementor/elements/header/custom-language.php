@@ -12,7 +12,7 @@ class Themename_Elementor_Custom_Language extends Themename_Elementor_Widget_Bas
 {
     public function get_name()
     {
-        return 'tbay-custom-language';
+        return 'xptheme-custom-language';
     }
 
     public function get_title()
@@ -32,7 +32,7 @@ class Themename_Elementor_Custom_Language extends Themename_Elementor_Widget_Bas
        
     protected function themename_custom_language()
     {
-        do_action('themename_tbay_header_custom_language');
+        do_action('themename_xptheme_header_custom_language');
     }
 
     protected function register_controls()
@@ -75,7 +75,7 @@ class Themename_Elementor_Custom_Language extends Themename_Elementor_Widget_Bas
             Group_Control_Typography::get_type(),
             [
                 'name' => 'custom_language_typography',
-                'selector' => '{{WRAPPER}} .tbay-custom-language a span',
+                'selector' => '{{WRAPPER}} .xptheme-custom-language a span',
             ]
         );
 
@@ -95,8 +95,8 @@ class Themename_Elementor_Custom_Language extends Themename_Elementor_Widget_Bas
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .tbay-custom-language .select-button span.native,
-                    {{WRAPPER}} .tbay-custom-language .select-button:after' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .xptheme-custom-language .select-button span.native,
+                    {{WRAPPER}} .xptheme-custom-language .select-button:after' => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -108,7 +108,7 @@ class Themename_Elementor_Custom_Language extends Themename_Elementor_Widget_Bas
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .tbay-custom-language .list-item-wrapper' => 'background: {{VALUE}};',
+                    '{{WRAPPER}} .xptheme-custom-language .list-item-wrapper' => 'background: {{VALUE}};',
                 ],
             ]
         );
@@ -130,8 +130,8 @@ class Themename_Elementor_Custom_Language extends Themename_Elementor_Widget_Bas
                 'type' => Controls_Manager::COLOR,
                 'default' => '', 
                 'selectors' => [
-                    '{{WRAPPER}} .tbay-custom-language .select-button:hover span.native,{{WRAPPER}} .tbay-custom-language li:hover .select-button span.native,
-                    {{WRAPPER}} .tbay-custom-language .select-button:hover:after,{{WRAPPER}} .tbay-custom-language li:hover .select-button:after,
+                    '{{WRAPPER}} .xptheme-custom-language .select-button:hover span.native,{{WRAPPER}} .xptheme-custom-language li:hover .select-button span.native,
+                    {{WRAPPER}} .xptheme-custom-language .select-button:hover:after,{{WRAPPER}} .xptheme-custom-language li:hover .select-button:after,
                     {{WRAPPER}} a:hover'    => 'color: {{VALUE}}',
                 ],
             ]
@@ -144,7 +144,7 @@ class Themename_Elementor_Custom_Language extends Themename_Elementor_Widget_Bas
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .tbay-custom-language .list-item-wrapper:hover' => 'background: {{VALUE}};',
+                    '{{WRAPPER}} .xptheme-custom-language .list-item-wrapper:hover' => 'background: {{VALUE}};',
                 ],
             ]
         );

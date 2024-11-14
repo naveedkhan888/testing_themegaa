@@ -1,7 +1,7 @@
 <?php
 
-if (!class_exists("Themename_Tbay_Custom_Nav_Menu")) {
-    class Themename_Tbay_Custom_Nav_Menu extends Walker_Nav_Menu
+if (!class_exists("Themename_Xptheme_Custom_Nav_Menu")) {
+    class Themename_Xptheme_Custom_Nav_Menu extends Walker_Nav_Menu
     {
         
        /**
@@ -88,12 +88,12 @@ if (!class_exists("Themename_Tbay_Custom_Nav_Menu")) {
 
             $class_names = join(' ', apply_filters('nav_menu_css_class', array_filter($classes), $item, $args));
             
-            $tbay_mega_profile = $this->getSubMegaMenuProfile($item, $depth);
-            if ($tbay_mega_profile) {
+            $xptheme_mega_profile = $this->getSubMegaMenuProfile($item, $depth);
+            if ($xptheme_mega_profile) {
                 $args->has_children = true;
                 $class_names .= ' active-mega-menu';
             }
-            $class_names .= ' aligned-' . $item->tbay_alignment;
+            $class_names .= ' aligned-' . $item->xptheme_alignment;
 
             $class_names = ' class="' . esc_attr($class_names) . '"';
 
@@ -108,8 +108,8 @@ if (!class_exists("Themename_Tbay_Custom_Nav_Menu")) {
             $attributes .= ! empty($item->url) ? ' href="'   . esc_url($item->url) .'"' : '';
             
             $text_label = '';
-            if (isset($item->tbay_text_label) && !empty($item->tbay_text_label)) {
-                switch ($item->tbay_text_label) {
+            if (isset($item->xptheme_text_label) && !empty($item->xptheme_text_label)) {
+                switch ($item->xptheme_text_label) {
                     case 'label_new':
                         $text_label  = esc_html__('New', 'themename');
                         break;
@@ -126,16 +126,16 @@ if (!class_exists("Themename_Tbay_Custom_Nav_Menu")) {
                         $text_label  = '';
                         break;
                 }
-                $text_label  = ! empty($item->tbay_text_label) ? '<span class="text-label ' . str_replace('_', '-', $item->tbay_text_label)  . '">'.$text_label.'</span>' : '';
+                $text_label  = ! empty($item->xptheme_text_label) ? '<span class="text-label ' . str_replace('_', '-', $item->xptheme_text_label)  . '">'.$text_label.'</span>' : '';
             }
 
             $item_output = $args->before;
             $item_output .= '<a'. $attributes .'>';
             $item_output .= $args->link_before . $this->display_icon($item) . apply_filters('the_title', $item->title, $item->ID) . $args->link_after;
             $item_output .= $text_label;
-            $item_output .= $args->has_children || $tbay_mega_profile ? ' </a>' : '</a>';
+            $item_output .= $args->has_children || $xptheme_mega_profile ? ' </a>' : '</a>';
             $item_output .= $args->after;
-            $item_output .= $this->generateSubMegaMenu($item, $tbay_mega_profile);
+            $item_output .= $this->generateSubMegaMenu($item, $xptheme_mega_profile);
             
             $output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args);
         }
@@ -201,29 +201,29 @@ if (!class_exists("Themename_Tbay_Custom_Nav_Menu")) {
          */
         public function getSubMegaMenuProfile($item, $depth)
         {
-            return isset($item->tbay_mega_profile) && $item->tbay_mega_profile ? $item->tbay_mega_profile : false;
+            return isset($item->xptheme_mega_profile) && $item->xptheme_mega_profile ? $item->xptheme_mega_profile : false;
         }
 
         /**
          *
          */
-        public function generateSubMegaMenu($item, $tbay_mega_profile)
+        public function generateSubMegaMenu($item, $xptheme_mega_profile)
         {
-            global $tbaymegamenu;
-            if ($tbay_mega_profile) {
+            global $xpthememegamenu;
+            if ($xptheme_mega_profile) {
                 $args = array(
-                    'name'        => $tbay_mega_profile,
-                    'post_type'   => 'tbay_megamenu',
+                    'name'        => $xptheme_mega_profile,
+                    'post_type'   => 'xptheme_megamenu',
                     'post_status' => 'publish',
                     'numberposts' => 1
                 );
                 $posts = get_posts($args);
                 if ($posts && isset($posts[0])) {
                     $post = $posts[0];
-                    $tbaymegamenu = true;
+                    $xpthememegamenu = true;
                     $content = do_shortcode($post->post_content);
-                    $tbaymegamenu  = false;
-                    $width  = $item->tbay_width ? 'style="width:'.$item->tbay_width.'px"':"";
+                    $xpthememegamenu  = false;
+                    $width  = $item->xptheme_width ? 'style="width:'.$item->xptheme_width.'px"':"";
                     return '<div class="dropdown-menu" '.$width.'><div class="dropdown-menu-inner">'.$content.'</div></div>';
                 }
             }
@@ -232,10 +232,10 @@ if (!class_exists("Themename_Tbay_Custom_Nav_Menu")) {
 
         public function display_icon($item)
         {
-            if ($item->tbay_icon_image) {
-                return '<img src="'.esc_url($item->tbay_icon_image).'" alt="'.esc_attr($item->title).'"/>';
-            } elseif ($item->tbay_icon_font) {
-                return '<i class="'.esc_attr($item->tbay_icon_font).'"></i>';
+            if ($item->xptheme_icon_image) {
+                return '<img src="'.esc_url($item->xptheme_icon_image).'" alt="'.esc_attr($item->title).'"/>';
+            } elseif ($item->xptheme_icon_font) {
+                return '<i class="'.esc_attr($item->xptheme_icon_font).'"></i>';
             }
         }
     }

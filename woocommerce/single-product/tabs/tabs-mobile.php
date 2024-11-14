@@ -14,13 +14,13 @@ if (! empty($product_tabs)) : ?>
 	<div class="woocommerce-tabs-sidebar clearfix">
 		<ul class="tabs-sidebar" role="tablist">
 			<?php foreach ($product_tabs as $key => $product_tab) : ?>
-				<li class="<?php echo esc_attr($key); ?>_tab" id="tbay-wc-tab-<?php echo esc_attr($key); ?>" role="tab" aria-controls="tab-<?php echo esc_attr($key); ?>">
+				<li class="<?php echo esc_attr($key); ?>_tab" id="xptheme-wc-tab-<?php echo esc_attr($key); ?>" role="tab" aria-controls="tab-<?php echo esc_attr($key); ?>">
 					<a data-tabid="tab-<?php echo esc_attr($key); ?>" href="#tab-<?php echo esc_attr($key); ?>"><?php echo apply_filters('woocommerce_product_' . esc_html($key) . '_tab_title', esc_html($product_tab['title']), $key); ?></a>
 				</li>
 			<?php endforeach; ?>
 		</ul>
 		<?php foreach ($product_tabs as $key => $product_tab) : ?>
-			<div class="wc-tab-sidebar" id="tab-<?php echo esc_attr($key); ?>" role="tabpanel" aria-labelledby="tbay-wc-tab-<?php echo esc_attr($key); ?>">
+			<div class="wc-tab-sidebar" id="tab-<?php echo esc_attr($key); ?>" role="tabpanel" aria-labelledby="xptheme-wc-tab-<?php echo esc_attr($key); ?>">
 				<div class="tab-head">
 					<?php if (isset($product_tab['title'])) : ?>
 						<div class="title"><?php echo trim($product_tab['title']); ?></div>

@@ -28,7 +28,7 @@ class Themename_Elementor_Canvas_Menu_Template extends Themename_Elementor_Widge
      */
     public function get_name()
     {
-        return 'tbay-canvas-menu-template';
+        return 'xptheme-canvas-menu-template';
     }
 
     /**

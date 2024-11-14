@@ -28,7 +28,7 @@ class Themename_Elementor_Product_Category extends Themename_Elementor_Carousel_
      */
     public function get_name()
     {
-        return 'tbay-product-category';
+        return 'xptheme-product-category';
     }
 
     /**
@@ -208,7 +208,7 @@ class Themename_Elementor_Product_Category extends Themename_Elementor_Carousel_
                 'type'      => Controls_Manager::ICONS,
                 'default' => [
                     'value' => 'tb-icon tb-icon-arrow-right',
-                    'library' => 'tbay-custom',
+                    'library' => 'xptheme-custom',
                 ],
                 'condition' => [
                     'show_all' => 'yes'
@@ -251,7 +251,7 @@ class Themename_Elementor_Product_Category extends Themename_Elementor_Carousel_
                 <div class="wrapper-title-heading">
                     <?php
                         if (!empty($heading_subtitle) || !empty($heading_title)) : ?>
-                            <<?php echo trim($heading_title_tag); ?> class="heading-tbay-title">
+                            <<?php echo trim($heading_title_tag); ?> class="heading-xptheme-title">
                                 <?php if (!empty($heading_title)) : ?>
                                     <span class="title"><?php echo trim($heading_title); ?></span>
                                 <?php endif; ?>	    	

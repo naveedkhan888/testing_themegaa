@@ -30,7 +30,7 @@ class Themename_Elementor_Store_Notice extends Themename_Elementor_Widget_Base
      */
     public function get_name()
     {
-        return 'tbay-store-notice';
+        return 'xptheme-store-notice';
     }
 
     /**

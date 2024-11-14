@@ -8,7 +8,7 @@ extract($settings);
 
 $this->settings_layout();
  
-$_id = themename_tbay_random_key();
+$_id = themename_xptheme_random_key();
 
 if ($ajax_tabs === 'yes') {
     $this->add_render_attribute('row', 'class', ['products']);

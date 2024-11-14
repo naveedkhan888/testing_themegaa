@@ -2,22 +2,22 @@
     exit('No direct script access allowed');
 }
 
-if (! function_exists('themename_tbay_body_classes')) {
-    function themename_tbay_body_classes($classes)
+if (! function_exists('themename_xptheme_body_classes')) {
+    function themename_xptheme_body_classes($classes)
     {
         global $post;
         if (is_page() && is_object($post)) {
-            $class = get_post_meta($post->ID, 'tbay_page_extra_class', true);
+            $class = get_post_meta($post->ID, 'xptheme_page_extra_class', true);
             if (!empty($class)) {
                 $classes[] = trim($class);
             }
         }
 
-        if (themename_tbay_get_config('preload')) {
+        if (themename_xptheme_get_config('preload')) {
             $classes[] = 'tb-loader';
         }
 
-        if (themename_tbay_is_home_page()) {
+        if (themename_xptheme_is_home_page()) {
             $classes[] = 'tb-home';
         }
           
@@ -25,27 +25,27 @@ if (! function_exists('themename_tbay_body_classes')) {
             $classes[] = 'tb-default';
         }
 
-        $menu_mobile_search 	= themename_tbay_get_config('menu_mobile_search', true);
+        $menu_mobile_search 	= themename_xptheme_get_config('menu_mobile_search', true);
         if ($menu_mobile_search) {
-            $classes[] = 'tbay-search-mb';
+            $classes[] = 'xptheme-search-mb';
         }
 
         if( themename_checkout_optimized() ) {
             $classes[] = 'tb-checkout-optimized';
         }
 
-        if( !themename_tbay_get_config('always_display_logo', true) ) {
+        if( !themename_xptheme_get_config('always_display_logo', true) ) {
             $classes[] = 'hdmb-hdlogo';
         } 
            
 
         return $classes;
     }
-    add_filter('body_class', 'themename_tbay_body_classes');
+    add_filter('body_class', 'themename_xptheme_body_classes');
 }
 
-if (! function_exists('themename_tbay_get_shortcode_regex')) {
-    function themename_tbay_get_shortcode_regex($tagregexp = '')
+if (! function_exists('themename_xptheme_get_shortcode_regex')) {
+    function themename_xptheme_get_shortcode_regex($tagregexp = '')
     {
         // WARNING! Do not change this regex without changing do_shortcode_tag() and strip_shortcode_tag()
         // Also, see shortcode_unautop() and shortcode.js.
@@ -81,28 +81,28 @@ if (! function_exists('themename_tbay_get_shortcode_regex')) {
     }
 }
 
-if (! function_exists('themename_tbay_tagregexp')) {
-    function themename_tbay_tagregexp()
+if (! function_exists('themename_xptheme_tagregexp')) {
+    function themename_xptheme_tagregexp()
     {
-        return apply_filters('themename_tbay_custom_tagregexp', 'video|audio|playlist|video-playlist|embed|themename_tbay_media');
+        return apply_filters('themename_xptheme_custom_tagregexp', 'video|audio|playlist|video-playlist|embed|themename_xptheme_media');
     }
 }
 
 
-if (! function_exists('themename_tbay_text_line')) {
-    function themename_tbay_text_line($str)
+if (! function_exists('themename_xptheme_text_line')) {
+    function themename_xptheme_text_line($str)
     {
         return trim(preg_replace("/('|\"|\r?\n)/", '', $str));
     }
 }
 
-if ( !function_exists('themename_tbay_get_theme') ) {
-	function themename_tbay_get_theme() {
+if ( !function_exists('themename_xptheme_get_theme') ) {
+	function themename_xptheme_get_theme() {
 		$kin_default = 'v1';  
 		if( !empty($_GET['product_layout_style']) ) return $_GET['product_layout_style'];
 
-		if( !empty(themename_tbay_get_global_config('product_layout_style',$kin_default)) ) {
-		   return themename_tbay_get_global_config('product_layout_style',$kin_default);
+		if( !empty(themename_xptheme_get_global_config('product_layout_style',$kin_default)) ) {
+		   return themename_xptheme_get_global_config('product_layout_style',$kin_default);
 		} else {
 		   return $kin_default;
 		}
@@ -110,8 +110,8 @@ if ( !function_exists('themename_tbay_get_theme') ) {
 }
 
 
-if (!function_exists('themename_tbay_get_header_layouts')) {
-    function themename_tbay_get_header_layouts()
+if (!function_exists('themename_xptheme_get_header_layouts')) {
+    function themename_xptheme_get_header_layouts()
     {
         $headers = array( 'header_default' => esc_html__('Default', 'themename'));
         $args = array(
@@ -119,15 +119,15 @@ if (!function_exists('themename_tbay_get_header_layouts')) {
             'offset'           => 0,
             'orderby'          => 'date',
             'order'            => 'DESC',
-            'post_type'        => 'tbay_custom_post', 
+            'post_type'        => 'xptheme_custom_post', 
             'post_status'      => 'publish',
             'suppress_filters' => true,
-            'meta_key'     => 'tbay_block_type',
+            'meta_key'     => 'xptheme_block_type',
             'meta_value'   => 'type_header',
             'meta_query'   => [
                 'relation' => 'OR',
                 [
-                    'key'     => 'tbay_block_type',
+                    'key'     => 'xptheme_block_type',
                     'value'   => 'type_header',
                     'compare' => '==',
                     'type'    => 'post',
@@ -144,7 +144,7 @@ if (!function_exists('themename_tbay_get_header_layouts')) {
 
 if(!function_exists('themename_header_located_on_slider')) {
 	function themename_header_located_on_slider() {
-		$active  =   ( isset($_GET['header_located_on_slider']) ) ? $_GET['header_located_on_slider'] : themename_tbay_get_config('header_located_on_slider', false);
+		$active  =   ( isset($_GET['header_located_on_slider']) ) ? $_GET['header_located_on_slider'] : themename_xptheme_get_config('header_located_on_slider', false);
 		
 		$class = '';
 		if($active) {
@@ -155,60 +155,60 @@ if(!function_exists('themename_header_located_on_slider')) {
 	}
 }
 
-if (!function_exists('themename_tbay_get_header_layout')) {
-    function themename_tbay_get_header_layout()
+if (!function_exists('themename_xptheme_get_header_layout')) {
+    function themename_xptheme_get_header_layout()
     {
         if (is_page()) {
             global $post;
             $header = '';
             if (is_object($post) && isset($post->ID)) {
-                $header = get_post_meta($post->ID, 'tbay_page_header_type', true);
+                $header = get_post_meta($post->ID, 'xptheme_page_header_type', true);
                 if ($header == 'global' ||  $header == '') {
-                    return themename_tbay_get_config('header_type', 'header_default');
+                    return themename_xptheme_get_config('header_type', 'header_default');
                 }
             }
             return $header;
         } else if( class_exists( 'WooCommerce' ) && is_shop() ) {
-			return themename_tbay_woo_get_header_layout( wc_get_page_id( 'shop' ) );
+			return themename_xptheme_woo_get_header_layout( wc_get_page_id( 'shop' ) );
 		} else if( class_exists( 'WooCommerce' ) && is_cart() ) {
-			return themename_tbay_woo_get_header_layout( wc_get_page_id( 'cart' ) );
+			return themename_xptheme_woo_get_header_layout( wc_get_page_id( 'cart' ) );
 		} else if( class_exists( 'WooCommerce' ) && is_checkout() ) {
-			return themename_tbay_woo_get_header_layout( wc_get_page_id( 'checkout' ) );
+			return themename_xptheme_woo_get_header_layout( wc_get_page_id( 'checkout' ) );
 		}
-        return themename_tbay_get_config('header_type', 'header_default');
+        return themename_xptheme_get_config('header_type', 'header_default');
     }
-    add_filter('themename_tbay_get_header_layout', 'themename_tbay_get_header_layout');
+    add_filter('themename_xptheme_get_header_layout', 'themename_xptheme_get_header_layout');
 }
 
-if ( !function_exists('themename_tbay_woo_get_header_layout') ) {
-	function themename_tbay_woo_get_header_layout( $page_id ) {
-		$header = get_post_meta( $page_id, 'tbay_page_header_type', true );
+if ( !function_exists('themename_xptheme_woo_get_header_layout') ) {
+	function themename_xptheme_woo_get_header_layout( $page_id ) {
+		$header = get_post_meta( $page_id, 'xptheme_page_header_type', true );
 
 		if ( $header == 'global' ||  $header == '') {
-			return themename_tbay_get_config('header_type', 'header_default');
+			return themename_xptheme_get_config('header_type', 'header_default');
 		} else {
 			return $header;
 		}
 	}
 }
 
-if (!function_exists('themename_tbay_get_ids_custom_block')) {
-    function themename_tbay_get_ids_custom_block()
+if (!function_exists('themename_xptheme_get_ids_custom_block')) {
+    function themename_xptheme_get_ids_custom_block()
     {
         $args = array(
             'posts_per_page'   => -1,
             'offset'           => 0,
             'orderby'          => 'date',
             'order'            => 'DESC',
-            'post_type'        => 'tbay_custom_post', 
+            'post_type'        => 'xptheme_custom_post', 
             'post_status'      => 'publish',
             'suppress_filters' => true,
-            'meta_key'     => 'tbay_block_type',
+            'meta_key'     => 'xptheme_block_type',
             'meta_value'   => 'custom',
             'meta_query'   => [
                 'relation' => 'OR',
                 [
-                    'key'     => 'tbay_block_type',
+                    'key'     => 'xptheme_block_type',
                     'value'   => 'custom',
                     'compare' => '==',
                     'type'    => 'post',
@@ -223,8 +223,8 @@ if (!function_exists('themename_tbay_get_ids_custom_block')) {
     }
 }
 
-if (!function_exists('themename_tbay_get_footer_layouts')) {
-    function themename_tbay_get_footer_layouts()
+if (!function_exists('themename_xptheme_get_footer_layouts')) {
+    function themename_xptheme_get_footer_layouts()
     {
         $footers = array( 'footer_default' => esc_html__('Default', 'themename'));
         $args = array(
@@ -232,15 +232,15 @@ if (!function_exists('themename_tbay_get_footer_layouts')) {
             'offset'           => 0,
             'orderby'          => 'date',
             'order'            => 'DESC',
-            'post_type'        => 'tbay_custom_post', 
+            'post_type'        => 'xptheme_custom_post', 
             'post_status'      => 'publish',
             'suppress_filters' => true,
-            'meta_key'     => 'tbay_block_type',
+            'meta_key'     => 'xptheme_block_type',
             'meta_value'   => 'type_footer',
             'meta_query'   => [
                 'relation' => 'OR',
                 [
-                    'key'     => 'tbay_block_type',
+                    'key'     => 'xptheme_block_type',
                     'value'   => 'type_footer',
                     'compare' => '==',
                     'type'    => 'post',
@@ -255,74 +255,74 @@ if (!function_exists('themename_tbay_get_footer_layouts')) {
     }
 }
 
-if (!function_exists('themename_tbay_get_footer_layout')) {
-    function themename_tbay_get_footer_layout()
+if (!function_exists('themename_xptheme_get_footer_layout')) {
+    function themename_xptheme_get_footer_layout()
     {
         if (is_page()) {
             global $post;
             $footer = '';
             if (is_object($post) && isset($post->ID)) {
-                $footer = get_post_meta($post->ID, 'tbay_page_footer_type', true);
+                $footer = get_post_meta($post->ID, 'xptheme_page_footer_type', true);
                 if ($footer == 'global' ||  $footer == '') {
-                    return themename_tbay_get_config('footer_type', 'footer_default');
+                    return themename_xptheme_get_config('footer_type', 'footer_default');
                 }
             }
             return $footer;
         } else if( class_exists( 'WooCommerce' ) && is_shop() ) {
-			return themename_tbay_woo_get_footer_layout( wc_get_page_id( 'shop' ) );
+			return themename_xptheme_woo_get_footer_layout( wc_get_page_id( 'shop' ) );
 		} else if( class_exists( 'WooCommerce' ) && is_cart() ) {
-			return themename_tbay_woo_get_footer_layout( wc_get_page_id( 'cart' ) );
+			return themename_xptheme_woo_get_footer_layout( wc_get_page_id( 'cart' ) );
 		} else if( class_exists( 'WooCommerce' ) && is_checkout() ) {
-			return themename_tbay_woo_get_footer_layout( wc_get_page_id( 'checkout' ) );
+			return themename_xptheme_woo_get_footer_layout( wc_get_page_id( 'checkout' ) );
 		}
-        return themename_tbay_get_config('footer_type', 'footer_default');
+        return themename_xptheme_get_config('footer_type', 'footer_default');
     }
-    add_filter('themename_tbay_get_footer_layout', 'themename_tbay_get_footer_layout');
+    add_filter('themename_xptheme_get_footer_layout', 'themename_xptheme_get_footer_layout');
 }
 
-if ( !function_exists('themename_tbay_woo_get_footer_layout') ) {
-	function themename_tbay_woo_get_footer_layout( $page_id ) {
-		$footer = get_post_meta( $page_id, 'tbay_page_footer_type', true );
+if ( !function_exists('themename_xptheme_woo_get_footer_layout') ) {
+	function themename_xptheme_woo_get_footer_layout( $page_id ) {
+		$footer = get_post_meta( $page_id, 'xptheme_page_footer_type', true );
 
 		if ( $footer == 'global' ||  $footer == '') {
-			return themename_tbay_get_config('footer_type', 'footer_default');
+			return themename_xptheme_get_config('footer_type', 'footer_default');
 		} else {
 			return $footer;
 		}
 	}
 }
 
-if (!function_exists('themename_tbay_blog_content_class')) {
-    function themename_tbay_blog_content_class($class)
+if (!function_exists('themename_xptheme_blog_content_class')) {
+    function themename_xptheme_blog_content_class($class)
     {
         $page = 'archive';
         if (is_singular('post')) {
             $page = 'single';
         }
-        if (themename_tbay_get_config('blog_'.$page.'_fullwidth')) {
+        if (themename_xptheme_get_config('blog_'.$page.'_fullwidth')) {
             return 'container-fluid';
         }
         return $class;
     }
 }
-add_filter('themename_tbay_blog_content_class', 'themename_tbay_blog_content_class', 1, 1);
+add_filter('themename_xptheme_blog_content_class', 'themename_xptheme_blog_content_class', 1, 1);
 
 // layout class for woo page
-if (!function_exists('themename_tbay_post_content_class')) {
-    function themename_tbay_post_content_class($class)
+if (!function_exists('themename_xptheme_post_content_class')) {
+    function themename_xptheme_post_content_class($class)
     {
         $page = 'archive';
         if (is_singular('post')) {
             $page = 'single';
 
             if (!isset($_GET['blog_'.$page.'_layout'])) {
-                $class .= ' '.themename_tbay_get_config('blog_'.$page.'_layout');
+                $class .= ' '.themename_xptheme_get_config('blog_'.$page.'_layout');
             } else {
                 $class .= ' '.$_GET['blog_'.$page.'_layout'];
             }
         } else {
             if (!isset($_GET['blog_'.$page.'_layout'])) {
-                $class .= ' '.themename_tbay_get_config('blog_'.$page.'_layout');
+                $class .= ' '.themename_xptheme_get_config('blog_'.$page.'_layout');
             } else {
                 $class .= ' '.$_GET['blog_'.$page.'_layout'];
             }
@@ -330,18 +330,18 @@ if (!function_exists('themename_tbay_post_content_class')) {
         return $class;
     }
 }
-add_filter('themename_tbay_post_content_class', 'themename_tbay_post_content_class');
+add_filter('themename_xptheme_post_content_class', 'themename_xptheme_post_content_class');
 
 
-if (!function_exists('themename_tbay_get_page_layout_configs')) {
-    function themename_tbay_get_page_layout_configs()
+if (!function_exists('themename_xptheme_get_page_layout_configs')) {
+    function themename_xptheme_get_page_layout_configs()
     {
         global $post;
         if (isset($post->ID)) {
-            $left = get_post_meta($post->ID, 'tbay_page_left_sidebar', true);
-            $right = get_post_meta($post->ID, 'tbay_page_right_sidebar', true);
+            $left = get_post_meta($post->ID, 'xptheme_page_left_sidebar', true);
+            $right = get_post_meta($post->ID, 'xptheme_page_right_sidebar', true);
 
-            switch (get_post_meta($post->ID, 'tbay_page_layout', true)) {
+            switch (get_post_meta($post->ID, 'xptheme_page_layout', true)) {
                 case 'left-main':
                     $configs['sidebar'] = array( 'id' => $left, 'class' => 'col-12 col-lg-3'  );
                     $configs['main'] 	= array( 'class' => 'col-12 col-lg-9' );
@@ -363,8 +363,8 @@ if (!function_exists('themename_tbay_get_page_layout_configs')) {
     }
 }
 
-if (! function_exists('themename_tbay_get_first_url_from_string')) {
-    function themename_tbay_get_first_url_from_string($string)
+if (! function_exists('themename_xptheme_get_first_url_from_string')) {
+    function themename_xptheme_get_first_url_from_string($string)
     {
         $pattern = "/^\b(?:(?:https?|ftp):\/\/)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i";
         preg_match($pattern, $string, $link);
@@ -374,8 +374,8 @@ if (! function_exists('themename_tbay_get_first_url_from_string')) {
 }
 
 /*Check in home page*/
-if (!function_exists('themename_tbay_is_home_page')) {
-    function themename_tbay_is_home_page()
+if (!function_exists('themename_xptheme_is_home_page')) {
+    function themename_xptheme_is_home_page()
     {
         $is_home = false;
 
@@ -387,8 +387,8 @@ if (!function_exists('themename_tbay_is_home_page')) {
     }
 }
 
-if (!function_exists('themename_tbay_get_link_attributes')) {
-    function themename_tbay_get_link_attributes($string)
+if (!function_exists('themename_xptheme_get_link_attributes')) {
+    function themename_xptheme_get_link_attributes($string)
     {
         preg_match('/<a href="(.*?)">/i', $string, $atts);
 
@@ -396,16 +396,16 @@ if (!function_exists('themename_tbay_get_link_attributes')) {
     }
 }
 
-if (!function_exists('themename_tbay_post_media')) {
-    function themename_tbay_post_media($content)
+if (!function_exists('themename_xptheme_post_media')) {
+    function themename_xptheme_post_media($content)
     {
         $is_video = (get_post_format() == 'video') ? true : false;
-        $media = themename_tbay_get_first_url_from_string($content);
+        $media = themename_xptheme_get_first_url_from_string($content);
         if (! empty($media)) {
             global $wp_embed;
             $content = do_shortcode($wp_embed->run_shortcode('[embed]' . $media . '[/embed]'));
         } else {
-            $pattern = themename_tbay_get_shortcode_regex(themename_tbay_tagregexp());
+            $pattern = themename_xptheme_get_shortcode_regex(themename_xptheme_tagregexp());
             preg_match('/' . $pattern . '/s', $content, $media);
             if (! empty($media[2])) {
                 if ($media[2] == 'embed') {
@@ -430,10 +430,10 @@ if (!function_exists('themename_tbay_post_media')) {
     }
 }
 
-if (!function_exists('themename_tbay_post_gallery')) {
-    function themename_tbay_post_gallery($content)
+if (!function_exists('themename_xptheme_post_gallery')) {
+    function themename_xptheme_post_gallery($content)
     {
-        $pattern = themename_tbay_get_shortcode_regex('gallery');
+        $pattern = themename_xptheme_get_shortcode_regex('gallery');
         preg_match('/' . $pattern . '/s', $content, $media);
         if (! empty($media[2])) {
             return '<div class="entry-gallery">' . do_shortcode($media[0]) . '<hr class="pro-clear" /></div>';
@@ -443,8 +443,8 @@ if (!function_exists('themename_tbay_post_gallery')) {
     }
 }
 
-if (!function_exists('themename_tbay_random_key')) {
-    function themename_tbay_random_key($length = 5)
+if (!function_exists('themename_xptheme_random_key')) {
+    function themename_xptheme_random_key($length = 5)
     {
         $cthemenamecters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $return = '';
@@ -455,8 +455,8 @@ if (!function_exists('themename_tbay_random_key')) {
     }
 }
 
-if (!function_exists('themename_tbay_substring')) {
-    function themename_tbay_substring($string, $limit, $afterlimit = '[...]')
+if (!function_exists('themename_xptheme_substring')) {
+    function themename_xptheme_substring($string, $limit, $afterlimit = '[...]')
     {
         if (empty($string)) {
             return $string;
@@ -474,8 +474,8 @@ if (!function_exists('themename_tbay_substring')) {
     }
 }
 
-if (!function_exists('themename_tbay_subschars')) {
-    function themename_tbay_subschars($string, $limit, $afterlimit='...')
+if (!function_exists('themename_xptheme_subschars')) {
+    function themename_xptheme_subschars($string, $limit, $afterlimit='...')
     {
         if (strlen($string) > $limit) {
             $string = substr($string, 0, $limit);
@@ -488,16 +488,16 @@ if (!function_exists('themename_tbay_subschars')) {
 
 
 /*Themename get template parts*/
-if (!function_exists('themename_tbay_get_page_templates_parts')) {
-    function themename_tbay_get_page_templates_parts($slug = 'logo', $name = null)
+if (!function_exists('themename_xptheme_get_page_templates_parts')) {
+    function themename_xptheme_get_page_templates_parts($slug = 'logo', $name = null)
     {
         return get_template_part('page-templates/parts/'.$slug.'', $name);
     }
 }
 
 /*testimonials*/
-if (!function_exists('themename_tbay_get_testimonials_layouts')) {
-    function themename_tbay_get_testimonials_layouts()
+if (!function_exists('themename_xptheme_get_testimonials_layouts')) {
+    function themename_xptheme_get_testimonials_layouts()
     {
         $testimonials = array();
         $files = glob(get_template_directory() . '/vc_templates/testimonial/testimonial.php');
@@ -513,8 +513,8 @@ if (!function_exists('themename_tbay_get_testimonials_layouts')) {
 }
 
 /*Blog*/
-if (!function_exists('themename_tbay_get_blog_layouts')) {
-    function themename_tbay_get_blog_layouts()
+if (!function_exists('themename_xptheme_get_blog_layouts')) {
+    function themename_xptheme_get_blog_layouts()
     {
         $blogs = array(
             esc_html__('Grid', 'themename') => 'grid',
@@ -533,12 +533,12 @@ if (!function_exists('themename_tbay_get_blog_layouts')) {
 }
 
 // Number of blog per row
-if (!function_exists('themename_tbay_blog_loop_columns')) {
-    function themename_tbay_blog_loop_columns($number)
+if (!function_exists('themename_xptheme_blog_loop_columns')) {
+    function themename_xptheme_blog_loop_columns($number)
     {
-        $sidebar_configs = themename_tbay_get_blog_layout_configs();
+        $sidebar_configs = themename_xptheme_get_blog_layout_configs();
 
-        $columns 	= themename_tbay_get_config('blog_columns');
+        $columns 	= themename_xptheme_get_config('blog_columns');
 
         if (isset($_GET['blog_columns']) && is_numeric($_GET['blog_columns'])) {
             $value = $_GET['blog_columns'];
@@ -554,14 +554,14 @@ if (!function_exists('themename_tbay_blog_loop_columns')) {
         return $number;
     }
 }
-add_filter('loop_blog_columns', 'themename_tbay_blog_loop_columns');
+add_filter('loop_blog_columns', 'themename_xptheme_blog_loop_columns');
 
 /*Check style blog image full*/
-if (!function_exists('themename_tbay_blog_image_sizes_full')) {
-    function themename_tbay_blog_image_sizes_full()
+if (!function_exists('themename_xptheme_blog_image_sizes_full')) {
+    function themename_xptheme_blog_image_sizes_full()
     {
         $style = false;
-        $sidebar_configs = themename_tbay_get_blog_layout_configs();
+        $sidebar_configs = themename_xptheme_get_blog_layout_configs();
 
         if (!is_singular('post')) {
             if (isset($sidebar_configs['image_sizes']) && $sidebar_configs['image_sizes'] == 'full') :
@@ -575,8 +575,8 @@ if (!function_exists('themename_tbay_blog_image_sizes_full')) {
 
 
 // Number of post per page
-if (!function_exists('themename_tbay_loop_post_per_page')) {
-    function themename_tbay_loop_post_per_page($number)
+if (!function_exists('themename_xptheme_loop_post_per_page')) {
+    function themename_xptheme_loop_post_per_page($number)
     {
         if (isset($_GET['posts_per_page']) && is_numeric($_GET['posts_per_page'])) {
             $value = $_GET['posts_per_page'];
@@ -590,11 +590,11 @@ if (!function_exists('themename_tbay_loop_post_per_page')) {
         
         return $number;
     }
-    add_filter('loop_post_per_page', 'themename_tbay_loop_post_per_page');
+    add_filter('loop_post_per_page', 'themename_xptheme_loop_post_per_page');
 }
 
-if (!function_exists('themename_tbay_posts_per_page')) {
-    function themename_tbay_posts_per_page($wp_query)
+if (!function_exists('themename_xptheme_posts_per_page')) {
+    function themename_xptheme_posts_per_page($wp_query)
     {
         if (is_admin() || ! $wp_query->is_main_query()) {
             return;
@@ -607,7 +607,7 @@ if (!function_exists('themename_tbay_posts_per_page')) {
         }
         return $wp_query;
     }
-    add_action('pre_get_posts', 'themename_tbay_posts_per_page');
+    add_action('pre_get_posts', 'themename_xptheme_posts_per_page');
 }
 
 /*Post Views*/
@@ -662,14 +662,14 @@ if (! function_exists('themename_get_select_preloader')) {
     add_action('wp_body_open', 'themename_get_select_preloader', 10);
     function themename_get_select_preloader()
     {
-        $enable_preload = themename_tbay_get_global_config('preload', false);
+        $enable_preload = themename_xptheme_get_global_config('preload', false);
 
         if (!$enable_preload) {
             return;
         }
 
-        $preloader 	= themename_tbay_get_global_config('select_preloader', 'loader1');
-        $media 		= themename_tbay_get_global_config('media-preloader');
+        $preloader 	= themename_xptheme_get_global_config('select_preloader', 'loader1');
+        $media 		= themename_xptheme_get_global_config('media-preloader');
         
         if (isset($preloader)) {
             switch ($preloader) {
@@ -686,7 +686,7 @@ if (! function_exists('themename_get_select_preloader')) {
                 case 'loader2':
                     ?>
 <div class="item-loader">
-    <div class="tbay-loader tbay-loader-two">
+    <div class="xptheme-loader xptheme-loader-two">
         <span></span>
         <span></span>
         <span></span>
@@ -698,7 +698,7 @@ if (! function_exists('themename_get_select_preloader')) {
                 case 'loader3':
                     ?>
 <div class="item-loader">
-    <div class="tbay-loader tbay-loader-three">
+    <div class="xptheme-loader xptheme-loader-three">
         <span></span>
         <span></span>
         <span></span>
@@ -711,7 +711,7 @@ if (! function_exists('themename_get_select_preloader')) {
                 case 'loader4':
                     ?>
 <div class="item-loader">
-    <div class="tbay-loader tbay-loader-four"> <span class="spinner-cube spinner-cube1"></span> <span
+    <div class="xptheme-loader xptheme-loader-four"> <span class="spinner-cube spinner-cube1"></span> <span
             class="spinner-cube spinner-cube2"></span> <span class="spinner-cube spinner-cube3"></span> <span
             class="spinner-cube spinner-cube4"></span> <span class="spinner-cube spinner-cube5"></span> <span
             class="spinner-cube spinner-cube6"></span> <span class="spinner-cube spinner-cube7"></span> <span
@@ -722,7 +722,7 @@ if (! function_exists('themename_get_select_preloader')) {
                 case 'loader5':
                     ?>
 <div class="item-loader">
-    <div class="tbay-loader tbay-loader-five"> <span class="spinner-cube-1 spinner-cube"></span> <span
+    <div class="xptheme-loader xptheme-loader-five"> <span class="spinner-cube-1 spinner-cube"></span> <span
             class="spinner-cube-2 spinner-cube"></span> <span class="spinner-cube-4 spinner-cube"></span> <span
             class="spinner-cube-3 spinner-cube"></span> </div>
 </div>
@@ -731,7 +731,7 @@ if (! function_exists('themename_get_select_preloader')) {
                 case 'loader6':
                     ?>
 <div class="item-loader">
-    <div class="tbay-loader tbay-loader-six"> <span class=" spinner-cube-1 spinner-cube"></span> <span
+    <div class="xptheme-loader xptheme-loader-six"> <span class=" spinner-cube-1 spinner-cube"></span> <span
             class=" spinner-cube-2 spinner-cube"></span> </div>
 </div>
 <?php
@@ -789,7 +789,7 @@ if (!function_exists('themename_get_custom_menu')) {
     /* Change attributes of wp gallery to modify image sizes for your needs */
     function themename_get_custom_menu($menu_id)
     {
-        $_id = themename_tbay_random_key();
+        $_id = themename_xptheme_random_key();
 
         $args = array(
             'menu'              => $menu_id,
@@ -810,8 +810,8 @@ if (!function_exists('themename_get_custom_menu')) {
 }
 
 /*Set excerpt show enable default*/
-if (! function_exists('themename_tbay_edit_post_show_excerpt')) {
-    function themename_tbay_edit_post_show_excerpt()
+if (! function_exists('themename_xptheme_edit_post_show_excerpt')) {
+    function themename_xptheme_edit_post_show_excerpt()
     {
         $user = wp_get_current_user();
         $unchecked = get_user_meta($user->ID, 'metaboxhidden_post', true);
@@ -823,7 +823,7 @@ if (! function_exists('themename_tbay_edit_post_show_excerpt')) {
             }
         }
     }
-    add_action('admin_init', 'themename_tbay_edit_post_show_excerpt', 10);
+    add_action('admin_init', 'themename_xptheme_edit_post_show_excerpt', 10);
 }
 
 if (! function_exists('themename_texttrim')) {
@@ -834,10 +834,10 @@ if (! function_exists('themename_texttrim')) {
 }
 
 /*Get query*/
-if (!function_exists('themename_tbay_get_boolean_query_var')) {
-    function themename_tbay_get_boolean_query_var($config)
+if (!function_exists('themename_xptheme_get_boolean_query_var')) {
+    function themename_xptheme_get_boolean_query_var($config)
     {
-        $active = themename_tbay_get_config($config, true);
+        $active = themename_xptheme_get_config($config, true);
 
         $active = (isset($_GET[$config])) ? $_GET[$config] : $active;
 
@@ -845,35 +845,35 @@ if (!function_exists('themename_tbay_get_boolean_query_var')) {
     }
 }
 
-if (!function_exists('themename_tbay_archive_blog_size_image')) {
-    function themename_tbay_archive_blog_size_image()
+if (!function_exists('themename_xptheme_archive_blog_size_image')) {
+    function themename_xptheme_archive_blog_size_image()
     {
-        $blog_size = themename_tbay_get_config('blog_image_sizes', 'medium');
+        $blog_size = themename_xptheme_get_config('blog_image_sizes', 'medium');
 
         $blog_size = (isset($_GET['blog_image_sizes'])) ? $_GET['blog_image_sizes'] : $blog_size;
 
         return $blog_size;
     }
 }
-add_filter('themename_archive_blog_size_image', 'themename_tbay_archive_blog_size_image');
+add_filter('themename_archive_blog_size_image', 'themename_xptheme_archive_blog_size_image');
 
 
-if (!function_exists('themename_tbay_archive_layout_blog')) {
-    function themename_tbay_archive_layout_blog()
+if (!function_exists('themename_xptheme_archive_layout_blog')) {
+    function themename_xptheme_archive_layout_blog()
     {
-        $layout_blog = themename_tbay_get_config('layout_blog', 'post-style-1');
+        $layout_blog = themename_xptheme_get_config('layout_blog', 'post-style-1');
 
         $layout_blog = (isset($_GET['layout_blog'])) ? $_GET['layout_blog'] : $layout_blog;
 
         return $layout_blog;
     }
 }
-add_filter('themename_archive_layout_blog', 'themename_tbay_archive_layout_blog');
+add_filter('themename_archive_layout_blog', 'themename_xptheme_archive_layout_blog');
 
-if (!function_exists('themename_tbay_categories_blog_type')) {
-    function themename_tbay_categories_blog_type()
+if (!function_exists('themename_xptheme_categories_blog_type')) {
+    function themename_xptheme_categories_blog_type()
     {
-        $type = themename_tbay_get_config('categories_type', 'type-1');
+        $type = themename_xptheme_get_config('categories_type', 'type-1');
 
         $type = (isset($_GET['categories_type'])) ? $_GET['categories_type'] : $type;
 
@@ -883,48 +883,48 @@ if (!function_exists('themename_tbay_categories_blog_type')) {
 
 
 // cart Postion
-if (!function_exists('themename_tbay_header_mobile_position')) {
-    function themename_tbay_header_mobile_position()
+if (!function_exists('themename_xptheme_header_mobile_position')) {
+    function themename_xptheme_header_mobile_position()
     {
-        $position = themename_tbay_get_config('header_mobile', 'v1');
+        $position = themename_xptheme_get_config('header_mobile', 'v1');
 
         $position = (isset($_GET['header_mobile'])) ? $_GET['header_mobile'] : $position;
 
         return $position;
     }
-    add_filter('themename_header_mobile_position', 'themename_tbay_header_mobile_position');
+    add_filter('themename_header_mobile_position', 'themename_xptheme_header_mobile_position');
 }
 
-if (!function_exists('themename_tbay_offcanvas_smart_menu')) {
-    function themename_tbay_offcanvas_smart_menu()
+if (!function_exists('themename_xptheme_offcanvas_smart_menu')) {
+    function themename_xptheme_offcanvas_smart_menu()
     {
-        themename_tbay_get_page_templates_parts('device/offcanvas-smartmenu');
+        themename_xptheme_get_page_templates_parts('device/offcanvas-smartmenu');
     }
-    add_action('themename_before_theme_header', 'themename_tbay_offcanvas_smart_menu', 10);
+    add_action('themename_before_theme_header', 'themename_xptheme_offcanvas_smart_menu', 10);
 }
 
-if (!function_exists('themename_tbay_the_topbar_mobile')) {
-    function themename_tbay_the_topbar_mobile()
+if (!function_exists('themename_xptheme_the_topbar_mobile')) {
+    function themename_xptheme_the_topbar_mobile()
     {
-        if (!themename_tbay_get_config('mobile_header', true)) {
+        if (!themename_xptheme_get_config('mobile_header', true)) {
             return;
         }
 
         $position = apply_filters('themename_header_mobile_position', 10, 2);
 
-        themename_tbay_get_page_templates_parts('device/topbar-mobile', $position);
+        themename_xptheme_get_page_templates_parts('device/topbar-mobile', $position);
     }
-    add_action('themename_before_theme_header', 'themename_tbay_the_topbar_mobile', 20);
+    add_action('themename_before_theme_header', 'themename_xptheme_the_topbar_mobile', 20);
 }
 
-if (!function_exists('themename_tbay_footer_mobile')) {
-    function themename_tbay_footer_mobile()
+if (!function_exists('themename_xptheme_footer_mobile')) {
+    function themename_xptheme_footer_mobile()
     {
         if (themename_active_mobile_footer_icon()) {
-            themename_tbay_get_page_templates_parts('device/footer-mobile');
+            themename_xptheme_get_page_templates_parts('device/footer-mobile');
         }
     }
-    add_action('themename_before_theme_header', 'themename_tbay_footer_mobile', 40);
+    add_action('themename_before_theme_header', 'themename_xptheme_footer_mobile', 40);
 }
 
 if ( ! function_exists( 'themename_product_ajax_search_sku' ) ) {
@@ -941,10 +941,10 @@ if ( ! function_exists( 'themename_product_ajax_search_sku' ) ) {
 	}
 }
 
-if (!function_exists('themename_tbay_autocomplete_suggestions')) {
-    add_action('wp_ajax_themename_autocomplete_search', 'themename_tbay_autocomplete_suggestions');
-    add_action('wp_ajax_nopriv_themename_autocomplete_search', 'themename_tbay_autocomplete_suggestions');
-    function themename_tbay_autocomplete_suggestions()
+if (!function_exists('themename_xptheme_autocomplete_suggestions')) {
+    add_action('wp_ajax_themename_autocomplete_search', 'themename_xptheme_autocomplete_suggestions');
+    add_action('wp_ajax_nopriv_themename_autocomplete_search', 'themename_xptheme_autocomplete_suggestions');
+    function themename_xptheme_autocomplete_suggestions()
     {
         check_ajax_referer( 'themename-search-nonce', 'security' );
 
@@ -970,7 +970,7 @@ if (!function_exists('themename_tbay_autocomplete_suggestions')) {
             $args['meta_query'] = WC()->query->get_meta_query();
             $args['tax_query'] 	= WC()->query->get_tax_query();
 
-            if ( apply_filters( 'themename_search_query_in', themename_tbay_get_config('search_query_in', 'title') === 'all' ) ) {
+            if ( apply_filters( 'themename_search_query_in', themename_xptheme_get_config('search_query_in', 'title') === 'all' ) ) {
                 add_filter( 'posts_search', 'themename_product_ajax_search_sku', 9 );
             } else {
                 add_filter('posts_search', 'themename_product_search_title', 20, 2);
@@ -1041,7 +1041,7 @@ if (!function_exists('themename_tbay_autocomplete_suggestions')) {
                     $suggestions[] = array(
                         'value' => get_the_title(),
                         'subtitle' => $_subtitle,
-                        'sku' => ( themename_tbay_get_config('search_query_in', 'title') === 'all' && themename_tbay_get_config('search_sku_ajax', false) && $product->get_sku() ) ? esc_html__( 'SKU:', 'themename' ) . ' ' . $product->get_sku() : '',
+                        'sku' => ( themename_xptheme_get_config('search_query_in', 'title') === 'all' && themename_xptheme_get_config('search_sku_ajax', false) && $product->get_sku() ) ? esc_html__( 'SKU:', 'themename' ) . ' ' . $product->get_sku() : '',
                         'link' => get_the_permalink(),
                         'price' => $product->get_price_html(),
                         'image' => $product->get_image(),
@@ -1091,8 +1091,8 @@ if (!function_exists('themename_add_cssclass')) {
 }
 
 /*Fix woocomce don't active*/
-if (!function_exists('themename_tbay_get_variation_swatchs')) {
-    function themename_tbay_get_variation_swatchs()
+if (!function_exists('themename_xptheme_get_variation_swatchs')) {
+    function themename_xptheme_get_variation_swatchs()
     {
         $swatchs = array( '' => esc_html__('None', 'themename'));
 
@@ -1116,8 +1116,8 @@ if (!function_exists('themename_tbay_get_variation_swatchs')) {
     }
 }
 
-if (!function_exists('themename_tbay_get_custom_tab_layouts')) {
-    function themename_tbay_get_custom_tab_layouts()
+if (!function_exists('themename_xptheme_get_custom_tab_layouts')) {
+    function themename_xptheme_get_custom_tab_layouts()
     {
         $tabs = array( '' => 'None');
 
@@ -1129,7 +1129,7 @@ if (!function_exists('themename_tbay_get_custom_tab_layouts')) {
       'offset'           => 0,
       'orderby'          => 'date',
       'order'            => 'DESC',
-      'post_type'        => 'tbay_customtab',
+      'post_type'        => 'xptheme_customtab',
       'post_status'      => 'publish',
       'suppress_filters' => true,
     );
@@ -1142,8 +1142,8 @@ if (!function_exists('themename_tbay_get_custom_tab_layouts')) {
 }
 
 /*Get title mobile in top bar mobile*/
-if (! function_exists('themename_tbay_get_title_mobile')) {
-    function themename_tbay_get_title_mobile($title)
+if (! function_exists('themename_xptheme_get_title_mobile')) {
+    function themename_xptheme_get_title_mobile($title)
     {
         $delimiter = ' / ';
 
@@ -1181,24 +1181,24 @@ if (! function_exists('themename_tbay_get_title_mobile')) {
 
         return $title;
     }
-    add_filter('themename_get_filter_title_mobile', 'themename_tbay_get_title_mobile');
+    add_filter('themename_get_filter_title_mobile', 'themename_xptheme_get_title_mobile');
 }
 
 
-if (! function_exists('themename_tbay_get_cookie')) {
-    function themename_tbay_get_cookie($name = '')
+if (! function_exists('themename_xptheme_get_cookie')) {
+    function themename_xptheme_get_cookie($name = '')
     {
         $check = (isset($_COOKIE[$name]) && !empty($_COOKIE[$name])) ? (boolean)$_COOKIE[$name] : false;
         return $check;
     }
 }
 
-if (! function_exists('themename_tbay_active_newsletter_sidebar')) {
-    function themename_tbay_active_newsletter_sidebar()
+if (! function_exists('themename_xptheme_active_newsletter_sidebar')) {
+    function themename_xptheme_active_newsletter_sidebar()
     {
         $active = false;
 
-        $cookie = themename_tbay_get_cookie('hiddenmodal');
+        $cookie = themename_xptheme_get_cookie('hiddenmodal');
 
         if (!$cookie && is_active_sidebar('newsletter-popup')) {
             $active = true;
@@ -1239,8 +1239,8 @@ if (! function_exists('themename_pingback_header')) {
 }
 
 
-if (! function_exists('themename_tbay_check_data_responsive')) {
-    function themename_tbay_check_data_responsive($columns,$desktop, $desktopsmall, $tablet, $landscape_mobile, $mobile)
+if (! function_exists('themename_xptheme_check_data_responsive')) {
+    function themename_xptheme_check_data_responsive($columns,$desktop, $desktopsmall, $tablet, $landscape_mobile, $mobile)
     {
         $data_array = array();
 
@@ -1254,10 +1254,10 @@ if (! function_exists('themename_tbay_check_data_responsive')) {
     }
 }
 
-if (! function_exists('themename_tbay_check_data_responsive_carousel')) {
-    function themename_tbay_check_data_responsive_carousel($columns, $desktop, $desktopsmall, $tablet, $landscape_mobile, $mobile)
+if (! function_exists('themename_xptheme_check_data_responsive_carousel')) {
+    function themename_xptheme_check_data_responsive_carousel($columns, $desktop, $desktopsmall, $tablet, $landscape_mobile, $mobile)
     {
-        $data_responsive = themename_tbay_check_data_responsive($columns,$desktop, $desktopsmall, $tablet, $landscape_mobile, $mobile);
+        $data_responsive = themename_xptheme_check_data_responsive($columns,$desktop, $desktopsmall, $tablet, $landscape_mobile, $mobile);
 
         $datas = " data-items=\"". $columns ."\"";
         $datas .= " data-desktopslick=\"". $data_responsive['desktop'] ."\"";
@@ -1271,10 +1271,10 @@ if (! function_exists('themename_tbay_check_data_responsive_carousel')) {
 }
 
 
-if (! function_exists('themename_tbay_check_data_responsive_grid')) {
-    function themename_tbay_check_data_responsive_grid($columns, $desktop, $desktopsmall, $tablet, $landscape_mobile, $mobile)
+if (! function_exists('themename_xptheme_check_data_responsive_grid')) {
+    function themename_xptheme_check_data_responsive_grid($columns, $desktop, $desktopsmall, $tablet, $landscape_mobile, $mobile)
     {
-        $data_responsive = themename_tbay_check_data_responsive($columns, $desktop, $desktopsmall, $tablet, $landscape_mobile, $mobile);
+        $data_responsive = themename_xptheme_check_data_responsive($columns, $desktop, $desktopsmall, $tablet, $landscape_mobile, $mobile);
 
         $datas  = "";
         $datas .= " data-xlgdesktop=\"" . esc_attr($columns) ."\"";
@@ -1288,8 +1288,8 @@ if (! function_exists('themename_tbay_check_data_responsive_grid')) {
     }
 }
 
-if (! function_exists('themename_tbay_check_data_carousel')) {
-    function themename_tbay_check_data_carousel($rows, $nav_type, $pagi_type, $loop_type, $auto_type, $autospeed_type, $disable_mobile)
+if (! function_exists('themename_xptheme_check_data_carousel')) {
+    function themename_xptheme_check_data_carousel($rows, $nav_type, $pagi_type, $loop_type, $auto_type, $autospeed_type, $disable_mobile)
     {
         $data_array = array();
 
@@ -1305,10 +1305,10 @@ if (! function_exists('themename_tbay_check_data_carousel')) {
     }
 }
 
-if (! function_exists('themename_tbay_data_carousel')) {
-    function themename_tbay_data_carousel($rows, $nav_type, $pagi_type, $loop_type, $auto_type, $autospeed_type, $disable_mobile)
+if (! function_exists('themename_xptheme_data_carousel')) {
+    function themename_xptheme_data_carousel($rows, $nav_type, $pagi_type, $loop_type, $auto_type, $autospeed_type, $disable_mobile)
     {
-        $data_array = themename_tbay_check_data_carousel($rows, $nav_type, $pagi_type, $loop_type, $auto_type, $autospeed_type, $disable_mobile);
+        $data_array = themename_xptheme_check_data_carousel($rows, $nav_type, $pagi_type, $loop_type, $auto_type, $autospeed_type, $disable_mobile);
 
         $datas  = " data-carousel=\"owl\"";
         $datas .= " data-rows=\"" . esc_attr($data_array['rows']) ."\"";
@@ -1556,12 +1556,12 @@ if (!function_exists('themename_elements_ajax_tabs')) {
 }
 
 
-if (!function_exists('themename_tbay_footer_class')) {
-    function themename_tbay_footer_class()
+if (!function_exists('themename_xptheme_footer_class')) {
+    function themename_xptheme_footer_class()
     {
-        $classes = ['tbay-footer', apply_filters('themename_tbay_get_footer_layout', 'footer_default')];
+        $classes = ['xptheme-footer', apply_filters('themename_xptheme_get_footer_layout', 'footer_default')];
         
-        echo 'class="'. join(' ', apply_filters('themename_tbay_footer_class', $classes)) .'"';
+        echo 'class="'. join(' ', apply_filters('themename_xptheme_footer_class', $classes)) .'"';
     }
 }
 
@@ -1660,7 +1660,7 @@ if (!function_exists('themename_localize_translate')) {
 
         if (themename_woocommerce_activated()) {
             $position                       = (wp_is_mobile()) ? 'right' : apply_filters('themename_cart_position', 10, 2);
-            $woo_mode                       = themename_tbay_woocommerce_get_display_mode();
+            $woo_mode                       = themename_xptheme_woocommerce_get_display_mode();
             $quantity_mode                  = themename_woocommerce_quantity_mode_active();
             $loader                         = apply_filters('themename_quick_view_loader_gif', THEMENAME_IMAGES . '/ajax-loader-alt.svg');
 
@@ -1668,7 +1668,7 @@ if (!function_exists('themename_localize_translate')) {
             $config['popup_cart_noti']      = esc_html__('was added to shopping cart.', 'themename');
  
             $config['cart_position']        = $position;
-            $config['ajax_update_quantity'] = (bool) themename_tbay_get_config('ajax_update_quantity', false);
+            $config['ajax_update_quantity'] = (bool) themename_xptheme_get_config('ajax_update_quantity', false);
 
             $config['display_mode']         = $woo_mode;
             $config['quantity_mode']        = $quantity_mode;
@@ -1699,8 +1699,8 @@ if (!function_exists('themename_localize_translate')) {
             $config['wp_wishlistcountnonce']            = wp_create_nonce('themename-wishlistcount-nonce');
             $config['wp_quickviewproductnonce']         = wp_create_nonce('themename-quickviewproduct-nonce');
 
-            $config['collapse_details_tab']     = (bool) themename_tbay_get_config('enable_collapse_product_details_tab', false);
-            $config['maximum_height_collapse']  = themename_tbay_get_config('maximum_height_collapse', 300);
+            $config['collapse_details_tab']     = (bool) themename_xptheme_get_config('enable_collapse_product_details_tab', false);
+            $config['maximum_height_collapse']  = themename_xptheme_get_config('maximum_height_collapse', 300);
             $config['show_more']                = esc_html__('Show More', 'themename');
             $config['show_less']                = esc_html__('Show Less ', 'themename');
         }
@@ -1757,7 +1757,7 @@ if (!function_exists('themename_wc_get_custom_tab_options')) {
             'offset'           => 0,
             'orderby'          => 'date',
             'order'            => 'DESC',
-            'post_type'        => 'tbay_customtab',
+            'post_type'        => 'xptheme_customtab',
             'post_status'      => 'publish',
             'suppress_filters' => true
         );
@@ -1776,7 +1776,7 @@ if (!function_exists('themename_register_custom_tab')) {
 
         return $types;
     }
-    add_filter('tbay_elementor_register_post_types', 'themename_register_custom_tab', 10, 1);
+    add_filter('xptheme_elementor_register_post_types', 'themename_register_custom_tab', 10, 1);
 }
 
 if (!function_exists('themename_rocket_lazyload_exclude_class')) {
@@ -1838,7 +1838,7 @@ if (! function_exists('themename_woo_is_active_vendor')) {
 if (!function_exists('themename_catalog_mode_active')) {
     function themename_catalog_mode_active()
     {
-        $active = (isset($_GET['catalog_mode'])) ? $_GET['catalog_mode'] : themename_tbay_get_config('enable_woocommerce_catalog_mode', false);
+        $active = (isset($_GET['catalog_mode'])) ? $_GET['catalog_mode'] : themename_xptheme_get_config('enable_woocommerce_catalog_mode', false);
 
         return $active;
     }
@@ -1854,7 +1854,7 @@ if (! function_exists('themename_checkout_optimized')) {
 			return false;
 		}
        
-        if( ( isset($_GET['checkout_optimized']) && $_GET['checkout_optimized'] ) || themename_tbay_get_config('show_checkout_optimized', false) ) {
+        if( ( isset($_GET['checkout_optimized']) && $_GET['checkout_optimized'] ) || themename_xptheme_get_config('show_checkout_optimized', false) ) {
             return true; 
         } else {
             return false;
@@ -1873,16 +1873,16 @@ if (! function_exists('themename_the_logo_checkout')) {
     {
         if( !themename_checkout_optimized() ) return;
 
-        $ouput = themename_tbay_get_logo_checkout();
+        $ouput = themename_xptheme_get_logo_checkout();
         echo trim($ouput);
     }
     add_action('themename_theme_header_checkout', 'themename_the_logo_checkout', 10);
 }
 
-if (! function_exists('themename_tbay_get_logo_checkout')) {
-    function themename_tbay_get_logo_checkout()
+if (! function_exists('themename_xptheme_get_logo_checkout')) {
+    function themename_xptheme_get_logo_checkout()
     {
-        $logo 			= themename_tbay_get_config('checkout_logo');
+        $logo 			= themename_xptheme_get_config('checkout_logo');
 
         $output 	= '<div class="checkout-logo">';
         if (isset($logo['url']) && !empty($logo['url'])) {
@@ -1906,7 +1906,7 @@ if (! function_exists('themename_tbay_get_logo_checkout')) {
         }
         $output 	.= '</div>';
         
-        return apply_filters('themename_tbay_get_logo_checkout', $output, 10);
+        return apply_filters('themename_xptheme_get_logo_checkout', $output, 10);
     }
 }
 
@@ -2015,11 +2015,11 @@ if (! function_exists('themename_elementor_general_widgets')) {
             'store-notice',
         );
 
-        if( defined('TBAY_PORTFOLIOS') && TBAY_PORTFOLIOS &&  apply_filters( 'wpxperttheme_register_post_types_portfolio', true) ) {
+        if( defined('XPTHEME_PORTFOLIOS') && XPTHEME_PORTFOLIOS &&  apply_filters( 'wpxperttheme_register_post_types_portfolio', true) ) {
             array_push($elements, 'portfolios');
 		}
 
-        $active_theme = themename_tbay_get_theme();
+        $active_theme = themename_xptheme_get_theme();
 
         if( $active_theme === 'bicycle' ) {
             array_push($elements, 'image-color-tab');
@@ -2070,7 +2070,7 @@ if (! function_exists('themename_elementor_header_widgets')) {
             array_push($elements, 'compare');
         }
 
-        if (defined('TBAY_ELEMENTOR_DEMO')) {
+        if (defined('XPTHEME_ELEMENTOR_DEMO')) {
             array_push($elements, 'custom-language');
         }
 
@@ -2126,8 +2126,8 @@ if (! function_exists('themename_list_controls_effects')) {
 
 
 
-if ( !function_exists('themename_tbay_product_styles') ) {
-	function themename_tbay_product_styles() {
+if ( !function_exists('themename_xptheme_product_styles') ) {
+	function themename_xptheme_product_styles() {
 		$styles = array();
 
 		$styles['v1'] = array(

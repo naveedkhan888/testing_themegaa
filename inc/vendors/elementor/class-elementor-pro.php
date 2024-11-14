@@ -8,9 +8,9 @@ if (!function_exists('themename_elementor_pro_before_do_header')) {
     add_action('elementor/theme/before_do_header', 'themename_elementor_pro_before_do_header');
     function themename_elementor_pro_before_do_header()
     {
-        $class = (themename_tbay_get_config('hidden_header_el_pro_mobile', true)) ? 'hidden-header' : '';
+        $class = (themename_xptheme_get_config('hidden_header_el_pro_mobile', true)) ? 'hidden-header' : '';
 
-        echo '<div class="tbay-el-pro-wrapper wrapper-container '. esc_attr($class) .'"><div id="tbay-main-content" class="site">';
+        echo '<div class="xptheme-el-pro-wrapper wrapper-container '. esc_attr($class) .'"><div id="xptheme-main-content" class="site">';
     }
 }
 

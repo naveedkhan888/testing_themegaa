@@ -15,7 +15,7 @@ class Themename_Elementor_Mobile_Menu extends Themename_Elementor_Widget_Base
 
     public function get_name()
     {
-        return 'tbay-mobile-menu';
+        return 'xptheme-mobile-menu';
     }
 
     public function get_title()
@@ -122,7 +122,7 @@ class Themename_Elementor_Mobile_Menu extends Themename_Elementor_Widget_Base
                 'label_block' => true,
                 'default' => [
                     'value' => 'tb-icon tb-icon-bars',
-                    'library' => 'tbay-custom',
+                    'library' => 'xptheme-custom',
                 ],
             ]
         );

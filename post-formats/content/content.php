@@ -17,7 +17,7 @@ $class_main = $class_left = '';
             ?>
             <figure class="entry-thumb <?php echo(!has_post_thumbnail() ? 'no-thumb' : ''); ?>">
 
-                <?php themename_tbay_post_thumbnail(); ?>
+                <?php themename_xptheme_post_thumbnail(); ?>
 
             </figure>
             <?php
@@ -52,9 +52,9 @@ $class_main = $class_left = '';
 
             <?php the_content(esc_html__('Continue Reading', 'themename')); ?>
 
-            <div class="themename-tag-socials-box"><?php do_action('themename_tbay_post_tag_socials') ?></div>
+            <div class="themename-tag-socials-box"><?php do_action('themename_xptheme_post_tag_socials') ?></div>
 
-            <?php do_action('themename_tbay_post_bottom') ?>
+            <?php do_action('themename_xptheme_post_bottom') ?>
 
             
         </div><!-- /entry-content -->

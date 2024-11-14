@@ -10,7 +10,7 @@ class Themename_Elementor_Woocommerce_Tags extends Themename_Elementor_Widget_Ba
 {
     public function get_name()
     {
-        return 'tbay-woocommerce-tags';
+        return 'xptheme-woocommerce-tags';
     }
 
     public function get_title()

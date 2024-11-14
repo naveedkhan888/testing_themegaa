@@ -20,7 +20,7 @@ if (!empty($product_tabs)) : $selectIds = '#collapse-tab-0'; ?>
                 $i++; ?> 
                 <div class="panel">
 
-                    <div class="tabs-title" id="tbay-wc-tab-<?php echo esc_attr($key); ?>">
+                    <div class="tabs-title" id="xptheme-wc-tab-<?php echo esc_attr($key); ?>">
                       <h5 class="mb-0">
                         <button class="btn btn-link" data-bs-toggle="collapse" data-bs-target="#collapse-tab-<?php echo esc_attr($i); ?>" aria-expanded="true" aria-controls="collapse-tab-<?php echo esc_attr($i); ?>">
                         <?php echo apply_filters('woocommerce_product_' . $key . '_tab_title', esc_html($product_tab['title']), $key); ?>
@@ -29,7 +29,7 @@ if (!empty($product_tabs)) : $selectIds = '#collapse-tab-0'; ?>
                       </h5>
                     </div> 
 
-                    <div id="collapse-tab-<?php echo esc_attr($i); ?>" class="collapse <?php echo esc_attr($in); ?>" aria-labelledby="tbay-wc-tab-<?php echo esc_attr($key); ?>" data-bs-parent="#woocommerce-accordion">
+                    <div id="collapse-tab-<?php echo esc_attr($i); ?>" class="collapse <?php echo esc_attr($in); ?>" aria-labelledby="xptheme-wc-tab-<?php echo esc_attr($key); ?>" data-bs-parent="#woocommerce-accordion">
                       <div class="entry-content">
                         <?php call_user_func($product_tab['callback'], $key, $product_tab); ?>
                       </div>

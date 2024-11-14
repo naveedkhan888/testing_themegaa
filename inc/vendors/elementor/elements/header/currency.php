@@ -11,7 +11,7 @@ class Themename_Elementor_Currency extends Themename_Elementor_Widget_Base
 {
     public function get_name()
     {
-        return 'tbay-currency';
+        return 'xptheme-currency';
     }
 
     public function get_title()
@@ -249,7 +249,7 @@ class Themename_Elementor_Currency extends Themename_Elementor_Widget_Base
 
         if (themename_woocommerce_activated() && class_exists('WOOCS')) {
             wp_enqueue_style('sumoselect'); ?>
-            <div class="tbay-currency">
+            <div class="xptheme-currency">
             <?php
                 echo do_shortcode("[woocs $woocs ]"); ?>
             </div>

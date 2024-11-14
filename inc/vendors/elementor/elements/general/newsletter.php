@@ -22,7 +22,7 @@ class Themename_Elementor_Newsletter extends Themename_Elementor_Widget_Base
      */
     public function get_name()
     {
-        return 'tbay-newsletter';
+        return 'xptheme-newsletter';
     }
 
     /**
@@ -82,7 +82,7 @@ class Themename_Elementor_Newsletter extends Themename_Elementor_Widget_Base
                 'label_on'  => esc_html__('On', 'themename'),
                 'default'   => '',
                 'selectors' => [
-                    '{{WRAPPER}} .tbay-element-newsletter .mc4wp-form-fields' => 'display: flex; flex-direction: column;',
+                    '{{WRAPPER}} .xptheme-element-newsletter .mc4wp-form-fields' => 'display: flex; flex-direction: column;',
                 ],
             ]
         );
@@ -108,7 +108,7 @@ class Themename_Elementor_Newsletter extends Themename_Elementor_Widget_Base
                 ],
                 'default' => 'flex-start',
                 'selectors' => [
-                    '{{WRAPPER}} .tbay-element-newsletter .mc4wp-form-fields' => 'justify-content: {{VALUE}};',
+                    '{{WRAPPER}} .xptheme-element-newsletter .mc4wp-form-fields' => 'justify-content: {{VALUE}};',
                 ],
             ]
         );
@@ -140,7 +140,7 @@ class Themename_Elementor_Newsletter extends Themename_Elementor_Widget_Base
                 ],
                 'size_units' => [ 'px', 'em', '%' ],
                 'selectors'  => [
-                    '{{WRAPPER}} .tbay-element-newsletter input[type="email"]' => 'width: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .xptheme-element-newsletter input[type="email"]' => 'width: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );
@@ -155,7 +155,7 @@ class Themename_Elementor_Newsletter extends Themename_Elementor_Widget_Base
                 'default'      => '',
                 'return_value' => 'none',
                 'selectors'    => [
-                    '{{WRAPPER}} .tbay-element-newsletter span' => 'display: {{VALUE}}',
+                    '{{WRAPPER}} .xptheme-element-newsletter span' => 'display: {{VALUE}}',
                 ],
             ]
         );
@@ -179,7 +179,7 @@ class Themename_Elementor_Newsletter extends Themename_Elementor_Widget_Base
                 'default'      => '',
                 'return_value' => 'none',
                 'selectors'    => [
-                    '{{WRAPPER}} .tbay-element-newsletter i' => 'display: {{VALUE}}',
+                    '{{WRAPPER}} .xptheme-element-newsletter i' => 'display: {{VALUE}}',
                 ],
             ]
         );
@@ -196,7 +196,7 @@ class Themename_Elementor_Newsletter extends Themename_Elementor_Widget_Base
                     ],
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .tbay-element-newsletter i' => 'font-size: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .xptheme-element-newsletter i' => 'font-size: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );
@@ -208,7 +208,7 @@ class Themename_Elementor_Newsletter extends Themename_Elementor_Widget_Base
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', 'em', '%' ],
                 'selectors'  => [
-                    '{{WRAPPER}} .tbay-element-newsletter i' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .xptheme-element-newsletter i' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -237,7 +237,7 @@ class Themename_Elementor_Newsletter extends Themename_Elementor_Widget_Base
                     'form_style' => 'yes',
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .tbay-element-newsletter .mc4wp-form-fields' => 'align-items: {{VALUE}};',
+                    '{{WRAPPER}} .xptheme-element-newsletter .mc4wp-form-fields' => 'align-items: {{VALUE}};',
                 ],
             ]
         );
@@ -268,7 +268,7 @@ class Themename_Elementor_Newsletter extends Themename_Elementor_Widget_Base
                 ],
                 'size_units' => [ 'px', 'em', '%' ],
                 'selectors'  => [
-                    '{{WRAPPER}} .tbay-element-newsletter button[type="submit"]' => 'width: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .xptheme-element-newsletter button[type="submit"]' => 'width: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );
@@ -290,7 +290,7 @@ class Themename_Elementor_Newsletter extends Themename_Elementor_Widget_Base
                 'label'     => esc_html__('Background Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .tbay-element-newsletter input[type="email"]' => 'background-color: {{VALUE}};',
+                    '{{WRAPPER}} .xptheme-element-newsletter input[type="email"]' => 'background-color: {{VALUE}};',
                 ],
             ]
         );
@@ -301,7 +301,7 @@ class Themename_Elementor_Newsletter extends Themename_Elementor_Widget_Base
                 'label'     => esc_html__('Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .tbay-element-newsletter input[type="email"]' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .xptheme-element-newsletter input[type="email"]' => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -312,9 +312,9 @@ class Themename_Elementor_Newsletter extends Themename_Elementor_Widget_Base
                 'label'     => esc_html__('Placeholder Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .tbay-element-newsletter ::-webkit-input-placeholder' => 'color: {{VALUE}};',
-                    '{{WRAPPER}} .tbay-element-newsletter ::-moz-placeholder'          => 'color: {{VALUE}};',
-                    '{{WRAPPER}} .tbay-element-newsletter ::-ms-input-placeholder'     => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .xptheme-element-newsletter ::-webkit-input-placeholder' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .xptheme-element-newsletter ::-moz-placeholder'          => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .xptheme-element-newsletter ::-ms-input-placeholder'     => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -340,7 +340,7 @@ class Themename_Elementor_Newsletter extends Themename_Elementor_Widget_Base
                 ],
                 'default'   => '',
                 'selectors' => [
-                    '{{WRAPPER}} .tbay-element-newsletter input[type="email"]' => 'text-align: {{VALUE}};',
+                    '{{WRAPPER}} .xptheme-element-newsletter input[type="email"]' => 'text-align: {{VALUE}};',
                 ],
             ]
         );
@@ -351,7 +351,7 @@ class Themename_Elementor_Newsletter extends Themename_Elementor_Widget_Base
                 'name'        => 'border_input',
                 'placeholder' => '1px',
                 'default'     => '1px',
-                'selector'    => '{{WRAPPER}} .tbay-element-newsletter input[type="email"]',
+                'selector'    => '{{WRAPPER}} .xptheme-element-newsletter input[type="email"]',
                 'separator'   => 'before',
             ]
         );
@@ -370,7 +370,7 @@ class Themename_Elementor_Newsletter extends Themename_Elementor_Widget_Base
                     'unit' => 'px'
                 ],
                 'selectors'  => [
-                    '{{WRAPPER}} .tbay-element-newsletter input[type="email"]' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .xptheme-element-newsletter input[type="email"]' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -382,7 +382,7 @@ class Themename_Elementor_Newsletter extends Themename_Elementor_Widget_Base
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', 'em', '%' ],
                 'selectors'  => [
-                    '{{WRAPPER}} .tbay-element-newsletter input[type="email"]' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .xptheme-element-newsletter input[type="email"]' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -393,7 +393,7 @@ class Themename_Elementor_Newsletter extends Themename_Elementor_Widget_Base
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', 'em', '%' ],
                 'selectors'  => [
-                    '{{WRAPPER}} .tbay-element-newsletter input[type="email"]' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .xptheme-element-newsletter input[type="email"]' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -412,7 +412,7 @@ class Themename_Elementor_Newsletter extends Themename_Elementor_Widget_Base
                 ],
                 'size_units' => [ 'px' ],
                 'selectors'  => [
-                    '{{WRAPPER}} .tbay-element-newsletter input[type="email"]' => 'height: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .xptheme-element-newsletter input[type="email"]' => 'height: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );
@@ -433,7 +433,7 @@ class Themename_Elementor_Newsletter extends Themename_Elementor_Widget_Base
             Group_Control_Typography::get_type(),
             [
                 'name'     => 'mailchip_style_typography',
-                'selector' => '{{WRAPPER}} .tbay-element-newsletter button[type="submit"]',
+                'selector' => '{{WRAPPER}} .xptheme-element-newsletter button[type="submit"]',
             ]
         );
 
@@ -452,7 +452,7 @@ class Themename_Elementor_Newsletter extends Themename_Elementor_Widget_Base
                 'label'     => esc_html__('Background Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .tbay-element-newsletter button[type="submit"]' => 'background-color: {{VALUE}};',
+                    '{{WRAPPER}} .xptheme-element-newsletter button[type="submit"]' => 'background-color: {{VALUE}};',
                 ],
             ]
         );
@@ -463,7 +463,7 @@ class Themename_Elementor_Newsletter extends Themename_Elementor_Widget_Base
                 'label'     => esc_html__('Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .tbay-element-newsletter button[type="submit"]' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .xptheme-element-newsletter button[type="submit"]' => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -483,7 +483,7 @@ class Themename_Elementor_Newsletter extends Themename_Elementor_Widget_Base
                 'label'     => esc_html__('Background Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .tbay-element-newsletter button[type="submit"]:hover' => 'background-color: {{VALUE}};',
+                    '{{WRAPPER}} .xptheme-element-newsletter button[type="submit"]:hover' => 'background-color: {{VALUE}};',
                 ],
             ]
         );
@@ -494,7 +494,7 @@ class Themename_Elementor_Newsletter extends Themename_Elementor_Widget_Base
                 'label'     => esc_html__('Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .tbay-element-newsletter button[type="submit"]:hover' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .xptheme-element-newsletter button[type="submit"]:hover' => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -505,7 +505,7 @@ class Themename_Elementor_Newsletter extends Themename_Elementor_Widget_Base
                 'label'     => esc_html__('Border Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .tbay-element-newsletter button[type="submit"]:hover' => 'border-color: {{VALUE}};',
+                    '{{WRAPPER}} .xptheme-element-newsletter button[type="submit"]:hover' => 'border-color: {{VALUE}};',
                 ],
             ]
         );
@@ -525,7 +525,7 @@ class Themename_Elementor_Newsletter extends Themename_Elementor_Widget_Base
                 'label'     => esc_html__('Background Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .tbay-element-newsletter button[type="submit"]:forcus' => 'background-color: {{VALUE}};',
+                    '{{WRAPPER}} .xptheme-element-newsletter button[type="submit"]:forcus' => 'background-color: {{VALUE}};',
                 ],
             ]
         );
@@ -536,7 +536,7 @@ class Themename_Elementor_Newsletter extends Themename_Elementor_Widget_Base
                 'label'     => esc_html__('Button Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .tbay-element-newsletter button[type="submit"]:focus' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .xptheme-element-newsletter button[type="submit"]:focus' => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -547,7 +547,7 @@ class Themename_Elementor_Newsletter extends Themename_Elementor_Widget_Base
                 'label'     => esc_html__('Border Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .tbay-element-newsletter button[type="submit"]:focus' => 'border-color: {{VALUE}};',
+                    '{{WRAPPER}} .xptheme-element-newsletter button[type="submit"]:focus' => 'border-color: {{VALUE}};',
                 ],
             ]
         );
@@ -562,7 +562,7 @@ class Themename_Elementor_Newsletter extends Themename_Elementor_Widget_Base
                 'name'        => 'border_button',
                 'placeholder' => '1px',
                 'default'     => '1px',
-                'selector'    => '{{WRAPPER}} .tbay-element-newsletter button[type="submit"]',
+                'selector'    => '{{WRAPPER}} .xptheme-element-newsletter button[type="submit"]',
                 'separator'   => 'before',
             ]
         );
@@ -581,7 +581,7 @@ class Themename_Elementor_Newsletter extends Themename_Elementor_Widget_Base
                     'unit' => 'px'
                 ],
                 'selectors'  => [
-                    '{{WRAPPER}} .tbay-element-newsletter button[type="submit"]' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .xptheme-element-newsletter button[type="submit"]' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -593,7 +593,7 @@ class Themename_Elementor_Newsletter extends Themename_Elementor_Widget_Base
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', 'em', '%' ],
                 'selectors'  => [
-                    '{{WRAPPER}} .tbay-element-newsletter button[type="submit"]' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .xptheme-element-newsletter button[type="submit"]' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -604,7 +604,7 @@ class Themename_Elementor_Newsletter extends Themename_Elementor_Widget_Base
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', 'em', '%' ],
                 'selectors'  => [
-                    '{{WRAPPER}} .tbay-element-newsletter button[type="submit"]' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .xptheme-element-newsletter button[type="submit"]' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -622,7 +622,7 @@ class Themename_Elementor_Newsletter extends Themename_Elementor_Widget_Base
                 ],
                 'size_units' => [ 'px' ],
                 'selectors'  => [
-                    '{{WRAPPER}} .tbay-element-newsletter button[type="submit"]' => 'height: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .xptheme-element-newsletter button[type="submit"]' => 'height: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );

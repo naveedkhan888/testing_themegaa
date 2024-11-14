@@ -28,7 +28,7 @@ class Themename_Elementor_Brands extends Themename_Elementor_Carousel_Base
      */
     public function get_name()
     {
-        return 'tbay-brands';
+        return 'xptheme-brands';
     }
 
     /**
@@ -118,7 +118,7 @@ class Themename_Elementor_Brands extends Themename_Elementor_Carousel_Base
                 ],
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .item .inner,.tbay-element-brands .row.grid > div' => 'justify-content: {{VALUE}} !important',
+                    '{{WRAPPER}} .item .inner,.xptheme-element-brands .row.grid > div' => 'justify-content: {{VALUE}} !important',
                 ]
             ]
         );

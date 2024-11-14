@@ -18,11 +18,11 @@ $screen_landscape_mobile  =      isset($screen_landscape_mobile) ? $screen_lands
 $screen_mobile           	=      isset($screen_mobile) ? $screen_mobile : 1;
 
 $disable_mobile           =      isset($disable_mobile) ? $disable_mobile : '';
-$skin                     =      themename_tbay_get_theme();
+$skin                     =      themename_xptheme_get_theme();
 
 
-$data_carousel = themename_tbay_data_carousel($rows, $nav_type, $pagi_type, $loop_type, $auto_type, $autospeed_type, $disable_mobile);
-$responsive_carousel  = themename_tbay_check_data_responsive_carousel($columns, $screen_desktop, $screen_desktopsmall, $screen_tablet, $screen_landscape_mobile, $screen_mobile);
+$data_carousel = themename_xptheme_data_carousel($rows, $nav_type, $pagi_type, $loop_type, $auto_type, $autospeed_type, $disable_mobile);
+$responsive_carousel  = themename_xptheme_check_data_responsive_carousel($columns, $screen_desktop, $screen_desktopsmall, $screen_tablet, $screen_landscape_mobile, $screen_mobile);
 
 // Extra post classes
 $classes = array('products-grid', 'product');

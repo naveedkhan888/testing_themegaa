@@ -15,7 +15,7 @@ class Themename_Elementor_Mini_Cart extends Themename_Elementor_Widget_Base
 
     public function get_name()
     {
-        return 'tbay-mini-cart';
+        return 'xptheme-mini-cart';
     }
 
     public function get_title()
@@ -57,7 +57,7 @@ class Themename_Elementor_Mini_Cart extends Themename_Elementor_Widget_Base
                 'type'               => Controls_Manager::ICONS,
                 'default' => [
                     'value' => 'tb-icon tb-icon-bag',
-                    'library' => 'tbay-custom',
+                    'library' => 'xptheme-custom',
                 ],
             ]
         );
@@ -546,7 +546,7 @@ class Themename_Elementor_Mini_Cart extends Themename_Elementor_Widget_Base
             'price_mini_cart'                => $price_mini_cart,
         ];
         
-        themename_tbay_get_woocommerce_mini_cart($args);
+        themename_xptheme_get_woocommerce_mini_cart($args);
     }
 }
 $widgets_manager->register(new Themename_Elementor_Mini_Cart());

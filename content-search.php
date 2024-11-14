@@ -11,7 +11,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php themename_tbay_post_thumbnail(); ?>
+	<?php themename_xptheme_post_thumbnail(); ?>
 
 	<header class="entry-header">
 		<?php the_title(sprintf('<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url(get_permalink())), '</a></h2>'); ?>
@@ -24,7 +24,7 @@
 	<?php if ('post' == get_post_type()) : ?>
 
 		<footer class="entry-footer">
-			<?php themename_tbay_entry_meta(); ?>
+			<?php themename_xptheme_entry_meta(); ?>
 			<?php edit_post_link(esc_html__('Edit', 'themename'), '<span class="edit-link">', '</span>'); ?>
 		</footer><!-- .entry-footer -->
 

@@ -58,14 +58,14 @@
 	//Update site link color in real time...
 	api( 'topbar_bg', function( value ) {
 		value.bind( function( newval ) {  
-			$('#tbay-topbar').css('background-color', newval );
+			$('#xptheme-topbar').css('background-color', newval );
 		} );
 	} );
 
 	//Update site link color in real time...
 	api( 'topbar_color', function( value ) {
 		value.bind( function( newval ) {  
-			$('#tbay-topbar, #tbay-topbar a, #tbay-topbar span').css('color', newval );
+			$('#xptheme-topbar, #xptheme-topbar a, #xptheme-topbar span').css('color', newval );
 		} );
 	} );
 
@@ -74,21 +74,21 @@
 	//Update site link color in real time...
 	api( 'footer_bg', function( value ) {
 		value.bind( function( newval ) {  
-			$('#tbay-footer').css('background-color', newval );
+			$('#xptheme-footer').css('background-color', newval );
 		} );
 	} );
 
 	//Update site link color in real time...
 	api( 'footer_color', function( value ) {
 		value.bind( function( newval ) {  
-			$('#tbay-footer, #tbay-footer a').css('color', newval );
+			$('#xptheme-footer, #xptheme-footer a').css('color', newval );
 		} );
 	} );
 
 	//Update site link color in real time...
 	api( 'footer_heading_color', function( value ) {
 		value.bind( function( newval ) {  
-			$('#tbay-footer h2, #tbay-footer h3, #tbay-footer h4').css('color', newval );
+			$('#xptheme-footer h2, #xptheme-footer h3, #xptheme-footer h4').css('color', newval );
 		} );
 	} );
 } )( jQuery );

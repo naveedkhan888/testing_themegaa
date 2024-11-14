@@ -12,7 +12,7 @@ class Themename_Elementor_Product_Flash_Sales extends Themename_Elementor_Carous
 {
     public function get_name()
     {
-        return 'tbay-product-flash-sales';
+        return 'xptheme-product-flash-sales';
     }
 
     public function get_title()
@@ -530,7 +530,7 @@ class Themename_Elementor_Product_Flash_Sales extends Themename_Elementor_Carous
 
         if( empty($sale_campaign) ) return $product_ids;
 
-        $sale_products = get_post_meta($sale_campaign, 'tbay_discount_campaign_group', true);
+        $sale_products = get_post_meta($sale_campaign, 'xptheme_discount_campaign_group', true);
 
         if( empty($sale_products) || sizeof($sale_products) === 0 ) return $product_ids;
 

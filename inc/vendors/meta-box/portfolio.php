@@ -2,7 +2,7 @@
 if (!function_exists('themename_register_portfolio_meta_boxes')) {
     add_filter( 'rwmb_meta_boxes', 'themename_register_portfolio_meta_boxes' );
     function themename_register_portfolio_meta_boxes( $meta_boxes ) {
-        $prefix = 'tbay_portfolio_';
+        $prefix = 'xptheme_portfolio_';
 
         $fields = array(
             array(

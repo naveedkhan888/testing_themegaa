@@ -32,7 +32,7 @@ class Themename_Elementor_Countdown extends Themename_Elementor_Widget_Base
      */
     public function get_name()
     {
-        return 'tbay-countdown';
+        return 'xptheme-countdown';
     }
 
     /**
@@ -307,7 +307,7 @@ class Themename_Elementor_Countdown extends Themename_Elementor_Widget_Base
                     ],
                 ], 
                 'selectors' => [
-                    '{{WRAPPER}} .tbay-countdown' => 'text-align: {{VALUE}}',
+                    '{{WRAPPER}} .xptheme-countdown' => 'text-align: {{VALUE}}',
                 ],
             ]
         ); 
@@ -339,7 +339,7 @@ class Themename_Elementor_Countdown extends Themename_Elementor_Widget_Base
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tbay-countdown' => 'max-width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .xptheme-countdown' => 'max-width: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);

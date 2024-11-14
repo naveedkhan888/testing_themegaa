@@ -20,7 +20,7 @@ if (! defined('ABSPATH')) {
 }
 
 $tabs_layout   =  apply_filters('themename_woo_tabs_style_single_product', 10, 2);
-if (wp_is_mobile() && themename_tbay_get_config('enable_tabs_mobile', false)) {
+if (wp_is_mobile() && themename_xptheme_get_config('enable_tabs_mobile', false)) {
 	wc_get_template('single-product/tabs/tabs-mobile.php');
 	return;
 }

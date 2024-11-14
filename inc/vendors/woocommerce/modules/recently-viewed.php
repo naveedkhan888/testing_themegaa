@@ -3,8 +3,8 @@
 if ( !themename_woocommerce_activated() ) return;
 
 
-if (! function_exists('themename_tbay_recently_viewed_set_cookie_meta')) {
-    function themename_tbay_recently_viewed_set_cookie_meta($products_list)
+if (! function_exists('themename_xptheme_recently_viewed_set_cookie_meta')) {
+    function themename_xptheme_recently_viewed_set_cookie_meta($products_list)
     {
         $user_id            = get_current_user_id();
         $meta_products_list = 'themename_recently_viewed_product_list';
@@ -20,8 +20,8 @@ if (! function_exists('themename_tbay_recently_viewed_set_cookie_meta')) {
     }
 }
 
-if (! function_exists('themename_tbay_wc_track_user_get_cookie')) {
-    function themename_tbay_wc_track_user_get_cookie()
+if (! function_exists('themename_xptheme_wc_track_user_get_cookie')) {
+    function themename_xptheme_wc_track_user_get_cookie()
     {
         $user_id            = get_current_user_id();
         $cookie_name        = 'themename_recently_viewed_products_list';
@@ -42,8 +42,8 @@ if (! function_exists('themename_tbay_wc_track_user_get_cookie')) {
     }
 }
 
-if (! function_exists('themename_tbay_wc_track_user_viewed_produts')) {
-    function themename_tbay_wc_track_user_viewed_produts()
+if (! function_exists('themename_xptheme_wc_track_user_viewed_produts')) {
+    function themename_xptheme_wc_track_user_viewed_produts()
     {
         if ( ! is_singular( 'product' ) ) {
             return;
@@ -51,7 +51,7 @@ if (! function_exists('themename_tbay_wc_track_user_viewed_produts')) {
 
         global $post;
 
-        $products_list      = themename_tbay_wc_track_user_get_cookie();
+        $products_list      = themename_xptheme_wc_track_user_get_cookie();
 
         // Unset if already in viewed products list.
         $keys = array_flip( $products_list );
@@ -63,15 +63,15 @@ if (! function_exists('themename_tbay_wc_track_user_viewed_produts')) {
         $products_list[] = $post->ID;
 
         // set cookie and save meta
-        themename_tbay_recently_viewed_set_cookie_meta($products_list);
+        themename_xptheme_recently_viewed_set_cookie_meta($products_list);
     }
-    add_action('template_redirect', 'themename_tbay_wc_track_user_viewed_produts', 99);
+    add_action('template_redirect', 'themename_xptheme_wc_track_user_viewed_produts', 99);
 }
 
-if (! function_exists('themename_tbay_get_products_recently_viewed')) {
-    function themename_tbay_get_products_recently_viewed($number_post = 8)
+if (! function_exists('themename_xptheme_get_products_recently_viewed')) {
+    function themename_xptheme_get_products_recently_viewed($number_post = 8)
     {
-        $products_list      = themename_tbay_wc_track_user_get_cookie();
+        $products_list      = themename_xptheme_wc_track_user_get_cookie();
 
         if (empty($products_list)) {
             return '';
@@ -99,12 +99,12 @@ if (! function_exists('themename_tbay_get_products_recently_viewed')) {
 }
 
 /*The list product recently viewed*/
-if (! function_exists('themename_tbay_wc_get_recently_viewed')) {
-    function themename_tbay_wc_get_recently_viewed()
+if (! function_exists('themename_xptheme_wc_get_recently_viewed')) {
+    function themename_xptheme_wc_get_recently_viewed()
     {
-        $num_post           =   themename_tbay_get_config('max_products_recentview', 8);
+        $num_post           =   themename_xptheme_get_config('max_products_recentview', 8);
             
-        $args = themename_tbay_get_products_recently_viewed($num_post);
+        $args = themename_xptheme_get_products_recently_viewed($num_post);
         $args = apply_filters('themename_list_recently_viewed_products_args', $args);
 
 

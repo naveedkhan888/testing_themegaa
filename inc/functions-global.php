@@ -35,14 +35,14 @@ define('THEMENAME_ASSETS_IMAGES', THEMENAME_ASSETS    . '/images');
 
 define('THEMENAME_MIN_JS', '');
 
-define('TBAY_DISCOUNT_CAMPAIGN', true);
-define('TBAY_PORTFOLIOS', true);
+define('XPTHEME_DISCOUNT_CAMPAIGN', true);
+define('XPTHEME_PORTFOLIOS', true);
 
 if (! isset($content_width)) {
     $content_width = 660;
 }
 
-function themename_tbay_get_config($name, $default = '')
+function themename_xptheme_get_config($name, $default = '')
 {
     global $themename_options;
     if (isset($themename_options[$name])) {
@@ -51,9 +51,9 @@ function themename_tbay_get_config($name, $default = '')
     return $default;
 }
 
-function themename_tbay_get_global_config($name, $default = '')
+function themename_xptheme_get_global_config($name, $default = '')
 {
-    $options = get_option('themename_tbay_theme_options', array());
+    $options = get_option('themename_xptheme_theme_options', array());
     if (isset($options[$name])) {
         return $options[$name];
     }

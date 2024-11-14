@@ -29,7 +29,7 @@ class Themename_Elementor_Testimonials extends Themename_Elementor_Carousel_Base
      */
     public function get_name()
     {
-        return 'tbay-testimonials';
+        return 'xptheme-testimonials';
     }
 
     /**

@@ -11,7 +11,7 @@ if (isset($count) && $count > 0) {
     wp_enqueue_script('hc-sticky');
 }
 
-$sidebar_configs    = themename_tbay_get_woocommerce_layout_configs();
+$sidebar_configs    = themename_xptheme_get_woocommerce_layout_configs();
 $images_layout      = ( !empty($sidebar_configs['thumbnail']) ) ? $sidebar_configs['thumbnail'] : 'horizontal';
 $is_rtl 			= (is_rtl()) ? 'yes' : 'no';
 

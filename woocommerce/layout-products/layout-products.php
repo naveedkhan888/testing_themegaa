@@ -11,7 +11,7 @@
     $countdown 			= isset($countdown) ? $countdown : false;
 
     $classes    = array('products-grid', 'product');
-    $skin       = themename_tbay_get_theme();
+    $skin       = themename_xptheme_get_theme();
 ?>
 <div <?php echo trim($attr_row); ?>>
 

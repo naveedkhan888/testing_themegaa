@@ -13,7 +13,7 @@ class Themename_Merlin_Config
         add_filter('merlin_generate_child_functions_php', [ $this, 'render_child_functions_php' ], 10, 2);
         add_filter('merlin_generate_child_style_css', [ $this, 'render_child_style_css' ], 10, 5);
 
-        remove_action('init', 'tbay_import_init', 50);
+        remove_action('init', 'xptheme_import_init', 50);
     }
 
     private function init()
@@ -22,7 +22,7 @@ class Themename_Merlin_Config
             $config = array(
                 'directory'          => 'inc/merlin',
                 // Location / directory where Merlin WP is placed in your theme.
-                'merlin_url'         => 'tbay_import',
+                'merlin_url'         => 'xptheme_import',
                 // The wp-admin page slug where Merlin WP loads.
                 'parent_slug'        => 'themes.php',
                 // The wp-admin parent page slug for the admin menu item.
@@ -248,7 +248,7 @@ class Themename_Merlin_Config
         });
 
         if ( did_action( 'elementor/loaded' ) ) {
-            $cpt_support = ['tbay_custom_post', 'post', 'page', 'product'];
+            $cpt_support = ['xptheme_custom_post', 'post', 'page', 'product'];
             update_option('elementor_cpt_support', $cpt_support);
 
             update_option('elementor_disable_color_schemes', 'yes');

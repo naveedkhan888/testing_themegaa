@@ -91,13 +91,13 @@ if (! function_exists('themename_megamenu_create_related_post')) {
 		$slug 	= 'xperttheme-megamenu-' . $menu_id;
 
 		$args = apply_filters('themename_megamenu_create_related_post_args', array(
-			'post_type'   => 'tbay_custom_post',
+			'post_type'   => 'xptheme_custom_post',
 			'post_title'  => $name,
 			'post_name'   => $slug,
 			'post_status' => 'publish',
 			'meta_input'  => array(
 				'_wp_page_template' => 'elementor_canvas',
-				'tbay_block_type' => 'type_megamenu',
+				'xptheme_block_type' => 'type_megamenu',
 			)
 		)); 
 
@@ -135,7 +135,7 @@ if (! function_exists('themename_megamenu_get_icon_html')) {
 
 if (! function_exists('themename_megamenu_get_icons')) {
 	function themename_megamenu_get_icons() {
-		$jsonfile = get_theme_file_uri('/inc/vendors/elementor/icons/json/tbay-custom.json');
+		$jsonfile = get_theme_file_uri('/inc/vendors/elementor/icons/json/xptheme-custom.json');
 		$request  = wp_remote_get($jsonfile, array('sslverify' => FALSE) );
 		$response = wp_remote_retrieve_body($request);
 

@@ -1,10 +1,10 @@
 (function($){
-	$.fn.tbayCountDown = function( options ) {
+	$.fn.xpthemeCountDown = function( options ) {
 	 	return this.each(function() {
-			new $.tbayCountDown( this, options ); 
+			new $.xpthemeCountDown( this, options ); 
 		});
  	}
-	$.tbayCountDown = function( obj, options ) {
+	$.xpthemeCountDown = function( obj, options ) {
 		this.options = $.extend({
 			autoStart : true,
 			LeadingZero:true,
@@ -27,9 +27,9 @@
 		var gsecs = Math.floor(ddiff.valueOf()/1000); 
 		this.CountBack(gsecs, this);
 	};
-	$.tbayCountDown.fn = $.tbayCountDown.prototype;
-    $.tbayCountDown.fn.extend = $.tbayCountDown.extend = $.extend;
-	$.tbayCountDown.fn.extend({
+	$.xpthemeCountDown.fn = $.xpthemeCountDown.prototype;
+    $.xpthemeCountDown.fn.extend = $.xpthemeCountDown.extend = $.extend;
+	$.xpthemeCountDown.fn.extend({
 		calculateDate:function( secs, num1, num2 ){
 			var s = ((Math.floor(secs/num1))%num2).toString();
 			if ( this.options.LeadingZero && s.length < 2) {

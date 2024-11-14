@@ -165,11 +165,11 @@
 	font-size: 20px;
 }
 
-.tbay-redux-slides .redux-slides-list li{
+.xptheme-redux-slides .redux-slides-list li{
     margin-bottom: 5px !important;
 }
 
-.tbay-redux-slides .redux-slides-list li input {
+.xptheme-redux-slides .redux-slides-list li input {
 	height: 32px;
 }
 .description .des-label {
@@ -193,18 +193,18 @@ div.nsl-container .nsl-button-default span.nsl-button-label-container {
 	-moz-osx-font-smoothing: grayscale;
 }
 
-#tbay-elementor-widget-template-empty-templates {
+#xptheme-elementor-widget-template-empty-templates {
 	margin-top: 15px;
 	text-align: center;
 }
-.tbay-elementor-widget-template-empty-templates-icon {
+.xptheme-elementor-widget-template-empty-templates-icon {
 font-size: 96px;
 color: #d5dadf;
 }
-.tbay-elementor-widget-template-empty-templates-title {
+.xptheme-elementor-widget-template-empty-templates-title {
 padding: 25px 0 30px
 }
-.tbay-elementor-widget-template-empty-templates-footer {
+.xptheme-elementor-widget-template-empty-templates-footer {
 	color: #a4afb7;
 	font-size: 13px;
 	font-style: italic;

@@ -8,7 +8,7 @@
  */
 $class_main = $class_left = '';
 
-$audiolink =  get_post_meta(get_the_ID(), 'tbay_post_audio_link', true);
+$audiolink =  get_post_meta(get_the_ID(), 'xptheme_post_audio_link', true);
 
 if (isset($audiolink) && $audiolink) {
 } else {
@@ -26,7 +26,7 @@ if (isset($audiolink) && $audiolink) {
         <?php if ($audiolink) : ?>
             <div class="audio-wrap audio-responsive"><?php echo wp_oembed_get($audiolink); ?></div>
         <?php elseif (has_post_thumbnail()) : ?>
-            <?php themename_tbay_post_thumbnail(); ?>
+            <?php themename_xptheme_post_thumbnail(); ?>
         <?php endif; ?>
 
         <?php if (get_the_category_list()): ?>
@@ -59,9 +59,9 @@ if (isset($audiolink) && $audiolink) {
 
             <?php the_content(esc_html__('Continue Reading', 'themename')); ?>
 
-            <div class="themename-tag-socials-box"><?php do_action('themename_tbay_post_tag_socials') ?></div>
+            <div class="themename-tag-socials-box"><?php do_action('themename_xptheme_post_tag_socials') ?></div>
 
-            <?php do_action('themename_tbay_post_bottom') ?>
+            <?php do_action('themename_xptheme_post_bottom') ?>
             
         </div><!-- /entry-content -->
 

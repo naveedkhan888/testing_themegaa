@@ -1,4 +1,4 @@
-<header id="tbay-header" class="tbay_header-template site-header header-checkout">
+<header id="xptheme-header" class="xptheme_header-template site-header header-checkout">
 	<div class="container">
 		<?php
 			/**

@@ -11,7 +11,7 @@ class Themename_Elementor_Compare extends Themename_Elementor_Widget_Base
 {
     public function get_name()
     {
-        return 'tbay-compare';
+        return 'xptheme-compare';
     }
 
     public function get_title()
@@ -45,7 +45,7 @@ class Themename_Elementor_Compare extends Themename_Elementor_Widget_Base
                 'type'               => Controls_Manager::ICONS,
                 'default' => [
                     'value' => 'tb-icon tb-icon-sync',
-                    'library' => 'tbay-custom',
+                    'library' => 'xptheme-custom',
                 ],
             ]
         );

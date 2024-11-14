@@ -13,7 +13,7 @@ class Themename_Elementor_Account extends Themename_Elementor_Widget_Base
 
     public function get_name()
     {
-        return 'tbay-account';
+        return 'xptheme-account';
     }
 
     public function get_title()
@@ -52,7 +52,7 @@ class Themename_Elementor_Account extends Themename_Elementor_Widget_Base
                 'type'               => Controls_Manager::ICONS,
                 'default' => [
                     'value' => 'tb-icon tb-icon-user',
-                    'library' => 'tbay-custom',
+                    'library' => 'xptheme-custom',
                 ],
             ]
         );
@@ -158,7 +158,7 @@ class Themename_Elementor_Account extends Themename_Elementor_Widget_Base
                     ],
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .tbay-login a i' => 'font-size: {{SIZE}}{{UNIT}} !important;',
+                    '{{WRAPPER}} .xptheme-login a i' => 'font-size: {{SIZE}}{{UNIT}} !important;',
                 ],
             ]
         );
@@ -169,7 +169,7 @@ class Themename_Elementor_Account extends Themename_Elementor_Widget_Base
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px' ],
                 'selectors'  => [
-                    '{{WRAPPER}} .tbay-login a i' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .xptheme-login a i' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -180,7 +180,7 @@ class Themename_Elementor_Account extends Themename_Elementor_Widget_Base
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px' ],
                 'selectors'  => [
-                    '{{WRAPPER}} .tbay-login a i' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .xptheme-login a i' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -199,7 +199,7 @@ class Themename_Elementor_Account extends Themename_Elementor_Widget_Base
                 'label'     => esc_html__('Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .tbay-login a i'    => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .xptheme-login a i'    => 'color: {{VALUE}}',
                 ],
             ]
         );
@@ -209,7 +209,7 @@ class Themename_Elementor_Account extends Themename_Elementor_Widget_Base
                 'label'     => esc_html__('Background Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .tbay-login > a'    => 'background-color: {{VALUE}}',
+                    '{{WRAPPER}} .xptheme-login > a'    => 'background-color: {{VALUE}}',
                 ],
             ]
         );
@@ -230,7 +230,7 @@ class Themename_Elementor_Account extends Themename_Elementor_Widget_Base
                 'label'     => esc_html__('Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .tbay-login > a:hover i'    => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .xptheme-login > a:hover i'    => 'color: {{VALUE}}',
                 ],
             ]
         );
@@ -240,7 +240,7 @@ class Themename_Elementor_Account extends Themename_Elementor_Widget_Base
                 'label'     => esc_html__('Background Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .tbay-login > a:hover'    => 'background-color: {{VALUE}}',
+                    '{{WRAPPER}} .xptheme-login > a:hover'    => 'background-color: {{VALUE}}',
                 ],
             ]
         );

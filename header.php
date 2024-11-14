@@ -25,10 +25,10 @@
         /**
         * themename_before_theme_header hook
         *
-        * @hooked themename_tbay_offcanvas_smart_menu - 10
-        * @hooked themename_tbay_the_topbar_mobile - 20
-        * @hooked themename_tbay_custom_form_login - 30
-        * @hooked themename_tbay_footer_mobile - 40
+        * @hooked themename_xptheme_offcanvas_smart_menu - 10
+        * @hooked themename_xptheme_the_topbar_mobile - 20
+        * @hooked themename_xptheme_custom_form_login - 30
+        * @hooked themename_xptheme_footer_mobile - 40
         */
         do_action('themename_before_theme_header');
     ?>
@@ -41,4 +41,4 @@
         do_action('themename_after_theme_header');
     ?>
 
-	<div id="tbay-main-content">
+	<div id="xptheme-main-content">

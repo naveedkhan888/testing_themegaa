@@ -30,7 +30,7 @@ class Themename_Elementor_Text_Box extends Themename_Elementor_Widget_Base
      */
     public function get_name()
     {
-        return 'tbay-text-box';
+        return 'xptheme-text-box';
     }
 
     /**

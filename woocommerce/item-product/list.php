@@ -37,18 +37,18 @@ global $product;
 
 				<?php
                     /**
-                    * themename_tbay_after_shop_loop_item_title hook
+                    * themename_xptheme_after_shop_loop_item_title hook
                     *
                     */
-                    do_action('themename_tbay_after_shop_loop_item_title');
+                    do_action('themename_xptheme_after_shop_loop_item_title');
                 ?>
 				<?php
                     /**
-                    * tbay_woocommerce_before_content_product hook
+                    * xptheme_woocommerce_before_content_product hook
                     *
                     * @hooked woocommerce_show_product_loop_sale_flash - 10
                     */
-                    do_action('tbay_woocommerce_before_content_product');
+                    do_action('xptheme_woocommerce_before_content_product');
                 ?>
 				
 			</figure>
@@ -68,11 +68,11 @@ global $product;
 
                 <?php
                     /**
-                    * themename_after_title_tbay_subtitle hook
+                    * themename_after_title_xptheme_subtitle hook
                     *
                     * @hooked themename_woo_get_subtitle - 0
                     */
-                    do_action('themename_after_title_tbay_subtitle');
+                    do_action('themename_after_title_xptheme_subtitle');
                 ?>
 
 
@@ -97,7 +97,7 @@ global $product;
                     *
                     * @hooked the_woocommerce_variable - 5
                     * @hooked list_variable_swatches_pro - 5
-                    * @hooked themename_tbay_total_sales - 15
+                    * @hooked themename_xptheme_total_sales - 15
                     */
                     do_action('themename_woo_list_after_short_description');
                 ?>

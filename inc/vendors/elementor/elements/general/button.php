@@ -29,7 +29,7 @@ class Themename_Elementor_Button extends Themename_Elementor_Widget_Base
      */
     public function get_name()
     {
-        return 'tbay-button';
+        return 'xptheme-button';
     }
 
     /**
@@ -113,7 +113,7 @@ class Themename_Elementor_Button extends Themename_Elementor_Widget_Base
                 'type' => Controls_Manager::ICONS,
                 'default' => [
                     'value' => 'tb-icon tb-icon-arrow-right',
-                    'library' => 'tbay-custom',
+                    'library' => 'xptheme-custom',
                 ],
                 'condition' => [
                     'add_icon' => 'yes'
@@ -157,7 +157,7 @@ class Themename_Elementor_Button extends Themename_Elementor_Widget_Base
                 ], 
                 'prefix_class' => 'align-',
                 'selectors' => [
-                    '{{WRAPPER}} .tbay-element-button' => 'text-align: {{VALUE}}',
+                    '{{WRAPPER}} .xptheme-element-button' => 'text-align: {{VALUE}}',
                 ],
             ]
         ); 
@@ -166,7 +166,7 @@ class Themename_Elementor_Button extends Themename_Elementor_Widget_Base
             Group_Control_Typography::get_type(),
             [
                 'name'     => 'style_button_typography',
-                'selector' => '{{WRAPPER}} .tbay-element-button > a',
+                'selector' => '{{WRAPPER}} .xptheme-element-button > a',
             ]
         );
 
@@ -178,7 +178,7 @@ class Themename_Elementor_Button extends Themename_Elementor_Widget_Base
                 'size_units' => [ 'px', '%' ],
                 'separator'    => 'before',
                 'selectors' => [
-                    '{{WRAPPER}} .tbay-element-button > a' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .xptheme-element-button > a' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -191,7 +191,7 @@ class Themename_Elementor_Button extends Themename_Elementor_Widget_Base
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', 'em', '%' ],
                 'selectors'  => [
-                    '{{WRAPPER}} .tbay-element-button > a' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .xptheme-element-button > a' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -202,7 +202,7 @@ class Themename_Elementor_Button extends Themename_Elementor_Widget_Base
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', 'em', '%' ],
                 'selectors'  => [
-                    '{{WRAPPER}} .tbay-element-button > a' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .xptheme-element-button > a' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -223,8 +223,8 @@ class Themename_Elementor_Button extends Themename_Elementor_Widget_Base
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .tbay-element-button > a' => 'background: {{VALUE}};',
-                    '{{WRAPPER}} .tbay-element-button > a:after' => 'border-color: {{VALUE}};',
+                    '{{WRAPPER}} .xptheme-element-button > a' => 'background: {{VALUE}};',
+                    '{{WRAPPER}} .xptheme-element-button > a:after' => 'border-color: {{VALUE}};',
                 ],
             ]
         );
@@ -236,7 +236,7 @@ class Themename_Elementor_Button extends Themename_Elementor_Widget_Base
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .tbay-element-button > a' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .xptheme-element-button > a' => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -258,7 +258,7 @@ class Themename_Elementor_Button extends Themename_Elementor_Widget_Base
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .tbay-element-button > a:hover' => 'background: {{VALUE}};',
+                    '{{WRAPPER}} .xptheme-element-button > a:hover' => 'background: {{VALUE}};',
                 ],
             ]
         );
@@ -270,7 +270,7 @@ class Themename_Elementor_Button extends Themename_Elementor_Widget_Base
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .tbay-element-button > a:hover' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .xptheme-element-button > a:hover' => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -300,7 +300,7 @@ class Themename_Elementor_Button extends Themename_Elementor_Widget_Base
             $attribute .= 'rel="nofollow"';
         } ?>
             <a href="<?php echo esc_url($link) ?>" <?php echo trim($attribute) ?>
-                class="tbay-btn-theme btn-theme"><span><?php echo trim($text_button); ?></span>
+                class="xptheme-btn-theme btn-theme"><span><?php echo trim($text_button); ?></span>
                 <?php $this->render_item_icon($icon_button); ?>
             </a>
         <?php

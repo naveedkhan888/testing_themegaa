@@ -9,7 +9,7 @@ abstract class Themename_Elementor_Responsive_Base extends Themename_Elementor_W
 {
     public function get_name()
     {
-        return 'tbay-responsive';
+        return 'xptheme-responsive';
     }
 
     /**

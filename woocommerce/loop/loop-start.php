@@ -35,7 +35,7 @@ switch ($columns) {
 $screen_tablet 			= 3;
 $screen_landscape 		= 3;
 
-if ( themename_tbay_get_config('mobile_product_number', 'two') !== 'one' ) {
+if ( themename_xptheme_get_config('mobile_product_number', 'two') !== 'one' ) {
     $screen_mobile          = 2;
 } else {
     $screen_mobile          = 1;
@@ -53,7 +53,7 @@ $data_responsive .= ' data-landscape='. esc_attr($screen_landscape) .'';
 
 $data_responsive .= ' data-mobile='. esc_attr($screen_mobile) .'';
 
-$woo_mode = themename_tbay_woocommerce_get_display_mode();
+$woo_mode = themename_xptheme_woocommerce_get_display_mode();
 
 switch ($woo_mode) {
     case 'grid':

@@ -25,7 +25,7 @@ class Themename_Elementor_Heading extends Themename_Elementor_Widget_Base
      */
     public function get_name()
     {
-        return 'tbay-heading';
+        return 'xptheme-heading';
     }
 
     /**

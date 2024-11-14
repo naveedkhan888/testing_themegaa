@@ -13,7 +13,7 @@ class Themename_Elementor_Search_Form extends Themename_Elementor_Widget_Base
 
     public function get_name()
     {
-        return 'tbay-search-form';
+        return 'xptheme-search-form';
     }
 
     public function get_title()
@@ -107,13 +107,13 @@ class Themename_Elementor_Search_Form extends Themename_Elementor_Widget_Base
                     ],
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .tbay-search-form .tbay-search,
-                    {{WRAPPER}} .tbay-search-form .select-category,
-                    {{WRAPPER}} .tbay-search-form .select-category > select' => 'height: {{SIZE}}{{UNIT}};',
-                    '{{WRAPPER}} .tbay-search-form .select-category,{{WRAPPER}} .tbay-search-form .button-search:not(.icon),
-                    {{WRAPPER}} .tbay-search-clear,{{WRAPPER}} .tbay-search-form .button-search:not(.icon) i,
-                    {{WRAPPER}} .tbay-search-form .SumoSelect, 
-                    {{WRAPPER}} .tbay-search-form .select-category .CaptionCont' => 'line-height: {{SIZE}}{{UNIT}}'
+                    '{{WRAPPER}} .xptheme-search-form .xptheme-search,
+                    {{WRAPPER}} .xptheme-search-form .select-category,
+                    {{WRAPPER}} .xptheme-search-form .select-category > select' => 'height: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .xptheme-search-form .select-category,{{WRAPPER}} .xptheme-search-form .button-search:not(.icon),
+                    {{WRAPPER}} .xptheme-search-clear,{{WRAPPER}} .xptheme-search-form .button-search:not(.icon) i,
+                    {{WRAPPER}} .xptheme-search-form .SumoSelect, 
+                    {{WRAPPER}} .xptheme-search-form .select-category .CaptionCont' => 'line-height: {{SIZE}}{{UNIT}}'
                 ],
             ]
         );
@@ -134,37 +134,37 @@ class Themename_Elementor_Search_Form extends Themename_Elementor_Widget_Base
                 ],
                 'size_units' => [ 'px' ,'%'],
                 'selectors' => [
-                    '{{WRAPPER}} .tbay-search-form .form-group .input-group,
+                    '{{WRAPPER}} .xptheme-search-form .form-group .input-group,
                     {{WRAPPER}}' => 'width: {{SIZE}}{{UNIT}} !important;',
                 ],
             ]
         );
 
         $this->add_control(
-            'padding_tbay_search_form',
+            'padding_xptheme_search_form',
             [
                 'label'     => esc_html__('Padding Search Form', 'themename'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px' ],
                 'selectors'  => [
-                    '{{WRAPPER}} .tbay-search-form .form-group .input-group' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .xptheme-search-form .form-group .input-group' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
 
         $this->add_control(
-            'bg_tbay_search_form',
+            'bg_xptheme_search_form',
             [
                 'label'     => esc_html__('Background', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .tbay-search-form .form-group .input-group'    => 'background: {{VALUE}}',
+                    '{{WRAPPER}} .xptheme-search-form .form-group .input-group'    => 'background: {{VALUE}}',
                 ],
             ]
         );
 
         $this->add_control(
-            'border_style_tbay_search_form',
+            'border_style_xptheme_search_form',
             [
                 'label' => esc_html__('Border Type', 'themename'),
                 'type' => Controls_Manager::SELECT,
@@ -177,50 +177,50 @@ class Themename_Elementor_Search_Form extends Themename_Elementor_Widget_Base
                     'groove' => esc_html__('Groove', 'themename'),
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .tbay-search-form .form-group .input-group' => 'border-style: {{VALUE}};',
+                    '{{WRAPPER}} .xptheme-search-form .form-group .input-group' => 'border-style: {{VALUE}};',
                 ],
             ]
         );
         $this->add_control(
-            'border_width_tbay_search_form',
+            'border_width_xptheme_search_form',
             [
                 'label' => esc_html__('Width', 'themename'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px' ],
 
                 'selectors'  => [
-                    '{{WRAPPER}} .tbay-search-form .form-group .input-group' => 'border-width: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .xptheme-search-form .form-group .input-group' => 'border-width: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                     '{{WRAPPER}} .SumoSelect.open>.optWrapper,{{WRAPPER}} .autocomplete-suggestions' => 'margin-top: {{BOTTOM}}{{UNIT}};'
                 ],
                 'condition' => [
-                    'border_style_tbay_search_form!' => '',
+                    'border_style_xptheme_search_form!' => '',
                 ],
             ]
         );
         $this->add_control(
-            'border_color_tbay_search_form',
+            'border_color_xptheme_search_form',
             [
                 'label' => esc_html__('Border Color', 'themename'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .tbay-search-form .form-group .input-group' => 'border-color: {{VALUE}};',
+                    '{{WRAPPER}} .xptheme-search-form .form-group .input-group' => 'border-color: {{VALUE}};',
                 ],
                 'condition' => [
-                    'border_style_tbay_search_form!' => '',
+                    'border_style_xptheme_search_form!' => '',
                 ],
             ]
         );
         
         $this->add_control(
-            'border_radius_tbay_search_form',
+            'border_radius_xptheme_search_form',
             [
                 'label'     => esc_html__('Border Radius Search Form', 'themename'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px' ,'%'],
                 'selectors'  => [
-                    '{{WRAPPER}} .tbay-search-form .form-group .input-group' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                    '{{WRAPPER}} .tbay-search-form .select-category .CaptionCont' => 'border-radius: {{TOP}}{{UNIT}} 0 0 {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .xptheme-search-form .form-group .input-group' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .xptheme-search-form .select-category .CaptionCont' => 'border-radius: {{TOP}}{{UNIT}} 0 0 {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -242,7 +242,7 @@ class Themename_Elementor_Search_Form extends Themename_Elementor_Widget_Base
                 'label'     => esc_html__('Background', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .tbay-search-form .select-category'    => 'background: {{VALUE}}',
+                    '{{WRAPPER}} .xptheme-search-form .select-category'    => 'background: {{VALUE}}',
                 ],
                 'condition' => [
                     'enable_categories_search' => 'yes'
@@ -255,7 +255,7 @@ class Themename_Elementor_Search_Form extends Themename_Elementor_Widget_Base
                 'label'     => esc_html__('Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .tbay-search-form .select-category','{{WRAPPER}} .tbay-search-form .select-category > select'    => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .xptheme-search-form .select-category','{{WRAPPER}} .xptheme-search-form .select-category > select'    => 'color: {{VALUE}}',
                 ],
                 'condition' => [
                     'enable_categories_search' => 'yes'
@@ -270,7 +270,7 @@ class Themename_Elementor_Search_Form extends Themename_Elementor_Widget_Base
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px' ],
                 'selectors'  => [
-                    '{{WRAPPER}} .tbay-search-form .select-category' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .xptheme-search-form .select-category' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -289,10 +289,10 @@ class Themename_Elementor_Search_Form extends Themename_Elementor_Widget_Base
                     'groove' => esc_html__('Groove', 'themename'),
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .tbay-search-form .select-category' => 'border-style: {{VALUE}};',
+                    '{{WRAPPER}} .xptheme-search-form .select-category' => 'border-style: {{VALUE}};',
                 ],
                 'condition' => [
-                    'border_style_tbay_search_form' => '',
+                    'border_style_xptheme_search_form' => '',
                     'enable_categories_search' => 'yes'
                 ],
             ]
@@ -305,7 +305,7 @@ class Themename_Elementor_Search_Form extends Themename_Elementor_Widget_Base
                 'size_units' => [ 'px' ],
 
                 'selectors'  => [
-                    '{{WRAPPER}} .tbay-search-form .select-category' => 'border-width: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .xptheme-search-form .select-category' => 'border-width: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                     
                 ],
                 'condition' => [
@@ -320,7 +320,7 @@ class Themename_Elementor_Search_Form extends Themename_Elementor_Widget_Base
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .tbay-search-form .select-category' => 'border-color: {{VALUE}};',
+                    '{{WRAPPER}} .xptheme-search-form .select-category' => 'border-color: {{VALUE}};',
                 ],
                 'condition' => [
                     'border_style_category_search!' => '',
@@ -335,7 +335,7 @@ class Themename_Elementor_Search_Form extends Themename_Elementor_Widget_Base
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px' ,'%'],
                 'selectors'  => [
-                    '{{WRAPPER}} .tbay-search-form .select-category' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .xptheme-search-form .select-category' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                     
                 ],
                 'condition' => [
@@ -359,7 +359,7 @@ class Themename_Elementor_Search_Form extends Themename_Elementor_Widget_Base
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px' ],
                 'selectors'  => [
-                    '{{WRAPPER}} .tbay-search-form .button-search' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .xptheme-search-form .button-search' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -370,7 +370,7 @@ class Themename_Elementor_Search_Form extends Themename_Elementor_Widget_Base
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px' ],
                 'selectors'  => [
-                    '{{WRAPPER}} .tbay-search-form .button-search' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .xptheme-search-form .button-search' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -382,8 +382,8 @@ class Themename_Elementor_Search_Form extends Themename_Elementor_Widget_Base
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px' ,'%'],
                 'selectors'  => [ 
-                    '{{WRAPPER}} .tbay-search-form .button-group,
-                    {{WRAPPER}} .tbay-search-form .button-search' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}} !important;',
+                    '{{WRAPPER}} .xptheme-search-form .button-group,
+                    {{WRAPPER}} .xptheme-search-form .button-search' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}} !important;',
                     
                 ],
             ]
@@ -403,8 +403,8 @@ class Themename_Elementor_Search_Form extends Themename_Elementor_Widget_Base
                 'label'     => esc_html__('Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .tbay-search-form .button-search i,
-                    {{WRAPPER}} .tbay-search-form .button-search .text, {{WRAPPER}} .tbay-search-form .button-group:before'    => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .xptheme-search-form .button-search i,
+                    {{WRAPPER}} .xptheme-search-form .button-search .text, {{WRAPPER}} .xptheme-search-form .button-group:before'    => 'color: {{VALUE}}',
                 ],
             ]
         );
@@ -414,7 +414,7 @@ class Themename_Elementor_Search_Form extends Themename_Elementor_Widget_Base
                 'label'     => esc_html__('Background Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .tbay-search-form .button-search,{{WRAPPER}} .tbay-search-form .button-group'    => 'background-color: {{VALUE}}',
+                    '{{WRAPPER}} .xptheme-search-form .button-search,{{WRAPPER}} .xptheme-search-form .button-group'    => 'background-color: {{VALUE}}',
                 ],
             ]
         );
@@ -433,8 +433,8 @@ class Themename_Elementor_Search_Form extends Themename_Elementor_Widget_Base
                 'label'     => esc_html__('Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .tbay-search-form .button-search:hover i,
-                    {{WRAPPER}} .tbay-search-form .button-search:hover .text'    => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .xptheme-search-form .button-search:hover i,
+                    {{WRAPPER}} .xptheme-search-form .button-search:hover .text'    => 'color: {{VALUE}}',
                 ],
             ]
         );
@@ -444,7 +444,7 @@ class Themename_Elementor_Search_Form extends Themename_Elementor_Widget_Base
                 'label'     => esc_html__('Background Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .tbay-search-form .button-search:hover'    => 'background-color: {{VALUE}}',
+                    '{{WRAPPER}} .xptheme-search-form .button-search:hover'    => 'background-color: {{VALUE}}',
                 ],
             ]
         );
@@ -465,7 +465,7 @@ class Themename_Elementor_Search_Form extends Themename_Elementor_Widget_Base
                 'label'     => esc_html__('Background Input Search', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .tbay-search-form .tbay-search'    => 'background: {{VALUE}}',
+                    '{{WRAPPER}} .xptheme-search-form .xptheme-search'    => 'background: {{VALUE}}',
                 ],
             ]
         );
@@ -475,7 +475,7 @@ class Themename_Elementor_Search_Form extends Themename_Elementor_Widget_Base
                 'label'     => esc_html__('Color Input Search', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .tbay-search-form .tbay-search'    => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .xptheme-search-form .xptheme-search'    => 'color: {{VALUE}}',
                     '{{WRAPPER}} .form-control::placeholder'    => 'color: {{VALUE}}',
                 ],
             ]
@@ -494,10 +494,10 @@ class Themename_Elementor_Search_Form extends Themename_Elementor_Widget_Base
                     'groove' => esc_html__('Groove', 'themename'),
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .tbay-search-form .tbay-search' => 'border-style: {{VALUE}};',
+                    '{{WRAPPER}} .xptheme-search-form .xptheme-search' => 'border-style: {{VALUE}};',
                 ],
                 'condition' => [
-                    'border_style_tbay_search_form' => '',
+                    'border_style_xptheme_search_form' => '',
                 ],
             ]
         );
@@ -509,7 +509,7 @@ class Themename_Elementor_Search_Form extends Themename_Elementor_Widget_Base
                 'size_units' => [ 'px' ],
 
                 'selectors'  => [
-                    '{{WRAPPER}} .tbay-search-form .tbay-search' => 'border-width: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .xptheme-search-form .xptheme-search' => 'border-width: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                     
                 ],
                 'condition' => [
@@ -524,7 +524,7 @@ class Themename_Elementor_Search_Form extends Themename_Elementor_Widget_Base
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .tbay-search-form .tbay-search' => 'border-color: {{VALUE}};',
+                    '{{WRAPPER}} .xptheme-search-form .xptheme-search' => 'border-color: {{VALUE}};',
                 ],
                 'condition' => [
                     'border_style_input_search!' => '',
@@ -539,7 +539,7 @@ class Themename_Elementor_Search_Form extends Themename_Elementor_Widget_Base
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px' ,'%'],
                 'selectors'  => [
-                    '{{WRAPPER}} .tbay-search-form .tbay-search' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .xptheme-search-form .xptheme-search' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                     
                 ],
                 'condition' => [
@@ -555,7 +555,7 @@ class Themename_Elementor_Search_Form extends Themename_Elementor_Widget_Base
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', 'em', '%' ],
                 'selectors'  => [
-                    '{{WRAPPER}} .tbay-search-form .tbay-search' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .xptheme-search-form .xptheme-search' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -755,7 +755,7 @@ class Themename_Elementor_Search_Form extends Themename_Elementor_Widget_Base
         $settings = $this->get_settings_for_display();
         extract($settings);
         
-        $_id = themename_tbay_random_key();
+        $_id = themename_xptheme_random_key();
         $class_active_ajax = (themename_switcher_to_boolean($autocomplete_search)) ? 'themename-ajax-search' : '';
 
         $this->add_render_attribute(
@@ -774,7 +774,7 @@ class Themename_Elementor_Search_Form extends Themename_Elementor_Widget_Base
                 'data-count' => $search_max_number_results['size'],
             ]
         ); ?>
-            <div class="tbay-search-form">
+            <div class="xptheme-search-form">
                 <form action="<?php echo esc_url(home_url('/')); ?>" method="get" <?php $this->print_render_attribute_string('search_form'); ?> >
                     <div class="form-group">
                         <div class="input-group">
@@ -811,7 +811,7 @@ class Themename_Elementor_Search_Form extends Themename_Elementor_Widget_Base
                         <?php endif; ?>
 
                         
-                        <input data-style="right" type="text" placeholder="<?php echo esc_attr($placeholder_text); ?>" name="s" required oninvalid="this.setCustomValidity('<?php echo esc_attr($vali_input_search) ?>')" oninput="setCustomValidity('')" class="tbay-search form-control input-sm"/>
+                        <input data-style="right" type="text" placeholder="<?php echo esc_attr($placeholder_text); ?>" name="s" required oninvalid="this.setCustomValidity('<?php echo esc_attr($vali_input_search) ?>')" oninput="setCustomValidity('')" class="xptheme-search form-control input-sm"/>
                         
                         <div class="search-results-wrapper">
                             <div class="themename-search-results search-results-<?php echo esc_attr($_id); ?>" ></div>
@@ -826,7 +826,7 @@ class Themename_Elementor_Search_Form extends Themename_Elementor_Widget_Base
                                     <?php
                                 } ?>
                             </button>
-                            <div class="tbay-search-clear"></div>
+                            <div class="xptheme-search-clear"></div>
                         </div>
 
                         <input type="hidden" name="post_type" value="<?php echo esc_attr($search_type); ?>" class="post_type" />

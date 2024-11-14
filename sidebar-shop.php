@@ -1,6 +1,6 @@
 <?php
 $class_shop = '';
-$sidebar_configs = themename_tbay_get_woocommerce_layout_configs();
+$sidebar_configs = themename_xptheme_get_woocommerce_layout_configs();
 $sidebar_id = $sidebar_configs['sidebar']['id'];
 
 if (empty($sidebar_id)) {
@@ -12,7 +12,7 @@ if (themename_woo_is_vendor_page()) {
 }
 
 if (!is_singular('product')) {
-    $product_archive_layout  =   (isset($_GET['product_archive_layout'])) ? $_GET['product_archive_layout'] : themename_tbay_get_config('product_archive_layout', 'shop-left');
+    $product_archive_layout  =   (isset($_GET['product_archive_layout'])) ? $_GET['product_archive_layout'] : themename_xptheme_get_config('product_archive_layout', 'shop-left');
 
     $class_sidebar = ($product_archive_layout !== 'full-width') ? ' d-none d-xl-block' : '';
 } else {

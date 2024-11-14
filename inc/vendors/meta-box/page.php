@@ -4,10 +4,10 @@ if (!function_exists('themename_register_page_meta_boxes')) {
     function themename_register_page_meta_boxes( $meta_boxes ) {
         $sidebars = themename_sidebars_array();
 
-        $footers = array_merge(array('global' => esc_html__('Global Setting', 'themename')), themename_tbay_get_footer_layouts());
-        $headers = array_merge(array('global' => esc_html__('Global Setting', 'themename')), themename_tbay_get_header_layouts());
+        $footers = array_merge(array('global' => esc_html__('Global Setting', 'themename')), themename_xptheme_get_footer_layouts());
+        $headers = array_merge(array('global' => esc_html__('Global Setting', 'themename')), themename_xptheme_get_header_layouts());
 
-        $prefix = 'tbay_page_';
+        $prefix = 'xptheme_page_';
 
         $fields = array(
             array(

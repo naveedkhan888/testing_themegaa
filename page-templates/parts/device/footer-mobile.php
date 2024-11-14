@@ -4,7 +4,7 @@
      * themename_before_topbar_mobile hook
      */
     do_action('themename_before_footer_mobile');
-    $mobile_footer_slides = themename_tbay_get_config('mobile_footer_slides');
+    $mobile_footer_slides = themename_xptheme_get_config('mobile_footer_slides');
 ?>
 
 

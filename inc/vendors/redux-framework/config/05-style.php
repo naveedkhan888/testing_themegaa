@@ -9,8 +9,8 @@
 defined( 'ABSPATH' ) || exit;
 
 
-$default_color = themename_tbay_default_theme_primary_color();
-$default_fonts = themename_tbay_default_theme_primary_fonts();
+$default_color = themename_xptheme_default_theme_primary_color();
+$default_fonts = themename_xptheme_default_theme_primary_fonts();
 
 if ( !isset($default_color['main_color_second']) ) {
 	$default_color['main_color_second'] = '';

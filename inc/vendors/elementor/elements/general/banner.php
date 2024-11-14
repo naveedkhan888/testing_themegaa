@@ -32,7 +32,7 @@ class Themename_Elementor_Banner extends Themename_Elementor_Widget_Base
      */
     public function get_name()
     {
-        return 'tbay-banner';
+        return 'xptheme-banner';
     }
 
     /**
@@ -330,7 +330,7 @@ class Themename_Elementor_Banner extends Themename_Elementor_Widget_Base
             Group_Control_Typography::get_type(),
             [
                 'name'     => 'title_typography',
-                'selector' => '{{WRAPPER}} .banner-tbay-title .title',
+                'selector' => '{{WRAPPER}} .banner-xptheme-title .title',
             ]
         );
 
@@ -341,7 +341,7 @@ class Themename_Elementor_Banner extends Themename_Elementor_Widget_Base
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors'  => [
-                    '{{WRAPPER}} .banner-tbay-title .title' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .banner-xptheme-title .title' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -354,7 +354,7 @@ class Themename_Elementor_Banner extends Themename_Elementor_Widget_Base
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors'  => [
-                    '{{WRAPPER}} .banner-tbay-title .title' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .banner-xptheme-title .title' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -377,7 +377,7 @@ class Themename_Elementor_Banner extends Themename_Elementor_Widget_Base
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .banner-tbay-title .title' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .banner-xptheme-title .title' => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -388,7 +388,7 @@ class Themename_Elementor_Banner extends Themename_Elementor_Widget_Base
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .banner-tbay-title .title' => 'background: {{VALUE}};',
+                    '{{WRAPPER}} .banner-xptheme-title .title' => 'background: {{VALUE}};',
                 ],
             ]
         );
@@ -410,7 +410,7 @@ class Themename_Elementor_Banner extends Themename_Elementor_Widget_Base
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}}:hover .banner-tbay-title .title' => 'color: {{VALUE}};',
+                    '{{WRAPPER}}:hover .banner-xptheme-title .title' => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -421,7 +421,7 @@ class Themename_Elementor_Banner extends Themename_Elementor_Widget_Base
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}}:hover .banner-tbay-title .title' => 'background: {{VALUE}};',
+                    '{{WRAPPER}}:hover .banner-xptheme-title .title' => 'background: {{VALUE}};',
                 ],
             ]
         );
@@ -434,7 +434,7 @@ class Themename_Elementor_Banner extends Themename_Elementor_Widget_Base
             Group_Control_Border::get_type(),
             [
                 'name'        => 'border_title',
-                'selector' => '{{WRAPPER}} .banner-tbay-title .title',
+                'selector' => '{{WRAPPER}} .banner-xptheme-title .title',
                 'separator'   => 'before',
             ]
         );
@@ -445,7 +445,7 @@ class Themename_Elementor_Banner extends Themename_Elementor_Widget_Base
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px' ],
                 'selectors'  => [
-                    '{{WRAPPER}} .banner-tbay-title .title' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .banner-xptheme-title .title' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -466,7 +466,7 @@ class Themename_Elementor_Banner extends Themename_Elementor_Widget_Base
             Group_Control_Typography::get_type(),
             [
                 'name'     => 'subtitle_typography',
-                'selector' => '{{WRAPPER}} .banner-tbay-title .subtitle',
+                'selector' => '{{WRAPPER}} .banner-xptheme-title .subtitle',
             ]
         );
 
@@ -477,7 +477,7 @@ class Themename_Elementor_Banner extends Themename_Elementor_Widget_Base
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors'  => [
-                    '{{WRAPPER}} .banner-tbay-title .subtitle' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .banner-xptheme-title .subtitle' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -490,7 +490,7 @@ class Themename_Elementor_Banner extends Themename_Elementor_Widget_Base
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors'  => [
-                    '{{WRAPPER}} .banner-tbay-title .subtitle' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .banner-xptheme-title .subtitle' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -511,7 +511,7 @@ class Themename_Elementor_Banner extends Themename_Elementor_Widget_Base
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .banner-tbay-title .subtitle' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .banner-xptheme-title .subtitle' => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -533,7 +533,7 @@ class Themename_Elementor_Banner extends Themename_Elementor_Widget_Base
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}}:hover .banner-tbay-title .subtitle' => 'color: {{VALUE}};',
+                    '{{WRAPPER}}:hover .banner-xptheme-title .subtitle' => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -948,7 +948,7 @@ class Themename_Elementor_Banner extends Themename_Elementor_Widget_Base
             <div class="content-banner">
                 <?php
                 if (!empty($banner_subtitle) || !empty($banner_title)) : ?>
-                    <<?php echo trim($banner_title_tag); ?> class="banner-tbay-title">
+                    <<?php echo trim($banner_title_tag); ?> class="banner-xptheme-title">
                         <?php if (!empty($banner_title)) : ?>
                         <span class="title"><?php echo trim($banner_title); ?></span>
                         <?php endif; ?>

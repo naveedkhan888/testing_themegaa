@@ -61,8 +61,8 @@ class AjaxCart {
   }
 
   _initAjaxPopupShow(title) {
-    let cart_popup = jQuery("#tbay-cart-popup"),
-        cart_popup_content = jQuery("#tbay-cart-popup").find(".toast-body"),
+    let cart_popup = jQuery("#xptheme-cart-popup"),
+        cart_popup_content = jQuery("#xptheme-cart-popup").find(".toast-body"),
         cart_notification = themename_settings.popup_cart_noti,
         string = "";
     string += themename_settings.popup_cart_icon;
@@ -339,8 +339,8 @@ class ProductItem {
   }
 
   _initSwatches() {
-    if (jQuery(".tbay-swatches-wrapper li a").length === 0) return;
-    jQuery("body").on("click", ".tbay-swatches-wrapper li a", function (event) {
+    if (jQuery(".xptheme-swatches-wrapper li a").length === 0) return;
+    jQuery("body").on("click", ".xptheme-swatches-wrapper li a", function (event) {
       event.preventDefault();
       let $active = false;
       let $parent = jQuery(this).closest(".product-block");
@@ -420,7 +420,7 @@ class Cart {
     jQuery(document.body).on("cart_page_refreshed", () => {
       this._initEventChangeQuantity();
     });
-    jQuery(document.body).on("tbay_display_mode", () => {
+    jQuery(document.body).on("xptheme_display_mode", () => {
       this._initEventChangeQuantity();
     });
   }
@@ -445,14 +445,14 @@ class Cart {
   }
 
   _init_shipping_free_notification() {
-    const totalCondition = jQuery(".tbay-total-condition");
+    const totalCondition = jQuery(".xptheme-total-condition");
 
     if (totalCondition.length > 0) {
       totalCondition.each(function () {
-        if (!jQuery(this).hasClass("tbay-active")) {
-          jQuery(this).addClass("tbay-active");
+        if (!jQuery(this).hasClass("xptheme-active")) {
+          jQuery(this).addClass("xptheme-active");
           const per = jQuery(this).attr("data-per");
-          jQuery(this).find(".tbay-total-condition-hint, .tbay-subtotal-condition").css({
+          jQuery(this).find(".xptheme-total-condition-hint, .xptheme-subtotal-condition").css({
             width: per + "%"
           });
         }
@@ -545,15 +545,15 @@ class Checkout {
 
 class WooCommon {
   constructor() {
-    this._tbayFixRemove();
+    this._xpthemeFixRemove();
 
-    jQuery(document.body).on("tbayFixRemove", () => {
-      this._tbayFixRemove();
+    jQuery(document.body).on("xpthemeFixRemove", () => {
+      this._xpthemeFixRemove();
     });
   }
 
-  _tbayFixRemove() {
-    const galleryTrigger = document.querySelector(".tbay-gallery-varible .woocommerce-product-gallery__trigger");
+  _xpthemeFixRemove() {
+    const galleryTrigger = document.querySelector(".xptheme-gallery-varible .woocommerce-product-gallery__trigger");
 
     if (galleryTrigger) {
       galleryTrigger.remove();
@@ -566,10 +566,10 @@ class QuickView {
   constructor() {
     if (typeof jQuery.magnificPopup === "undefined" || typeof themename_settings === "undefined") return;
 
-    this._init_tbay_quick_view();
+    this._init_xptheme_quick_view();
   }
 
-  _init_tbay_quick_view() {
+  _init_xptheme_quick_view() {
     var _this = this;
 
     jQuery(document).off("click", "a.qview-button").on("click", "a.qview-button", function (e) {
@@ -614,7 +614,7 @@ class QuickView {
           type: "inline"
         }
       });
-      let qv_content = jQuery("#tbay-quick-view-content");
+      let qv_content = jQuery("#xptheme-quick-view-content");
       let form_variation = qv_content.find(".variations_form");
 
       if (typeof wc_add_to_cart_variation_params !== "undefined") {
@@ -636,7 +636,7 @@ class QuickView {
         self.unblock();
       }
 
-      jQuery(document.body).trigger("tbay_quick_view");
+      jQuery(document.body).trigger("xptheme_quick_view");
     });
   }
 
@@ -678,8 +678,8 @@ class StickyBar {
     const onepage = jQuery("#sticky-menu-bar");
 
     if (onepage.length > 0) {
-      const tbay_width = jQuery(window).width();
-      jQuery(".tbay_header-template").removeClass("main-sticky-header");
+      const xptheme_width = jQuery(window).width();
+      jQuery(".xptheme_header-template").removeClass("main-sticky-header");
       const btn_cart_offset = jQuery(".single_add_to_cart_button").length > 0 ? jQuery(".single_add_to_cart_button").offset().top : 0;
       const out_of_stock_offset = jQuery("div.product .out-of-stock").length > 0 ? jQuery("div.product .out-of-stock").offset().top : 0;
 
@@ -689,10 +689,10 @@ class StickyBar {
 
       const sum_height = jQuery(".single_add_to_cart_button").length > 0 ? btn_cart_offset : out_of_stock_offset;
 
-      this._checkScroll(tbay_width, sum_height, onepage);
+      this._checkScroll(xptheme_width, sum_height, onepage);
 
       jQuery(window).scroll(() => {
-        this._checkScroll(tbay_width, sum_height, onepage);
+        this._checkScroll(xptheme_width, sum_height, onepage);
       });
     }
 
@@ -701,8 +701,8 @@ class StickyBar {
     }
   }
 
-  _checkScroll(tbay_width, sum_height, onepage) {
-    if (tbay_width >= 768) {
+  _checkScroll(xptheme_width, sum_height, onepage) {
+    if (xptheme_width >= 768) {
       const NextScroll = jQuery(window).scrollTop();
 
       if (NextScroll > sum_height) {
@@ -751,14 +751,14 @@ class DisplayMode {
         dataType: "json",
         method: "POST",
         beforeSend: function (xhr) {
-          event.closest("#tbay-main-content").find(".display-products").addClass("load-ajax");
+          event.closest("#xptheme-main-content").find(".display-products").addClass("load-ajax");
         },
         success: function (data) {
           if (data) {
             event.parent().children().removeClass("active");
             event.addClass("active");
-            event.closest("#tbay-main-content").find(".display-products > div").html(data);
-            event.closest("#tbay-main-content").find(".display-products").fadeOut(0, function () {
+            event.closest("#xptheme-main-content").find(".display-products > div").html(data);
+            event.closest("#xptheme-main-content").find(".display-products").fadeOut(0, function () {
               jQuery(this).addClass("products-list").removeClass("products-grid grid").fadeIn(300);
             });
 
@@ -768,8 +768,8 @@ class DisplayMode {
               });
             }
 
-            jQuery(document.body).trigger("tbay_display_mode");
-            event.closest("#tbay-main-content").find(".display-products").removeClass("load-ajax");
+            jQuery(document.body).trigger("xptheme_display_mode");
+            event.closest("#xptheme-main-content").find(".display-products").removeClass("load-ajax");
             Cookies.set("themename_display_mode", "list", {
               expires: 0.1,
               path: "/"
@@ -787,7 +787,7 @@ class DisplayMode {
       if (jQuery(this).hasClass("active")) return;
       var event = jQuery(this),
           urlAjax = themename_settings.wc_ajax_url.toString().replace("%%endpoint%%", PRODUCT_GRID_AJAX_SHOP_PAGE);
-      event.closest("#tbay-main-content").find("div.display-products");
+      event.closest("#xptheme-main-content").find("div.display-products");
       jQuery.ajax({
         url: urlAjax,
         data: {
@@ -797,14 +797,14 @@ class DisplayMode {
         dataType: "json",
         method: "POST",
         beforeSend: function (xhr) {
-          event.closest("#tbay-main-content").find(".display-products").addClass("load-ajax");
+          event.closest("#xptheme-main-content").find(".display-products").addClass("load-ajax");
         },
         success: function (data) {
           if (data) {
             event.parent().children().removeClass("active");
             event.addClass("active");
-            event.closest("#tbay-main-content").find(".display-products > div").html(data);
-            let products = event.closest("#tbay-main-content").find("div.display-products");
+            event.closest("#xptheme-main-content").find(".display-products > div").html(data);
+            let products = event.closest("#xptheme-main-content").find("div.display-products");
             products.fadeOut(0, function () {
               jQuery(this).addClass("products-grid").removeClass("products-list").fadeIn(300);
             });
@@ -815,8 +815,8 @@ class DisplayMode {
               });
             }
 
-            jQuery(document.body).trigger("tbay_display_mode");
-            event.closest("#tbay-main-content").find(".display-products").removeClass("load-ajax");
+            jQuery(document.body).trigger("xptheme_display_mode");
+            event.closest("#xptheme-main-content").find(".display-products").removeClass("load-ajax");
             Cookies.set("themename_display_mode", "grid", {
               expires: 0.1,
               path: "/"
@@ -842,7 +842,7 @@ class AjaxFilter {
       jQuery(".woocommerce-product-gallery").each(function () {
         jQuery(this).wc_product_gallery();
       });
-      jQuery(document.body).trigger("tbayFixRemove displayMode ajax_sidebar_shop_mobile");
+      jQuery(document.body).trigger("xpthemeFixRemove displayMode ajax_sidebar_shop_mobile");
 
       if (jQuery("body").hasClass("filter-mobile-active")) {
         jQuery("body").removeClass("filter-mobile-active");
@@ -930,7 +930,7 @@ class SingleProduct {
 
     _this._initAskAQuestionName();
 
-    jQuery(document.body).on("tbay_quick_view", () => {
+    jQuery(document.body).on("xptheme_quick_view", () => {
       _this._initBuyNow();
 
       _this._initAjaxSingleCart();
@@ -1039,8 +1039,8 @@ class SingleProduct {
   }
 
   _initBuyNow() {
-    if (jQuery(".tbay-buy-now").length === 0) return;
-    jQuery("body").on("click", ".tbay-buy-now", function (e) {
+    if (jQuery(".xptheme-buy-now").length === 0) return;
+    jQuery("body").on("click", ".xptheme-buy-now", function (e) {
       e.preventDefault();
       let productform = jQuery(this).closest("form.cart"),
           submit_btn = productform.find('[type="submit"]'),
@@ -1060,9 +1060,9 @@ class SingleProduct {
         let is_submit_disabled = jQuery(this).is(".disabled");
 
         if (is_submit_disabled) {
-          jQuery(this).parent().find(".tbay-buy-now").addClass("disabled");
+          jQuery(this).parent().find(".xptheme-buy-now").addClass("disabled");
         } else {
-          jQuery(this).parent().find(".tbay-buy-now").removeClass("disabled");
+          jQuery(this).parent().find(".xptheme-buy-now").removeClass("disabled");
         }
       });
     });
@@ -1070,11 +1070,11 @@ class SingleProduct {
 
   _initFeatureVideo() {
     if (typeof themename_settings === "undefined") return;
-    let featured = jQuery(document).find(themename_settings.img_class_container + ".tbay_featured_content");
+    let featured = jQuery(document).find(themename_settings.img_class_container + ".xptheme_featured_content");
     if (featured.length === 0) return;
     let featured_index = featured.index(),
         featured_gallery_thumbnail = jQuery(themename_settings.thumbnail_gallery_class_element).get(featured_index);
-    jQuery(featured_gallery_thumbnail).addClass("tbay_featured_thumbnail");
+    jQuery(featured_gallery_thumbnail).addClass("xptheme_featured_thumbnail");
   }
 
   _initChangeImageVarible() {
@@ -1134,7 +1134,7 @@ class SingleProduct {
   }
 
   _initAddToCartClickMobile() {
-    const addtocart = jQuery("#tbay-click-addtocart");
+    const addtocart = jQuery("#xptheme-click-addtocart");
     if (addtocart.length === 0) return;
     addtocart.off().on("click", function () {
       jQuery(this).parent().parent().find("form.cart").addClass("open open-btn-addtocart");
@@ -1142,7 +1142,7 @@ class SingleProduct {
   }
 
   _initBuyNowwClickMobile() {
-    const buy_now = jQuery("#tbay-click-buy-now");
+    const buy_now = jQuery("#xptheme-click-buy-now");
     if (buy_now.length === 0) return;
     buy_now.off().on("click", function () {
       jQuery(this).parent().parent().find("form.cart").addClass("open open-btn-buynow");
@@ -1317,7 +1317,7 @@ class ProductTabs {
   }
 
   _initProductTabs() {
-    jQuery(".tbay-element-product-tabs.ajax-active").each(function () {
+    jQuery(".xptheme-element-product-tabs.ajax-active").each(function () {
       var $this = jQuery(this);
       $this.find(".product-tabs-title li a").off("click").on("click", function (e) {
         e.preventDefault();
@@ -1351,8 +1351,8 @@ class ProductTabs {
               jQuery(id).parent().removeClass("load-ajax");
               jQuery(id).addClass("active-content");
               jQuery(id).addClass("current");
-              jQuery(document.body).trigger("tbay_carousel_slick");
-              jQuery(document.body).trigger("tbay_ajax_tabs_products");
+              jQuery(document.body).trigger("xptheme_carousel_slick");
+              jQuery(document.body).trigger("xptheme_ajax_tabs_products");
             } else {
               console.log("loading html products tab ajax returns wrong data");
             }
@@ -1375,7 +1375,7 @@ class ProductCategoriesTabs {
   }
 
   _initProductCategoriesTabs() {
-    jQuery(".tbay-element-product-categories-tabs.ajax-active").each(function () {
+    jQuery(".xptheme-element-product-categories-tabs.ajax-active").each(function () {
       var $this = jQuery(this);
       $this.find(".product-categories-tabs-title li a").off("click").on("click", function (e) {
         e.preventDefault();
@@ -1407,8 +1407,8 @@ class ProductCategoriesTabs {
               jQuery(id).parent().removeClass("load-ajax");
               jQuery(id).addClass("active-content");
               jQuery(id).addClass("current");
-              jQuery(document.body).trigger("tbay_carousel_slick");
-              jQuery(document.body).trigger("tbay_ajax_tabs_products");
+              jQuery(document.body).trigger("xptheme_carousel_slick");
+              jQuery(document.body).trigger("xptheme_ajax_tabs_products");
             } else {
               console.log("loading html products categories tab ajax returns wrong data");
             }
@@ -1432,25 +1432,25 @@ class CollapseDescriptionTab {
   }
 
   _intCollapseDescriptionTab() {
-    const wrap = jQuery(".single-product .tbay-product-description");
+    const wrap = jQuery(".single-product .xptheme-product-description");
 
     if (wrap.length > 0) {
-      const current_height = wrap.find(".tbay-product-description--content").height();
+      const current_height = wrap.find(".xptheme-product-description--content").height();
       const max_height = themename_settings.maximum_height_collapse;
 
       if (current_height > max_height) {
         wrap.addClass("fix-height").css("max-height", parseInt(max_height));
-        wrap.append(`<div class="tbay-description-toggle tbay-description-toggle__less"><a title="${themename_settings.show_less}" href="javascript:void(0);">${themename_settings.show_less}</a></div>`);
-        wrap.append(`<div class="tbay-description-toggle tbay-description-toggle__more"><a title="${themename_settings.show_more}" href="javascript:void(0);">${themename_settings.show_more}</a></div>`);
-        jQuery("body").on("click", ".tbay-description-toggle__more", () => {
+        wrap.append(`<div class="xptheme-description-toggle xptheme-description-toggle__less"><a title="${themename_settings.show_less}" href="javascript:void(0);">${themename_settings.show_less}</a></div>`);
+        wrap.append(`<div class="xptheme-description-toggle xptheme-description-toggle__more"><a title="${themename_settings.show_more}" href="javascript:void(0);">${themename_settings.show_more}</a></div>`);
+        jQuery("body").on("click", ".xptheme-description-toggle__more", () => {
           wrap.removeClass("fix-height").css("max-height", "none");
-          jQuery("body .tbay-description-toggle__more").hide();
-          jQuery("body .tbay-description-toggle__less").show();
+          jQuery("body .xptheme-description-toggle__more").hide();
+          jQuery("body .xptheme-description-toggle__less").show();
         });
-        jQuery("body").on("click", ".tbay-description-toggle__less", () => {
+        jQuery("body").on("click", ".xptheme-description-toggle__less", () => {
           wrap.addClass("fix-height").css("max-height", parseInt(max_height));
-          jQuery("body .tbay-description-toggle__less").hide();
-          jQuery("body .tbay-description-toggle__more").show();
+          jQuery("body .xptheme-description-toggle__less").hide();
+          jQuery("body .xptheme-description-toggle__more").show();
         });
       }
     }
@@ -1491,7 +1491,7 @@ var AddButtonQuantity = function ($scope, $) {
   product_item._initAddButtonQuantity();
 };
 
-jQuery(document.body).on("tbay_ajax_tabs_products", () => {
+jQuery(document.body).on("xptheme_ajax_tabs_products", () => {
   var product_item = new ProductItem();
 
   product_item._initAddButtonQuantity();
@@ -1499,7 +1499,7 @@ jQuery(document.body).on("tbay_ajax_tabs_products", () => {
 jQuery(window).on("elementor/frontend/init", function () {
   if (elementorFrontend.isEditMode() && typeof themename_settings !== "undefined" && Array.isArray(themename_settings.elements_ready.products)) {
     jQuery.each(themename_settings.elements_ready.products, function (index, value) {
-      elementorFrontend.hooks.addAction("frontend/element_ready/tbay-" + value + ".default", AddButtonQuantity);
+      elementorFrontend.hooks.addAction("frontend/element_ready/xptheme-" + value + ".default", AddButtonQuantity);
     });
   }
 });
@@ -1511,7 +1511,7 @@ var AjaxProductTabs = function ($scope, $) {
 jQuery(window).on("elementor/frontend/init", function () {
   if (elementorFrontend.isEditMode() && typeof themename_settings !== "undefined" && elementorFrontend.isEditMode() && Array.isArray(themename_settings.elements_ready.ajax_tabs)) {
     jQuery.each(themename_settings.elements_ready.ajax_tabs, function (index, value) {
-      elementorFrontend.hooks.addAction("frontend/element_ready/tbay-" + value + ".default", AjaxProductTabs);
+      elementorFrontend.hooks.addAction("frontend/element_ready/xptheme-" + value + ".default", AjaxProductTabs);
     });
   }
 });

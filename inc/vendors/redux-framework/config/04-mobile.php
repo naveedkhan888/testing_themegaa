@@ -81,7 +81,7 @@ Redux::set_section(
                 'required'  => array('mobile_header','=', true),
                 'title'     => esc_html__('Always Display Search', 'themename'),
                 'subtitle'  => esc_html__('Search displays on all pages', 'themename'),
-                'class' =>   'tbay-search-mb-all-page',
+                'class' =>   'xptheme-search-mb-all-page',
                 'default'   => false
             ),
             
@@ -127,7 +127,7 @@ Redux::set_section(
                 'type'        => 'slides',
                 'title'       => esc_html__('Config List Menu Icon', 'themename'),
                 'subtitle' => esc_html__('Enter icon name of fonts: ', 'themename') . '<a href="//fontawesome.com/icons?m=free/" target="_blank">Awesome</a> , <a href="//fonts.xperttheme.com/simple-line-icons//" target="_blank">Simple Line Icons</a>, <a href="//fonts.xperttheme.com/material-design-iconic/" target="_blank">Material Design Iconic</a></br></br><b>'. esc_html__('List default URLs:', 'themename') . '</b></br></br><span class="des-label">'. esc_html__('Home page:', 'themename') .'</span><b class="df-url">{{home}}</b></br><span class="des-label">'. esc_html__('Shop page:', 'themename') .'</span><b class="df-url">{{shop}}</b></br><span class="des-label">'. esc_html__('My account page:', 'themename') .'</span><b class="df-url">{{account}}</b></br><span class="des-label">'. esc_html__('Cart page:', 'themename') .'</span><b class="df-url">{{cart}}</b></br><span class="des-label">'. esc_html__('Checkout page:', 'themename') .'</span><b class="df-url">{{checkout}}</b></br><span class="des-label">'. esc_html__('Wishlist page:', 'themename') .'</span><b class="df-url">{{wishlist}}</b></br></br>'. esc_html__('Watch video tutorial: ', 'themename') . '<a href="//youtu.be/d7b6dIzV-YI/" target="_blank">here</a>',
-                'class' =>   'tbay-redux-slides',
+                'class' =>   'xptheme-redux-slides',
                 'show' => array(
                     'title' => true,
                     'description' => true,

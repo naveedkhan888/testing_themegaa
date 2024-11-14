@@ -10,7 +10,7 @@ class Themename_Elementor_Products extends Themename_Elementor_Carousel_Base
 {
     public function get_name()
     {
-        return 'tbay-products';
+        return 'xptheme-products';
     }
 
     public function get_title()
@@ -170,7 +170,7 @@ class Themename_Elementor_Products extends Themename_Elementor_Carousel_Base
                 'type'      => Controls_Manager::ICONS,
                 'default' => [
                     'value' => 'tb-icon tb-icon-arrow-right',
-                    'library' => 'tbay-custom',
+                    'library' => 'xptheme-custom',
                 ],
                 'condition' => [
                     'show_all' => 'yes'
@@ -207,7 +207,7 @@ class Themename_Elementor_Products extends Themename_Elementor_Carousel_Base
                 <div class="wrapper-title-heading">
                     <?php
                         if (!empty($heading_subtitle) || !empty($heading_title)) : ?>
-                            <<?php echo trim($heading_title_tag); ?> class="heading-tbay-title">
+                            <<?php echo trim($heading_title_tag); ?> class="heading-xptheme-title">
                                 <?php if (!empty($heading_title)) : ?>
                                     <span class="title"><?php echo trim($heading_title); ?></span>
                                 <?php endif; ?>	    	

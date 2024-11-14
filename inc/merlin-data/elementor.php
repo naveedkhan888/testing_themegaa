@@ -21,7 +21,7 @@ class Themename_Merlin_Elementor
                 'import_redux'         => array(
                     array(
                         'file_url'   => "http://demosamples.xperttheme.com/themename/fashion-1/home/redux_options.json",
-                        'option_name' => 'themename_tbay_theme_options',
+                        'option_name' => 'themename_xptheme_theme_options',
                     ),
                 ),
                 'rev_sliders'                => $rev_sliders,
@@ -50,7 +50,7 @@ class Themename_Merlin_Elementor
                 'import_redux'         => array(
                     array(
                         'file_url'   => "http://demosamples.xperttheme.com/themename/fashion-2/home/redux_options.json",
-                        'option_name' => 'themename_tbay_theme_options',
+                        'option_name' => 'themename_xptheme_theme_options',
                     ),
                 ),
                 'rev_sliders'                => $rev_sliders,
@@ -79,7 +79,7 @@ class Themename_Merlin_Elementor
                 'import_redux'         => array(
                     array(
                         'file_url'   => "http://demosamples.xperttheme.com/themename/fashion-3/home/redux_options.json",
-                        'option_name' => 'themename_tbay_theme_options',
+                        'option_name' => 'themename_xptheme_theme_options',
                     ),
                 ),
                 'rev_sliders'                => $rev_sliders,
@@ -109,7 +109,7 @@ class Themename_Merlin_Elementor
                 'import_redux'         => array(
                     array(
                         'file_url'   => "http://demosamples.xperttheme.com/themename/fashion-4/home/redux_options.json",
-                        'option_name' => 'themename_tbay_theme_options',
+                        'option_name' => 'themename_xptheme_theme_options',
                     ),
                 ),
                 'rev_sliders'                => $rev_sliders,
@@ -139,7 +139,7 @@ class Themename_Merlin_Elementor
                 'import_redux'         => array(
                     array(
                         'file_url'   => "http://demosamples.xperttheme.com/themename/furniture-1/home/redux_options.json",
-                        'option_name' => 'themename_tbay_theme_options',
+                        'option_name' => 'themename_xptheme_theme_options',
                     ),
                 ),
                 'rev_sliders'                => $rev_sliders,
@@ -168,7 +168,7 @@ class Themename_Merlin_Elementor
                 'import_redux'         => array(
                     array(
                         'file_url'   => "http://demosamples.xperttheme.com/themename/furniture-2/home/redux_options.json",
-                        'option_name' => 'themename_tbay_theme_options',
+                        'option_name' => 'themename_xptheme_theme_options',
                     ),
                 ),
                 'rev_sliders'                => $rev_sliders,
@@ -198,7 +198,7 @@ class Themename_Merlin_Elementor
                 'import_redux'         => array(
                     array(
                         'file_url'   => "http://demosamples.xperttheme.com/themename/furniture-3/home/redux_options.json",
-                        'option_name' => 'themename_tbay_theme_options',
+                        'option_name' => 'themename_xptheme_theme_options',
                     ),
                 ),
                 'rev_sliders'                => $rev_sliders,
@@ -228,7 +228,7 @@ class Themename_Merlin_Elementor
                 'import_redux'         => array(
                     array(
                         'file_url'   => "http://demosamples.xperttheme.com/themename/furniture-4/home/redux_options.json",
-                        'option_name' => 'themename_tbay_theme_options',
+                        'option_name' => 'themename_xptheme_theme_options',
                     ),
                 ),
                 'rev_sliders'                => $rev_sliders,
@@ -258,7 +258,7 @@ class Themename_Merlin_Elementor
                 'import_redux'         => array(
                     array(
                         'file_url'   => "http://demosamples.xperttheme.com/themename/rtl/home/redux_options.json",
-                        'option_name' => 'themename_tbay_theme_options',
+                        'option_name' => 'themename_xptheme_theme_options',
                     ),
                 ),
                 'rev_sliders'                => $rev_sliders,

@@ -12,7 +12,7 @@ abstract class Themename_Elementor_Widget_Base extends Elementor\Widget_Base
 {
     public function get_name_template()
     {
-        return str_replace('tbay-', '', $this->get_name());
+        return str_replace('xptheme-', '', $this->get_name());
     }
 
     public function get_categories()
@@ -67,7 +67,7 @@ abstract class Themename_Elementor_Widget_Base extends Elementor\Widget_Base
     protected function render()
     {
         $settings = $this->get_settings_for_display();
-        $this->add_render_attribute('wrapper', 'class', 'tbay-element tbay-element-'. $this->get_name_template());
+        $this->add_render_attribute('wrapper', 'class', 'xptheme-element xptheme-element-'. $this->get_name_template());
 
         $this->get_view_template($this->get_name_template(), '', $settings);
     }
@@ -204,7 +204,7 @@ abstract class Themename_Elementor_Widget_Base extends Elementor\Widget_Base
                 ], 
                 'default' => 'center',
                 'selectors' => [
-                    '{{WRAPPER}} .heading-tbay-title i' => 'justify-content: {{VALUE}}',
+                    '{{WRAPPER}} .heading-xptheme-title i' => 'justify-content: {{VALUE}}',
                 ],
             ]
         ); 
@@ -225,7 +225,7 @@ abstract class Themename_Elementor_Widget_Base extends Elementor\Widget_Base
 					'size' => 46,
 				],
                 'selectors' => [
-                    '{{WRAPPER}} .heading-tbay-title i' => 'font-size: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .heading-xptheme-title i' => 'font-size: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );
@@ -241,7 +241,7 @@ abstract class Themename_Elementor_Widget_Base extends Elementor\Widget_Base
                     ],
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .heading-tbay-title i' => 'line-height: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .heading-xptheme-title i' => 'line-height: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );
@@ -253,7 +253,7 @@ abstract class Themename_Elementor_Widget_Base extends Elementor\Widget_Base
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ], 
                 'selectors' => [
-                    '{{WRAPPER}} .heading-tbay-title i' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .heading-xptheme-title i' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );    
@@ -274,7 +274,7 @@ abstract class Themename_Elementor_Widget_Base extends Elementor\Widget_Base
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .heading-tbay-title i' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .heading-xptheme-title i' => 'color: {{VALUE}};',
                 ],
                 
             ]
@@ -300,7 +300,7 @@ abstract class Themename_Elementor_Widget_Base extends Elementor\Widget_Base
                 ],
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}}:hover .heading-tbay-title i' => 'color: {{VALUE}};',
+                    '{{WRAPPER}}:hover .heading-xptheme-title i' => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -336,7 +336,7 @@ abstract class Themename_Elementor_Widget_Base extends Elementor\Widget_Base
                 'default' => 'center',
                 'prefix_class' => 'align-',
                 'selectors' => [
-                    '{{WRAPPER}} .heading-tbay-title' => 'text-align: {{VALUE}}',
+                    '{{WRAPPER}} .heading-xptheme-title' => 'text-align: {{VALUE}}',
                 ],
             ]
         ); 
@@ -360,7 +360,7 @@ abstract class Themename_Elementor_Widget_Base extends Elementor\Widget_Base
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'selectors' => [
-                    '{{WRAPPER}} .heading-tbay-title' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .heading-xptheme-title' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -372,7 +372,7 @@ abstract class Themename_Elementor_Widget_Base extends Elementor\Widget_Base
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'selectors' => [
-                    '{{WRAPPER}} .heading-tbay-title' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .heading-xptheme-title' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -384,7 +384,7 @@ abstract class Themename_Elementor_Widget_Base extends Elementor\Widget_Base
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .heading-tbay-title' => 'background: {{VALUE}};',
+                    '{{WRAPPER}} .heading-xptheme-title' => 'background: {{VALUE}};',
                 ],
             ]
         );
@@ -395,7 +395,7 @@ abstract class Themename_Elementor_Widget_Base extends Elementor\Widget_Base
                 'name'        => 'border_heading_content',
                 'placeholder' => '1px',
                 'default'     => '1px',
-                'selector'    => '{{WRAPPER}} .heading-tbay-title',
+                'selector'    => '{{WRAPPER}} .heading-xptheme-title',
                 'separator'   => 'before',
             ]
         );
@@ -418,7 +418,7 @@ abstract class Themename_Elementor_Widget_Base extends Elementor\Widget_Base
             Group_Control_Typography::get_type(),
             [
                 'name' => 'heading_title_typography',
-                'selector' => '{{WRAPPER}} .heading-tbay-title .title',
+                'selector' => '{{WRAPPER}} .heading-xptheme-title .title',
             ]
         );
 
@@ -438,7 +438,7 @@ abstract class Themename_Elementor_Widget_Base extends Elementor\Widget_Base
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .heading-tbay-title .title' => 'background: {{VALUE}};',
+                    '{{WRAPPER}} .heading-xptheme-title .title' => 'background: {{VALUE}};',
                 ],
             ]
         );
@@ -450,7 +450,7 @@ abstract class Themename_Elementor_Widget_Base extends Elementor\Widget_Base
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .heading-tbay-title .title' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .heading-xptheme-title .title' => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -472,7 +472,7 @@ abstract class Themename_Elementor_Widget_Base extends Elementor\Widget_Base
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}}:hover .heading-tbay-title .title' => 'background: {{VALUE}};',
+                    '{{WRAPPER}}:hover .heading-xptheme-title .title' => 'background: {{VALUE}};',
                 ],
             ]
         );
@@ -484,7 +484,7 @@ abstract class Themename_Elementor_Widget_Base extends Elementor\Widget_Base
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}}:hover .heading-tbay-title .title' => 'color: {{VALUE}};',
+                    '{{WRAPPER}}:hover .heading-xptheme-title .title' => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -512,7 +512,7 @@ abstract class Themename_Elementor_Widget_Base extends Elementor\Widget_Base
 				],
                 'separator'    => 'before',
 				'selectors' => [
-					'{{WRAPPER}} .heading-tbay-title .title' => 'transform: rotate({{SIZE}}{{UNIT}});',
+					'{{WRAPPER}} .heading-xptheme-title .title' => 'transform: rotate({{SIZE}}{{UNIT}});',
 				],
 			]
 		);
@@ -530,7 +530,7 @@ abstract class Themename_Elementor_Widget_Base extends Elementor\Widget_Base
                     'vertical-lr'  => esc_html__('Vertical Lr', 'themename'),
                 ],
                 'selectors' => [
-					'{{WRAPPER}} .heading-tbay-title .title' => 'writing-mode: {{VALUE}};',
+					'{{WRAPPER}} .heading-xptheme-title .title' => 'writing-mode: {{VALUE}};',
 				], 
             ]
         );
@@ -543,7 +543,7 @@ abstract class Themename_Elementor_Widget_Base extends Elementor\Widget_Base
                 'size_units' => [ 'px', '%' ],
                 'separator'    => 'before',
                 'selectors' => [
-                    '{{WRAPPER}} .heading-tbay-title .title' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .heading-xptheme-title .title' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -560,7 +560,7 @@ abstract class Themename_Elementor_Widget_Base extends Elementor\Widget_Base
                     ],
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .heading-tbay-title .title' => 'margin-bottom: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .heading-xptheme-title .title' => 'margin-bottom: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );
@@ -577,7 +577,7 @@ abstract class Themename_Elementor_Widget_Base extends Elementor\Widget_Base
                     ],
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .heading-tbay-title .title' => 'max-width: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .heading-xptheme-title .title' => 'max-width: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );
@@ -690,7 +690,7 @@ abstract class Themename_Elementor_Widget_Base extends Elementor\Widget_Base
             Group_Control_Typography::get_type(),
             [
                 'name' => 'heading_subtitle_typography',
-                'selector' => '{{WRAPPER}} .heading-tbay-title .subtitle',
+                'selector' => '{{WRAPPER}} .heading-xptheme-title .subtitle',
             ]
         );
 
@@ -710,7 +710,7 @@ abstract class Themename_Elementor_Widget_Base extends Elementor\Widget_Base
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .heading-tbay-title .subtitle' => 'background: {{VALUE}};',
+                    '{{WRAPPER}} .heading-xptheme-title .subtitle' => 'background: {{VALUE}};',
                 ],
             ]
         );
@@ -722,7 +722,7 @@ abstract class Themename_Elementor_Widget_Base extends Elementor\Widget_Base
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .heading-tbay-title .subtitle' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .heading-xptheme-title .subtitle' => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -744,7 +744,7 @@ abstract class Themename_Elementor_Widget_Base extends Elementor\Widget_Base
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}}:hover .heading-tbay-title .subtitle' => 'background: {{VALUE}};',
+                    '{{WRAPPER}}:hover .heading-xptheme-title .subtitle' => 'background: {{VALUE}};',
                 ],
             ]
         );
@@ -759,7 +759,7 @@ abstract class Themename_Elementor_Widget_Base extends Elementor\Widget_Base
                 ],
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}}:hover .heading-tbay-title .subtitle' => 'color: {{VALUE}};',
+                    '{{WRAPPER}}:hover .heading-xptheme-title .subtitle' => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -776,7 +776,7 @@ abstract class Themename_Elementor_Widget_Base extends Elementor\Widget_Base
                 'size_units' => [ 'px', '%' ],
                 'separator'    => 'before',
                 'selectors' => [
-                    '{{WRAPPER}} .heading-tbay-title .subtitle' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .heading-xptheme-title .subtitle' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -793,7 +793,7 @@ abstract class Themename_Elementor_Widget_Base extends Elementor\Widget_Base
                     ],
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .heading-tbay-title .subtitle' => 'margin-bottom: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .heading-xptheme-title .subtitle' => 'margin-bottom: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );
@@ -810,7 +810,7 @@ abstract class Themename_Elementor_Widget_Base extends Elementor\Widget_Base
                     ],
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .heading-tbay-title .subtitle' => 'max-width: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .heading-xptheme-title .subtitle' => 'max-width: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );
@@ -833,7 +833,7 @@ abstract class Themename_Elementor_Widget_Base extends Elementor\Widget_Base
             Group_Control_Typography::get_type(),
             [
                 'name' => 'heading_description_typography',
-                'selector' => '{{WRAPPER}} .heading-tbay-title .description',
+                'selector' => '{{WRAPPER}} .heading-xptheme-title .description',
             ]
         );
 
@@ -854,7 +854,7 @@ abstract class Themename_Elementor_Widget_Base extends Elementor\Widget_Base
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .heading-tbay-title .description' => 'background: {{VALUE}};',
+                    '{{WRAPPER}} .heading-xptheme-title .description' => 'background: {{VALUE}};',
                 ],
             ]
         );
@@ -866,7 +866,7 @@ abstract class Themename_Elementor_Widget_Base extends Elementor\Widget_Base
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .heading-tbay-title .description' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .heading-xptheme-title .description' => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -888,7 +888,7 @@ abstract class Themename_Elementor_Widget_Base extends Elementor\Widget_Base
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}}:hover .heading-tbay-title .description' => 'background: {{VALUE}};',
+                    '{{WRAPPER}}:hover .heading-xptheme-title .description' => 'background: {{VALUE}};',
                 ],
             ]
         );
@@ -903,7 +903,7 @@ abstract class Themename_Elementor_Widget_Base extends Elementor\Widget_Base
                 ],
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}}:hover .heading-tbay-title .description' => 'color: {{VALUE}};',
+                    '{{WRAPPER}}:hover .heading-xptheme-title .description' => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -920,7 +920,7 @@ abstract class Themename_Elementor_Widget_Base extends Elementor\Widget_Base
                 'size_units' => [ 'px', '%' ],
                 'separator'    => 'before',
                 'selectors' => [
-                    '{{WRAPPER}} .heading-tbay-title .description' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .heading-xptheme-title .description' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -937,7 +937,7 @@ abstract class Themename_Elementor_Widget_Base extends Elementor\Widget_Base
                     ],
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .heading-tbay-title .description' => 'margin-bottom: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .heading-xptheme-title .description' => 'margin-bottom: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );
@@ -954,7 +954,7 @@ abstract class Themename_Elementor_Widget_Base extends Elementor\Widget_Base
                     ],
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .heading-tbay-title .description' => 'max-width: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .heading-xptheme-title .description' => 'max-width: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );
@@ -1188,7 +1188,7 @@ abstract class Themename_Elementor_Widget_Base extends Elementor\Widget_Base
             \Elementor\Group_Control_Typography::get_type(),
             [
                 'name'     => 'style_product_item_sub_title_typography',
-                'selector' => '{{WRAPPER}} .product-block .tbay-subtitle',
+                'selector' => '{{WRAPPER}} .product-block .xptheme-subtitle',
             ]
         );
 
@@ -1199,7 +1199,7 @@ abstract class Themename_Elementor_Widget_Base extends Elementor\Widget_Base
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'selectors' => [
-                    '{{WRAPPER}} .product-block .tbay-subtitle' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .product-block .xptheme-subtitle' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -1211,7 +1211,7 @@ abstract class Themename_Elementor_Widget_Base extends Elementor\Widget_Base
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'selectors' => [
-                    '{{WRAPPER}} .product-block .tbay-subtitle' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .product-block .xptheme-subtitle' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -1232,7 +1232,7 @@ abstract class Themename_Elementor_Widget_Base extends Elementor\Widget_Base
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .product-block .tbay-subtitle' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .product-block .xptheme-subtitle' => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -1254,7 +1254,7 @@ abstract class Themename_Elementor_Widget_Base extends Elementor\Widget_Base
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .product-block .tbay-subtitle:hover' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .product-block .xptheme-subtitle:hover' => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -1387,7 +1387,7 @@ abstract class Themename_Elementor_Widget_Base extends Elementor\Widget_Base
         extract($settings);
         
         if (!empty($heading_subtitle) || !empty($heading_title)) : ?>
-            <<?php echo trim($heading_title_tag); ?> class="heading-tbay-title <?php echo esc_attr($heading_list_style); ?>">
+            <<?php echo trim($heading_title_tag); ?> class="heading-xptheme-title <?php echo esc_attr($heading_list_style); ?>">
                 <?php 
                     if( $heading_list_style === 'style-2' ) {
                         $this->render_item_icon($heading_icon);

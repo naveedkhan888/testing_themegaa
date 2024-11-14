@@ -2,13 +2,13 @@
 if (!function_exists('themename_section_sticky_header')) {
     function themename_section_sticky_header($element)
     {
-        if (get_post_type() !== 'tbay_custom_post') {
+        if (get_post_type() !== 'xptheme_custom_post') {
             return;
         }
 
         global $post;
 
-        $block_type = get_post_meta($post->ID, 'tbay_block_type', true);
+        $block_type = get_post_meta($post->ID, 'xptheme_block_type', true);
 
         if( $block_type !== 'type_header' ) {
             return;

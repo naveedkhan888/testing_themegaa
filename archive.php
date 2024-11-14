@@ -1,8 +1,8 @@
 <?php
 get_header();
 
-$sidebar_configs = themename_tbay_get_blog_layout_configs();
-$blog_archive_layout =  (isset($_GET['blog_archive_layout']))  ? $_GET['blog_archive_layout'] : themename_tbay_get_config('blog_archive_layout', 'main-right');
+$sidebar_configs = themename_xptheme_get_blog_layout_configs();
+$blog_archive_layout =  (isset($_GET['blog_archive_layout']))  ? $_GET['blog_archive_layout'] : themename_xptheme_get_config('blog_archive_layout', 'main-right');
 if (isset($sidebar_configs['sidebar'])) {
     $sidebar_id = $sidebar_configs['sidebar']['id'];
     if (!is_active_sidebar($sidebar_id)) {
@@ -11,9 +11,9 @@ if (isset($sidebar_configs['sidebar'])) {
 }
 $class_row = ($blog_archive_layout === 'main-right') ? 'tb-column-reverse tb-custom-blog' : 'tb-custom-blog';
 
-themename_tbay_render_breadcrumbs();
+themename_xptheme_render_breadcrumbs();
 
-$class_main = apply_filters('themename_tbay_post_content_class', 'container');
+$class_main = apply_filters('themename_xptheme_post_content_class', 'container');
 
 
 $blog_columns = apply_filters('loop_blog_columns', 1);
@@ -107,7 +107,7 @@ if ( !themename_redux_framework_activated() ) {
 				</div>
 				<?php
                     // Previous/next page navigation.
-                    themename_tbay_paging_nav();
+                    themename_xptheme_paging_nav();
                 ?>
 				<?php do_action('themename_post_template_main_content_after'); ?>
 

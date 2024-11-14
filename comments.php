@@ -28,7 +28,7 @@ if (post_password_required()) {
             <?php comments_number(esc_html__('0 Comments', 'themename'), esc_html__('1 Comment', 'themename'), esc_html__('% Comments', 'themename')); ?>
             </span>
         </h3>
-		<?php themename_tbay_comment_nav(); ?>
+		<?php themename_xptheme_comment_nav(); ?>
 		<ul class="comment-list">
 			<?php
                 wp_list_comments(array(
@@ -39,7 +39,7 @@ if (post_password_required()) {
             ?>
 		</ul><!-- .comment-list -->
 
-		<?php themename_tbay_comment_nav(); ?>
+		<?php themename_xptheme_comment_nav(); ?>
 
 	<?php endif; // have_comments()?>
 
@@ -77,5 +77,5 @@ if (post_password_required()) {
         );
     ?>
 
-	<?php themename_tbay_comment_form($comment_args); ?>
+	<?php themename_xptheme_comment_form($comment_args); ?>
 </div><!-- .comments-area -->

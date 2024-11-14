@@ -60,7 +60,7 @@ if (! class_exists('Themename_Shop_WooCommerce')) :
             add_action('woocommerce_before_shop_loop_item_title', array( $this, 'the_display_image_mode'), 10);
 
             /*swatches*/
-            add_action('themename_tbay_variable_product', array( $this, 'the_woocommerce_variable'), 20);
+            add_action('themename_xptheme_variable_product', array( $this, 'the_woocommerce_variable'), 20);
             add_action('themename_woo_list_after_short_description', array( $this, 'the_woocommerce_variable'), 5);
 
             add_action('themename_woocommerce_before_shop_list_item', array( $this, 'remove_variable_on_list'), 10);
@@ -87,12 +87,12 @@ if (! class_exists('Themename_Shop_WooCommerce')) :
             add_action('themename_woo_before_shop_list_caption', array( $this, 'the_brands_the_name'), 10);
             
             /* sold */
-            add_action('themename_woo_list_sold', array( $this, 'themename_tbay_total_sales'), 5);
+            add_action('themename_woo_list_sold', array( $this, 'themename_xptheme_total_sales'), 5);
         }
 
         public function remove_variable_on_list()
         {
-            remove_action('themename_tbay_after_shop_loop_item_title', array( $this, 'the_woocommerce_variable'), 20);
+            remove_action('themename_xptheme_after_shop_loop_item_title', array( $this, 'the_woocommerce_variable'), 20);
         }
 
         public function shop_display_modes()
@@ -103,7 +103,7 @@ if (! class_exists('Themename_Shop_WooCommerce')) :
                 return;
             }
             
-            $woo_mode      = themename_tbay_woocommerce_get_display_mode();
+            $woo_mode      = themename_xptheme_woocommerce_get_display_mode();
 
             $grid = ($woo_mode == 'grid') ? 'active' : '';
             $list = ($woo_mode == 'list') ? 'active' : '';
@@ -127,7 +127,7 @@ if (! class_exists('Themename_Shop_WooCommerce')) :
                 if (is_product_category() || is_product_tag() || is_product_taxonomy() || is_shop()) {
                     $page = 'product_archive_sidebar';
         
-                    $sidebar = themename_tbay_get_config($page);
+                    $sidebar = themename_xptheme_get_config($page);
                     if (is_active_sidebar($sidebar)) {
                         $active = true;
                     }
@@ -155,7 +155,7 @@ if (! class_exists('Themename_Shop_WooCommerce')) :
                 }
             }
 
-            $product_archive_layout  =   (isset($_GET['product_archive_layout'])) ? $_GET['product_archive_layout'] : themename_tbay_get_config('product_archive_layout', 'shop-left');
+            $product_archive_layout  =   (isset($_GET['product_archive_layout'])) ? $_GET['product_archive_layout'] : themename_xptheme_get_config('product_archive_layout', 'shop-left');
 
             $filter_class = ($product_archive_layout !== 'full-width') ? ' d-xl-none' : '';
  
@@ -166,9 +166,9 @@ if (! class_exists('Themename_Shop_WooCommerce')) :
         public function shop_filter_before()
         {
             $notproducts =  (themename_is_check_hidden_filter()) ? ' hidden' : '';
-            $columns     = themename_tbay_get_config('mobile_product_number', 'two');
+            $columns     = themename_xptheme_get_config('mobile_product_number', 'two');
 
-            echo '<div class="tbay-filter'. esc_attr($notproducts) . ' tbmb-pr-'. esc_attr($columns) .'">';
+            echo '<div class="xptheme-filter'. esc_attr($notproducts) . ' tbmb-pr-'. esc_attr($columns) .'">';
         }
 
         public function shop_filter_after()
@@ -190,7 +190,7 @@ if (! class_exists('Themename_Shop_WooCommerce')) :
 
         public function shop_product_top_sidebar()
         {
-            $sidebar_configs = themename_tbay_get_woocommerce_layout_configs();
+            $sidebar_configs = themename_xptheme_get_woocommerce_layout_configs();
 
             if (!is_product()  && isset($sidebar_configs['product_top_sidebar']) && $sidebar_configs['product_top_sidebar']) {
                 ?>
@@ -212,7 +212,7 @@ if (! class_exists('Themename_Shop_WooCommerce')) :
             if (isset($_GET['product_per_page']) && is_numeric($_GET['product_per_page'])) {
                 $value = $_GET['product_per_page'];
             } else {
-                $value = themename_tbay_get_config('number_products_per_page', 12);
+                $value = themename_xptheme_get_config('number_products_per_page', 12);
             }
 
             if (is_numeric($value) && $value) {
@@ -227,7 +227,7 @@ if (! class_exists('Themename_Shop_WooCommerce')) :
             if (isset($_GET['product_columns']) && is_numeric($_GET['product_columns'])) {
                 $value = $_GET['product_columns'];
             } else {
-                $value = themename_tbay_get_config('product_columns', 5);
+                $value = themename_xptheme_get_config('product_columns', 5);
             }
 
             if (in_array($value, array(1, 2, 3, 4, 5, 6))) {
@@ -240,7 +240,7 @@ if (! class_exists('Themename_Shop_WooCommerce')) :
 
         public function get_display_image_mode($mode)
         {
-            $mode = themename_tbay_get_config('product_display_image_mode', 'one');
+            $mode = themename_xptheme_get_config('product_display_image_mode', 'one');
 
             $mode = (isset($_GET['display_image_mode'])) ? $_GET['display_image_mode'] : $mode;
 
@@ -265,7 +265,7 @@ if (! class_exists('Themename_Shop_WooCommerce')) :
                     break;
 
                 case 'two':
-                    echo themename_tbay_woocommerce_get_two_product_thumbnail();
+                    echo themename_xptheme_woocommerce_get_two_product_thumbnail();
                     break;
                     
                 default:
@@ -286,7 +286,7 @@ if (! class_exists('Themename_Shop_WooCommerce')) :
         
 
         /*stock*/
-        public function themename_tbay_total_sales()
+        public function themename_xptheme_total_sales()
         {
             global $product;
             $total_sales        = $product->get_total_sales(); ?>
@@ -338,7 +338,7 @@ if (! class_exists('Themename_Shop_WooCommerce')) :
 
         public function product_per_page_query($q)
         {
-            $default            = themename_tbay_get_config('number_products_per_page');
+            $default            = themename_xptheme_get_config('number_products_per_page');
             $product_per_page   = themename_woocommerce_get_fillter('product_per_page', $default);
             if (function_exists('woocommerce_products_will_display') && $q->is_main_query()) :
                 $q->set('posts_per_page', $product_per_page);
@@ -406,7 +406,7 @@ if (! class_exists('Themename_Shop_WooCommerce')) :
 
         public function title_product_archives_active()
         {
-            $active = themename_tbay_get_config('title_product_archives', false);
+            $active = themename_xptheme_get_config('title_product_archives', false);
 
             $active = (isset($_GET['title_product_archives'])) ? (boolean)$_GET['title_product_archives'] : (boolean)$active;
 
@@ -425,7 +425,7 @@ if (! class_exists('Themename_Shop_WooCommerce')) :
 
         public function display_modes_active()
         {
-            $active = themename_tbay_get_config('enable_display_mode', false);
+            $active = themename_xptheme_get_config('enable_display_mode', false);
 
             $active = (isset($_GET['enable_display_mode'])) ? (boolean)$_GET['enable_display_mode'] : (boolean)$active;
 
@@ -435,7 +435,7 @@ if (! class_exists('Themename_Shop_WooCommerce')) :
 
         public function the_brands_the_name()
         {
-            if (!themename_tbay_get_config('enable_brand', false)) {
+            if (!themename_xptheme_get_config('enable_brand', false)) {
                 return;
             }
 

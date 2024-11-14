@@ -16,7 +16,7 @@ if (!$available_menus || empty($menu) || !is_nav_menu($menu)) {
     return;
 }
 
-$_id = themename_tbay_random_key();
+$_id = themename_xptheme_random_key();
 
 $args = [
     'echo'        => false,
@@ -59,14 +59,14 @@ $this->add_render_attribute('main-menu', 'class', [
 $this->add_render_attribute(
     'main-menu',  
     [
-        'class' => ['tbay-'.$layout, 'nav-menu-'. $this->get_id()],
+        'class' => ['xptheme-'.$layout, 'nav-menu-'. $this->get_id()],
         'data-id' => $menu
     ]
 );
 
 
 if ($layout === 'vertical' || $layout === 'treeview') {
-    $this->add_render_attribute('main-menu', 'class', 'tbay-treevertical-lv1');
+    $this->add_render_attribute('main-menu', 'class', 'xptheme-treevertical-lv1');
 }
 
 if( $layout === 'treeview' ) {
@@ -99,7 +99,7 @@ if ($layout === 'vertical') {
     $this->add_render_attribute('main-menu', 'class', 'vertical-submenu-'.$toggle_vertical_submenu_align);
 }
 
-if ( $ajax_toggle !== 'yes' && $show_content_menu === 'yes' && themename_tbay_is_home_page() && !is_home() ) {
+if ( $ajax_toggle !== 'yes' && $show_content_menu === 'yes' && themename_xptheme_is_home_page() && !is_home() ) {
     $this->add_render_attribute('wrapper', 'class', ['open' ,'setting-open']);
 }
 

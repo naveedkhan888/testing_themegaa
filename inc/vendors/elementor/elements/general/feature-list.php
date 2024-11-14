@@ -30,7 +30,7 @@ class Themename_Elementor_Feature_List extends Themename_Elementor_Carousel_Base
      */
     public function get_name()
     {
-        return 'tbay-feature-list';
+        return 'xptheme-feature-list';
     }
 
     /**

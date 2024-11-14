@@ -28,7 +28,7 @@ class Themename_Elementor_Our_Team extends Themename_Elementor_Carousel_Base
      */
     public function get_name()
     {
-        return 'tbay-our-team';
+        return 'xptheme-our-team';
     }
 
     /**

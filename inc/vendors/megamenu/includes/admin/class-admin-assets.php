@@ -67,7 +67,7 @@ class Themename_Admin_Megamenu_Assets {
 			wp_enqueue_script( 'themename-megamenu' );
 
 			wp_enqueue_style( 'themename-megamenu', get_template_directory_uri() . '/inc/vendors/megamenu/assets/css/admin.css', array(), THEMENAME_THEME_VERSION );
-			wp_enqueue_style('themename-font-tbay-custom', THEMENAME_STYLES . '/font-tbay-custom.css', array(), THEMENAME_THEME_VERSION);
+			wp_enqueue_style('themename-font-xptheme-custom', THEMENAME_STYLES . '/font-xptheme-custom.css', array(), THEMENAME_THEME_VERSION);
 		}
 
 	}

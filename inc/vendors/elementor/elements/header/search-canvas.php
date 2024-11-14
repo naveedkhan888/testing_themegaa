@@ -13,7 +13,7 @@ class Themename_Elementor_Search_Canvas extends Themename_Elementor_Widget_Base 
     protected $nav_menu_index = 1;
 
     public function get_name() {
-        return 'tbay-search-canvas'; 
+        return 'xptheme-search-canvas'; 
     }
 
     public function get_title() {
@@ -447,7 +447,7 @@ class Themename_Elementor_Search_Canvas extends Themename_Elementor_Widget_Base 
         $settings = $this->get_settings_for_display();
         extract($settings);
         
-        $_id = themename_tbay_random_key();
+        $_id = themename_xptheme_random_key();
 
         $class_active_ajax = themename_switcher_to_boolean($autocomplete_search) ? 'themename-ajax-search' : '';
 
@@ -467,7 +467,7 @@ class Themename_Elementor_Search_Canvas extends Themename_Elementor_Widget_Base 
             ]
         ); 
         ?>
-            <div id="tbay-search-form-canvas" class="tbay-search-form">
+            <div id="xptheme-search-form-canvas" class="xptheme-search-form">
                 <button type="button" class="btn-search-icon search-open">
                     <?php $this->render_item_icon($icon_button_search) ?>
                     <?php if(!empty($text_button_search) && isset($text_button_search) ) {
@@ -485,7 +485,7 @@ class Themename_Elementor_Search_Canvas extends Themename_Elementor_Widget_Base 
                             <div class="form-group">
                                 <div class="input-group">
 
-                                <input data-style="right" type="text" placeholder="<?php echo esc_attr($placeholder_text); ?>" name="s" required oninvalid="this.setCustomValidity('<?php echo esc_attr($vali_input_search) ?>')" oninput="setCustomValidity('')" class="tbay-search form-control input-sm"/>
+                                <input data-style="right" type="text" placeholder="<?php echo esc_attr($placeholder_text); ?>" name="s" required oninvalid="this.setCustomValidity('<?php echo esc_attr($vali_input_search) ?>')" oninput="setCustomValidity('')" class="xptheme-search form-control input-sm"/>
                                 <div class="search-results-wrapper">
                                     <div class="themename-search-results search-results-<?php echo esc_attr( $_id );?>" ></div>
                                 </div>
@@ -494,7 +494,7 @@ class Themename_Elementor_Search_Canvas extends Themename_Elementor_Widget_Base 
                                     <button type="submit" class="button-search btn btn-sm>">
                                         <?php $this->render_item_icon($icon_button_search) ?>
                                     </button>
-                                    <div class="tbay-search-clear"></div>
+                                    <div class="xptheme-search-clear"></div>
                                 </div>
                                     <?php if ( $enable_categories_search === 'yes' ): ?>
                                         <div class="select-category input-group-addon">

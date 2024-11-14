@@ -29,7 +29,7 @@ class Themename_Elementor_WPForms_Button_Popup extends Themename_Elementor_Widge
      */
     public function get_name()
     {
-        return 'tbay-wpforms-button-popup';
+        return 'xptheme-wpforms-button-popup';
     }
 
     /**
@@ -384,12 +384,12 @@ class Themename_Elementor_WPForms_Button_Popup extends Themename_Elementor_Widge
         if( empty($button_title) ) return;
         ?>
         <div class="wpforms-button-popup">
-            <a href="#tbay-content-wpforms-popup" class="btn show-all popup-button-open">
+            <a href="#xptheme-content-wpforms-popup" class="btn show-all popup-button-open">
                 <span><?php echo trim($button_title);  ?></span>
             </a>
         </div>
 
-        <div id="tbay-content-wpforms-popup" class="tbay-popup-content popup-wpforms-popup zoom-anim-dialog mfp-hide">
+        <div id="xptheme-content-wpforms-popup" class="xptheme-popup-content popup-wpforms-popup zoom-anim-dialog mfp-hide">
             <div class="content">
                 <?php echo do_shortcode( $this->render_shortcode() ); ?>
             </div>

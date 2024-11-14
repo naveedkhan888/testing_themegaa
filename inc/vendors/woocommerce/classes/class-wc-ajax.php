@@ -42,7 +42,7 @@ if ( class_exists('WC_AJAX') ) :
                 $ajax_events[] = 'themename_update_wishlist_count';
             }
 
-            if ( themename_tbay_get_config('enable_quickview', true) ) {
+            if ( themename_xptheme_get_config('enable_quickview', true) ) {
                 $ajax_events[] = 'themename_quickview_product';
             }
 

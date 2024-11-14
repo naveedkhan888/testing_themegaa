@@ -61,7 +61,7 @@ do_action('woocommerce_before_mini_cart');
 										<?php echo wc_get_formatted_cart_item_data($cart_item); ?>
 
 										<?php 
-											if ( themename_tbay_get_config('show_mini_cart_qty', false) ) :
+											if ( themename_xptheme_get_config('show_mini_cart_qty', false) ) :
 												if ($_product->is_sold_individually()) :
 													$product_quantity = sprintf('<input type="hidden" name="cart[%s][qty]" value="1" />', $cart_item_key);
 												else :

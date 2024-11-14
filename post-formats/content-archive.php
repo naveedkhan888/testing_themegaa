@@ -6,13 +6,13 @@
  * @version 1.2.0
  *
  */
-$date 						= themename_tbay_get_boolean_query_var('enable_date');
-$author 					= themename_tbay_get_boolean_query_var('enable_author');
-$categories 				= themename_tbay_get_boolean_query_var('enable_categories');
-$short_descriptions 		= themename_tbay_get_boolean_query_var('enable_short_descriptions');
-$read_more 					= themename_tbay_get_boolean_query_var('enable_readmore');
-$comment					= themename_tbay_get_boolean_query_var('enable_comment');
-$comment_text				= themename_tbay_get_boolean_query_var('enable_comment_text');
+$date 						= themename_xptheme_get_boolean_query_var('enable_date');
+$author 					= themename_xptheme_get_boolean_query_var('enable_author');
+$categories 				= themename_xptheme_get_boolean_query_var('enable_categories');
+$short_descriptions 		= themename_xptheme_get_boolean_query_var('enable_short_descriptions');
+$read_more 					= themename_xptheme_get_boolean_query_var('enable_readmore');
+$comment					= themename_xptheme_get_boolean_query_var('enable_comment');
+$comment_text				= themename_xptheme_get_boolean_query_var('enable_comment_text');
 
 $layout_blog   			= apply_filters('themename_archive_layout_blog', 10, 2);
 
@@ -26,7 +26,7 @@ $class_main = $class_left = '';
             if (has_post_thumbnail()) {
                 ?>
                 <figure class="entry-thumb <?php echo esc_attr($class_left); ?> <?php echo(!has_post_thumbnail() ? 'no-thumb' : ''); ?>">
-                    <?php themename_tbay_post_thumbnail(); ?>
+                    <?php themename_xptheme_post_thumbnail(); ?>
                 </figure>
             <?php } ?>
         <div class="entry-content <?php echo esc_attr($class_left); ?> <?php echo (!has_post_thumbnail()) ? 'no-thumb' : ''; ?>">

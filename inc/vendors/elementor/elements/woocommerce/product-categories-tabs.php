@@ -30,7 +30,7 @@ class Themename_Elementor_Product_Categories_Tabs extends Themename_Elementor_Ca
      */
     public function get_name()
     {
-        return 'tbay-product-categories-tabs';
+        return 'xptheme-product-categories-tabs';
     }
    
     /**
@@ -256,7 +256,7 @@ class Themename_Elementor_Product_Categories_Tabs extends Themename_Elementor_Ca
                 ],
                 'default' => 'flex-start',
                 'selectors' => [
-                    '{{WRAPPER}} .wrapper-heading-tab .tabs-list, {{WRAPPER}} .wrapper-heading-tab .heading-tbay-title' => 'justify-content: {{VALUE}};',
+                    '{{WRAPPER}} .wrapper-heading-tab .tabs-list, {{WRAPPER}} .wrapper-heading-tab .heading-xptheme-title' => 'justify-content: {{VALUE}};',
                 ],
             ]
         );
@@ -418,8 +418,8 @@ class Themename_Elementor_Product_Categories_Tabs extends Themename_Elementor_Ca
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .tbay-element-product-categories-tabs .tabs-list > li > a.active:after,
-                    {{WRAPPER}} .tbay-element-product-categories-tabs .tabs-list > li > a:hover:after' => 'background: {{VALUE}};',
+                    '{{WRAPPER}} .xptheme-element-product-categories-tabs .tabs-list > li > a.active:after,
+                    {{WRAPPER}} .xptheme-element-product-categories-tabs .tabs-list > li > a:hover:after' => 'background: {{VALUE}};',
                 ],
                 
             ]
@@ -437,7 +437,7 @@ class Themename_Elementor_Product_Categories_Tabs extends Themename_Elementor_Ca
                     ],
                 ],
                 'selectors' => [
-					'{{WRAPPER}} .tbay-element-product-categories-tabs .tabs-list > li > a:after' => 'height: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .xptheme-element-product-categories-tabs .tabs-list > li > a:after' => 'height: {{SIZE}}{{UNIT}};',
 				],
             ]
         );
@@ -454,7 +454,7 @@ class Themename_Elementor_Product_Categories_Tabs extends Themename_Elementor_Ca
                     ],
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .tbay-element-product-categories-tabs .tabs-list > li > a:after' => 'bottom: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .xptheme-element-product-categories-tabs .tabs-list > li > a:after' => 'bottom: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );
@@ -471,7 +471,7 @@ class Themename_Elementor_Product_Categories_Tabs extends Themename_Elementor_Ca
                     ],
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .tbay-element-product-categories-tabs .tabs-list > li > a:after' => 'left: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .xptheme-element-product-categories-tabs .tabs-list > li > a:after' => 'left: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );
@@ -507,7 +507,7 @@ class Themename_Elementor_Product_Categories_Tabs extends Themename_Elementor_Ca
                 'type'      => Controls_Manager::ICONS,
                 'default' => [
                     'value' => 'tb-icon tb-icon-arrow-right',
-                    'library' => 'tbay-custom',
+                    'library' => 'xptheme-custom',
                 ],
                 'condition' => [
                     'show_more' => 'yes'
@@ -552,7 +552,7 @@ class Themename_Elementor_Product_Categories_Tabs extends Themename_Elementor_Ca
             <?php
                 if (!empty($title_cat_tab) || !empty($sub_title_cat_tab)) {
                     ?>
-                    <h3 class="heading-tbay-title">
+                    <h3 class="heading-xptheme-title">
                         <?php if (!empty($title_cat_tab)) : ?>
                             <span class="title"><?php echo trim($title_cat_tab); ?></span>
                         <?php endif; ?>	    	
@@ -595,7 +595,7 @@ class Themename_Elementor_Product_Categories_Tabs extends Themename_Elementor_Ca
         $settings = $this->get_settings_for_display();
         ?>
             <div class="content-product-category-tab">
-                <div class="tbay-addon-content tab-content woocommerce">
+                <div class="xptheme-addon-content tab-content woocommerce">
                  <?php
                     $_count = 0;
                     foreach ($categories_tabs as $key) {

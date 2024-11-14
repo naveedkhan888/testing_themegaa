@@ -1,9 +1,9 @@
 <?php 
 
-if (!function_exists('themename_tbay_private_size_image_setup')) {
-    function themename_tbay_private_size_image_setup()
+if (!function_exists('themename_xptheme_private_size_image_setup')) {
+    function themename_xptheme_private_size_image_setup()
     {
-        if (themename_tbay_get_global_config('config_media', false)) {
+        if (themename_xptheme_get_global_config('config_media', false)) {
             return;
         }
 
@@ -18,7 +18,7 @@ if (!function_exists('themename_tbay_private_size_image_setup')) {
         update_option('large_size_w', 770);
         update_option('large_size_h', 466); 
     }
-    add_action('after_setup_theme', 'themename_tbay_private_size_image_setup');
+    add_action('after_setup_theme', 'themename_xptheme_private_size_image_setup');
 }
   
 /**
@@ -62,16 +62,16 @@ if ( !function_exists('themename_fonts_url') ) {
 	}
 }
 
-if ( !function_exists('themename_tbay_fonts_url') ) {
-	function themename_tbay_fonts_url() {  
-        $show_typography  = themename_tbay_get_config('show_typography', false);
-        $font_source      = themename_tbay_get_config('font_source', "1");
-        $font_google_code = themename_tbay_get_config('font_google_code');
+if ( !function_exists('themename_xptheme_fonts_url') ) {
+	function themename_xptheme_fonts_url() {  
+        $show_typography  = themename_xptheme_get_config('show_typography', false);
+        $font_source      = themename_xptheme_get_config('font_source', "1");
+        $font_google_code = themename_xptheme_get_config('font_google_code');
         if( !$show_typography ) {
 			wp_enqueue_style( 'themename-theme-fonts', themename_fonts_url(), array(), false );
 		} else if ( $font_source == "2" && !empty($font_google_code) ) {
             wp_enqueue_style('themename-theme-fonts', $font_google_code, array(), null);
 		}
 	}
-	add_action('wp_enqueue_scripts', 'themename_tbay_fonts_url');
+	add_action('wp_enqueue_scripts', 'themename_xptheme_fonts_url');
 }

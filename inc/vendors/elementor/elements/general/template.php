@@ -17,7 +17,7 @@ class Themename_Elementor_Template extends Elementor\Widget_Base
 {
     public function get_name()
     {
-        return 'tbay-template';
+        return 'xptheme-template';
     }
 
     public function get_title()

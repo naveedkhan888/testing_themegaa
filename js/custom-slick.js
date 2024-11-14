@@ -2,7 +2,7 @@
 
 class Carousel {
   CarouselSlickQuickView() {
-    jQuery("#tbay-quick-view-content .woocommerce-product-gallery__wrapper").each(function () {
+    jQuery("#xptheme-quick-view-content .woocommerce-product-gallery__wrapper").each(function () {
       let _this = jQuery(this);
 
       if (_this.children().length == 0 || _this.hasClass("slick-initialized")) {
@@ -193,15 +193,15 @@ class Carousel {
   }
 
   _carouselBlurAddClass() {
-    if (jQuery(".tbay-element").hasClass("carousel-blur")) {
-      jQuery('.tbay-element.carousel-blur').parents('.elementor-top-section').addClass('elementor-product-carousel-blur');
+    if (jQuery(".xptheme-element").hasClass("carousel-blur")) {
+      jQuery('.xptheme-element.carousel-blur').parents('.elementor-top-section').addClass('elementor-product-carousel-blur');
     }
   }
 
 }
 
 class Slider {
-  tbaySlickSlider() {
+  xpthemeSlickSlider() {
     jQuery(".flex-control-thumbs").each(function () {
       if (jQuery(this).children().length == 0 || jQuery(this).hasClass("slick-initialized")) return;
       var _config = {
@@ -234,21 +234,21 @@ jQuery(document).ready(function () {
 
   carousel._carouselBlurAddClass();
 
-  jQuery(document.body).on("tbay_carousel_slick", () => {
+  jQuery(document.body).on("xptheme_carousel_slick", () => {
     carousel.CarouselSlick();
   });
-  jQuery(document.body).on("tbay_quick_view", () => {
+  jQuery(document.body).on("xptheme_quick_view", () => {
     carousel.CarouselSlickQuickView();
   });
 });
 jQuery(document.body).on('wc-product-gallery-after-init', () => {
   var slider = new Slider();
-  slider.tbaySlickSlider();
+  slider.xpthemeSlickSlider();
 });
 jQuery(window).on("elementor/frontend/init", function () {
   if (elementorFrontend.isEditMode() && typeof themename_settings !== "undefined" && Array.isArray(themename_settings.elements_ready.slick)) {
     jQuery.each(themename_settings.elements_ready.slick, function (index, value) {
-      elementorFrontend.hooks.addAction("frontend/element_ready/tbay-" + value + ".default", () => {
+      elementorFrontend.hooks.addAction("frontend/element_ready/xptheme-" + value + ".default", () => {
         const carousel = new Carousel();
         carousel.CarouselSlick();
       });

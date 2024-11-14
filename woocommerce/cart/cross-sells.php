@@ -32,17 +32,17 @@ $rows = 1;
 
 if ($cross_sells) : ?>
 
-	<div class="cross-sells related products tbay-addon tbay-addon-products">
+	<div class="cross-sells related products xptheme-addon xptheme-addon-products">
 
 		<?php
         $heading = apply_filters('woocommerce_product_cross_sells_products_heading', esc_html__('You may be interested in&hellip;', 'themename'));
 
         if ($heading) :
             ?>
-			<h3 class="heading-tbay-title"><span><?php echo esc_html($heading); ?></span></h3>
+			<h3 class="heading-xptheme-title"><span><?php echo esc_html($heading); ?></span></h3>
 		<?php endif; ?>
 
-		<div class="tbay-addon-content woocommerce">
+		<div class="xptheme-addon-content woocommerce">
 		<?php  wc_get_template('layout-products/carousel-related.php', array( 'loops'=>$cross_sells,'rows' => $rows, 'pagi_type' => 'no', 'nav_type' => 'yes','columns'=>$columns,'screen_desktop'=>$columns,'screen_desktopsmall'=>$columns_desktopsmall,'screen_tablet'=>$columns_tablet,'screen_mobile'=>$columns_mobile )); ?>
 		</div>
 	</div>

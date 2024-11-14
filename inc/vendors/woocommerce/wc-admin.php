@@ -119,17 +119,17 @@ if (! function_exists('themename_options_woocom_product_data_fields')) {
     }
 }
 // class hide sub title product
-if (!function_exists('themename_tbay_woocommerce_hide_sub_title')) {
-    function themename_tbay_woocommerce_hide_sub_title($active)
+if (!function_exists('themename_xptheme_woocommerce_hide_sub_title')) {
+    function themename_xptheme_woocommerce_hide_sub_title($active)
     {
-        $active = themename_tbay_get_config('enable_hide_sub_title_product', false);
+        $active = themename_xptheme_get_config('enable_hide_sub_title_product', false);
 
         $active = (isset($_GET['hide_sub_title'])) ? $_GET['hide_sub_title'] : $active;
 
         return $active;
     }
 }
-add_filter('themename_hide_sub_title', 'themename_tbay_woocommerce_hide_sub_title');
+add_filter('themename_hide_sub_title', 'themename_xptheme_woocommerce_hide_sub_title');
 
 if (! function_exists('themename_woo_subtitle_field_save')) {
     function themename_woo_subtitle_field_save($post_id)
@@ -153,11 +153,11 @@ if (! function_exists('themename_woo_get_subtitle')) {
 
         $_subtitle = get_post_meta($product->get_id(), '_subtitle', true);
         if (!($_subtitle == null || $_subtitle == '')) {
-            echo '<div class="tbay-subtitle">'. trim($_subtitle) .'</div>';
+            echo '<div class="xptheme-subtitle">'. trim($_subtitle) .'</div>';
         }
     }
 
-    add_action('themename_after_title_tbay_subtitle', 'themename_woo_get_subtitle', 0);
+    add_action('themename_after_title_xptheme_subtitle', 'themename_woo_get_subtitle', 0);
 }
 
 if (! function_exists('themename_options_woocom_save_proddata_custom_fields')) {
@@ -326,8 +326,8 @@ if (! function_exists('themename_save_remote_image')) {
  * ------------------------------------------------------------------------------------------------
  */
 //Dropdown template
-if (! function_exists('tbay_swatch_attribute_template')) {
-    function tbay_swatch_attribute_template($post)
+if (! function_exists('xptheme_swatch_attribute_template')) {
+    function xptheme_swatch_attribute_template($post)
     {
         global $post;
 
@@ -379,8 +379,8 @@ if (! function_exists('themename_attribute_dropdown_save')) {
  * ------------------------------------------------------------------------------------------------
  */
 //Dropdown Single layout template
-if (! function_exists('tbay_single_select_single_layout_template')) {
-    function tbay_single_select_single_layout_template($post)
+if (! function_exists('xptheme_single_select_single_layout_template')) {
+    function xptheme_single_select_single_layout_template($post)
     {
         global $post;
 

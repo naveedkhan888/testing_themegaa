@@ -30,7 +30,7 @@ class Themename_Elementor_Testimonials_Tab extends Themename_Elementor_Widget_Ba
      */
     public function get_name()
     {
-        return 'tbay-testimonials-tab';
+        return 'xptheme-testimonials-tab';
     }
 
     /**
@@ -101,7 +101,7 @@ class Themename_Elementor_Testimonials_Tab extends Themename_Elementor_Widget_Ba
                 'type' => Controls_Manager::ICONS,
                 'default' => [
                     'value' => 'tb-icon tb-icon-quote-2',
-                    'library' => 'tbay-custom',
+                    'library' => 'xptheme-custom',
                 ],
             ]
         );

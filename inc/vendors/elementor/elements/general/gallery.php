@@ -29,7 +29,7 @@ class Themename_Elementor_Gallery extends Themename_Elementor_Carousel_Base
      */
     public function get_name()
     {
-        return 'tbay-custom-gallery';
+        return 'xptheme-custom-gallery';
     }
 
     /**
@@ -161,7 +161,7 @@ class Themename_Elementor_Gallery extends Themename_Elementor_Carousel_Base
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px' ],
                 'selectors' => [
-                    '{{WRAPPER}} .tbay-element-custom-gallery .custom-gallery' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .xptheme-element-custom-gallery .custom-gallery' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -173,7 +173,7 @@ class Themename_Elementor_Gallery extends Themename_Elementor_Carousel_Base
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px' ],
                 'selectors' => [
-                    '{{WRAPPER}} .tbay-element-custom-gallery .custom-gallery' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .xptheme-element-custom-gallery .custom-gallery' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -194,7 +194,7 @@ class Themename_Elementor_Gallery extends Themename_Elementor_Carousel_Base
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px' ],
                 'selectors' => [
-                    '{{WRAPPER}} .tbay-element-custom-gallery .gallery-item' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .xptheme-element-custom-gallery .gallery-item' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -206,7 +206,7 @@ class Themename_Elementor_Gallery extends Themename_Elementor_Carousel_Base
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px' ],
                 'selectors' => [
-                    '{{WRAPPER}} .tbay-element-custom-gallery .gallery-item' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .xptheme-element-custom-gallery .gallery-item' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -227,7 +227,7 @@ class Themename_Elementor_Gallery extends Themename_Elementor_Carousel_Base
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px' ],
                 'selectors' => [
-                    '{{WRAPPER}} .tbay-element-custom-gallery img' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .xptheme-element-custom-gallery img' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -239,7 +239,7 @@ class Themename_Elementor_Gallery extends Themename_Elementor_Carousel_Base
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px' ],
                 'selectors' => [
-                    '{{WRAPPER}} .tbay-element-custom-gallery img' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .xptheme-element-custom-gallery img' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -257,7 +257,7 @@ class Themename_Elementor_Gallery extends Themename_Elementor_Carousel_Base
             Group_Control_Typography::get_type(),
             [
                 'name' => 'post_title_typography',
-                'selector' => '{{WRAPPER}} .tbay-element-custom-gallery .gallery-link::after',
+                'selector' => '{{WRAPPER}} .xptheme-element-custom-gallery .gallery-link::after',
             ]
         );
 
@@ -268,7 +268,7 @@ class Themename_Elementor_Gallery extends Themename_Elementor_Carousel_Base
                 'label'     => esc_html__('Color', 'themename'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .tbay-element-custom-gallery .gallery-link::after' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .xptheme-element-custom-gallery .gallery-link::after' => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -294,7 +294,7 @@ class Themename_Elementor_Gallery extends Themename_Elementor_Carousel_Base
                 ],
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .tbay-element-custom-gallery .gallery-link::after'  => 'text-align: {{VALUE}}',
+                    '{{WRAPPER}} .xptheme-element-custom-gallery .gallery-link::after'  => 'text-align: {{VALUE}}',
                 ]
             ]
         );

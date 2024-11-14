@@ -19,7 +19,7 @@ abstract class Themename_Elementor_Widget_Image extends Widget_Image
 
     public function get_name()
     {
-        return 'tbay-base';
+        return 'xptheme-base';
     }
 
     /**
@@ -64,7 +64,7 @@ abstract class Themename_Elementor_Widget_Image extends Widget_Image
     protected function render()
     {
         $settings = $this->get_settings_for_display();
-        $this->add_render_attribute('wrapper', 'class', 'tbay-element tbay-element-'. $this->get_name_template());
+        $this->add_render_attribute('wrapper', 'class', 'xptheme-element xptheme-element-'. $this->get_name_template());
 
         $this->get_view_template($this->get_name_template(), '', $settings);
     }

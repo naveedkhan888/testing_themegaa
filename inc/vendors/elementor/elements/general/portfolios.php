@@ -31,7 +31,7 @@ class Themename_Elementor_Portfolios extends Themename_Elementor_Carousel_Base
      */
     public function get_name()
     {
-        return 'tbay-portfolios';
+        return 'xptheme-portfolios';
     }
 
     /**

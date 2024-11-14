@@ -30,7 +30,7 @@ if ( !themename_redux_framework_activated() ) {
 									<?php
                                 // End the loop.
                                 endwhile;
-    themename_tbay_paging_nav(); ?>
+    themename_xptheme_paging_nav(); ?>
 	                        <?php else : ?>
 	                            <?php get_template_part('post-formats/content/content', 'none'); ?>
 	                        <?php endif; ?>
@@ -48,14 +48,14 @@ if ( !themename_redux_framework_activated() ) {
 
 	<?php
 } else {
-        $sidebar_configs = themename_tbay_get_blog_layout_configs();
-        $blog_archive_layout =  (isset($_GET['blog_archive_layout']))  ? $_GET['blog_archive_layout'] : themename_tbay_get_config('blog_archive_layout', 'main-right');
+        $sidebar_configs = themename_xptheme_get_blog_layout_configs();
+        $blog_archive_layout =  (isset($_GET['blog_archive_layout']))  ? $_GET['blog_archive_layout'] : themename_xptheme_get_config('blog_archive_layout', 'main-right');
 
         $class_row = ($blog_archive_layout === 'main-right') ? 'tb-column-reverse tb-custom-blog' : 'tb-custom-blog';
 
-        $class_main = apply_filters('themename_tbay_post_content_class', 'container');
+        $class_main = apply_filters('themename_xptheme_post_content_class', 'container');
 
-        themename_tbay_render_breadcrumbs(); ?>
+        themename_xptheme_render_breadcrumbs(); ?>
 	<header class="page-header">
 		<div class="content <?php echo esc_attr($class_main); ?>">
 		<?php
@@ -95,7 +95,7 @@ if ( !themename_redux_framework_activated() ) {
                     endwhile;
 
         // Previous/next page navigation.
-        themename_tbay_paging_nav();
+        themename_xptheme_paging_nav();
 
         // If no content, include the "No posts found" template.
         else :

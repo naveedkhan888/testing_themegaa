@@ -2,31 +2,31 @@
 if ( !themename_woocommerce_activated() ) return;
 
 // breadcrumb for woocommerce page
-if (!function_exists('themename_tbay_woocommerce_breadcrumb_defaults')) {
-    function themename_tbay_woocommerce_breadcrumb_defaults($args)
+if (!function_exists('themename_xptheme_woocommerce_breadcrumb_defaults')) {
+    function themename_xptheme_woocommerce_breadcrumb_defaults($args)
     {
         if( themename_checkout_optimized() ) return;
         
         global $post;
 
         if( is_product() ) {
-            $breadcrumb_img = themename_tbay_get_config('woo_single_breadcrumb_image');
-            $breadcrumb_color = themename_tbay_get_config('woo_single_breadcrumb_color');
-            $breadcrumbs_layout = themename_tbay_get_config('single_product_breadcrumb_layout', 'color');
+            $breadcrumb_img = themename_xptheme_get_config('woo_single_breadcrumb_image');
+            $breadcrumb_color = themename_xptheme_get_config('woo_single_breadcrumb_color');
+            $breadcrumbs_layout = themename_xptheme_get_config('single_product_breadcrumb_layout', 'color');
 
-            $breadcrumb_alignment = themename_tbay_get_config('single_product_breadcrumb_text_alignment', 'center');
+            $breadcrumb_alignment = themename_xptheme_get_config('single_product_breadcrumb_text_alignment', 'center');
         } else {
-            $breadcrumb_img = themename_tbay_get_config('woo_breadcrumb_image');
-            $breadcrumb_color = themename_tbay_get_config('woo_breadcrumb_color');
-            $breadcrumbs_layout = themename_tbay_get_config('product_breadcrumb_layout', 'color');
+            $breadcrumb_img = themename_xptheme_get_config('woo_breadcrumb_image');
+            $breadcrumb_color = themename_xptheme_get_config('woo_breadcrumb_color');
+            $breadcrumbs_layout = themename_xptheme_get_config('product_breadcrumb_layout', 'color');
 
-            $breadcrumb_alignment = themename_tbay_get_config('product_breadcrumb_text_alignment', 'center');
+            $breadcrumb_alignment = themename_xptheme_get_config('product_breadcrumb_text_alignment', 'center');
         }
 
         $style = array();
         $img = '';
 
-        $sidebar_configs = themename_tbay_get_woocommerce_layout_configs();
+        $sidebar_configs = themename_xptheme_get_woocommerce_layout_configs();
 
 
 
@@ -90,7 +90,7 @@ if (!function_exists('themename_tbay_woocommerce_breadcrumb_defaults')) {
             
         }
 
-        $args['wrap_before'] = '<section id="tbay-breadcrumb" '.$estyle.' class="tbay-breadcrumb '.esc_attr($breadcrumbs_class).'">'.$img.'<div class="container '.$class_container.'"><div class="breadscrumb-inner">'. $title .'<ol class="tbay-woocommerce-breadcrumb breadcrumb">';
+        $args['wrap_before'] = '<section id="xptheme-breadcrumb" '.$estyle.' class="xptheme-breadcrumb '.esc_attr($breadcrumbs_class).'">'.$img.'<div class="container '.$class_container.'"><div class="breadscrumb-inner">'. $title .'<ol class="xptheme-woocommerce-breadcrumb breadcrumb">';
         $args['wrap_after'] = '</ol>'. $nav .'</div></div></section>';
 
         return $args;

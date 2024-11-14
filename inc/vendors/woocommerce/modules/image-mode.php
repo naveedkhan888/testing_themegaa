@@ -2,8 +2,8 @@
 if ( !themename_woocommerce_activated() ) return;
 
 // Two product thumbnail
-if (!function_exists('themename_tbay_woocommerce_get_two_product_thumbnail')) {
-    function themename_tbay_woocommerce_get_two_product_thumbnail()
+if (!function_exists('themename_xptheme_woocommerce_get_two_product_thumbnail')) {
+    function themename_xptheme_woocommerce_get_two_product_thumbnail()
     {
         global $product;
 
@@ -33,8 +33,8 @@ if (!function_exists('themename_tbay_woocommerce_get_two_product_thumbnail')) {
 }
 
 // Slider product thumbnail
-if (!function_exists('themename_tbay_woocommerce_get_silder_product_thumbnail')) {
-    function themename_tbay_woocommerce_get_silder_product_thumbnail()
+if (!function_exists('themename_xptheme_woocommerce_get_silder_product_thumbnail')) {
+    function themename_xptheme_woocommerce_get_silder_product_thumbnail()
     {
         global $product;
 
@@ -53,19 +53,19 @@ if (!function_exists('themename_tbay_woocommerce_get_silder_product_thumbnail'))
         if (has_post_thumbnail()) {
             $class = 'item-slider';
 
-            $output .= '<div class="tbay-product-slider-gallery">';
+            $output .= '<div class="xptheme-product-slider-gallery">';
 
-            $output .= '<div class="gallery_item first tbay-image-loaded">'.wp_get_attachment_image($post_thumbnail_id, $size, false, array('class' => $class )).'</div>';
+            $output .= '<div class="gallery_item first xptheme-image-loaded">'.wp_get_attachment_image($post_thumbnail_id, $size, false, array('class' => $class )).'</div>';
 
             $attachment_ids = $product->get_gallery_image_ids();
 
             foreach ($attachment_ids as $attachment_id) {
-                $output .= '<div class="gallery_item tbay-image-loaded">'.wp_get_attachment_image($attachment_id, $size, false, array('class' => $class )).'</div>';
+                $output .= '<div class="gallery_item xptheme-image-loaded">'.wp_get_attachment_image($attachment_id, $size, false, array('class' => $class )).'</div>';
             }
 
             $output .= '</div>';
         } else {
-            $output .= '<div class="gallery_item first tbay-image-loaded">';
+            $output .= '<div class="gallery_item first xptheme-image-loaded">';
 
             $output .= '<img src="'.wc_placeholder_img_src().'" alt="'. esc_attr__('Placeholder', 'themename') .'" class="'. esc_attr($class) .'" width="'. esc_attr($placeholder_width) .'" height="'. esc_attr($placeholder_height) .'" />';
             $output .= '</div>';
@@ -104,8 +104,8 @@ if (!function_exists('themename_slick_carousel_product_block_image_class')) {
 }
 
 
-if (!function_exists('themename_tbay_product_class')) {
-    function themename_tbay_product_class($class = array())
+if (!function_exists('themename_xptheme_product_class')) {
+    function themename_xptheme_product_class($class = array())
     {
 
         $class_array    = array();
@@ -117,7 +117,7 @@ if (!function_exists('themename_tbay_product_class')) {
             $class = explode(" ", $class);
         }
 
-        array_push($class_array, "product-block", "grid", "product", themename_tbay_get_theme(), $class_varible);
+        array_push($class_array, "product-block", "grid", "product", themename_xptheme_get_theme(), $class_varible);
 
         $class_array    = array_merge($class_array, $class);
 

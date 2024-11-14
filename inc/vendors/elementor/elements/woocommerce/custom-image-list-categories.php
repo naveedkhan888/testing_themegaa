@@ -30,7 +30,7 @@ class Themename_Elementor_Custom_Image_List_Categories extends Themename_Element
      */
     public function get_name()
     {
-        return 'tbay-custom-image-list-categories';
+        return 'xptheme-custom-image-list-categories';
     }
 
     /**
@@ -225,7 +225,7 @@ class Themename_Elementor_Custom_Image_List_Categories extends Themename_Element
                 'label'     => esc_html__('Icon Show All', 'themename'),
                 'type'      => Controls_Manager::ICONS,
                 'default'   => [
-                    'library' => 'tbay-custom',
+                    'library' => 'xptheme-custom',
                     'value'   => 'tb-icon tb-icon-angle-right'
                 ],
 
@@ -885,7 +885,7 @@ class Themename_Elementor_Custom_Image_List_Categories extends Themename_Element
             <div class="wrapper-title-heading">
                 <?php
                 if (!empty($heading_subtitle) || !empty($heading_title)) : ?>
-                    <<?php echo trim($heading_title_tag); ?> class="heading-tbay-title">
+                    <<?php echo trim($heading_title_tag); ?> class="heading-xptheme-title">
                         <?php if (!empty($heading_title)) : ?>
                         <span class="title"><?php echo trim($heading_title); ?></span>
                         <?php endif; ?>

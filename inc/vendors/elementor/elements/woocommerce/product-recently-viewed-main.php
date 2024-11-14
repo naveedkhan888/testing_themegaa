@@ -10,7 +10,7 @@ class Themename_Elementor_Product_Recently_Viewed_Main extends Themename_Element
 {
     public function get_name()
     {
-        return 'tbay-product-recently-viewed-main';
+        return 'xptheme-product-recently-viewed-main';
     }
 
     public function get_title()
@@ -219,7 +219,7 @@ class Themename_Elementor_Product_Recently_Viewed_Main extends Themename_Element
     {
         $settings = $this->get_settings_for_display();
         extract($settings);
-        $products_list              =  themename_tbay_wc_track_user_get_cookie();
+        $products_list              =  themename_xptheme_wc_track_user_get_cookie();
         $all                        =  count($products_list);
 
         if (!empty($readmore_page)) {
@@ -236,7 +236,7 @@ class Themename_Elementor_Product_Recently_Viewed_Main extends Themename_Element
         $settings = $this->get_settings_for_display();
         extract($settings);
 
-        $args   = themename_tbay_get_products_recently_viewed($limit);
+        $args   = themename_xptheme_get_products_recently_viewed($limit);
 
         $args   =  apply_filters('themename_list_recently_viewed_products_args', $args);
         $loop   = new WP_Query($args);

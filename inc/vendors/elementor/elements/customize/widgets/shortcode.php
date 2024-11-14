@@ -67,7 +67,7 @@ class Themename_Widget_Shortcode extends Widget_Shortcode
 		$shortcode = $this->get_settings_for_display( 'shortcode' );
 		$only_home_page = $this->get_settings_for_display( 'only_home_page' );
 
-		if(!themename_tbay_is_home_page() && $only_home_page === 'yes') {
+		if(!themename_xptheme_is_home_page() && $only_home_page === 'yes') {
 			return;
 		}
 

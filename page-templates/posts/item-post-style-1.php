@@ -73,7 +73,7 @@ if (get_comments_number() == 1) {
         <?php do_action('themename_blog_before_meta_list'); ?>
 
         <?php if ($show_excerpt) : ?>
-            <div class="entry-description"><?php echo themename_tbay_substring(get_the_excerpt(), $excerpt_length, '...'); ?></div>
+            <div class="entry-description"><?php echo themename_xptheme_substring(get_the_excerpt(), $excerpt_length, '...'); ?></div>
         <?php endif; ?>
 
         <?php 

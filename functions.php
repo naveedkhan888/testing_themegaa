@@ -50,14 +50,14 @@ if( apply_filters( 'themename_active_theme_setup', true ) ) {
     require_once(get_parent_theme_file_path(THEMENAME_INC . '/merlin-config.php'));
 }
 
-require_once( get_parent_theme_file_path( THEMENAME_INC . '/skins/'. themename_tbay_get_theme() .'/functions.php') );
+require_once( get_parent_theme_file_path( THEMENAME_INC . '/skins/'. themename_xptheme_get_theme() .'/functions.php') );
 
 /**
  * Customizer
  *
  */
 require_once(get_parent_theme_file_path(THEMENAME_INC . '/customizer/custom-header.php'));
-require_once(get_parent_theme_file_path(THEMENAME_INC . '/skins/'. themename_tbay_get_theme() .'/customizer.php') );
+require_once(get_parent_theme_file_path(THEMENAME_INC . '/skins/'. themename_xptheme_get_theme() .'/customizer.php') );
 require_once(get_parent_theme_file_path(THEMENAME_INC . '/customizer/custom-styles.php'));
 /**
  * Classess file
@@ -82,7 +82,7 @@ if( themename_is_meta_box() ) {
     require_once(get_parent_theme_file_path(THEMENAME_VENDORS . '/meta-box/page.php'));
     require_once(get_parent_theme_file_path(THEMENAME_VENDORS . '/meta-box/post.php'));
     
-    if( defined('TBAY_PORTFOLIOS') && TBAY_PORTFOLIOS &&  apply_filters( 'wpxperttheme_register_post_types_portfolio', true) ) {
+    if( defined('XPTHEME_PORTFOLIOS') && XPTHEME_PORTFOLIOS &&  apply_filters( 'wpxperttheme_register_post_types_portfolio', true) ) {
         require_once(get_parent_theme_file_path(THEMENAME_VENDORS . '/meta-box/portfolio.php')); 
     }
 
@@ -95,7 +95,7 @@ if( themename_wpml_is_activated() )  {
 
 if ( themename_woocommerce_activated() ) {
     require_once(get_parent_theme_file_path(THEMENAME_WOOCOMMERCE . '/wc-admin.php'));
-    require_once(get_parent_theme_file_path(THEMENAME_WOOCOMMERCE . '/skins/'. themename_tbay_get_theme() .'.php') );
+    require_once(get_parent_theme_file_path(THEMENAME_WOOCOMMERCE . '/skins/'. themename_xptheme_get_theme() .'.php') );
     require_once(get_parent_theme_file_path(THEMENAME_WOOCOMMERCE . '/classes/class-wc.php'));
     require_once(get_parent_theme_file_path(THEMENAME_WOOCOMMERCE . '/classes/class-wc-ajax.php'));
     
@@ -152,7 +152,7 @@ if( themename_redux_framework_activated() ) {
     require_once( get_parent_theme_file_path(THEMENAME_CONFIG . '/06-woocommerce.php') );
     require_once( get_parent_theme_file_path(THEMENAME_CONFIG . '/07-blog.php') );
 
-    if( defined('TBAY_PORTFOLIOS') && TBAY_PORTFOLIOS &&  apply_filters( 'wpxperttheme_register_post_types_portfolio', true) ) {
+    if( defined('XPTHEME_PORTFOLIOS') && XPTHEME_PORTFOLIOS &&  apply_filters( 'wpxperttheme_register_post_types_portfolio', true) ) {
         require_once( get_parent_theme_file_path(THEMENAME_CONFIG . '/08-portfolio.php') );
     }
 

@@ -39,18 +39,18 @@ if (! function_exists('themename_elementor_icon_control_material_design_iconic')
 }
 
 
-if (! function_exists('themename_elementor_icon_control_tbay_custom')) {
-    add_action('elementor/icons_manager/additional_tabs', 'themename_elementor_icon_control_tbay_custom', 10);
-    function themename_elementor_icon_control_tbay_custom($tabs)
+if (! function_exists('themename_elementor_icon_control_xptheme_custom')) {
+    add_action('elementor/icons_manager/additional_tabs', 'themename_elementor_icon_control_xptheme_custom', 10);
+    function themename_elementor_icon_control_xptheme_custom($tabs)
     {
-        $tabs['tbay-custom'] = [
-            'name'          => 'tbay-custom',
+        $tabs['xptheme-custom'] = [
+            'name'          => 'xptheme-custom',
             'label'         => esc_html__('Xperttheme Custom', 'themename'),
             'prefix'        => 'tb-icon-',
             'displayPrefix' => 'tb-icon',
             'labelIcon'     => 'fa fa-font-awesome',
             'ver'           => '1.0.0',
-            'fetchJson'     => get_template_directory_uri() . '/inc/vendors/elementor/icons/json/tbay-custom.json',
+            'fetchJson'     => get_template_directory_uri() . '/inc/vendors/elementor/icons/json/xptheme-custom.json',
             'native'        => true,
         ];
 

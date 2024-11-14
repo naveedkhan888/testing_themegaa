@@ -33,7 +33,7 @@ if (sizeof($related_products) == 0) {
 if (isset($_GET['releated_columns'])) {
     $columns = $_GET['releated_columns'];
 } else {
-    $columns = themename_tbay_get_config('releated_product_columns', 4);
+    $columns = themename_xptheme_get_config('releated_product_columns', 4);
 }
 
 $columns_desktopsmall = 4;
@@ -41,16 +41,16 @@ $columns_tablet = 3;
 $columns_mobile = 2;
 $rows = 1;
 
-$show_product_releated = themename_tbay_get_config('enable_product_releated', true);
+$show_product_releated = themename_xptheme_get_config('enable_product_releated', true);
 
 $heading = apply_filters('woocommerce_product_related_products_heading', esc_html__('Related products', 'themename'));
  
 if ($related_products && $show_product_releated) : ?> 
-	<div class="related products tbay-element tbay-element-product" id="product-related">
+	<div class="related products xptheme-element xptheme-element-product" id="product-related">
 		<?php if ($heading) : ?>
-			<h3 class="heading-tbay-title"><span><?php echo esc_html($heading); ?></span></h3>
+			<h3 class="heading-xptheme-title"><span><?php echo esc_html($heading); ?></span></h3>
 		<?php endif; ?>
-		<div class="tbay-element-content woocommerce">
+		<div class="xptheme-element-content woocommerce">
 		<?php  wc_get_template('layout-products/carousel-related.php', array( 'loops'=>$related_products,'rows' => $rows, 'pagi_type' => 'no', 'nav_type' => 'yes','columns'=>$columns,'screen_desktop'=>$columns,'screen_desktopsmall'=>$columns_desktopsmall,'screen_tablet'=>$columns_tablet,'screen_mobile'=>$columns_mobile )); ?>
 		</div>
 

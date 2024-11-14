@@ -10,7 +10,7 @@ class Themename_Elementor_Product_Recently_Viewed_Header extends Themename_Eleme
 {
     public function get_name()
     {
-        return 'tbay-product-recently-viewed-header';
+        return 'xptheme-product-recently-viewed-header';
     }
 
     
@@ -393,7 +393,7 @@ class Themename_Elementor_Product_Recently_Viewed_Header extends Themename_Eleme
                 'type'               => Controls_Manager::ICONS,
                 'default' => [
                     'value' => 'tb-icon tb-icon-recently-viewed',
-                    'library' => 'tbay-custom',
+                    'library' => 'xptheme-custom',
                 ],
             ]
         );
@@ -452,7 +452,7 @@ class Themename_Elementor_Product_Recently_Viewed_Header extends Themename_Eleme
 
     private function get_recently_viewed($limit)
     {
-        $args = themename_tbay_get_products_recently_viewed($limit);
+        $args = themename_xptheme_get_products_recently_viewed($limit);
         $args = apply_filters('themename_list_recently_viewed_products_args', $args);
 
         $products = new WP_Query($args);
@@ -480,7 +480,7 @@ class Themename_Elementor_Product_Recently_Viewed_Header extends Themename_Eleme
         $settings = $this->get_settings_for_display();
         extract($settings);
 
-        $products_list      = themename_tbay_wc_track_user_get_cookie();
+        $products_list      = themename_xptheme_wc_track_user_get_cookie();
 
         if ( !empty($products_list) ) {
             $content                    =  $this->get_recently_viewed($header_column);
@@ -518,7 +518,7 @@ class Themename_Elementor_Product_Recently_Viewed_Header extends Themename_Eleme
     {
         $settings = $this->get_settings_for_display();
         extract($settings);
-        $products_list              =  themename_tbay_wc_track_user_get_cookie();
+        $products_list              =  themename_xptheme_wc_track_user_get_cookie();
         $all                        =  count($products_list);
 
         if (!empty($readmore_page)) {

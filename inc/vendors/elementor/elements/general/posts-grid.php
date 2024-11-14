@@ -13,7 +13,7 @@ class Themename_Elementor_Posts_Grid extends Themename_Elementor_Carousel_Base
 {
     public function get_name()
     {
-        return 'tbay-posts-grid';
+        return 'xptheme-posts-grid';
     }
 
     public function get_title()

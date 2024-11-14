@@ -62,10 +62,10 @@ if (! class_exists('Themename_WooCommerce')) :
             add_action('wp_enqueue_scripts', array( $this, 'quick_view_scripts'), 101);
             add_action( 'themename_woocommerce_after_product_thumbnails', array( $this, 'quick_view_view_details_btn'), 10 );
 
-            add_filter('themename_tbay_woocommerce_content_class', array( $this, 'woocommerce_content_class'), 10);
+            add_filter('themename_xptheme_woocommerce_content_class', array( $this, 'woocommerce_content_class'), 10);
 
             /*YITH Wishlist*/
-            if ( class_exists('YITH_WCWL') && apply_filters( 'tbay_yith_wcwl_remove_text', true )) {
+            if ( class_exists('YITH_WCWL') && apply_filters( 'xptheme_yith_wcwl_remove_text', true )) {
 
                 $icon = get_option( 'yith_wcwl_add_to_wishlist_icon' );
                 if ( 'custom' === $icon ) {
@@ -101,7 +101,7 @@ if (! class_exists('Themename_WooCommerce')) :
             add_action('themename_woocommerce_before_quick_view', array( $this, 'remove_quickview_hook'), 10);
             add_action('themename_woocommerce_after_quick_view', array( $this, 'add_quickview_hook'), 10);
 
-            add_action('themename_tbay_after_shop_loop_item_title', array( $this, 'catalog_mode_remove_shop_loop_item_hook'), 10);
+            add_action('themename_xptheme_after_shop_loop_item_title', array( $this, 'catalog_mode_remove_shop_loop_item_hook'), 10);
             add_action('yith_wcqv_product_image', array( $this, 'catalog_mode_remove_yith_wcqv_hook'), 10);
             add_action('wp', array( $this, 'catalog_mode_redirect_page'), 10);
              
@@ -131,12 +131,12 @@ if (! class_exists('Themename_WooCommerce')) :
 
             /*Change sale flash*/
             add_filter('woocommerce_sale_flash', array( $this, 'show_product_loop_sale_flash_label'), 10, 3);
-            add_action('tbay_woocommerce_before_content_product', 'woocommerce_show_product_loop_sale_flash', 10);
+            add_action('xptheme_woocommerce_before_content_product', 'woocommerce_show_product_loop_sale_flash', 10);
 
             
 
             // add only feature product
-            add_action('tbay_woocommerce_before_content_product', array( $this,'only_feature_product_label'), 10);
+            add_action('xptheme_woocommerce_before_content_product', array( $this,'only_feature_product_label'), 10);
             add_action('woocommerce_before_single_product_summary', array( $this,'only_feature_product_label'), 15);
             
 
@@ -176,7 +176,7 @@ if (! class_exists('Themename_WooCommerce')) :
 
         public function woocommerce_scripts()
         {
-            $suffix = (themename_tbay_get_config('minified_js', false)) ? '.min' : THEMENAME_MIN_JS;
+            $suffix = (themename_xptheme_get_config('minified_js', false)) ? '.min' : THEMENAME_MIN_JS;
 
             wp_enqueue_script( 'wc-cart-fragments' );
 
@@ -196,9 +196,9 @@ if (! class_exists('Themename_WooCommerce')) :
                 return;
             }
 
-            wp_enqueue_style('themename-font-tbay-custom');
+            wp_enqueue_style('themename-font-xptheme-custom');
 
-            themename_tbay_fonts_url();
+            themename_xptheme_fonts_url();
 
             wp_enqueue_style('themename-template');
             
@@ -295,7 +295,7 @@ if (! class_exists('Themename_WooCommerce')) :
             }
 
             if (!isset($_GET['product_'.$page.'_layout'])) {
-                $class .= ' '.themename_tbay_get_config('product_'.$page.'_layout');
+                $class .= ' '.themename_xptheme_get_config('product_'.$page.'_layout');
             } else {
                 $class .= ' '.$_GET['product_'.$page.'_layout'];
             }
@@ -435,14 +435,14 @@ if (! class_exists('Themename_WooCommerce')) :
             wp_enqueue_style( 'font-awesome' );
             wp_enqueue_style( 'simple-line-icons' );
 
-            themename_tbay_fonts_url();
+            themename_xptheme_fonts_url();
 
             wp_enqueue_style( 'themename-style' );
         }
 
         public function enable_variation_selector()
         {
-            $active = themename_tbay_get_config('enable_variation_swatch', false);
+            $active = themename_xptheme_get_config('enable_variation_swatch', false);
 
             $active = (isset($_GET['variation-selector'])) ? $_GET['variation-selector'] : $active;
 
@@ -455,7 +455,7 @@ if (! class_exists('Themename_WooCommerce')) :
 
         public function show_quantity_mobile()
         {
-            $active = themename_tbay_get_config('enable_quantity_mobile', false);
+            $active = themename_xptheme_get_config('enable_quantity_mobile', false);
 
             $active = (isset($_GET['quantity_mobile'])) ? $_GET['quantity_mobile'] : $active;
 
@@ -477,7 +477,7 @@ if (! class_exists('Themename_WooCommerce')) :
 
         public function remove_password_strength()
         {
-            $active = themename_tbay_get_config('show_woocommerce_password_strength', true);
+            $active = themename_xptheme_get_config('show_woocommerce_password_strength', true);
 
             if (isset($active) && !$active) {
                 wp_dequeue_script('wc-password-strength-meter');
@@ -520,11 +520,11 @@ if (! class_exists('Themename_WooCommerce')) :
 
         public function show_product_loop_sale_flash_label($original, $post, $product)
         {
-            $format                 =  themename_tbay_get_config('sale_tags', 'custom');
-            $enable_label_featured  =  themename_tbay_get_config('enable_label_featured', true);
+            $format                 =  themename_xptheme_get_config('sale_tags', 'custom');
+            $enable_label_featured  =  themename_xptheme_get_config('enable_label_featured', true);
 
             if ($format == 'custom') {
-                $format = themename_tbay_get_config('sale_tag_custom', '-{percent-diff}%');
+                $format = themename_xptheme_get_config('sale_tag_custom', '-{percent-diff}%');
             }
 
             $priceDiff = 0;
@@ -539,7 +539,7 @@ if (! class_exists('Themename_WooCommerce')) :
             $featured        = $product->is_featured();
 
             if ($featured && $enable_label_featured) {
-                $return_content  = '<span class="featured">'. themename_tbay_get_config('custom_label_featured', esc_html__('Hot', 'themename')) .'</span>';
+                $return_content  = '<span class="featured">'. themename_xptheme_get_config('custom_label_featured', esc_html__('Hot', 'themename')) .'</span>';
             }
 
 
@@ -599,10 +599,10 @@ if (! class_exists('Themename_WooCommerce')) :
             $featured               = $product->is_featured();
             $return_content = '';
             if ($featured) {
-                $enable_label_featured  =  themename_tbay_get_config('enable_label_featured', true);
+                $enable_label_featured  =  themename_xptheme_get_config('enable_label_featured', true);
 
                 if ($featured && $enable_label_featured) {
-                    $return_content  .= '<span class="only-featured onsale"><span class="featured">'. themename_tbay_get_config('custom_label_featured', esc_html__('Hot', 'themename')) .'</span></span>';
+                    $return_content  .= '<span class="only-featured onsale"><span class="featured">'. themename_xptheme_get_config('custom_label_featured', esc_html__('Hot', 'themename')) .'</span></span>';
 
                     echo trim($return_content);
                 }
@@ -618,7 +618,7 @@ if (! class_exists('Themename_WooCommerce')) :
 
         public function quick_view_scripts()
         {
-            if (!themename_tbay_get_config('enable_quickview', true)) {
+            if (!themename_xptheme_get_config('enable_quickview', true)) {
                 return; 
             }
 
@@ -679,12 +679,12 @@ if (! class_exists('Themename_WooCommerce')) :
 
         public function product_thumbnails_columns()
         {
-            $columns = themename_tbay_get_config('number_product_thumbnail', 4);
+            $columns = themename_xptheme_get_config('number_product_thumbnail', 4);
 
             if (isset($_GET['number_product_thumbnail']) && !empty($_GET['number_product_thumbnail']) && is_numeric($_GET['number_product_thumbnail'])) {
                 $columns = $_GET['number_product_thumbnail'];
             } else {
-                $columns = themename_tbay_get_config('number_product_thumbnail', 4);
+                $columns = themename_xptheme_get_config('number_product_thumbnail', 4);
             }
 
             return $columns;
@@ -692,7 +692,7 @@ if (! class_exists('Themename_WooCommerce')) :
 
         public function remove_result_count_loadmore()
         {
-            $pagination_style = (isset($_GET['pagination_style'])) ? $_GET['pagination_style'] : themename_tbay_get_config('product_pagination_style', 'number');
+            $pagination_style = (isset($_GET['pagination_style'])) ? $_GET['pagination_style'] : themename_xptheme_get_config('product_pagination_style', 'number');
 
             if (isset($pagination_style) && ($pagination_style == 'loadmore')) {
                 remove_action('woocommerce_before_shop_loop', 'woocommerce_result_count', 20);
@@ -710,7 +710,7 @@ if (! class_exists('Themename_WooCommerce')) :
                 $title = esc_html__('Tagged: "', 'themename'). single_tag_title('', false) . '"';
             } elseif (is_product_category()) {
                 $title = '';
-                $_id = themename_tbay_random_key();
+                $_id = themename_xptheme_random_key();
                 $args = array(
                     'id' => 'product-cat-'.$_id,
                     'hide_empty'         => 0,
@@ -739,8 +739,8 @@ if (! class_exists('Themename_WooCommerce')) :
         {
             if (is_account_page() && is_user_logged_in() && wp_is_mobile()) {
                 $current_user   =  wp_get_current_user();
-                $output = '<div class="tbay-my-account-avatar">';
-                $output .= '<div class="tbay-avatar">';
+                $output = '<div class="xptheme-my-account-avatar">';
+                $output .= '<div class="xptheme-avatar">';
                 $output .= get_avatar($current_user->user_email, 70, '', $current_user->display_name);
                 $output .= '</div>';
                 $output .= '</div>';
@@ -751,7 +751,7 @@ if (! class_exists('Themename_WooCommerce')) :
 
         public function shop_des_image_active($active)
         {
-            $active = themename_tbay_get_config('pro_des_image_product_archives', false);
+            $active = themename_xptheme_get_config('pro_des_image_product_archives', false);
     
             $active = (isset($_GET['pro_des_image'])) ? (boolean)$_GET['pro_des_image'] : (boolean)$active;
     

@@ -3,8 +3,8 @@
     wp_enqueue_script('slick');
     wp_enqueue_script('themename-custom-slick');
     
-    $relate_count = themename_tbay_get_config('number_blog_releated', 2);
-    $relate_columns = themename_tbay_get_config('releated_blog_columns', 2);
+    $relate_count = themename_xptheme_get_config('number_blog_releated', 2);
+    $relate_columns = themename_xptheme_get_config('releated_blog_columns', 2);
     $terms = get_the_terms(get_the_ID(), 'category');
     $termids =array();
     $nav_type = 'yes';
@@ -36,12 +36,12 @@
     if ($relates->have_posts()):
     
 ?>
-    <div class="tbay-addon tbay-addon-blog relate-blog">
-        <h4 class="tbay-addon-title">
+    <div class="xptheme-addon xptheme-addon-blog relate-blog">
+        <h4 class="xptheme-addon-title">
             <span><?php esc_html_e('Related posts', 'themename'); ?></span>
         </h4>
 
-        <div class="tbay-addon-content">
+        <div class="xptheme-addon-content">
             <?php $class_column = 12/$relate_columns; ?>
             <?php
 

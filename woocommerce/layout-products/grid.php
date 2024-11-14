@@ -18,7 +18,7 @@ $screen_mobile           	=      isset($screen_mobile) ? $screen_mobile : 1;
 $count = 0;
  
 
-$data_responsive  = themename_tbay_check_data_responsive_grid($columns, $screen_desktop, $screen_desktopsmall, $screen_tablet, $screen_landscape_mobile, $screen_mobile);
+$data_responsive  = themename_xptheme_check_data_responsive_grid($columns, $screen_desktop, $screen_desktopsmall, $screen_tablet, $screen_landscape_mobile, $screen_mobile);
 
 $class_columns = ($columns <= 1) ? 'w-products-list' : 'products products-grid';
 ?>

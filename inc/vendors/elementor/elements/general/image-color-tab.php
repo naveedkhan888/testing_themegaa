@@ -29,7 +29,7 @@ class Themename_Elementor_Image_Color_Tab extends Themename_Elementor_Widget_Bas
      */
     public function get_name()
     {
-        return 'tbay-image-color-tab';
+        return 'xptheme-image-color-tab';
     }
 
     /**

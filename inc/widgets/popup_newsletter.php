@@ -3,7 +3,7 @@ if (!themename_redux_framework_activated()) {
     return;
 }
 
-class Tbay_Widget_Popup_Newsletter extends Tbay_Widget
+class Xptheme_Widget_Popup_Newsletter extends Xptheme_Widget
 {
     public function __construct()
     {
@@ -18,8 +18,8 @@ class Tbay_Widget_Popup_Newsletter extends Tbay_Widget
     
     public function scripts()
     {
-        $suffix = (themename_tbay_get_config('minified_js', false)) ? '.min' : THEMENAME_MIN_JS;
-        wp_enqueue_script('tbay-upload', WPXPERTTHEME_ELEMENTOR_URL . 'assets/upload.js', array( 'jquery', 'wp-pointer' ), WPXPERTTHEME_ELEMENTOR_VERSION, true);
+        $suffix = (themename_xptheme_get_config('minified_js', false)) ? '.min' : THEMENAME_MIN_JS;
+        wp_enqueue_script('xptheme-upload', WPXPERTTHEME_ELEMENTOR_URL . 'assets/upload.js', array( 'jquery', 'wp-pointer' ), WPXPERTTHEME_ELEMENTOR_VERSION, true);
     }
 
     public function getTemplate()

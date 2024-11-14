@@ -1,11 +1,11 @@
 <?php
 
 get_header();
-$sidebar_configs = themename_tbay_get_page_layout_configs();
+$sidebar_configs = themename_xptheme_get_page_layout_configs();
 
-$class_row = (get_post_meta($post->ID, 'tbay_page_layout', true) === 'main-right') ? 'tb-column-reverse' : '';
+$class_row = (get_post_meta($post->ID, 'xptheme_page_layout', true) === 'main-right') ? 'tb-column-reverse' : '';
 
-themename_tbay_render_breadcrumbs();
+themename_xptheme_render_breadcrumbs();
 
 if( isset($sidebar_configs['sidebar']) && is_active_sidebar($sidebar_configs['sidebar']['id']) ) {
     $main_class = $sidebar_configs['main']['class'];
@@ -16,7 +16,7 @@ if( isset($sidebar_configs['sidebar']) && is_active_sidebar($sidebar_configs['si
 }
 ?>
 
-<section id="main-container" class="<?php echo esc_attr($container_class); ?> <?php echo esc_attr(apply_filters('themename_tbay_page_content_class', 'container'));?>">
+<section id="main-container" class="<?php echo esc_attr($container_class); ?> <?php echo esc_attr(apply_filters('themename_xptheme_page_content_class', 'container'));?>">
 	<div class="row <?php echo esc_attr($class_row); ?>">
 		<?php if (isset($sidebar_configs['sidebar']) && is_active_sidebar($sidebar_configs['sidebar']['id'])) : ?>
 		<div class="<?php echo esc_attr($sidebar_configs['sidebar']['class']) ;?>">

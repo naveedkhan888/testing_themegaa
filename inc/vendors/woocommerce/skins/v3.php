@@ -25,6 +25,6 @@ if ( ! function_exists( 'themename_woocommerce_setup_size_image' ) ) {
     add_action( 'after_setup_theme', 'themename_woocommerce_setup_size_image' );
 }
 
-if(themename_tbay_get_global_config('config_media',false)) {
+if(themename_xptheme_get_global_config('config_media',false)) {
     remove_action( 'after_setup_theme', 'themename_woocommerce_setup_size_image' );
 }

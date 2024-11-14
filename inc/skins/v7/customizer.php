@@ -15,9 +15,9 @@
  * @param WP_Customize_Manager $wp_customize Customizer object.
  */
 
-function themename_tbay_customize_register($wp_customize)
+function themename_xptheme_customize_register($wp_customize)
 {
-    $color_scheme = themename_tbay_get_color_scheme();
+    $color_scheme = themename_xptheme_get_color_scheme();
 
     $wp_customize->get_setting('blogname')->transport        = 'postMessage';
     $wp_customize->get_setting('blogdescription')->transport = 'postMessage';
@@ -25,7 +25,7 @@ function themename_tbay_customize_register($wp_customize)
     // Add color scheme setting and control.
     $wp_customize->add_setting('color_scheme', array(
         'default'           => 'default',
-        'sanitize_callback' => 'themename_tbay_sanitize_color_scheme',
+        'sanitize_callback' => 'themename_xptheme_sanitize_color_scheme',
         'transport'         => 'postMessage',
     ));
 
@@ -33,7 +33,7 @@ function themename_tbay_customize_register($wp_customize)
         'label'    => esc_html__('Base Color Scheme', 'themename'),
         'section'  => 'colors',
         'type'     => 'select',
-        'choices'  => themename_tbay_get_color_scheme_choices(),
+        'choices'  => themename_xptheme_get_color_scheme_choices(),
         'priority' => 1,
     ));
 
@@ -75,7 +75,7 @@ function themename_tbay_customize_register($wp_customize)
     /*Fix customize thumbnail image woocommerce*/
     if (in_array('woocommerce/woocommerce.php', apply_filters('active_plugins', get_option('active_plugins')))) {
         $wp_customize->add_setting(
-            'tbay_woocommerce_thumbnail_image_width',
+            'xptheme_woocommerce_thumbnail_image_width',
             array(
                 'default'              => 100,
                 'type'                 => 'option',
@@ -86,12 +86,12 @@ function themename_tbay_customize_register($wp_customize)
         );
 
         $wp_customize->add_control(
-            'tbay_woocommerce_thumbnail_image_width',
+            'xptheme_woocommerce_thumbnail_image_width',
             array(
-                'label'       => esc_html__('Tbay thumbnail image width', 'themename'),
+                'label'       => esc_html__('Xptheme thumbnail image width', 'themename'),
                 'description' => esc_html__('Image size used for the mini cart or single product image thumbnail.', 'themename'),
                 'section'     => 'woocommerce_product_images',
-                'settings'    => 'tbay_woocommerce_thumbnail_image_width',
+                'settings'    => 'xptheme_woocommerce_thumbnail_image_width',
                 'type'        => 'number',
                 'input_attrs' => array(
                     'min'  => 0,
@@ -101,7 +101,7 @@ function themename_tbay_customize_register($wp_customize)
         );
 
         $wp_customize->add_setting(
-            'tbay_woocommerce_thumbnail_image_height',
+            'xptheme_woocommerce_thumbnail_image_height',
             array(
                 'default'              => 100,
                 'type'                 => 'option',
@@ -112,12 +112,12 @@ function themename_tbay_customize_register($wp_customize)
         );
 
         $wp_customize->add_control(
-            'tbay_woocommerce_thumbnail_image_height',
+            'xptheme_woocommerce_thumbnail_image_height',
             array(
-                'label'       => esc_html__('Tbay thumbnail image height', 'themename'),
+                'label'       => esc_html__('Xptheme thumbnail image height', 'themename'),
                 'description' => esc_html__('Image size used for the mini cart or single product image thumbnail.', 'themename'),
                 'section'     => 'woocommerce_product_images',
-                'settings'    => 'tbay_woocommerce_thumbnail_image_height',
+                'settings'    => 'xptheme_woocommerce_thumbnail_image_height',
                 'type'        => 'number',
                 'default'              => 153,
                 'input_attrs' => array(
@@ -128,7 +128,7 @@ function themename_tbay_customize_register($wp_customize)
         );
 
         $wp_customize->add_setting(
-            'tbay_woocommerce_thumbnail_cropping',
+            'xptheme_woocommerce_thumbnail_cropping',
             array(
                 'default'              => 'yes',
                 'type'                 => 'option',
@@ -139,12 +139,12 @@ function themename_tbay_customize_register($wp_customize)
         );
 
         $wp_customize->add_control(
-            'tbay_woocommerce_thumbnail_cropping',
+            'xptheme_woocommerce_thumbnail_cropping',
             array(
                 'label'    => esc_html__('Enable cropped', 'themename'),
                 'description' => esc_html__('Images will be cropped to a custom size above.', 'themename'),
                 'section'  => 'woocommerce_product_images',
-                'settings' => 'tbay_woocommerce_thumbnail_cropping',
+                'settings' => 'xptheme_woocommerce_thumbnail_cropping',
                 'type'     => 'checkbox',
             )
         );
@@ -228,7 +228,7 @@ function themename_tbay_customize_register($wp_customize)
         );
     }
 }
-add_action('customize_register', 'themename_tbay_customize_register', 20);
+add_action('customize_register', 'themename_xptheme_customize_register', 20);
 
 
 /**
@@ -248,7 +248,7 @@ add_action('customize_register', 'themename_tbay_customize_register', 20);
  *
  * @return array An associative array of color scheme options.
  */
-function themename_tbay_get_color_schemes()
+function themename_xptheme_get_color_schemes()
 {
     /**
      * Filter the color schemes registered for use with themename.
@@ -271,7 +271,7 @@ function themename_tbay_get_color_schemes()
      *     }
      * }
      */
-    return apply_filters('themename_tbay_color_schemes', array(
+    return apply_filters('themename_xptheme_color_schemes', array(
         'default' => array(
             'label'  => esc_html__('Default', 'themename'),
             'colors' => array(
@@ -341,7 +341,7 @@ function themename_tbay_get_color_schemes()
     ));
 }
 
-if (! function_exists('themename_tbay_get_color_scheme')) :
+if (! function_exists('themename_xptheme_get_color_scheme')) :
 /**
  * Get the current themename color scheme.
  *
@@ -349,10 +349,10 @@ if (! function_exists('themename_tbay_get_color_scheme')) :
  *
  * @return array An associative array of either the current or default color scheme hex values.
  */
-function themename_tbay_get_color_scheme()
+function themename_xptheme_get_color_scheme()
 {
     $color_scheme_option = get_theme_mod('color_scheme', 'default');
-    $color_schemes       = themename_tbay_get_color_schemes();
+    $color_schemes       = themename_xptheme_get_color_schemes();
 
     if (array_key_exists($color_scheme_option, $color_schemes)) {
         return $color_schemes[ $color_scheme_option ]['colors'];
@@ -360,9 +360,9 @@ function themename_tbay_get_color_scheme()
 
     return $color_schemes['default']['colors'];
 }
-endif; // themename_tbay_get_color_scheme
+endif; // themename_xptheme_get_color_scheme
 
-if (! function_exists('themename_tbay_get_color_scheme_choices')) :
+if (! function_exists('themename_xptheme_get_color_scheme_choices')) :
 /**
  * Returns an array of color scheme choices registered for themename.
  *
@@ -370,9 +370,9 @@ if (! function_exists('themename_tbay_get_color_scheme_choices')) :
  *
  * @return array Array of color schemes.
  */
-function themename_tbay_get_color_scheme_choices()
+function themename_xptheme_get_color_scheme_choices()
 {
-    $color_schemes                = themename_tbay_get_color_schemes();
+    $color_schemes                = themename_xptheme_get_color_schemes();
     $color_scheme_control_options = array();
 
     foreach ($color_schemes as $color_scheme => $value) {
@@ -381,9 +381,9 @@ function themename_tbay_get_color_scheme_choices()
 
     return $color_scheme_control_options;
 }
-endif; // themename_tbay_get_color_scheme_choices
+endif; // themename_xptheme_get_color_scheme_choices
 
-if (! function_exists('themename_tbay_sanitize_color_scheme')) :
+if (! function_exists('themename_xptheme_sanitize_color_scheme')) :
 /**
  * Sanitization callback for color schemes.
  *
@@ -392,9 +392,9 @@ if (! function_exists('themename_tbay_sanitize_color_scheme')) :
  * @param string $value Color scheme name value.
  * @return string Color scheme name.
  */
-function themename_tbay_sanitize_color_scheme($value)
+function themename_xptheme_sanitize_color_scheme($value)
 {
-    $color_schemes = themename_tbay_get_color_scheme_choices();
+    $color_schemes = themename_xptheme_get_color_scheme_choices();
 
     if (! array_key_exists($value, $color_schemes)) {
         $value = 'default';
@@ -411,22 +411,22 @@ endif; // themename_sanitize_color_scheme
  *
  * @since Themename 1.0
  */
-function themename_tbay_customize_control_js()
+function themename_xptheme_customize_control_js()
 {
-    $suffix = (themename_tbay_get_config('minified_js', false)) ? '.min' : THEMENAME_MIN_JS;
+    $suffix = (themename_xptheme_get_config('minified_js', false)) ? '.min' : THEMENAME_MIN_JS;
     wp_enqueue_script('color-scheme-control', THEMENAME_SCRIPTS . '/color-scheme-control' . $suffix . '.js', array( 'customize-controls', 'iris', 'underscore', 'wp-util' ), '20141216', true);
-    wp_localize_script('color-scheme-control', 'colorScheme', themename_tbay_get_color_schemes());
+    wp_localize_script('color-scheme-control', 'colorScheme', themename_xptheme_get_color_schemes());
 }
-add_action('customize_controls_enqueue_scripts', 'themename_tbay_customize_control_js');
+add_action('customize_controls_enqueue_scripts', 'themename_xptheme_customize_control_js');
 
 /**
  * Binds JS handlers to make the Customizer preview reload changes asynchronously.
  *
  * @since Themename 1.0
  */
-function themename_tbay_customize_preview_js()
+function themename_xptheme_customize_preview_js()
 {
-    $suffix = (themename_tbay_get_config('minified_js', false)) ? '.min' : THEMENAME_MIN_JS;
+    $suffix = (themename_xptheme_get_config('minified_js', false)) ? '.min' : THEMENAME_MIN_JS;
     wp_enqueue_script('themename-customize-preview', THEMENAME_SCRIPTS . '/customize-preview' . $suffix . '.js', array( 'customize-preview' ), '20141216', true);
 }
-add_action('customize_preview_init', 'themename_tbay_customize_preview_js');
+add_action('customize_preview_init', 'themename_xptheme_customize_preview_js');

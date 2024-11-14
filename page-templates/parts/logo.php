@@ -1,5 +1,5 @@
 <?php
-    $logo = themename_tbay_get_config('media-logo');
+    $logo = themename_xptheme_get_config('media-logo');
 ?>
 
 <?php if (isset($logo['url']) && !empty($logo['url'])): ?>

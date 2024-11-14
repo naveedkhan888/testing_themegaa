@@ -10,7 +10,7 @@ class Themename_Elementor_Product_List_Tags extends Themename_Elementor_Carousel
 {
     public function get_name()
     {
-        return 'tbay-product-list-tags';
+        return 'xptheme-product-list-tags';
     }
 
     public function get_title()

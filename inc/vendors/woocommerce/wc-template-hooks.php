@@ -1,7 +1,7 @@
 <?php
 
 // Remove default breadcrumb
-add_filter('woocommerce_breadcrumb_defaults', 'themename_tbay_woocommerce_breadcrumb_defaults');
+add_filter('woocommerce_breadcrumb_defaults', 'themename_xptheme_woocommerce_breadcrumb_defaults');
 remove_action('woocommerce_before_main_content', 'woocommerce_breadcrumb', 20);
 add_action('themename_woo_template_main_wrapper_before', 'woocommerce_breadcrumb', 20);
 

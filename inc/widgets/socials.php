@@ -3,7 +3,7 @@ if (!themename_redux_framework_activated()) {
     return;
 }
 
-class Tbay_Widget_Socials extends Tbay_Widget
+class Xptheme_Widget_Socials extends Xptheme_Widget
 {
     public function __construct()
     {
@@ -39,7 +39,7 @@ class Tbay_Widget_Socials extends Tbay_Widget
 
         $defaults = array('title' => 'Find us on social networks', 'layout' => 'default', 'socials' => array());
         $instance = wp_parse_args((array) $instance, $defaults); ?>
-    <div class="tbay_socials">
+    <div class="xptheme_socials">
 
         <p>
             <label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><?php esc_html_e('Title:', 'themename'); ?></label>

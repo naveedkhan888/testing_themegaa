@@ -11,7 +11,7 @@ class Themename_Elementor_Single_Product_Home extends Themename_Elementor_Widget
 {
     public function get_name()
     {
-        return 'tbay-single-product-home';
+        return 'xptheme-single-product-home';
     }
 
     public function get_title()

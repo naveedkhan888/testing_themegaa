@@ -11,13 +11,13 @@
  * @since Themename 1.0
  */
 
-if (! function_exists('themename_tbay_comment_nav')) :
+if (! function_exists('themename_xptheme_comment_nav')) :
 /**
  * Display navigation to next/previous comments when applicable.
  *
  * @since Themename 1.0
  */
-function themename_tbay_comment_nav()
+function themename_xptheme_comment_nav()
 {
     // Are there comments to navigate through?
     if (get_comment_pages_count() > 1 && get_option('page_comments')) :
@@ -64,13 +64,13 @@ if (! function_exists('themename_edit_link')) :
 endif;
 
 
-if (! function_exists('themename_tbay_entry_meta')) :
+if (! function_exists('themename_xptheme_entry_meta')) :
 /**
  * Prints HTML with meta information for the categories, tags.
  *
  * @since Themename 1.0
  */
-function themename_tbay_entry_meta()
+function themename_xptheme_entry_meta()
 {
     if (is_sticky() && is_home() && ! is_paged()) {
         printf('<span class="sticky-post">%s</span>', esc_html__('Featured', 'themename'));
@@ -120,7 +120,7 @@ function themename_tbay_entry_meta()
         }
 
         $categories_list = get_the_category_list(_x(', ', 'Used between list items, there is a space after the comma.', 'themename'));
-        if ($categories_list && themename_tbay_categorized_blog()) {
+        if ($categories_list && themename_xptheme_categorized_blog()) {
             printf(
                 '<span class="cat-links"><span class="screen-reader-text">%1$s </span>%2$s</span>',
                 _x('Categories', 'Used before category names.', 'themename'),
@@ -167,9 +167,9 @@ endif;
  *
  * @return bool True of there is more than one category, false otherwise.
  */
-function themename_tbay_categorized_blog()
+function themename_xptheme_categorized_blog()
 {
-    if (false === ($all_the_cool_cats = get_transient('themename_tbay_categories'))) {
+    if (false === ($all_the_cool_cats = get_transient('themename_xptheme_categories'))) {
         // Create an array of all the categories that are attached to posts.
         $all_the_cool_cats = get_categories(array(
             'fields'     => 'ids',
@@ -182,33 +182,33 @@ function themename_tbay_categorized_blog()
         // Count the number of categories that are attached to the posts.
         $all_the_cool_cats = count($all_the_cool_cats);
 
-        set_transient('themename_tbay_categories', $all_the_cool_cats);
+        set_transient('themename_xptheme_categories', $all_the_cool_cats);
     }
 
     if ($all_the_cool_cats > 1) {
-        // This blog has more than 1 category so themename_tbay_categorized_blog should return true.
+        // This blog has more than 1 category so themename_xptheme_categorized_blog should return true.
         return true;
     } else {
-        // This blog has only 1 category so themename_tbay_categorized_blog should return false.
+        // This blog has only 1 category so themename_xptheme_categorized_blog should return false.
         return false;
     }
 }
 
 /**
- * Flush out the transients used in {@see themename_tbay_categorized_blog()}.
+ * Flush out the transients used in {@see themename_xptheme_categorized_blog()}.
  *
  * @since Themename 1.0
  */
-function themename_tbay_category_transient_flusher()
+function themename_xptheme_category_transient_flusher()
 {
     // Like, beat it. Dig?
-    delete_transient('themename_tbay_categories');
+    delete_transient('themename_xptheme_categories');
 }
-add_action('edit_category', 'themename_tbay_category_transient_flusher');
-add_action('save_post', 'themename_tbay_category_transient_flusher');
+add_action('edit_category', 'themename_xptheme_category_transient_flusher');
+add_action('save_post', 'themename_xptheme_category_transient_flusher');
 
-if (! function_exists('themename_tbay_post_thumbnail')) {
-    function themename_tbay_post_thumbnail()
+if (! function_exists('themename_xptheme_post_thumbnail')) {
+    function themename_xptheme_post_thumbnail()
     {
         if (post_password_required() || is_attachment() || ! has_post_thumbnail()) {
             return;
@@ -236,8 +236,8 @@ if (! function_exists('themename_tbay_post_thumbnail')) {
     }
 }
 
-if (! function_exists('themename_tbay_post_categories')) {
-    function themename_tbay_post_categories($post)
+if (! function_exists('themename_xptheme_post_categories')) {
+    function themename_xptheme_post_categories($post)
     {
         $cat = wp_get_post_categories($post->ID);
         $k   = count($cat);
@@ -253,8 +253,8 @@ if (! function_exists('themename_tbay_post_categories')) {
     }
 }
 
-if (! function_exists('themename_tbay_short_top_meta')) {
-    function themename_tbay_short_top_meta($post)
+if (! function_exists('themename_xptheme_short_top_meta')) {
+    function themename_xptheme_short_top_meta($post)
     {
         ?>
         <div class="entry-create">
@@ -266,7 +266,7 @@ if (! function_exists('themename_tbay_short_top_meta')) {
     }
 }
 
-if (! function_exists('themename_tbay_get_link_url')) :
+if (! function_exists('themename_xptheme_get_link_url')) :
 /**
  * Return the post URL.
  *
@@ -278,7 +278,7 @@ if (! function_exists('themename_tbay_get_link_url')) :
  *
  * @return string The Link format URL.
  */
-function themename_tbay_get_link_url()
+function themename_xptheme_get_link_url()
 {
     $has_url = get_url_in_content(get_the_content());
 
@@ -286,7 +286,7 @@ function themename_tbay_get_link_url()
 }
 endif;
 
-if (! function_exists('themename_tbay_excerpt_more') && ! is_admin()) :
+if (! function_exists('themename_xptheme_excerpt_more') && ! is_admin()) :
 /**
  * Replaces "[...]" (appended to automatically generated excerpts) with ... and a 'Continue reading' link.
  *
@@ -294,7 +294,7 @@ if (! function_exists('themename_tbay_excerpt_more') && ! is_admin()) :
  *
  * @return string 'Continue reading' link prepended with an ellipsis.
  */
-function themename_tbay_excerpt_more($more)
+function themename_xptheme_excerpt_more($more)
 {
     $link = sprintf(
         '<a href="%1$s" class="more-link">%2$s</a>',
@@ -304,7 +304,7 @@ function themename_tbay_excerpt_more($more)
     );
     return ' &hellip; ' . $link;
 }
-add_filter('excerpt_more', 'themename_tbay_excerpt_more');
+add_filter('excerpt_more', 'themename_xptheme_excerpt_more');
 endif;
 
 /**
@@ -421,12 +421,12 @@ if (! function_exists('themename_post_archive_the_short_description')) {
 
         if (has_excerpt()) { ?>
 			<div class="entry-description">
-				<?php echo themename_tbay_substring(get_the_excerpt(), 30, '[...]'); ?>
+				<?php echo themename_xptheme_substring(get_the_excerpt(), 30, '[...]'); ?>
 			</div>
 		<?php } else {
             ?>
 				<div class="entry-description">
-					<?php echo themename_tbay_substring(get_the_content(), 25, '...'); ?>
+					<?php echo themename_xptheme_substring(get_the_content(), 25, '...'); ?>
 				</div>
 			<?php
         }
@@ -443,7 +443,7 @@ if (! function_exists('themename_post_archive_the_read_more')) {
         if( !empty($text) ) {
             $custom_readmore = $text;
         } else {
-            $custom_readmore	= themename_tbay_get_config('text_readmore', esc_html__('Continue Reading', 'themename')); 
+            $custom_readmore	= themename_xptheme_get_config('text_readmore', esc_html__('Continue Reading', 'themename')); 
         }
         ?>
 			<div class="more">
@@ -487,7 +487,7 @@ if (! function_exists('themename_search_title_query')) {
 if ( ! function_exists( 'themename_init_product_search' ) ) {
 	function themename_init_product_search() {
         if( themename_woocommerce_activated() ) {
-            if ( apply_filters( 'themename_search_query_in', themename_tbay_get_config('search_query_in', 'title') === 'all' ) ) {
+            if ( apply_filters( 'themename_search_query_in', themename_xptheme_get_config('search_query_in', 'title') === 'all' ) ) {
                 add_filter( 'posts_search', 'themename_product_search_sku', 9 );
             } else {
                 add_filter('posts_search', 'themename_product_search_title', 20, 2);

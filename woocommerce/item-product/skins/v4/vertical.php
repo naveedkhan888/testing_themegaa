@@ -23,22 +23,22 @@ $product_style = isset($product_style) ? $product_style : '';
 			</figure>
 			<?php
                 /**
-                * tbay_woocommerce_before_content_product hook
+                * xptheme_woocommerce_before_content_product hook
                 *
                 * @hooked woocommerce_show_product_loop_sale_flash - 10
                 */
-                do_action('tbay_woocommerce_before_content_product');
+                do_action('xptheme_woocommerce_before_content_product');
             ?>
 		</div>
 		<div class="caption">
 			<?php themename_the_product_name(); ?>
 			<?php
                 /**
-                * themename_after_title_tbay_subtitle hook
+                * themename_after_title_xptheme_subtitle hook
                 *
                 * @hooked themename_woo_get_subtitle - 0
                 */
-                do_action('themename_after_title_tbay_subtitle');
+                do_action('themename_after_title_xptheme_subtitle');
             ?>
 
 			<?php do_action('woocommerce_after_shop_loop_item_vertical_title'); ?>

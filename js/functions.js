@@ -4,10 +4,10 @@ class StickyHeader {
   constructor() {
     let _this = this;
 
-    this.$tbayHeader = jQuery(".tbay_header-template");
-    this.$tbayHeaderMain = jQuery(".tbay_header-template .header-main");
+    this.$xpthemeHeader = jQuery(".xptheme_header-template");
+    this.$xpthemeHeaderMain = jQuery(".xptheme_header-template .header-main");
 
-    if (this.$tbayHeader.hasClass("main-sticky-header") && this.$tbayHeaderMain.length > 0) {
+    if (this.$xpthemeHeader.hasClass("main-sticky-header") && this.$xpthemeHeaderMain.length > 0) {
       this._initStickyHeader();
     }
 
@@ -22,43 +22,43 @@ class StickyHeader {
   _initStickyHeader() {
     var _this = this;
 
-    var tbay_width = jQuery(window).width();
+    var xptheme_width = jQuery(window).width();
 
-    var header_height = _this.$tbayHeader.outerHeight();
+    var header_height = _this.$xpthemeHeader.outerHeight();
 
-    var headerMain_height = _this.$tbayHeaderMain.outerHeight();
+    var headerMain_height = _this.$xpthemeHeaderMain.outerHeight();
 
     var admin_height = jQuery("#wpadminbar").length > 0 ? jQuery("#wpadminbar").outerHeight() : 0;
 
-    var sticky = _this.$tbayHeaderMain.offset().top;
+    var sticky = _this.$xpthemeHeaderMain.offset().top;
 
-    if (tbay_width >= 1024) {
+    if (xptheme_width >= 1024) {
       if (sticky == 0 || sticky == admin_height) {
-        if (_this.$tbayHeader.hasClass("sticky-header")) return;
+        if (_this.$xpthemeHeader.hasClass("sticky-header")) return;
 
         _this._stickyHeaderOnDesktop(headerMain_height, sticky, admin_height);
 
-        _this.$tbayHeaderMain.addClass("sticky-1");
+        _this.$xpthemeHeaderMain.addClass("sticky-1");
 
         jQuery(window).scroll(function () {
           if (jQuery(this).scrollTop() > header_height) {
-            _this.$tbayHeaderMain.addClass("sticky-box");
+            _this.$xpthemeHeaderMain.addClass("sticky-box");
           } else {
-            _this.$tbayHeaderMain.removeClass("sticky-box");
+            _this.$xpthemeHeaderMain.removeClass("sticky-box");
           }
         });
       } else {
         jQuery(window).scroll(function () {
-          if (!_this.$tbayHeader.hasClass("main-sticky-header")) return;
+          if (!_this.$xpthemeHeader.hasClass("main-sticky-header")) return;
 
           if (jQuery(this).scrollTop() > sticky - admin_height) {
-            if (_this.$tbayHeader.hasClass("sticky-header")) return;
+            if (_this.$xpthemeHeader.hasClass("sticky-header")) return;
 
             _this._stickyHeaderOnDesktop(headerMain_height, sticky, admin_height);
           } else {
-            _this.$tbayHeaderMain.css("top", 0).css("position", "relative").removeClass("sticky-header").parent().css("padding-top", 0);
+            _this.$xpthemeHeaderMain.css("top", 0).css("position", "relative").removeClass("sticky-header").parent().css("padding-top", 0);
 
-            _this.$tbayHeaderMain.prev().css("margin-bottom", 0);
+            _this.$xpthemeHeaderMain.prev().css("margin-bottom", 0);
           }
         });
       }
@@ -66,26 +66,26 @@ class StickyHeader {
   }
 
   _stickyHeaderOnDesktop(headerMain_height, sticky, admin_height) {
-    this.$tbayHeaderMain.addClass("sticky-header").css("top", admin_height).css("position", "fixed");
+    this.$xpthemeHeaderMain.addClass("sticky-header").css("top", admin_height).css("position", "fixed");
 
     if (sticky == 0 || sticky == admin_height) {
-      this.$tbayHeaderMain.parent().css("padding-top", headerMain_height);
+      this.$xpthemeHeaderMain.parent().css("padding-top", headerMain_height);
     } else {
-      this.$tbayHeaderMain.prev().css("margin-bottom", headerMain_height);
+      this.$xpthemeHeaderMain.prev().css("margin-bottom", headerMain_height);
     }
   }
 
   _intSearchOffcanvas() {
-    if (jQuery("#tbay-offcanvas-main").length === 0) return;
+    if (jQuery("#xptheme-offcanvas-main").length === 0) return;
     jQuery('[data-toggle="offcanvas-main-search"]').off().on("click", function () {
       jQuery("#wrapper-container").toggleClass("show");
-      jQuery("#tbay-offcanvas-main").toggleClass("show");
+      jQuery("#xptheme-offcanvas-main").toggleClass("show");
     });
-    var $box_totop = jQuery("#tbay-offcanvas-main, .search");
+    var $box_totop = jQuery("#xptheme-offcanvas-main, .search");
     jQuery(window).on("click.Bst", function (event) {
       if ($box_totop.has(event.target).length == 0 && !$box_totop.is(event.target)) {
         jQuery("#wrapper-container").removeClass("show");
-        jQuery("#tbay-offcanvas-main").removeClass("show");
+        jQuery("#xptheme-offcanvas-main").removeClass("show");
       }
     });
   }
@@ -98,7 +98,7 @@ class StickyHeader {
     var scroll = false,
         sum = 0,
         prev_sum = 0;
-    if (el.parents(".tbay_header-template").length === 0) return;
+    if (el.parents(".xptheme_header-template").length === 0) return;
     var adminbar = jQuery("#wpadminbar").length > 0 ? jQuery("#wpadminbar").outerHeight() : 0,
         sticky_load = el.offset().top - jQuery(window).scrollTop() - adminbar,
         sticky = sticky_load;
@@ -199,15 +199,15 @@ class Mobile {
     const scrollmobile = windowObj.scrollTop();
     const topbarDeviceMobile = jQuery(".topbar-device-mobile");
     topbarDeviceMobile.toggleClass("active", scroll <= objectSelect);
-    jQuery("#tbay-mobile-menu").toggleClass("offsetop", scrollmobile == 0);
+    jQuery("#xptheme-mobile-menu").toggleClass("offsetop", scrollmobile == 0);
   }
 
   _mobileMenu() {
     const wrapperContainer = jQuery("#wrapper-container");
-    const tbayMobileMenu = jQuery("#tbay-mobile-menu");
+    const xpthemeMobileMenu = jQuery("#xptheme-mobile-menu");
     jQuery('[data-toggle="offcanvas"], .btn-offcanvas').on("click", function () {
       wrapperContainer.toggleClass("active");
-      tbayMobileMenu.toggleClass("active");
+      xpthemeMobileMenu.toggleClass("active");
     });
     jQuery("#main-mobile-menu .caret").on("click", function () {
       jQuery("#main-mobile-menu .dropdown").removeClass("open");
@@ -225,19 +225,19 @@ class Mobile {
 
 class AccountMenu {
   constructor() {
-    this._slideToggleAccountMenu(".tbay-login");
+    this._slideToggleAccountMenu(".xptheme-login");
 
     this._slideToggleAccountMenu(".topbar-mobile");
 
-    this._tbayClickNotMyAccountMenu();
+    this._xpthemeClickNotMyAccountMenu();
   }
 
-  _tbayClickNotMyAccountMenu() {
+  _xpthemeClickNotMyAccountMenu() {
     const $win_my_account = jQuery(window);
-    const $box_my_account = jQuery(".tbay-login .dropdown .account-menu,.topbar-mobile .dropdown .account-menu,.tbay-login .dropdown .account-button,.topbar-mobile .dropdown .account-button");
+    const $box_my_account = jQuery(".xptheme-login .dropdown .account-menu,.topbar-mobile .dropdown .account-menu,.xptheme-login .dropdown .account-button,.topbar-mobile .dropdown .account-button");
     $win_my_account.on("click.Bst", function (event) {
       if ($box_my_account.has(event.target).length === 0 && !$box_my_account.is(event.target)) {
-        jQuery(".tbay-login .dropdown .account-menu, .topbar-mobile .dropdown .account-menu").slideUp(500);
+        jQuery(".xptheme-login .dropdown .account-menu, .topbar-mobile .dropdown .account-menu").slideUp(500);
       }
     });
   }
@@ -259,8 +259,8 @@ class BackToTop {
     const $window = jQuery(window);
     const $backToTopMobile = jQuery("#back-to-top-mobile");
     const $backToTop = jQuery("#back-to-top");
-    const $categoryFixed = jQuery(".tbay-category-fixed");
-    const $toTop = jQuery(".tbay-to-top");
+    const $categoryFixed = jQuery(".xptheme-category-fixed");
+    const $toTop = jQuery(".xptheme-to-top");
     $window.scroll(function () {
       const isActive = $window.scrollTop() > 400;
       $toTop.toggleClass("active", isActive);
@@ -283,9 +283,9 @@ class FuncCommon {
 
     jQuery(".mod-heading .widget-title > span").wrapStart();
 
-    this._tbayActiveAdminBar();
+    this._xpthemeActiveAdminBar();
 
-    this._tbayResizeMegamenu();
+    this._xpthemeResizeMegamenu();
 
     this._initHeaderCoverBG();
 
@@ -296,10 +296,10 @@ class FuncCommon {
     this._categoryMenu();
 
     jQuery(window).scroll(() => {
-      this._tbayActiveAdminBar();
+      this._xpthemeActiveAdminBar();
     });
     jQuery(window).on("resize", () => {
-      this._tbayResizeMegamenu();
+      this._xpthemeResizeMegamenu();
     });
 
     this._moveFormLogin();
@@ -308,14 +308,14 @@ class FuncCommon {
 
     this._moveNoticesLogin();
 
-    this._tbayMainContentMinHeight();
+    this._xpthemeMainContentMinHeight();
 
-    this._tbayCompareOpenAddClassBody();
+    this._xpthemeCompareOpenAddClassBody();
 
-    this._tbayImageColorTab();
+    this._xpthemeImageColorTab();
   }
 
-  _tbayActiveAdminBar() {
+  _xpthemeActiveAdminBar() {
     const objectSelect = jQuery("#wpadminbar");
 
     if (objectSelect.length > 0) {
@@ -357,10 +357,10 @@ class FuncCommon {
     });
   }
 
-  _tbayResizeMegamenu() {
+  _xpthemeResizeMegamenu() {
     const window_size = jQuery("body").innerWidth();
 
-    if (jQuery(".tbay_custom_menu").length > 0 && jQuery(".tbay_custom_menu").hasClass("tbay-vertical-menu")) {
+    if (jQuery(".xptheme_custom_menu").length > 0 && jQuery(".xptheme_custom_menu").hasClass("xptheme-vertical-menu")) {
       if (window_size > 767) {
         this._resizeMegaMenuOnDesktop();
       } else {
@@ -368,7 +368,7 @@ class FuncCommon {
       }
     }
 
-    if (jQuery(".tbay-megamenu").length > 0 && jQuery(".tbay-megamenu,.tbay-offcanvas-main").hasClass("verticle-menu") && window_size > 767) {
+    if (jQuery(".xptheme-megamenu").length > 0 && jQuery(".xptheme-megamenu,.xptheme-offcanvas-main").hasClass("verticle-menu") && window_size > 767) {
       this._resizeMegaMenuVertical();
     }
   }
@@ -384,9 +384,9 @@ class FuncCommon {
   }
 
   _resizeMegaMenuOnDesktop() {
-    const maxWidth = jQuery("#main-container.container").innerWidth() - jQuery(".tbay-vertical-menu").innerWidth();
+    const maxWidth = jQuery("#main-container.container").innerWidth() - jQuery(".xptheme-vertical-menu").innerWidth();
     const width = jQuery("#main-container.container").innerWidth() - 30;
-    jQuery(".tbay-vertical-menu").find(".aligned-fullwidth").children(".dropdown-menu").css({
+    jQuery(".xptheme-vertical-menu").find(".aligned-fullwidth").children(".dropdown-menu").css({
       "max-width": maxWidth,
       width: width
     });
@@ -394,7 +394,7 @@ class FuncCommon {
 
   _initTreeViewForMegaMenuOnMobile() {
     if (typeof jQuery.fn.treeview === "undefined") return;
-    jQuery(".tbay-vertical-menu > .widget_nav_menu >.nav > ul").each(function () {
+    jQuery(".xptheme-vertical-menu > .widget_nav_menu >.nav > ul").each(function () {
       if (jQuery(this).hasClass("treeview")) return;
       jQuery(this).treeview(TREE_VIEW_OPTION_MEGA_MENU);
     });
@@ -416,43 +416,43 @@ class FuncCommon {
   }
 
   _initHeaderCoverBG() {
-    const menu = jQuery(".tbay-horizontal .navbar-nav > li,.tbay-horizontal-default .navbar-nav > li, .tbay_header-template .product-recently-viewed-header"),
-          search = jQuery(".tbay-search-form .tbay-search"),
+    const menu = jQuery(".xptheme-horizontal .navbar-nav > li,.xptheme-horizontal-default .navbar-nav > li, .xptheme_header-template .product-recently-viewed-header"),
+          search = jQuery(".xptheme-search-form .xptheme-search"),
           btn_category = jQuery(".category-inside .category-inside-title"),
           cart_click = jQuery(".cart-popup");
     menu.mouseenter(function () {
-      if (jQuery(this).parents("#tbay-header").length === 0) return;
+      if (jQuery(this).parents("#xptheme-header").length === 0) return;
       if (jQuery(this).children(".dropdown-menu, ul, .sub-menu-wrap, .content-view").length == 0) return;
-      jQuery(".tbay_header-template").addClass("nav-cover-active-1");
+      jQuery(".xptheme_header-template").addClass("nav-cover-active-1");
     }).mouseleave(function () {
       if (jQuery(this).closest(".dropdown-menu").length) return;
-      jQuery(".tbay_header-template").removeClass("nav-cover-active-1");
+      jQuery(".xptheme_header-template").removeClass("nav-cover-active-1");
     });
     search.focusin(function () {
       if (jQuery(this).closest(".dropdown-menu").length) return;
-      if (search.parents(".sidebar-canvas-search").length > 0 || jQuery(this).closest(".tbay_header-template").length === 0) return;
-      jQuery(".tbay_header-template").addClass("nav-cover-active-2");
+      if (search.parents(".sidebar-canvas-search").length > 0 || jQuery(this).closest(".xptheme_header-template").length === 0) return;
+      jQuery(".xptheme_header-template").addClass("nav-cover-active-2");
     }).focusout(function () {
-      jQuery(".tbay_header-template").removeClass("nav-cover-active-2");
+      jQuery(".xptheme_header-template").removeClass("nav-cover-active-2");
     });
     cart_click.on("shown.bs.dropdown", function (event) {
-      jQuery(event.target).closest(".tbay_header-template").addClass("nav-cover-active-3");
+      jQuery(event.target).closest(".xptheme_header-template").addClass("nav-cover-active-3");
     }).on("hidden.bs.dropdown", function (event) {
-      jQuery(event.target).closest(".tbay_header-template").removeClass("nav-cover-active-3");
+      jQuery(event.target).closest(".xptheme_header-template").removeClass("nav-cover-active-3");
     });
 
-    if (btn_category.parents(".tbay_header-template")) {
-      jQuery(document.body).on("tbay_category_inside_open", () => {
-        jQuery(".tbay_header-template").addClass("nav-cover-active-4");
+    if (btn_category.parents(".xptheme_header-template")) {
+      jQuery(document.body).on("xptheme_category_inside_open", () => {
+        jQuery(".xptheme_header-template").addClass("nav-cover-active-4");
       });
-      jQuery(document.body).on("tbay_category_inside_close", () => {
-        jQuery(".tbay_header-template").removeClass("nav-cover-active-4");
+      jQuery(document.body).on("xptheme_category_inside_close", () => {
+        jQuery(".xptheme_header-template").removeClass("nav-cover-active-4");
       });
     }
   }
 
   _initCanvasSearch() {
-    const input_search = jQuery("#tbay-search-form-canvas .sidebar-canvas-search .sidebar-content .tbay-search");
+    const input_search = jQuery("#xptheme-search-form-canvas .sidebar-canvas-search .sidebar-content .xptheme-search");
     input_search.focusin(function () {
       input_search.parent().addClass("search_cv_active");
     }).focusout(function () {
@@ -473,39 +473,39 @@ class FuncCommon {
       if (jQuery(event.target).parents(".category-inside").hasClass("setting-open")) return;
 
       if (jQuery(event.target).parents(".category-inside").hasClass("open")) {
-        jQuery(document.body).trigger("tbay_category_inside_open");
+        jQuery(document.body).trigger("xptheme_category_inside_open");
       } else {
-        jQuery(document.body).trigger("tbay_category_inside_close");
+        jQuery(document.body).trigger("xptheme_category_inside_close");
       }
     });
     const $win = jQuery(window);
     $win.on("click.Bst,click touchstart tap", function (event) {
       const $box = jQuery(".category-inside .category-inside-title, .category-inside-content");
-      if (!jQuery(".category-inside").hasClass("open") && !jQuery(".tbay_header-template").hasClass("nav-cover-active-4")) return;
+      if (!jQuery(".category-inside").hasClass("open") && !jQuery(".xptheme_header-template").hasClass("nav-cover-active-4")) return;
 
       if ($box.has(event.target).length == 0 && !$box.is(event.target)) {
         const insides = jQuery(".category-inside");
         jQuery.each(insides, function (key, inside) {
           if (!jQuery(inside).hasClass("setting-open")) {
             jQuery(inside).removeClass("open");
-            jQuery(".tbay_header-template").removeClass("nav-cover-active-4");
+            jQuery(".xptheme_header-template").removeClass("nav-cover-active-4");
           }
         });
       }
     });
   }
 
-  _tbayMainContentMinHeight() {
-    if (jQuery("#tbay-header").length === 0) return;
-    const headerH = jQuery("#tbay-header").length > 0 ? jQuery("#tbay-header").outerHeight() : 0,
-          footerH = jQuery("#tbay-footer").length > 0 ? jQuery("#tbay-footer").outerHeight() : 0,
+  _xpthemeMainContentMinHeight() {
+    if (jQuery("#xptheme-header").length === 0) return;
+    const headerH = jQuery("#xptheme-header").length > 0 ? jQuery("#xptheme-header").outerHeight() : 0,
+          footerH = jQuery("#xptheme-footer").length > 0 ? jQuery("#xptheme-footer").outerHeight() : 0,
           wpadminbarH = jQuery('#wpadminbar').length > 0 ? jQuery('#wpadminbar').outerHeight() : 0,
-          copyrightH = jQuery('.tbay-footer .tbay-copyright').length > 0 ? jQuery('.tbay-footer .tbay-copyright').css('margin-top').replace("px", "") : 0,
+          copyrightH = jQuery('.xptheme-footer .xptheme-copyright').length > 0 ? jQuery('.xptheme-footer .xptheme-copyright').css('margin-top').replace("px", "") : 0,
           winH = jQuery(window).outerHeight();
-    jQuery("#tbay-main-content").css('min-height', winH - headerH - footerH - wpadminbarH - copyrightH);
+    jQuery("#xptheme-main-content").css('min-height', winH - headerH - footerH - wpadminbarH - copyrightH);
   }
 
-  _tbayCompareOpenAddClassBody() {
+  _xpthemeCompareOpenAddClassBody() {
     jQuery(document.body).on("yith_woocompare_open_popup", () => {
       jQuery("body").addClass("overflow-hidden");
     });
@@ -514,8 +514,8 @@ class FuncCommon {
     });
   }
 
-  _tbayImageColorTab() {
-    if (jQuery(".tbay-element-image-color-tab").length === 0) return;
+  _xpthemeImageColorTab() {
+    if (jQuery(".xptheme-element-image-color-tab").length === 0) return;
     jQuery(".tab-list-color .gallery-color-picker").on('click', function (event) {
       if (jQuery(event.target).hasClass('active')) return;
       jQuery(event.target).parent().find('.active').removeClass('active');
@@ -558,21 +558,21 @@ class Search {
   }
 
   _init() {
-    this._tbaySearchMobile();
+    this._xpthemeSearchMobile();
 
     this._searchToTop();
 
     this._searchCanvasForm();
 
     jQuery(".button-show-search").on("click", function () {
-      jQuery(".tbay-search-form").addClass("active");
+      jQuery(".xptheme-search-form").addClass("active");
     });
     jQuery(".button-hidden-search").on("click", function () {
-      jQuery(".tbay-search-form").removeClass("active");
+      jQuery(".xptheme-search-form").removeClass("active");
     });
   }
 
-  _tbaySearchMobile() {
+  _xpthemeSearchMobile() {
     jQuery("#search-mobile-nav-cover").on("click", function () {
       jQuery(this).parent().find("form").removeClass("open");
     });
@@ -593,14 +593,14 @@ class Search {
   }
 
   _searchCanvasForm() {
-    let searchform = jQuery("#tbay-search-form-canvas");
+    let searchform = jQuery("#xptheme-search-form-canvas");
     if (searchform.length === 0) return;
     searchform.find("button.search-open").on('click', function () {
-      jQuery(event.target).parents("#tbay-search-form-canvas").addClass("open").find('.tbay-search').focus();
+      jQuery(event.target).parents("#xptheme-search-form-canvas").addClass("open").find('.xptheme-search').focus();
       jQuery("body").toggleClass("active-search-canvas");
     });
     let window_searchcanvas = jQuery(window);
-    let forcussidebar = jQuery("#tbay-search-form-canvas .search-open, #tbay-search-form-canvas .sidebar-content");
+    let forcussidebar = jQuery("#xptheme-search-form-canvas .search-open, #xptheme-search-form-canvas .sidebar-content");
     window_searchcanvas.on("click.Bst", function (event) {
       if (!searchform.hasClass("open")) return;
 
@@ -620,14 +620,14 @@ class Search {
 
 class TreeView {
   constructor() {
-    this._tbayTreeViewMenu();
+    this._xpthemeTreeViewMenu();
   }
 
-  _tbayTreeViewMenu() {
+  _xpthemeTreeViewMenu() {
     const treeview = jQuery.fn.treeview;
-    const tbayTreeview = jQuery(".tbay-treeview");
-    if (typeof treeview === "undefined" || typeof tbayTreeview === "undefined") return;
-    tbayTreeview.each(function () {
+    const xpthemeTreeview = jQuery(".xptheme-treeview");
+    if (typeof treeview === "undefined" || typeof xpthemeTreeview === "undefined") return;
+    xpthemeTreeview.each(function () {
       const ul = jQuery(this).find("> ul");
       if (ul.hasClass("treeview")) return;
       ul.treeview({
@@ -643,31 +643,31 @@ class TreeView {
 
 class Section {
   constructor() {
-    this._tbayMegaMenu();
+    this._xpthemeMegaMenu();
 
-    this._tbayRecentlyView();
+    this._xpthemeRecentlyView();
   }
 
-  _tbayMegaMenu() {
-    const menu = jQuery(".elementor-widget-tbay-nav-menu");
+  _xpthemeMegaMenu() {
+    const menu = jQuery(".elementor-widget-xptheme-nav-menu");
     if (menu.length === 0) return;
     menu.each(function () {
       const column = jQuery(this).closest(".elementor-column, .e-child");
       const section = jQuery(this).closest(".elementor-top-section, .e-parent");
 
-      if (jQuery(this).find(".tbay-element-nav-menu").data("wrapper").layout === "horizontal") {
-        if (!column.hasClass("tbay-column-static")) {
-          column.addClass("tbay-column-static");
+      if (jQuery(this).find(".xptheme-element-nav-menu").data("wrapper").layout === "horizontal") {
+        if (!column.hasClass("xptheme-column-static")) {
+          column.addClass("xptheme-column-static");
         }
 
-        if (!section.hasClass("tbay-section-static")) {
-          section.addClass("tbay-section-static");
+        if (!section.hasClass("xptheme-section-static")) {
+          section.addClass("xptheme-section-static");
         }
       }
     });
   }
 
-  _tbayRecentlyView() {
+  _xpthemeRecentlyView() {
     const recently = jQuery(".product-recently-viewed-header");
     if (recently.length === 0) return;
     recently.each(function () {
@@ -675,20 +675,20 @@ class Section {
       const section = jQuery(this).closest(".elementor-top-section, .e-parent");
 
       if (jQuery(this).data("wrapper").layout === "header") {
-        if (!column.hasClass("tbay-column-static")) {
-          column.addClass("tbay-column-static");
+        if (!column.hasClass("xptheme-column-static")) {
+          column.addClass("xptheme-column-static");
         }
 
-        if (!column.hasClass("tbay-column-recentlyviewed")) {
-          column.addClass("tbay-column-recentlyviewed");
+        if (!column.hasClass("xptheme-column-recentlyviewed")) {
+          column.addClass("xptheme-column-recentlyviewed");
         }
 
-        if (!section.hasClass("tbay-section-recentlyviewed")) {
-          section.addClass("tbay-section-recentlyviewed");
+        if (!section.hasClass("xptheme-section-recentlyviewed")) {
+          section.addClass("xptheme-section-recentlyviewed");
         }
 
-        if (!section.hasClass("tbay-section-static")) {
-          section.addClass("tbay-section-static");
+        if (!section.hasClass("xptheme-section-static")) {
+          section.addClass("xptheme-section-static");
         }
       }
     });
@@ -713,7 +713,7 @@ class Preload {
     }
 
     jQuery(".item-loader").delay(100).fadeOut(400, function () {
-      jQuery("body").removeClass("tbay-body-loading");
+      jQuery("body").removeClass("xptheme-body-loading");
       jQuery(this).remove();
     });
 
@@ -755,7 +755,7 @@ class CustomFonts {
   }
 
   _init() {
-    if (jQuery('.list-tbay-custom-fonts-body').length === 0) return;
+    if (jQuery('.list-xptheme-custom-fonts-body').length === 0) return;
     jQuery('.code-preview').hide();
     jQuery('.show-code').off().on('click', function (e) {
       var temp = jQuery("<input>");
@@ -821,7 +821,7 @@ class MenuDropdownsAJAX {
         unparsedData = "",
         menu_mobile_id = "";
 
-    if ($menu.closest("nav").attr("id") === "tbay-mobile-menu-navbar") {
+    if ($menu.closest("nav").attr("id") === "xptheme-mobile-menu-navbar") {
       if (jQuery("#main-mobile-menu-mmenu-wrapper").length > 0) {
         menu_mobile_id += "_" + jQuery("#main-mobile-menu-mmenu-wrapper").data("id");
       }
@@ -849,7 +849,7 @@ class MenuDropdownsAJAX {
     if (storedData) {
       _this.renderResults(storedData, $menu);
 
-      if ($menu.attr("id") !== "tbay-mobile-menu-navbar") {
+      if ($menu.attr("id") !== "xptheme-mobile-menu-navbar") {
         $menu.removeClass("dropdowns-loading").addClass("dropdowns-loaded");
       }
     } else {
@@ -897,7 +897,7 @@ class MenuDropdownsAJAX {
 
         $menu.find('[data-id="' + id + '"]').replaceWith(html2);
 
-        if ($menu.attr("id") !== "tbay-mobile-menu-navbar") {
+        if ($menu.attr("id") !== "xptheme-mobile-menu-navbar") {
           $menu.addClass("dropdowns-loaded");
           setTimeout(function () {
             $menu.removeClass("dropdowns-loading");
@@ -945,7 +945,7 @@ class MenuClickAJAX {
         e.preventDefault();
         var $this = jQuery(this);
         if (!$this.closest(".element-menu-ajax").hasClass("ajax-active")) return;
-        var element = $this.closest(".tbay-element"),
+        var element = $this.closest(".xptheme-element"),
             type_menu = element.data("wrapper")["type_menu"],
             layout = element.data("wrapper")["layout"];
         var nav = type_menu === "toggle" ? element.find(".category-inside-content > nav") : element.find(".menu-canvas-content > nav");
@@ -966,9 +966,9 @@ class MenuClickAJAX {
           $this.closest(".element-menu-ajax").removeClass("ajax-active");
 
           if (layout === "treeview") {
-            jQuery(document.body).trigger("tbay_load_html_click_treeview");
+            jQuery(document.body).trigger("xptheme_load_html_click_treeview");
           } else {
-            jQuery(document.body).trigger("tbay_load_html_click");
+            jQuery(document.body).trigger("xptheme_load_html_click");
           }
         } else {
           jQuery.ajax({
@@ -991,9 +991,9 @@ class MenuClickAJAX {
                 localStorage.setItem(storageKey, JSON.stringify(response.data));
 
                 if (layout === "treeview") {
-                  jQuery(document.body).trigger("tbay_load_html_click_treeview");
+                  jQuery(document.body).trigger("xptheme_load_html_click_treeview");
                 } else {
-                  jQuery(document.body).trigger("tbay_load_html_click");
+                  jQuery(document.body).trigger("xptheme_load_html_click");
                 }
               } else {
                 console.log("loading html dropdowns returns wrong data - ", response.message);
@@ -1042,7 +1042,7 @@ class CanvastemplateAJAX {
           nav.html(storedData);
           element.removeClass("load-ajax");
           $this.closest(".canvas-template-ajax").removeClass("ajax-active");
-          jQuery(document.body).trigger("tbay_load_canvas_template_html_click");
+          jQuery(document.body).trigger("xptheme_load_canvas_template_html_click");
         } else {
           jQuery.ajax({
             url: themename_settings.ajaxurl,
@@ -1060,7 +1060,7 @@ class CanvastemplateAJAX {
               if (response.status === "success") {
                 nav.html(response.data);
                 localStorage.setItem(storageKey, JSON.stringify(response.data));
-                jQuery(document.body).trigger("tbay_load_canvas_template_html_click");
+                jQuery(document.body).trigger("xptheme_load_canvas_template_html_click");
               } else {
                 console.log("loading html dropdowns returns wrong data - ", response.message);
               }
@@ -1087,9 +1087,9 @@ class CndkBeforeAfter {
   }
 
   _beforeAfterImage() {
-    let element = jQuery(".tbay-before-after-image-slider");
+    let element = jQuery(".xptheme-before-after-image-slider");
     if (element.length === 0) return;
-    let settings = element.parents('.tbay-element-before-after-image-slider').data('settings');
+    let settings = element.parents('.xptheme-element-before-after-image-slider').data('settings');
     element.cndkbeforeafter({
       mode: settings.mode,
       showText: settings.showText,
@@ -1193,7 +1193,7 @@ class AutoComplete {
         onSelect: suggestion => {
           if (suggestion.link.length > 0) window.location.href = suggestion.link;
         },
-        onSearchStart: () => autosearch.parents("form").addClass("tbay-loading"),
+        onSearchStart: () => autosearch.parents("form").addClass("xptheme-loading"),
         beforeRender: (container, suggestion) => {
           if (typeof suggestion[0].result !== "undefined") {
             jQuery(container).prepend(`<div class="list-header"><span>${suggestion[0].result}</span></div>`);
@@ -1204,9 +1204,9 @@ class AutoComplete {
           }
         },
         onSearchComplete: (query, suggestions) => {
-          form.removeClass("tbay-loading");
+          form.removeClass("xptheme-loading");
           jQuery(this).parents("form").addClass("open");
-          jQuery(document.body).trigger("tbay_searchcomplete");
+          jQuery(document.body).trigger("xptheme_searchcomplete");
         },
         formatResult: (suggestion, currentValue) => {
           let returnValue = _this._initformatResult(suggestion, currentValue, RegEx, enable_image, enable_price, enable_subtitle);
@@ -1226,9 +1226,9 @@ class AutoComplete {
           jQuery(this).devbridgeAutocomplete("hide");
         });
       });
-      jQuery(".tbay-search-clear").on("click", function () {
-        jQuery(this).parents(".tbay-search-form").removeClass("open");
-        jQuery(this).parents(".tbay-search-form").find("input[name=s]").val("");
+      jQuery(".xptheme-search-clear").on("click", function () {
+        jQuery(this).parents(".xptheme-search-form").removeClass("open");
+        jQuery(this).parents(".xptheme-search-form").find("input[name=s]").val("");
       });
     });
     const cat_change = form.find('[name="product_cat"], [name="category"]');
@@ -1245,7 +1245,7 @@ class AutoComplete {
       });
     }
 
-    jQuery(document.body).on("tbay_searchcomplete", function () {
+    jQuery(document.body).on("xptheme_searchcomplete", function () {
       jQuery(".view-all-products").on("click", function () {
         jQuery(this).parents("form").submit();
         e.stopPropagation();
@@ -1333,7 +1333,7 @@ class TBMmenu {
     Mmenu.i18n({
       cancel: text_cancel
     });
-    const mmenu = jQuery("#tbay-mobile-smartmenu");
+    const mmenu = jQuery("#xptheme-mobile-smartmenu");
     if (mmenu.length === 0) return;
     const themes = mmenu.data("themes");
     const menu_title = mmenu.data("title");
@@ -1353,9 +1353,9 @@ class TBMmenu {
       navbars: [],
       searchfield: {}
     };
-    const mm_tbay_bottom = jQuery("#mm-tbay-bottom");
+    const mm_xptheme_bottom = jQuery("#mm-xptheme-bottom");
 
-    if (mm_tbay_bottom.length > 0) {
+    if (mm_xptheme_bottom.length > 0) {
       mmenuOptionsAddition.navbars.push({
         position: "bottom",
         content: ""
@@ -1366,17 +1366,17 @@ class TBMmenu {
     const mmenuConfigurations = {
       offCanvas: {
         page: {
-          selector: "#tbay-main-content"
+          selector: "#xptheme-main-content"
         }
       },
       searchfield: {
         clear: true
       }
     };
-    const menu = new Mmenu("#tbay-mobile-menu-navbar", mmenuOptions, mmenuConfigurations);
+    const menu = new Mmenu("#xptheme-mobile-menu-navbar", mmenuOptions, mmenuConfigurations);
 
-    if (mm_tbay_bottom.length > 0) {
-      mm_tbay_bottom.prependTo(jQuery("#tbay-mobile-menu-navbar .mm-navbars--bottom"));
+    if (mm_xptheme_bottom.length > 0) {
+      mm_xptheme_bottom.prependTo(jQuery("#xptheme-mobile-menu-navbar .mm-navbars--bottom"));
     }
 
     const mmenu_close = jQuery("#mmenu-close");
@@ -1407,14 +1407,14 @@ class SumoSelect {
 
   _init() {
     jQuery(document).ready(function () {
-      let sumo_class = ".woocommerce-currency-switcher, .woocommerce-fillter >.select, .woocommerce-ordering > .orderby, .tbay-filter select";
+      let sumo_class = ".woocommerce-currency-switcher, .woocommerce-fillter >.select, .woocommerce-ordering > .orderby, .xptheme-filter select";
       jQuery(sumo_class).SumoSelect({
         csvDispCount: 3,
         captionFormatAllSelected: "Yeah, OK, so everything."
       });
-      let search_form = jQuery(".tbay-search-form");
+      let search_form = jQuery(".xptheme-search-form");
       search_form.each(function () {
-        if (jQuery(this).hasClass("tbay-search-mobile")) return;
+        if (jQuery(this).hasClass("xptheme-search-mobile")) return;
         jQuery(this).find("select").SumoSelect({
           forceCustomRendering: true
         });
@@ -1432,7 +1432,7 @@ class Gallery {
   }
 
   _intGallery() {
-    const gallery = jQuery(".tbay-element-custom-gallery");
+    const gallery = jQuery(".xptheme-element-custom-gallery");
     if (gallery.length === 0) return;
     const container = gallery.find(".gallery-item").map(function () {
       const $link = jQuery(this).find(".gallery-link");
@@ -1462,7 +1462,7 @@ class Gallery {
 
 class CountDownTimer {
   constructor() {
-    if (typeof jQuery.fn.tbayCountDown === "undefined" || typeof themename_settings === "undefined") return;
+    if (typeof jQuery.fn.xpthemeCountDown === "undefined" || typeof themename_settings === "undefined") return;
 
     this._CountDownTimer();
   }
@@ -1494,8 +1494,8 @@ class CountDownTimer {
     var show_days = show_hours = show_minutes = show_seconds = true;
     var custom_separator = ":";
 
-    if (jQuery(el).parents('.tbay-element-countdown').length > 0) {
-      var settings = jQuery(el).parents('.tbay-element-countdown').data('settings'),
+    if (jQuery(el).parents('.xptheme-element-countdown').length > 0) {
+      var settings = jQuery(el).parents('.xptheme-element-countdown').data('settings'),
           show_days = settings.show_days,
           show_hours = settings.show_hours,
           show_minutes = settings.show_minutes,
@@ -1519,7 +1519,7 @@ class CountDownTimer {
       display += '<div class="seconds">%%S%%' + secs + '</div>';
     }
 
-    jQuery(el).tbayCountDown({
+    jQuery(el).xpthemeCountDown({
       TargetDate: date[0] + "/" + date[1] + "/" + date[2] + " " + date[3] + ":" + date[4] + ":" + date[5],
       DisplayFormat: '<div class="times">' + display + '</div>',
       FinishMessage: ""
@@ -1533,11 +1533,11 @@ class Sticky {
     if (typeof themename_settings === "undefined" || typeof jQuery.fn.hcSticky === "undefined") return;
     let sticky_menu_bar = jQuery("#sticky-menu-bar").outerHeight() || 0;
 
-    this._tbayProductSingleStick(sticky_menu_bar);
+    this._xpthemeProductSingleStick(sticky_menu_bar);
   }
 
-  _tbayProductSingleStick(sticky_menu_bar) {
-    if (jQuery(window).width() < 992 || jQuery("#tbay-header").length === 0 && jQuery("#tbay-customize-header").length === 0) return;
+  _xpthemeProductSingleStick(sticky_menu_bar) {
+    if (jQuery(window).width() < 992 || jQuery("#xptheme-header").length === 0 && jQuery("#xptheme-customize-header").length === 0) return;
 
     if (jQuery(".active-stick .summary-left, .active-stick .summary-right").length > 0) {
       jQuery(".active-stick .summary-left, .active-stick .summary-right").hcSticky({
@@ -1564,14 +1564,14 @@ class Magnific {
 
     this._list_button_popup();
 
-    jQuery(document.body).on("tbay_quick_view", () => {
+    jQuery(document.body).on("xptheme_quick_view", () => {
       this._list_button_popup();
     });
   }
 
   _list_search_form_popup() {
-    if (jQuery("#tbay-search-form-popup").length === 0) return;
-    jQuery("#tbay-search-form-popup .search-open").magnificPopup({
+    if (jQuery("#xptheme-search-form-popup").length === 0) return;
+    jQuery("#xptheme-search-form-popup .search-open").magnificPopup({
       type: "inline",
       fixedContentPos: "hidden",
       fixedBgPos: true,
@@ -1579,7 +1579,7 @@ class Magnific {
       preloader: false,
       showCloseBtn: false,
       midClick: true,
-      focus: '.tbay-search',
+      focus: '.xptheme-search',
       mainClass: "popup-mfp-search-form",
       callbacks: {
         open: function () {
@@ -1602,7 +1602,7 @@ class Magnific {
       preloader: false,
       midClick: true,
       removalDelay: 300,
-      mainClass: "popup-button-mfp-zoom-in tbay-mfp-max-width"
+      mainClass: "popup-button-mfp-zoom-in xptheme-mfp-max-width"
     });
   }
 
@@ -1630,7 +1630,7 @@ jQuery(document).ready(jQuery => {
   jQuery(document).on("woof_ajax_done", woof_ajax_done_handler2);
 });
 setTimeout(function () {
-  jQuery(document.body).on("tbay_load_html_click_treeview", () => {
+  jQuery(document.body).on("xptheme_load_html_click_treeview", () => {
     new TreeView();
   });
 }, 2000);
@@ -1655,7 +1655,7 @@ var CustomFontsHandler = function ($scope, $) {
 jQuery(window).on("elementor/frontend/init", function () {
   if (elementorFrontend.isEditMode() && typeof themename_settings !== "undefined" && Array.isArray(themename_settings.elements_ready.customfonts)) {
     jQuery.each(themename_settings.elements_ready.customfonts, function (index, value) {
-      elementorFrontend.hooks.addAction("frontend/element_ready/tbay-" + value + ".default", CustomFontsHandler);
+      elementorFrontend.hooks.addAction("frontend/element_ready/xptheme-" + value + ".default", CustomFontsHandler);
     });
   }
 });
@@ -1667,7 +1667,7 @@ var AutoCompleteHandler = function ($scope, $) {
 jQuery(window).on("elementor/frontend/init", function () {
   if (elementorFrontend.isEditMode() && typeof themename_settings !== "undefined" && Array.isArray(themename_settings.elements_ready.autocomplete)) {
     jQuery.each(themename_settings.elements_ready.autocomplete, function (index, value) {
-      elementorFrontend.hooks.addAction("frontend/element_ready/tbay-" + value + ".default", AutoCompleteHandler);
+      elementorFrontend.hooks.addAction("frontend/element_ready/xptheme-" + value + ".default", AutoCompleteHandler);
     });
   }
 });
@@ -1678,7 +1678,7 @@ var CndkBeforeAfterHandler = function ($scope, $) {
 
 jQuery(window).on("elementor/frontend/init", function () {
   if (elementorFrontend.isEditMode() && typeof themename_settings !== "undefined") {
-    elementorFrontend.hooks.addAction("frontend/element_ready/tbay-before-after-image-slider.default", CndkBeforeAfterHandler);
+    elementorFrontend.hooks.addAction("frontend/element_ready/xptheme-before-after-image-slider.default", CndkBeforeAfterHandler);
   }
 });
 
@@ -1686,13 +1686,13 @@ var CountDownTimerHandler = function ($scope, $) {
   new CountDownTimer();
 };
 
-jQuery(document.body).on("tbay_quick_view", () => {
+jQuery(document.body).on("xptheme_quick_view", () => {
   new CountDownTimer();
 });
 jQuery(window).on("elementor/frontend/init", function () {
   if (elementorFrontend.isEditMode() && typeof themename_settings !== "undefined" && Array.isArray(themename_settings.elements_ready.countdowntimer)) {
     jQuery.each(themename_settings.elements_ready.countdowntimer, function (index, value) {
-      elementorFrontend.hooks.addAction("frontend/element_ready/tbay-" + value + ".default", CountDownTimerHandler);
+      elementorFrontend.hooks.addAction("frontend/element_ready/xptheme-" + value + ".default", CountDownTimerHandler);
     });
   }
 });
@@ -1704,7 +1704,7 @@ var IsotopeHandler = function ($scope, $) {
 jQuery(window).on("elementor/frontend/init", function () {
   if (elementorFrontend.isEditMode() && typeof themename_settings !== "undefined" && Array.isArray(themename_settings.elements_ready.isotope)) {
     jQuery.each(themename_settings.elements_ready.isotope, function (index, value) {
-      elementorFrontend.hooks.addAction("frontend/element_ready/tbay-" + value + ".default", IsotopeHandler);
+      elementorFrontend.hooks.addAction("frontend/element_ready/xptheme-" + value + ".default", IsotopeHandler);
     });
   }
 });

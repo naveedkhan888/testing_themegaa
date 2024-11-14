@@ -38,7 +38,7 @@ class Themename_Elementor_Addons
             return;
         }
 
-        $suffix = (themename_tbay_get_config('minified_js', false)) ? '.min' : THEMENAME_MIN_JS;
+        $suffix = (themename_xptheme_get_config('minified_js', false)) ? '.min' : THEMENAME_MIN_JS;
         // /*slick jquery*/
         wp_register_script('slick', THEMENAME_SCRIPTS . '/slick' . $suffix . '.js', array(), '1.0.0', true);
         wp_register_script('themename-custom-slick', THEMENAME_SCRIPTS . '/custom-slick' . $suffix . '.js', array( ), THEMENAME_THEME_VERSION, true);
@@ -77,7 +77,7 @@ class Themename_Elementor_Addons
     {
         wp_enqueue_style('font-awesome', THEMENAME_STYLES . '/font-awesome.css', array(), '5.10.2');
         wp_enqueue_style('simple-line-icons', THEMENAME_STYLES . '/simple-line-icons.css', array(), '2.4.0');
-        wp_enqueue_style('themename-font-tbay-custom', THEMENAME_STYLES . '/font-tbay-custom.css', array(), '1.0.0');
+        wp_enqueue_style('themename-font-xptheme-custom', THEMENAME_STYLES . '/font-xptheme-custom.css', array(), '1.0.0');
         wp_enqueue_style('material-design-iconic-font', THEMENAME_STYLES . '/material-design-iconic-font.css', array(), '2.2.0');
 
         if (themename_elementor_is_edit_mode() || themename_elementor_preview_page() || themename_elementor_preview_mode()) {
@@ -234,7 +234,7 @@ class Themename_Elementor_Addons
             'global-colors',
         );
 
-        if( themename_tbay_get_theme() === 'bicycle' ) {
+        if( themename_xptheme_get_theme() === 'bicycle' ) {
             array_push($widgets, 'heading');
         }
 

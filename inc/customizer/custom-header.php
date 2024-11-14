@@ -12,11 +12,11 @@
 /**
  * Set up the WordPress core custom header feature.
  *
- * @uses themename_tbay_header_style()
+ * @uses themename_xptheme_header_style()
  */
-function themename_tbay_custom_header_setup()
+function themename_xptheme_custom_header_setup()
 {
-    $color_scheme        = themename_tbay_get_color_scheme();
+    $color_scheme        = themename_xptheme_get_color_scheme();
     $default_text_color  = trim($color_scheme[4], '#');
 
     /**
@@ -34,14 +34,14 @@ function themename_tbay_custom_header_setup()
      *                                          displayed on the blog.
      * }
      */
-    add_theme_support('custom-header', apply_filters('themename_tbay_custom_header_args', array(
+    add_theme_support('custom-header', apply_filters('themename_xptheme_custom_header_args', array(
         'default-text-color'     => $default_text_color,
         'width'                  => 954,
         'height'                 => 1300,
-        'wp-head-callback'       => 'themename_tbay_header_style',
+        'wp-head-callback'       => 'themename_xptheme_header_style',
     )));
 }
-add_action('after_setup_theme', 'themename_tbay_custom_header_setup');
+add_action('after_setup_theme', 'themename_xptheme_custom_header_setup');
 
 /**
  * Convert HEX to RGB.
@@ -52,7 +52,7 @@ add_action('after_setup_theme', 'themename_tbay_custom_header_setup');
  * @return array Array containing RGB (red, green, and blue) values for the given
  *               HEX code, empty array otherwise.
  */
-function themename_tbay_hex2rgb($color)
+function themename_xptheme_hex2rgb($color)
 {
     $color = trim($color, '#');
 
@@ -71,15 +71,15 @@ function themename_tbay_hex2rgb($color)
     return array( 'red' => $r, 'green' => $g, 'blue' => $b );
 }
 
-if (! function_exists('themename_tbay_header_style')) :
+if (! function_exists('themename_xptheme_header_style')) :
 /**
  * Styles the header image and text displayed on the blog.
  *
  * @since Themename 1.0
  *
- * @see themename_tbay_custom_header_setup()
+ * @see themename_xptheme_custom_header_setup()
  */
-function themename_tbay_header_style()
+function themename_xptheme_header_style()
 {
     return '';
     $header_image = get_header_image();
@@ -187,7 +187,7 @@ function themename_tbay_header_style()
 
     wp_add_inline_style('themename-style', $css);
 }
-endif; // themename_tbay_header_style
+endif; // themename_xptheme_header_style
 
 /**
  * Enqueues front-end CSS for the header background color.
@@ -196,9 +196,9 @@ endif; // themename_tbay_header_style
  *
  * @see wp_add_inline_style()
  */
-function themename_tbay_header_background_color_css()
+function themename_xptheme_header_background_color_css()
 {
-    $color_scheme            = themename_tbay_get_color_scheme();
+    $color_scheme            = themename_xptheme_get_color_scheme();
     $default_color           = $color_scheme[1];
     $header_background_color = get_theme_mod('header_background_color', $default_color);
 
@@ -240,9 +240,9 @@ function themename_tbay_header_background_color_css()
  *
  * @since Themename 1.0
  */
-function themename_tbay_sidebar_text_color_css()
+function themename_xptheme_sidebar_text_color_css()
 {
-    $color_scheme       = themename_tbay_get_color_scheme();
+    $color_scheme       = themename_xptheme_get_color_scheme();
     $default_color      = $color_scheme[4];
     $sidebar_link_color = get_theme_mod('sidebar_textcolor', $default_color);
 
@@ -252,7 +252,7 @@ function themename_tbay_sidebar_text_color_css()
     }
 
     // If we get this far, we have custom styles. Let's do this.
-    $sidebar_link_color_rgb     = themename_tbay_hex2rgb($sidebar_link_color);
+    $sidebar_link_color_rgb     = themename_xptheme_hex2rgb($sidebar_link_color);
     $sidebar_text_color         = vsprintf('rgba( %1$s, %2$s, %3$s, 0.7)', $sidebar_link_color_rgb);
     $sidebar_border_color       = vsprintf('rgba( %1$s, %2$s, %3$s, 0.1)', $sidebar_link_color_rgb);
     $sidebar_border_themename_color = vsprintf('rgba( %1$s, %2$s, %3$s, 0.3)', $sidebar_link_color_rgb);
@@ -346,7 +346,7 @@ function themename_tbay_sidebar_text_color_css()
 			.widget pre,
 			.widget li,
 			.widget_categories .children,
-			.widget_tbay_custom_menu .sub-menu,
+			.widget_xptheme_custom_menu .sub-menu,
 			.widget_pages .children,
 			.widget abbr[title] {
 				border-color: %3$s;

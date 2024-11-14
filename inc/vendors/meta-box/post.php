@@ -3,7 +3,7 @@ if (!function_exists('themename_register_post_meta_boxes')) {
     add_filter( 'rwmb_meta_boxes', 'themename_register_post_meta_boxes' );
     function themename_register_post_meta_boxes($meta_boxes)
     {
-        $prefix = 'tbay_post_';
+        $prefix = 'xptheme_post_';
         $fields = array(
             array(
                 'id'               => "{$prefix}gallery_files",

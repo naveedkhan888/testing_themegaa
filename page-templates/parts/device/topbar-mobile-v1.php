@@ -2,7 +2,7 @@
     if( themename_checkout_optimized() ) return;
     $class_top_bar 	=  '';
 
-    $always_display_logo 			= themename_tbay_get_config('always_display_logo', true);
+    $always_display_logo 			= themename_xptheme_get_config('always_display_logo', true);
     if (!$always_display_logo && !themename_catalog_mode_active() && themename_woocommerce_activated() && (is_product() || is_cart() || is_checkout())) {
         $class_top_bar .= ' active-home-icon';
     }

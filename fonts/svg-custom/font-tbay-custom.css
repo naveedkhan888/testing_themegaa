@@ -20,7 +20,7 @@
 	text-transform: none;
 }
 
-<% _.each(glyphs, function(glyph) { if(glyph.fileName !== "icon-tbay") { %>
+<% _.each(glyphs, function(glyph) { if(glyph.fileName !== "icon-xptheme") { %>
 .<%= cssClass %>-<%= glyph.fileName %>:before {
 	content: "\<%= glyph.codePoint %>";
 }

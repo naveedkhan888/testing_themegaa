@@ -11,7 +11,7 @@ $class_main = $class_left = '';
 wp_enqueue_script('slick');
 wp_enqueue_script('themename-custom-slick');
 
-$galleries = get_post_meta(get_the_ID(), 'tbay_post_gallery_files');
+$galleries = get_post_meta(get_the_ID(), 'xptheme_post_gallery_files');
 
 ?>
 
@@ -52,16 +52,16 @@ $galleries = get_post_meta(get_the_ID(), 'tbay_post_gallery_files');
         
         
         <?php elseif (has_post_thumbnail()) : ?>
-            <?php themename_tbay_post_thumbnail(); ?>
+            <?php themename_xptheme_post_thumbnail(); ?>
         <?php endif; ?>
         <div class="post-excerpt entry-content">
                 
 
             <?php the_content(esc_html__('Continue Reading', 'themename')); ?>
 
-            <div class="themename-tag-socials-box"><?php do_action('themename_tbay_post_tag_socials') ?></div>
+            <div class="themename-tag-socials-box"><?php do_action('themename_xptheme_post_tag_socials') ?></div>
 
-            <?php do_action('themename_tbay_post_bottom') ?>
+            <?php do_action('themename_xptheme_post_bottom') ?>
             
         </div><!-- /entry-content -->
 

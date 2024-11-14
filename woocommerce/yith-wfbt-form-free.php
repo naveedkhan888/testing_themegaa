@@ -107,9 +107,9 @@ $title       = get_option('yith-wfbt-form-title');
 
 ?>
 
-<div class="yith-wfbt-section tbay-element woocommerce">
+<div class="yith-wfbt-section xptheme-element woocommerce">
     <?php if ($title != '') {
-    echo '<h3 class="heading-tbay-title">' . esc_html($title) . '</h3>';
+    echo '<h3 class="heading-xptheme-title">' . esc_html($title) . '</h3>';
 }
     ?>
 

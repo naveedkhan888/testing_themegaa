@@ -1,15 +1,15 @@
 <?php 
     if ( has_nav_menu( 'primary' ) ) {
-        $tbay_location = 'primary';
+        $xptheme_location = 'primary';
         $locations  = get_nav_menu_locations();
-        $menu_id    = $locations[ $tbay_location ] ;
+        $menu_id    = $locations[ $xptheme_location ] ;
         $menu_obj   = wp_get_nav_menu_object( $menu_id );
         $menu_name  = themename_get_transliterate($menu_obj->slug);
     } else {
-        $tbay_location = $menu_name = '';
+        $xptheme_location = $menu_name = '';
     }
 ?>
-<nav data-duration="400" class="hidden-xs hidden-sm tbay-megamenu slide animate navbar tbay-horizontal-default" data-id="'. $menu_name .'">
+<nav data-duration="400" class="hidden-xs hidden-sm xptheme-megamenu slide animate navbar xptheme-horizontal-default" data-id="'. $menu_name .'">
 <?php
     $args = array(
         'theme_location' => 'primary',

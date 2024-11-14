@@ -19,7 +19,7 @@ Redux::set_section(
                 'id' => 'footer_type',
                 'type' => 'select',
                 'title' => esc_html__('Select Footer Layout', 'themename'),
-                'options' => themename_tbay_get_footer_layouts(),
+                'options' => themename_xptheme_get_footer_layouts(),
                 'default' => 'footer_default'
             ),
             array(

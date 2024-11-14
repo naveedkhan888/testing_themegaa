@@ -294,7 +294,7 @@ class Themename_Megamenu_Walker extends Walker_Nav_Menu {
                 $classes = array('dropdown-menu', 'mega-menu', 'custom-subwidth');
             }
 
-            if( themename_tbay_get_config('ajax_dropdown_megamenu', false) ) {  
+            if( themename_xptheme_get_config('ajax_dropdown_megamenu', false) ) {  
                 $classes[]      = "dropdown-load-ajax";
                 $output_content = "<div class=\"dropdown-html-placeholder\" data-id=\"$post_id\"></div>";
             } else {

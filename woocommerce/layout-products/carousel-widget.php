@@ -22,12 +22,12 @@ $screen_desktopsmall     	=      isset($screen_desktopsmall) ? $screen_desktopsm
 $screen_tablet           	=      isset($screen_tablet) ? $screen_tablet : 3;
 $screen_landscape_mobile    =      isset($screen_landscape_mobile) ? $screen_landscape_mobile : 2;
 $screen_mobile           	=      isset($screen_mobile) ? $screen_mobile : 1;
-$skin 						= 	   themename_tbay_get_theme();
+$skin 						= 	   themename_xptheme_get_theme();
 
 $disable_mobile          	=      isset($disable_mobile) ? $disable_mobile : '';
 
-$data_carousel = themename_tbay_data_carousel($rows, $nav_type, $pagi_type, $loop_type, $auto_type, $autospeed_type, $disable_mobile);
-$responsive_carousel  = themename_tbay_check_data_responsive_carousel($columns, $screen_desktop, $screen_desktopsmall, $screen_tablet, $screen_landscape_mobile, $screen_mobile);
+$data_carousel = themename_xptheme_data_carousel($rows, $nav_type, $pagi_type, $loop_type, $auto_type, $autospeed_type, $disable_mobile);
+$responsive_carousel  = themename_xptheme_check_data_responsive_carousel($columns, $screen_desktop, $screen_desktopsmall, $screen_tablet, $screen_landscape_mobile, $screen_mobile);
 
 $classes = array('products-grid', 'product');
 ?>

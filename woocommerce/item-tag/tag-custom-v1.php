@@ -2,7 +2,7 @@
 
     $have_icon = (isset($iconClass) && $iconClass) ? 'tag-icon' : 'tag-img';
 ?>
-<div class="item-tag tbay-image-loaded <?php echo esc_attr($have_icon); ?>">
+<div class="item-tag xptheme-image-loaded <?php echo esc_attr($have_icon); ?>">
 <?php if (isset($tab['images']) && !empty($tab['images'])): ?>
 
     <?php

@@ -3,7 +3,7 @@ if (! defined('ABSPATH')) {
     exit;
 }
 
-$aspect_ratio = themename_tbay_get_config('video_aspect_ratio', '16_9');
+$aspect_ratio = themename_xptheme_get_config('video_aspect_ratio', '16_9');
 $aspect_ratio = '_' . $aspect_ratio;
 
 $gallery_thumbnail = wc_get_image_size('gallery_thumbnail');
@@ -35,8 +35,8 @@ $gallery_item_class = themename_get_gallery_item_class();
 
 $video_class	.= ' '.$aspect_ratio;
 ?>
-<div class="<?php echo esc_attr($gallery_item_class); ?> tbay_featured_content" data-thumb="<?php echo esc_attr($thumbnail_url); ?>">
-    <div class="tbay-video-content <?php echo esc_attr($video_class); ?>">
+<div class="<?php echo esc_attr($gallery_item_class); ?> xptheme_featured_content" data-thumb="<?php echo esc_attr($thumbnail_url); ?>">
+    <div class="xptheme-video-content <?php echo esc_attr($video_class); ?>">
         <iframe id="video_<?php echo esc_attr($product->get_id()); ?>" src="<?php echo esc_url($url); ?>" type="text/html" frameborder="0" allowfullscreen>
         </iframe>
     </div>

@@ -28,7 +28,7 @@ class Themename_Elementor_Shortcode_Carousel extends Themename_Elementor_Carouse
      */
     public function get_name()
     {
-        return 'tbay-shortcode-carousel';
+        return 'xptheme-shortcode-carousel';
     }
 
     /**
@@ -110,8 +110,8 @@ class Themename_Elementor_Shortcode_Carousel extends Themename_Elementor_Carouse
                         'dynamic' => [
                             'active' => true,
                         ],
-                        'placeholder' => '[tbay_block id="block-id"]',
-                        'description'  => sprintf(__('Go to the <a href="%s" target="_blank">Xperttheme Shortcode</a> to manage your.', 'themename'), admin_url('edit.php?post_type=tbay_custom_post&tbay_block_type=custom')),
+                        'placeholder' => '[xptheme_block id="block-id"]',
+                        'description'  => sprintf(__('Go to the <a href="%s" target="_blank">Xperttheme Shortcode</a> to manage your.', 'themename'), admin_url('edit.php?post_type=xptheme_custom_post&xptheme_block_type=custom')),
                         'default' => '',
 					],
                 ]

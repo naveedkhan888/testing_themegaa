@@ -29,7 +29,7 @@ if (!function_exists('themename_dokan_price_kses')) {
 if (!function_exists('themename_dokan_vendor_name')) {
     function themename_dokan_vendor_name()
     {
-        $active = themename_tbay_get_config('show_vendor_name', true);
+        $active = themename_xptheme_get_config('show_vendor_name', true);
         
         if (!$active && !is_singular('product')) {
             return;
@@ -91,7 +91,7 @@ if (!function_exists('themename_dokan_set_columns_more_from_seller_tab')) {
         if (isset($_GET['seller_tab_columns']) && is_numeric($_GET['seller_tab_columns'])) {
             $value = $_GET['seller_tab_columns'];
         } else {
-            $value = themename_tbay_get_config('seller_tab_columns');
+            $value = themename_xptheme_get_config('seller_tab_columns');
         }
 
         if (in_array($value, array(1, 2, 3, 4, 5, 6))) {
@@ -107,7 +107,7 @@ if (!function_exists('themename_dokan_set_per_page_more_from_seller_tab')) {
         if (isset($_GET['seller_tab_per_page']) && is_numeric($_GET['seller_tab_per_page'])) {
             $value = $_GET['seller_tab_per_page'];
         } else {
-            $value = themename_tbay_get_config('seller_tab_per_page');
+            $value = themename_xptheme_get_config('seller_tab_per_page');
         }
 
         if (is_numeric($value) && $value) {
@@ -120,7 +120,7 @@ if (!function_exists('themename_dokan_set_per_page_more_from_seller_tab')) {
 if (function_exists('dokan_seller_product_tab') &&  !function_exists('themename_dokan_seller_product_tab')) {
     function themename_dokan_seller_product_tab($tabs)
     {
-        $active = themename_tbay_get_config('show_info_vendor_tab', true);
+        $active = themename_xptheme_get_config('show_info_vendor_tab', true);
         
         if ($active) {
             $tabs['seller'] = array(
@@ -268,10 +268,10 @@ if (! function_exists('themename_dokan_description')) {
     add_filter('the_content', 'themename_dokan_description', 10, 1);
 }
 
-if ( ! function_exists( 'tbay_get_sidebar_dokan' ) ) {
-    function tbay_get_sidebar_dokan() {
+if ( ! function_exists( 'xptheme_get_sidebar_dokan' ) ) {
+    function xptheme_get_sidebar_dokan() {
         $sidebar = array();
-        $sidebar['id'] =  themename_tbay_get_config('product_archive_sidebar');
+        $sidebar['id'] =  themename_xptheme_get_config('product_archive_sidebar');
         return $sidebar;
     }
 }

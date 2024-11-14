@@ -1,7 +1,7 @@
 <?php
 
-if (! function_exists('themename_tbay_category')) {
-    function themename_tbay_category($post)
+if (! function_exists('themename_xptheme_category')) {
+    function themename_xptheme_category($post)
     {
         // format
         $post_format = get_post_format();
@@ -24,8 +24,8 @@ if (! function_exists('themename_tbay_category')) {
 
 
 
-if (! function_exists('themename_tbay_full_top_meta')) {
-    function themename_tbay_full_top_meta($post)
+if (! function_exists('themename_xptheme_full_top_meta')) {
+    function themename_xptheme_full_top_meta($post)
     {
         // format
         $post_format = get_post_format();
@@ -62,8 +62,8 @@ if (! function_exists('themename_tbay_full_top_meta')) {
     }
 }
 
-if (! function_exists('themename_tbay_post_tags')) {
-    function themename_tbay_post_tags()
+if (! function_exists('themename_xptheme_post_tags')) {
+    function themename_xptheme_post_tags()
     {
         $posttags = get_the_tags();
         if ($posttags) {
@@ -82,16 +82,16 @@ if (! function_exists('themename_tbay_post_tags')) {
             echo '</div>';
         }
     }
-    add_action('themename_tbay_post_tag_socials', 'themename_tbay_post_tags', 10);
+    add_action('themename_xptheme_post_tag_socials', 'themename_xptheme_post_tags', 10);
 }
 
 
 
-if (! function_exists('themename_tbay_post_info_author')) {
-    function themename_tbay_post_info_author()
+if (! function_exists('themename_xptheme_post_info_author')) {
+    function themename_xptheme_post_info_author()
     {
 
-        if(!themename_tbay_get_config('show_blog_author_info', false)) {
+        if(!themename_xptheme_get_config('show_blog_author_info', false)) {
             echo '<div class="not-author-info"></div>';
             return;
         }
@@ -126,15 +126,15 @@ if (! function_exists('themename_tbay_post_info_author')) {
         <?php
         }
     }
-    add_action('themename_tbay_post_bottom', 'themename_tbay_post_info_author', 20);
+    add_action('themename_xptheme_post_bottom', 'themename_xptheme_post_info_author', 20);
 }
 
-if (! function_exists('themename_tbay_post_share_box')) {
-    function themename_tbay_post_share_box()
+if (! function_exists('themename_xptheme_post_share_box')) {
+    function themename_xptheme_post_share_box()
     {
-        if ( themename_tbay_get_config('enable_code_share',false) && themename_tbay_get_config('show_blog_social_share', true) ) {
+        if ( themename_xptheme_get_config('enable_code_share',false) && themename_xptheme_get_config('show_blog_social_share', true) ) {
             ?>
-            <div class="tbay-post-share">
+            <div class="xptheme-post-share">
                 <span> <?php esc_html_e('Share:', 'themename') ?> </span>
                 <?php   
                     $image = get_the_post_thumbnail_url( get_the_ID(), 'full' );
@@ -144,18 +144,18 @@ if (! function_exists('themename_tbay_post_share_box')) {
             <?php
         } 
     }
-    add_action('themename_tbay_post_tag_socials', 'themename_tbay_post_share_box', 15);
+    add_action('themename_xptheme_post_tag_socials', 'themename_xptheme_post_share_box', 15);
 }
 
-if (! function_exists('themename_tbay_post_format_link_helper')) {
-    function themename_tbay_post_format_link_helper($content = null, $title = null, $post = null)
+if (! function_exists('themename_xptheme_post_format_link_helper')) {
+    function themename_xptheme_post_format_link_helper($content = null, $title = null, $post = null)
     {
         if (! $content) {
             $post = get_post($post);
             $title = $post->post_title;
             $content = $post->post_content;
         }
-        $link = themename_tbay_get_first_url_from_string($content);
+        $link = themename_xptheme_get_first_url_from_string($content);
         if (! empty($link)) {
             $title = '<a href="' . esc_url($link) . '" rel="bookmark">' . $title . '</a>';
             $content = str_replace($link, '', $content);
@@ -183,8 +183,8 @@ if (! function_exists('themename_tbay_post_format_link_helper')) {
 }
 
 
-if (! function_exists('themename_tbay_breadcrumbs')) {
-    function themename_tbay_breadcrumbs()
+if (! function_exists('themename_xptheme_breadcrumbs')) {
+    function themename_xptheme_breadcrumbs()
     {
         $delimiter = '';
         $home = esc_html__('Home', 'themename');
@@ -228,7 +228,7 @@ if (! function_exists('themename_tbay_breadcrumbs')) {
                     $slug = $post_type->rewrite;
 
                     if( get_post_type() === 'tb_portfolio' ) {
-                        echo '<li><a href="' . esc_url(get_permalink(themename_tbay_get_config('page_portfolio'))) .'">' . esc_html($post_type->labels->singular_name) . '</a></li> ' . esc_html($delimiter) . ' ';
+                        echo '<li><a href="' . esc_url(get_permalink(themename_xptheme_get_config('page_portfolio'))) .'">' . esc_html($post_type->labels->singular_name) . '</a></li> ' . esc_html($delimiter) . ' ';
                     } else if( !empty($slug['slug']) ) {
                         echo '<li><a href="' . esc_url($homeLink) . '/' . $slug['slug'] . '/">' . esc_html($post_type->labels->singular_name) . '</a></li> ' . esc_html($delimiter) . ' ';
                     }
@@ -258,7 +258,7 @@ if (! function_exists('themename_tbay_breadcrumbs')) {
                 echo trim($before) . get_the_title() . trim($after);
             } elseif (is_page() && !$post->post_parent) {
         
-                if( get_post_meta($post->ID, 'tbay_page_hide_title', true) ) {
+                if( get_post_meta($post->ID, 'xptheme_page_hide_title', true) ) {
                     echo trim($before) . get_the_title() . $after;
                 } else {
                     echo trim($before) . esc_html__('Page', 'themename') . trim($after);
@@ -277,7 +277,7 @@ if (! function_exists('themename_tbay_breadcrumbs')) {
                     echo trim($crumb) . ' ' . trim($delimiter) . ' ';
                 }
 
-                if( get_post_meta($post->ID, 'tbay_page_hide_title', true) ) {
+                if( get_post_meta($post->ID, 'xptheme_page_hide_title', true) ) {
                     echo trim($before) . get_the_title() . $after;
                 } else {
                     echo trim($before) . esc_html__('Page', 'themename') . trim($after);
@@ -298,8 +298,8 @@ if (! function_exists('themename_tbay_breadcrumbs')) {
     }
 }
 
-if (! function_exists('themename_tbay_get_title_bottom')) {
-    function themename_tbay_get_title_bottom()
+if (! function_exists('themename_xptheme_get_title_bottom')) {
+    function themename_xptheme_get_title_bottom()
     {
         global $post;
         
@@ -340,8 +340,8 @@ if (! function_exists('themename_tbay_get_title_bottom')) {
     }
 }
 
-if (! function_exists('themename_tbay_render_breadcrumbs')) {
-    function themename_tbay_render_breadcrumbs()
+if (! function_exists('themename_xptheme_render_breadcrumbs')) {
+    function themename_xptheme_render_breadcrumbs()
     {
         if( themename_checkout_optimized() || is_attachment() ) return;
         
@@ -351,21 +351,21 @@ if (! function_exists('themename_tbay_render_breadcrumbs')) {
         $img_url = '';
         $style = array();
 
-        $breadcrumbs_layout = themename_tbay_get_config('blog_breadcrumb_layout', 'image');
+        $breadcrumbs_layout = themename_xptheme_get_config('blog_breadcrumb_layout', 'image');
 
-        if (isset($post->ID) && !empty(get_post_meta($post->ID, 'tbay_page_breadcrumbs_layout', true))) {
-            $breadcrumbs_layout = get_post_meta($post->ID, 'tbay_page_breadcrumbs_layout', true);
+        if (isset($post->ID) && !empty(get_post_meta($post->ID, 'xptheme_page_breadcrumbs_layout', true))) {
+            $breadcrumbs_layout = get_post_meta($post->ID, 'xptheme_page_breadcrumbs_layout', true);
         }
 
-        if (isset($post->ID) && !empty(get_post_meta($post->ID, 'tbay_page_hide_title', true))) {
-            $hide_title = get_post_meta($post->ID, 'tbay_page_hide_title', true);
+        if (isset($post->ID) && !empty(get_post_meta($post->ID, 'xptheme_page_hide_title', true))) {
+            $hide_title = get_post_meta($post->ID, 'xptheme_page_hide_title', true);
         }
 
         if (isset($_GET['breadcrumbs_layout'])) {
             $breadcrumbs_layout = $_GET['breadcrumbs_layout'];
         }
 
-        $title_bottom = themename_tbay_get_title_bottom();
+        $title_bottom = themename_xptheme_get_title_bottom();
 
         switch ($breadcrumbs_layout) {
         case 'image':
@@ -387,8 +387,8 @@ if (! function_exists('themename_tbay_render_breadcrumbs')) {
        
         if (is_singular('post') || is_category() || is_home() || is_tag() || is_author() || is_day() || is_month() || is_year()  || is_search() || is_singular('tb_portfolio') ) {
             
-            $breadcrumb_layout_img = themename_tbay_get_config('blog_breadcrumb_layout_image');
-            $breadcrumb_layout_color = themename_tbay_get_config('blog_breadcrumb_layout_color');
+            $breadcrumb_layout_img = themename_xptheme_get_config('blog_breadcrumb_layout_image');
+            $breadcrumb_layout_color = themename_xptheme_get_config('blog_breadcrumb_layout_color');
 
             $style = array();
             if ($breadcrumb_layout_color && $breadcrumbs_layout ==='color'  ) {
@@ -404,10 +404,10 @@ if (! function_exists('themename_tbay_render_breadcrumbs')) {
 
 
         if ($breadcrumbs_layout !== 'image') {
-            if (!themename_tbay_is_home_page()) {
+            if (!themename_xptheme_is_home_page()) {
                 $breadcrumbs_class .= ' active-nav-right';
             }
-            if ( !themename_tbay_is_home_page() && isset($post->ID) && !empty(get_the_title($post->ID) && is_page())) {
+            if ( !themename_xptheme_is_home_page() && isset($post->ID) && !empty(get_the_title($post->ID) && is_page())) {
                 $title_bottom 		= get_the_title($post->ID);
                 $breadcrumbs_class .= ' show-title';
             }
@@ -425,28 +425,28 @@ if (! function_exists('themename_tbay_render_breadcrumbs')) {
         $estyle = !empty($style)? ' style="'.implode(";", $style).'"':"";
         
         if ( !themename_redux_framework_activated() ) {
-            if (!$hide_title && !themename_tbay_is_home_page() && !empty($title_bottom)) {
+            if (!$hide_title && !themename_xptheme_is_home_page() && !empty($title_bottom)) {
                 echo '<div class="title-not-breadcrumbs"><div class="container"><h1 class="page-title">'.trim($title_bottom) . '</h1></div></div>';
             }
             return '';
         } 
 
         if (is_page() && is_object($post)) {
-            $show = get_post_meta($post->ID, 'tbay_page_show_breadcrumb', true);
+            $show = get_post_meta($post->ID, 'xptheme_page_show_breadcrumb', true);
 
             
-            $breadcrumbs_class .= ' '.get_post_meta($post->ID, 'tbay_page_breadcrumbs_text_alignment', true);
+            $breadcrumbs_class .= ' '.get_post_meta($post->ID, 'xptheme_page_breadcrumbs_text_alignment', true);
             
             if ( isset($show) ) {
                 if( !$show ) {
-                    if (!$hide_title && !themename_tbay_is_home_page() && !empty($title_bottom)) {
+                    if (!$hide_title && !themename_xptheme_is_home_page() && !empty($title_bottom)) {
                         echo '<div class="title-not-breadcrumbs"><div class="container"><h1 class="page-title">'. trim($title_bottom) . '</h1></div></div>';
                     }
                     return '';
                 } else {
 
-                    $bgimage = get_post_meta($post->ID, 'tbay_page_breadcrumb_image', true);
-                    $bgcolor = get_post_meta($post->ID, 'tbay_page_breadcrumb_color', true);
+                    $bgimage = get_post_meta($post->ID, 'xptheme_page_breadcrumb_image', true);
+                    $bgcolor = get_post_meta($post->ID, 'xptheme_page_breadcrumb_color', true);
                     if ($bgcolor && $breadcrumbs_layout ==='color') {
                         $style[] = 'background-color:'.$bgcolor;
                     }
@@ -458,17 +458,17 @@ if (! function_exists('themename_tbay_render_breadcrumbs')) {
                     $estyle = !empty($style)? ' style="'.implode(";", $style).'"':"";
          
                     if ($breadcrumbs_layout !== 'image') {
-                        echo '<section id="tbay-breadcrumb" '. trim($estyle).' class="tbay-breadcrumb '.esc_attr($breadcrumbs_class).'"><div class="container"><div class="breadscrumb-inner" >';
-                        themename_tbay_breadcrumbs() ;
+                        echo '<section id="xptheme-breadcrumb" '. trim($estyle).' class="xptheme-breadcrumb '.esc_attr($breadcrumbs_class).'"><div class="container"><div class="breadscrumb-inner" >';
+                        themename_xptheme_breadcrumbs() ;
                         echo ''. trim($nav) . '</div></div></section>'; 
 
-                        if (!$hide_title && !themename_tbay_is_home_page() && !empty($title_bottom)) {
+                        if (!$hide_title && !themename_xptheme_is_home_page() && !empty($title_bottom)) {
                             echo '<div class="title-not-breadcrumbs"><div class="container"><h1 class="page-title">'. trim($title_bottom) . '</h1></div></div>'; 
                         }
                         return '';
                     } else {
-                        echo '<section id="tbay-breadcrumb" '. trim($estyle).' class="tbay-breadcrumb '.esc_attr($breadcrumbs_class).'"><img src="'. esc_url($img_url) .'" class="breadcrumb-img" alt="'. esc_attr__('breadcrumb', 'themename') .'"><div class="container"><div class="breadscrumb-inner"><h1 class="page-title">'. trim($title_bottom) .'</h1>';
-                        themename_tbay_breadcrumbs() ;
+                        echo '<section id="xptheme-breadcrumb" '. trim($estyle).' class="xptheme-breadcrumb '.esc_attr($breadcrumbs_class).'"><img src="'. esc_url($img_url) .'" class="breadcrumb-img" alt="'. esc_attr__('breadcrumb', 'themename') .'"><div class="container"><div class="breadscrumb-inner"><h1 class="page-title">'. trim($title_bottom) .'</h1>';
+                        themename_xptheme_breadcrumbs() ;
                         echo ''. trim($nav) .'</div></div></section>';
                     }
 
@@ -476,11 +476,11 @@ if (! function_exists('themename_tbay_render_breadcrumbs')) {
             } 
             
         } else { 
-            $show = themename_tbay_get_config('show_blog_breadcrumb', false);
+            $show = themename_xptheme_get_config('show_blog_breadcrumb', false);
 
-            $breadcrumbs_class .= ' '.themename_tbay_get_config('blog_breadcrumb_text_alignment', true);
+            $breadcrumbs_class .= ' '.themename_xptheme_get_config('blog_breadcrumb_text_alignment', true);
             if ($show || !empty($title_bottom)) {
-                echo '<section id="tbay-breadcrumb-blog" '. trim($estyle).' class="tbay-breadcrumb '.esc_attr($breadcrumbs_class).'">'; 
+                echo '<section id="xptheme-breadcrumb-blog" '. trim($estyle).' class="xptheme-breadcrumb '.esc_attr($breadcrumbs_class).'">'; 
 
                 if( !empty($img_url) ) {
                     echo '<img src="' . esc_url($img_url) . '" class="breadcrumb-img" alt="' . esc_attr__('breadcrumb', 'themename') . '">';
@@ -493,13 +493,13 @@ if (! function_exists('themename_tbay_render_breadcrumbs')) {
                 }
                 
                 if ( $show ) {
-                    themename_tbay_breadcrumbs();
+                    themename_xptheme_breadcrumbs();
                 } 
                 
                 echo ''. trim($nav) .'</div></div></section>';
                  
                 if ($breadcrumbs_layout !== 'image' && !empty($title_bottom) ) {
-                    echo '<section id="tbay-breadscrumb-title"><div class="container"><h1 class="page-title">'. trim($title_bottom) .'</h1></div></section>';
+                    echo '<section id="xptheme-breadscrumb-title"><div class="container"><h1 class="page-title">'. trim($title_bottom) .'</h1></div></section>';
                 }
             } 
             
@@ -508,8 +508,8 @@ if (! function_exists('themename_tbay_render_breadcrumbs')) {
     }
 }
 
-if (! function_exists('themename_tbay_paging_nav')) {
-    function themename_tbay_paging_nav()
+if (! function_exists('themename_xptheme_paging_nav')) {
+    function themename_xptheme_paging_nav()
     {
         global $wp_query, $wp_rewrite;
 
@@ -549,7 +549,7 @@ if (! function_exists('themename_tbay_paging_nav')) {
         ?>
 		<nav class="navigation paging-navigation">
 			<h5 class="screen-reader-text hidden"><?php esc_html_e('Posts navigation', 'themename'); ?></h5>
-			<div class="tbay-pagination">
+			<div class="xptheme-pagination">
 				<?php echo trim($links); ?>
 			</div><!-- .pagination -->
 		</nav><!-- .navigation -->
@@ -559,8 +559,8 @@ if (! function_exists('themename_tbay_paging_nav')) {
 }
 
 
-if (! function_exists('themename_tbay_post_nav')) {
-    function themename_tbay_post_nav()
+if (! function_exists('themename_xptheme_post_nav')) {
+    function themename_xptheme_post_nav()
     {
         // Don't print empty markup if there's nowhere to navigate.
         $previous = (is_attachment()) ? get_post(get_post()->post_parent) : get_adjacent_post(false, '', true);
@@ -603,11 +603,11 @@ if (! function_exists('themename_tbay_post_nav')) {
     }
 }
  
-if (!function_exists('themename_tbay_pagination')) {
-    function themename_tbay_pagination($per_page, $total, $max_num_pages = '')
+if (!function_exists('themename_xptheme_pagination')) {
+    function themename_xptheme_pagination($per_page, $total, $max_num_pages = '')
     {
         global $wp_query, $wp_rewrite; ?>
-        <div class="tbay-pagination">
+        <div class="xptheme-pagination">
         	<?php
             $prev = esc_html__('Previous', 'themename');
         $next = esc_html__('Next', 'themename');
@@ -658,8 +658,8 @@ if (!function_exists('themename_tbay_pagination')) {
     }
 }
 
-if (!function_exists('themename_tbay_comment_form')) {
-    function themename_tbay_comment_form($arg, $class = 'btn-primary btn-outline ')
+if (!function_exists('themename_xptheme_comment_form')) {
+    function themename_xptheme_comment_form($arg, $class = 'btn-primary btn-outline ')
     {
         global $post;
         if ('open' == $post->comment_status) {
@@ -675,8 +675,8 @@ if (!function_exists('themename_tbay_comment_form')) {
     }
 }
 
-if (!function_exists('themename_tbay_display_header_builder')) {
-    function themename_tbay_display_header_builder()
+if (!function_exists('themename_xptheme_display_header_builder')) {
+    function themename_xptheme_display_header_builder()
     {
         echo themename_get_display_header_builder();
     }
@@ -696,11 +696,11 @@ if (!function_exists('themename_get_elementor_css_print_method')) {
 if (!function_exists('themename_get_header_id')) {
     function themename_get_header_id()
     {
-        $header 	= apply_filters('themename_tbay_get_header_layout', 'default');
+        $header 	= apply_filters('themename_xptheme_get_header_layout', 'default');
 
         $args = array(
             'name'		 => $header,
-            'post_type'   => 'tbay_custom_post',
+            'post_type'   => 'xptheme_custom_post',
             'post_status' => 'publish',
             'numberposts' => 1
         );
@@ -723,11 +723,11 @@ if (!function_exists('themename_get_display_header_builder')) {
 if (!function_exists('themename_get_footer_id')) {
     function themename_get_footer_id()
     {
-        $footer     = apply_filters('themename_tbay_get_footer_layout', 'footer_default');
+        $footer     = apply_filters('themename_xptheme_get_footer_layout', 'footer_default');
 
         $args = array(
             'name'        => $footer,
-            'post_type'   => 'tbay_custom_post',
+            'post_type'   => 'xptheme_custom_post',
             'post_status' => 'publish',
             'numberposts' => 1
         );
@@ -761,15 +761,15 @@ if( ! function_exists( 'themename_get_html_custom_post' ) ) {
 
 }
 
-if (!function_exists('themename_tbay_display_footer_builder')) {
-    function themename_tbay_display_footer_builder()
+if (!function_exists('themename_xptheme_display_footer_builder')) {
+    function themename_xptheme_display_footer_builder()
     {
         echo themename_get_display_footer_builder();
     }
 }
 
-if (!function_exists('themename_tbay_get_random_blog_cat')) {
-    function themename_tbay_get_random_blog_cat()
+if (!function_exists('themename_xptheme_get_random_blog_cat')) {
+    function themename_xptheme_get_random_blog_cat()
     {
         $post_category = "";
         $categories = get_the_category();
@@ -784,8 +784,8 @@ if (!function_exists('themename_tbay_get_random_blog_cat')) {
     }
 }
 
-if (!function_exists('themename_tbay_get_id_author_post')) {
-    function themename_tbay_get_id_author_post()
+if (!function_exists('themename_xptheme_get_id_author_post')) {
+    function themename_xptheme_get_id_author_post()
     {
         global $post;
 
@@ -801,7 +801,7 @@ if (!function_exists('themename_tbay_get_id_author_post')) {
 if (! function_exists('themename_active_mobile_footer_icon')) {
     function themename_active_mobile_footer_icon()
     {
-        $active = themename_tbay_get_config('mobile_footer_icon', true);
+        $active = themename_xptheme_get_config('mobile_footer_icon', true);
 
         if ($active) {
             return true;
@@ -816,7 +816,7 @@ if (! function_exists('themename_active_mobile_footer_icon')) {
 if (! function_exists('themename_body_class_mobile_footer')) {
     function themename_body_class_mobile_footer($classes)
     {
-        $mobile_footer = themename_tbay_get_config('mobile_footer', true);
+        $mobile_footer = themename_xptheme_get_config('mobile_footer', true);
 
         if (isset($mobile_footer) && !$mobile_footer) {
             $classes[] = 'mbhd-ft-desktop';
@@ -835,7 +835,7 @@ if (! function_exists('themename_body_class_mobile_footer')) {
     add_filter('body_class', 'themename_body_class_mobile_footer', 99);
 }
 
-if (!function_exists('themename_tbay_comment_form_fields_open')) {
+if (!function_exists('themename_xptheme_comment_form_fields_open')) {
     function themename_move_comment_field_to_bottom( $fields ) {
         $comment_field = $fields['comment'];
         $comment_cookies = $fields['cookies'];
@@ -852,20 +852,20 @@ if (!function_exists('themename_tbay_comment_form_fields_open')) {
 
 
 //Add div wrapper author and name in comment form
-if (!function_exists('themename_tbay_comment_form_fields_open')) {
-    function themename_tbay_comment_form_fields_open()
+if (!function_exists('themename_xptheme_comment_form_fields_open')) {
+    function themename_xptheme_comment_form_fields_open()
     {
         echo '<div class="comment-form-fields-wrapper">';
     }
 }
-if (!function_exists('themename_tbay_comment_form_fields_close')) {
-    function themename_tbay_comment_form_fields_close()
+if (!function_exists('themename_xptheme_comment_form_fields_close')) {
+    function themename_xptheme_comment_form_fields_close()
     {
         echo '</div>';
     }
 }
-add_action('comment_form_before_fields', 'themename_tbay_comment_form_fields_open');
-add_action('comment_form_after_fields', 'themename_tbay_comment_form_fields_close');
+add_action('comment_form_before_fields', 'themename_xptheme_comment_form_fields_open');
+add_action('comment_form_after_fields', 'themename_xptheme_comment_form_fields_close');
 
 if (!function_exists('themename_the_post_category_full')) {
     function themename_the_post_category_full($has_separator = false)
@@ -886,20 +886,20 @@ if (!function_exists('themename_the_post_category_full')) {
 }
 
 //Check active WPML
-if (!function_exists('themename_tbay_wpml')) {
-    function themename_tbay_wpml()
+if (!function_exists('themename_xptheme_wpml')) {
+    function themename_xptheme_wpml()
     {
         if (is_active_sidebar('wpml-sidebar')) {
             dynamic_sidebar('wpml-sidebar');
         }
     }
 
-    add_action('themename_tbay_header_custom_language', 'themename_tbay_wpml', 10);
+    add_action('themename_xptheme_header_custom_language', 'themename_xptheme_wpml', 10);
 }
 
 //Config Layout Blog
-if (!function_exists('themename_tbay_get_blog_layout_configs')) {
-    function themename_tbay_get_blog_layout_configs()
+if (!function_exists('themename_xptheme_get_blog_layout_configs')) {
+    function themename_xptheme_get_blog_layout_configs()
     {
         if (!is_singular('post')) {
             $page = 'blog_archive_sidebar';
@@ -907,12 +907,12 @@ if (!function_exists('themename_tbay_get_blog_layout_configs')) {
             $page = 'blog_single_sidebar';
         }
 
-        $sidebar = themename_tbay_get_config($page);
+        $sidebar = themename_xptheme_get_config($page);
 
 
 
         if (!is_singular('post')) {
-            $blog_archive_layout =  (isset($_GET['blog_archive_layout']))  ? $_GET['blog_archive_layout'] : themename_tbay_get_config('blog_archive_layout', 'main-right');
+            $blog_archive_layout =  (isset($_GET['blog_archive_layout']))  ? $_GET['blog_archive_layout'] : themename_xptheme_get_config('blog_archive_layout', 'main-right');
 
             if (isset($blog_archive_layout)) {
                 switch ($blog_archive_layout) {
@@ -937,7 +937,7 @@ if (!function_exists('themename_tbay_get_blog_layout_configs')) {
                 }
             }
         } else {
-            $blog_single_layout =	(isset($_GET['blog_single_layout'])) ? $_GET['blog_single_layout']  :  themename_tbay_get_config('blog_single_layout', 'left-main');
+            $blog_single_layout =	(isset($_GET['blog_single_layout'])) ? $_GET['blog_single_layout']  :  themename_xptheme_get_config('blog_single_layout', 'left-main');
 
             if (isset($blog_single_layout)) {
                 switch ($blog_single_layout) {
@@ -968,8 +968,8 @@ if (!function_exists('themename_tbay_get_blog_layout_configs')) {
     }
 }
 
-if (! function_exists('themename_tbay_add_bg_close_canvas_menu')) {
-    function themename_tbay_add_bg_close_canvas_menu()
+if (! function_exists('themename_xptheme_add_bg_close_canvas_menu')) {
+    function themename_xptheme_add_bg_close_canvas_menu()
     {
         $sidebar_id = 'canvas-menu';
         if (!is_active_sidebar($sidebar_id)) {
@@ -989,11 +989,11 @@ if (! function_exists('themename_tbay_add_bg_close_canvas_menu')) {
 			</div>
 		<?php
     }
-    add_action('wp_footer', 'themename_tbay_add_bg_close_canvas_menu');
+    add_action('wp_footer', 'themename_xptheme_add_bg_close_canvas_menu');
 }
 
 
-if (! function_exists('themename_tbay_nav_description')) {
+if (! function_exists('themename_xptheme_nav_description')) {
     /**
      * Display descriptions in main navigation.
      *
@@ -1005,7 +1005,7 @@ if (! function_exists('themename_tbay_nav_description')) {
      * @param array   $args        wp_nav_menu() arguments.
      * @return string Menu item with possible description.
      */
-    function themename_tbay_nav_description($item_output, $item, $depth, $args)
+    function themename_xptheme_nav_description($item_output, $item, $depth, $args)
     {
         if ('primary' == $args->theme_location && $item->description) {
             $item_output = str_replace($args->link_after . '</a>', '<div class="menu-item-description">' . $item->description . '</div>' . $args->link_after . '</a>', $item_output);
@@ -1013,7 +1013,7 @@ if (! function_exists('themename_tbay_nav_description')) {
 
         return $item_output;
     }
-    add_filter('walker_nav_menu_start_el', 'themename_tbay_nav_description', 10, 4);
+    add_filter('walker_nav_menu_start_el', 'themename_xptheme_nav_description', 10, 4);
 }
 
 
@@ -1029,12 +1029,12 @@ if (! function_exists('themename_add_class_wrapper_container')) {
     add_filter('themename_class_wrapper_container', 'themename_add_class_wrapper_container', 10, 1);
 }
 
-if (! function_exists('themename_tbay_woocs_redraw_cart')) {
-    function themename_tbay_woocs_redraw_cart()
+if (! function_exists('themename_xptheme_woocs_redraw_cart')) {
+    function themename_xptheme_woocs_redraw_cart()
     {
         return 0;
     }
-    add_filter('woocs_redraw_cart', 'themename_tbay_woocs_redraw_cart', 10, 1);
+    add_filter('woocs_redraw_cart', 'themename_xptheme_woocs_redraw_cart', 10, 1);
 }
 
 if( ! function_exists('themename_load_html_dropdowns_action') ) {
@@ -1150,7 +1150,7 @@ if ( ! function_exists( 'themename_get_social_html' ) ) {
 		switch ($key) {
 			case 'facebook':
 				$output = sprintf(
-					'<a class="share-facebook tbay-facebook" title="%s" href="http://www.facebook.com/sharer.php?u=%s&t=%s" target="_blank"><i class="fa fa-facebook"></i></a>',
+					'<a class="share-facebook xptheme-facebook" title="%s" href="http://www.facebook.com/sharer.php?u=%s&t=%s" target="_blank"><i class="fa fa-facebook"></i></a>',
 					esc_attr( $title ),
 					urlencode( $link ),
 					urlencode( $title )
@@ -1158,7 +1158,7 @@ if ( ! function_exists( 'themename_get_social_html' ) ) {
 				break;			
 			case 'twitter':
 				$output = sprintf(
-					'<a class="share-twitter tbay-twitter" href="http://twitter.com/share?text=%s&url=%s" title="%s" target="_blank"><i class="fa fa-twitter"></i></a>',
+					'<a class="share-twitter xptheme-twitter" href="http://twitter.com/share?text=%s&url=%s" title="%s" target="_blank"><i class="fa fa-twitter"></i></a>',
 					esc_attr( $title ),
 					urlencode( $link ),
 					urlencode( $title )
@@ -1166,7 +1166,7 @@ if ( ! function_exists( 'themename_get_social_html' ) ) {
 				break;			
 			case 'linkedin':
 				$output = sprintf(
-					'<a class="share-linkedin tbay-linkedin" href="http://www.linkedin.com/shareArticle?url=%s&title=%s" title="%s" target="_blank"><i class="fa fa-linkedin"></i></a>',
+					'<a class="share-linkedin xptheme-linkedin" href="http://www.linkedin.com/shareArticle?url=%s&title=%s" title="%s" target="_blank"><i class="fa fa-linkedin"></i></a>',
 					urlencode( $link ),
 					esc_attr( $title ),
 					urlencode( $title )
@@ -1175,7 +1175,7 @@ if ( ! function_exists( 'themename_get_social_html' ) ) {
 
 			case 'pinterest':
 				$output = sprintf(
-					'<a class="share-pinterest tbay-pinterest" href="http://pinterest.com/pin/create/button?media=%s&url=%s&description=%s" title="%s" target="_blank"><i class="fa fa-pinterest-p"></i></a>',
+					'<a class="share-pinterest xptheme-pinterest" href="http://pinterest.com/pin/create/button?media=%s&url=%s&description=%s" title="%s" target="_blank"><i class="fa fa-pinterest-p"></i></a>',
 					urlencode( $media ),
 					urlencode( $link ),
 					esc_attr( $title ),
@@ -1185,7 +1185,7 @@ if ( ! function_exists( 'themename_get_social_html' ) ) {
 
 			case 'whatsapp':
 				$output = sprintf(
-					'<a class="share-whatsapp tbay-whatsapp" href="https://api.whatsapp.com/send?text=%s" title="%s" target="_blank"><i class="fa fa-whatsapp"></i></a>',
+					'<a class="share-whatsapp xptheme-whatsapp" href="https://api.whatsapp.com/send?text=%s" title="%s" target="_blank"><i class="fa fa-whatsapp"></i></a>',
 					urlencode( $link ),
 					esc_attr( $title )
 				);
@@ -1193,7 +1193,7 @@ if ( ! function_exists( 'themename_get_social_html' ) ) {
 
 			case 'email':
 				$output = sprintf(
-					'<a class="share-email tbay-email" href="mailto:?subject=%s&body=%s" title="%s" target="_blank"><i class="fa fa-envelope-o"></i></a>',
+					'<a class="share-email xptheme-email" href="mailto:?subject=%s&body=%s" title="%s" target="_blank"><i class="fa fa-envelope-o"></i></a>',
 					esc_html( $title ),
 					urlencode( $link ),
 					esc_attr( $title )
@@ -1211,8 +1211,8 @@ if ( ! function_exists( 'themename_get_social_html' ) ) {
 
 if ( ! function_exists( 'themename_custom_share_code' ) ) {
 	function themename_custom_share_code( $title, $link, $media ) {
-		if( !themename_tbay_get_config('enable_code_share', true) ) return; 
-		$socials = themename_tbay_get_config('sortable_sharing');
+		if( !themename_xptheme_get_config('enable_code_share', true) ) return; 
+		$socials = themename_xptheme_get_config('sortable_sharing');
 
 		$socials_html = '';
 		foreach ($socials as $key => $value) {
@@ -1222,7 +1222,7 @@ if ( ! function_exists( 'themename_custom_share_code' ) ) {
 
 		if ( $socials_html ) {
 			$socials_html = apply_filters('themename_addons_share_link_socials', $socials_html);
-			printf( '<div class="tbay-social-links">%s</div>', $socials_html );
+			printf( '<div class="xptheme-social-links">%s</div>', $socials_html );
 		}
 
 	}
@@ -1260,10 +1260,10 @@ if ( ! function_exists( 'themename_get_elementor_post_scripts' ) ) {
     }
 } 
 
-if ( !function_exists('themename_tbay_back_to_top') ) {
-    function themename_tbay_back_to_top(){
-        if (themename_tbay_get_config('back_to_top')) { ?>
-            <div class="tbay-to-top">
+if ( !function_exists('themename_xptheme_back_to_top') ) {
+    function themename_xptheme_back_to_top(){
+        if (themename_xptheme_get_config('back_to_top')) { ?>
+            <div class="xptheme-to-top">
                 <a href="javascript:void(0);" id="back-to-top">
                     <i class="tb-icon tb-icon-arrow-top"></i>
                 </a>
@@ -1273,8 +1273,8 @@ if ( !function_exists('themename_tbay_back_to_top') ) {
         ?>
     
         <?php
-        if (themename_tbay_get_config('mobile_back_to_top')) { ?>
-            <div class="tbay-to-top-mobile tbay-to-top">
+        if (themename_xptheme_get_config('mobile_back_to_top')) { ?>
+            <div class="xptheme-to-top-mobile xptheme-to-top">
     
                 <div class="more-to-top">
                     <a href="javascript:void(0);" id="back-to-top-mobile">
@@ -1287,8 +1287,8 @@ if ( !function_exists('themename_tbay_back_to_top') ) {
         <?php
         }
     } 
-    add_action('elementor/theme/after_do_footer', 'themename_tbay_back_to_top', 10);
-    add_action('themename_after_do_footer', 'themename_tbay_back_to_top', 10);
+    add_action('elementor/theme/after_do_footer', 'themename_xptheme_back_to_top', 10);
+    add_action('themename_after_do_footer', 'themename_xptheme_back_to_top', 10);
 }
 
 if (!function_exists('themename_customize_wp_list_categories')) {

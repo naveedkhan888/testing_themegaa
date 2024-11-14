@@ -11,7 +11,7 @@ class Themename_Elementor_Custom_Image_List_Tags extends Themename_Elementor_Car
 {
     public function get_name()
     {
-        return 'tbay-custom-image-list-tags';
+        return 'xptheme-custom-image-list-tags';
     }
 
     public function get_title()
@@ -216,7 +216,7 @@ class Themename_Elementor_Custom_Image_List_Tags extends Themename_Elementor_Car
                 'type'      => Controls_Manager::ICONS,
                 'default' => [
                     'value' => 'tb-icon tb-icon-arrow-right',
-                    'library' => 'tbay-custom',
+                    'library' => 'xptheme-custom',
                 ],
                 'condition' => [
                     'show_all' => 'yes'

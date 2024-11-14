@@ -29,7 +29,7 @@ $attachment_ids = $product->get_gallery_image_ids();
 wp_enqueue_script('slick');
 wp_enqueue_script('themename-custom-slick');
 
-$sidebar_configs    = themename_tbay_get_woocommerce_layout_configs();
+$sidebar_configs    = themename_xptheme_get_woocommerce_layout_configs();
 $images_layout      = ( !empty($sidebar_configs['thumbnail']) ) ? $sidebar_configs['thumbnail'] : 'horizontal';
 $images_position      = ( !empty($sidebar_configs['position']) ) ? $sidebar_configs['position'] : 'horizontal-top';
 $is_rtl 			= (is_rtl()) ? 'yes' : 'no'; 

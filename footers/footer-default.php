@@ -1,6 +1,6 @@
 <?php
 
-    $copyright 	= themename_tbay_get_config('copyright_text', '');
+    $copyright 	= themename_xptheme_get_config('copyright_text', '');
 
 ?>
 
@@ -15,7 +15,7 @@
 <?php endif; ?>
 
 <?php if (!empty($copyright)) : ?>
-	<div class="tbay-copyright">
+	<div class="xptheme-copyright">
 		<div class="container">
 			<div class="copyright-content">
 				<div class="text-copyright text-center">
@@ -28,7 +28,7 @@
 	</div>
 
 <?php else: ?>
-	<div class="tbay-copyright">
+	<div class="xptheme-copyright">
 		<div class="container">
 			<div class="copyright-content">
 				<div class="text-copyright text-center">

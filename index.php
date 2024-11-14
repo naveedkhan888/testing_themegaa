@@ -18,7 +18,7 @@ if ( !themename_redux_framework_activated() ) {
 									<?php
 								// End the loop.
 								endwhile;
-								themename_tbay_paging_nav(); ?>
+								themename_xptheme_paging_nav(); ?>
 							<?php else : ?>
 								<?php get_template_part('post-formats/content/content', 'none'); ?>
 							<?php endif; ?>
@@ -34,17 +34,17 @@ if ( !themename_redux_framework_activated() ) {
 		</div><!-- .site-main -->
 <?php
 } else {
-        $sidebar_configs = themename_tbay_get_blog_layout_configs();
-        $blog_archive_layout =  (isset($_GET['blog_archive_layout']))  ? $_GET['blog_archive_layout'] : themename_tbay_get_config('blog_archive_layout', 'main-right');
-        $blog_single_layout =	(isset($_GET['blog_single_layout'])) ? $_GET['blog_single_layout']  :  themename_tbay_get_config('blog_single_layout', 'left-main');
+        $sidebar_configs = themename_xptheme_get_blog_layout_configs();
+        $blog_archive_layout =  (isset($_GET['blog_archive_layout']))  ? $_GET['blog_archive_layout'] : themename_xptheme_get_config('blog_archive_layout', 'main-right');
+        $blog_single_layout =	(isset($_GET['blog_single_layout'])) ? $_GET['blog_single_layout']  :  themename_xptheme_get_config('blog_single_layout', 'left-main');
         $class_row =  $blog_archive_layout === 'main-right' ? 'tb-column-reverse tb-custom-blog' : 'tb-custom-blog';
         if (is_single()) {
             $class_row =  $blog_single_layout === 'main-right' ? 'tb-column-reverse' : 'tb-custom-blog';
         }
 
-        themename_tbay_render_breadcrumbs();
+        themename_xptheme_render_breadcrumbs();
 
-        $class_main = apply_filters('themename_tbay_post_content_class', 'container');
+        $class_main = apply_filters('themename_xptheme_post_content_class', 'container');
     
         $blog_columns = apply_filters('loop_blog_columns', 1);
 
@@ -114,7 +114,7 @@ if ( !themename_redux_framework_activated() ) {
                             endwhile;
 
 						// Previous/next page navigation.
-						themename_tbay_paging_nav();
+						themename_xptheme_paging_nav();
 
 						// If no content, include the "No posts found" template.
 						else :

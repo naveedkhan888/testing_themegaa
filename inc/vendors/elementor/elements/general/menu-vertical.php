@@ -11,7 +11,7 @@ class Themename_Elementor_Menu_Vertical extends Themename_Elementor_Widget_Base
 {
     public function get_name()
     {
-        return 'tbay-menu-vertical';
+        return 'xptheme-menu-vertical';
     }
 
     public function get_title()

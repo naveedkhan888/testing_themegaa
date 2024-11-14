@@ -1,8 +1,8 @@
 <?php
 	$product_item 	= isset($product_item) ? $product_item : 'list';
-	$skin 			= themename_tbay_get_theme();
+	$skin 			= themename_xptheme_get_theme();
 ?>
-<ul class="tbay-w-products-list">
+<ul class="xptheme-w-products-list">
 	<?php while ($loop->have_posts()) : $loop->the_post(); global $product; ?>
 		<?php 
 			$post_object = get_post( get_the_ID() );

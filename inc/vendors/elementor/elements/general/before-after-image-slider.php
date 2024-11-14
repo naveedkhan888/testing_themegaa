@@ -27,7 +27,7 @@ class Themename_Elementor_Before_After_Image_Slider extends  Themename_Elementor
      * @return string Widget name.
      */
     public function get_name() {
-        return 'tbay-before-after-image-slider';
+        return 'xptheme-before-after-image-slider';
     }
 
     /**
@@ -515,7 +515,7 @@ class Themename_Elementor_Before_After_Image_Slider extends  Themename_Elementor
         if ( !empty($image_before['url']) && !empty($image_after['url']) ) {
             ?>
             <div class="themename-before-after-wrapper">
-                <div class="beforeafterdefault tbay-before-after-image-slider">
+                <div class="beforeafterdefault xptheme-before-after-image-slider">
                     <div data-type="data-type-image">
                         <div data-type="before"><?php echo wp_get_attachment_image($image_before['id'], 'full'); ?></div>
                         <div data-type="after"><?php echo wp_get_attachment_image($image_after['id'], 'full'); ?></div>

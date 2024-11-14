@@ -2,8 +2,8 @@
 
 get_header();
 
-$sidebar_configs = themename_tbay_get_blog_layout_configs();
-$blog_single_layout =	(isset($_GET['blog_single_layout'])) ? $_GET['blog_single_layout']  :  themename_tbay_get_config('blog_single_layout', 'left-main');
+$sidebar_configs = themename_xptheme_get_blog_layout_configs();
+$blog_single_layout =	(isset($_GET['blog_single_layout'])) ? $_GET['blog_single_layout']  :  themename_xptheme_get_config('blog_single_layout', 'left-main');
 
 $class_row = ($blog_single_layout === 'main-right') ? 'tb-column-reverse tb-custom-blog' : 'tb-custom-blog';
 
@@ -11,12 +11,12 @@ $class_main_content = (isset($sidebar_configs['sidebar']) && is_active_sidebar($
 $class_check_sidebar = (isset($sidebar_configs['sidebar']) && is_active_sidebar($sidebar_configs['sidebar']['id'])) ? 'active-sidebar' : '';
  
 
-themename_tbay_render_breadcrumbs();
+themename_xptheme_render_breadcrumbs();
 
 ?>
 
 
-<section id="main-container" class="main-content <?php echo esc_attr(apply_filters('themename_tbay_blog_content_class', 'container')); ?>">
+<section id="main-container" class="main-content <?php echo esc_attr(apply_filters('themename_xptheme_blog_content_class', 'container')); ?>">
 	<div class="row <?php echo esc_attr($class_row); ?> <?php echo esc_attr($class_check_sidebar); ?>">
 		
 		<?php if ( isset($sidebar_configs['sidebar']) && is_active_sidebar($sidebar_configs['sidebar']['id'])) : ?>
@@ -40,9 +40,9 @@ themename_tbay_render_breadcrumbs();
 							*/
 						get_template_part('post-formats/content/content', get_post_format());
 						// Previous/next post navigation.
-						themename_tbay_post_nav();
+						themename_xptheme_post_nav();
 
-						if (themename_tbay_get_config('show_blog_related', false)): ?>
+						if (themename_xptheme_get_config('show_blog_related', false)): ?>
 							<div class="related-posts">
 								<?php get_template_part('posts-releated'); ?>
 							</div>

@@ -28,7 +28,7 @@ class Themename_Elementor_List_Custom_Fonts extends Themename_Elementor_Carousel
      */
     public function get_name()
     {
-        return 'tbay-list-custom-fonts';
+        return 'xptheme-list-custom-fonts';
     }
 
     /**
@@ -43,7 +43,7 @@ class Themename_Elementor_List_Custom_Fonts extends Themename_Elementor_Carousel
      */
     public function get_title()
     {
-        return esc_html__('Themename List Icons Tbay Custom Fonts', 'themename');
+        return esc_html__('Themename List Icons Xptheme Custom Fonts', 'themename');
     }
 
     public function get_script_depends()
@@ -99,7 +99,7 @@ class Themename_Elementor_List_Custom_Fonts extends Themename_Elementor_Carousel
 
     protected function render_element_content()
     {
-        $url = THEMENAME_THEME_DIR . '/inc/vendors/elementor/icons/json/tbay-custom.json';
+        $url = THEMENAME_THEME_DIR . '/inc/vendors/elementor/icons/json/xptheme-custom.json';
         $request = wp_remote_get($url);
 
         if (is_wp_error($request)) {
@@ -110,7 +110,7 @@ class Themename_Elementor_List_Custom_Fonts extends Themename_Elementor_Carousel
         $data   = json_decode($body);
 
         $this->add_render_attribute('row', 'class', 'list-icons'); ?> 
-            <div class="list-tbay-custom-fonts-body"> 
+            <div class="list-xptheme-custom-fonts-body"> 
                 <div class="quick-search">
                     <input id="quick-search" placeholder="Search..." type="text">
                     <i class="icon-magnifier"></i>

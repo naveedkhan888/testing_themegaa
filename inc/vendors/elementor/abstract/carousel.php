@@ -9,7 +9,7 @@ abstract class Themename_Elementor_Carousel_Base extends Themename_Elementor_Res
 {
     public function get_name()
     {
-        return 'tbay-carousel';
+        return 'xptheme-carousel';
     }
 
     private function get_rows()
@@ -208,7 +208,7 @@ abstract class Themename_Elementor_Carousel_Base extends Themename_Elementor_Res
                     ],
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .tbay-element .owl-carousel .slick-arrow' => 'width: {{SIZE}}{{UNIT}}',
+                    '{{WRAPPER}} .xptheme-element .owl-carousel .slick-arrow' => 'width: {{SIZE}}{{UNIT}}',
                 ],
                 'condition' => [
                     'navigation' => [ 'yes' ],
@@ -228,8 +228,8 @@ abstract class Themename_Elementor_Carousel_Base extends Themename_Elementor_Res
                     ],
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .tbay-element .owl-carousel .slick-arrow' => 'height: {{SIZE}}{{UNIT}};',
-                    '{{WRAPPER}} .tbay-element .owl-carousel .slick-arrow i' => 'line-height: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .xptheme-element .owl-carousel .slick-arrow' => 'height: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .xptheme-element .owl-carousel .slick-arrow i' => 'line-height: {{SIZE}}{{UNIT}};',
                 ],
                 'condition' => [
                     'navigation' => [ 'yes' ],
@@ -249,7 +249,7 @@ abstract class Themename_Elementor_Carousel_Base extends Themename_Elementor_Res
                     ],
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .tbay-element .owl-carousel .slick-arrow i' => 'font-size: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .xptheme-element .owl-carousel .slick-arrow i' => 'font-size: {{SIZE}}{{UNIT}};',
                 ],
                 'condition' => [
                     'navigation' => [ 'yes' ],
@@ -269,8 +269,8 @@ abstract class Themename_Elementor_Carousel_Base extends Themename_Elementor_Res
                     ],
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .tbay-element .owl-carousel .slick-arrow.slick-prev' => 'margin-left: {{SIZE}}{{UNIT}};',
-                    '{{WRAPPER}} .tbay-element .owl-carousel .slick-arrow.slick-next' => 'margin-right: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .xptheme-element .owl-carousel .slick-arrow.slick-prev' => 'margin-left: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .xptheme-element .owl-carousel .slick-arrow.slick-next' => 'margin-right: {{SIZE}}{{UNIT}};',
                 ],
                 'condition' => [
                     'navigation' => [ 'yes' ],
@@ -285,7 +285,7 @@ abstract class Themename_Elementor_Carousel_Base extends Themename_Elementor_Res
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'selectors' => [
-                    '{{WRAPPER}} .tbay-element .owl-carousel .slick-arrow' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .xptheme-element .owl-carousel .slick-arrow' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -297,7 +297,7 @@ abstract class Themename_Elementor_Carousel_Base extends Themename_Elementor_Res
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .tbay-element .owl-carousel .slick-arrow i' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .xptheme-element .owl-carousel .slick-arrow i' => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -309,7 +309,7 @@ abstract class Themename_Elementor_Carousel_Base extends Themename_Elementor_Res
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .tbay-element .owl-carousel .slick-arrow:hover i' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .xptheme-element .owl-carousel .slick-arrow:hover i' => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -341,7 +341,7 @@ abstract class Themename_Elementor_Carousel_Base extends Themename_Elementor_Res
                     ],
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .tbay-element .owl-carousel .slick-dots li button' => 'width: {{SIZE}}{{UNIT}}',
+                    '{{WRAPPER}} .xptheme-element .owl-carousel .slick-dots li button' => 'width: {{SIZE}}{{UNIT}}',
                 ],
             ]
         );
@@ -358,7 +358,7 @@ abstract class Themename_Elementor_Carousel_Base extends Themename_Elementor_Res
                     ],
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .tbay-element .owl-carousel .slick-dots li button' => 'height: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .xptheme-element .owl-carousel .slick-dots li button' => 'height: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );
@@ -374,7 +374,7 @@ abstract class Themename_Elementor_Carousel_Base extends Themename_Elementor_Res
                     ],
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .tbay-element .owl-carousel .slick-dots' => 'margin-top: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .xptheme-element .owl-carousel .slick-dots' => 'margin-top: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );
@@ -385,7 +385,7 @@ abstract class Themename_Elementor_Carousel_Base extends Themename_Elementor_Res
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'selectors' => [
-                    '{{WRAPPER}} .tbay-element .owl-carousel .slick-dots li button' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .xptheme-element .owl-carousel .slick-dots li button' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );

@@ -1,4 +1,4 @@
-<div class="tbay-offcanvas-cart sidebar-left offcanvas offcanvas-start" id="cart-offcanvas-left">
+<div class="xptheme-offcanvas-cart sidebar-left offcanvas offcanvas-start" id="cart-offcanvas-left">
 	<div class="offcanvas-header widget-header-cart">
 		<div class="header-cart-content">
 			<h3 class="widget-title heading-title"><?php esc_html_e('Shopping cart', 'themename') ?></h3>

@@ -1,20 +1,20 @@
 <?php
     $location = 'mobile-menu';
-    $tbay_location  = '';
+    $xptheme_location  = '';
     if (has_nav_menu($location)) {
-        $tbay_location = $location;
+        $xptheme_location = $location;
     }
 
     
-    $mmenu_langue           = themename_tbay_get_config('enable_mmenu_langue', false);
-    $mmenu_currency         = themename_tbay_get_config('enable_mmenu_currency', false);
+    $mmenu_langue           = themename_xptheme_get_config('enable_mmenu_langue', false);
+    $mmenu_currency         = themename_xptheme_get_config('enable_mmenu_currency', false);
 
-    $menu_mobile_select    =  themename_tbay_get_config('menu_mobile_select');
+    $menu_mobile_select    =  themename_xptheme_get_config('menu_mobile_select');
 ?>
   
-<div id="tbay-mobile-smartmenu" data-title="<?php esc_attr_e('Menu', 'themename'); ?>" class="tbay-mmenu d-xl-none"> 
+<div id="xptheme-mobile-smartmenu" data-title="<?php esc_attr_e('Menu', 'themename'); ?>" class="xptheme-mmenu d-xl-none"> 
 
-    <div class="tbay-offcanvas-body">
+    <div class="xptheme-offcanvas-body">
         
         <div id="mmenu-close">
             <button type="button" class="btn btn-toggle-canvas" data-toggle="offcanvas">
@@ -26,7 +26,7 @@
         if ( empty($menu_mobile_select) ) {
             if( !empty($theme_locations) ) {
                 $theme_locations = get_nav_menu_locations();
-                $menu_obj = get_term( $theme_locations[$tbay_location], 'nav_menu' );
+                $menu_obj = get_term( $theme_locations[$xptheme_location], 'nav_menu' );
                 $menu_name = themename_get_transliterate($menu_obj->name);
             } else {
                 $menu_name = '';
@@ -37,7 +37,7 @@
             $menu_name = themename_get_transliterate($menu_obj->slug);
         }
         ?>
-        <nav id="tbay-mobile-menu-navbar" class="menu navbar navbar-offcanvas navbar-static" data-id="menu-<?php echo esc_attr($menu_name); ?>" >
+        <nav id="xptheme-mobile-menu-navbar" class="menu navbar navbar-offcanvas navbar-static" data-id="menu-<?php echo esc_attr($menu_name); ?>" >
             <?php
 
                 $args = array(
@@ -45,7 +45,7 @@
                 );
 
                 if (empty($menu_mobile_select)) {
-                    $args['theme_location']     = $tbay_location;
+                    $args['theme_location']     = $xptheme_location;
                 } else {
                     $args['menu']               = $menu_mobile_select;
                 }
@@ -70,7 +70,7 @@
     </div>
     <?php if ($mmenu_langue || $mmenu_currency) {
                 ?>
-         <div id="mm-tbay-bottom">  
+         <div id="mm-xptheme-bottom">  
     
             <div class="mm-bottom-track-wrapper">
 
@@ -79,13 +79,13 @@
                     <div class="mm-bottom-langue-currency ">
                         <?php if ($mmenu_langue): ?>
                             <div class="mm-bottom-langue">
-                                <?php do_action('themename_tbay_header_custom_language'); ?>
+                                <?php do_action('themename_xptheme_header_custom_language'); ?>
                             </div>
                         <?php endif; ?>
                 
                         <?php if ($mmenu_currency && class_exists('WooCommerce') && class_exists('WOOCS')): ?>
                             <div class="mm-bottom-currency">
-                                <div class="tbay-currency">
+                                <div class="xptheme-currency">
                                 <?php echo do_shortcode('[woocs txt_type="desc"]'); ?> 
                                 </div>
                             </div>

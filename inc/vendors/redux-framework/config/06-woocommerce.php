@@ -22,7 +22,7 @@ Redux::set_section(
                 'id' => 'product_layout_style',
                 'type' => 'image_select',
                 'title' => esc_html__('Product Styles', 'themename'),
-                'options'   => themename_tbay_product_styles(),
+                'options'   => themename_xptheme_product_styles(),
                 'default' => 'v1'
             ),
             array(
@@ -134,7 +134,7 @@ Redux::set_section(
                 'type' => 'select',
                 'title' => esc_html__('Product Attribute', 'themename'),
                 'required' => array('enable_variation_swatch','=',1),
-                'options' => themename_tbay_get_variation_swatchs(),
+                'options' => themename_xptheme_get_variation_swatchs(),
                 'default' => 'pa_size'
             ),
         )
@@ -789,7 +789,7 @@ Redux::set_section(
                 'id'        => 'single_size_guide_icon',
                 'type'      => 'text',
                 'title'     => esc_html__('Icon', 'themename'),
-                'subtitle'  => sprintf(__('Get class name icon name of <a href="%s" target="_blank">Tbay Icon</a>', 'themename'), home_url( '/tbay-list-icons')),
+                'subtitle'  => sprintf(__('Get class name icon name of <a href="%s" target="_blank">Xptheme Icon</a>', 'themename'), home_url( '/xptheme-list-icons')),
                 'default'   => 'tb-icon tb-icon-size-guide'
             ),
             array(
@@ -819,7 +819,7 @@ Redux::set_section(
                 'id'        => 'single_delivery_return_icon',
                 'type'      => 'text',
                 'title'     => esc_html__('Icon', 'themename'),
-                'subtitle'  => sprintf(__('Get class name icon name of <a href="%s" target="_blank">Tbay Icon</a>', 'themename'), home_url( '/tbay-list-icons')),
+                'subtitle'  => sprintf(__('Get class name icon name of <a href="%s" target="_blank">Xptheme Icon</a>', 'themename'), home_url( '/xptheme-list-icons')),
                 'default'   => 'tb-icon tb-icon-return-box'
             ),
             array(
@@ -848,7 +848,7 @@ Redux::set_section(
                 'id'        => 'single_aska_question_icon',
                 'type'      => 'text',
                 'title'     => esc_html__('Icon', 'themename'),
-                'subtitle'  => sprintf(__('Get class name icon name of <a href="%s" target="_blank">Tbay Icon</a>', 'themename'), home_url( '/tbay-list-icons')),
+                'subtitle'  => sprintf(__('Get class name icon name of <a href="%s" target="_blank">Xptheme Icon</a>', 'themename'), home_url( '/xptheme-list-icons')),
                 'default'   => 'tb-icon tb-icon-help'
             ),
             array(

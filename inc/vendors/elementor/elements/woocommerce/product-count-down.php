@@ -10,7 +10,7 @@ class Themename_Elementor_Product_CountDown extends Themename_Elementor_Carousel
 {
     public function get_name()
     {
-        return 'tbay-product-count-down';
+        return 'xptheme-product-count-down';
     }
 
     public function get_title()
@@ -178,7 +178,7 @@ class Themename_Elementor_Product_CountDown extends Themename_Elementor_Carousel
                 'type'      => Controls_Manager::ICONS,
                 'default' => [
                     'value' => 'tb-icon tb-icon-arrow-right',
-                    'library' => 'tbay-custom',
+                    'library' => 'xptheme-custom',
                 ],
                 'condition' => [
                     'show_all' => 'yes'
@@ -215,7 +215,7 @@ class Themename_Elementor_Product_CountDown extends Themename_Elementor_Carousel
                 <div class="wrapper-title-heading">
                     <?php
                         if (!empty($heading_subtitle) || !empty($heading_title)) : ?>
-                            <<?php echo trim($heading_title_tag); ?> class="heading-tbay-title">
+                            <<?php echo trim($heading_title_tag); ?> class="heading-xptheme-title">
                                 <?php if (!empty($heading_title)) : ?>
                                     <span class="title"><?php echo trim($heading_title); ?></span>
                                 <?php endif; ?>	    	
@@ -279,7 +279,7 @@ class Themename_Elementor_Product_CountDown extends Themename_Elementor_Carousel
 
         if( empty($sale_campaign) ) return $product_ids;
 
-        $sale_products = get_post_meta($sale_campaign, 'tbay_discount_campaign_group', true);
+        $sale_products = get_post_meta($sale_campaign, 'xptheme_discount_campaign_group', true);
 
         if( empty($sale_products) || sizeof($sale_products) === 0 ) return $product_ids;
 

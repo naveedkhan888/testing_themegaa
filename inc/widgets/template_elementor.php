@@ -2,7 +2,7 @@
 
 if ( !themename_redux_framework_activated() )  return;
 
-class Tbay_Widget_Template_Custom_Block extends Tbay_Widget
+class Xptheme_Widget_Template_Custom_Block extends Xptheme_Widget
 {
     public function __construct()
     {
@@ -55,13 +55,13 @@ class Tbay_Widget_Template_Custom_Block extends Tbay_Widget
 
         $instance = array_merge($default, $instance);
 
-        $templates = themename_tbay_get_ids_custom_block();
+        $templates = themename_xptheme_get_ids_custom_block();
 
         if (! $templates) {
-            echo '<div id="tbay-elementor-widget-template-empty-templates">
-            <div class="tbay-elementor-widget-template-empty-templates-icon"><i class="eicon-nerd" aria-hidden="true"></i></div>
-            <div class="tbay-elementor-widget-template-empty-templates-title">' . esc_html__('You Haven’t Saved Templates Yet.', 'themename') . '</div>
-            <div class="tbay-elementor-widget-template-empty-templates-footer">' . esc_html__('Want to learn more about Elementor library?', 'themename') . ' <a class="elementor-widget-template-empty-templates-footer-url" href="https://go.elementor.com/docs-library/" target="_blank">' . esc_html__('Click Here', 'themename') . '</a>
+            echo '<div id="xptheme-elementor-widget-template-empty-templates">
+            <div class="xptheme-elementor-widget-template-empty-templates-icon"><i class="eicon-nerd" aria-hidden="true"></i></div>
+            <div class="xptheme-elementor-widget-template-empty-templates-title">' . esc_html__('You Haven’t Saved Templates Yet.', 'themename') . '</div>
+            <div class="xptheme-elementor-widget-template-empty-templates-footer">' . esc_html__('Want to learn more about Elementor library?', 'themename') . ' <a class="elementor-widget-template-empty-templates-footer-url" href="https://go.elementor.com/docs-library/" target="_blank">' . esc_html__('Click Here', 'themename') . '</a>
             </div>
             </div>';
 
@@ -89,7 +89,7 @@ class Tbay_Widget_Template_Custom_Block extends Tbay_Widget
                 if (!empty($instance['template_id'])) {
                     $edit_link = admin_url('post.php?post='. $instance['template_id'] .'&action=elementor');
                 } else {
-                    $edit_link = admin_url('edit.php?post_type=tbay_custom_post');
+                    $edit_link = admin_url('edit.php?post_type=xptheme_custom_post');
                 } ?>
 			<a target="_blank" class="elementor-edit-template" href="<?php echo esc_url($edit_link); ?>">
 				<i class="eicon-pencil"></i> <?php esc_html_e('Edit Template', 'themename'); ?>

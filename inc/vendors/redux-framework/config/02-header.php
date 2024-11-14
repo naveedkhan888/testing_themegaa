@@ -19,7 +19,7 @@ Redux::set_section(
 				'id' => 'header_type',
 				'type' => 'select',
 				'title' => esc_html__('Select Header Layout', 'themename'),
-				'options' => themename_tbay_get_header_layouts(),
+				'options' => themename_xptheme_get_header_layouts(),
 				'default' => 'header_default'
 			),
 			array(

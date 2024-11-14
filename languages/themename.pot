@@ -1570,7 +1570,7 @@ msgid "Header and Sidebar Background Color"
 msgstr ""
 
 #: inc/skins/v7/customizer.php:91
-msgid "Tbay thumbnail image width"
+msgid "Xptheme thumbnail image width"
 msgstr ""
 
 #: inc/skins/v7/customizer.php:118
@@ -1578,7 +1578,7 @@ msgid "Image size used for the mini cart or single product image thumbnail."
 msgstr ""
 
 #: inc/skins/v7/customizer.php:117
-msgid "Tbay thumbnail image height"
+msgid "Xptheme thumbnail image height"
 msgstr ""
 
 #: inc/skins/v7/customizer.php:144
@@ -2658,7 +2658,7 @@ msgid "Image Content"
 msgstr ""
 
 #: inc/vendors/elementor/elements/general/list-custom-fonts.php:46
-msgid "Themename List Icons Tbay Custom Fonts"
+msgid "Themename List Icons Xptheme Custom Fonts"
 msgstr ""
 
 #: inc/vendors/elementor/elements/general/list-custom-fonts.php:119
@@ -5375,7 +5375,7 @@ msgid "Size Guide"
 msgstr ""
 
 #: inc/vendors/redux-framework/config/06-woocommerce.php:851
-msgid "Get class name icon name of <a href=\"%s\" target=\"_blank\">Tbay Icon</a>"
+msgid "Get class name icon name of <a href=\"%s\" target=\"_blank\">Xptheme Icon</a>"
 msgstr ""
 
 #: inc/vendors/redux-framework/config/06-woocommerce.php:857

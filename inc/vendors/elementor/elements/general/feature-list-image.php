@@ -30,7 +30,7 @@ class Themename_Elementor_Feature_List_Image extends Themename_Elementor_Widget_
      */
     public function get_name()
     {
-        return 'tbay-feature-list-image';
+        return 'xptheme-feature-list-image';
     }
 
     /**

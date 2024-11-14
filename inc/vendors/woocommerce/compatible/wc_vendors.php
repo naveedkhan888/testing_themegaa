@@ -5,9 +5,9 @@ if (!class_exists('WC_Vendors')) {
 }
 
 
-if (! function_exists('themename_tbay_wcv_vendor_shop')) {
+if (! function_exists('themename_xptheme_wcv_vendor_shop')) {
     remove_action('woocommerce_after_shop_loop_item', array( 'WCV_Vendor_Shop', 'template_loop_sold_by' ), 9);
-    function themename_tbay_wcv_vendor_shop()
+    function themename_xptheme_wcv_vendor_shop()
     {
         if (! wc_string_to_bool(get_option('wcvendors_display_label_sold_by_enable', 'no'))) {
             return;
@@ -25,8 +25,8 @@ if (! function_exists('themename_tbay_wcv_vendor_shop')) {
 		</small><br/>
 		<?php
     }
-    add_action('themename_woo_after_shop_loop_item_caption', 'themename_tbay_wcv_vendor_shop', 5);
-    add_action('themename_woo_list_after_short_description', 'themename_tbay_wcv_vendor_shop', 10);
+    add_action('themename_woo_after_shop_loop_item_caption', 'themename_xptheme_wcv_vendor_shop', 5);
+    add_action('themename_woo_list_after_short_description', 'themename_xptheme_wcv_vendor_shop', 10);
 }
 
 remove_action('woocommerce_product_meta_start', array( 'WCV_Vendor_Cart', 'sold_by_meta' ), 10);

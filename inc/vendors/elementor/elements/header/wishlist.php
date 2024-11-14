@@ -14,7 +14,7 @@ class Themename_Elementor_Wishlist extends Themename_Elementor_Widget_Base
 
     public function get_name()
     {
-        return 'tbay-wishlist';
+        return 'xptheme-wishlist';
     }
 
     public function get_title()
@@ -48,7 +48,7 @@ class Themename_Elementor_Wishlist extends Themename_Elementor_Widget_Base
                 'type'               => Controls_Manager::ICONS,
                 'default' => [
                     'value' => 'tb-icon tb-icon-favorite',
-                    'library' => 'tbay-custom',
+                    'library' => 'xptheme-custom',
                 ],
             ]
         );

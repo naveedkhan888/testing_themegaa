@@ -7,8 +7,8 @@
  * Get Icon Mobile Menu
  * ------------------------------------------------------------------------------------------------
  */
-if (! function_exists('themename_tbay_get_button_mobile_menu')) {
-    function themename_tbay_get_button_mobile_menu()
+if (! function_exists('themename_xptheme_get_button_mobile_menu')) {
+    function themename_xptheme_get_button_mobile_menu()
     {
         $output 	= '';
         $output 	.= '<a href="javascript:void(0)" class="btn btn-sm mmenu-open">';
@@ -16,7 +16,7 @@ if (! function_exists('themename_tbay_get_button_mobile_menu')) {
         $output  .= '</a>';
 
         
-        return apply_filters('themename_tbay_get_button_mobile_menu', '<div class="active-mobile">'. $output . '</div>', 10);
+        return apply_filters('themename_xptheme_get_button_mobile_menu', '<div class="active-mobile">'. $output . '</div>', 10);
     }
 }
 
@@ -30,7 +30,7 @@ if (! function_exists('themename_the_button_mobile_menu')) {
     function themename_the_button_mobile_menu()
     {
         wp_enqueue_script('jquery-mmenu');
-        $ouput = themename_tbay_get_button_mobile_menu();
+        $ouput = themename_xptheme_get_button_mobile_menu();
         
         echo trim($ouput);
     }
@@ -41,10 +41,10 @@ if (! function_exists('themename_the_button_mobile_menu')) {
  * Get Logo Mobile
  * ------------------------------------------------------------------------------------------------
  */
-if (! function_exists('themename_tbay_get_logo_mobile')) {
-    function themename_tbay_get_logo_mobile()
+if (! function_exists('themename_xptheme_get_logo_mobile')) {
+    function themename_xptheme_get_logo_mobile()
     {
-        $mobilelogo 			= themename_tbay_get_config('mobile-logo');
+        $mobilelogo 			= themename_xptheme_get_config('mobile-logo');
 
         $output 	= '<div class="mobile-logo">';
         if (isset($mobilelogo['url']) && !empty($mobilelogo['url'])) {
@@ -68,7 +68,7 @@ if (! function_exists('themename_tbay_get_logo_mobile')) {
         }
         $output 	.= '</div>';
         
-        return apply_filters('themename_tbay_get_logo_mobile', $output, 10);
+        return apply_filters('themename_xptheme_get_logo_mobile', $output, 10);
     }
 }
 
@@ -81,7 +81,7 @@ if (! function_exists('themename_tbay_get_logo_mobile')) {
 if (! function_exists('themename_the_logo_mobile')) {
     function themename_the_logo_mobile()
     {
-        $ouput = themename_tbay_get_logo_mobile();
+        $ouput = themename_xptheme_get_logo_mobile();
         echo trim($ouput);
     }
 }
@@ -94,21 +94,21 @@ if (! function_exists('themename_the_logo_mobile')) {
 if (! function_exists('themename_the_icon_mini_cart_mobile')) {
     function themename_the_icon_mini_cart_mobile()
     {
-        ?><div class="device-mini_cart top-cart tbay-element-mini-cart"><?php
+        ?><div class="device-mini_cart top-cart xptheme-element-mini-cart"><?php
             if (themename_woocommerce_activated() && !themename_catalog_mode_active()) {
                 global $woocommerce;
-                $_id 	= themename_tbay_random_key();
+                $_id 	= themename_xptheme_random_key();
                 if (!themename_woocommerce_activated() || themename_catalog_mode_active()) {
                     return;
                 } ?>
                     <?php 
                         if( !is_checkout() && !is_cart() ) {
-                            themename_tbay_get_page_templates_parts('device/offcanvas-cart', 'mobile');
+                            themename_xptheme_get_page_templates_parts('device/offcanvas-cart', 'mobile');
                         }
 
                         $data_dropdown = ( is_checkout() || is_cart() ) ? '' : 'data-bs-toggle="offcanvas" data-bs-target="#cart-offcanvas-mobile" aria-controls="cart-offcanvas-mobile"';
                     ?>
-					<div class="tbay-topcart">
+					<div class="xptheme-topcart">
 						<div id="cart-<?php echo esc_attr($_id); ?>" class="cart-dropdown dropdown">
                             <a class="dropdown-toggle mini-cart v2" <?php echo trim($data_dropdown); ?>  href="<?php echo ( is_checkout() ) ? wc_get_cart_url() : 'javascript:void(0);'; ?>">
                                     <i class="tb-icon tb-icon-bag"></i> 
@@ -147,15 +147,15 @@ if (! function_exists('themename_the_search_header_mobile')) {
     {
         ?>
 			<?php
-                $menu_mobile_search 	= themename_tbay_get_config('menu_mobile_search', true);
-        if (!$menu_mobile_search && !themename_tbay_is_home_page()) {
+                $menu_mobile_search 	= themename_xptheme_get_config('menu_mobile_search', true);
+        if (!$menu_mobile_search && !themename_xptheme_is_home_page()) {
             return;
         }
 
-        if ($menu_mobile_search || themename_tbay_is_home_page()) {
+        if ($menu_mobile_search || themename_xptheme_is_home_page()) {
             ?>
 					<div class="search-device"> 
-						<?php themename_tbay_get_page_templates_parts('device/productsearchform', 'mobileheader'); ?>
+						<?php themename_xptheme_get_page_templates_parts('device/productsearchform', 'mobileheader'); ?>
 					</div>
 					<?php
         } ?>
@@ -174,7 +174,7 @@ if (! function_exists('themename_the_search_header_mobile')) {
 if (! function_exists('themename_the_mini_cart_header_mobile')) {
     function themename_the_mini_cart_header_mobile()
     {
-        themename_tbay_get_page_templates_parts('offcanvas-cart', 'right');
+        themename_xptheme_get_page_templates_parts('offcanvas-cart', 'right');
     }
 }
 
@@ -218,8 +218,8 @@ if (! function_exists('themename_top_header_mobile')) {
  * Get Title Page Header Mobile
  * ------------------------------------------------------------------------------------------------
  */
-if (! function_exists('themename_tbay_get_title_page_mobile')) {
-    function themename_tbay_get_title_page_mobile()
+if (! function_exists('themename_xptheme_get_title_page_mobile')) {
+    function themename_xptheme_get_title_page_mobile()
     {
         $output = '';
 
@@ -231,7 +231,7 @@ if (! function_exists('themename_tbay_get_title_page_mobile')) {
             $output     .= '</div>';
         }
         
-        return apply_filters('themename_tbay_get_title_page_mobile', $output, 10);
+        return apply_filters('themename_xptheme_get_title_page_mobile', $output, 10);
     }
 }
 
@@ -244,7 +244,7 @@ if (! function_exists('themename_tbay_get_title_page_mobile')) {
 if (! function_exists('themename_the_title_page_mobile')) {
     function themename_the_title_page_mobile()
     {
-        $output = themename_tbay_get_title_page_mobile();
+        $output = themename_xptheme_get_title_page_mobile();
         echo trim($output);
     }
 }
@@ -254,8 +254,8 @@ if (! function_exists('themename_the_title_page_mobile')) {
  * Get Icon Home Page On Header Mobile
  * ------------------------------------------------------------------------------------------------
  */
-if (! function_exists('themename_tbay_get_icon_home_page_mobile')) {
-    function themename_tbay_get_icon_home_page_mobile()
+if (! function_exists('themename_xptheme_get_icon_home_page_mobile')) {
+    function themename_xptheme_get_icon_home_page_mobile()
     {
         $output 	= '<div class="topbar-icon-home">';
         $output 	.= '<a href="'. esc_url(home_url('/')) .'">';
@@ -263,7 +263,7 @@ if (! function_exists('themename_tbay_get_icon_home_page_mobile')) {
         $output  	.= '</a>';
         $output  	.= '</div>';
         
-        return apply_filters('themename_tbay_get_icon_home_page_mobile', $output, 10);
+        return apply_filters('themename_xptheme_get_icon_home_page_mobile', $output, 10);
     }
 }
 
@@ -276,7 +276,7 @@ if (! function_exists('themename_tbay_get_icon_home_page_mobile')) {
 if (! function_exists('themename_the_icon_home_page_mobile')) {
     function themename_the_icon_home_page_mobile()
     {
-        $ouput = themename_tbay_get_icon_home_page_mobile();
+        $ouput = themename_xptheme_get_icon_home_page_mobile();
         echo trim($ouput);
     }
 }
@@ -291,13 +291,13 @@ if (! function_exists('themename_the_icon_home_page_mobile')) {
 if (! function_exists('themename_the_hook_header_mobile_all_page')) {
     function themename_the_hook_header_mobile_all_page()
     {
-        $always_display_logo 			= themename_tbay_get_config('always_display_logo', true);
+        $always_display_logo 			= themename_xptheme_get_config('always_display_logo', true);
 
         if ($always_display_logo) {
             remove_action('themename_header_mobile_content', 'themename_the_icon_home_page_mobile', 10);
         }
         
-        if ($always_display_logo || themename_tbay_is_home_page()) {
+        if ($always_display_logo || themename_xptheme_is_home_page()) {
             return;
         }
 
@@ -319,8 +319,8 @@ if (! function_exists('themename_the_hook_header_mobile_all_page')) {
  * Get Icon Home Page On Footer Mobile
  * ------------------------------------------------------------------------------------------------
  */
-if (! function_exists('themename_tbay_get_icon_home_footer_mobile')) {
-    function themename_tbay_get_icon_home_footer_mobile()
+if (! function_exists('themename_xptheme_get_icon_home_footer_mobile')) {
+    function themename_xptheme_get_icon_home_footer_mobile()
     {
         $active = (is_front_page()) ? 'active' : '';
 
@@ -331,7 +331,7 @@ if (! function_exists('themename_tbay_get_icon_home_footer_mobile')) {
         $output  .='</a>';
         $output  .='</div>';
         
-        return apply_filters('themename_tbay_get_icon_home_footer_mobile', $output, 10);
+        return apply_filters('themename_xptheme_get_icon_home_footer_mobile', $output, 10);
     }
 }
 
@@ -344,7 +344,7 @@ if (! function_exists('themename_tbay_get_icon_home_footer_mobile')) {
 if (! function_exists('themename_the_icon_home_footer_mobile')) {
     function themename_the_icon_home_footer_mobile()
     {
-        $ouput = themename_tbay_get_icon_home_footer_mobile();
+        $ouput = themename_xptheme_get_icon_home_footer_mobile();
         
         echo trim($ouput);
     }
@@ -355,8 +355,8 @@ if (! function_exists('themename_the_icon_home_footer_mobile')) {
  * Get Icon Wishlist On Footer Mobile
  * ------------------------------------------------------------------------------------------------
  */
-if (! function_exists('themename_tbay_get_icon_wishlist_footer_mobile')) {
-    function themename_tbay_get_icon_wishlist_footer_mobile()
+if (! function_exists('themename_xptheme_get_icon_wishlist_footer_mobile')) {
+    function themename_xptheme_get_icon_wishlist_footer_mobile()
     {
         $output = '';
         
@@ -375,7 +375,7 @@ if (! function_exists('themename_tbay_get_icon_wishlist_footer_mobile')) {
         $output  .='</a>';
         $output  .='</div>';
         
-        return apply_filters('themename_tbay_get_icon_wishlist_footer_mobile', $output, 10);
+        return apply_filters('themename_xptheme_get_icon_wishlist_footer_mobile', $output, 10);
     }
 }
 
@@ -388,7 +388,7 @@ if (! function_exists('themename_tbay_get_icon_wishlist_footer_mobile')) {
 if (! function_exists('themename_the_icon_wishlist_footer_mobile')) {
     function themename_the_icon_wishlist_footer_mobile()
     {
-        $ouput = themename_tbay_get_icon_wishlist_footer_mobile();
+        $ouput = themename_xptheme_get_icon_wishlist_footer_mobile();
         
         echo trim($ouput);
     }
@@ -399,8 +399,8 @@ if (! function_exists('themename_the_icon_wishlist_footer_mobile')) {
  * Get Icon Account On Footer Mobile
  * ------------------------------------------------------------------------------------------------
  */
-if (! function_exists('themename_tbay_get_icon_account_footer_mobile')) {
-    function themename_tbay_get_icon_account_footer_mobile()
+if (! function_exists('themename_xptheme_get_icon_account_footer_mobile')) {
+    function themename_xptheme_get_icon_account_footer_mobile()
     {
         $output = '';
 
@@ -424,7 +424,7 @@ if (! function_exists('themename_tbay_get_icon_account_footer_mobile')) {
 
         $output  .='</div>';
         
-        return apply_filters('themename_tbay_get_icon_account_footer_mobile', $output, 10);
+        return apply_filters('themename_xptheme_get_icon_account_footer_mobile', $output, 10);
     }
 }
 
@@ -437,7 +437,7 @@ if (! function_exists('themename_tbay_get_icon_account_footer_mobile')) {
 if (! function_exists('themename_the_icon_account_footer_mobile')) {
     function themename_the_icon_account_footer_mobile()
     {
-        $ouput = themename_tbay_get_icon_account_footer_mobile();
+        $ouput = themename_xptheme_get_icon_account_footer_mobile();
         
         echo trim($ouput);
     }
@@ -447,9 +447,9 @@ if (! function_exists('themename_the_icon_account_footer_mobile')) {
 if (! function_exists('themename_the_custom_list_menu_icon')) {
     function themename_the_custom_list_menu_icon()
     {
-        $slides = themename_tbay_get_config('mobile_footer_slides');
+        $slides = themename_xptheme_get_config('mobile_footer_slides');
 
-        if (!themename_tbay_get_config('mobile_footer_icon', true) || empty($slides)) {
+        if (!themename_xptheme_get_config('mobile_footer_icon', true) || empty($slides)) {
             return;
         }
 

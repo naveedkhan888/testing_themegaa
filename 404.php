@@ -11,7 +11,7 @@
 *Template Name: 404 Page
 */
 get_header();
-$image = themename_tbay_get_config('img_404');
+$image = themename_xptheme_get_config('img_404');
 if (isset($image['url']) && !empty($image['url'])) {
     $image = $image['url'];
 } else {

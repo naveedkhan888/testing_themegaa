@@ -11,12 +11,12 @@ $countdown_title 		= isset($countdown_title) ? $countdown_title : '';
 
 $countdown 		= isset($countdown) ? $countdown : false;
 $class = array();
-$class_flash_sale = themename_tbay_class_flash_sale($flash_sales);
+$class_flash_sale = themename_xptheme_class_flash_sale($flash_sales);
 array_push($class, $class_flash_sale);
 
 
 ?>
-<div <?php themename_tbay_product_class($class); ?> data-product-id="<?php echo esc_attr($product->get_id()); ?>">
+<div <?php themename_xptheme_product_class($class); ?> data-product-id="<?php echo esc_attr($product->get_id()); ?>">
     <?php do_action( 'themename_content_product_item_before' ); ?>
 	<?php
         /**
@@ -43,13 +43,13 @@ array_push($class, $class_flash_sale);
 				
 				<?php
                     /**
-                    * themename_tbay_after_shop_loop_item_title hook
+                    * themename_xptheme_after_shop_loop_item_title hook
                     *
                     */
-                    do_action('themename_tbay_after_shop_loop_item_title');
+                    do_action('themename_xptheme_after_shop_loop_item_title');
                 ?>
 			
-			<?php themename_tbay_item_deal_ended_flash_sale($flash_sales, $end_date); ?>
+			<?php themename_xptheme_item_deal_ended_flash_sale($flash_sales, $end_date); ?>
 			</figure>
 
             <?php themename_woo_product_time_countdown($countdown, $countdown_title); ?>
@@ -71,11 +71,11 @@ array_push($class, $class_flash_sale);
 		
 		<?php
             /**
-            * tbay_woocommerce_before_content_product hook
+            * xptheme_woocommerce_before_content_product hook
             *
             * @hooked woocommerce_show_product_loop_sale_flash - 10
             */
-            do_action('tbay_woocommerce_before_content_product');
+            do_action('xptheme_woocommerce_before_content_product');
         ?>
 		
 		
@@ -107,11 +107,11 @@ array_push($class, $class_flash_sale);
 
             <?php
                 /**
-                * themename_after_title_tbay_subtitle hook
+                * themename_after_title_xptheme_subtitle hook
                 *
                 * @hooked themename_woo_get_subtitle - 0
                 */
-                do_action('themename_after_title_tbay_subtitle');
+                do_action('themename_after_title_xptheme_subtitle');
             ?>
             
 			<?php
@@ -136,10 +136,10 @@ array_push($class, $class_flash_sale);
             </div>
 
             <?php
-                do_action('themename_tbay_variable_product');
+                do_action('themename_xptheme_variable_product');
             ?>	
 
-            <?php themename_tbay_stock_flash_sale($flash_sales); ?>
+            <?php themename_xptheme_stock_flash_sale($flash_sales); ?>
 			
 			<?php
                 do_action('themename_woo_after_shop_loop_item_caption');

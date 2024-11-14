@@ -11,7 +11,7 @@ use Elementor\Group_Control_Typography;
 class Themename_Elementor_List_Menu extends Themename_Elementor_Widget_Base {
 
     public function get_name() {
-        return 'tbay-list-menu';
+        return 'xptheme-list-menu';
     }
 
     public function get_title() {
@@ -119,7 +119,7 @@ class Themename_Elementor_List_Menu extends Themename_Elementor_Widget_Base {
                 ],
                 'default' => 'left',
                 'selectors' => [
-                    '{{WRAPPER}} .tbay-element-list-menu' => 'text-align: {{VALUE}} !important',
+                    '{{WRAPPER}} .xptheme-element-list-menu' => 'text-align: {{VALUE}} !important',
                 ]
             ]
         );

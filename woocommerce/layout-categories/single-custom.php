@@ -19,7 +19,7 @@
 
 				<div class="item-cat">
 					<?php if (!empty($image)) { ?>
-						<a class="cat-img tbay-image-loaded" href="<?php echo esc_url($cat_link); ?>">
+						<a class="cat-img xptheme-image-loaded" href="<?php echo esc_url($cat_link); ?>">
 							<?php echo wp_get_attachment_image($cat_id, 'full', false, array('alt'=> $cat_name )); ?>
 						</a>
 					<?php } ?>

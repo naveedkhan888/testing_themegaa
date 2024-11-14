@@ -17,7 +17,7 @@
 if (! defined('ABSPATH')) {
     exit;
 }
-$stock_style    = themename_tbay_get_config('single_stock_style', 'style1');
+$stock_style    = themename_xptheme_get_config('single_stock_style', 'style1');
 ?>
 <?php if(  $stock_style === 'style1' || $class === 'out-of-stock' ) : ?>
 <p class="stock <?php echo esc_attr($class); ?>"><?php echo wp_kses_post($availability); ?></p>

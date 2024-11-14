@@ -30,7 +30,7 @@ class Themename_Elementor_Product_Tabs extends Themename_Elementor_Carousel_Base
      */
     public function get_name()
     {
-        return 'tbay-product-tabs';
+        return 'xptheme-product-tabs';
     }
 
     /**
@@ -252,7 +252,7 @@ class Themename_Elementor_Product_Tabs extends Themename_Elementor_Carousel_Base
                 ],
                 'default' => 'flex-start',
                 'selectors' => [
-                    '{{WRAPPER}} .tbay-element-product-tabs > .wrapper-heading-tab > ul, {{WRAPPER}} .tbay-element-product-tabs .heading-tbay-title' => 'justify-content: {{VALUE}};',
+                    '{{WRAPPER}} .xptheme-element-product-tabs > .wrapper-heading-tab > ul, {{WRAPPER}} .xptheme-element-product-tabs .heading-xptheme-title' => 'justify-content: {{VALUE}};',
                 ],
             ]
         );
@@ -411,8 +411,8 @@ class Themename_Elementor_Product_Tabs extends Themename_Elementor_Carousel_Base
                 'label' => esc_html__( 'Background Color', 'themename' ),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .tbay-element-product-tabs .tabs-list > li > a.active:after,
-                    {{WRAPPER}} .tbay-element-product-tabs .tabs-list > li > a:hover:after' => 'background: {{VALUE}};',
+                    '{{WRAPPER}} .xptheme-element-product-tabs .tabs-list > li > a.active:after,
+                    {{WRAPPER}} .xptheme-element-product-tabs .tabs-list > li > a:hover:after' => 'background: {{VALUE}};',
                 ],
                 
             ]
@@ -490,7 +490,7 @@ class Themename_Elementor_Product_Tabs extends Themename_Elementor_Carousel_Base
     {   
         $settings = $this->get_settings_for_display();
         ?>
-        <div class="tbay-addon-content tab-content woocommerce">
+        <div class="xptheme-addon-content tab-content woocommerce">
             <?php $_count = 0;?>
             <?php foreach ($list_product_tabs as $key) {
                     $tab_active = ($_count==0)? 'active active-content current':'';

@@ -25,7 +25,7 @@ if (isset($tab['check_custom_link']) &&  $tab['check_custom_link'] == 'yes' && i
 $have_icon = (isset($iconClass) && $iconClass) ? 'cat-icon' : 'cat-img';
 
 ?>
-<div class="item-cat tbay-image-loaded <?php echo esc_attr($have_icon); ?>">
+<div class="item-cat xptheme-image-loaded <?php echo esc_attr($have_icon); ?>">
 <?php if (isset($tab['images']) && !empty($tab['images'])): ?>
 
     <?php
@@ -45,13 +45,13 @@ $have_icon = (isset($iconClass) && $iconClass) ? 'cat-icon' : 'cat-img';
         <?php if ((isset($shop_now) && $shop_now == 'yes')) { ?>
             <div class="cat-hover">
                 <?php if ($count_item == 'yes') { ?>
-                    <span class="count-item"><?php echo trim($cat_count).' '. apply_filters('themename_tbay_categories_count_item', esc_html__('products', 'themename')); ?></span>
+                    <span class="count-item"><?php echo trim($cat_count).' '. apply_filters('themename_xptheme_categories_count_item', esc_html__('products', 'themename')); ?></span>
                 <?php } ?>
                 <a href="<?php echo esc_url($cat_link); ?>" class="shop-now"><?php echo trim($shop_now_text); ?></a>
             </div>
             <?php } else { ?>
             <?php if ($count_item == 'yes') { ?>
-                <span class="count-item"><?php echo trim($cat_count).' '.apply_filters('themename_tbay_categories_count_item', esc_html__('products', 'themename')); ?></span>
+                <span class="count-item"><?php echo trim($cat_count).' '.apply_filters('themename_xptheme_categories_count_item', esc_html__('products', 'themename')); ?></span>
 
             <?php } ?>      
         <?php } ?>

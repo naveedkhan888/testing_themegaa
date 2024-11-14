@@ -3,7 +3,7 @@
  * Templates Name: Elementor
  * Widget: Account
  */
-$this->add_render_attribute('tbay-login', 'class', 'tbay-login');
+$this->add_render_attribute('xptheme-login', 'class', 'xptheme-login');
 $this->add_render_attribute('sub-menu', 'class', 'account-menu sub-menu');
 $this->add_render_attribute('wrapper', 'class', ['header-icon']);
 
@@ -14,7 +14,7 @@ extract($settings);
 $url_login = apply_filters('themename_woocommerce_my_account_url', get_permalink(wc_get_page_id('myaccount')));
 ?>
     <div <?php $this->print_render_attribute_string('wrapper'); ?>>
-        <div <?php $this->print_render_attribute_string('tbay-login'); ?>>
+        <div <?php $this->print_render_attribute_string('xptheme-login'); ?>>
             <?php
                 if ( is_user_logged_in() ) {
                     ?>

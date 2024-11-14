@@ -28,7 +28,7 @@ class Themename_Elementor_List_Categories_Product extends Themename_Elementor_Ca
      */
     public function get_name()
     {
-        return 'tbay-list-categories-product';
+        return 'xptheme-list-categories-product';
     }
 
     /**
@@ -171,7 +171,7 @@ class Themename_Elementor_List_Categories_Product extends Themename_Elementor_Ca
                 'type'      => Controls_Manager::ICONS,
                 'default' => [
                     'value' => 'tb-icon tb-icon-arrow-right',
-                    'library' => 'tbay-custom',
+                    'library' => 'xptheme-custom',
                 ],
                 'condition' => [
                     'show_all' => 'show'

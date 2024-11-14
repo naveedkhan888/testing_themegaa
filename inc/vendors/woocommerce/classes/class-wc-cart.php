@@ -52,7 +52,7 @@ if (! class_exists('Themename_Cart')) :
                 return;   
             } ?>
 
-            <div id="tbay-cart-popup" class="toast-container position-fixed bottom-0 start-50 m-3 translate-middle-x">
+            <div id="xptheme-cart-popup" class="toast-container position-fixed bottom-0 start-50 m-3 translate-middle-x">
                 <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="1500"> 
                     <div class="d-flex toast-body">
                     </div>
@@ -69,11 +69,11 @@ if (! class_exists('Themename_Cart')) :
 
             $position_array = array("popup", "left", "right", "no-popup");
 
-            $position = themename_tbay_get_config('woo_mini_cart_position', 'popup');
+            $position = themename_xptheme_get_config('woo_mini_cart_position', 'popup');
 
             $position = (isset($_GET['ajax_cart'])) ? $_GET['ajax_cart'] : $position;
 
-            $position =  (!in_array($position, $position_array)) ? themename_tbay_get_config('woo_mini_cart_position', 'popup') : $position;
+            $position =  (!in_array($position, $position_array)) ? themename_xptheme_get_config('woo_mini_cart_position', 'popup') : $position;
 
             return $position;
         }
@@ -97,7 +97,7 @@ if (! class_exists('Themename_Cart')) :
                 return __return_empty_string();
             }
 
-            if (wp_is_mobile() && ! intval(themename_tbay_get_config('enable_buy_now', false))) {
+            if (wp_is_mobile() && ! intval(themename_xptheme_get_config('enable_buy_now', false))) {
                 return __return_empty_string();
             } else {
                 return $message;
@@ -106,7 +106,7 @@ if (! class_exists('Themename_Cart')) :
 
         public function show_cart_mobile()
         {
-            $active = themename_tbay_get_config('enable_add_cart_mobile', false);
+            $active = themename_xptheme_get_config('enable_add_cart_mobile', false);
 
             $active = (isset($_GET['add_cart_mobile'])) ? $_GET['add_cart_mobile'] : $active;
 
@@ -129,12 +129,12 @@ if (! class_exists('Themename_Cart')) :
         public function subtotal_free_shipping_in_cart() {
             $content = $this->subtotal_free_shipping(true);
             if ($content !== '') {
-                echo '<div class="tbay-no-border"><div class="tbay-subtotal_free_shipping">' . ($content) . '</div></div>';
+                echo '<div class="xptheme-no-border"><div class="xptheme-subtotal_free_shipping">' . ($content) . '</div></div>';
             }
         }
 
         public function subtotal_free_shipping( $return = false ) {
-            if ( WC()->cart->is_empty() || !themename_tbay_get_config('show_cart_free_shipping', false) ) {
+            if ( WC()->cart->is_empty() || !themename_xptheme_get_config('show_cart_free_shipping', false) ) {
 				return;
 			}
 
@@ -180,11 +180,11 @@ if (! class_exists('Themename_Cart')) :
                             $spend = intval($min_amount) - intval($current); 
                             $per = (intval($current)/intval($min_amount))*100;
                             
-                            $content .= '<div class="tbay-total-condition-wrap">';
+                            $content .= '<div class="xptheme-total-condition-wrap">';
                             
-                            $content .= '<div class="tbay-total-condition" data-per="' . esc_attr($per) . '">' .
-                                '<span class="tbay-total-condition-hint">' . esc_attr($per) . '%</span>' .
-                                '<div class="tbay-subtotal-condition">' . esc_attr($per) . '%</div>' .
+                            $content .= '<div class="xptheme-total-condition" data-per="' . esc_attr($per) . '">' .
+                                '<span class="xptheme-total-condition-hint">' . esc_attr($per) . '%</span>' .
+                                '<div class="xptheme-subtotal-condition">' . esc_attr($per) . '%</div>' .
                             '</div>';
                             
                             $allowed_html = array(
@@ -200,7 +200,7 @@ if (! class_exists('Themename_Cart')) :
                                 'br' => array()
                             );
                             
-                            $content .= '<div class="tbay-total-condition-desc">' .
+                            $content .= '<div class="xptheme-total-condition-desc">' .
                             sprintf(
                                 wp_kses(__('Spend %s more to reach <strong>FREE SHIPPING!</strong> <br /><span class="hide-in-cart">to add more products to your cart and receive free shipping for order %s.</span>', 'themename'), $allowed_html),
                                 wc_price($spend),
@@ -210,8 +210,8 @@ if (! class_exists('Themename_Cart')) :
                             
                             $content .= '</div>';
 						} else {
-                            $content .= '<div class="tbay-total-condition-wrap">';
-                            $content .= '<div class="tbay-total-condition-desc">';
+                            $content .= '<div class="xptheme-total-condition-wrap">';
+                            $content .= '<div class="xptheme-total-condition-desc">';
                             $content .= sprintf(
                                 esc_html__("Congratulations! You get free shipping with your order greater %s.", 'themename'),
                                 wc_price($min_amount)

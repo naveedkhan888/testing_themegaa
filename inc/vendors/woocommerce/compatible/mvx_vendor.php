@@ -9,7 +9,7 @@ update_option('is_enable_store_sidebar_position', false);
 if (!function_exists('themename_mvx_vendor_name')) {
     function themename_mvx_vendor_name()
     {
-        $active = themename_tbay_get_config('show_vendor_name', true);
+        $active = themename_xptheme_get_config('show_vendor_name', true);
 
         if (!$active) {
             return;
@@ -44,8 +44,8 @@ if (!function_exists('themename_mvx_vendor_name')) {
 }
 
 /*Get title My Account in top bar mobile*/
-if (! function_exists('themename_tbay_mvx_get_title_mobile')) {
-    function themename_tbay_mvx_get_title_mobile($title = '')
+if (! function_exists('themename_xptheme_mvx_get_title_mobile')) {
+    function themename_xptheme_mvx_get_title_mobile($title = '')
     {
         if (themename_woo_is_vendor_page()) {
             $vendor_id  = get_queried_object()->term_id;
@@ -56,11 +56,11 @@ if (! function_exists('themename_tbay_mvx_get_title_mobile')) {
 
         return $title;
     }
-    add_filter('themename_get_filter_title_mobile', 'themename_tbay_mvx_get_title_mobile');
+    add_filter('themename_get_filter_title_mobile', 'themename_xptheme_mvx_get_title_mobile');
 }
 
-if (! function_exists('themename_tbay_mvx_description')) {
-    function themename_tbay_mvx_description($description)
+if (! function_exists('themename_xptheme_mvx_description')) {
+    function themename_xptheme_mvx_description($description)
     {
         global $MVX;
 
@@ -76,7 +76,7 @@ if (! function_exists('themename_tbay_mvx_description')) {
 
         return $description;
     }
-    add_filter('the_content', 'themename_tbay_mvx_description', 10, 1);
+    add_filter('the_content', 'themename_xptheme_mvx_description', 10, 1);
 }
 
 /*Fix WCMP 3.7*/

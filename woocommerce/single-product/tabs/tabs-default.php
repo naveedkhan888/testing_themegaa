@@ -13,13 +13,13 @@ if (! empty($product_tabs)) : ?>
 	<div id="woocommerce-tabs" class="woocommerce-tabs wc-tabs-wrapper">
 		<ul class="tabs wc-tabs nav nav-tabs" role="tablist">
 			<?php foreach ($product_tabs as $key => $product_tab) : ?>
-				<li class="<?php echo esc_attr($key); ?>_tab" id="tbay-wc-tab-<?php echo esc_attr($key); ?>" role="tab" aria-controls="tab-<?php echo esc_attr($key); ?>">
+				<li class="<?php echo esc_attr($key); ?>_tab" id="xptheme-wc-tab-<?php echo esc_attr($key); ?>" role="tab" aria-controls="tab-<?php echo esc_attr($key); ?>">
 					<a href="#tab-<?php echo esc_attr($key); ?>"><?php echo apply_filters('woocommerce_product_' . esc_html($key) . '_tab_title', esc_html($product_tab['title']), $key); ?></a>
 				</li>
 			<?php endforeach; ?>
 		</ul>
 		<?php foreach ($product_tabs as $key => $product_tab) : ?>
-			<div class="woocommerce-Tabs-panel woocommerce-Tabs-panel--<?php echo esc_attr($key); ?> panel entry-content wc-tab" id="tab-<?php echo esc_attr($key); ?>" role="tabpanel" aria-labelledby="tbay-wc-tab-<?php echo esc_attr($key); ?>">
+			<div class="woocommerce-Tabs-panel woocommerce-Tabs-panel--<?php echo esc_attr($key); ?> panel entry-content wc-tab" id="tab-<?php echo esc_attr($key); ?>" role="tabpanel" aria-labelledby="xptheme-wc-tab-<?php echo esc_attr($key); ?>">
 				<?php if (isset($product_tab['callback'])) {
     				call_user_func($product_tab['callback'], $key, $product_tab);
 				} ?>

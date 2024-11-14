@@ -22,7 +22,7 @@ if (! function_exists('wc_get_gallery_image_html')) {
     return;
 }
 
-$sidebar_configs    = themename_tbay_get_woocommerce_layout_configs();
+$sidebar_configs    = themename_xptheme_get_woocommerce_layout_configs();
 $images_layout      = ( !empty($sidebar_configs['thumbnail']) ) ? $sidebar_configs['thumbnail'] : 'horizontal';
 
 

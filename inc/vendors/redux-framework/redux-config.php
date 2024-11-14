@@ -6,7 +6,7 @@
 
 if ( !themename_redux_framework_activated() )  return;
 
-$opt_name = 'themename_tbay_theme_options';
+$opt_name = 'themename_xptheme_theme_options';
 
 $theme = wp_get_theme();
 

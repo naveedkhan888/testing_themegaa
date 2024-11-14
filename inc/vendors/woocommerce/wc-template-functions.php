@@ -1,8 +1,8 @@
 <?php
 if ( !themename_woocommerce_activated() ) return;
 
-if (!function_exists('themename_tbay_get_woocommerce_mini_cart')) {
-    function themename_tbay_get_woocommerce_mini_cart($args = array())
+if (!function_exists('themename_xptheme_get_woocommerce_mini_cart')) {
+    function themename_xptheme_get_woocommerce_mini_cart($args = array())
     {
         $args = wp_parse_args(
             $args,
@@ -28,10 +28,10 @@ if (!function_exists('themename_tbay_get_woocommerce_mini_cart')) {
     }
 }
 
-if (!function_exists('themename_tbay_woocommerce_get_cookie_display_mode')) {
-    function themename_tbay_woocommerce_get_cookie_display_mode()
+if (!function_exists('themename_xptheme_woocommerce_get_cookie_display_mode')) {
+    function themename_xptheme_woocommerce_get_cookie_display_mode()
     {
-        $woo_mode = themename_tbay_get_config('product_display_mode', 'grid');
+        $woo_mode = themename_xptheme_get_config('product_display_mode', 'grid');
 
         if (isset($_COOKIE['themename_display_mode']) && $_COOKIE['themename_display_mode'] == 'grid') {
             $woo_mode = 'grid';
@@ -45,10 +45,10 @@ if (!function_exists('themename_tbay_woocommerce_get_cookie_display_mode')) {
     }
 }
 
-if (!function_exists('themename_tbay_woocommerce_get_display_mode')) {
-    function themename_tbay_woocommerce_get_display_mode()
+if (!function_exists('themename_xptheme_woocommerce_get_display_mode')) {
+    function themename_xptheme_woocommerce_get_display_mode()
     {
-        $woo_mode = themename_tbay_woocommerce_get_cookie_display_mode();
+        $woo_mode = themename_xptheme_woocommerce_get_cookie_display_mode();
 
         if (isset($_GET['display_mode']) && $_GET['display_mode'] == 'grid') {
             $woo_mode = 'grid';
@@ -107,8 +107,8 @@ if (!function_exists('themename_is_check_hidden_filter')) {
 
 
 // get layout configs
-if (!function_exists('themename_tbay_get_woocommerce_layout_configs')) {
-    function themename_tbay_get_woocommerce_layout_configs() {
+if (!function_exists('themename_xptheme_get_woocommerce_layout_configs')) {
+    function themename_xptheme_get_woocommerce_layout_configs() {
         if(function_exists('dokan_is_store_page') && dokan_is_store_page() ) {
             return;
         }
@@ -119,11 +119,11 @@ if (!function_exists('themename_tbay_get_woocommerce_layout_configs')) {
             $page = 'product_single_sidebar';
         }
 
-        $sidebar = themename_tbay_get_config($page);
+        $sidebar = themename_xptheme_get_config($page);
 
 
         if (!is_singular('product')) {
-            $product_archive_layout  =   (isset($_GET['product_archive_layout'])) ? $_GET['product_archive_layout'] : themename_tbay_get_config('product_archive_layout', 'shop-left');
+            $product_archive_layout  =   (isset($_GET['product_archive_layout'])) ? $_GET['product_archive_layout'] : themename_xptheme_get_config('product_archive_layout', 'shop-left');
 
 
             if (themename_woo_is_mvx_vendor_store()) {
@@ -141,11 +141,11 @@ if (!function_exists('themename_tbay_get_woocommerce_layout_configs')) {
             if (isset($product_archive_layout)) {
                 switch ($product_archive_layout) {
                     case 'shop-left':
-                        $configs['sidebar'] = array( 'id'  => $sidebar, 'class' => 'tbay-sidebar-shop col-12 col-xl-3'  );
+                        $configs['sidebar'] = array( 'id'  => $sidebar, 'class' => 'xptheme-sidebar-shop col-12 col-xl-3'  );
                         $configs['main']    = array( 'class'    => 'col-12 col-xl-9' );
                         break;
                     case 'shop-right':
-                        $configs['sidebar'] = array( 'id' => $sidebar,  'class' => 'tbay-sidebar-shop col-12 col-xl-3' );
+                        $configs['sidebar'] = array( 'id' => $sidebar,  'class' => 'xptheme-sidebar-shop col-12 col-xl-3' );
                         $configs['main']    = array( 'class'    => 'col-12 col-xl-9' );
                         break;
                     default:
@@ -166,7 +166,7 @@ if (!function_exists('themename_tbay_get_woocommerce_layout_configs')) {
                 $class_main = 'col-12 col-xl-9';
                 $class_sidebar = 'col-12 col-xl-3';
 
-                $sidebar = themename_tbay_get_config('product_single_sidebar', 'product-single');
+                $sidebar = themename_xptheme_get_config('product_single_sidebar', 'product-single');
             }
             if (isset($product_single_layout)) {
                 switch ($product_single_layout) {
@@ -246,19 +246,19 @@ if (!function_exists('themename_class_wrapper_start')) {
 
         if( function_exists('dokan_is_store_page') && dokan_is_store_page() ) return $configs;
 
-        $sidebar_configs                    = themename_tbay_get_woocommerce_layout_configs();
+        $sidebar_configs                    = themename_xptheme_get_woocommerce_layout_configs();
         $configs['content']                 = themename_add_cssclass($configs['content'], $sidebar_configs['main']['class']);
 
         if (!is_product()) {
             $configs['content']  = themename_add_cssclass($configs['content'], 'archive-shop');
-            $class_main         =  (isset($_GET['product_archive_layout'])) ? $_GET['product_archive_layout'] : themename_tbay_get_config('product_archive_layout', 'shop-left');
+            $class_main         =  (isset($_GET['product_archive_layout'])) ? $_GET['product_archive_layout'] : themename_xptheme_get_config('product_archive_layout', 'shop-left');
 
 
             $configs['main']  = themename_add_cssclass($configs['main'], $class_main);
         } elseif (is_product()) {
             $configs['content']  = themename_add_cssclass($configs['content'], 'singular-shop');
 
-            $class_main         =  (isset($_GET['product_single_layout']))   ?   $_GET['product_single_layout'] :  themename_tbay_get_config('product_single_layout', 'horizontal-bottom');
+            $class_main         =  (isset($_GET['product_single_layout']))   ?   $_GET['product_single_layout'] :  themename_xptheme_get_config('product_single_layout', 'horizontal-bottom');
 
 
             $configs['main']  = themename_add_cssclass($configs['main'], $class_main);
@@ -368,7 +368,7 @@ if (! function_exists('themename_is_product_variable_sale')) {
 
         $class =  '';
         if ($product->is_type('variable') && $product->is_on_sale()) {
-            $class = 'tbay-variable-sale';
+            $class = 'xptheme-variable-sale';
         }
         
         return $class;
@@ -378,7 +378,7 @@ if (! function_exists('themename_is_product_variable_sale')) {
 if (! function_exists('themename_woo_content_class')) {
     function themename_woo_content_class($class = '')
     {
-        $sidebar_configs = themename_tbay_get_woocommerce_layout_configs();
+        $sidebar_configs = themename_xptheme_get_woocommerce_layout_configs();
 
         if (!(isset($sidebar_configs['right']) && is_active_sidebar($sidebar_configs['right']['sidebar'])) && !(isset($sidebar_configs['left']) && is_active_sidebar($sidebar_configs['left']['sidebar']))) {
             $class .= ' col-12';
@@ -474,7 +474,7 @@ if (! function_exists('themename_the_yith_wishlist')) {
             return;
         }
 
-        $active         = themename_tbay_get_config('enable_wishlist_mobile', false);
+        $active         = themename_xptheme_get_config('enable_wishlist_mobile', false);
         
         $class_mobile   = ($active) ? 'shown-mobile' : '';
 
@@ -488,13 +488,13 @@ if (! function_exists('themename_the_yith_wishlist')) {
  * ------------------------------------------------------------------------------------------------
  */
 
-if (! function_exists('themename_tbay_class_flash_sale')) {
-    function themename_tbay_class_flash_sale($flash_sales)
+if (! function_exists('themename_xptheme_class_flash_sale')) {
+    function themename_xptheme_class_flash_sale($flash_sales)
     {
         global $product;
 
         if (isset($flash_sales) && $flash_sales) {
-            $class_sale    = (!$product->is_on_sale()) ? 'tbay-not-flash-sale' : '';
+            $class_sale    = (!$product->is_on_sale()) ? 'xptheme-not-flash-sale' : '';
             return $class_sale;
         }
     }
@@ -506,8 +506,8 @@ if (! function_exists('themename_tbay_class_flash_sale')) {
  * ------------------------------------------------------------------------------------------------
  */
 
-if (! function_exists('themename_tbay_item_deal_ended_flash_sale')) {
-    function themename_tbay_item_deal_ended_flash_sale($flash_sales, $end_date)
+if (! function_exists('themename_xptheme_item_deal_ended_flash_sale')) {
+    function themename_xptheme_item_deal_ended_flash_sale($flash_sales, $end_date)
     {
         global $product;
     
@@ -534,10 +534,10 @@ if (! function_exists('themename_tbay_item_deal_ended_flash_sale')) {
  * The Count Down Flash Sale
  * ------------------------------------------------------------------------------------------------
  */
-if (!function_exists('themename_tbay_label_flash_sale')) {
-    function themename_tbay_label_flash_sale()
+if (!function_exists('themename_xptheme_label_flash_sale')) {
+    function themename_xptheme_label_flash_sale()
     {
-        if ( !themename_tbay_get_config('enable_text_time_coutdown', false) ) {
+        if ( !themename_xptheme_get_config('enable_text_time_coutdown', false) ) {
             $dates = array(
                 'days' => '',
                 'hours' => '',
@@ -546,25 +546,25 @@ if (!function_exists('themename_tbay_label_flash_sale')) {
             );
         } else {
             $dates = array(
-                'days' => apply_filters('themename_tbay_countdown_flash_sale_day', '<span class="label">'. esc_html__('days', 'themename') .'</span>'),
-                'hours' => apply_filters('themename_tbay_countdown_flash_sale_hour', '<span class="label">'. esc_html__('hours', 'themename') .'</span>'),
-                'mins' => apply_filters('themename_tbay_countdown_flash_sale_mins', '<span class="label">'. esc_html__('mins', 'themename') .'</span>'),
-                'secs' => apply_filters('themename_tbay_countdown_flash_sale_secs', '<span class="label">'. esc_html__('secs', 'themename') .'</span>'),
+                'days' => apply_filters('themename_xptheme_countdown_flash_sale_day', '<span class="label">'. esc_html__('days', 'themename') .'</span>'),
+                'hours' => apply_filters('themename_xptheme_countdown_flash_sale_hour', '<span class="label">'. esc_html__('hours', 'themename') .'</span>'),
+                'mins' => apply_filters('themename_xptheme_countdown_flash_sale_mins', '<span class="label">'. esc_html__('mins', 'themename') .'</span>'),
+                'secs' => apply_filters('themename_xptheme_countdown_flash_sale_secs', '<span class="label">'. esc_html__('secs', 'themename') .'</span>'),
 
             );
         }
         return $dates;
     }
 }
-if (!function_exists('themename_tbay_countdown_flash_sale')) {
-    function themename_tbay_countdown_flash_sale($time_sale = '', $date_title = '', $date_title_ended = '', $strtotime = false)
+if (!function_exists('themename_xptheme_countdown_flash_sale')) {
+    function themename_xptheme_countdown_flash_sale($time_sale = '', $date_title = '', $date_title_ended = '', $strtotime = false)
     {
         wp_enqueue_script('jquery-countdowntimer');
-        $_id        = themename_tbay_random_key();
+        $_id        = themename_xptheme_random_key();
 
         $today      = strtotime("today");
        
-        $dates = themename_tbay_label_flash_sale();
+        $dates = themename_xptheme_label_flash_sale();
         $days = $dates['days'];
         $hours = $dates['hours'];
         $mins = $dates['mins'];
@@ -578,8 +578,8 @@ if (!function_exists('themename_tbay_countdown_flash_sale')) {
                     <?php if (isset($date_title) && !empty($date_title)) :  ?>
                         <div class="date-title"><?php echo trim($date_title); ?></div>
                     <?php endif; ?>
-                    <div class="time <?php echo ( themename_tbay_get_config('enable_text_time_coutdown', false) ) ? 'label-coutdown' : '';?>">
-                        <div class="tbay-countdown" id="tbay-flash-sale-<?php echo esc_attr($_id); ?>" data-time="timmer"
+                    <div class="time <?php echo ( themename_xptheme_get_config('enable_text_time_coutdown', false) ) ? 'label-coutdown' : '';?>">
+                        <div class="xptheme-countdown" id="xptheme-flash-sale-<?php echo esc_attr($_id); ?>" data-time="timmer"
                              data-date="<?php echo date('m', $time_sale).'-'.date('d', $time_sale).'-'.date('Y', $time_sale).'-'. date('H', $time_sale) . '-' . date('i', $time_sale) . '-' .  date('s', $time_sale) ; ?>" data-days="<?php echo esc_attr($days); ?>" data-hours="<?php echo esc_attr($hours); ?>" data-mins="<?php echo esc_attr($mins); ?>" data-secs="<?php echo esc_attr($secs); ?>" >
                         </div>
                     </div>
@@ -600,8 +600,8 @@ if (!function_exists('themename_tbay_countdown_flash_sale')) {
  * The Count Down Flash Sale
  * ------------------------------------------------------------------------------------------------
  */
-if (!function_exists('themename_tbay_stock_flash_sale')) {
-    function themename_tbay_stock_flash_sale($flash_sales = '')
+if (!function_exists('themename_xptheme_stock_flash_sale')) {
+    function themename_xptheme_stock_flash_sale($flash_sales = '')
     {
         global $product;
 
@@ -641,7 +641,7 @@ if (!function_exists('themename_tbay_stock_flash_sale')) {
 if (! function_exists('themename_the_product_name')) {
     function themename_the_product_name()
     {
-        $active         = themename_tbay_get_config('enable_one_name_mobile', false);
+        $active         = themename_xptheme_get_config('enable_one_name_mobile', false);
 
         $class_mobile   = ($active) ? 'full_name' : ''; 
 
@@ -738,8 +738,8 @@ if (! function_exists('themename_custom_product_get_rating_html')) {
  * Mini cart Button
  * ------------------------------------------------------------------------------------------------
  */
-if (!function_exists('themename_tbay_minicart_button')) {
-    function themename_tbay_minicart_button($icon, $enable_text, $text, $enable_price)
+if (!function_exists('themename_xptheme_minicart_button')) {
+    function themename_xptheme_minicart_button($icon, $enable_text, $text, $enable_price)
     {
         global $woocommerce; ?>
 
@@ -782,19 +782,19 @@ if (!function_exists('themename_woo_product_time_countdown')) {
 
         wp_enqueue_script('jquery-countdowntimer');
         $time_sale = get_post_meta($product->get_id(), '_sale_price_dates_to', true);
-        $_id = themename_tbay_random_key();
-        $dates = themename_tbay_label_flash_sale();
+        $_id = themename_xptheme_random_key();
+        $dates = themename_xptheme_label_flash_sale();
         $days = $dates['days'];
         $hours = $dates['hours'];
         $mins = $dates['mins'];
         $secs = $dates['secs']; ?>
         <?php if ($time_sale): ?>
-            <div class="time <?php echo ( themename_tbay_get_config('enable_text_time_coutdown', false) ) ? 'label-coutdown' : '';?>">
+            <div class="time <?php echo ( themename_xptheme_get_config('enable_text_time_coutdown', false) ) ? 'label-coutdown' : '';?>">
                 <div class="timming">
                     <?php if (isset($countdown_title) && !empty($countdown_title)) :  ?>
                         <div class="date-title"><?php echo trim($countdown_title); ?></div>
                     <?php endif; ?>
-                    <div class="tbay-countdown" id="tbay-flash-sale-<?php echo esc_attr($_id); ?>" data-time="timmer" data-date="<?php echo date('m', $time_sale).'-'.date('d', $time_sale).'-'.date('Y', $time_sale).'-'. date('H', $time_sale) . '-' . date('i', $time_sale) . '-' .  date('s', $time_sale) ; ?>" data-days="<?php echo esc_attr($days); ?>" data-hours="<?php echo esc_attr($hours); ?>" data-mins="<?php echo esc_attr($mins); ?>" data-secs="<?php echo esc_attr($secs); ?>">
+                    <div class="xptheme-countdown" id="xptheme-flash-sale-<?php echo esc_attr($_id); ?>" data-time="timmer" data-date="<?php echo date('m', $time_sale).'-'.date('d', $time_sale).'-'.date('Y', $time_sale).'-'. date('H', $time_sale) . '-' . date('i', $time_sale) . '-' .  date('s', $time_sale) ; ?>" data-days="<?php echo esc_attr($days); ?>" data-hours="<?php echo esc_attr($hours); ?>" data-mins="<?php echo esc_attr($mins); ?>" data-secs="<?php echo esc_attr($secs); ?>">
                     </div>
                 </div>
             </div> 
@@ -842,26 +842,26 @@ if (! function_exists('themename_get_single_select_layout')) {
     {
         $custom = get_post_meta(get_the_ID(), '_themename_single_layout_select', true);
 
-        return empty($custom) ? themename_tbay_get_config('product_single_layout', 'horizontal-bottom') : $custom;
+        return empty($custom) ? themename_xptheme_get_config('product_single_layout', 'horizontal-bottom') : $custom;
     }
 }
 
-if (!function_exists('themename_tbay_minicart')) {
-    function themename_tbay_minicart()
+if (!function_exists('themename_xptheme_minicart')) {
+    function themename_xptheme_minicart()
     {
-        $template = apply_filters('themename_tbay_minicart_version', '');
+        $template = apply_filters('themename_xptheme_minicart_version', '');
         get_template_part('woocommerce/cart/mini-cart-button', $template);
     }
 }
 
-if (!function_exists('themename_tbay_display_custom_tab_builder')) {
-    function themename_tbay_display_custom_tab_builder($tabs)
+if (!function_exists('themename_xptheme_display_custom_tab_builder')) {
+    function themename_xptheme_display_custom_tab_builder($tabs)
     {
         global $tabs_builder;
         $tabs_builder = true;
         $args = array(
             'name'        => $tabs,
-            'post_type'   => 'tbay_customtab',
+            'post_type'   => 'xptheme_customtab',
             'post_status' => 'publish',
             'numberposts' => 1
         );
@@ -985,7 +985,7 @@ if (! function_exists('themename_get_yt_video_id')) {
 if (! function_exists('themename_get_product_menu_bar')) {
     function themename_get_product_menu_bar()
     {
-        $menu_bar   = themename_tbay_get_config('enable_sticky_menu_bar', false);
+        $menu_bar   = themename_xptheme_get_config('enable_sticky_menu_bar', false);
 
         if (isset($_GET['sticky_menu_bar'])) {
             $menu_bar = $_GET['sticky_menu_bar'];
@@ -1018,7 +1018,7 @@ if ( ! function_exists( 'themename_woocommerce_quantity_mode_active' ) ) {
 
         if( $catalog_mode ) return false;
 
-        $active = themename_tbay_get_config('enable_woocommerce_quantity_mode', false);
+        $active = themename_xptheme_get_config('enable_woocommerce_quantity_mode', false);
 
         $active = (isset($_GET['quantity_mode'])) ? $_GET['quantity_mode'] : $active;
 
@@ -1115,7 +1115,7 @@ if ( ! function_exists( 'themename_woocommerce_add_quantity_mode_list' ) ) {
 if (! function_exists('themename_woocommerce_cart_item_name')) {
     function themename_woocommerce_cart_item_name($name, $cart_item, $cart_item_key)
     {
-        if ( !themename_tbay_get_config('show_checkout_image', true) || !is_checkout()) {
+        if ( !themename_xptheme_get_config('show_checkout_image', true) || !is_checkout()) {
             return $name;
         }
 
@@ -1138,10 +1138,10 @@ if (! function_exists('themename_woocommerce_get_product_category')) {
     }
 }
 
-if (!function_exists('themename_tbay_woocommerce_full_width_product_archives')) {
-    function themename_tbay_woocommerce_full_width_product_archives($active)
+if (!function_exists('themename_xptheme_woocommerce_full_width_product_archives')) {
+    function themename_xptheme_woocommerce_full_width_product_archives($active)
     {
-        $active = (isset($_GET['product_archive_layout'])) ? $_GET['product_archive_layout'] : themename_tbay_get_config('product_archive_layout', 'full-width');
+        $active = (isset($_GET['product_archive_layout'])) ? $_GET['product_archive_layout'] : themename_xptheme_get_config('product_archive_layout', 'full-width');
 
         if ($active === 'full-width') {
             $active = true;
@@ -1151,7 +1151,7 @@ if (!function_exists('themename_tbay_woocommerce_full_width_product_archives')) 
 
         return $active;
     }
-    add_filter('themename_woo_width_product_archives', 'themename_tbay_woocommerce_full_width_product_archives');
+    add_filter('themename_woo_width_product_archives', 'themename_xptheme_woocommerce_full_width_product_archives');
 }
 
 
@@ -1177,7 +1177,7 @@ if (!function_exists('themename_add_image_sizes_wvs')) {
 if (!function_exists('themename_get_mobile_form_cart_style')) {
     function themename_get_mobile_form_cart_style()
     {
-        $ouput = (!empty(themename_tbay_get_config('mobile_form_cart_style', 'default'))) ? themename_tbay_get_config('mobile_form_cart_style', 'default') : 'default';
+        $ouput = (!empty(themename_xptheme_get_config('mobile_form_cart_style', 'default'))) ? themename_xptheme_get_config('mobile_form_cart_style', 'default') : 'default';
     
         return $ouput;
     }
@@ -1189,7 +1189,7 @@ if (!function_exists('themename_open_woocommerce_catalog_ordering')) {
     {
         if( !themename_is_show_woo_catalog_ordering() ) return;
 
-        echo '<div class="tbay-ordering"><span>'. esc_html__('Sort by:', 'themename') .'</span>';
+        echo '<div class="xptheme-ordering"><span>'. esc_html__('Sort by:', 'themename') .'</span>';
     }
     add_action('woocommerce_before_shop_loop', 'themename_open_woocommerce_catalog_ordering', 29);
 }
@@ -1227,21 +1227,21 @@ if (! function_exists('themename_compatible_checkout_order')) {
 }
 
 /*Get display product nav*/
-if ( !function_exists('themename_tbay_woocommerce_product_nav_display_mode') ) {
-    function themename_tbay_woocommerce_product_nav_display_mode($mode) {
+if ( !function_exists('themename_xptheme_woocommerce_product_nav_display_mode') ) {
+    function themename_xptheme_woocommerce_product_nav_display_mode($mode) {
         $mode = 'icon';
 
         $mode = (isset($_GET['display_nav_mode'])) ? $_GET['display_nav_mode'] : $mode;
 
         return $mode;
     }
-    add_filter( 'themename_woo_nav_display_mode', 'themename_tbay_woocommerce_product_nav_display_mode' );
+    add_filter( 'themename_woo_nav_display_mode', 'themename_xptheme_woocommerce_product_nav_display_mode' );
 }
 
 /*Product nav icon*/
 if ( !function_exists('themename_woo_product_nav_icon') ) {
     function themename_woo_product_nav_icon(){
-          if ( themename_tbay_get_config('show_product_nav', false) ) {
+          if ( themename_xptheme_get_config('show_product_nav', false) ) {
   
               $display_mode = apply_filters( 'themename_woo_nav_display_mode', 10,2 );
   
@@ -1570,7 +1570,7 @@ if (!function_exists('themename_single_product_stock_style2')) {
                 <div class="stock-bottom">
                     <div class="tb-available"><span class="stock-label"><?php esc_html_e('Available', 'themename'); ?>:</span> <span class="stock-value"><?php echo esc_html($stock_amount) ?></span></div>
 
-                    <?php if( themename_tbay_get_config('enable_total_sales', true) && $_product->get_type() !== 'external' ) : ?>
+                    <?php if( themename_xptheme_get_config('enable_total_sales', true) && $_product->get_type() !== 'external' ) : ?>
                         <div class="tb-sold"><span class="stock-label"><?php esc_html_e('Sold', 'themename'); ?>:</span> <span class="stock-value"><?php echo esc_html($total_sales) ?></span></div>
                     <?php endif; ?>
                 </div>
@@ -1583,7 +1583,7 @@ if ( ! function_exists( 'themename_product_active_button_popup_groups' ) ) {
 	function themename_product_active_button_popup_groups( $product_id ) {
 		$active = false;
 
-		$aska_question          = maybe_unserialize(themename_tbay_get_config('single_aska_question'));
+		$aska_question          = maybe_unserialize(themename_xptheme_get_config('single_aska_question'));
 
         if( !empty($aska_question) ) return true;
 
@@ -1592,7 +1592,7 @@ if ( ! function_exists( 'themename_product_active_button_popup_groups' ) ) {
         if( !empty($delivery_return_type) && $delivery_return_type !== 'global' ) {
             $delivery_return          = maybe_unserialize(get_post_meta($product_id, '_themename_delivery_return', true));
         } else {
-            $delivery_return          = maybe_unserialize(themename_tbay_get_config('single_delivery_return'));
+            $delivery_return          = maybe_unserialize(themename_xptheme_get_config('single_delivery_return'));
         }
 
 		if( !empty($delivery_return) ) return true;
@@ -1602,7 +1602,7 @@ if ( ! function_exists( 'themename_product_active_button_popup_groups' ) ) {
 		if( !empty($size_guide_type) && $size_guide_type !== 'global' ) {
             $size_guide          = maybe_unserialize(get_post_meta($product_id, '_themename_size_guide', true));
         } else {
-            $size_guide          = maybe_unserialize(themename_tbay_get_config('single_size_guide'));
+            $size_guide          = maybe_unserialize(themename_xptheme_get_config('single_size_guide'));
         } 
 
         if( !empty($size_guide) ) return true;
@@ -1619,7 +1619,7 @@ if ( ! function_exists( 'themename_product_popup_group_buttons' ) ) {
 
         if( !themename_product_active_button_popup_groups($product_id) ) return; 
         ?>
-        <ul class="tbay-button-popup-wrap">
+        <ul class="xptheme-button-popup-wrap">
         <?php 
             themename_the_size_guide($product_id); 
             themename_the_delivery_return($product_id);
@@ -1632,9 +1632,9 @@ if ( ! function_exists( 'themename_product_popup_group_buttons' ) ) {
 
 if ( ! function_exists( 'themename_html_before_add_to_cart_button' ) ) {
     function themename_html_before_add_to_cart_button() {
-        $content = themename_tbay_get_config('html_before_add_to_cart_btn');
+        $content = themename_xptheme_get_config('html_before_add_to_cart_btn');
         if( !empty($content) ) {
-            echo '<div class="tbay-before-add-to-cart-btn">'. do_shortcode($content) .'</div>';
+            echo '<div class="xptheme-before-add-to-cart-btn">'. do_shortcode($content) .'</div>';
         }
     }
 }
@@ -1642,9 +1642,9 @@ if ( ! function_exists( 'themename_html_before_add_to_cart_button' ) ) {
 if ( ! function_exists( 'themename_html_after_add_to_cart_button' ) ) {
     function themename_html_after_add_to_cart_button()
     {
-        $content = themename_tbay_get_config('html_after_add_to_cart_btn');
+        $content = themename_xptheme_get_config('html_after_add_to_cart_btn');
         if( !empty($content) ) {
-            echo '<div class="tbay-after-add-to-cart-btn">'. do_shortcode($content) .'</div>';
+            echo '<div class="xptheme-after-add-to-cart-btn">'. do_shortcode($content) .'</div>';
         }
     }
 }
@@ -1652,9 +1652,9 @@ if ( ! function_exists( 'themename_html_after_add_to_cart_button' ) ) {
 if ( ! function_exists( 'themename_html_before_inner_product_summary' ) ) {
     function themename_html_before_inner_product_summary()
     {
-        $content = themename_tbay_get_config('html_before_inner_product_summary');
+        $content = themename_xptheme_get_config('html_before_inner_product_summary');
         if( !empty($content) ) {
-            echo '<div class="tbay-before-inner-product-summary">'. do_shortcode($content) .'</div>';
+            echo '<div class="xptheme-before-inner-product-summary">'. do_shortcode($content) .'</div>';
         }
     }
 }
@@ -1662,9 +1662,9 @@ if ( ! function_exists( 'themename_html_before_inner_product_summary' ) ) {
 if ( ! function_exists( 'themename_html_after_inner_product_summary' ) ) {
     function themename_html_after_inner_product_summary()
     {
-        $content = themename_tbay_get_config('html_after_inner_product_summary');
+        $content = themename_xptheme_get_config('html_after_inner_product_summary');
         if( !empty($content) ) {
-            echo '<div class="tbay-after-inner-product-summary">'. do_shortcode($content) .'</div>';
+            echo '<div class="xptheme-after-inner-product-summary">'. do_shortcode($content) .'</div>';
         }
     }
 }
@@ -1672,9 +1672,9 @@ if ( ! function_exists( 'themename_html_after_inner_product_summary' ) ) {
 if ( ! function_exists( 'themename_html_before_product_summary' ) ) {
     function themename_html_before_product_summary()
     {
-        $content = themename_tbay_get_config('html_before_product_summary');
+        $content = themename_xptheme_get_config('html_before_product_summary');
         if( !empty($content) ) {
-            echo '<div class="tbay-before-product-summary">'. do_shortcode($content) . '</div>';
+            echo '<div class="xptheme-before-product-summary">'. do_shortcode($content) . '</div>';
         }
     }
 }
@@ -1682,9 +1682,9 @@ if ( ! function_exists( 'themename_html_before_product_summary' ) ) {
 if ( ! function_exists( 'themename_html_after_product_summary' ) ) {
     function themename_html_after_product_summary()
     {
-        $content = themename_tbay_get_config('html_after_product_summary');
+        $content = themename_xptheme_get_config('html_after_product_summary');
         if( !empty($content) ) {
-            echo '<div class="tbay-after-product-summary">'. do_shortcode($content) .'</div>';
+            echo '<div class="xptheme-after-product-summary">'. do_shortcode($content) .'</div>';
         }
     }
 }
@@ -1693,7 +1693,7 @@ if ( ! function_exists( 'themename_woocommerce_checkout_cart_item_quantity_filte
     add_filter( 'woocommerce_checkout_cart_item_quantity', 'themename_woocommerce_checkout_cart_item_quantity_filter', 1, 3 ); 
     function themename_woocommerce_checkout_cart_item_quantity_filter( $html, $cart_item, $cart_item_key ){
         
-        if( themename_tbay_get_config('show_checkout_quantity', false) ) {
+        if( themename_xptheme_get_config('show_checkout_quantity', false) ) {
             $_product = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
             $product_name      = apply_filters('woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key);
             $html = woocommerce_quantity_input(
@@ -1829,7 +1829,7 @@ if ( ! function_exists( 'themename_woocommerce_dequeue_script_layout_product' ) 
         global $post;
         
         if ( is_product() || ( ! empty( $post->post_content ) && strstr( $post->post_content, '[product_page' ) ) ) {
-            $sidebar_configs  = themename_tbay_get_woocommerce_layout_configs();
+            $sidebar_configs  = themename_xptheme_get_woocommerce_layout_configs();
             $images_layout      = ( !empty($sidebar_configs['thumbnail']) ) ? $sidebar_configs['thumbnail'] : 'horizontal';
     
             $images_layout_array = array('gallery', 'stick');

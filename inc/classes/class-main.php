@@ -33,7 +33,7 @@ class themename_setup_theme
             return;
         }
        
-        $suffix = (themename_tbay_get_config('minified_js', false)) ? '.min' : THEMENAME_MIN_JS;
+        $suffix = (themename_xptheme_get_config('minified_js', false)) ? '.min' : THEMENAME_MIN_JS;
 
         // load bootstrap style
         if (is_rtl()) {
@@ -42,7 +42,7 @@ class themename_setup_theme
             wp_enqueue_style('bootstrap', THEMENAME_STYLES . '/bootstrap.css', array(), '5.3');
         }
         
-        $skin = themename_tbay_get_theme();
+        $skin = themename_xptheme_get_theme();
         // Load our main stylesheet.
         if (is_rtl()) {
             $css_path =  THEMENAME_STYLES . '/template.rtl.css';
@@ -69,8 +69,8 @@ class themename_setup_theme
         //load font awesome
         wp_enqueue_style('font-awesome', THEMENAME_STYLES . '/font-awesome.css', array(), '5.10.2');
 
-        //load font custom icon tbay
-        wp_enqueue_style('themename-font-tbay-custom', THEMENAME_STYLES . '/font-tbay-custom.css', array(), '1.0.0');
+        //load font custom icon xptheme
+        wp_enqueue_style('themename-font-xptheme-custom', THEMENAME_STYLES . '/font-xptheme-custom.css', array(), '1.0.0');
 
         //load simple-line-icons
         wp_enqueue_style('simple-line-icons', THEMENAME_STYLES . '/simple-line-icons.css', array(), '2.4.0');
@@ -138,8 +138,8 @@ class themename_setup_theme
 
         wp_enqueue_script('themename-script', THEMENAME_SCRIPTS . '/functions' . $suffix . '.js', array('jquery-core', 'js-cookie'), THEMENAME_THEME_VERSION, true);
        
-        if (themename_tbay_get_config('header_js') != "") {
-            wp_add_inline_script('themename-script', themename_tbay_get_config('header_js'));
+        if (themename_xptheme_get_config('header_js') != "") {
+            wp_add_inline_script('themename-script', themename_xptheme_get_config('header_js'));
         }
   
         $config = themename_localize_translate();
@@ -149,17 +149,17 @@ class themename_setup_theme
 
     public function footer_scripts()
     {
-        if (themename_tbay_get_config('footer_js') != "") {
-            $footer_js = themename_tbay_get_config('footer_js');
+        if (themename_xptheme_get_config('footer_js') != "") {
+            $footer_js = themename_xptheme_get_config('footer_js');
             echo trim($footer_js);
         }
     }
 
     public function remove_fonts_redux_url()
     {
-        $show_typography  = themename_tbay_get_config('show_typography', false);
+        $show_typography  = themename_xptheme_get_config('show_typography', false);
         if (!$show_typography) {
-            wp_dequeue_style('redux-google-fonts-themename_tbay_theme_options');
+            wp_dequeue_style('redux-google-fonts-themename_xptheme_theme_options');
         }
     }
    
@@ -168,7 +168,7 @@ class themename_setup_theme
         wp_enqueue_style('material-design-iconic-font', THEMENAME_STYLES . '/material-design-iconic-font.css', array(), '2.2.0');
         wp_enqueue_style('themename-custom-admin', THEMENAME_STYLES . '/admin/custom-admin.css', array(), '1.0.0');
 
-        $suffix = (themename_tbay_get_config('minified_js', false)) ? '.min' : THEMENAME_MIN_JS;
+        $suffix = (themename_xptheme_get_config('minified_js', false)) ? '.min' : THEMENAME_MIN_JS;
         wp_enqueue_script('themename-admin', THEMENAME_SCRIPTS . '/admin/admin' . $suffix . '.js', array( ), THEMENAME_THEME_VERSION, true);
     }
 
@@ -226,7 +226,7 @@ class themename_setup_theme
 
     public function add_cpt_support()
     {
-        $cpt_support = ['tbay_custom_post', 'post', 'page', 'product'];
+        $cpt_support = ['xptheme_custom_post', 'post', 'page', 'product'];
         update_option('elementor_cpt_support', $cpt_support);
 
         update_option('elementor_disable_color_schemes', 'yes');
@@ -274,7 +274,7 @@ class themename_setup_theme
         add_image_size('themename_avatar_post_carousel', 100, 100, true);
 
         // This theme styles the visual editor with editor-style.css to match the theme style.
-        $font_source = themename_tbay_get_config('show_typography', false);
+        $font_source = themename_xptheme_get_config('show_typography', false);
         if (!$font_source) {
             add_editor_style(array( 'css/editor-style.css', themename_fonts_url() ));
         }
@@ -306,7 +306,7 @@ class themename_setup_theme
             'aside', 'image', 'video', 'gallery', 'audio'
         ));
 
-        $color_scheme  = themename_tbay_get_color_scheme();
+        $color_scheme  = themename_xptheme_get_color_scheme();
         $default_color = trim($color_scheme[0], '#');
 
         // Setup the WordPress core custom background feature.
