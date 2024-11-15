@@ -22,7 +22,7 @@ if (!function_exists('themename_settings_global_colors_advanced')) {
 			[
 				'_id' => 'text',
 				'title' => esc_html__( 'Text', 'themename' ),
-				'color' => '#121216',
+				'color' => '#000000',
 			],
 			[
 				'_id' => 'accent',
