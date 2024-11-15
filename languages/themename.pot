@@ -1626,7 +1626,7 @@ msgid "Blue"
 msgstr ""
 
 #: inc/skins/v7/functions.php:40
-msgctxt "Poppins font: on or off"
+msgctxt "Jost font: on or off"
 msgid "on"
 msgstr ""
 

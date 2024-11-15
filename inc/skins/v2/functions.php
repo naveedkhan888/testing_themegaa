@@ -37,14 +37,14 @@ if ( !function_exists('themename_fonts_url') ) {
         * supported by Montserrat, translate this to 'off'. Do not translate
         * into your own language.
         */
-        $google_font       = _x('on', 'Poppins font: on or off', 'themename');
+        $google_font       = _x('on', 'Jost font: on or off', 'themename');
 
      
         if ('off' !== $google_font) {
             $font_families = array();
      
             if ('off' !== $google_font) {
-                $font_families[] = 'Poppins:400,500,600,700';
+                $font_families[] = 'Jost:100,100i,200,200i,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i';
             }
 
             $query_args = array(
