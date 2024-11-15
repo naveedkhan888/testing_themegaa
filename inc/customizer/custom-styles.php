@@ -96,7 +96,7 @@ if ( !function_exists ('themename_xptheme_default_theme_primary_fonts') ) {
 
 		$theme_variable = array();
 
-		$theme_variable['main_font'] 	= 'Poppins';
+		$theme_variable['main_font'] 	= 'Jost';
 		$theme_variable['font_second_enable'] 	= false;
 
 		return apply_filters( 'themename_get_default_theme_fonts', $theme_variable);
