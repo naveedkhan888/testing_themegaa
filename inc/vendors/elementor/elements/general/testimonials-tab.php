@@ -100,7 +100,7 @@ class Themename_Elementor_Testimonials_Tab extends Themename_Elementor_Widget_Ba
                 'label' => esc_html__('Choose Icon', 'themename'),
                 'type' => Controls_Manager::ICONS,
                 'default' => [
-                    'value' => 'tb-icon tb-icon-quote-2',
+                    'value' => 'xp-icon xp-icon-quote-2',
                     'library' => 'xptheme-custom',
                 ],
             ]

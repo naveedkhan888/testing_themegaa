@@ -676,8 +676,8 @@ class Themename_Elementor_Search_Form extends Themename_Elementor_Widget_Base
                 'label'              => esc_html__('Button Search Icon', 'themename'),
                 'type'               => Controls_Manager::ICONS,
                 'default' => [
-                    'library' => 'tb-icon',
-                    'value'   => 'tb-icon tb-icon-search'
+                    'library' => 'xp-icon',
+                    'value'   => 'xp-icon xp-icon-search'
                 ],
             ]
         );

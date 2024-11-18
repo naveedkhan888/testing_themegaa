@@ -319,7 +319,7 @@ class Themename_Elementor_Portfolios extends Themename_Elementor_Carousel_Base
         $settings = $this->get_settings_for_display();
 
         $args = apply_filters('element_portfolios_query_filter', array(
-            'post_type'      => 'tb_portfolio',
+            'post_type'      => 'xp_portfolio',
             'posts_per_page'=> $settings['limit'],
             'order' => $settings['order'],
             'orderby' => $settings['orderby'],
@@ -343,12 +343,12 @@ class Themename_Elementor_Portfolios extends Themename_Elementor_Carousel_Base
                         ?>
                         <div class="item-info-wrapper">
                         <div class="item-info">
-                                <a class="item-link" target="_blank" href="<?php echo esc_url( get_permalink() ); ?>"><i class="tb-icon tb-icon-search"></i></a>
+                                <a class="item-link" target="_blank" href="<?php echo esc_url( get_permalink() ); ?>"><i class="xp-icon xp-icon-search"></i></a>
                                     <div class="item-title"><a class="item-title-link" target="_blank" href="<?php echo esc_url( get_permalink() ); ?>"><?php the_title(); ?></a></div>
 
                                     <?php 
                                         if( !empty($this->get_list_terms_tags(get_the_ID(), ' ')) ) {
-                                            echo '<div class="item-tags"><i class="tb-icon tb-icon-tag"></i>' .$this->get_list_terms_tags(get_the_ID(), ', '). '</div>'; 
+                                            echo '<div class="item-tags"><i class="xp-icon xp-icon-tag"></i>' .$this->get_list_terms_tags(get_the_ID(), ', '). '</div>'; 
                                         }
                                     ?>
                         </div>

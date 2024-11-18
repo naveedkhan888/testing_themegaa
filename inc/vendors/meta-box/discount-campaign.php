@@ -10,7 +10,7 @@ if ( !function_exists('themename_register_discount_campaign_meta_boxes') ) {
         $meta_boxes[$prefix . 'format_setting'] = array(
             'id'                        => 'post_discount_campaig_post_meta',
             'title'                     => esc_html__('Campaign Setting', 'themename'),
-            'post_types'                => array( 'tb_discount_campaign' ),
+            'post_types'                => array( 'xp_discount_campaign' ),
             'fields'     => array(
                 array(
                     'id'          => $prefix.'group',
@@ -61,7 +61,7 @@ if ( !function_exists('themename_rem_editor_from_post_type') ) {
     function themename_rem_editor_from_post_type() {
         if( !class_exists( 'Xptheme_PostType_Discount_Campaign' ) ) return;
 
-        remove_post_type_support( 'tb_discount_campaign', 'editor' );
+        remove_post_type_support( 'xp_discount_campaign', 'editor' );
     }
 }
 

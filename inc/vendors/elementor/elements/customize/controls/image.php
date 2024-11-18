@@ -9,7 +9,7 @@ if (!function_exists('themename_customize_image_section')) {
                 'type' => \Elementor\Controls_Manager::SELECT,
                 'label_block' => true,
                 'default' => 'no',
-				'prefix_class' => 'tb-effect effect-',
+				'prefix_class' => 'xp-effect effect-',
                 'options' => themename_list_controls_effects(),
             ]
         );

@@ -14,15 +14,15 @@ if (! function_exists('themename_xptheme_body_classes')) {
         }
 
         if (themename_xptheme_get_config('preload')) {
-            $classes[] = 'tb-loader';
+            $classes[] = 'xp-loader';
         }
 
         if (themename_xptheme_is_home_page()) {
-            $classes[] = 'tb-home';
+            $classes[] = 'xp-home';
         }
           
         if (!themename_redux_framework_activated()) {
-            $classes[] = 'tb-default';
+            $classes[] = 'xp-default';
         }
 
         $menu_mobile_search 	= themename_xptheme_get_config('menu_mobile_search', true);
@@ -31,7 +31,7 @@ if (! function_exists('themename_xptheme_body_classes')) {
         }
 
         if( themename_checkout_optimized() ) {
-            $classes[] = 'tb-checkout-optimized';
+            $classes[] = 'xp-checkout-optimized';
         }
 
         if( !themename_xptheme_get_config('always_display_logo', true) ) {
@@ -1217,7 +1217,7 @@ if (! function_exists('themename_yith_compare_header')) {
             ?>
 <div class="yith-compare-header product">
     <a href="<?php echo esc_url($yith_woocompare->obj->view_table_url()); ?>" class="compare added">
-        <i class="tb-icon tb-icon-sync"></i>
+        <i class="xp-icon xp-icon-sync"></i>
         <?php apply_filters('themename_get_text_compare', ''); ?>
     </a>
 </div>
@@ -1626,11 +1626,11 @@ if (!function_exists('themename_localize_translate')) {
             
         $config = array( 
             'storage_key'  		=> apply_filters( 'themename_storage_key', 'themename_' . md5( get_current_blog_id() . '_' . get_home_url( get_current_blog_id(), '/' ) . get_template() . $themename_hash_transient ) ),
-            'quantity_minus'    => apply_filters('themename_quantity_minus', '<i class="tb-icon tb-icon-minus"></i>'),
-            'quantity_plus'     => apply_filters('themename_quantity_plus', '<i class="tb-icon tb-icon-plus"></i>'),
+            'quantity_minus'    => apply_filters('themename_quantity_minus', '<i class="xp-icon xp-icon-minus"></i>'),
+            'quantity_plus'     => apply_filters('themename_quantity_plus', '<i class="xp-icon xp-icon-plus"></i>'),
             'ajaxurl'			=> admin_url('admin-ajax.php'),
             'cancel'            => esc_html__('cancel', 'themename'),  
-            'close'             => apply_filters('themename_quantity_plus', '<i class="tb-icon tb-icon-close-01"></i>'),
+            'close'             => apply_filters('themename_quantity_plus', '<i class="xp-icon xp-icon-close-01"></i>'),
             'show_all_text'     => esc_html__('View all', 'themename'),
             'search'            => esc_html__('Search', 'themename'),
             'wp_searchnonce' 	=> wp_create_nonce('themename-search-nonce'),
@@ -1639,8 +1639,8 @@ if (!function_exists('themename_localize_translate')) {
             'wp_templateclicknonce' => wp_create_nonce('themename-templateclick-nonce'),
             'posts'             => json_encode($wp_query->query_vars),
             'mobile'            => wp_is_mobile(),
-            'slick_prev'        => apply_filters('themename_slick_prev', '<i class="tb-icon tb-icon-arrow-left-2"></i>'), 
-            'slick_next'        => apply_filters('themename_slick_next', '<i class="tb-icon tb-icon-arrow-right-2"></i>'), 
+            'slick_prev'        => apply_filters('themename_slick_prev', '<i class="xp-icon xp-icon-arrow-left-2"></i>'), 
+            'slick_next'        => apply_filters('themename_slick_next', '<i class="xp-icon xp-icon-arrow-right-2"></i>'), 
             /*Element ready default callback*/
             'elements_ready'  => array(
                 'slick'               => themename_elements_ready_slick(),
@@ -1664,7 +1664,7 @@ if (!function_exists('themename_localize_translate')) {
             $quantity_mode                  = themename_woocommerce_quantity_mode_active();
             $loader                         = apply_filters('themename_quick_view_loader_gif', THEMENAME_IMAGES . '/ajax-loader-alt.svg');
 
-            $config['popup_cart_icon']      = apply_filters('themename_popup_cart_icon', '<i class="tb-icon tb-icon tb-icon-tick-circle"></i>', 2);
+            $config['popup_cart_icon']      = apply_filters('themename_popup_cart_icon', '<i class="xp-icon xp-icon xp-icon-tick-circle"></i>', 2);
             $config['popup_cart_noti']      = esc_html__('was added to shopping cart.', 'themename');
  
             $config['cart_position']        = $position;
@@ -1718,7 +1718,7 @@ if (! function_exists('themename_instagram_feed_row_class')) {
         }
         $result = '';
         foreach ($array as $key => $value) {
-            if ($key !== 'tb-atts' && $key !== 'user') {
+            if ($key !== 'xp-atts' && $key !== 'user') {
                 $result .= ' '.$key.'='."'$value'";
             }
         }

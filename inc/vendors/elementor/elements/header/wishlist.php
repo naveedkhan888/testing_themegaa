@@ -47,7 +47,7 @@ class Themename_Elementor_Wishlist extends Themename_Elementor_Widget_Base
                 'label'              => esc_html__('Icon', 'themename'),
                 'type'               => Controls_Manager::ICONS,
                 'default' => [
-                    'value' => 'tb-icon tb-icon-favorite',
+                    'value' => 'xp-icon xp-icon-favorite',
                     'library' => 'xptheme-custom',
                 ],
             ]

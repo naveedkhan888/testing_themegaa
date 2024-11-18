@@ -13,7 +13,7 @@
 			<input type="text" placeholder="<?php esc_attr_e('Search ...', 'themename'); ?>" name="s" class="form-control"/>
 				<span class="input-group-btn">
 					<button type="submit" class="btn">
-						<i class="tb-icon tb-icon-search"></i>
+						<i class="xp-icon xp-icon-search"></i>
 					</button>
 				</span>
 		</div>

@@ -11,7 +11,7 @@ $this->add_render_attribute('item', 'class', 'item');
     <div class="feature-list-img-wrapper">
         <?php  
             if( !empty($feature_list_image['id']) ) {
-                echo '<div class="feature-image tb-effect effect-'. esc_attr($style_feature_item_image_effects) .'">'. wp_get_attachment_image($feature_list_image['id'], 'full') .'</div>';
+                echo '<div class="feature-image xp-effect effect-'. esc_attr($style_feature_item_image_effects) .'">'. wp_get_attachment_image($feature_list_image['id'], 'full') .'</div>';
             }
         ?>
         <div class="list-items" > 

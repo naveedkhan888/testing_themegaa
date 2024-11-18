@@ -165,7 +165,7 @@ class Themename_Elementor_Product_Flash_Sales extends Themename_Elementor_Carous
                 'sale_html_campaign',
                 [
                     'type'            => Controls_Manager::RAW_HTML,
-                    'raw'             => sprintf(__('You don not have any campaigns. <br>Go to the <strong><a href="%s" target="_blank">Discount Campaign screen</a></strong> to create one.', 'themename'), admin_url('edit.php?post_type=tb_discount_campaign')),
+                    'raw'             => sprintf(__('You don not have any campaigns. <br>Go to the <strong><a href="%s" target="_blank">Discount Campaign screen</a></strong> to create one.', 'themename'), admin_url('edit.php?post_type=xp_discount_campaign')),
                     'separator'       => 'after',
                     'content_classes' => 'elementor-panel-alert elementor-panel-alert-info',
                 ]
@@ -450,7 +450,7 @@ class Themename_Elementor_Product_Flash_Sales extends Themename_Elementor_Carous
         }
 
         if ($enable_readmore && !empty($link)) : ?>
-            <div class="readmore-wrapper"><a class="show-all" href="<?php echo esc_url($link); ?>" title="<?php esc_attr($readmore_text); ?>"><span><?php echo trim($readmore_text); ?></span><i class="tb-icon tb-icon-arrow-right"></i></a></div>
+            <div class="readmore-wrapper"><a class="show-all" href="<?php echo esc_url($link); ?>" title="<?php esc_attr($readmore_text); ?>"><span><?php echo trim($readmore_text); ?></span><i class="xp-icon xp-icon-arrow-right"></i></a></div>
         <?php endif;
     }
 

@@ -37,7 +37,7 @@ if (isset($image['url']) && !empty($image['url'])) {
 					<div class="themename-content-404">
 						<p class="sub-title"><?php esc_html_e( 'We’re very sorry but the page you are looking for doesn’t exist or has been moved.', 'themename') ?>
 						</p>
-						<a href="<?php echo esc_url(home_url()) ?>" class="back"><?php esc_html_e('Back to Home', 'themename'); ?><i class="tb-icon tb-icon-arrow-right"></i></a>
+						<a href="<?php echo esc_url(home_url()) ?>" class="back"><?php esc_html_e('Back to Home', 'themename'); ?><i class="xp-icon xp-icon-arrow-right"></i></a>
 					</div>
 				</section><!-- .error-404 -->
 				</div>

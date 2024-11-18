@@ -21,7 +21,7 @@ do_action('woocommerce_before_cart'); ?>
 <form class="woocommerce-cart-form" action="<?php echo esc_url(wc_get_cart_url()); ?>" method="post">
 	<?php do_action('woocommerce_before_cart_table'); ?>
 	<div class="row">
-		<div class="col-lg-12 tb-cart-form">
+		<div class="col-lg-12 xp-cart-form">
 			<div class="shop_table shop_table_responsive cart woocommerce-cart-form__contents">
 				<div class="cart_item head">
 					<div class="product-info"><?php esc_html_e('Product', 'themename'); ?></div>
@@ -114,7 +114,7 @@ do_action('woocommerce_before_cart'); ?>
 								<?php
                                     // @codingStandardsIgnoreLine
                                     echo apply_filters('woocommerce_cart_item_remove_link', sprintf(
-                                        '<a href="%s" class="remove" aria-label="%s" data-product_id="%s" data-product_sku="%s"><i class="tb-icon tb-icon-trash"></i></a>',
+                                        '<a href="%s" class="remove" aria-label="%s" data-product_id="%s" data-product_sku="%s"><i class="xp-icon xp-icon-trash"></i></a>',
                                         esc_url(wc_get_cart_remove_url($cart_item_key)),
 										/* translators: %s is the product name */
 										esc_attr( sprintf( __( 'Remove %s from cart', 'themename' ), wp_strip_all_tags( $product_name ) ) ),
@@ -133,7 +133,7 @@ do_action('woocommerce_before_cart'); ?>
 				<?php if (wc_get_page_id('shop') > 0) : ?>
 					<div class="continue-to-shop pull-left hidden-xs">
 						<a href="<?php echo esc_url(apply_filters('woocommerce_return_to_shop_redirect', wc_get_page_permalink('shop'))); ?>">
-							<i class="tb-icon tb-icon-chevron-left"></i><?php esc_html_e('Continue Shopping', 'themename'); ?>
+							<i class="xp-icon xp-icon-chevron-left"></i><?php esc_html_e('Continue Shopping', 'themename'); ?>
 						</a>
 					</div>
 				<?php endif; ?>
@@ -149,7 +149,7 @@ do_action('woocommerce_before_cart'); ?>
 
 			<?php do_action('woocommerce_cart_contents'); ?>
 		</div>
-		<div class="col-12 tb-cart-total">
+		<div class="col-12 xp-cart-total">
 			<div class="row">
 				<div class="col-lg-4 col-md-6">
 					<?php if (wc_coupons_enabled()) { ?>

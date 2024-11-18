@@ -506,7 +506,7 @@ class Themename_Elementor_Product_Categories_Tabs extends Themename_Elementor_Ca
                 'label'     => esc_html__('Icon Button', 'themename'),
                 'type'      => Controls_Manager::ICONS,
                 'default' => [
-                    'value' => 'tb-icon tb-icon-arrow-right',
+                    'value' => 'xp-icon xp-icon-arrow-right',
                     'library' => 'xptheme-custom',
                 ],
                 'condition' => [

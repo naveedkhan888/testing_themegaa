@@ -15,7 +15,7 @@
         $search_placeholder 			=  themename_xptheme_get_config('search_placeholder', esc_html__('I&rsquo;m shopping for...', 'themename'));
         $button_search 				=  themename_xptheme_get_config('button_search', 'all');
         $button_search_text 		=  themename_xptheme_get_config('button_search_text', 'Search');
-        $button_search_icon 		=  themename_xptheme_get_config('button_search_icon', 'tb-icon tb-icon-magnifier');
+        $button_search_icon 		=  themename_xptheme_get_config('button_search_icon', 'xp-icon xp-icon-magnifier');
 
 
         $show_count 					= themename_xptheme_get_config('search_count_categories', false);

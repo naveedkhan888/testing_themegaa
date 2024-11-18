@@ -44,7 +44,7 @@ foreach ($products as $current_product) {
     $current_product_title          = $current_product->get_title();
 
     if ($index > 0) {
-        $thumbs .= '<li class="image_plus image_plus_' . $index . '" data-rel="offeringID_' . $index . '"><i class="tb-icon tb-icon-zt-plus"></i></li>';
+        $thumbs .= '<li class="image_plus image_plus_' . $index . '" data-rel="offeringID_' . $index . '"><i class="xp-icon xp-icon-zt-plus"></i></li>';
     }
     $thumbs .= '<li class="image-td" data-rel="offeringID_' . $index . '"><a href="' . $current_product_link . '">' . $current_product_image . '</a>';
     $thumbs .= '<div class="caption"><span class="price">' . $current_product->get_price_html() . '</span><span class="name"><a href="' . $current_product_link . '">' . $current_product_title . '</a></span></div></li>';

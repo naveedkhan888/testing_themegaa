@@ -226,7 +226,7 @@ class Themename_Elementor_Custom_Image_List_Categories extends Themename_Element
                 'type'      => Controls_Manager::ICONS,
                 'default'   => [
                     'library' => 'xptheme-custom',
-                    'value'   => 'tb-icon tb-icon-angle-right'
+                    'value'   => 'xp-icon xp-icon-angle-right'
                 ],
 
                 'condition' => [

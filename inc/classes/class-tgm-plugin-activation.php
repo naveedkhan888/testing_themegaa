@@ -1720,7 +1720,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 					array(
 						'tab'       => 'plugin-information',
 						'plugin'    => urlencode( $slug ),
-						'TB_iframe' => 'true',
+						'xp_iframe' => 'true',
 						'width'     => '640',
 						'height'    => '500',
 					),

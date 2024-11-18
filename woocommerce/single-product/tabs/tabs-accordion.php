@@ -24,7 +24,7 @@ if (!empty($product_tabs)) : $selectIds = '#collapse-tab-0'; ?>
                       <h5 class="mb-0">
                         <button class="btn btn-link" data-bs-toggle="collapse" data-bs-target="#collapse-tab-<?php echo esc_attr($i); ?>" aria-expanded="true" aria-controls="collapse-tab-<?php echo esc_attr($i); ?>">
                         <?php echo apply_filters('woocommerce_product_' . $key . '_tab_title', esc_html($product_tab['title']), $key); ?>
-                        <i class="icons tb-icon tb-icon-<?php echo esc_attr($arrow); ?>-square"></i>
+                        <i class="icons xp-icon xp-icon-<?php echo esc_attr($arrow); ?>-square"></i>
                         </button>
                       </h5>
                     </div> 
@@ -47,7 +47,7 @@ if (!empty($product_tabs)) : $selectIds = '#collapse-tab-0'; ?>
         jQuery(function ($) {
             var selectIds = $('<?php echo trim($selectIds); ?>');
             selectIds.on('show.bs.collapse hidden.bs.collapse', function (e) {
-                $(this).prev().find('.icons').toggleClass('tb-icon-minus-square tb-icon-plus-square');
+                $(this).prev().find('.icons').toggleClass('xp-icon-minus-square xp-icon-plus-square');
             })
         });
     </script>

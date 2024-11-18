@@ -48,8 +48,8 @@
                 $nav_type   = ($nav_type == 'yes') ? 'true' : 'false';
                 $pagi_type  = ($pagi_type == 'yes') ? 'true' : 'false';
 
-                $navleft    = apply_filters('themename_slick_prev', '<i class="tb-icon tb-icon-arrow-left-2"></i>');
-                $navright   = apply_filters('themename_slick_next', '<i class="tb-icon tb-icon-arrow-right-2"></i>');
+                $navleft    = apply_filters('themename_slick_prev', '<i class="xp-icon xp-icon-arrow-left-2"></i>');
+                $navright   = apply_filters('themename_slick_next', '<i class="xp-icon xp-icon-arrow-right-2"></i>');
 
             ?>
             <div class="owl-carousel rows-1" data-carousel="owl" data-navleft="<?php echo esc_attr($navleft); ?>" data-navright="<?php echo esc_attr($navright); ?>" data-items="<?php echo esc_attr($relate_columns); ?>" data-nav="<?php echo esc_attr($nav_type); ?>" data-pagination="<?php echo esc_attr($pagi_type); ?>" data-desktopslick="<?php echo esc_attr($relate_columns); ?>" data-desktopsmallslick="<?php echo esc_attr($relate_columns); ?>" data-tabletslick="2" data-landscapeslick="2" data-mobileslick="1">

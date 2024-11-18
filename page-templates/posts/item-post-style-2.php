@@ -50,7 +50,7 @@ if (get_comments_number() == 1) {
         
         <?php if ($show_author): ?>
             <div class="entry-author">
-                <i class="tb-icon tb-icon-profile"></i>
+                <i class="xp-icon xp-icon-profile"></i>
                 <span><?php esc_html_e('By ', 'themename'); ?></span> <?php echo get_the_author_posts_link(); ?>
             </div>
         <?php endif ?>

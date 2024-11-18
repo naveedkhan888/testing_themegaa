@@ -717,9 +717,9 @@ class Preload {
       jQuery(this).remove();
     });
 
-    if (jQuery(document.body).hasClass("tb-loader")) {
+    if (jQuery(document.body).hasClass("xp-loader")) {
       setTimeout(function () {
-        jQuery(document.body).removeClass("tb-loader");
+        jQuery(document.body).removeClass("xp-loader");
         jQuery(".item-loader").fadeOut(250);
       }, 300);
     }

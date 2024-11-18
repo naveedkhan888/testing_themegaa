@@ -603,7 +603,7 @@ if (! class_exists('Themename_Single_WooCommerce')) :
             $menu_bar   =  apply_filters('themename_woo_product_menu_bar', 10, 2);
 
             if (isset($menu_bar) && $menu_bar && is_product()) {
-                $classes[] = 'tb-menu-bar';
+                $classes[] = 'xp-menu-bar';
             }
             return $classes;
         }
@@ -772,7 +772,7 @@ if (! class_exists('Themename_Single_WooCommerce')) :
             }
 
             global $product; ?>
-            <div id="mobile-close-infor"><i class="tb-icon tb-icon-close-01"></i></div>
+            <div id="mobile-close-infor"><i class="xp-icon xp-icon-close-01"></i></div>
             <div class="mobile-infor-wrapper">
                 <div class="d-flex">
                     <div class="me-3">
@@ -913,7 +913,7 @@ if (! class_exists('Themename_Single_WooCommerce')) :
                         <?php echo esc_html(implode('/ ', $default_attributes)); ?>
                     </div>
                 </div>
-                <div id="attribute-open"><i class="tb-icon tb-icon-angle-right"></i></div>
+                <div id="attribute-open"><i class="xp-icon xp-icon-angle-right"></i></div>
             </div>
             <?php
         }

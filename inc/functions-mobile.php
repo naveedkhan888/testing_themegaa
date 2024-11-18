@@ -12,7 +12,7 @@ if (! function_exists('themename_xptheme_get_button_mobile_menu')) {
     {
         $output 	= '';
         $output 	.= '<a href="javascript:void(0)" class="btn btn-sm mmenu-open">';
-        $output  .= '<i class="tb-icon tb-icon-menu"></i>';
+        $output  .= '<i class="xp-icon xp-icon-menu"></i>';
         $output  .= '</a>';
 
         
@@ -111,7 +111,7 @@ if (! function_exists('themename_the_icon_mini_cart_mobile')) {
 					<div class="xptheme-topcart">
 						<div id="cart-<?php echo esc_attr($_id); ?>" class="cart-dropdown dropdown">
                             <a class="dropdown-toggle mini-cart v2" <?php echo trim($data_dropdown); ?>  href="<?php echo ( is_checkout() ) ? wc_get_cart_url() : 'javascript:void(0);'; ?>">
-                                    <i class="tb-icon tb-icon-bag"></i> 
+                                    <i class="xp-icon xp-icon-bag"></i> 
 									<span class="mini-cart-items">
 									<?php echo sprintf('%d', $woocommerce->cart->cart_contents_count); ?>
 									</span>
@@ -259,7 +259,7 @@ if (! function_exists('themename_xptheme_get_icon_home_page_mobile')) {
     {
         $output 	= '<div class="topbar-icon-home">';
         $output 	.= '<a href="'. esc_url(home_url('/')) .'">';
-        $output  	.= apply_filters('themename_get_mobile_home_icon', '<i class="tb-icon tb-icon-home3"></i>', 2);
+        $output  	.= apply_filters('themename_get_mobile_home_icon', '<i class="xp-icon xp-icon-home3"></i>', 2);
         $output  	.= '</a>';
         $output  	.= '</div>';
         
@@ -326,7 +326,7 @@ if (! function_exists('themename_xptheme_get_icon_home_footer_mobile')) {
 
         $output	 = '<div class="device-home '. $active .' ">';
         $output  .= '<a href="'. esc_url(home_url('/')) .'" >';
-        $output  .= apply_filters('themename_get_mobile_home_icon', '<i class="tb-icon tb-icon-home3"></i>', 2);
+        $output  .= apply_filters('themename_get_mobile_home_icon', '<i class="xp-icon xp-icon-home3"></i>', 2);
         $output  .= '<span>'. esc_html__('Home', 'themename'). '</span>';
         $output  .='</a>';
         $output  .='</div>';
@@ -369,7 +369,7 @@ if (! function_exists('themename_xptheme_get_icon_wishlist_footer_mobile')) {
 
         $output	 .= '<div class="device-wishlist">';
         $output  .= '<a class="text-skin wishlist-icon" href="'. esc_url($wishlist_url) .'" >';
-        $output  .= apply_filters('themename_get_mobile_wishlist_icon', '<i class="tb-icon tb-icon-favorite"></i>', 2);
+        $output  .= apply_filters('themename_get_mobile_wishlist_icon', '<i class="xp-icon xp-icon-favorite"></i>', 2);
         $output  .= '<span class="count count_wishlist"><span>'. esc_html($wishlist_count) .'</span></span>';
         $output  .= '<span>'. esc_html__('Wishlist', 'themename'). '</span>';
         $output  .='</a>';
@@ -408,7 +408,7 @@ if (! function_exists('themename_xptheme_get_icon_account_footer_mobile')) {
             return $output;
         }
 
-        $icon_text 	= apply_filters('themename_get_mobile_user_icon', '<i class="tb-icon tb-icon-user"></i>', 2);
+        $icon_text 	= apply_filters('themename_get_mobile_user_icon', '<i class="xp-icon xp-icon-user"></i>', 2);
         $icon_text .= '<span>'.esc_html__('Account', 'themename').'</span>';
 
         $active 	= (is_account_page()) ? 'active' : '';

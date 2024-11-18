@@ -44,7 +44,7 @@ class Themename_Elementor_Compare extends Themename_Elementor_Widget_Base
                 'label'              => esc_html__('Icon', 'themename'),
                 'type'               => Controls_Manager::ICONS,
                 'default' => [
-                    'value' => 'tb-icon tb-icon-sync',
+                    'value' => 'xp-icon xp-icon-sync',
                     'library' => 'xptheme-custom',
                 ],
             ]

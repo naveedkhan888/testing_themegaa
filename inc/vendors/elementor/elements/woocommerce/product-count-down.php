@@ -119,7 +119,7 @@ class Themename_Elementor_Product_CountDown extends Themename_Elementor_Carousel
                 'main_html_campaign',
                 [
                     'type'            => Controls_Manager::RAW_HTML,
-                    'raw'             => sprintf(__('You don not have any campaigns. <br>Go to the <strong><a href="%s" target="_blank">Discount Campaign screen</a></strong> to create one.', 'themename'), admin_url('edit.php?post_type=tb_discount_campaign')),
+                    'raw'             => sprintf(__('You don not have any campaigns. <br>Go to the <strong><a href="%s" target="_blank">Discount Campaign screen</a></strong> to create one.', 'themename'), admin_url('edit.php?post_type=xp_discount_campaign')),
                     'separator'       => 'after',
                     'content_classes' => 'elementor-panel-alert elementor-panel-alert-info',
                 ]
@@ -177,7 +177,7 @@ class Themename_Elementor_Product_CountDown extends Themename_Elementor_Carousel
                 'label'     => esc_html__('Icon Button', 'themename'),
                 'type'      => Controls_Manager::ICONS,
                 'default' => [
-                    'value' => 'tb-icon tb-icon-arrow-right',
+                    'value' => 'xp-icon xp-icon-arrow-right',
                     'library' => 'xptheme-custom',
                 ],
                 'condition' => [

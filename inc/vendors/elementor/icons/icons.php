@@ -46,8 +46,8 @@ if (! function_exists('themename_elementor_icon_control_xptheme_custom')) {
         $tabs['xptheme-custom'] = [
             'name'          => 'xptheme-custom',
             'label'         => esc_html__('Xperttheme Custom', 'themename'),
-            'prefix'        => 'tb-icon-',
-            'displayPrefix' => 'tb-icon',
+            'prefix'        => 'xp-icon-',
+            'displayPrefix' => 'xp-icon',
             'labelIcon'     => 'fa fa-font-awesome',
             'ver'           => '1.0.0',
             'fetchJson'     => get_template_directory_uri() . '/inc/vendors/elementor/icons/json/xptheme-custom.json',

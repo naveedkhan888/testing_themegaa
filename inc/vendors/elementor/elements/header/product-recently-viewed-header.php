@@ -392,7 +392,7 @@ class Themename_Elementor_Product_Recently_Viewed_Header extends Themename_Eleme
                 'label'              => esc_html__('Icon', 'themename'),
                 'type'               => Controls_Manager::ICONS,
                 'default' => [
-                    'value' => 'tb-icon tb-icon-recently-viewed',
+                    'value' => 'xp-icon xp-icon-recently-viewed',
                     'library' => 'xptheme-custom',
                 ],
             ]

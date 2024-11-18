@@ -121,7 +121,7 @@ class Themename_Elementor_Mobile_Menu extends Themename_Elementor_Widget_Base
                 'type' => Controls_Manager::ICONS,
                 'label_block' => true,
                 'default' => [
-                    'value' => 'tb-icon tb-icon-bars',
+                    'value' => 'xp-icon xp-icon-bars',
                     'library' => 'xptheme-custom',
                 ],
             ]

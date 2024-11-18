@@ -18,7 +18,7 @@
         
         <div id="mmenu-close">
             <button type="button" class="btn btn-toggle-canvas" data-toggle="offcanvas">
-                <i class="tb-icon tb-icon-close-01"></i>
+                <i class="xp-icon xp-icon-close-01"></i>
             </button>
         </div>
 

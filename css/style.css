@@ -4704,13 +4704,13 @@ ul.list-square li:last-child:before {
 }
 
 /* line 996, ../sass/template/_elements.scss */
-.space-padding-tb-90 {
+.space-padding-xp-90 {
   padding-top: 90px !important;
   padding-bottom: 90px !important;
 }
 
 /* line 1000, ../sass/template/_elements.scss */
-.space-padding-tb-55 {
+.space-padding-xp-55 {
   padding-top: 55px !important;
   padding-bottom: 55px !important;
 }

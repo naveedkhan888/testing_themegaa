@@ -26,7 +26,7 @@ if (! empty($product_tabs)) : ?>
 						<div class="title"><?php echo trim($product_tab['title']); ?></div>
 					<?php endif; ?>
 
-					<a class="close-tab" href="#"><i class="tb-icon tb-icon-close-01"></i></a>
+					<a class="close-tab" href="#"><i class="xp-icon xp-icon-close-01"></i></a>
 				</div>
 				<div class="tab-content">
 					<?php if (isset($product_tab['callback'])) {

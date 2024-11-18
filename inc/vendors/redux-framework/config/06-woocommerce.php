@@ -790,7 +790,7 @@ Redux::set_section(
                 'type'      => 'text',
                 'title'     => esc_html__('Icon', 'themename'),
                 'subtitle'  => sprintf(__('Get class name icon name of <a href="%s" target="_blank">Xptheme Icon</a>', 'themename'), home_url( '/xptheme-list-icons')),
-                'default'   => 'tb-icon tb-icon-size-guide'
+                'default'   => 'xp-icon xp-icon-size-guide'
             ),
             array(
                 'id'       => 'single_size_guide',
@@ -820,7 +820,7 @@ Redux::set_section(
                 'type'      => 'text',
                 'title'     => esc_html__('Icon', 'themename'),
                 'subtitle'  => sprintf(__('Get class name icon name of <a href="%s" target="_blank">Xptheme Icon</a>', 'themename'), home_url( '/xptheme-list-icons')),
-                'default'   => 'tb-icon tb-icon-return-box'
+                'default'   => 'xp-icon xp-icon-return-box'
             ),
             array(
                 'id'       => 'single_delivery_return',
@@ -849,7 +849,7 @@ Redux::set_section(
                 'type'      => 'text',
                 'title'     => esc_html__('Icon', 'themename'),
                 'subtitle'  => sprintf(__('Get class name icon name of <a href="%s" target="_blank">Xptheme Icon</a>', 'themename'), home_url( '/xptheme-list-icons')),
-                'default'   => 'tb-icon tb-icon-help'
+                'default'   => 'xp-icon xp-icon-help'
             ),
             array(
                 'id'       => 'single_aska_question',

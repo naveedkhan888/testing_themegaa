@@ -8,7 +8,7 @@ if (!function_exists('themename_xptheme_get_woocommerce_mini_cart')) {
             $args,
             array(
                 'icon_mini_cart'                => [
-                    'value' => 'tb-icon tb-icon-bag',
+                    'value' => 'xp-icon xp-icon-bag',
                 ],
                 'show_title_mini_cart'          => '',
                 'title_mini_cart'               => esc_html__('Shopping cart', 'themename'),
@@ -622,7 +622,7 @@ if (!function_exists('themename_xptheme_stock_flash_sale')) {
                     <div class="progress-bar active" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo esc_attr($percentsold); ?>%">
                     </div>
                 </div>
-                <span class="tb-sold">
+                <span class="xp-sold">
                     <span class="available"><?php esc_html_e('Available', 'themename'); ?>: <span class="sold-vl"><?php echo esc_html($stock_quantity) ?></span></span>
                     <span class="sold"><?php esc_html_e('Sold', 'themename'); ?>: <?php ?><span class="sold-vl"><?php echo esc_html($total_sales) ?></span></span>
                 </span>
@@ -830,7 +830,7 @@ if (!function_exists('themename_woo_product_time_countdown_stock')) {
                     </div>
                 <?php } ?>
                 <?php if ($stock_quantity >= 0) { ?>
-                    <span class="tb-sold"><?php esc_html_e('Sold', 'themename'); ?> : <span class="sold"><?php echo esc_html($total_sales) ?></span><span class="total">/<?php echo esc_html($total_quantity) ?></span></span>
+                    <span class="xp-sold"><?php esc_html_e('Sold', 'themename'); ?> : <span class="sold"><?php echo esc_html($total_sales) ?></span><span class="total">/<?php echo esc_html($total_quantity) ?></span></span>
                 <?php } ?>
             </div>
         <?php }
@@ -1568,10 +1568,10 @@ if (!function_exists('themename_single_product_stock_style2')) {
                     </div>
                 </div>
                 <div class="stock-bottom">
-                    <div class="tb-available"><span class="stock-label"><?php esc_html_e('Available', 'themename'); ?>:</span> <span class="stock-value"><?php echo esc_html($stock_amount) ?></span></div>
+                    <div class="xp-available"><span class="stock-label"><?php esc_html_e('Available', 'themename'); ?>:</span> <span class="stock-value"><?php echo esc_html($stock_amount) ?></span></div>
 
                     <?php if( themename_xptheme_get_config('enable_total_sales', true) && $_product->get_type() !== 'external' ) : ?>
-                        <div class="tb-sold"><span class="stock-label"><?php esc_html_e('Sold', 'themename'); ?>:</span> <span class="stock-value"><?php echo esc_html($total_sales) ?></span></div>
+                        <div class="xp-sold"><span class="stock-label"><?php esc_html_e('Sold', 'themename'); ?>:</span> <span class="stock-value"><?php echo esc_html($total_sales) ?></span></div>
                     <?php endif; ?>
                 </div>
             </div>
@@ -1743,8 +1743,8 @@ if ( ! function_exists( 'themename_woocommerce_single_title' ) ) {
 if (! function_exists('themename_customize_woocommerce_pagination_args')) {
     function themename_customize_woocommerce_pagination_args($args)
     {
-        $args['prev_text'] = is_rtl() ? '<i class="tb-icon tb-icon-arrow-right"></i>' : '<i class="tb-icon tb-icon-arrow-left"></i>';
-        $args['next_text'] = is_rtl() ? '<i class="tb-icon tb-icon-arrow-left"></i>' : '<i class="tb-icon tb-icon-arrow-right"></i>';
+        $args['prev_text'] = is_rtl() ? '<i class="xp-icon xp-icon-arrow-right"></i>' : '<i class="xp-icon xp-icon-arrow-left"></i>';
+        $args['next_text'] = is_rtl() ? '<i class="xp-icon xp-icon-arrow-left"></i>' : '<i class="xp-icon xp-icon-arrow-right"></i>';
 
         return $args;
     }

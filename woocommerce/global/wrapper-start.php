@@ -29,14 +29,14 @@ $class_row = '';
 
 
 if (!is_singular('product')) {
-    $class_row .= ($product_archive_layout === 'shop-right') ? ' tb-column-reverse' : '';
+    $class_row .= ($product_archive_layout === 'shop-right') ? ' xp-column-reverse' : '';
     $class_row .= ($product_archive_layout !== 'full-width') ? ' row-shop-sidebar' : '';
 
 	if ( !themename_xptheme_get_config('show_product_breadcrumb', false) ) {
 		remove_action('themename_woo_template_main_wrapper_before', 'woocommerce_breadcrumb', 20);
 	}
 } else {
-    $class_row .= ($product_single_layout === 'main-right') ? ' tb-column-reverse' : '';
+    $class_row .= ($product_single_layout === 'main-right') ? ' xp-column-reverse' : '';
 
 	if ( !themename_xptheme_get_config('show_single_product_breadcrumb', false) ) {
 		remove_action('themename_woo_template_main_wrapper_before', 'woocommerce_breadcrumb', 20);

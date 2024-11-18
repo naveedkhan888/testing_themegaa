@@ -340,7 +340,7 @@ if (! function_exists('themename_post_meta')) {
                 <?php // Author?>
                 <?php if ($author == 1): ?>
                     <li class="entry-author">
-                        <i class="tb-icon tb-icon-profile"></i>
+                        <i class="xp-icon xp-icon-profile"></i>
                         <span><?php esc_html_e('By ', 'themename'); ?></span> <?php echo get_the_author_posts_link(); ?>
                     </li>
                 <?php endif ?>
@@ -354,7 +354,7 @@ if (! function_exists('themename_post_meta')) {
                 <?php if ($comments && comments_open()): ?>
                     
                     <li class="comments-link">
-                        <i class="tb-icon tb-icon-message"></i> 
+                        <i class="xp-icon xp-icon-message"></i> 
                             <?php comments_popup_link(
                             '0'. '<span>'. $text_domain .'</span>',
                             '1'. '<span>'. $text_domain .'</span>',
@@ -367,7 +367,7 @@ if (! function_exists('themename_post_meta')) {
                 <?php
                     if ( $date == 1) {
                         ?>
-                            <li class="entry-date"><i class="tb-icon tb-icon-clock"></i><?php echo themename_time_link(); ?></li>
+                            <li class="entry-date"><i class="xp-icon xp-icon-clock"></i><?php echo themename_time_link(); ?></li>
                         <?php
                     } 
                 ?>

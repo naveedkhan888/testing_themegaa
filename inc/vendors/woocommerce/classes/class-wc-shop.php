@@ -109,8 +109,8 @@ if (! class_exists('Themename_Shop_WooCommerce')) :
             $list = ($woo_mode == 'list') ? 'active' : '';
             ?>
 	        <div class="display-mode-warpper">
-                <a href="javascript:void(0);" id="display-mode-grid" class="display-mode-btn <?php echo esc_attr($grid); ?>" title="<?php esc_attr_e('Grid', 'themename'); ?>" ><i class="tb-icon tb-icon-grid-2"></i></a>
-                <a href="javascript:void(0);" id="display-mode-list" class="display-mode-btn list <?php echo esc_attr($list); ?>" title="<?php esc_attr_e('List', 'themename'); ?>" ><i class="tb-icon tb-icon-task-square"></i></a>
+                <a href="javascript:void(0);" id="display-mode-grid" class="display-mode-btn <?php echo esc_attr($grid); ?>" title="<?php esc_attr_e('Grid', 'themename'); ?>" ><i class="xp-icon xp-icon-grid-2"></i></a>
+                <a href="javascript:void(0);" id="display-mode-list" class="display-mode-btn list <?php echo esc_attr($list); ?>" title="<?php esc_attr_e('List', 'themename'); ?>" ><i class="xp-icon xp-icon-task-square"></i></a>
 	        </div>
 
 	        <?php
@@ -159,7 +159,7 @@ if (! class_exists('Themename_Shop_WooCommerce')) :
 
             $filter_class = ($product_archive_layout !== 'full-width') ? ' d-xl-none' : '';
  
-            echo '<div class="filter-btn-wrapper'. esc_attr($filter_class) .'"><button id="button-filter-btn" class="button-filter-btn hidden-lg hidden-md" type="submit"><i class="tb-icon tb-icon-filter" aria-hidden="true"></i>'. esc_html__('Filter', 'themename') .'</button></div>';
+            echo '<div class="filter-btn-wrapper'. esc_attr($filter_class) .'"><button id="button-filter-btn" class="button-filter-btn hidden-lg hidden-md" type="submit"><i class="xp-icon xp-icon-filter" aria-hidden="true"></i>'. esc_html__('Filter', 'themename') .'</button></div>';
             echo '<div id="filter-close"></div>';
         }
         

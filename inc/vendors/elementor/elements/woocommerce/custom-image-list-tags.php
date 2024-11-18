@@ -215,7 +215,7 @@ class Themename_Elementor_Custom_Image_List_Tags extends Themename_Elementor_Car
                 'label'     => esc_html__('Icon Button', 'themename'),
                 'type'      => Controls_Manager::ICONS,
                 'default' => [
-                    'value' => 'tb-icon tb-icon-arrow-right',
+                    'value' => 'xp-icon xp-icon-arrow-right',
                     'library' => 'xptheme-custom',
                 ],
                 'condition' => [

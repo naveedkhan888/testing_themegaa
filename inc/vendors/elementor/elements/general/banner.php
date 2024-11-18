@@ -126,7 +126,7 @@ class Themename_Elementor_Banner extends Themename_Elementor_Widget_Base
                 'label' => esc_html__('TB Effects', 'themename'),
                 'type' => Controls_Manager::SELECT,
                 'label_block' => true,
-                'prefix_class' => 'tb-effect effect-',
+                'prefix_class' => 'xp-effect effect-',
                 'default' => 'no',
                 'options' => themename_list_controls_effects(),
             ]

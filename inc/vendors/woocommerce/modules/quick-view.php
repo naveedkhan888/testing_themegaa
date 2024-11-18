@@ -13,7 +13,7 @@ if (! function_exists('themename_the_quick_view')) {
         ?>
         <div class="xptheme-quick-view">  
             <a href="#" class="qview-button" title ="<?php esc_attr_e('Quick View', 'themename') ?>" data-effect="mfp-move-from-top" data-product_id="<?php echo esc_attr($product_id); ?>">
-                <i class="tb-icon tb-icon-visibility"></i>
+                <i class="xp-icon xp-icon-visibility"></i>
                 <span><?php esc_html_e('Quick View', 'themename') ?></span>
             </a>
         </div> 

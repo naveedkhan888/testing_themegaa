@@ -95,7 +95,7 @@ do_action('woocommerce_before_mini_cart');
 
 									</div>
 									<?php echo apply_filters('woocommerce_cart_item_remove_link', sprintf(
-                                '<a href="%s" class="remove" aria-label="%s" data-product_id="%s" data-cart_item_key="%s" data-product_sku="%s" data-success_message="%s"><i class="tb-icon tb-icon-trash"></i></a>',
+                                '<a href="%s" class="remove" aria-label="%s" data-product_id="%s" data-cart_item_key="%s" data-product_sku="%s" data-success_message="%s"><i class="xp-icon xp-icon-trash"></i></a>',
                                 esc_url(wc_get_cart_remove_url($cart_item_key)),
 															/* translators: %s is the product name */
 															esc_attr( sprintf( __( 'Remove %s from cart', 'themename' ), wp_strip_all_tags( $product_name ) ) ),
@@ -117,7 +117,7 @@ do_action('woocommerce_before_mini_cart');
 			<?php else: ?>
 				<ul class="cart_empty <?php echo esc_attr($args['list_class']); ?>">
 					<li><span><?php esc_html_e('Your cart is empty', 'themename') ?></span></li>
-					<li class="total"><a class="button wc-continue" href="<?php echo esc_url(apply_filters('woocommerce_return_to_shop_redirect', wc_get_page_permalink('shop'))); ?>"><?php esc_html_e('Continue Shopping', 'themename') ?><i class="tb-icon tb-icon-angle-right"></i></a></li>
+					<li class="total"><a class="button wc-continue" href="<?php echo esc_url(apply_filters('woocommerce_return_to_shop_redirect', wc_get_page_permalink('shop'))); ?>"><?php esc_html_e('Continue Shopping', 'themename') ?><i class="xp-icon xp-icon-angle-right"></i></a></li>
 				</ul>
 			<?php endif; ?>
 

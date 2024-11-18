@@ -200,7 +200,7 @@ if (! function_exists('themename_megamenu_underscore_template')) {
 											<option value=""<%= data.icon == '' ? ' selected' : '' %>><?php echo esc_html__("No Use", "themename") ?></option>
 											<option value="1"<%= data.icon == 1 ? ' selected' : '' %>><?php echo esc_html__("Custom Class", "themename") ?></option>
 											<?php foreach (themename_megamenu_get_icons() as $value) : ?>
-												<option value="<?php echo 'tb-icon tb-icon-'.esc_attr($value) ?>"<%= data.icon == '<?php echo 'tb-icon tb-icon-'.esc_attr($value) ?>' ? ' selected' : '' %>><?php echo 'tb-icon tb-icon-'.esc_attr($value) ?></option>
+												<option value="<?php echo 'xp-icon xp-icon-'.esc_attr($value) ?>"<%= data.icon == '<?php echo 'xp-icon xp-icon-'.esc_attr($value) ?>' ? ' selected' : '' %>><?php echo 'xp-icon xp-icon-'.esc_attr($value) ?></option>
 											<?php endforeach ?>
 										</select>
 									</div>

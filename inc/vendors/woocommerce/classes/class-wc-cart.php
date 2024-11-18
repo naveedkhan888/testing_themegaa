@@ -118,7 +118,7 @@ if (! class_exists('Themename_Cart')) :
             $class = '';
             $active = apply_filters('themename_show_cart_mobile', 10, 2);
             if (isset($active) && $active) {
-                $class = 'tb-addtocart-mb';
+                $class = 'xp-addtocart-mb';
             }
 
             $classes[] = trim($class);

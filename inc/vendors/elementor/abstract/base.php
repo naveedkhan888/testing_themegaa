@@ -597,7 +597,7 @@ abstract class Themename_Elementor_Widget_Base extends Elementor\Widget_Base
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .style-border-after .tb-border-after:after' => 'background: {{VALUE}};',
+                    '{{WRAPPER}} .style-border-after .xp-border-after:after' => 'background: {{VALUE}};',
                 ],
                 
             ]
@@ -615,8 +615,8 @@ abstract class Themename_Elementor_Widget_Base extends Elementor\Widget_Base
                     ],
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .style-border-after .tb-border-after:after' => 'padding: 0 {{SIZE}}{{UNIT}};',
-                    '{{WRAPPER}} .style-border-after .tb-border-after:after' => 'width: calc(100% + 2*{{SIZE}}{{UNIT}});',
+                    '{{WRAPPER}} .style-border-after .xp-border-after:after' => 'padding: 0 {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .style-border-after .xp-border-after:after' => 'width: calc(100% + 2*{{SIZE}}{{UNIT}});',
                 ],
             ]
         );
@@ -633,7 +633,7 @@ abstract class Themename_Elementor_Widget_Base extends Elementor\Widget_Base
                     ],
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .style-border-after .tb-border-after:after' => 'height: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .style-border-after .xp-border-after:after' => 'height: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );
@@ -650,7 +650,7 @@ abstract class Themename_Elementor_Widget_Base extends Elementor\Widget_Base
                     ],
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .style-border-after .tb-border-after:after' => 'bottom: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .style-border-after .xp-border-after:after' => 'bottom: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );
@@ -667,7 +667,7 @@ abstract class Themename_Elementor_Widget_Base extends Elementor\Widget_Base
                     ],
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .style-border-after .tb-border-after:after' => 'left: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .style-border-after .xp-border-after:after' => 'left: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );
@@ -978,7 +978,7 @@ abstract class Themename_Elementor_Widget_Base extends Elementor\Widget_Base
 
     protected function get_list_campaigns() {
         $args = array(
-            'post_type' => 'tb_discount_campaign',
+            'post_type' => 'xp_discount_campaign',
             'posts_per_page' => -1
         );
 
@@ -1400,7 +1400,7 @@ abstract class Themename_Elementor_Widget_Base extends Elementor\Widget_Base
                     } else if( $heading_list_style === 'style-border-after' ) {
                         $this->render_item_icon($heading_icon);
 
-                        echo ( !empty($heading_title) ) ? '<span class="title tb-border-after">'. trim($heading_title) .'</span>' : '';  
+                        echo ( !empty($heading_title) ) ? '<span class="title xp-border-after">'. trim($heading_title) .'</span>' : '';  
 
                         echo ( !empty($heading_subtitle) ) ? '<span class="subtitle">'. trim($heading_subtitle) .'</span>' : '';	
 

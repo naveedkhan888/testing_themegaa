@@ -135,26 +135,26 @@ if (!function_exists('themename_xptheme_theme_primary_color')) {
 		}
 		?>
 		:root {
-			--tb-theme-color: <?php themename_xptheme_check_empty_customize( $main_color, $default_color['main_color']) ?>;
-			--tb-theme-body: <?php echo ( !empty($boby_bg['background-color']) ) ? $boby_bg['background-color'] : $default_color['boby_bg']; ?>;
-			--tb-theme-color-bg-opacity-01: <?php themename_xptheme_check_empty_customize( themename_hex2rgba_opacity($main_color, 0.08), $default_color['main_color']) ?>;
-			--tb-theme-color-bg-opacity-02: <?php themename_xptheme_check_empty_customize( themename_hex2rgba_opacity($main_color, 0.2), $default_color['main_color']) ?>;
-			--tb-theme-color-hover: <?php themename_xptheme_check_empty_customize( themename_xptheme_color_lightens_darkens($main_color, -0.05), themename_xptheme_color_lightens_darkens($default_color['main_color'], -0.05) );  ?>;
-			--tb-header-mobile-bg: <?php themename_xptheme_check_empty_customize($header_mobile_bg, $default_color['header_mobile_bg']) ?>;
-			--tb-header-mobile-color: <?php themename_xptheme_check_empty_customize($header_mobile_color, $default_color['header_mobile_color'] )?>;
+			--xp-theme-color: <?php themename_xptheme_check_empty_customize( $main_color, $default_color['main_color']) ?>;
+			--xp-theme-body: <?php echo ( !empty($boby_bg['background-color']) ) ? $boby_bg['background-color'] : $default_color['boby_bg']; ?>;
+			--xp-theme-color-bg-opacity-01: <?php themename_xptheme_check_empty_customize( themename_hex2rgba_opacity($main_color, 0.08), $default_color['main_color']) ?>;
+			--xp-theme-color-bg-opacity-02: <?php themename_xptheme_check_empty_customize( themename_hex2rgba_opacity($main_color, 0.2), $default_color['main_color']) ?>;
+			--xp-theme-color-hover: <?php themename_xptheme_check_empty_customize( themename_xptheme_color_lightens_darkens($main_color, -0.05), themename_xptheme_color_lightens_darkens($default_color['main_color'], -0.05) );  ?>;
+			--xp-header-mobile-bg: <?php themename_xptheme_check_empty_customize($header_mobile_bg, $default_color['header_mobile_bg']) ?>;
+			--xp-header-mobile-color: <?php themename_xptheme_check_empty_customize($header_mobile_color, $default_color['header_mobile_color'] )?>;
 
 			<?php if( !empty($default_color['enable_main_color_text']) ) : ?>
-				--tb-theme-color-text: <?php themename_xptheme_check_empty_customize( $main_color_text, $default_color['main_color_text']) ?>;
+				--xp-theme-color-text: <?php themename_xptheme_check_empty_customize( $main_color_text, $default_color['main_color_text']) ?>;
 			<?php else: ?>
-				--tb-theme-color-text: <?php themename_xptheme_check_empty_customize( $main_color, $default_color['main_color']) ?>;
+				--xp-theme-color-text: <?php themename_xptheme_check_empty_customize( $main_color, $default_color['main_color']) ?>;
 			<?php endif; ?>
 
 			<?php if( !empty($default_color['enable_main_color_second']) && $default_color['enable_main_color_second'] ) : ?>
-				--tb-theme-color-second: <?php themename_xptheme_check_empty_customize( themename_xptheme_get_config(('main_color_second'),$default_color['main_color_second']), $default_color['main_color_second']) ?>;
+				--xp-theme-color-second: <?php themename_xptheme_check_empty_customize( themename_xptheme_get_config(('main_color_second'),$default_color['main_color_second']), $default_color['main_color_second']) ?>;
 			<?php endif; ?>
 
 			<?php if( !empty($btn_text_color) ) : ?>
-				--tb-btn-text-color: <?php themename_xptheme_check_empty_customize( $btn_text_color, '') ?>;
+				--xp-btn-text-color: <?php themename_xptheme_check_empty_customize( $btn_text_color, '') ?>;
 			<?php endif; ?>
 			
 		} 
@@ -174,8 +174,8 @@ if (!function_exists('themename_xptheme_custom_styles')) {
 		if ( !themename_redux_framework_activated() ) {
 			?>  
 			:root { 
-				--tb-text-primary-font: '<?php echo trim($default_fonts['main_font']); ?>'; 
-				--tb-text-second-font: '<?php echo trim($default_fonts['main_font_second']); ?>';
+				--xp-text-primary-font: '<?php echo trim($default_fonts['main_font']); ?>'; 
+				--xp-text-second-font: '<?php echo trim($default_fonts['main_font_second']); ?>';
 			} 
 			<?php
         }
@@ -227,19 +227,19 @@ if (!function_exists('themename_xptheme_custom_styles')) {
                     $second_font = $main_second_custom_font_face;
                 } ?>
 				:root {
-					--tb-text-primary-font: '<?php echo trim($primary_font); ?>';
+					--xp-text-primary-font: '<?php echo trim($primary_font); ?>';
 
 					<?php if ($default_fonts['font_second_enable']) : ?> 
-						--tb-text-second-font: '<?php echo trim($second_font); ?>';  
+						--xp-text-second-font: '<?php echo trim($second_font); ?>';  
 					<?php endif; ?>
 				}  
 				<?php 
             } else {
 				?>
 					:root { 
-						--tb-text-primary-font: '<?php echo trim($default_fonts['main_font']); ?>';
+						--xp-text-primary-font: '<?php echo trim($default_fonts['main_font']); ?>';
 						<?php if ($default_fonts['font_second_enable']) : ?>
-							--tb-text-second-font: '<?php echo trim($default_fonts['main_font_second']); ?>';
+							--xp-text-second-font: '<?php echo trim($default_fonts['main_font_second']); ?>';
 						<?php endif; ?>
 					}
 				<?php

@@ -9,7 +9,7 @@ if (isset($sidebar_configs['sidebar'])) {
         $class_main = 'container';
     }
 }
-$class_row = ($blog_archive_layout === 'main-right') ? 'tb-column-reverse tb-custom-blog' : 'tb-custom-blog';
+$class_row = ($blog_archive_layout === 'main-right') ? 'xp-column-reverse xp-custom-blog' : 'xp-custom-blog';
 
 themename_xptheme_render_breadcrumbs();
 

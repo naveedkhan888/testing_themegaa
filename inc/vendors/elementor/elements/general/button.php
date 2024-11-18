@@ -112,7 +112,7 @@ class Themename_Elementor_Button extends Themename_Elementor_Widget_Base
                 'label' => esc_html__('Choose Icon', 'themename'),
                 'type' => Controls_Manager::ICONS,
                 'default' => [
-                    'value' => 'tb-icon tb-icon-arrow-right',
+                    'value' => 'xp-icon xp-icon-arrow-right',
                     'library' => 'xptheme-custom',
                 ],
                 'condition' => [

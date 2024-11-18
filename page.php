@@ -3,7 +3,7 @@
 get_header();
 $sidebar_configs = themename_xptheme_get_page_layout_configs();
 
-$class_row = (get_post_meta($post->ID, 'xptheme_page_layout', true) === 'main-right') ? 'tb-column-reverse' : '';
+$class_row = (get_post_meta($post->ID, 'xptheme_page_layout', true) === 'main-right') ? 'xp-column-reverse' : '';
 
 themename_xptheme_render_breadcrumbs();
 

@@ -132,7 +132,7 @@ if (! defined('YITH_WCWL')) {
                     <td class="product-thumbnail">
                         <?php if ($show_remove_product): ?>
                         <span class="product-remove icon">
-                                <a href="<?php echo esc_url(add_query_arg('remove_from_wishlist', $item->get_product_id())) ?>" class="remove_from_wishlist" title="<?php echo apply_filters('yith_wcwl_remove_product_wishlist_message_title', esc_html__('Remove this product', 'themename')); ?>"><i class="tb-icon tb-icon-close-01"></i></a>
+                                <a href="<?php echo esc_url(add_query_arg('remove_from_wishlist', $item->get_product_id())) ?>" class="remove_from_wishlist" title="<?php echo apply_filters('yith_wcwl_remove_product_wishlist_message_title', esc_html__('Remove this product', 'themename')); ?>"><i class="xp-icon xp-icon-close-01"></i></a>
                         </span>
                         <?php endif; ?>
                         <a href="<?php echo esc_url(get_permalink(apply_filters('woocommerce_in_cart_product', $item->get_product_id()))) ?>">

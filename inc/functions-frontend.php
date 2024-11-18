@@ -227,7 +227,7 @@ if (! function_exists('themename_xptheme_breadcrumbs')) {
                     $post_type = get_post_type_object(get_post_type());
                     $slug = $post_type->rewrite;
 
-                    if( get_post_type() === 'tb_portfolio' ) {
+                    if( get_post_type() === 'xp_portfolio' ) {
                         echo '<li><a href="' . esc_url(get_permalink(themename_xptheme_get_config('page_portfolio'))) .'">' . esc_html($post_type->labels->singular_name) . '</a></li> ' . esc_html($delimiter) . ' ';
                     } else if( !empty($slug['slug']) ) {
                         echo '<li><a href="' . esc_url($homeLink) . '/' . $slug['slug'] . '/">' . esc_html($post_type->labels->singular_name) . '</a></li> ' . esc_html($delimiter) . ' ';
@@ -385,7 +385,7 @@ if (! function_exists('themename_xptheme_render_breadcrumbs')) {
         } 
 
        
-        if (is_singular('post') || is_category() || is_home() || is_tag() || is_author() || is_day() || is_month() || is_year()  || is_search() || is_singular('tb_portfolio') ) {
+        if (is_singular('post') || is_category() || is_home() || is_tag() || is_author() || is_day() || is_month() || is_year()  || is_search() || is_singular('xp_portfolio') ) {
             
             $breadcrumb_layout_img = themename_xptheme_get_config('blog_breadcrumb_layout_image');
             $breadcrumb_layout_color = themename_xptheme_get_config('blog_breadcrumb_layout_color');
@@ -540,8 +540,8 @@ if (! function_exists('themename_xptheme_paging_nav')) {
             'current'  => $paged,
             'mid_size' => 1,
             'add_args' => array_map('urlencode', $query_args),
-            'prev_text' => '<i class="tb-icon tb-icon-arrow-left"></i>',
-            'next_text' => '<i class="tb-icon tb-icon-arrow-right"></i>'
+            'prev_text' => '<i class="xp-icon xp-icon-arrow-left"></i>',
+            'next_text' => '<i class="xp-icon xp-icon-arrow-right"></i>'
         ));
 
         if ($links) :
@@ -979,7 +979,7 @@ if (! function_exists('themename_xptheme_add_bg_close_canvas_menu')) {
  			<div class="sidebar-content-wrapper">
 
 				<div class="sidebar-header">
-					<a href="javascript:void(0);" class="close-canvas-menu"><?php esc_html_e('Close', 'themename'); ?><i class="tb-icon tb-icon-close-01"></i></a>
+					<a href="javascript:void(0);" class="close-canvas-menu"><?php esc_html_e('Close', 'themename'); ?><i class="xp-icon xp-icon-close-01"></i></a>
 				</div>
 
 				<div class="sidebar-content">
@@ -1265,7 +1265,7 @@ if ( !function_exists('themename_xptheme_back_to_top') ) {
         if (themename_xptheme_get_config('back_to_top')) { ?>
             <div class="xptheme-to-top">
                 <a href="javascript:void(0);" id="back-to-top">
-                    <i class="tb-icon tb-icon-arrow-top"></i>
+                    <i class="xp-icon xp-icon-arrow-top"></i>
                 </a>
             </div>
         <?php
@@ -1278,7 +1278,7 @@ if ( !function_exists('themename_xptheme_back_to_top') ) {
     
                 <div class="more-to-top">
                     <a href="javascript:void(0);" id="back-to-top-mobile">
-                        <i class="tb-icon tb-icon-arrow-top"></i>
+                        <i class="xp-icon xp-icon-arrow-top"></i>
                     </a> 
                     
                 </div>

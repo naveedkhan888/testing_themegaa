@@ -1117,7 +1117,7 @@ class Themename_Elementor_Nav_Menu extends Themename_Elementor_Widget_Base
                 'type' => Controls_Manager::ICONS,
                 'label_block' => true,
                 'default' => [
-                    'value' => 'tb-icon tb-icon-text-align-right',
+                    'value' => 'xp-icon xp-icon-text-align-right',
                     'library' => 'xptheme-custom',
                 ],
             ]
@@ -1421,7 +1421,7 @@ class Themename_Elementor_Nav_Menu extends Themename_Elementor_Widget_Base
             return;
         }
 
-        $ouput .= '<a class="canvas-close-tab" data-bs-dismiss="offcanvas" href="javascript:void(0)"><i class="tb-icon tb-icon-close-01"></i></a>';
+        $ouput .= '<a class="canvas-close-tab" data-bs-dismiss="offcanvas" href="javascript:void(0)"><i class="xp-icon xp-icon-close-01"></i></a>';
 
         $ouput .= '<'. $toggle_canvas_title_tag .'  class="toggle-canvas-title">';
 

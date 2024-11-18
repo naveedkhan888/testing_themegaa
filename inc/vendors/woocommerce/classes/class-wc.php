@@ -209,7 +209,7 @@ if (! class_exists('Themename_WooCommerce')) :
         
         public function body_classes_compare($classes)
         {
-            $class = 'tb-compare';
+            $class = 'xp-compare';
 
             $classes[] = trim($class);
 
@@ -240,7 +240,7 @@ if (! class_exists('Themename_WooCommerce')) :
 
             if (class_exists('Woo_Variation_Swatches')) {
                 if ( !(class_exists('Woo_Variation_Swatches_Pro') && function_exists('wvs_pro_archive_variation_template')) ) {
-                    $classes[] = 'tb-variation-free';
+                    $classes[] = 'xp-variation-free';
                 }  
             }
 
@@ -305,7 +305,7 @@ if (! class_exists('Themename_WooCommerce')) :
 
         public function custom_wishlist_icon_html( )
         {
-            return '<i class="tb-icon tb-icon-favorite"></i>';
+            return '<i class="xp-icon xp-icon-favorite"></i>';
         }
 
         public function remove_wishlist_text()
@@ -326,7 +326,7 @@ if (! class_exists('Themename_WooCommerce')) :
             $class = '';
             $active = themename_catalog_mode_active();
             if (isset($active) && $active) {
-                $class = 'tb-woo-catalogmod';
+                $class = 'xp-woo-catalogmod';
             }
 
             $classes[] = trim($class);

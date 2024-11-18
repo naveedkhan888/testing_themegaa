@@ -25,7 +25,7 @@ $this->add_render_attribute('item', 'class', ['gallery-item', $layout_type]);
                     $image_alt = get_the_title($item['gallery']['id']);
                 }
 
-                $effect_class = ($gallery_effects !== 'no') ? 'tb-effect effect-'. esc_attr($gallery_effects) : '';
+                $effect_class = ($gallery_effects !== 'no') ? 'xp-effect effect-'. esc_attr($gallery_effects) : '';
             ?>
             <a class="gallery-link <?php echo esc_attr($effect_class); ?>"
                 href="<?php echo esc_url( $item['gallery']['url'] ); ?>"

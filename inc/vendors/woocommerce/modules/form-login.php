@@ -76,7 +76,7 @@ if( ! function_exists( 'themename_modal_login_form' ) ) {
             <div class="modal-dialog"> 
                 <!-- Modal content-->
                 <div class="modal-content woocommerce-account">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"><i class="tb-icon tb-icon-close-01"></i></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"><i class="xp-icon xp-icon-close-01"></i></button>
                     <div class="form-header">
                         <h5 class="form-title" ><?php esc_html_e('Sign in', 'themename'); ?></h5>
                     </div>

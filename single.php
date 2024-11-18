@@ -5,7 +5,7 @@ get_header();
 $sidebar_configs = themename_xptheme_get_blog_layout_configs();
 $blog_single_layout =	(isset($_GET['blog_single_layout'])) ? $_GET['blog_single_layout']  :  themename_xptheme_get_config('blog_single_layout', 'left-main');
 
-$class_row = ($blog_single_layout === 'main-right') ? 'tb-column-reverse tb-custom-blog' : 'tb-custom-blog';
+$class_row = ($blog_single_layout === 'main-right') ? 'xp-column-reverse xp-custom-blog' : 'xp-custom-blog';
 
 $class_main_content = (isset($sidebar_configs['sidebar']) && is_active_sidebar($sidebar_configs['sidebar']['id'])) ? 'col-12' : 'col-xxl-9 mx-auto';
 $class_check_sidebar = (isset($sidebar_configs['sidebar']) && is_active_sidebar($sidebar_configs['sidebar']['id'])) ? 'active-sidebar' : '';

@@ -10,7 +10,7 @@
                         ?>
                         <div class="popup-image" <?php echo trim($bg); ?>></div>
                         <div class="popup-content">
-                            <a class="popupnewsletter-close" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#popupNewsletterModal"><i class="tb-icon tb-icon-close-01"></i></a>
+                            <a class="popupnewsletter-close" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#popupNewsletterModal"><i class="xp-icon xp-icon-close-01"></i></a>
                             <?php if (!empty($title)) { ?>
                                 <h3 class="popup-heading">
                                     <span><?php echo trim(apply_filters( 'widget_title', $title )); ?></span>

@@ -65,7 +65,7 @@
 					<?php endif; ?>
 					<div class="button-group input-group-addon">
                         <button type="submit" class="button-search btn btn-sm>">
-                            <i aria-hidden="true" class="tb-icon tb-icon-search"></i>
+                            <i aria-hidden="true" class="xp-icon xp-icon-search"></i>
                         </button>
                         <div class="xptheme-search-clear"></div>
                     </div>  

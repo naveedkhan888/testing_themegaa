@@ -51,7 +51,7 @@ if (!(defined('YITH_WFBT_PREMIUM') && YITH_WFBT_PREMIUM)) {
     } ?>
 
                         <?php if ($i > 0) : ?>
-                            <li class="image_plus image_plus_<?php echo esc_attr($i); ?>" data-rel="offeringID_<?php echo esc_attr($i); ?>"><i class="tb-icon tb-icon-zt-plus"></i></li>
+                            <li class="image_plus image_plus_<?php echo esc_attr($i); ?>" data-rel="offeringID_<?php echo esc_attr($i); ?>"><i class="xp-icon xp-icon-zt-plus"></i></li>
                         <?php endif; ?>
                         <li class="image-td" data-rel="offeringID_<?php echo esc_attr($i); ?>">
                         	<div class="content">

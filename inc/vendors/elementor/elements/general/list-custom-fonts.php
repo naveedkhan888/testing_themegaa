@@ -135,7 +135,7 @@ class Themename_Elementor_List_Custom_Fonts extends Themename_Elementor_Carousel
         ?>
         <div class="icon-preview-box large-icons">
             <div class="preview">
-            <a href="#" class="show-code" data-bs-toggle="tooltip" data-bs-placement="top" title="<?php esc_attr_e('Click to copy class', 'themename'); ?>"><i class="tb-icon tb-icon-<?php echo esc_attr($icon); ?>"></i><span class="name"><?php echo trim(str_replace('-', ' ', $icon)); ?></span> <code class="code-preview" style="display: none;">tb-icon tb-icon-<?php echo trim($icon); ?></code></a>
+            <a href="#" class="show-code" data-bs-toggle="tooltip" data-bs-placement="top" title="<?php esc_attr_e('Click to copy class', 'themename'); ?>"><i class="xp-icon xp-icon-<?php echo esc_attr($icon); ?>"></i><span class="name"><?php echo trim(str_replace('-', ' ', $icon)); ?></span> <code class="code-preview" style="display: none;">xp-icon xp-icon-<?php echo trim($icon); ?></code></a>
             </div>
         </div>
         <?php

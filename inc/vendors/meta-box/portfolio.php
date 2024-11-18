@@ -45,7 +45,7 @@ if (!function_exists('themename_register_portfolio_meta_boxes')) {
         $meta_boxes[$prefix . 'display_setting'] = array(
             'id'                        => $prefix . 'display_setting',
             'title'                     => esc_html__('Portfolio Details', 'themename'),
-            'post_types'                => ['tb_portfolio'],
+            'post_types'                => ['xp_portfolio'],
             'context'                   => 'normal',
             'priority'                  => 'high',
             'autosave'                  => true,

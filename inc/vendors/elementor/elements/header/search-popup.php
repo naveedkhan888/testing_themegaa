@@ -480,7 +480,7 @@ class Themename_Elementor_Search_Popup extends Themename_Elementor_Widget_Base {
                         <div class="content-heading">
                             <h3 class="heading"><?php esc_html_e('Search', 'themename'); ?></h3>
                             <button type="button" class="btn-search-close">
-                                <i class="tb-icon tb-icon-close-02"></i>
+                                <i class="xp-icon xp-icon-close-02"></i>
                             </button> 
                         </div>
 

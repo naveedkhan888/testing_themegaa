@@ -16,7 +16,7 @@ if ( !themename_redux_framework_activated() ) {
 		<div id="main" class="site-main">
 			<div class="container">
 			<div class="container-inner main-content">
-				<div class="row tb-custom-size"> 
+				<div class="row xp-custom-size"> 
 	                <!-- MAIN CONTENT -->
 	                <div class="col-xl-<?php echo esc_attr($colContent); ?> ">
 	                	    <header class="page-header">
@@ -51,7 +51,7 @@ if ( !themename_redux_framework_activated() ) {
         $sidebar_configs = themename_xptheme_get_blog_layout_configs();
         $blog_archive_layout =  (isset($_GET['blog_archive_layout']))  ? $_GET['blog_archive_layout'] : themename_xptheme_get_config('blog_archive_layout', 'main-right');
 
-        $class_row = ($blog_archive_layout === 'main-right') ? 'tb-column-reverse tb-custom-blog' : 'tb-custom-blog';
+        $class_row = ($blog_archive_layout === 'main-right') ? 'xp-column-reverse xp-custom-blog' : 'xp-custom-blog';
 
         $class_main = apply_filters('themename_xptheme_post_content_class', 'container');
 
