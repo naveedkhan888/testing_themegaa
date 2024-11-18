@@ -441,16 +441,27 @@ class Merlin
     /**
      * Add the admin menu item, under Appearance.
      */
-    public function add_admin_menu()
-    {
+    class Merlin {
+            // Declare the property to avoid dynamic property creation.
+            protected $hook_suffix;
 
-        // Strings passed in from the config file.
-        $strings = $this->strings;
+            // Other properties and methods...
 
-        $this->hook_suffix = add_submenu_page(
-            esc_html( $this->parent_slug ), esc_html( $strings['admin-menu'] ), esc_html( $strings['admin-menu'] ), sanitize_key( $this->capability ), sanitize_key( $this->merlin_url ), array( $this, 'admin_page' )
-        );
-    }
+            public function add_admin_menu() 
+            {
+                // Strings passed in from the config file.
+                $strings = $this->strings;
+
+                $this->hook_suffix = add_submenu_page(
+                    esc_html($this->parent_slug),
+                    esc_html($strings['admin-menu']),
+                    esc_html($strings['admin-menu']),
+                    sanitize_key($this->capability),
+                    sanitize_key($this->merlin_url),
+                    array($this, 'admin_page')
+                );
+            }
+        }
 
     /**
      * Add the admin page.
