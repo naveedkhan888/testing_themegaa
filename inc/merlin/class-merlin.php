@@ -46,6 +46,13 @@ class Merlin
     protected $steps = array();
 
     /**
+     * Admin menu hook suffix.
+     *
+     * @var string
+     */
+    protected $hook_suffix;
+
+    /**
      * TGMPA instance.
      *
      * @var    object
@@ -239,11 +246,11 @@ class Merlin
     }
 
     /**
-	 * Imported terms.
-	 *
-	 * @var array
-	 */
-	private $imported_terms = array();
+     * Imported terms.
+     *
+     * @var array
+     */
+    private $imported_terms = array();
 
     /**
      * Class Constructor.
@@ -326,8 +333,8 @@ class Merlin
             $this->tgmpa = isset($GLOBALS['tgmpa']) ? $GLOBALS['tgmpa'] : TGM_Plugin_Activation::get_instance();
         }
         add_action('admin_init', array( $this, 'required_classes' ));
-        //		add_action( 'admin_init', array( $this, 'redirect' ), 30 );
-        //		add_action( 'after_switch_theme', array( $this, 'switch_theme' ) );
+        //      add_action( 'admin_init', array( $this, 'redirect' ), 30 );
+        //      add_action( 'after_switch_theme', array( $this, 'switch_theme' ) );
         add_action('admin_init', array( $this, 'steps' ), 30, 0);
         add_action('admin_menu', array( $this, 'add_admin_menu' ));
         add_action('admin_init', array( $this, 'admin_page' ), 30, 0);
@@ -441,27 +448,16 @@ class Merlin
     /**
      * Add the admin menu item, under Appearance.
      */
-    class Merlin {
-            // Declare the property to avoid dynamic property creation.
-            protected $hook_suffix;
+    public function add_admin_menu()
+    {
 
-            // Other properties and methods...
+        // Strings passed in from the config file.
+        $strings = $this->strings;
 
-            public function add_admin_menu() 
-            {
-                // Strings passed in from the config file.
-                $strings = $this->strings;
-
-                $this->hook_suffix = add_submenu_page(
-                    esc_html($this->parent_slug),
-                    esc_html($strings['admin-menu']),
-                    esc_html($strings['admin-menu']),
-                    sanitize_key($this->capability),
-                    sanitize_key($this->merlin_url),
-                    array($this, 'admin_page')
-                );
-            }
-        }
+        $this->hook_suffix = add_submenu_page(
+            esc_html( $this->parent_slug ), esc_html( $strings['admin-menu'] ), esc_html( $strings['admin-menu'] ), sanitize_key( $this->capability ), sanitize_key( $this->merlin_url ), array( $this, 'admin_page' )
+        );
+    }
 
     /**
      * Add the admin page.
@@ -533,11 +529,11 @@ class Merlin
          */
         $this->header(); ?>
 
-		<div class="merlin__wrapper">
+        <div class="merlin__wrapper">
 
-			<div class="merlin__content merlin__content--<?php echo esc_attr(strtolower($this->steps[ $this->step ]['name'])); ?>">
+            <div class="merlin__content merlin__content--<?php echo esc_attr(strtolower($this->steps[ $this->step ]['name'])); ?>">
 
-				<?php
+                <?php
                 // Content Handlers.
                 $show_content = true;
 
@@ -549,21 +545,21 @@ class Merlin
             $this->body();
         } ?>
 
-			<?php $this->step_output(); ?>
+            <?php $this->step_output(); ?>
 
-			</div>
+            </div>
 
-			<?php echo sprintf('<a class="return-to-dashboard" href="%s">%s</a>', esc_url(admin_url('/')), esc_html($strings['return-to-dashboard'])); ?>
+            <?php echo sprintf('<a class="return-to-dashboard" href="%s">%s</a>', esc_url(admin_url('/')), esc_html($strings['return-to-dashboard'])); ?>
 
-			<?php $ignore_url = wp_nonce_url(admin_url('?' . $this->ignore . '=true'), 'merlinwp-ignore-nounce'); ?>
+            <?php $ignore_url = wp_nonce_url(admin_url('?' . $this->ignore . '=true'), 'merlinwp-ignore-nounce'); ?>
 
-			<?php echo sprintf('<a class="return-to-dashboard ignore" href="%s">%s</a>', esc_url($ignore_url), esc_html($strings['ignore'])); ?>
+            <?php echo sprintf('<a class="return-to-dashboard ignore" href="%s">%s</a>', esc_url($ignore_url), esc_html($strings['ignore'])); ?>
 
-		</div>
+        </div>
 
-		<?php $this->footer(); ?>
+        <?php $this->footer(); ?>
 
-		<?php
+        <?php
         exit;
     }
 
@@ -579,17 +575,17 @@ class Merlin
         // Get the current step.
         $current_step = strtolower($this->steps[ $this->step ]['name']); ?>
 
-		<!DOCTYPE html>
-		<html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes(); ?>>
-		<head>
-			<meta name="viewport" content="width=device-width"/>
-			<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-			<?php printf(esc_html($strings['title%s%s%s%s']), '<ti', 'tle>', esc_html($this->theme->name), '</title>'); ?>
-			<?php do_action('admin_print_styles'); ?>
-			<?php do_action('admin_print_scripts'); ?>
-		</head>
-		<body class="merlin__body merlin__body--<?php echo esc_attr($current_step); ?> merlin__drawer--open">
-		<?php
+        <!DOCTYPE html>
+        <html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes(); ?>>
+        <head>
+            <meta name="viewport" content="width=device-width"/>
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+            <?php printf(esc_html($strings['title%s%s%s%s']), '<ti', 'tle>', esc_html($this->theme->name), '</title>'); ?>
+            <?php do_action('admin_print_styles'); ?>
+            <?php do_action('admin_print_scripts'); ?>
+        </head>
+        <body class="merlin__body merlin__body--<?php echo esc_attr($current_step); ?> merlin__drawer--open">
+        <?php
     }
 
     /**
@@ -606,11 +602,11 @@ class Merlin
     protected function footer()
     {
         ?>
-		</body>
-		<?php do_action('admin_footer'); ?>
-		<?php do_action('admin_print_footer_scripts'); ?>
-		</html>
-		<?php
+        </body>
+        <?php do_action('admin_footer'); ?>
+        <?php do_action('admin_print_footer_scripts'); ?>
+        </html>
+        <?php
     }
 
     /**
@@ -825,9 +821,9 @@ class Merlin
 
         array_shift($ouput_steps); ?>
 
-		<ol class="dots">
+        <ol class="dots">
 
-			<?php
+            <?php
             foreach ($ouput_steps as $step_key => $step) :
 
                 $class_attr = '';
@@ -840,15 +836,15 @@ class Merlin
             $show_link  = true;
         } ?>
 
-				<li class="<?php echo esc_attr($class_attr); ?>">
-					<a href="<?php echo esc_url($this->step_link($step_key)); ?>" title="<?php echo esc_attr($step['name']); ?>"></a>
-				</li>
+                <li class="<?php echo esc_attr($class_attr); ?>">
+                    <a href="<?php echo esc_url($this->step_link($step_key)); ?>" title="<?php echo esc_attr($step['name']); ?>"></a>
+                </li>
 
-			<?php endforeach; ?>
+            <?php endforeach; ?>
 
-		</ol>
+        </ol>
 
-		<?php
+        <?php
     }
 
     /**
@@ -896,23 +892,23 @@ class Merlin
         $start     = $strings['btn-start'];
         $no        = $strings['btn-no']; ?>
 
-		<div class="merlin__content--transition">
+        <div class="merlin__content--transition">
 
-			<?php echo wp_kses($this->svg(array( 'icon' => 'welcome' )), $this->svg_allowed_html()); ?>
+            <?php echo wp_kses($this->svg(array( 'icon' => 'welcome' )), $this->svg_allowed_html()); ?>
 
-			<h1><?php echo esc_html(sprintf($header, $theme)); ?></h1>
+            <h1><?php echo esc_html(sprintf($header, $theme)); ?></h1>
 
-			<p><?php echo esc_html(sprintf($paragraph, $theme)); ?></p>
+            <p><?php echo esc_html(sprintf($paragraph, $theme)); ?></p>
 
-		</div>
+        </div>
 
-		<footer class="merlin__content__footer">
-			<a href="<?php echo esc_url(wp_get_referer() && ! strpos(wp_get_referer(), 'update.php') ? wp_get_referer() : admin_url('/')); ?>" class="merlin__button merlin__button--skip"><?php echo esc_html($no); ?></a>
-			<a href="<?php echo esc_url($this->step_next_link()); ?>" class="merlin__button merlin__button--next merlin__button--proceed merlin__button--colorchange"><?php echo esc_html($start); ?></a>
-			<?php wp_nonce_field('merlin'); ?>
-		</footer>
+        <footer class="merlin__content__footer">
+            <a href="<?php echo esc_url(wp_get_referer() && ! strpos(wp_get_referer(), 'update.php') ? wp_get_referer() : admin_url('/')); ?>" class="merlin__button merlin__button--skip"><?php echo esc_html($no); ?></a>
+            <a href="<?php echo esc_url($this->step_next_link()); ?>" class="merlin__button merlin__button--next merlin__button--proceed merlin__button--colorchange"><?php echo esc_html($start); ?></a>
+            <?php wp_nonce_field('merlin'); ?>
+        </footer>
 
-	<?php
+    <?php
         $this->logger->debug(__('The welcome step has been displayed', 'themename'));
     }
 
@@ -956,57 +952,57 @@ class Merlin
         $paragraph = ! $is_theme_registered ? $strings['license%s'] : $strings['license-success%s'];
         $install   = $strings['btn-license-activate']; ?>
 
-		<div class="merlin__content--transition">
+        <div class="merlin__content--transition">
 
-			<?php echo wp_kses($this->svg(array( 'icon' => 'license' )), $this->svg_allowed_html()); ?>
+            <?php echo wp_kses($this->svg(array( 'icon' => 'license' )), $this->svg_allowed_html()); ?>
 
-			<svg class="icon icon--checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
-				<circle class="icon--checkmark__circle" cx="26" cy="26" r="25" fill="none"/><path class="icon--checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
-			</svg>
+            <svg class="icon icon--checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                <circle class="icon--checkmark__circle" cx="26" cy="26" r="25" fill="none"/><path class="icon--checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+            </svg>
 
-			<h1><?php echo esc_html(sprintf($header, $theme)); ?></h1>
+            <h1><?php echo esc_html(sprintf($header, $theme)); ?></h1>
 
-			<p id="license-text"><?php echo esc_html(sprintf($paragraph, $theme)); ?></p>
+            <p id="license-text"><?php echo esc_html(sprintf($paragraph, $theme)); ?></p>
 
-			<?php if (! $is_theme_registered) : ?>
-				<div class="merlin__content--license-key">
-					<label for="license-key"><?php echo esc_html($label); ?></label>
+            <?php if (! $is_theme_registered) : ?>
+                <div class="merlin__content--license-key">
+                    <label for="license-key"><?php echo esc_html($label); ?></label>
 
-					<div class="merlin__content--license-key-wrapper">
-						<input type="text" id="license-key" class="js-license-key" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
-						<?php if (! empty($action_url)) : ?>
-							<a href="<?php echo esc_url($action_url); ?>" alt="<?php echo esc_attr($action); ?>" target="_blank">
-								<span class="hint--top" aria-label="<?php echo esc_attr($action); ?>">
-									<?php echo wp_kses($this->svg(array( 'icon' => 'help' )), $this->svg_allowed_html()); ?>
-								</span>
-							</a>
-						<?php endif ?>
-					</div>
+                    <div class="merlin__content--license-key-wrapper">
+                        <input type="text" id="license-key" class="js-license-key" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+                        <?php if (! empty($action_url)) : ?>
+                            <a href="<?php echo esc_url($action_url); ?>" alt="<?php echo esc_attr($action); ?>" target="_blank">
+                                <span class="hint--top" aria-label="<?php echo esc_attr($action); ?>">
+                                    <?php echo wp_kses($this->svg(array( 'icon' => 'help' )), $this->svg_allowed_html()); ?>
+                                </span>
+                            </a>
+                        <?php endif ?>
+                    </div>
 
-				</div>
-			<?php endif; ?>
+                </div>
+            <?php endif; ?>
 
-		</div>
+        </div>
 
-		<footer class="merlin__content__footer <?php echo esc_attr($is_theme_registered_class); ?>">
+        <footer class="merlin__content__footer <?php echo esc_attr($is_theme_registered_class); ?>">
 
-			<?php if (! $is_theme_registered) : ?>
+            <?php if (! $is_theme_registered) : ?>
 
-				<?php if (! $required) : ?>
-					<a href="<?php echo esc_url($this->step_next_link()); ?>" class="merlin__button merlin__button--skip merlin__button--proceed"><?php echo esc_html($skip); ?></a>
-				<?php endif ?>
+                <?php if (! $required) : ?>
+                    <a href="<?php echo esc_url($this->step_next_link()); ?>" class="merlin__button merlin__button--skip merlin__button--proceed"><?php echo esc_html($skip); ?></a>
+                <?php endif ?>
 
-				<a href="<?php echo esc_url($this->step_next_link()); ?>" class="merlin__button merlin__button--next button-next js-merlin-license-activate-button" data-callback="activate_license">
-					<span class="merlin__button--loading__text"><?php echo esc_html($install); ?></span>
-					<?php echo wp_kses($this->loading_spinner(), $this->loading_spinner_allowed_html()); ?>
-				</a>
+                <a href="<?php echo esc_url($this->step_next_link()); ?>" class="merlin__button merlin__button--next button-next js-merlin-license-activate-button" data-callback="activate_license">
+                    <span class="merlin__button--loading__text"><?php echo esc_html($install); ?></span>
+                    <?php echo wp_kses($this->loading_spinner(), $this->loading_spinner_allowed_html()); ?>
+                </a>
 
-			<?php else : ?>
-				<a href="<?php echo esc_url($this->step_next_link()); ?>" class="merlin__button merlin__button--next merlin__button--proceed merlin__button--colorchange"><?php echo esc_html($next); ?></a>
-			<?php endif; ?>
-			<?php wp_nonce_field('merlin'); ?>
-		</footer>
-		<?php
+            <?php else : ?>
+                <a href="<?php echo esc_url($this->step_next_link()); ?>" class="merlin__button merlin__button--next merlin__button--proceed merlin__button--colorchange"><?php echo esc_html($next); ?></a>
+            <?php endif; ?>
+            <?php wp_nonce_field('merlin'); ?>
+        </footer>
+        <?php
         $this->logger->debug(__('The license activation step has been displayed', 'themename'));
     }
 
@@ -1045,39 +1041,39 @@ class Merlin
         $paragraph = ! $is_child_theme ? $strings['child'] : $strings['child-success%s'];
         $install   = $strings['btn-child-install']; ?>
 
-		<div class="merlin__content--transition">
+        <div class="merlin__content--transition">
 
-			<?php echo wp_kses($this->svg(array( 'icon' => 'child' )), $this->svg_allowed_html()); ?>
+            <?php echo wp_kses($this->svg(array( 'icon' => 'child' )), $this->svg_allowed_html()); ?>
 
-			<svg class="icon icon--checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
-				<circle class="icon--checkmark__circle" cx="26" cy="26" r="25" fill="none"/><path class="icon--checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
-			</svg>
+            <svg class="icon icon--checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                <circle class="icon--checkmark__circle" cx="26" cy="26" r="25" fill="none"/><path class="icon--checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+            </svg>
 
-			<h1><?php echo esc_html($header); ?></h1>
+            <h1><?php echo esc_html($header); ?></h1>
 
-			<p id="child-theme-text"><?php echo esc_html(sprintf($paragraph, $theme)); ?></p>
+            <p id="child-theme-text"><?php echo esc_html(sprintf($paragraph, $theme)); ?></p>
 
-			<a class="merlin__button merlin__button--knockout merlin__button--no-chevron merlin__button--external" href="<?php echo esc_url($action_url); ?>" target="_blank"><?php echo esc_html($action); ?></a>
+            <a class="merlin__button merlin__button--knockout merlin__button--no-chevron merlin__button--external" href="<?php echo esc_url($action_url); ?>" target="_blank"><?php echo esc_html($action); ?></a>
 
-		</div>
+        </div>
 
-		<footer class="merlin__content__footer">
+        <footer class="merlin__content__footer">
 
-			<?php if (! $is_child_theme) : ?>
+            <?php if (! $is_child_theme) : ?>
 
-				<a href="<?php echo esc_url($this->step_next_link()); ?>" class="merlin__button merlin__button--skip merlin__button--proceed"><?php echo esc_html($skip); ?></a>
+                <a href="<?php echo esc_url($this->step_next_link()); ?>" class="merlin__button merlin__button--skip merlin__button--proceed"><?php echo esc_html($skip); ?></a>
 
-				<a href="<?php echo esc_url($this->step_next_link()); ?>" class="merlin__button merlin__button--next button-next" data-callback="install_child">
-					<span class="merlin__button--loading__text"><?php echo esc_html($install); ?></span>
-					<?php echo wp_kses($this->loading_spinner(), $this->loading_spinner_allowed_html()); ?>
-				</a>
+                <a href="<?php echo esc_url($this->step_next_link()); ?>" class="merlin__button merlin__button--next button-next" data-callback="install_child">
+                    <span class="merlin__button--loading__text"><?php echo esc_html($install); ?></span>
+                    <?php echo wp_kses($this->loading_spinner(), $this->loading_spinner_allowed_html()); ?>
+                </a>
 
-			<?php else : ?>
-				<a href="<?php echo esc_url($this->step_next_link()); ?>" class="merlin__button merlin__button--next merlin__button--proceed merlin__button--colorchange"><?php echo esc_html($next); ?></a>
-			<?php endif; ?>
-			<?php wp_nonce_field('merlin'); ?>
-		</footer>
-	<?php
+            <?php else : ?>
+                <a href="<?php echo esc_url($this->step_next_link()); ?>" class="merlin__button merlin__button--next merlin__button--proceed merlin__button--colorchange"><?php echo esc_html($next); ?></a>
+            <?php endif; ?>
+            <?php wp_nonce_field('merlin'); ?>
+        </footer>
+    <?php
         $this->logger->debug(__('The child theme installation step has been displayed', 'themename'));
     }
 
@@ -1130,82 +1126,82 @@ class Merlin
         $next      = $strings['btn-next'];
         $install   = $strings['btn-plugins-install']; ?>
 
-		<div class="merlin__content--transition">
+        <div class="merlin__content--transition">
 
-			<?php echo wp_kses($this->svg(array( 'icon' => 'plugins' )), $this->svg_allowed_html()); ?>
+            <?php echo wp_kses($this->svg(array( 'icon' => 'plugins' )), $this->svg_allowed_html()); ?>
 
-			<svg class="icon icon--checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
-				<circle class="icon--checkmark__circle" cx="26" cy="26" r="25" fill="none"/><path class="icon--checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
-			</svg>
+            <svg class="icon icon--checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                <circle class="icon--checkmark__circle" cx="26" cy="26" r="25" fill="none"/><path class="icon--checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+            </svg>
 
-			<h1><?php echo esc_html($header); ?></h1>
+            <h1><?php echo esc_html($header); ?></h1>
 
-			<p><?php echo esc_html($paragraph); ?></p>
+            <p><?php echo esc_html($paragraph); ?></p>
 
-			<?php if ($count) { ?>
-				<a id="merlin__drawer-trigger" class="merlin__button merlin__button--knockout"><span><?php echo esc_html($action); ?></span><span class="chevron"></span></a>
-			<?php } ?>
+            <?php if ($count) { ?>
+                <a id="merlin__drawer-trigger" class="merlin__button merlin__button--knockout"><span><?php echo esc_html($action); ?></span><span class="chevron"></span></a>
+            <?php } ?>
 
-		</div>
+        </div>
 
-		<form action="" method="post">
+        <form action="" method="post">
 
-			<?php if ($count) : ?>
+            <?php if ($count) : ?>
 
-				<ul class="merlin__drawer merlin__drawer--install-plugins">
+                <ul class="merlin__drawer merlin__drawer--install-plugins">
 
-				<?php if (! empty($required_plugins)) : ?>
-					<?php foreach ($required_plugins as $slug => $plugin) : ?>
-						<li data-slug="<?php echo esc_attr($slug); ?>">
-							<input type="checkbox" name="default_plugins[<?php echo esc_attr($slug); ?>]" class="checkbox" id="default_plugins_<?php echo esc_attr($slug); ?>" value="1" checked>
+                <?php if (! empty($required_plugins)) : ?>
+                    <?php foreach ($required_plugins as $slug => $plugin) : ?>
+                        <li data-slug="<?php echo esc_attr($slug); ?>">
+                            <input type="checkbox" name="default_plugins[<?php echo esc_attr($slug); ?>]" class="checkbox" id="default_plugins_<?php echo esc_attr($slug); ?>" value="1" checked>
 
-							<label for="default_plugins_<?php echo esc_attr($slug); ?>">
-								<i></i>
+                            <label for="default_plugins_<?php echo esc_attr($slug); ?>">
+                                <i></i>
 
-								<span><?php echo esc_html($plugin['name']); ?></span>
+                                <span><?php echo esc_html($plugin['name']); ?></span>
 
-								<span class="badge">
-									<span class="hint--top" aria-label="<?php esc_attr_e('Required', 'themename'); ?>">
-										<?php esc_html_e('req', 'themename'); ?>
-									</span>
-								</span>
-							</label>
-						</li>
-					<?php endforeach; ?>
-				<?php endif; ?>
+                                <span class="badge">
+                                    <span class="hint--top" aria-label="<?php esc_attr_e('Required', 'themename'); ?>">
+                                        <?php esc_html_e('req', 'themename'); ?>
+                                    </span>
+                                </span>
+                            </label>
+                        </li>
+                    <?php endforeach; ?>
+                <?php endif; ?>
 
-				<?php if (! empty($recommended_plugins)) : ?>
-					<?php foreach ($recommended_plugins as $slug => $plugin) : ?>
-						<li data-slug="<?php echo esc_attr($slug); ?>">
-							<input type="checkbox" name="default_plugins[<?php echo esc_attr($slug); ?>]" class="checkbox" id="default_plugins_<?php echo esc_attr($slug); ?>" value="1" checked>
+                <?php if (! empty($recommended_plugins)) : ?>
+                    <?php foreach ($recommended_plugins as $slug => $plugin) : ?>
+                        <li data-slug="<?php echo esc_attr($slug); ?>">
+                            <input type="checkbox" name="default_plugins[<?php echo esc_attr($slug); ?>]" class="checkbox" id="default_plugins_<?php echo esc_attr($slug); ?>" value="1" checked>
 
-							<label for="default_plugins_<?php echo esc_attr($slug); ?>">
-								<i></i><span><?php echo esc_html($plugin['name']); ?></span>
-							</label>
-						</li>
-					<?php endforeach; ?>
-				<?php endif; ?>
+                            <label for="default_plugins_<?php echo esc_attr($slug); ?>">
+                                <i></i><span><?php echo esc_html($plugin['name']); ?></span>
+                            </label>
+                        </li>
+                    <?php endforeach; ?>
+                <?php endif; ?>
 
-				</ul>
+                </ul>
 
-			<?php endif; ?>
+            <?php endif; ?>
 
-			<footer class="merlin__content__footer <?php echo esc_attr($class); ?>">
-				<?php if ($count) : ?>
-					<a id="close" href="<?php echo esc_url($this->step_next_link()); ?>" class="merlin__button merlin__button--skip merlin__button--closer merlin__button--proceed"><?php echo esc_html($skip); ?></a>
-					<a id="skip" href="<?php echo esc_url($this->step_next_link()); ?>" class="merlin__button merlin__button--skip merlin__button--proceed"><?php echo esc_html($skip); ?></a>
-					<a href="<?php echo esc_url($this->step_next_link()); ?>" class="merlin__button merlin__button--next button-next" data-callback="install_plugins">
-						<span class="merlin__button--loading__text"><?php echo esc_html($install); ?></span>
-						<?php echo wp_kses($this->loading_spinner(), $this->loading_spinner_allowed_html()); ?>
-					</a>
-				<?php else : ?>
-					<a href="<?php echo esc_url($this->step_next_link()); ?>" class="merlin__button merlin__button--next merlin__button--proceed merlin__button--colorchange"><?php echo esc_html($next); ?></a>
-				<?php endif; ?>
-				<?php wp_nonce_field('merlin'); ?>
-			</footer>
-		</form>
+            <footer class="merlin__content__footer <?php echo esc_attr($class); ?>">
+                <?php if ($count) : ?>
+                    <a id="close" href="<?php echo esc_url($this->step_next_link()); ?>" class="merlin__button merlin__button--skip merlin__button--closer merlin__button--proceed"><?php echo esc_html($skip); ?></a>
+                    <a id="skip" href="<?php echo esc_url($this->step_next_link()); ?>" class="merlin__button merlin__button--skip merlin__button--proceed"><?php echo esc_html($skip); ?></a>
+                    <a href="<?php echo esc_url($this->step_next_link()); ?>" class="merlin__button merlin__button--next button-next" data-callback="install_plugins">
+                        <span class="merlin__button--loading__text"><?php echo esc_html($install); ?></span>
+                        <?php echo wp_kses($this->loading_spinner(), $this->loading_spinner_allowed_html()); ?>
+                    </a>
+                <?php else : ?>
+                    <a href="<?php echo esc_url($this->step_next_link()); ?>" class="merlin__button merlin__button--next merlin__button--proceed merlin__button--colorchange"><?php echo esc_html($next); ?></a>
+                <?php endif; ?>
+                <?php wp_nonce_field('merlin'); ?>
+            </footer>
+        </form>
 
-	<?php
+    <?php
         $this->logger->debug(__('The plugin installation step has been displayed', 'themename'));
     }
 
@@ -1229,82 +1225,82 @@ class Merlin
 
         $multi_import = (1 < count($this->import_files)) ? 'is-multi-import' : null; ?>
 
-		<div class="merlin__content--transition">
+        <div class="merlin__content--transition">
 
             <?php
-            //				echo wp_kses($this->svg(array('icon' => 'content')), $this->svg_allowed_html());
+            //              echo wp_kses($this->svg(array('icon' => 'content')), $this->svg_allowed_html());
             
             printf("<img src='%s' alt='Home Preview' class='merlin-image-preview' />", $this->import_files[0]['import_preview_image_url']);
             
         printf('<a href="%s" target="_blank" class="merlin-view-demo">' . esc_html__('Watch Demo Online', 'themename') . '</a>', $this->import_files[0]['preview_url']); ?>
 
-			<svg class="icon icon--checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
-				<circle class="icon--checkmark__circle" cx="26" cy="26" r="25" fill="none"/><path class="icon--checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
-			</svg>
+            <svg class="icon icon--checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                <circle class="icon--checkmark__circle" cx="26" cy="26" r="25" fill="none"/><path class="icon--checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+            </svg>
 
-			<h1><?php echo esc_html($header); ?></h1>
+            <h1><?php echo esc_html($header); ?></h1>
 
-			<p><?php echo esc_html($paragraph); ?></p>
+            <p><?php echo esc_html($paragraph); ?></p>
 
-			<?php if (1 < count($this->import_files)) : ?>
+            <?php if (1 < count($this->import_files)) : ?>
 
-				<div class="merlin__select-control-wrapper">
+                <div class="merlin__select-control-wrapper">
  
-					<select class="merlin__select-control js-merlin-demo-import-select">
-						<?php foreach ($this->import_files as $index => $import_file) : ?>
+                    <select class="merlin__select-control js-merlin-demo-import-select">
+                        <?php foreach ($this->import_files as $index => $import_file) : ?>
 
-							<?php if (isset($import_file['group_label_start']) &&  $import_file['group_label_start'] === 'yes') : ?>
-								<optgroup label="<?php echo esc_attr($import_file['group_label_name']); ?>">
-							<?php endif; ?>
+                            <?php if (isset($import_file['group_label_start']) &&  $import_file['group_label_start'] === 'yes') : ?>
+                                <optgroup label="<?php echo esc_attr($import_file['group_label_name']); ?>">
+                            <?php endif; ?>
 
-							<option value="<?php echo esc_attr($index); ?>" data-image="<?php echo esc_attr($import_file['import_preview_image_url']) ?>"  data-preview="<?php echo esc_attr($import_file['preview_url']) ?>"><?php echo esc_html($import_file['import_file_name']); ?></option>
+                            <option value="<?php echo esc_attr($index); ?>" data-image="<?php echo esc_attr($import_file['import_preview_image_url']) ?>"  data-preview="<?php echo esc_attr($import_file['preview_url']) ?>"><?php echo esc_html($import_file['import_file_name']); ?></option>
 
-							<?php if (isset($import_file['group_label_end']) &&  $import_file['group_label_end'] === 'yes') : ?>
-								</optgroup>
-							<?php endif; ?>
+                            <?php if (isset($import_file['group_label_end']) &&  $import_file['group_label_end'] === 'yes') : ?>
+                                </optgroup>
+                            <?php endif; ?>
 
-						<?php endforeach; ?>
-					</select>
+                        <?php endforeach; ?>
+                    </select>
 
-					<div class="merlin__select-control-help">
-						<span class="hint--top" aria-label="<?php echo esc_attr__('Select Demo', 'themename'); ?>">
-							<?php echo wp_kses($this->svg(array( 'icon' => 'downarrow' )), $this->svg_allowed_html()); ?>
-						</span>
-					</div>
-				</div>
-			<?php endif; ?>
+                    <div class="merlin__select-control-help">
+                        <span class="hint--top" aria-label="<?php echo esc_attr__('Select Demo', 'themename'); ?>">
+                            <?php echo wp_kses($this->svg(array( 'icon' => 'downarrow' )), $this->svg_allowed_html()); ?>
+                        </span>
+                    </div>
+                </div>
+            <?php endif; ?>
 
-			<a id="merlin__drawer-trigger" class="merlin__button merlin__button--knockout"><span><?php echo esc_html($action); ?></span><span class="chevron"></span></a>
+            <a id="merlin__drawer-trigger" class="merlin__button merlin__button--knockout"><span><?php echo esc_html($action); ?></span><span class="chevron"></span></a>
 
-		</div>
+        </div>
 
-		<form action="" method="post" class="<?php echo esc_attr($multi_import); ?>">
+        <form action="" method="post" class="<?php echo esc_attr($multi_import); ?>">
 
-			<ul class="merlin__drawer merlin__drawer--import-content js-merlin-drawer-import-content">
-				<?php echo $this->get_import_steps_html($import_info); ?>
-			</ul>
+            <ul class="merlin__drawer merlin__drawer--import-content js-merlin-drawer-import-content">
+                <?php echo $this->get_import_steps_html($import_info); ?>
+            </ul>
 
-			<footer class="merlin__content__footer">
+            <footer class="merlin__content__footer">
 
-				<a id="close" href="<?php echo esc_url($this->step_next_link()); ?>" class="merlin__button merlin__button--skip merlin__button--closer merlin__button--proceed"><?php echo esc_html($skip); ?></a>
+                <a id="close" href="<?php echo esc_url($this->step_next_link()); ?>" class="merlin__button merlin__button--skip merlin__button--closer merlin__button--proceed"><?php echo esc_html($skip); ?></a>
 
-				<a id="skip" href="<?php echo esc_url($this->step_next_link()); ?>" class="merlin__button merlin__button--skip merlin__button--proceed"><?php echo esc_html($skip); ?></a>
+                <a id="skip" href="<?php echo esc_url($this->step_next_link()); ?>" class="merlin__button merlin__button--skip merlin__button--proceed"><?php echo esc_html($skip); ?></a>
 
-				<a href="<?php echo esc_url($this->step_next_link()); ?>" class="merlin__button merlin__button--next button-next" data-callback="install_content">
-					<span class="merlin__button--loading__text"><?php echo esc_html($import); ?></span>
+                <a href="<?php echo esc_url($this->step_next_link()); ?>" class="merlin__button merlin__button--next button-next" data-callback="install_content">
+                    <span class="merlin__button--loading__text"><?php echo esc_html($import); ?></span>
 
-					<div class="merlin__progress-bar">
-						<span class="js-merlin-progress-bar"></span>
-					</div>
+                    <div class="merlin__progress-bar">
+                        <span class="js-merlin-progress-bar"></span>
+                    </div>
 
-					<span class="js-merlin-progress-bar-percentage">0%</span>
-				</a>
+                    <span class="js-merlin-progress-bar-percentage">0%</span>
+                </a>
 
-				<?php wp_nonce_field('merlin'); ?>
-			</footer>
-		</form>
+                <?php wp_nonce_field('merlin'); ?>
+            </footer>
+        </form>
 
-	<?php
+    <?php
         $this->logger->debug(__('The content import step has been displayed', 'themename'));
     }
 
@@ -1356,35 +1352,35 @@ class Merlin
 
         update_option('merlin_' . $this->slug . '_completed', time()); ?>
 
-		<div class="merlin__content--transition">
+        <div class="merlin__content--transition">
 
-			<?php echo wp_kses($this->svg(array( 'icon' => 'done' )), $this->svg_allowed_html()); ?>
+            <?php echo wp_kses($this->svg(array( 'icon' => 'done' )), $this->svg_allowed_html()); ?>
 
-			<h1><?php echo esc_html(sprintf($header, $theme)); ?></h1>
+            <h1><?php echo esc_html(sprintf($header, $theme)); ?></h1>
 
-			<p><?php wp_kses(printf($paragraph, $author), $allowed_html_array); ?></p>
+            <p><?php wp_kses(printf($paragraph, $author), $allowed_html_array); ?></p>
 
-		</div>
+        </div>
 
-		<footer class="merlin__content__footer merlin__content__footer--fullwidth <?php echo esc_attr($links_class); ?>">
+        <footer class="merlin__content__footer merlin__content__footer--fullwidth <?php echo esc_attr($links_class); ?>">
 
-			<a href="<?php echo esc_url($this->ready_big_button_url); ?>" class="merlin__button merlin__button--blue merlin__button--fullwidth merlin__button--popin"><?php echo esc_html($big_btn); ?></a>
+            <a href="<?php echo esc_url($this->ready_big_button_url); ?>" class="merlin__button merlin__button--blue merlin__button--fullwidth merlin__button--popin"><?php echo esc_html($big_btn); ?></a>
 
-			<?php if (! empty($links)) : ?>
-				<a id="merlin__drawer-trigger" class="merlin__button merlin__button--knockout"><span><?php echo esc_html($action); ?></span><span class="chevron"></span></a>
+            <?php if (! empty($links)) : ?>
+                <a id="merlin__drawer-trigger" class="merlin__button merlin__button--knockout"><span><?php echo esc_html($action); ?></span><span class="chevron"></span></a>
 
-				<ul class="merlin__drawer merlin__drawer--extras">
+                <ul class="merlin__drawer merlin__drawer--extras">
 
-					<?php foreach ($links as $link) : ?>
-						<li><?php echo wp_kses($link, $allowed_html_array); ?></li>
-					<?php endforeach; ?>
+                    <?php foreach ($links as $link) : ?>
+                        <li><?php echo wp_kses($link, $allowed_html_array); ?></li>
+                    <?php endforeach; ?>
 
-				</ul>
-			<?php endif; ?>
+                </ul>
+            <?php endif; ?>
 
-		</footer>
+        </footer>
 
-	<?php
+    <?php
         $this->logger->debug(__('The final step has been displayed', 'themename'));
     }
 
@@ -1665,35 +1661,35 @@ class Merlin
         $slug_no_hyphens = strtolower(preg_replace('#[^a-zA-Z]#', '', $slug));
 
         $output = "
-			<?php
-			/**
-			 * Theme functions and definitions.
-			 * This child theme was generated by Merlin WP.
-			 *
-			 * @link https://developer.wordpress.org/themes/basics/theme-functions/
-			 */
+            <?php
+            /**
+             * Theme functions and definitions.
+             * This child theme was generated by Merlin WP.
+             *
+             * @link https://developer.wordpress.org/themes/basics/theme-functions/
+             */
 
-			/*
-			 * If your child theme has more than one .css file (eg. ie.css, style.css, main.css) then
-			 * you will have to make sure to maintain all of the parent theme dependencies.
-			 *
-			 * Make sure you're using the correct handle for loading the parent theme's styles.
-			 * Failure to use the proper tag will result in a CSS file needlessly being loaded twice.
-			 * This will usually not affect the site appearance, but it's inefficient and extends your page's loading time.
-			 *
-			 * @link https://codex.wordpress.org/Child_Themes
-			 */
-			function {$slug_no_hyphens}_child_enqueue_styles() {
-			    wp_enqueue_style( '{$slug}-style' , get_template_directory_uri() . '/style.css' );
-			    wp_enqueue_style( '{$slug}-child-style',
-			        get_stylesheet_directory_uri() . '/style.css',
-			        array( '{$slug}-style' ),
-			        wp_get_theme()->get('Version')
-			    );
-			}
+            /*
+             * If your child theme has more than one .css file (eg. ie.css, style.css, main.css) then
+             * you will have to make sure to maintain all of the parent theme dependencies.
+             *
+             * Make sure you're using the correct handle for loading the parent theme's styles.
+             * Failure to use the proper tag will result in a CSS file needlessly being loaded twice.
+             * This will usually not affect the site appearance, but it's inefficient and extends your page's loading time.
+             *
+             * @link https://codex.wordpress.org/Child_Themes
+             */
+            function {$slug_no_hyphens}_child_enqueue_styles() {
+                wp_enqueue_style( '{$slug}-style' , get_template_directory_uri() . '/style.css' );
+                wp_enqueue_style( '{$slug}-child-style',
+                    get_stylesheet_directory_uri() . '/style.css',
+                    array( '{$slug}-style' ),
+                    wp_get_theme()->get('Version')
+                );
+            }
 
-			add_action(  'wp_enqueue_scripts', '{$slug_no_hyphens}_child_enqueue_styles' );\n
-		";
+            add_action(  'wp_enqueue_scripts', '{$slug_no_hyphens}_child_enqueue_styles' );\n
+        ";
 
         // Let's remove the tabs so that it displays nicely.
         $output = trim(preg_replace('/\t+/', '', $output));
@@ -1717,14 +1713,14 @@ class Merlin
     public function generate_child_style_css($slug, $parent, $author, $version)
     {
         $output = "
-			/**
-			* Theme Name: {$parent} Child
-			* Description: This is a child theme of {$parent}, generated by Merlin WP.
-			* Author: {$author}
-			* Template: {$slug}
-			* Version: {$version}
-			*/\n
-		";
+            /**
+            * Theme Name: {$parent} Child
+            * Description: This is a child theme of {$parent}, generated by Merlin WP.
+            * Author: {$author}
+            * Template: {$slug}
+            * Version: {$version}
+            */\n
+        ";
 
         // Let's remove the tabs so that it displays nicely.
         $output = trim(preg_replace('/\t+/', '', $output));
@@ -2427,21 +2423,21 @@ class Merlin
     public function get_import_steps_html($import_info)
     {
         ob_start(); ?>
-			<?php foreach ($import_info as $slug => $available) : ?>
-				<?php
+            <?php foreach ($import_info as $slug => $available) : ?>
+                <?php
                 if (! $available) {
                     continue;
                 } ?>
 
-				<li class="merlin__drawer--import-content__list-item status status--Pending" data-content="<?php echo esc_attr($slug); ?>">
-					<input type="checkbox" name="default_content[<?php echo esc_attr($slug); ?>]" class="checkbox checkbox-<?php echo esc_attr($slug); ?>" id="default_content_<?php echo esc_attr($slug); ?>" value="1" checked>
-					<label for="default_content_<?php echo esc_attr($slug); ?>">
-						<i></i><span><?php echo esc_html(ucfirst(str_replace('_', ' ', $slug))); ?></span>
-					</label>
-				</li>
+                <li class="merlin__drawer--import-content__list-item status status--Pending" data-content="<?php echo esc_attr($slug); ?>">
+                    <input type="checkbox" name="default_content[<?php echo esc_attr($slug); ?>]" class="checkbox checkbox-<?php echo esc_attr($slug); ?>" id="default_content_<?php echo esc_attr($slug); ?>" value="1" checked>
+                    <label for="default_content_<?php echo esc_attr($slug); ?>">
+                        <i></i><span><?php echo esc_html(ucfirst(str_replace('_', ' ', $slug))); ?></span>
+                    </label>
+                </li>
 
-			<?php endforeach; ?>
-		<?php
+            <?php endforeach; ?>
+        <?php
 
         return ob_get_clean();
     }
