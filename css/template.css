@@ -2106,3 +2106,7 @@ body.xptheme-dark-mode-active.xp-compare table.compare-list tbody th{background-
 .wc-block-components-totals-coupon__form .wc-block-components-text-input input[type="text"]:focus{outline:none !important}.wc-block-components-totals-coupon__form .wc-block-components-text-input label{display:none}.price .wc-block-components-product-price__regular{color:#888}.wc-block-grid__product .woocs_price_code{justify-content:center}.wc-block-components-order-summary .wc-block-components-order-summary-item .wc-block-components-order-summary-item__quantity{background-color:var(--xp-theme-color);border-color:var(--xp-theme-color);color:#fff}
 .elementor-widget-woocommerce-breadcrumb .breadcrumbs-color,.elementor-widget-woocommerce-breadcrumb .breadcrumbs-text{margin-bottom:0}.woocommerce div.product.elementor form.cart.variations_form .woocommerce-variation-add-to-cart{flex-direction:column}@media(min-width:992px) and (max-width:1199px){.woocommerce .elementor-add-to-cart #shop-now .single_add_to_cart_button{width:auto}}@media(max-width:991px){.woocommerce .elementor-add-to-cart #shop-now.has-buy-now .xptheme-buy-now{margin-left:0;max-width:unset}
 }
+.yith-add-to-wishlist-button-block .yith-wcwl-add-to-wishlist-button:before {
+	font-family: simple-line-icons;
+	content: "\e08a";
+}
